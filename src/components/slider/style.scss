@@ -1,0 +1,32 @@
+.slider {
+  padding: 0 4%;
+  position: relative;
+  margin-bottom: 40px;
+  overflow: hidden;
+
+  // animation-name:slideup;
+  // animation-delay:0.5s;
+  // animation-duration:0.8s;
+  // animation-fill-mode:forwards;
+  // animation-timing-function:ease-out;
+
+  &-content {
+    white-space: nowrap;
+  }
+
+  &:hover,
+  &:active {
+    .slider-control {
+      background-color: rgba(20, 20, 20, 0.7);
+    }
+
+    .slider-control-arrow {
+      display: block;
+    }
+  }
+}
+
+// @keyframes slideup {
+//   0%{bottom:-10vh}
+//   100%{bottom:0;}
+// }

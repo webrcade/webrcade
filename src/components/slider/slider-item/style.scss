@@ -1,0 +1,47 @@
+.slider-item {
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+
+  &-container {
+    position: relative;
+    border: .4vw solid #252525;  
+    // border: .4vw solid #1d1d1d;  
+    cursor: pointer;
+
+    border-radius: 1vh;
+    overflow: hidden;
+    margin: 2px;
+
+    &__selected {
+      border-color: #e50914;  
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      overflow: hidden;
+    }  
+
+    .slider-item-title {
+      position: absolute;
+      display: block;
+      color: white;
+      bottom: 0;
+      font-size: 1.4vw;
+      width: 100%;
+      max-width: 100%;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      background-color: #1d1d1d;
+      padding: 5px;
+      opacity: .8;
+
+      &__selected {
+        color: white;
+      }
+    }
+  }
+}
+

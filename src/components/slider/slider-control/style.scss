@@ -1,0 +1,38 @@
+.slider-control {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 4%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 3rem;
+  cursor: pointer;
+  color: #ffffff;
+  z-index: 10;
+
+  &-arrow {
+    transition-duration: 0.4s;
+  }
+
+  &.right {
+    right: 0;
+  }
+
+  &.left {
+    left: 0;
+  }
+
+  &-arrow {
+    display: none;
+  }
+
+  &:hover,
+  &:active {
+    .slider-control-arrow {
+      transform: scale(1.3);
+    }
+  }
+}
