@@ -1,0 +1,3 @@
+[submodule "apps/webrcade-app-prboom"]
+	path = apps/webrcade-app-prboom
+	url = https://github.com/webrcade/webrcade-app-prboom.git
