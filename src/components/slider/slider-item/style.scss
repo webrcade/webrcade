@@ -5,8 +5,9 @@
 
   &-container {
     position: relative;
-    border: .4vw solid #252525;  
-    // border: .4vw solid #1d1d1d;  
+    // border: .4vw solid #252525;  
+    border: 4px solid #1d1d1d;      
+    border: calc(min(5px, .4vw)) solid #1d1d1d;      
     cursor: pointer;
 
     border-radius: 1vh;
@@ -18,6 +19,7 @@
     }
 
     img {
+      border-radius: 1vh;
       display: block;
       width: 100%;
       max-width: 100%;
@@ -29,7 +31,7 @@
       display: block;
       color: white;
       bottom: 0;
-      font-size: 1.4vw;
+      font-size: 1.4rem;
       width: 100%;
       max-width: 100%;
       text-overflow: ellipsis;

@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import Slider from "./components/slider/slider.js";
+import AppDetails from "./components/app-details/index.js";
 
-require("./scss/App.scss");
+require("./scss/webrcade.scss");
 
-export class App extends Component {
+export class Webrcade extends Component {
   constructor() {
     super();
     this.state = {
-      games: [],
+      apps: [],
     };
 
     this.sliderRef = React.createRef();
@@ -23,21 +24,21 @@ export class App extends Component {
         slider.selectPrev();
         break;
       case 'Enter':
-        let games = [
+        let apps = [
           {
             title: "B*nQ",
             thumbnail: "https://www.mobygames.com/images/shots/l/529340-b-nq-atari-7800-screenshot-i-fell-off-the-board-my-such-language.png"
           }
         ];
         
-        let gamesOut = [];
-        while (gamesOut.length < 20) {
-          gamesOut = gamesOut.concat(games);
+        let appsOut = [];
+        while (appsOut.length < 20) {
+          appsOut = appsOut.concat(apps);
         }
         let index = 0;
-        gamesOut = gamesOut.map(game => { game.id = index++; return game });
+        appsOut = appsOut.map(app => { app.id = index++; return app });
     
-        this.setState({ games: gamesOut });
+        this.setState({ apps: appsOut });
         //carousel.select();
         break;
       default:
@@ -46,7 +47,7 @@ export class App extends Component {
   };
 
   componentDidMount() {
-    let games = [
+    let apps = [
       {
         title: "B*nQ",
         thumbnail: "https://www.mobygames.com/images/shots/l/529340-b-nq-atari-7800-screenshot-i-fell-off-the-board-my-such-language.png"
@@ -65,14 +66,14 @@ export class App extends Component {
       }
     ];
 
-    let gamesOut = [];
-    while (gamesOut.length < 20) {
-      gamesOut = gamesOut.concat(games);
+    let appsOut = [];
+    while (appsOut.length < 20) {
+      appsOut = appsOut.concat(apps);
     }
     let index = 0;
-    gamesOut = gamesOut.map(game => { game.id = index++; return game });
+    appsOut = appsOut.map(app => { app.id = index++; return app });
 
-    this.setState({ games: gamesOut });
+    this.setState({ apps: appsOut });
 
     document.addEventListener("keyup", this.keyUpListener);
   }
@@ -82,17 +83,18 @@ export class App extends Component {
   }
 
   render() {
-    const { games } = this.state;
+    const { apps } = this.state;
 
     return (
-      <div className="App">
-        <h1 className="App-title">
-          web<span>Я</span>cade
-        </h1>
-        <Slider games={games} ref={this.sliderRef} />
+      <div className="webrcade">
+        <div className="webrcade-outer">
+          <AppDetails/>
+          <div className="app-category"><a href="javascript:void(0)">Atari 7800 Games</a></div>
+          <Slider apps={apps} ref={this.sliderRef} />
+        </div>
       </div>
     );
   }
 }
 
-export default App;
+export default Webrcade;

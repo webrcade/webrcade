@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
+import Webrcade from "./webrcade";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Webrcade />
   </React.StrictMode>,
   document.getElementById("root")
 );

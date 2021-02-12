@@ -34,7 +34,7 @@ export class slider extends Component {
     } else if (window.innerWidth >= 1000) {
       this.setState({ itemsInRow: 5 });
     } else if (window.innerWidth < 1000) {
-      this.setState({ itemsInRow: 4 });
+      this.setState({ itemsInRow: 5 });
     }
   };
 
@@ -42,8 +42,8 @@ export class slider extends Component {
   renderSliderContent = () => {
     // console.log('RENDER');
     const { sliderHasMoved, itemsInRow, lowestVisibleIndex, selectedItem } = this.state;
-    const { games } = this.props;
-    const totalItems = games.length;
+    const { apps } = this.props;
+    const totalItems = apps.length;
 
     // slider content made up of left, mid, and right portions to allow continous cycling
     const left = [];
@@ -103,8 +103,8 @@ export class slider extends Component {
     for (let index of combinedIndex) {
       sliderContents.push(
         <SliderItem
-          game={games[index]}
-          key={`${games[index].id}-${index}`}
+          app={apps[index]}
+          key={`${apps[index].id}-${index}`}
           width={100 / itemsInRow}
           selected={selectedItem === index}
           onClick={() => {this.handleItemClicked(index)}}
@@ -130,8 +130,8 @@ export class slider extends Component {
 
   handlePrevPage = () => {
     const { lowestVisibleIndex, itemsInRow, sliderMoving } = this.state;
-    const { games } = this.props;
-    const totalItems = games.length;
+    const { apps } = this.props;
+    const totalItems = apps.length;
 
     if (sliderMoving) return;
 
@@ -161,7 +161,7 @@ export class slider extends Component {
         sliderMoving: true,
         sliderMoveDirection: "left",
         movePercentage: newMovePercentage,
-        selectedItem: (newIndex + itemsInRow - 1) % games.length
+        selectedItem: (newIndex + itemsInRow - 1) % apps.length
       },
       () => {
         setTimeout(() => {
@@ -178,8 +178,8 @@ export class slider extends Component {
 
   handleNextPage = () => {
     const { sliderHasMoved, lowestVisibleIndex, itemsInRow, sliderMoving } = this.state;
-    const { games } = this.props;
-    const totalItems = games.length;
+    const { apps } = this.props;
+    const totalItems = apps.length;
 
     if (sliderMoving) return;
 
@@ -234,8 +234,8 @@ export class slider extends Component {
   selectNext() {
     const { selectedItem, lowestVisibleIndex, itemsInRow, sliderMoving } = this.state;
     const max = lowestVisibleIndex + itemsInRow;
-    const { games } = this.props;
-    const totalItems = games.length;
+    const { apps } = this.props;
+    const totalItems = apps.length;
 
     if (sliderMoving) return;
 
@@ -254,8 +254,8 @@ export class slider extends Component {
 
   selectPrev() {
     const { selectedItem, lowestVisibleIndex, sliderMoving } = this.state;
-    const { games } = this.props;
-    const totalItems = games.length;
+    const { apps } = this.props;
+    const totalItems = apps.length;
 
     if (sliderMoving) return;
 
@@ -280,10 +280,10 @@ export class slider extends Component {
       sliderMoveDirection,
       movePercentage,
     } = this.state;
-    const { games } = this.props;
+    const { apps } = this.props;
 
-    // return null if games are not loaded
-    if (!games.length) {
+    // return null if apps are not loaded
+    if (!apps.length) {
       return null;
     }
 
@@ -309,6 +309,7 @@ export class slider extends Component {
     }
 
     return (
+      // <div className="slider" tabIndex="0"></div>
       <div className="slider">
         {sliderHasMoved && (
           <SliderControl arrowDirection={"left"} onClick={this.handlePrevPage} />
