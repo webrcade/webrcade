@@ -52,23 +52,28 @@ export class Webrcade extends Component {
       {
         title: "B*nQ",
         system: "Atari 7800",
-        thumbnail: "https://www.mobygames.com/images/shots/l/529340-b-nq-atari-7800-screenshot-i-fell-off-the-board-my-such-language.png"
+        thumbnail: "https://www.mobygames.com/images/shots/l/529340-b-nq-atari-7800-screenshot-i-fell-off-the-board-my-such-language.png",
+        background: "https://www.mobygames.com/images/shots/l/529341-b-nq-atari-7800-screenshot-i-completed-the-level.png"
       }, {
         title: "Basketbrawl",
         system: "Atari 7800",
-        thumbnail: "https://www.mobygames.com/images/shots/l/56349-basketbrawl-atari-7800-screenshot-title-screen.gif"
+        thumbnail: "https://www.mobygames.com/images/shots/l/56349-basketbrawl-atari-7800-screenshot-title-screen.gif",
+        background: "https://www.mobygames.com/images/shots/l/56353-basketbrawl-atari-7800-screenshot-a-game-in-progress.gif"
       }, {
         title: "Beef Drop",
         system: "Atari 7800",
-        thumbnail: "https://www.mobygames.com/images/shots/l/311802-beef-drop-atari-7800-screenshot-level-2.png"
+        thumbnail: "https://www.mobygames.com/images/shots/l/311802-beef-drop-atari-7800-screenshot-level-2.png",
+        background: "https://www.mobygames.com/images/shots/l/311800-beef-drop-atari-7800-screenshot-he-got-me.png"
       }, {
         title: "Commando",
         system: "Atari 7800",
-        thumbnail: "https://www.mobygames.com/images/shots/l/56374-commando-atari-7800-screenshot-title-screen.gif"
+        thumbnail: "https://www.mobygames.com/images/shots/l/56374-commando-atari-7800-screenshot-title-screen.gif",
+        background: "https://www.mobygames.com/images/shots/l/56375-commando-atari-7800-screenshot-the-starting-location.gif"
       }, {
         title: "Fatal Run",
         system: "Atari 7800",
-        thumbnail: "https://www.mobygames.com/images/shots/l/56386-fatal-run-atari-7800-screenshot-title-screen.gif"
+        thumbnail: "https://www.mobygames.com/images/shots/l/56386-fatal-run-atari-7800-screenshot-title-screen.gif",
+        background: "https://www.mobygames.com/images/shots/l/56387-fatal-run-atari-7800-screenshot-racing-to-the-next-city.gif"
       }
     ];
 

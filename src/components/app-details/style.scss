@@ -1,13 +1,14 @@
 .app-details {
-    &-content {
+    &-content {        
         margin-top: 20px;
         flex-grow: 1;
         /* max-height: 56.25vw; */
         position: relative;
         background-color: black;
         border-bottom: 6px solid black;
+        display: flex;
 
-        &-container {
+        &-container {            
             color: white;
             position: absolute;
             top: 0;
@@ -20,6 +21,7 @@
             overflow: hidden;
             display: flex;
             flex-direction: column;
+            z-index: 2;
 
             &-title {
                 padding-top: 20px;
@@ -44,16 +46,15 @@
     }
 
     &-background {
-        display: flex;
-        height: 100%;
-        opacity: 0;
+        flex-grow: 1;
+        display: flex;                
     }
 
     &-left {
         width: 40%;
         position: relative;
 
-        &:before {
+        &::before {
             content: '';
             position: absolute;
             background-image: linear-gradient(to right, #000, transparent);
@@ -61,10 +62,12 @@
             bottom: 0;
             left: 100%;
             width: 70%;
+            z-index: 1;
         }
     }
 
     &-right {
+        opacity: 0;
         // background: url(https://img1.cgtrader.com/items/2266200/5f9f3e10dd/nes-nintendo-entertainment-system-3d-model-low-poly-obj-blend.jpg);
         /* background: url(https://img1.cgtrader.com/items/23387/364fd58bef/atari-joystick-3d-model-max-obj-3ds.jpg);                                    */
         /* background: url(https://img-new.cgtrader.com/items/1875254/e248f68b2f/sega-genesis-3d-model-max-obj-mtl-3ds-fbx-c4d-lwo-lw-lws.jpg);                              */

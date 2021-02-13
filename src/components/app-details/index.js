@@ -15,10 +15,10 @@ export class AppDetails extends Component {
         let { app } = this.props;
 
         let imageStyle = app ? {
-            backgroundImage: 'url(' + app.thumbnail + ')',
+            backgroundImage: 'url(' + app.background + ')',
         } : {};
 
-        let el = document.querySelector('.app-details-background');
+        let el = document.querySelector('.app-details-right');
         if (el) {
             el.classList.remove('fade-in');                
             if (this.timeoutId) window.clearTimeout(this.timeoutId);

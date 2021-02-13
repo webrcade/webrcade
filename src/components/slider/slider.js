@@ -44,7 +44,7 @@ export class slider extends Component {
     } else if (window.innerWidth >= 1000) {
       this.setState({ itemsInRow: 7 });
     } else if (window.innerWidth < 1000) {
-      this.setState({ itemsInRow: 7 });
+      this.setState({ itemsInRow: 6 });
     }
   };
 
