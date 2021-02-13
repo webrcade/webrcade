@@ -9,6 +9,7 @@ export class Webrcade extends Component {
     super();
     this.state = {
       apps: [],
+      currentApp: null
     };
 
     this.sliderRef = React.createRef();
@@ -50,24 +51,29 @@ export class Webrcade extends Component {
     let apps = [
       {
         title: "B*nQ",
+        system: "Atari 7800",
         thumbnail: "https://www.mobygames.com/images/shots/l/529340-b-nq-atari-7800-screenshot-i-fell-off-the-board-my-such-language.png"
       }, {
         title: "Basketbrawl",
+        system: "Atari 7800",
         thumbnail: "https://www.mobygames.com/images/shots/l/56349-basketbrawl-atari-7800-screenshot-title-screen.gif"
       }, {
         title: "Beef Drop",
+        system: "Atari 7800",
         thumbnail: "https://www.mobygames.com/images/shots/l/311802-beef-drop-atari-7800-screenshot-level-2.png"
       }, {
         title: "Commando",
+        system: "Atari 7800",
         thumbnail: "https://www.mobygames.com/images/shots/l/56374-commando-atari-7800-screenshot-title-screen.gif"
       }, {
         title: "Fatal Run",
+        system: "Atari 7800",
         thumbnail: "https://www.mobygames.com/images/shots/l/56386-fatal-run-atari-7800-screenshot-title-screen.gif"
       }
     ];
 
     let appsOut = [];
-    while (appsOut.length < 20) {
+    while (appsOut.length < 26) {
       appsOut = appsOut.concat(apps);
     }
     let index = 0;
@@ -83,14 +89,14 @@ export class Webrcade extends Component {
   }
 
   render() {
-    const { apps } = this.state;
+    const { apps, currentApp } = this.state;
 
     return (
       <div className="webrcade">
         <div className="webrcade-outer">
-          <AppDetails/>
-          <div className="app-category"><a href="javascript:void(0)">Atari 7800 Games</a></div>
-          <Slider apps={apps} ref={this.sliderRef} />
+          <AppDetails app={currentApp}/>
+          {/* <div className="app-category"><a href="javascript:void(0)">Atari 7800 Games</a></div> */}
+          <Slider apps={apps} ref={this.sliderRef} onSelected={(app) => this.setState({currentApp: app})}/>
         </div>
       </div>
     );

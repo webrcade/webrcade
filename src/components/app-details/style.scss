@@ -4,6 +4,8 @@
         flex-grow: 1;
         /* max-height: 56.25vw; */
         position: relative;
+        background-color: black;
+        border-bottom: 6px solid black;
 
         &-container {
             color: white;
@@ -24,30 +26,30 @@
                 font-weight: 700;
                 font-size: 2.3rem;
             }
-            
+
             &-system {
                 font-size: 1.5rem;
                 font-weight: 600;
                 color: #777777;
             }
-            
+
             &-description {
                 padding-top: 20px;
                 font-size: 1.4rem;
                 overflow: hidden;
                 line-height: 140%;
                 color: #cccccc
-            }            
-        }        
+            }
+        }
     }
 
     &-background {
         display: flex;
         height: 100%;
-    }    
+        opacity: 0;
+    }
 
     &-left {
-        background: black;
         width: 40%;
         position: relative;
 
@@ -59,18 +61,24 @@
             bottom: 0;
             left: 100%;
             width: 70%;
-        }    
+        }
     }
-        
+
     &-right {
-        background: url(https://img1.cgtrader.com/items/2266200/5f9f3e10dd/nes-nintendo-entertainment-system-3d-model-low-poly-obj-blend.jpg);
+        // background: url(https://img1.cgtrader.com/items/2266200/5f9f3e10dd/nes-nintendo-entertainment-system-3d-model-low-poly-obj-blend.jpg);
         /* background: url(https://img1.cgtrader.com/items/23387/364fd58bef/atari-joystick-3d-model-max-obj-3ds.jpg);                                    */
         /* background: url(https://img-new.cgtrader.com/items/1875254/e248f68b2f/sega-genesis-3d-model-max-obj-mtl-3ds-fbx-c4d-lwo-lw-lws.jpg);                              */
-        /* background: url(https://img1.cgtrader.com/items/918721/b1abe32ffd/snes-controller-3d-model-obj-3ds-fbx-3dm-ige-igs-iges-stp.jpg);                        */        
+        /* background: url(https://img1.cgtrader.com/items/918721/b1abe32ffd/snes-controller-3d-model-obj-3ds-fbx-3dm-ige-igs-iges-stp.jpg);                        */
         /* background: url(https://img1.cgtrader.com/items/22910/901a27b0f2/atari-2600-vcs-collection-3d-model-max-obj-3ds.jpg);       */
         /* background: url(https://img2.cgtrader.com/items/2522266/7f686d705c/nes-console-3d-model-obj-blend.jpg); */
         /* background: url(https://videogamecritic.com/images/7800/basketbrawl.png); */
         background-size: cover;
+        background-repeat: noRepeat;
         width: 60%;
-    }    
+    }
+}
+
+.fade-in {
+    opacity: 1;
+    transition: 1.2s;
 }

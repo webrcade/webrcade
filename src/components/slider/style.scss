@@ -1,14 +1,8 @@
 .slider {
   padding: 0 4%;
   position: relative;
-  margin-bottom: 5px;
+  margin: 5px 0 5px 0;
   overflow: hidden;
-
-  // animation-name:slideup;
-  // animation-delay:0.5s;
-  // animation-duration:0.8s;
-  // animation-fill-mode:forwards;
-  // animation-timing-function:ease-out;
 
   &-content {
     white-space: nowrap;
@@ -25,6 +19,13 @@
     }
   }
 }
+
+
+// animation-name:slideup;
+// animation-delay:0.5s;
+// animation-duration:0.8s;
+// animation-fill-mode:forwards;
+// animation-timing-function:ease-out;
 
 // @keyframes slideup {
 //   0%{bottom:-10vh}

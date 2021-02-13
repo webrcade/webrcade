@@ -27,14 +27,24 @@ export class slider extends Component {
     window.removeEventListener("resize", this.handleWindowResize);
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    const { apps, onSelected } = this.props;
+    const { selectedItem } = this.state;
+    if (
+      ((prevProps.apps !== apps) ||
+        (prevState.selectedItem !== selectedItem)) && onSelected) {
+      onSelected(apps[selectedItem]);
+    }
+  }
+
   // alter number of items in row on window resize
   handleWindowResize = () => {
     if (window.innerWidth > 1440) {
-      this.setState({ itemsInRow: 6 });
+      this.setState({ itemsInRow: 8 });
     } else if (window.innerWidth >= 1000) {
-      this.setState({ itemsInRow: 5 });
+      this.setState({ itemsInRow: 7 });
     } else if (window.innerWidth < 1000) {
-      this.setState({ itemsInRow: 5 });
+      this.setState({ itemsInRow: 7 });
     }
   };
 
@@ -107,7 +117,7 @@ export class slider extends Component {
           key={`${apps[index].id}-${index}`}
           width={100 / itemsInRow}
           selected={selectedItem === index}
-          onClick={() => {this.handleItemClicked(index)}}
+          onClick={() => { this.handleItemClicked(index) }}
         />
       );
     }
