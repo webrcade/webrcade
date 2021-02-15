@@ -1,20 +1,20 @@
 .app-details {
-    &-content {        
-        margin-top: 20px;
+    &-content { 
+        margin-top: 2.5rem;
         flex-grow: 1;
+        flex-direction: column;
         position: relative;
         background-color: black;
-        border-bottom: 6px solid black;
         display: flex;
 
-        &-container {            
+        &-container {        
             color: white;
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            padding: 20px 0 0 30px;
+            padding: 1rem 0 0 2rem;
             max-width: 48%;
             font-size: 2rem;
             overflow: hidden;
@@ -23,7 +23,7 @@
             z-index: 2;
 
             &-title {
-                padding-top: 20px;
+                padding-top: 1.5rem;
                 font-weight: 700;
                 font-size: 2.3rem;
             }
@@ -35,12 +35,33 @@
             }
 
             &-description {
-                padding-top: 20px;
+                flex-grow: 0;
+                padding-top: 1.5rem;
                 font-size: 1.4rem;
                 overflow: hidden;
                 line-height: 140%;
-                color: #cccccc
+                color: #cccccc;
+                min-height: 2rem;
             }
+
+            &-buttons {
+                padding-top: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+
+            &-category {
+                display: flex;
+                flex-direction: row;    
+                flex-grow: 1;      
+                color: white;
+                margin: 0 -.5rem;
+                padding: .8rem 0; 
+                font-size: 1.4rem;    
+            }
+            
+            &-category > * {
+                align-self: flex-end;
+            }                        
         }
     }
 

@@ -5,11 +5,10 @@
 
   &-container {
     position: relative;
-    border: 4px solid #1d1d1d;      
-    border: calc(min(5px, .4vw)) solid #1d1d1d;      
+    border: .3rem solid #1d1d1d;
     cursor: pointer;
 
-    border-radius: 1vh;
+    border-radius: .8rem;
     overflow: hidden;
     margin: 2px;
 
@@ -18,7 +17,7 @@
     }
 
     img {
-      border-radius: 1vh;
+      border-radius: .8rem;
       display: block;
       width: 100%;
       max-width: 100%;
