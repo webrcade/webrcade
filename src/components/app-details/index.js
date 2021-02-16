@@ -5,10 +5,6 @@ import PlayImage from "../../images/play.svg"
 require("./style.scss");
 
 export class AppDetails extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     timeoutId = null;
 
     render() {

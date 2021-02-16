@@ -1,6 +1,26 @@
 .app-category {
     color: white;
-    margin: 0 -.5rem;
-    padding: .8rem 0; 
-    font-size: 1.4rem;    
+    margin: .8rem -.5rem;
+    padding: 0;
+    font-size: 1.4rem;
+    border: 0;
+    background-color: transparent;
+    color: white;
+    white-space: nowrap;
+    outline: none;
+    cursor: pointer;
+
+    &:hover {
+        opacity: .6;
+        transition: 0.5s;
+    }
+
+    &:focus:not(:hover) {
+        // color: #ED2939;
+        color: red;
+    }
+
+    &>* {
+        outline: none;
+    }
 }

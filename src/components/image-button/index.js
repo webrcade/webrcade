@@ -3,14 +3,20 @@ import React, { Component } from "react";
 require("./style.scss");
 
 export class ImageButton extends Component {
-    constructor(props) {
-        super(props);
+    onClick = (e) => {
+        this.button.blur();
     }
 
     render() {
         let { label, imgSrc } = this.props;
         return (
-            <button class="image-button"><img src={imgSrc}></img><div>{label}</div></button>
+            <button 
+                className="image-button" 
+                ref={(button) => { this.button = button; }}  
+                onClick={this.onClick}>
+                <img alt={label} src={imgSrc}></img>
+                <div>{label}</div>
+            </button>
         );
     }
 };

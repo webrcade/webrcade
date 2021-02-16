@@ -320,7 +320,7 @@ export class slider extends Component {
 
     return (
       // <div className="slider" tabIndex="0"></div>
-      <div className="slider">
+      <div className="slider" tabIndex="0">
         {sliderHasMoved && (
           <SliderControl arrowDirection={"left"} onClick={this.handlePrevPage} />
         )}

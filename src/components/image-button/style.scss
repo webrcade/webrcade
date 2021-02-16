@@ -10,8 +10,9 @@
     background-color: white;
     color: black;        
     white-space: nowrap;
-    cursor: pointer;
-
+    cursor: pointer;    
+    outline:none;    
+    
     &>img {
         width: 1.8rem;
         height: 1.8rem;
@@ -20,4 +21,19 @@
     &>div {
         padding-left: .25rem;
     }    
+
+    &:hover {
+        opacity: .6;
+        transition: 0.5s;
+    }
+
+    &:focus:not(:hover) {
+        outline: none;
+        // box-shadow: 0 0 0 .35rem rgba(237, 41, 57, 0.8);
+        box-shadow: 0 0 0 .35rem rgba(255, 0, 0, 0.8);
+    }
+
+    &:active {
+        outline: none;
+    }
 }

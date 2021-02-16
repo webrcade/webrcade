@@ -25,24 +25,24 @@ export class Webrcade extends Component {
       case 'ArrowLeft':
         slider.selectPrev();
         break;
-      case 'Enter':
-        let apps = [
-          {
-            title: "B*nQ",
-            thumbnail: "https://www.mobygames.com/images/shots/l/529340-b-nq-atari-7800-screenshot-i-fell-off-the-board-my-such-language.png"
-          }
-        ];
+      // case 'Enter':
+      //   let apps = [
+      //     {
+      //       title: "B*nQ",
+      //       thumbnail: "https://www.mobygames.com/images/shots/l/529340-b-nq-atari-7800-screenshot-i-fell-off-the-board-my-such-language.png"
+      //     }
+      //   ];
         
-        let appsOut = [];
-        while (appsOut.length < 20) {
-          appsOut = appsOut.concat(apps);
-        }
-        let index = 0;
-        appsOut = appsOut.map(app => { app.id = index++; return app });
+      //   let appsOut = [];
+      //   while (appsOut.length < 20) {
+      //     appsOut = appsOut.concat(apps);
+      //   }
+      //   let index = 0;
+      //   appsOut = appsOut.map(app => { app.id = index++; return app });
     
-        this.setState({ apps: appsOut });
-        //carousel.select();
-        break;
+      //   this.setState({ apps: appsOut });
+      //   //carousel.select();
+      //   break;
       default:
         break;
     }

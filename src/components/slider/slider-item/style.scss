@@ -10,10 +10,15 @@
 
     border-radius: .8rem;
     overflow: hidden;
-    margin: 2px;
+    margin: 2px;    
 
     &__selected {
       border-color: #e50914;  
+    }
+
+    &:hover:not(&__selected) {
+      opacity: .6;
+      transition: .6s;
     }
 
     img {
