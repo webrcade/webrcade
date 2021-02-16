@@ -1,5 +1,5 @@
 .app-details {
-    &-content { 
+    &-content {
         margin-top: 2.5rem;
         flex-grow: 1;
         flex-direction: column;
@@ -7,7 +7,7 @@
         background-color: black;
         display: flex;
 
-        &-container {        
+        &-container {
             color: white;
             position: absolute;
             top: 0;
@@ -49,25 +49,21 @@
                 margin-bottom: 1.5rem;
             }
 
-            &-category {
+            &-bottom-comp {
                 display: flex;
-                flex-direction: row;    
-                flex-grow: 1;      
-                color: white;
-                margin: 0 -.5rem;
-                padding: .8rem 0; 
-                font-size: 1.4rem;    
+                flex-direction: row;
+                flex-grow: 1;
             }
-            
-            &-category > * {
+
+            &-bottom-comp>* {
                 align-self: flex-end;
-            }                        
+            }
         }
     }
 
     &-background {
         flex-grow: 1;
-        display: flex;                
+        display: flex;
     }
 
     &-left {

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Slider from "./components/slider/slider.js";
 import AppDetails from "./components/app-details/index.js";
+import AppCategory from "./components/app-category/index.js";
 
 require("./scss/webrcade.scss");
 
@@ -104,8 +105,13 @@ export class Webrcade extends Component {
     return (
       <div className="webrcade">
         <div className="webrcade-outer">
-          <AppDetails app={currentApp}/>
-          <Slider apps={apps} ref={this.sliderRef} onSelected={(app) => this.setState({currentApp: app})}/>
+          <AppDetails 
+            app={currentApp} 
+            bottom={<AppCategory label="Atari 7800 Games"/>}/>
+          <Slider 
+            apps={apps} 
+            ref={this.sliderRef} 
+            onSelected={(app) => this.setState({currentApp: app})}/>
         </div>
       </div>
     );

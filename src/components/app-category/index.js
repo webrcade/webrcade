@@ -8,8 +8,9 @@ export class AppCategory extends Component {
     }
 
     render() {
+        const { label } = this.props;
         return (
-            <div>Atari 7800 Games</div>
+            <div className="app-category">{label}</div>
         );
     }
 };
