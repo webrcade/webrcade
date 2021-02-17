@@ -2,9 +2,7 @@
   margin: .8rem -.5rem;
   padding: 0;
   border: 0;
-  outline: 0;
-  font-size: 1.4rem;
-  font-weight: 600;
+  outline: 0;  
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -16,14 +14,11 @@
   cursor: pointer;
 
   &-flyout {
-    // border: 1px solid white;
-    white-space: nowrap;
     overflow: hidden;
     max-width: 0;
     opacity: 0;
     transition: max-width 1s, opacity 1s, transform 750ms ease-in-out;
     font-size: 1.1rem;
-    color: white;
 
     span {
       padding-right: 1rem;
@@ -31,14 +26,11 @@
   }
 
   &-label {
-    // border: 1px solid white;
-    white-space: nowrap;
+    font-size: 1.4rem;  
+    font-weight: 600;
   }
 
   &-caret {
-    // border: 1px solid white;
-    color: white;
-    white-space: nowrap;
     line-height: 1.6rem;
     height: 1.6rem;
     font-size: 1.6rem;
