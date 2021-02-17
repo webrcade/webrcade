@@ -1,103 +1,105 @@
 .app-details {
-    &-content {
-        margin-top: 2.5rem;
-        flex-grow: 1;
-        flex-direction: column;
-        position: relative;
-        background-color: black;
+  &-content {
+    margin-top: 2.5rem;
+    flex-grow: 1;
+    flex-direction: column;
+    position: relative;
+    background-color: black;
+    display: flex;
+
+    &-container {
+      color: white;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 1rem 0 0 2rem;
+      max-width: 48%;
+      font-size: 2rem;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      z-index: 2;
+
+      &-title {
+        padding-top: 1.5rem;
+        font-weight: 700;
+        font-size: 2.3rem;
+      }
+
+      &-system {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #777777;
+      }
+
+      &-description {
+        flex-grow: 0;
+        padding-top: 1.5rem;
+        font-size: 1.4rem;
+        overflow: hidden;
+        line-height: 140%;
+        color: #cccccc;
+        min-height: 2rem;
+      }
+
+      &-buttons {
+        padding-top: 2rem;
+        margin-bottom: 1.5rem;
         display: flex;
+        flex-direction: row;
+      }
 
-        &-container {
-            color: white;
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            padding: 1rem 0 0 2rem;
-            max-width: 48%;
-            font-size: 2rem;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            z-index: 2;
-
-            &-title {
-                padding-top: 1.5rem;
-                font-weight: 700;
-                font-size: 2.3rem;
-            }
-
-            &-system {
-                font-size: 1.5rem;
-                font-weight: 600;
-                color: #777777;
-            }
-
-            &-description {
-                flex-grow: 0;
-                padding-top: 1.5rem;
-                font-size: 1.4rem;
-                overflow: hidden;
-                line-height: 140%;
-                color: #cccccc;
-                min-height: 2rem;
-            }
-
-            &-buttons {
-                padding-top: 1.5rem;
-                margin-bottom: 1.5rem;
-            }
-
-            &-bottom-comp {
-                display: flex;
-                flex-direction: row;
-                flex-grow: 1;
-            }
-
-            &-bottom-comp>* {
-                align-self: flex-end;
-            }
-        }
-    }
-
-    &-background {
-        flex-grow: 1;
+      &-bottom-comp {
         display: flex;
-    }
+        flex-direction: row;
+        flex-grow: 1;
+      }
 
-    &-left {
-        width: 40%;
-        position: relative;
-
-        &::before {
-            content: '';
-            position: absolute;
-            background-image: linear-gradient(to right, #000, transparent);
-            top: 0;
-            bottom: 0;
-            left: 100%;
-            width: 70%;
-            z-index: 1;
-        }
+      &-bottom-comp>* {
+        align-self: flex-end;
+      }
     }
+  }
 
-    &-right {
-        opacity: 0;
-        //background: url(https://img1.cgtrader.com/items/2266200/5f9f3e10dd/nes-nintendo-entertainment-system-3d-model-low-poly-obj-blend.jpg);
-        /* background: url(https://img1.cgtrader.com/items/23387/364fd58bef/atari-joystick-3d-model-max-obj-3ds.jpg);                                    */
-        /* background: url(https://img-new.cgtrader.com/items/1875254/e248f68b2f/sega-genesis-3d-model-max-obj-mtl-3ds-fbx-c4d-lwo-lw-lws.jpg);                              */
-        /* background: url(https://img1.cgtrader.com/items/918721/b1abe32ffd/snes-controller-3d-model-obj-3ds-fbx-3dm-ige-igs-iges-stp.jpg);                        */
-        /* background: url(https://img1.cgtrader.com/items/22910/901a27b0f2/atari-2600-vcs-collection-3d-model-max-obj-3ds.jpg);       */
-        /* background: url(https://img2.cgtrader.com/items/2522266/7f686d705c/nes-console-3d-model-obj-blend.jpg); */
-        /* background: url(https://videogamecritic.com/images/7800/basketbrawl.png); */
-        background-size: cover;
-        background-repeat: noRepeat;
-        width: 60%;
+  &-background {
+    flex-grow: 1;
+    display: flex;
+  }
+
+  &-left {
+    width: 40%;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      background-image: linear-gradient(to right, #000, transparent);
+      top: 0;
+      bottom: 0;
+      left: 100%;
+      width: 70%;
+      z-index: 1;
     }
+  }
+
+  &-right {
+    opacity: 0;
+    //background: url(https://img1.cgtrader.com/items/2266200/5f9f3e10dd/nes-nintendo-entertainment-system-3d-model-low-poly-obj-blend.jpg);
+    /* background: url(https://img1.cgtrader.com/items/23387/364fd58bef/atari-joystick-3d-model-max-obj-3ds.jpg);                                    */
+    /* background: url(https://img-new.cgtrader.com/items/1875254/e248f68b2f/sega-genesis-3d-model-max-obj-mtl-3ds-fbx-c4d-lwo-lw-lws.jpg);                              */
+    /* background: url(https://img1.cgtrader.com/items/918721/b1abe32ffd/snes-controller-3d-model-obj-3ds-fbx-3dm-ige-igs-iges-stp.jpg);                        */
+    /* background: url(https://img1.cgtrader.com/items/22910/901a27b0f2/atari-2600-vcs-collection-3d-model-max-obj-3ds.jpg);       */
+    /* background: url(https://img2.cgtrader.com/items/2522266/7f686d705c/nes-console-3d-model-obj-blend.jpg); */
+    /* background: url(https://videogamecritic.com/images/7800/basketbrawl.png); */
+    background-size: cover;
+    background-repeat: noRepeat;
+    width: 60%;
+  }
 }
 
 .fade-in {
-    opacity: 1;
-    transition: 1.2s;
+  opacity: 1;
+  transition: 1.2s;
 }

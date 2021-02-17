@@ -14,7 +14,8 @@ export class slider extends Component {
       movePercentage: 0, // amount to offset slider
       lowestVisibleIndex: 0, // lowest visible index of slider items
       itemsInRow: 6, // number of items to be displayed across screen
-      selectedItem: 0
+      selectedItem: 0,
+      focused: false
     };
   }
 
@@ -51,7 +52,7 @@ export class slider extends Component {
   // render the slider contents
   renderSliderContent = () => {
     // console.log('RENDER');
-    const { sliderHasMoved, itemsInRow, lowestVisibleIndex, selectedItem } = this.state;
+    const { sliderHasMoved, itemsInRow, lowestVisibleIndex, selectedItem, focused } = this.state;
     const { apps } = this.props;
     const totalItems = apps.length;
 
@@ -116,7 +117,7 @@ export class slider extends Component {
           app={apps[index]}
           key={`${apps[index].id}-${index}`}
           width={100 / itemsInRow}
-          selected={selectedItem === index}
+          selected={selectedItem === index && focused}
           onClick={() => { this.handleItemClicked(index) }}
         />
       );
@@ -242,12 +243,12 @@ export class slider extends Component {
   }
 
   selectNext() {
-    const { selectedItem, lowestVisibleIndex, itemsInRow, sliderMoving } = this.state;
+    const { selectedItem, lowestVisibleIndex, itemsInRow, sliderMoving, focused } = this.state;
     const max = lowestVisibleIndex + itemsInRow;
     const { apps } = this.props;
     const totalItems = apps.length;
 
-    if (sliderMoving) return;
+    if (sliderMoving || !focused) return;
 
     let newItem = selectedItem + 1;
 
@@ -263,11 +264,11 @@ export class slider extends Component {
   }
 
   selectPrev() {
-    const { selectedItem, lowestVisibleIndex, sliderMoving } = this.state;
+    const { selectedItem, lowestVisibleIndex, sliderMoving, focused } = this.state;
     const { apps } = this.props;
     const totalItems = apps.length;
 
-    if (sliderMoving) return;
+    if (sliderMoving || !focused) return;
 
     let newItem = selectedItem - 1;
 
@@ -282,13 +283,21 @@ export class slider extends Component {
     });
   }
 
+  onFocus = () => {
+    this.setState({focused: true});
+  }
+
+  onBlur = () => {
+    this.setState({focused :false});
+  }
+
   render() {
     const {
       sliderHasMoved,
       itemsInRow,
       sliderMoving,
       sliderMoveDirection,
-      movePercentage,
+      movePercentage
     } = this.state;
     const { apps } = this.props;
 
@@ -320,7 +329,7 @@ export class slider extends Component {
 
     return (
       // <div className="slider" tabIndex="0"></div>
-      <div className="slider" tabIndex="0">
+      <div className="slider" tabIndex="0" onFocus={this.onFocus} onBlur={this.onBlur}>
         {sliderHasMoved && (
           <SliderControl arrowDirection={"left"} onClick={this.handlePrevPage} />
         )}
