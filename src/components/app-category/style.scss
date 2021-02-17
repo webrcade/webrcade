@@ -14,6 +14,7 @@
   cursor: pointer;
 
   &-flyout {
+    color: white;
     overflow: hidden;
     max-width: 0;
     opacity: 0;
@@ -31,20 +32,21 @@
   }
 
   &-caret {
+    color: white;
     line-height: 1.6rem;
     height: 1.6rem;
     font-size: 1.6rem;
     align-self: flex-end;
   }
 
-  &:hover {
+  &:hover:not(:focus) {
     .app-category-label {
       opacity: .6;
       transition: 0.5s;
     }
   }
 
-  &:focus:not(:hover) {
+  &:focus {
     color: red;
   }
 

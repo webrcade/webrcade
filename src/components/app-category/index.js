@@ -5,6 +5,10 @@ import chevronRight from "@iconify/icons-mdi/chevron-right";
 require("./style.scss");
 
 export class AppCategory extends Component {
+  constructor() {
+    super();
+  }
+
   onClick = (e) => {
     // this.button.blur();
   }

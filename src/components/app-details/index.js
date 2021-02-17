@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ImageButton from "../image-button/index.js";
-import PlayImage from "../../images/play.svg"
+import PlayImageWhite from "../../images/play-white.svg"
+import PlayImageBlack from "../../images/play-black.svg"
 
 require("./style.scss");
 
@@ -34,7 +35,7 @@ export class AppDetails extends Component {
           <div className="app-details-content-container-system">{app ? app.system : ''}</div>
           <div className="app-details-content-container-description">{app ? app.description : ''}</div>
           <div className="app-details-content-container-buttons">
-            <ImageButton imgSrc={PlayImage} label="PLAY"></ImageButton>
+            <ImageButton imgSrc={PlayImageBlack} hoverImgSrc={PlayImageWhite} label="PLAY"></ImageButton>
           </div>
           <div className="app-details-content-container-bottom-comp">{this.props.bottom}</div>
         </div>
