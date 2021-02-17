@@ -21,7 +21,7 @@ export class AppCategory extends Component {
     return (
       <button ref={(button) => { this.button = button; }} onClick={this.onClick} className="app-category">
         <div className="app-category-label"><span>{label}</span></div>
-        <div className="app-category-flyout"><span>Select Category</span></div>
+        <div className="app-category-flyout"><span>Show Categories</span></div>
         <div className="app-category-caret"><Icon icon={chevronRight} /></div>
       </button>
     );
