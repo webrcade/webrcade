@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { GamepadNotifier } from "../../utils"
+import { GamepadNotifier, GamepadEnum} from "../../utils"
 
 require("./style.scss");
 
@@ -19,13 +19,13 @@ export default class ImageButton extends Component {
     if (!focused) return;
 
     switch (e.type) {
-      case "a":
+      case GamepadEnum.A:
         this.onClick();
         break;
-      case "down":
-      case "up":
-      case "left":
-      case "right":
+      case GamepadEnum.DOWN:
+      case GamepadEnum.UP:
+      case GamepadEnum.LEFT:
+      case GamepadEnum.RIGHT:
         if (onPad) onPad(e);
         break;        
       default: 

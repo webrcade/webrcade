@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import SliderControl from "./slider-control";
 import SliderItem from "./slider-item";
-import { GamepadNotifier } from "../../utils"
+import { GamepadNotifier, GamepadEnum } from "../../utils"
 
 require("./style.scss");
 
@@ -27,23 +27,23 @@ class Slider extends Component {
     if (!focused) return;
 
     switch (e.type) {
-      case "left":
+      case GamepadEnum.LEFT:
         this.selectPrev();
         break;
-      case "right":
+      case GamepadEnum.RIGHT:
         this.selectNext();
         break;
-      case "a":
+      case GamepadEnum.A:
         this.onClick();
         break;
-      case "lbump":
+      case GamepadEnum.LBUMP:
         this.handlePrevPage();
         break;
-      case "rbump":
+      case GamepadEnum.RBUMP:
         this.handleNextPage();
         break;
-      case "up":
-      case "down":
+      case GamepadEnum.UP:
+      case GamepadEnum.DOWN:
         if (onPad) onPad(e);
         break;
       default:

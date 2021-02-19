@@ -1,3 +1,5 @@
+import { GamepadEnum } from './gamepadenum.js'
+
 class FocusGrid {
     comps = [];
   
@@ -45,28 +47,28 @@ class FocusGrid {
   
         let comp = null;
         switch (dir) {
-          case 'left':
+          case GamepadEnum.LEFT:
             x--;
             while( x >= 0 && !comp) {
               comp = this.checkComp([y][x]);
               x--;
             }
             break;
-          case 'right':
+          case GamepadEnum.RIGHT:
             x++;
             while( x < row.length && !comp) {
               comp = this.checkComp([y][x]);
               x++;
             }
             break;
-          case 'up':
+          case GamepadEnum.UP:
             y--;
             while( y >= 0 && !comp) {
               comp = checkRowForComp(comps[y]);
               y--;
             }
             break;
-          case 'down':
+          case GamepadEnum.DOWN:
             y++;
             while( y < comps.length && !comp) {
               comp = checkRowForComp(comps[y]);

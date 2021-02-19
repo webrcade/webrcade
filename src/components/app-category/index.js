@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Icon } from "@iconify/react";
 import chevronRight from "@iconify/icons-mdi/chevron-right";
-import { GamepadNotifier } from "../../utils"
+import { GamepadNotifier, GamepadEnum } from "../../utils"
 
 require("./style.scss");
 
@@ -21,11 +21,11 @@ export default class AppCategory extends Component {
     if (!focused) return;
 
     switch (e.type) {
-      case "a":
+      case GamepadEnum.A:
         this.onClick();
         break;
-      case "down":
-      case "up":
+      case GamepadEnum.DOWN:
+      case GamepadEnum.UP:
         if (onPad) onPad(e);
         break;        
       default: 

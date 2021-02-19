@@ -1,3 +1,5 @@
+import { GamepadEnum } from './gamepadenum.js'
+
 class GamepadNotifier {
   static instance = GamepadNotifier.instance || new GamepadNotifier();
 
@@ -35,19 +37,19 @@ class GamepadNotifier {
         if (buttons && buttons.length >= 16) {
           hit = true;
           if (buttons[12].pressed) {
-            if (!padDown) this.fireEvent('up');
+            if (!padDown) this.fireEvent(GamepadEnum.UP);
           } else if (buttons[13].pressed) {
-            if (!padDown) this.fireEvent('down');
+            if (!padDown) this.fireEvent(GamepadEnum.DOWN);
           } else if (buttons[14].pressed) {
-            if (!padDown) this.fireEvent('left');
+            if (!padDown) this.fireEvent(GamepadEnum.LEFT);
           } else if (buttons[15].pressed) {
-            if (!padDown) this.fireEvent('right');
+            if (!padDown) this.fireEvent(GamepadEnum.RIGHT);
           } else if (buttons[4].pressed) {
-            if (!padDown) this.fireEvent('lbump');
+            if (!padDown) this.fireEvent(GamepadEnum.LBUMP);
           } else if (buttons[5].pressed) {
-            if (!padDown) this.fireEvent('rbump');
+            if (!padDown) this.fireEvent(GamepadEnum.RBUMP);
           } else if (buttons[0].pressed) {
-            if (!padDown && !firstPoll) this.fireEvent('a');
+            if (!padDown && !firstPoll) this.fireEvent(GamepadEnum.A);
           } else {
             hit = false;
           }
@@ -59,13 +61,13 @@ class GamepadNotifier {
             let valx = axes[0], valy = axes[1];
             hit = true;
             if (valy < -0.5) {
-              if (!padDown) this.fireEvent('up');
+              if (!padDown) this.fireEvent(GamepadEnum.UP);
             } else if (valy > 0.5) {
-              if (!padDown) this.fireEvent('down');
+              if (!padDown) this.fireEvent(GamepadEnum.DOWN);
             } else if (valx < -0.5) {
-              if (!padDown) this.fireEvent('left');
+              if (!padDown) this.fireEvent(GamepadEnum.LEFT);
             } else if (valx > 0.5) {
-              if (!padDown) this.fireEvent('right');
+              if (!padDown) this.fireEvent(GamepadEnum.RIGHT);
             } else {
               hit = false;
             }
