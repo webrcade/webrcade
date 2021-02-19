@@ -1,15 +1,12 @@
 import React, { Component } from "react";
-import ImageButton from "../image-button/index.js";
-import PlayImageWhite from "../../images/play-white.svg"
-import PlayImageBlack from "../../images/play-black.svg"
 
 require("./style.scss");
 
-export class AppDetails extends Component {
+export default class AppDetails extends Component {
   timeoutId = null;
 
   render() {
-    let { app } = this.props;
+    const { app, buttons, bottom } = this.props;
 
     let imageStyle = app ? {
       backgroundImage: 'url(' + app.background + ')',
@@ -34,14 +31,10 @@ export class AppDetails extends Component {
           <div className="app-details-content-container-title">{app ? app.title : ''}</div>
           <div className="app-details-content-container-system">{app ? app.system : ''}</div>
           <div className="app-details-content-container-description">{app ? app.description : ''}</div>
-          <div className="app-details-content-container-buttons">
-            <ImageButton imgSrc={PlayImageBlack} hoverImgSrc={PlayImageWhite} label="PLAY"></ImageButton>
-          </div>
-          <div className="app-details-content-container-bottom-comp">{this.props.bottom}</div>
+          <div className="app-details-content-container-buttons">{buttons}</div>
+          <div className="app-details-content-container-bottom-comp">{bottom}</div>
         </div>
       </div>
     );
   }
 };
-
-export default AppDetails;

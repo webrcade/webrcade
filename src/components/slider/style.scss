@@ -19,8 +19,18 @@
       display: block;
     }
   }
-}
 
+  &-no-items {
+    height: 7rem; 
+    line-height: 7rem;
+    color: white;
+    padding: 0;
+    margin: 0;
+    font-size: 1.5rem;
+    text-align: center;
+    vertical-align: middle;
+  }
+}
 
 // animation-name:slideup;
 // animation-delay:0.5s;

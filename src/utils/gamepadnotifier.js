@@ -1,0 +1,107 @@
+class GamepadNotifier {
+  static instance = GamepadNotifier.instance || new GamepadNotifier();
+
+  running = false;
+  callbacks = [];
+  padDown = false;
+  firstPoll = true;
+  defaultCallback = null;
+
+  fireEvent(type) {
+    const { callbacks, defaultCallback } = this;
+    let e = { "type": type }
+    for (let i = 0; i < callbacks.length; i++) {
+      if (callbacks[i](e)) return;
+    }
+    if (defaultCallback) defaultCallback(e);
+  }
+
+  pollGamepads = () => {
+    const { running } = this;
+    const gamepads = navigator.getGamepads ?
+      navigator.getGamepads() : (navigator.webkitGetGamepads ?
+        navigator.webkitGetGamepads : []);
+
+    let hit = false;
+    for (let i = 0; i < gamepads.length && !hit; i++) {
+      if (gamepads[i]) {
+        let firstPoll = this.firstPoll;
+        this.firstPoll = false;
+
+        let padDown = this.padDown;
+        let pad = gamepads[i];
+        let buttons = pad.buttons;
+
+        if (buttons && buttons.length >= 16) {
+          hit = true;
+          if (buttons[12].pressed) {
+            if (!padDown) this.fireEvent('up');
+          } else if (buttons[13].pressed) {
+            if (!padDown) this.fireEvent('down');
+          } else if (buttons[14].pressed) {
+            if (!padDown) this.fireEvent('left');
+          } else if (buttons[15].pressed) {
+            if (!padDown) this.fireEvent('right');
+          } else if (buttons[4].pressed) {
+            if (!padDown) this.fireEvent('lbump');
+          } else if (buttons[5].pressed) {
+            if (!padDown) this.fireEvent('rbump');
+          } else if (buttons[0].pressed) {
+            if (!padDown && !firstPoll) this.fireEvent('a');
+          } else {
+            hit = false;
+          }
+        }
+
+        if (!hit) {
+          let axes = pad.axes;
+          if (axes && axes.length >= 2) {
+            let valx = axes[0], valy = axes[1];
+            hit = true;
+            if (valy < -0.5) {
+              if (!padDown) this.fireEvent('up');
+            } else if (valy > 0.5) {
+              if (!padDown) this.fireEvent('down');
+            } else if (valx < -0.5) {
+              if (!padDown) this.fireEvent('left');
+            } else if (valx > 0.5) {
+              if (!padDown) this.fireEvent('right');
+            } else {
+              hit = false;
+            }
+          }
+        }
+      }
+    }
+    this.padDown = hit;
+
+    if (running) {
+      requestAnimationFrame(this.pollGamepads);
+    }
+  };
+
+  start() {
+    if (this.running) return;
+    this.running = true;
+    requestAnimationFrame(this.pollGamepads);
+  }
+
+  stop() {
+    if (!this.running) return;
+    this.running = false;
+  }
+
+  addCallback(cb) {
+    this.callbacks.push(cb);
+  }
+
+  removeCallback(cb) {
+    this.callbacks = this.callbacks.filter(value => value !== cb);
+  }
+
+  setDefaultCallback(cb) {
+    this.defaultCallback = cb;
+  }
+};
+
+export { GamepadNotifier };

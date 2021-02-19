@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import SliderControl from "./slider-control";
 import SliderItem from "./slider-item";
+import { GamepadNotifier } from "../../utils"
 
 require("./style.scss");
 
-export class slider extends Component {
+class Slider extends Component {
   constructor() {
     super();
     this.state = {
@@ -19,13 +20,49 @@ export class slider extends Component {
     };
   }
 
+  gamepadCallback = (e) => {
+    const { onPad } = this.props;
+    const { focused } = this.state;
+
+    if (!focused) return;
+
+    switch (e.type) {
+      case "left":
+        this.selectPrev();
+        break;
+      case "right":
+        this.selectNext();
+        break;
+      case "a":
+        this.onClick();
+        break;
+      case "lbump":
+        this.handlePrevPage();
+        break;
+      case "rbump":
+        this.handleNextPage();
+        break;
+      case "up":
+      case "down":
+        if (onPad) onPad(e);
+        break;
+      default:
+        break;
+    }
+    return true;
+  }
+
   componentDidMount() {
+    GamepadNotifier.instance.addCallback(this.gamepadCallback);
     window.addEventListener("resize", this.handleWindowResize);
+    document.addEventListener("keyup", this.keyUpListener);
     this.handleWindowResize();
   }
 
   componentWillUnmount() {
+    GamepadNotifier.instance.removeListener(this.gamepadCallback);
     window.removeEventListener("resize", this.handleWindowResize);
+    document.removeEventListener("keyup", this.keyUpListener);
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -37,6 +74,31 @@ export class slider extends Component {
       onSelected(apps[selectedItem]);
     }
   }
+
+  onClick() {
+    const { apps, onClick } = this.props;
+    const { selectedItem } = this.state;
+
+    if (onClick) {
+      onClick(apps[selectedItem]);
+    }
+  }
+
+  keyUpListener = (e) => {
+    switch (e.code) {
+      case 'ArrowRight':
+        this.selectNext();
+        break;
+      case 'ArrowLeft':
+        this.selectPrev();
+        break;
+      case 'Enter':
+        this.onClick();
+        break;
+      default:
+        break;
+    }
+  };
 
   // alter number of items in row on window resize
   handleWindowResize = () => {
@@ -284,11 +346,22 @@ export class slider extends Component {
   }
 
   onFocus = () => {
-    this.setState({focused: true});
+    this.setState({ focused: true });
   }
 
   onBlur = () => {
-    this.setState({focused :false});
+    this.setState({ focused: false });
+  }
+
+  focus() {
+    const { focused } = this.state;
+    const { container } = this;
+
+    if (!focused && container) {
+      container.focus();
+      return true;
+    }
+    return false;
   }
 
   render() {
@@ -300,11 +373,6 @@ export class slider extends Component {
       movePercentage
     } = this.state;
     const { apps } = this.props;
-
-    // return null if apps are not loaded
-    if (!apps.length) {
-      return null;
-    }
 
     // style object to determine movement of slider
     let style = {};
@@ -327,20 +395,27 @@ export class slider extends Component {
       };
     }
 
-    return (
-      // <div className="slider" tabIndex="0"></div>
-      <div className="slider" tabIndex="0" onFocus={this.onFocus} onBlur={this.onBlur}>
-        {sliderHasMoved && (
-          <SliderControl arrowDirection={"left"} onClick={this.handlePrevPage} />
-        )}
-        <div className="slider-content" style={style}>
-          {this.renderSliderContent()}
+    if (apps.length === 0) {
+      return (
+        <div className="slider slider-no-items"> No items found to display.</div>
+      );
+    } else {
+      return (
+        <div className="slider" tabIndex="0"
+          ref={(container) => { this.container = container; }}
+          onFocus={this.onFocus}
+          onBlur={this.onBlur}>
+          {sliderHasMoved && (
+            <SliderControl arrowDirection={"left"} onClick={this.handlePrevPage} />
+          )}
+          <div className="slider-content" style={style}>
+            {apps.length > 0 ? this.renderSliderContent() : null}
+          </div>
+          <SliderControl arrowDirection={"right"} onClick={this.handleNextPage} />
         </div>
-
-        <SliderControl arrowDirection={"right"} onClick={this.handleNextPage} />
-      </div>
-    );
+      );
+    }
   }
 }
 
-export default slider;
+export default Slider;

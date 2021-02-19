@@ -1,7 +1,12 @@
 import React, { Component } from "react";
-import Slider from "./components/slider/slider.js";
-import AppDetails from "./components/app-details/index.js";
-import AppCategory from "./components/app-category/index.js";
+import Slider from "./components/slider";
+import AppDetails from "./components/app-details";
+import AppCategory from "./components/app-category";
+import ImageButton from "./components/image-button";
+import { GamepadNotifier, FocusGrid } from "./utils"
+
+import PlayImageWhite from "./images/play-white.svg"
+import PlayImageBlack from "./images/play-black.svg"
 
 require("./scss/webrcade.scss");
 
@@ -14,41 +19,30 @@ export class Webrcade extends Component {
     };
 
     this.sliderRef = React.createRef();
+    this.playButtonRef = React.createRef();    
+    this.categoryRef = React.createRef(); 
+
+    this.focusGrid.setComponents([
+        [this.playButtonRef],
+        [this.categoryRef],
+        [this.sliderRef]
+      ]
+    );
   }
 
-  keyUpListener = (e) => {
-    let slider = this.sliderRef.current;
-    switch (e.code) {
-      case 'ArrowRight':
-        slider.selectNext();
-        break;
-      case 'ArrowLeft':
-        slider.selectPrev();
-        break;
-      // case 'Enter':
-      //   let apps = [
-      //     {
-      //       title: "B*nQ",
-      //       thumbnail: "https://www.mobygames.com/images/shots/l/529340-b-nq-atari-7800-screenshot-i-fell-off-the-board-my-such-language.png"
-      //     }
-      //   ];
-        
-      //   let appsOut = [];
-      //   while (appsOut.length < 20) {
-      //     appsOut = appsOut.concat(apps);
-      //   }
-      //   let index = 0;
-      //   appsOut = appsOut.map(app => { app.id = index++; return app });
-    
-      //   this.setState({ apps: appsOut });
-      //   //carousel.select();
-      //   break;
-      default:
-        break;
-    }
-  };
+  focusGrid = new FocusGrid();
+
+  gamepadCallback = (e) => {
+    const { focusGrid } = this;
+    focusGrid.focus();
+    return true;
+  }
 
   componentDidMount() {
+    // Start the gamepad notifier
+    GamepadNotifier.instance.start();
+    GamepadNotifier.instance.setDefaultCallback(this.gamepadCallback);
+
     let apps = [
       {
         title: "B*nQ",
@@ -89,29 +83,43 @@ export class Webrcade extends Component {
     }
     let index = 0;
     appsOut = appsOut.map(app => { app.id = index++; return app });
-
+    //appsOut = [];
     this.setState({ apps: appsOut });
-
-    document.addEventListener("keyup", this.keyUpListener);
   }
 
   componentWillUnmount() {
-    document.removeEventListener("keyup", this.keyUpListener);
+    // Stop the gamepad notifier
+    GamepadNotifier.instance.stop();
+    GamepadNotifier.instance.setDefaultCallback(null);
   }
 
-  render() {
+  render() {    
     const { apps, currentApp } = this.state;
+    const { focusGrid, playButtonRef, sliderRef, categoryRef } = this;
 
     return (
       <div className="webrcade">
         <div className="webrcade-outer">
-          <AppDetails 
-            app={currentApp} 
-            bottom={<AppCategory label="Atari 7800 Games"/>}/>
-          <Slider 
-            apps={apps} 
-            ref={this.sliderRef} 
-            onSelected={(app) => this.setState({currentApp: app})}/>
+          <AppDetails
+            app={currentApp}
+            buttons={currentApp ? 
+              <ImageButton
+                onPad={(e) => focusGrid.moveFocus(e.type, playButtonRef)}
+                ref={playButtonRef}
+                imgSrc={PlayImageBlack}
+                hoverImgSrc={PlayImageWhite}
+                label="PLAY" /> : null}
+            bottom={
+              <AppCategory 
+                onPad={(e) => focusGrid.moveFocus(e.type, categoryRef)}
+                ref={categoryRef}
+                label="Atari 7800 Games" />} />
+          <Slider
+            onPad={(e) => focusGrid.moveFocus(e.type, sliderRef)}
+            apps={apps}
+            ref={sliderRef}
+            onSelected={(app) => this.setState({ currentApp: app })}
+            onClick={(app) => playButtonRef.current.focus()} />
         </div>
       </div>
     );
