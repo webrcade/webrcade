@@ -38,6 +38,8 @@ export class Webrcade extends Component {
     APP: "app"
   }
 
+  HASH_PLAY = "play";
+
   focusGrid = new FocusGrid();
 
   gamepadCallback = (e) => {
@@ -46,10 +48,28 @@ export class Webrcade extends Component {
     return true;
   }
 
+  hashChange = () => {
+    const { HASH_PLAY, ModeEnum } = this;
+    if(!window.location.hash.includes(HASH_PLAY)) {
+      this.setState({mode: ModeEnum.MENU});
+    }
+  }
+
   componentDidMount() {
+    const { ModeEnum } = this;
+    const { mode } = this.state;
+
+    window.addEventListener('hashchange', this.hashChange, false);
+
+    // Clear hash if displaying menu
+    const hash = window.location.href.indexOf('#');
+    if (mode === ModeEnum.MENU && hash >= 0) {
+      window.history.pushState(null, "", window.location.href.substring(0, hash));
+    }
+
     // Start the gamepad notifier
     GamepadNotifier.instance.start();
-    GamepadNotifier.instance.setDefaultCallback(this.gamepadCallback);
+    GamepadNotifier.instance.setDefaultCallback(this.gamepadCallback);    
 
     let apps = [
       {
@@ -102,6 +122,8 @@ export class Webrcade extends Component {
   }
 
   componentWillUnmount() {
+    window.removeEventListener('hashchange', this.hashChange);
+
     // Stop the gamepad notifier
     GamepadNotifier.instance.stop();
     GamepadNotifier.instance.setDefaultCallback(null);
@@ -109,7 +131,7 @@ export class Webrcade extends Component {
 
   renderMenu() {
     const { apps, currentApp, mode } = this.state;
-    const { focusGrid, playButtonRef, sliderRef, categoryRef, ModeEnum } = this;
+    const { focusGrid, playButtonRef, sliderRef, categoryRef, ModeEnum, HASH_PLAY } = this;
 
     return (
       <div className="webrcade">
@@ -120,7 +142,10 @@ export class Webrcade extends Component {
             buttons={currentApp ?
               <ImageButton
                 onPad={(e) => focusGrid.moveFocus(e.type, playButtonRef)}
-                onClick={() => this.setState({ mode: this.ModeEnum.APP })}
+                onClick={() => {
+                  window.location.hash = HASH_PLAY;
+                  this.setState({ mode: this.ModeEnum.APP })
+                }}
                 ref={playButtonRef}
                 imgSrc={PlayImageBlack}
                 hoverImgSrc={PlayImageWhite}
