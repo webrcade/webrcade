@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { GamepadNotifier, GamepadEnum} from "../../utils"
+import { GamepadNotifier, GamepadEnum} from "../../input"
 
 require("./style.scss");
 
@@ -39,7 +39,7 @@ export default class ImageButton extends Component {
   }
 
   componentWillUnmount() {
-    GamepadNotifier.instance.removeListener(this.gamepadCallback);
+    GamepadNotifier.instance.removeCallback(this.gamepadCallback);
   }
 
   onClick = (e) => {

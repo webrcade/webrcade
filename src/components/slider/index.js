@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import SliderControl from "./slider-control";
 import SliderItem from "./slider-item";
-import { GamepadNotifier, GamepadEnum } from "../../utils"
+import { GamepadNotifier, GamepadEnum } from "../../input"
 
 require("./style.scss");
 
@@ -60,7 +60,7 @@ class Slider extends Component {
   }
 
   componentWillUnmount() {
-    GamepadNotifier.instance.removeListener(this.gamepadCallback);
+    GamepadNotifier.instance.removeCallback(this.gamepadCallback);
     window.removeEventListener("resize", this.handleWindowResize);
     document.removeEventListener("keyup", this.keyUpListener);
   }
@@ -102,12 +102,15 @@ class Slider extends Component {
 
   // alter number of items in row on window resize
   handleWindowResize = () => {
+    //alert(window.innerWidth);
     if (window.innerWidth > 1440) {
-      this.setState({ itemsInRow: 8 });
-    } else if (window.innerWidth >= 1000) {
+      this.setState({ itemsInRow: 8 });      
+    } else if (window.innerWidth >= 1152) {
       this.setState({ itemsInRow: 7 });
-    } else if (window.innerWidth < 1000) {
+    } else if (window.innerWidth >= 864) {
       this.setState({ itemsInRow: 6 });
+    } else if (window.innerWidth < 864) {
+      this.setState({ itemsInRow: 5 });
     }
   };
 

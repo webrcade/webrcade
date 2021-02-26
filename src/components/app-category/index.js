@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Icon } from "@iconify/react";
 import chevronRight from "@iconify/icons-mdi/chevron-right";
-import { GamepadNotifier, GamepadEnum } from "../../utils"
+import { GamepadNotifier, GamepadEnum } from "../../input"
 
 require("./style.scss");
 
@@ -44,7 +44,7 @@ export default class AppCategory extends Component {
   }
 
   componentWillUnmount() {
-    GamepadNotifier.instance.removeListener(this.gamepadCallback);
+    GamepadNotifier.instance.removeCallback(this.gamepadCallback);
   }
 
   onFocus = () => {
