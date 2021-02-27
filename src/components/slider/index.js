@@ -92,6 +92,14 @@ class Slider extends Component {
       case 'ArrowLeft':
         this.selectPrev();
         break;
+      case 'PageDown':
+      case 'ArrowDown':
+        this.handleNextPage();
+        break;
+      case 'PageUp':
+      case 'ArrowUp':
+        this.handlePrevPage();
+        break;
       case 'Enter':
         this.onClick();
         break;
@@ -104,7 +112,7 @@ class Slider extends Component {
   handleWindowResize = () => {
     //alert(window.innerWidth);
     if (window.innerWidth > 1440) {
-      this.setState({ itemsInRow: 8 });      
+      this.setState({ itemsInRow: 8 });
     } else if (window.innerWidth >= 1152) {
       this.setState({ itemsInRow: 7 });
     } else if (window.innerWidth >= 864) {

@@ -30,7 +30,7 @@ export default class AppDetails extends Component {
           <div className="app-details-right" style={imageStyle}></div>
         </div>
         <div className="app-details-content-container">
-          <div className="app-details-content-container-title">{app ? app.title : ''}</div>
+          <div className="app-details-content-container-title">{app ? reg.getLongTitle(app) : ''}</div>
           <div className="app-details-content-container-app">{app ? reg.getName(app) : ''}</div>
           <div className="app-details-content-container-description">{app ? reg.getDescription(app) : ''}</div>
           <div className="app-details-content-container-buttons">{buttons}</div>

@@ -44,6 +44,15 @@ class AppRegistry {
     const APPS = this.APPS;
     return APPS[app.app].location;
   }
+
+  getTitle(app) {
+    return app.title;
+  }
+
+  getLongTitle(app) {
+    return app.longTitle !== undefined ? 
+      app.longTitle : this.getTitle(app);
+  }
 };
 
 export { AppRegistry };

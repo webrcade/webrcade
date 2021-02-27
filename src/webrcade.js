@@ -50,8 +50,8 @@ export class Webrcade extends Component {
 
   hashChange = () => {
     const { HASH_PLAY, ModeEnum } = this;
-    if(!window.location.hash.includes(HASH_PLAY)) {
-      this.setState({mode: ModeEnum.MENU});
+    if (!window.location.hash.includes(HASH_PLAY)) {
+      this.setState({ mode: ModeEnum.MENU });
     }
   }
 
@@ -69,7 +69,7 @@ export class Webrcade extends Component {
 
     // Start the gamepad notifier
     GamepadNotifier.instance.start();
-    GamepadNotifier.instance.setDefaultCallback(this.gamepadCallback);    
+    GamepadNotifier.instance.setDefaultCallback(this.gamepadCallback);
 
     let apps = [
       {
@@ -103,8 +103,15 @@ export class Webrcade extends Component {
         background: "https://www.mobygames.com/images/shots/l/56387-fatal-run-atari-7800-screenshot-racing-to-the-next-city.gif",
         description: "In this post-apocalyptic driving/racing game you must travel to various towns delivering medicine, while on your way to a missile base which houses a rocket that can save the world. While driving through the 32 levels, you'll meet countless enemies who want to stop you from achieving your goal."
       }, {
+        title: "Atari 2600",
+        app: "2600"
+      }, {
         title: "Atari 7800",
         app: "7800"
+      }, {
+        title: "Nintendo NES",
+        longTitle: "Nintendo Entertainment System",
+        app: "nes"
       }, {
         title: "Sega Genesis",
         app: "genesis"
