@@ -213,11 +213,11 @@ class Slider extends Component {
   };
 
   handlePrevPage = () => {
-    const { lowestVisibleIndex, itemsInRow, sliderMoving } = this.state;
+    const { lowestVisibleIndex, itemsInRow, sliderMoving, focused } = this.state;
     const { apps } = this.props;
     const totalItems = apps.length;
 
-    if (sliderMoving) return;
+    if (sliderMoving || !focused) return;
 
     // get the new lowest visible index
     let newIndex;
@@ -261,11 +261,11 @@ class Slider extends Component {
   };
 
   handleNextPage = () => {
-    const { sliderHasMoved, lowestVisibleIndex, itemsInRow, sliderMoving } = this.state;
+    const { sliderHasMoved, lowestVisibleIndex, itemsInRow, sliderMoving, focused } = this.state;
     const { apps } = this.props;
     const totalItems = apps.length;
 
-    if (sliderMoving) return;
+    if (sliderMoving || !focused) return;
 
     // get the new lowest visible index
     let newIndex;

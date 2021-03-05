@@ -9,7 +9,7 @@ import { AppRegistry } from './apps'
 import PlayImageWhite from "./images/play-white.svg"
 import PlayImageBlack from "./images/play-black.svg"
 
-require("./scss/webrcade.scss");
+require("./style.scss");
 
 export class Webrcade extends Component {
   constructor() {
@@ -18,7 +18,8 @@ export class Webrcade extends Component {
     this.state = {
       apps: [],
       currentApp: null,
-      mode: this.ModeEnum.MENU
+      mode: this.ModeEnum.MENU,
+      initial: true
     };
 
     this.sliderRef = React.createRef();
@@ -29,8 +30,7 @@ export class Webrcade extends Component {
       [this.playButtonRef],
       [this.categoryRef],
       [this.sliderRef]
-    ]
-    );
+    ]);
   }
 
   ModeEnum = {
@@ -67,7 +67,7 @@ export class Webrcade extends Component {
       window.history.pushState(null, "", window.location.href.substring(0, hash));
     }
 
-    // Start the gamepad notifier
+    // Start the gamepad notifier 
     GamepadNotifier.instance.start();
     GamepadNotifier.instance.setDefaultCallback(this.gamepadCallback);
 
@@ -136,6 +136,20 @@ export class Webrcade extends Component {
     GamepadNotifier.instance.setDefaultCallback(null);
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    const { mode, initial } = this.state;
+    const { ModeEnum, sliderRef } = this;
+
+    if (initial ||
+      (prevState.mode === ModeEnum.APP && mode === ModeEnum.MENU)) {
+      this.setState({ initial: false });
+      setTimeout(() => {
+        window.focus();
+        sliderRef.current.focus();
+      }, 0);
+    }
+  }
+
   renderMenu() {
     const { apps, currentApp, mode } = this.state;
     const { focusGrid, playButtonRef, sliderRef, categoryRef, ModeEnum, HASH_PLAY } = this;
@@ -161,7 +175,7 @@ export class Webrcade extends Component {
               <AppCategory
                 onPad={(e) => focusGrid.moveFocus(e.type, categoryRef)}
                 ref={categoryRef}
-                label="Atari 7800 Games" />} />
+                label="Sega Genesis Games" />} />
           <Slider
             onPad={(e) => focusGrid.moveFocus(e.type, sliderRef)}
             apps={apps}
@@ -176,9 +190,16 @@ export class Webrcade extends Component {
   renderApp() {
     const { currentApp } = this.state;
     const reg = AppRegistry.instance;
+
     return (
       <div className="webrcade-app">
-        <iframe width="100%" height="100%" frameBorder="0" src={reg.getLocation(currentApp)} />
+        <iframe
+          width="100%"
+          height="100%"
+          frameBorder="0"
+          allow="autoplay; gamepad"
+          title={reg.getTitle(currentApp)}
+          src={reg.getLocation(currentApp)} />
       </div>
     )
   }

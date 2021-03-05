@@ -44,7 +44,6 @@ export default class ImageButton extends Component {
 
   onClick = (e) => {
     const { onClick } = this.props;
-    console.log('PLAY');
     if (onClick) onClick();
   }
 

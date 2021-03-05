@@ -1,4 +1,5 @@
 import APPLIST from './applist.js';
+import { AppProps, UrlUtil } from '@webrcade/app-common';
 
 class AppRegistry {
   static instance = AppRegistry.instance || new AppRegistry();
@@ -13,8 +14,8 @@ class AppRegistry {
 
   isValidApp(app) {
     const APPS = this.APPS;
-    return app.title !== undefined &&
-    APPS[app.app] !== undefined;
+    return app.title !== undefined && APPS[app.app] !== undefined ? 
+      APPS[app.app].isValid(app) : false;
   }
 
   getBackground(app) {
@@ -42,7 +43,11 @@ class AppRegistry {
 
   getLocation(app) {
     const APPS = this.APPS;
-    return APPS[app.app].location;
+    const { props } = app;    
+    const location = APPS[app.app].location;
+
+    return props === undefined ? location : 
+      UrlUtil.addParam(location, AppProps.RP_PROPS, AppProps.encode(props));
   }
 
   getTitle(app) {
