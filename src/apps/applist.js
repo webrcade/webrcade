@@ -20,6 +20,7 @@ const APPLIST = [
     name: 'Sega Genesis',
     description: 'The Sega Genesis, known as the Mega Drive outside North America, is a 16-bit fourth-generation home video game console developed and sold by Sega.',
     location: 'http://192.168.1.179:3010',
+    //location: 'app/genesis',
     background: 'images/apps/genesis-background.jpg',
     thumbnail: 'images/apps/genesis-thumb.png',
     isValid: (app) => {return true;}              
