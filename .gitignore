@@ -23,3 +23,6 @@ yarn-debug.log*
 yarn-error.log*
 
 /(old)
+
+/public/images/games
+applist-DO-NOT-CHECKIN

@@ -5,6 +5,7 @@ import AppCategory from "./components/app-category";
 import ImageButton from "./components/image-button";
 import { GamepadNotifier, FocusGrid } from "./input"
 import { AppRegistry } from './apps'
+import { isDev } from '@webrcade/app-common'
 
 import PlayImageWhite from "./images/play-white.svg"
 import PlayImageBlack from "./images/play-black.svg"
@@ -194,6 +195,7 @@ export class Webrcade extends Component {
     return (
       <div className="webrcade-app">
         <iframe
+          style={!isDev() ? {display: "none"} : {}}        
           width="100%"
           height="100%"
           frameBorder="0"
