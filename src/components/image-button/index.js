@@ -42,7 +42,7 @@ export default class ImageButton extends Component {
     GamepadNotifier.instance.removeCallback(this.gamepadCallback);
   }
 
-  onClick = (e) => {
+  onClick = e => {
     const { onClick } = this.props;
     if (onClick) onClick();
   }
@@ -74,9 +74,9 @@ export default class ImageButton extends Component {
         ref={(button) => { this.button = button; }}
         onClick={this.onClick}
         onFocus={this.onFocus}
-        onBlur={this.onBlur}>
-        <img alt={label} src={focused && hoverImgSrc ? hoverImgSrc : imgSrc}></img>
-        <div>{label}</div>
+        onBlur={this.onBlur}> {imgSrc ?
+          <img alt={label} src={focused && hoverImgSrc ? hoverImgSrc : imgSrc}></img> : null}
+          <div>{label}</div>
       </button>
     );
   }

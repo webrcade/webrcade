@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { AppRegistry } from '../../apps'
 
 require("./style.scss");
 
@@ -7,11 +6,10 @@ export default class AppDetails extends Component {
   timeoutId = null;
 
   render() {
-    const { app, buttons, bottom } = this.props;
-    const reg = AppRegistry.instance;
+    const { buttons, bottom, title, subTitle, description, backgroundSrc } = this.props;
 
-    let imageStyle = app ? {
-      backgroundImage: 'url(' + reg.getBackground(app) + ')',
+    let imageStyle = backgroundSrc ? {
+      backgroundImage: 'url(' + backgroundSrc + ')',
     } : {};
 
     let el = document.querySelector('.app-details-right');
@@ -30,9 +28,13 @@ export default class AppDetails extends Component {
           <div className="app-details-right" style={imageStyle}></div>
         </div>
         <div className="app-details-content-container">
-          <div className="app-details-content-container-title">{app ? reg.getLongTitle(app) : ''}</div>
-          <div className="app-details-content-container-app">{app ? reg.getName(app) : ''}</div>
-          <div className="app-details-content-container-description">{app ? reg.getDescription(app) : ''}</div>
+          <div className="app-details-content-container-title">{title ? title : ''}</div>
+          {subTitle ? (
+            <div className="app-details-content-container-app">{subTitle}</div>
+          ) : null}
+          {description ? (
+            <div className="app-details-content-container-description">{description}</div>
+          ) : null}
           <div className="app-details-content-container-buttons">{buttons}</div>
           <div className="app-details-content-container-bottom-comp">{bottom}</div>
         </div>

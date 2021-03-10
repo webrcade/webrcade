@@ -11,7 +11,7 @@ class GamepadNotifier {
 
   fireEvent(type) {
     const { callbacks, defaultCallback } = this;
-    let e = { "type": type }
+    const e = { "type": type }
     for (let i = 0; i < callbacks.length; i++) {
       if (callbacks[i](e)) return;
     }

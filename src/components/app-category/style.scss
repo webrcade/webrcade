@@ -1,15 +1,32 @@
-.app-category {
+%app-category-shared {
   margin: .8rem -.5rem;
   padding: 0;
   border: 0;
   outline: 0;  
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
   overflow: hidden;
   background-color: transparent;
   color: white;
-  white-space: nowrap;
+  white-space: nowrap;   
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.app-category-fade {
+  animation: fadein 1s;  
+}
+
+.app-categories {
+  @extend %app-category-shared;  
+}
+
+.app-category {
+  @extend %app-category-shared;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
   align-items: center;
   cursor: pointer;
 

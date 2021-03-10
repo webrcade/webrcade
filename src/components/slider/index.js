@@ -16,11 +16,13 @@ class Slider extends Component {
       lowestVisibleIndex: 0, // lowest visible index of slider items
       itemsInRow: 6, // number of items to be displayed across screen
       selectedItem: 0,
-      focused: false
+      focused: false,
+      sliderHidden: false
     };
+    this.keyDown = false;
   }
 
-  gamepadCallback = (e) => {
+  gamepadCallback = e => {
     const { onPad } = this.props;
     const { focused } = this.state;
 
@@ -55,36 +57,63 @@ class Slider extends Component {
   componentDidMount() {
     GamepadNotifier.instance.addCallback(this.gamepadCallback);
     window.addEventListener("resize", this.handleWindowResize);
-    document.addEventListener("keyup", this.keyUpListener);
     this.handleWindowResize();
   }
 
   componentWillUnmount() {
     GamepadNotifier.instance.removeCallback(this.gamepadCallback);
     window.removeEventListener("resize", this.handleWindowResize);
-    document.removeEventListener("keyup", this.keyUpListener);
   }
 
   componentDidUpdate(prevProps, prevState) {
-    const { apps, onSelected } = this.props;
-    const { selectedItem } = this.state;
-    if (
-      ((prevProps.apps !== apps) ||
-        (prevState.selectedItem !== selectedItem)) && onSelected) {
-      onSelected(apps[selectedItem]);
+    const { items, onSelected, maxSlides } = this.props;
+    const { selectedItem, itemsInRow } = this.state;
+
+    if (prevProps.items !== items) {
+      this.setState({
+        selectedItem: 0,
+        lowestVisibleIndex: 0,
+        sliderHidden: true
+      },
+        () => {
+          setTimeout(() => {
+            this.setState({
+              sliderHidden: false
+            });
+          }, 100);
+        });
+
+      if (onSelected) {
+        onSelected(items[0]);
+      }
+    }
+
+    if ((prevState.selectedItem !== selectedItem) && onSelected) {
+      onSelected(items[selectedItem]);
+    }
+
+    if (itemsInRow > maxSlides) {
+      throw new Error(`Max slides exceeded (${maxSlides}, ${itemsInRow})`);
     }
   }
 
   onClick() {
-    const { apps, onClick } = this.props;
+    const { items, onClick } = this.props;
     const { selectedItem } = this.state;
 
     if (onClick) {
-      onClick(apps[selectedItem]);
+      onClick(items[selectedItem]);
     }
   }
 
-  keyUpListener = (e) => {
+  keyDownListener = e => {
+    this.keyDown = true;
+  }
+
+  keyUpListener = e => {
+    if (!this.keyDown) return;
+    this.keyDown = false;
+
     switch (e.code) {
       case 'ArrowRight':
         this.selectNext();
@@ -126,8 +155,8 @@ class Slider extends Component {
   renderSliderContent = () => {
     // console.log('RENDER');
     const { sliderHasMoved, itemsInRow, lowestVisibleIndex, selectedItem, focused } = this.state;
-    const { apps } = this.props;
-    const totalItems = apps.length;
+    const { items, getTitle, getThumbnailSrc } = this.props;
+    const totalItems = items.length;
 
     // slider content made up of left, mid, and right portions to allow continous cycling
     const left = [];
@@ -185,10 +214,12 @@ class Slider extends Component {
 
     const sliderContents = [];
     for (let index of combinedIndex) {
+      const item = items[index];
       sliderContents.push(
         <SliderItem
-          app={apps[index]}
-          key={`${apps[index].id}-${index}`}
+          title={getTitle ? getTitle(item) : ''}
+          thumbnailSrc={getThumbnailSrc ? getThumbnailSrc(item) : ''}
+          key={`${item.id}-${index}`}
           width={100 / itemsInRow}
           selected={selectedItem === index && focused}
           onClick={() => { this.handleItemClicked(index) }}
@@ -214,8 +245,8 @@ class Slider extends Component {
 
   handlePrevPage = () => {
     const { lowestVisibleIndex, itemsInRow, sliderMoving, focused } = this.state;
-    const { apps } = this.props;
-    const totalItems = apps.length;
+    const { items } = this.props;
+    const totalItems = items.length;
 
     if (sliderMoving || !focused) return;
 
@@ -245,7 +276,7 @@ class Slider extends Component {
         sliderMoving: true,
         sliderMoveDirection: "left",
         movePercentage: newMovePercentage,
-        selectedItem: (newIndex + itemsInRow - 1) % apps.length
+        selectedItem: (newIndex + itemsInRow - 1) % items.length
       },
       () => {
         setTimeout(() => {
@@ -262,8 +293,8 @@ class Slider extends Component {
 
   handleNextPage = () => {
     const { sliderHasMoved, lowestVisibleIndex, itemsInRow, sliderMoving, focused } = this.state;
-    const { apps } = this.props;
-    const totalItems = apps.length;
+    const { items } = this.props;
+    const totalItems = items.length;
 
     if (sliderMoving || !focused) return;
 
@@ -318,8 +349,8 @@ class Slider extends Component {
   selectNext() {
     const { selectedItem, lowestVisibleIndex, itemsInRow, sliderMoving, focused } = this.state;
     const max = lowestVisibleIndex + itemsInRow;
-    const { apps } = this.props;
-    const totalItems = apps.length;
+    const { items } = this.props;
+    const totalItems = items.length;
 
     if (sliderMoving || !focused) return;
 
@@ -338,8 +369,8 @@ class Slider extends Component {
 
   selectPrev() {
     const { selectedItem, lowestVisibleIndex, sliderMoving, focused } = this.state;
-    const { apps } = this.props;
-    const totalItems = apps.length;
+    const { items } = this.props;
+    const totalItems = items.length;
 
     if (sliderMoving || !focused) return;
 
@@ -357,11 +388,17 @@ class Slider extends Component {
   }
 
   onFocus = () => {
+    this.keyDown = false;
     this.setState({ focused: true });
+    document.addEventListener("keyup", this.keyUpListener);
+    document.addEventListener("keydown", this.keyDownListener);
   }
 
   onBlur = () => {
+    this.keyDown = false;
     this.setState({ focused: false });
+    document.removeEventListener("keyup", this.keyUpListener);
+    document.removeEventListener("keydown", this.keyDownListener);
   }
 
   focus() {
@@ -381,9 +418,10 @@ class Slider extends Component {
       itemsInRow,
       sliderMoving,
       sliderMoveDirection,
+      sliderHidden,
       movePercentage
     } = this.state;
-    const { apps } = this.props;
+    const { items } = this.props;
 
     // style object to determine movement of slider
     let style = {};
@@ -406,21 +444,38 @@ class Slider extends Component {
       };
     }
 
-    if (apps.length === 0) {
+    
+    let sliderStyle = {}
+    if (sliderHidden) {
+      sliderStyle = {
+        transform: 'translateY(150%)',
+        opacity: 0
+      }
+    } else {
+      sliderStyle = {
+        transform: 'translateY(0%)',
+        transition: '.65s, opacity .8s ease-in-out',
+        opacity: 1
+      }
+    }
+
+    if (items.length === 0) {
       return (
         <div className="slider slider-no-items"> No items found to display.</div>
       );
     } else {
       return (
-        <div className="slider" tabIndex="0"
+        <div className="slider" tabIndex="0" 
           ref={(container) => { this.container = container; }}
           onFocus={this.onFocus}
           onBlur={this.onBlur}>
           {sliderHasMoved && (
             <SliderControl arrowDirection={"left"} onClick={this.handlePrevPage} />
           )}
-          <div className="slider-content" style={style}>
-            {apps.length > 0 ? this.renderSliderContent() : null}
+          <div style={sliderStyle}>
+            <div className="slider-content" style={style}>
+              {items.length > 0 ? this.renderSliderContent() : null}
+            </div>
           </div>
           <SliderControl arrowDirection={"right"} onClick={this.handleNextPage} />
         </div>

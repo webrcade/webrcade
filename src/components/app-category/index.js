@@ -10,15 +10,15 @@ export default class AppCategory extends Component {
     super();
 
     this.state = {
-      focused: false
+      focused: false,
     };
   }
 
-  gamepadCallback = (e) => {
+  gamepadCallback = e => {
     const { onPad } = this.props;
     const { focused } = this.state;
 
-    if (!focused) return;
+    if (!focused) return false;
 
     switch (e.type) {
       case GamepadEnum.A:
@@ -27,16 +27,16 @@ export default class AppCategory extends Component {
       case GamepadEnum.DOWN:
       case GamepadEnum.UP:
         if (onPad) onPad(e);
-        break;        
-      default: 
+        break;
+      default:
         break;
     }
     return true;
   }
 
-  onClick = (e) => {
+  onClick = e => {
     const { onClick } = this.props;
-    if (onClick) onClick();    
+    if (onClick) onClick();
   }
 
   componentDidMount() {
@@ -59,25 +59,48 @@ export default class AppCategory extends Component {
     const { focused } = this.state;
     const { button } = this;
 
-    if (!focused && button) {
+    if (!focused && button && this.isFocusable()) {
       button.focus();
       return true;
     }
     return false;
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    const { isSelectable } = this.props;
+
+    if (prevProps.isSelectable && !isSelectable) {
+      this.setState({ focused: false });
+    }
+  }
+
+  isFocusable() {
+    const { isSelectable } = this.props;
+    return isSelectable;
+  }
+
   render() {
-    const { label } = this.props;
+    const { label, isSelectable } = this.props;    
+    const mainClassName = 
+      `${isSelectable ? "app-category" : "app-categories"} app-category-fade`;
+
     return (
-      <button 
-        ref={(button) => { this.button = button; }} 
-        onFocus={this.onFocus}
-        onBlur={this.onBlur}
-        onClick={this.onClick} className="app-category">
-        <div className="app-category-label"><span>{label}</span></div>
-        <div className="app-category-flyout"><span>Show Categories</span></div>
-        <div className="app-category-caret"><Icon icon={chevronRight} /></div>
-      </button>
+      <>
+        {isSelectable ? (
+          <button
+            ref={(button) => { this.button = button; }}
+            onFocus={this.onFocus}
+            onBlur={this.onBlur}
+            onClick={this.onClick} className={mainClassName}>
+            <div className="app-category-label"><span>{label}</span></div>
+            <div className="app-category-flyout"><span>Show Categories</span></div>
+            <div className="app-category-caret"><Icon icon={chevronRight} /></div>
+          </button>) : (
+          <div className={mainClassName}>
+            <div className="app-category-label">{label}</div>
+          </div>)
+        }
+      </>
     );
   }
 };

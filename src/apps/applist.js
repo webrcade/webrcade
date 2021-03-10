@@ -1,8 +1,16 @@
 import { isDev } from '@webrcade/app-common'
 
-const genesisLoc = isDev() ? 'http://192.168.1.179:3010' : 'app/genesis';
+const localIp = "192.168.1.179";
+const locGenesis = isDev() ? `http://${localIp}:3010` : 'app/genesis';
+const loc7800 = isDev() ? `http://${localIp}:3020` : 'app/7800';
 
-const APPLIST = [
+const checkRom = app => {
+  if (app.props === undefined && app.props.roms === undefined) {
+    throw new Error("Missing 'rom' property");
+  }
+}
+
+let types = [
   {
     key: '2600',
     name: 'Atari 2600',
@@ -10,23 +18,23 @@ const APPLIST = [
     location: 'http://192.168.1.179:9000',
     thumbnail: "images/apps/2600-thumb2.png",        
     background: "images/apps/2600-background.jpg",
-    isValid: (app) => {return true;}              
+    validate: app => true              
   }, {
-    key: '7800',
+    key: 'js7800',
     name: 'Atari 7800',
     description: 'The Atari 7800 ProSystem, or simply the Atari 7800, is a home video game console officially released by Atari Corporation in 1986 as the successor to both the Atari 2600 and Atari 5200.',
-    location: 'http://192.168.1.179:9000',
+    location: loc7800,
     background: 'images/apps/7800-background.jpg',
     thumbnail: 'images/apps/7800-thumb.png',
-    isValid: (app) => {return true;}              
+    validate: checkRom
   }, {
-    key: 'genesis',
+    key: 'wasm-genplus',
     name: 'Sega Genesis',
     description: 'The Sega Genesis, known as the Mega Drive outside North America, is a 16-bit fourth-generation home video game console developed and sold by Sega.',
-    location: genesisLoc,
+    location: locGenesis,
     background: 'images/apps/genesis-background.jpg',
     thumbnail: 'images/apps/genesis-thumb.png',
-    isValid: (app) => {return true;}              
+    validate: checkRom
   }, {
     key: 'nes',
     name: 'Nintendo NES',
@@ -34,8 +42,19 @@ const APPLIST = [
     location: 'alert("not implemented yet")',
     background: 'images/apps/nes-background2.png',
     thumbnail: 'images/apps/nes-thumb.png',
-    isValid: (app) => {return true;}              
+    validate: app => true              
   }
 ];
 
-export default APPLIST;
+const addAlias = (types, alias, typeKey) => {
+  const {key, ...props} = types.filter(t => t.key === typeKey)[0];
+  types.push({key: alias, ...props});      
+}
+
+// Aliases
+addAlias(types, 'genesis', 'wasm-genplus');
+addAlias(types, '7800', 'js7800');
+
+const APP_TYPES = types;
+
+export default APP_TYPES;
