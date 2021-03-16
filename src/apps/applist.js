@@ -3,6 +3,7 @@ import { isDev } from '@webrcade/app-common'
 const localIp = "192.168.1.179";
 const locGenesis = isDev() ? `http://${localIp}:3010` : 'app/genesis';
 const loc7800 = isDev() ? `http://${localIp}:3020` : 'app/7800';
+const locNes = isDev() ? `http://${localIp}:3030` : 'app/nes';
 
 const checkRom = app => {
   if (app.props === undefined && app.props.roms === undefined) {
@@ -37,9 +38,9 @@ let types = [
     validate: checkRom
   }, {
     key: 'nes',
-    name: 'Nintendo NES',
+    name: 'Nintendo Entertainment System',
     description: 'The Nintendo Entertainment System (NES) is an 8-bit third-generation home video game console produced by Nintendo.',
-    location: 'alert("not implemented yet")',
+    location: locNes,
     background: 'images/apps/nes-background2.png',
     thumbnail: 'images/apps/nes-thumb.png',
     validate: app => true              
