@@ -132,7 +132,7 @@ export class Webrcade extends Component {
         description = currentItem.description;
         categoryLabel = "Select Category";
         getTitle = item => item.title;
-        getThumbnailSrc = item => item.thumbnail; /* TODO: Default */
+        getThumbnailSrc = item => item.thumbnail ? item.thumbnail : 'images/apps/folder.png' ;
         onClick = () => {
           this.setState({ 
             menuMode: MenuModeEnum.APPS,

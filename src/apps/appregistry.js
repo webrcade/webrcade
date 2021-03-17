@@ -7,6 +7,8 @@ class AppRegistry {
   constructor() {
     APP_TYPES.forEach((appType) => {
       this.APP_TYPES[appType.key] = appType;
+      appType.type = appType.absoluteKey === undefined ?
+        appType.key : appType.absoluteKey;      
     });
   }
 
@@ -51,11 +53,17 @@ class AppRegistry {
 
   getLocation(app) {
     const APP_TYPES = this.APP_TYPES;
+    const { RP_PROPS } = AppProps;
     const { props } = app;    
-    const location = APP_TYPES[app.type].location;
+    const appType = APP_TYPES[app.type];
+    const outProps = { type: appType.type };    
 
-    return props === undefined ? location : 
-      UrlUtil.addParam(location, AppProps.RP_PROPS, AppProps.encode(props));
+    if (props !== undefined) {
+      Object.assign(outProps, props);
+    }
+        
+    return UrlUtil.addParam(
+      appType.location, RP_PROPS, AppProps.encode(outProps));
   }
 
   getTitle(app) {

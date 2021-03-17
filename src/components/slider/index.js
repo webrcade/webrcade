@@ -63,13 +63,16 @@ class Slider extends Component {
   componentWillUnmount() {
     GamepadNotifier.instance.removeCallback(this.gamepadCallback);
     window.removeEventListener("resize", this.handleWindowResize);
-  }
+  }  
 
-  componentDidUpdate(prevProps, prevState) {
-    const { items, onSelected, maxSlides } = this.props;
-    const { selectedItem, itemsInRow } = this.state;
 
-    if (prevProps.items !== items) {
+  shouldComponentUpdate(nextProps, nextState) {
+    const { items, onSelected } = this.props;
+
+    let ret = true;
+
+    if (nextProps.items !== items) {
+      ret = false;
       this.setState({
         selectedItem: 0,
         lowestVisibleIndex: 0,
@@ -80,13 +83,20 @@ class Slider extends Component {
             this.setState({
               sliderHidden: false
             });
-          }, 100);
-        });
+          }, 150);  
 
-      if (onSelected) {
-        onSelected(items[0]);
-      }
+          if (onSelected) {
+            onSelected(nextProps.items[0]);
+          }
+        });
     }
+
+    return ret;
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const { items, onSelected, maxSlides } = this.props;
+    const { selectedItem, itemsInRow } = this.state;
 
     if ((prevState.selectedItem !== selectedItem) && onSelected) {
       onSelected(items[selectedItem]);
@@ -162,6 +172,11 @@ class Slider extends Component {
     const left = [];
     const mid = [];
     const right = [];
+
+    if (lowestVisibleIndex >= totalItems ) {
+      console.log('Index out of bounds, not rendering.');
+      return;
+    }
 
     // gets the indexes to be displayed
     for (let i = 0; i < itemsInRow; i++) {
