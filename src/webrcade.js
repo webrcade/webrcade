@@ -17,7 +17,7 @@ export class Webrcade extends Component {
   constructor() {
     super();
 
-    const feed = new WebrcadeFeed(getDefaultFeed(), (3 * this.MAX_SLIDES + 2)); 
+    const feed = new WebrcadeFeed(getDefaultFeed(), (3 * this.MAX_SLIDES + 2));
     const category = feed.getCategories()[0];
 
     this.state = {
@@ -31,6 +31,7 @@ export class Webrcade extends Component {
     this.sliderRef = React.createRef();
     this.playButtonRef = React.createRef();
     this.categoryRef = React.createRef();
+    this.appRef = React.createRef();
 
     this.focusGrid.setComponents([
       [this.playButtonRef],
@@ -51,7 +52,7 @@ export class Webrcade extends Component {
     CATEGORIES: "categories"
   }
 
-  HASH_PLAY = "play";  
+  HASH_PLAY = "play";
 
   focusGrid = new FocusGrid();
 
@@ -61,10 +62,32 @@ export class Webrcade extends Component {
     return true;
   }
 
-  hashChange = () => {
-    const { HASH_PLAY, ModeEnum } = this;
-    if (!window.location.hash.includes(HASH_PLAY)) {
-      this.setState({ mode: ModeEnum.MENU });
+  popstateHandler = (e) => {
+    const { ModeEnum, appRef } = this;
+    const { mode } = this.state;
+
+    // Returning to menu
+    if (mode === ModeEnum.APP) {
+      let properExit = false; // In dev we can't access frame (different port)
+      if (appRef.current) {
+        try {
+          const content = appRef.current.contentWindow;
+          if (content && content.app) {                          
+            properExit = true;
+
+            // Exit from app is asynchronous (allow for async saves, etc.)
+            content.app.exit(null, false)
+              .catch((e) => console.error(e)) // TODO: Proper error handling
+              .finally(() => this.setState({ mode: ModeEnum.MENU }));
+          }
+        } catch (e) {
+          if (!isDev()) console.error(e);
+        }
+      }
+      if (!properExit) {
+        // We can't do a proper exit in dev mode (when back is pressed)
+        this.setState({ mode: ModeEnum.MENU });
+      }
     }
   }
 
@@ -72,23 +95,23 @@ export class Webrcade extends Component {
     const { ModeEnum } = this;
     const { mode } = this.state;
 
-    window.addEventListener('hashchange', this.hashChange, false);
+    window.addEventListener('popstate', this.popstateHandler, false);
 
     // Clear hash if displaying menu
     const hash = window.location.href.indexOf('#');
     if (mode === ModeEnum.MENU && hash >= 0) {
       window.history.pushState(null, "", window.location.href.substring(0, hash));
-    }
+    }      
 
     // Start the gamepad notifier 
     GamepadNotifier.instance.start();
-    GamepadNotifier.instance.setDefaultCallback(this.gamepadCallback);    
+    GamepadNotifier.instance.setDefaultCallback(this.gamepadCallback);
 
-    this.setState({initial: true});
+    this.setState({ initial: true });
   }
 
   componentWillUnmount() {
-    window.removeEventListener('hashchange', this.hashChange);
+    window.removeEventListener('popstate', this.popstateHandler);
 
     // Stop the gamepad notifier
     GamepadNotifier.instance.stop();
@@ -118,12 +141,12 @@ export class Webrcade extends Component {
     const { focusGrid, playButtonRef, sliderRef, categoryRef, ModeEnum,
       MenuModeEnum, HASH_PLAY, MAX_SLIDES } = this;
     const reg = AppRegistry.instance;
-    
-    const isCategories = (menuMode === MenuModeEnum.CATEGORIES);    
+
+    const isCategories = (menuMode === MenuModeEnum.CATEGORIES);
     const items = isCategories ? feed.getCategories() : category.items;
 
     let title = '', backgroundSrc = null, description = null, subTitle = null,
-      categoryLabel = null, getTitle = null, getThumbnailSrc, onClick = null;    
+      categoryLabel = null, getTitle = null, getThumbnailSrc, onClick = null;
 
     if (currentItem) {
       if (isCategories) {
@@ -132,12 +155,12 @@ export class Webrcade extends Component {
         description = currentItem.description;
         categoryLabel = "Select Category";
         getTitle = item => item.title;
-        getThumbnailSrc = item => item.thumbnail ? item.thumbnail : 'images/apps/folder.png' ;
+        getThumbnailSrc = item => item.thumbnail ? item.thumbnail : 'images/apps/folder.png';
         onClick = () => {
-          this.setState({ 
+          this.setState({
             menuMode: MenuModeEnum.APPS,
             category: currentItem,
-            currentItem: currentItem.items[0],                        
+            currentItem: currentItem.items[0],
           });
           sliderRef.current.focus();
         }
@@ -203,12 +226,14 @@ export class Webrcade extends Component {
   }
 
   renderApp() {
+    const { appRef } = this;
     const { currentItem } = this.state;
     const reg = AppRegistry.instance;
 
     return (
       <div className="webrcade-app">
         <iframe
+          ref={appRef}
           style={!isDev() ? { display: "none" } : {}}
           width="100%"
           height="100%"

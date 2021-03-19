@@ -7,7 +7,7 @@ const loc7800 = isDev() ? `http://${localIp}:3020` : 'app/7800';
 const locNes = isDev() ? `http://${localIp}:3030` : 'app/nes';
 
 const checkRom = app => {
-  if (app.props === undefined && app.props.roms === undefined) {
+  if (app.props === undefined || app.props.rom === undefined) {
     throw new Error("Missing 'rom' property");
   }
 }
@@ -44,7 +44,7 @@ let types = [
     location: locNes,
     background: 'images/apps/nes-background.png',
     thumbnail: 'images/apps/nes-thumb.png',
-    validate: app => true              
+    validate: checkRom              
   }, {
     key: 'wasm-genplus-sms',
     name: 'Sega Master System',
@@ -52,7 +52,7 @@ let types = [
     location: locSms,
     background: 'images/apps/mastersystem-background.jpg',
     thumbnail: 'images/apps/mastersystem-thumb.png',
-    validate: app => true              
+    validate: checkRom              
   }
 ];
 
