@@ -53,7 +53,7 @@ class AppRegistry {
 
   getLocation(app) {
     const APP_TYPES = this.APP_TYPES;
-    const { RP_PROPS } = AppProps;
+    const { RP_PROPS, RP_DEBUG } = AppProps;
     const { props } = app;    
     const appType = APP_TYPES[app.type];
     const outProps = { type: appType.type };    
@@ -62,8 +62,15 @@ class AppRegistry {
       Object.assign(outProps, props);
     }
         
-    return UrlUtil.addParam(
+    let loc = UrlUtil.addParam(
       appType.location, RP_PROPS, AppProps.encode(outProps));
+
+    const debug = UrlUtil.getBoolParam(
+      window.location.search, RP_DEBUG);
+    if (debug) {
+      loc = UrlUtil.addParam(loc, RP_DEBUG, 'true');
+    }
+    return loc;
   }
 
   getTitle(app) {
