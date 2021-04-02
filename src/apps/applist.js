@@ -5,6 +5,7 @@ const locGenesis = isDev() ? `http://${localIp}:3010` : 'app/genesis';
 const locSms = locGenesis;
 const loc7800 = isDev() ? `http://${localIp}:3020` : 'app/7800';
 const locNes = isDev() ? `http://${localIp}:3030` : 'app/nes';
+const locDoom = isDev() ? `http://${localIp}:3040` : 'app/doom';
 
 const checkRom = app => {
   if (app.props === undefined || app.props.rom === undefined) {
@@ -53,6 +54,18 @@ let types = [
     background: 'images/apps/mastersystem-background.jpg',
     thumbnail: 'images/apps/mastersystem-thumb.png',
     validate: checkRom              
+  }, {
+    key: 'webprboom',
+    name: 'Doom Classic',
+    // description: 'The Sega Master System is a third-generation 8-bit home video game console manufactured by Sega.',
+    location: locDoom,
+    background: 'images/apps/doom-background.jpg',
+    thumbnail: 'images/apps/doom-thumb.png',
+    validate: app => {
+      if (app.props === undefined || app.props.game === undefined) {
+        throw new Error("Missing 'game' property");
+      }
+    }
   }
 ];
 
@@ -66,6 +79,7 @@ addAlias(types, 'genesis', 'wasm-genplus-md');
 addAlias(types, '7800', 'js7800');
 addAlias(types, 'nes', 'em-fceux');
 addAlias(types, 'sms', 'wasm-genplus-sms');
+addAlias(types, 'doom', 'webprboom');
 
 const APP_TYPES = types;
 
