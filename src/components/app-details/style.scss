@@ -49,12 +49,14 @@
         margin-bottom: 1.5rem;
         display: flex;
         flex-direction: row;
+        flex-shrink: 0;
       }
 
       &-bottom-comp {
         display: flex;
         flex-direction: row;
         flex-grow: 1;
+        flex-shrink: 0;            
       }
 
       &-bottom-comp>* {
