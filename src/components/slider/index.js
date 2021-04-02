@@ -17,7 +17,9 @@ class Slider extends Component {
       itemsInRow: 6, // number of items to be displayed across screen
       selectedItem: 0,
       focused: false,
-      sliderHidden: false
+      sliderHidden: false,
+      scrollable: true,
+      uniqueItems: 0
     };
     this.keyDown = false;
   }
@@ -65,18 +67,27 @@ class Slider extends Component {
     window.removeEventListener("resize", this.handleWindowResize);
   }  
 
-
   shouldComponentUpdate(nextProps, nextState) {
     const { items, onSelected } = this.props;
 
-    let ret = true;
+    let ret = true;    
+
+    const unique = nextProps.items.reduce((
+      acc, curr) => acc + (curr.duplicate ? 0 : 1), 0);
+    const scrollable = unique > nextState.itemsInRow;
+
+    // console.log("Unique: " + unique);
+    // console.log("Items in row: " + nextState.itemsInRow);
+    // console.log("Scrollable: " + scrollable);
 
     if (nextProps.items !== items) {
       ret = false;
       this.setState({
         selectedItem: 0,
         lowestVisibleIndex: 0,
-        sliderHidden: true
+        sliderHidden: true,
+        uniqueItems: unique,
+        scrollable: scrollable
       },
         () => {
           setTimeout(() => {
@@ -89,6 +100,11 @@ class Slider extends Component {
             onSelected(nextProps.items[0]);
           }
         });
+    } else if (unique !== nextState.uniqueItems || scrollable !== nextState.scrollable) {
+      this.setState({
+        uniqueItems: unique,
+        scrollable: scrollable
+      });
     }
 
     return ret;
@@ -164,7 +180,7 @@ class Slider extends Component {
   // render the slider contents
   renderSliderContent = () => {
     // console.log('RENDER');
-    const { sliderHasMoved, itemsInRow, lowestVisibleIndex, selectedItem, focused } = this.state;
+    const { sliderHasMoved, itemsInRow, lowestVisibleIndex, selectedItem, focused, scrollable } = this.state;
     const { items, getTitle, getThumbnailSrc } = this.props;
     const totalItems = items.length;
 
@@ -225,11 +241,12 @@ class Slider extends Component {
 
     const leadingIndex =
       combinedIndex[0] === 0 ? totalItems - 1 : combinedIndex[0] - 1;
-    combinedIndex.unshift(leadingIndex);
+    combinedIndex.unshift(leadingIndex);    
 
     const sliderContents = [];
-    for (let index of combinedIndex) {
-      const item = items[index];
+    for (let index of combinedIndex) {      
+      const item = items[index];      
+      const hide = item.duplicate === true && !scrollable;
       sliderContents.push(
         <SliderItem
           title={getTitle ? getTitle(item) : ''}
@@ -238,6 +255,7 @@ class Slider extends Component {
           width={100 / itemsInRow}
           selected={selectedItem === index && focused}
           onClick={() => { this.handleItemClicked(index) }}
+          hide={hide}
         />
       );
     }
@@ -259,11 +277,11 @@ class Slider extends Component {
   };
 
   handlePrevPage = () => {
-    const { lowestVisibleIndex, itemsInRow, sliderMoving, focused } = this.state;
+    const { lowestVisibleIndex, itemsInRow, sliderMoving, focused, scrollable } = this.state;
     const { items } = this.props;
     const totalItems = items.length;
 
-    if (sliderMoving || !focused) return;
+    if (sliderMoving || !focused || !scrollable) return;
 
     // get the new lowest visible index
     let newIndex;
@@ -307,11 +325,12 @@ class Slider extends Component {
   };
 
   handleNextPage = () => {
-    const { sliderHasMoved, lowestVisibleIndex, itemsInRow, sliderMoving, focused } = this.state;
+    const { sliderHasMoved, lowestVisibleIndex, itemsInRow, sliderMoving, 
+      focused, scrollable } = this.state;
     const { items } = this.props;
     const totalItems = items.length;
 
-    if (sliderMoving || !focused) return;
+    if (sliderMoving || !focused || !scrollable) return;
 
     // get the new lowest visible index
     let newIndex;
@@ -362,12 +381,14 @@ class Slider extends Component {
   }
 
   selectNext() {
-    const { selectedItem, lowestVisibleIndex, itemsInRow, sliderMoving, focused } = this.state;
+    const { selectedItem, lowestVisibleIndex, itemsInRow, sliderMoving, 
+      focused, scrollable, uniqueItems } = this.state;
     const max = lowestVisibleIndex + itemsInRow;
     const { items } = this.props;
     const totalItems = items.length;
 
-    if (sliderMoving || !focused) return;
+    if (sliderMoving || !focused || 
+      (!scrollable && selectedItem === (uniqueItems - 1))) return;
 
     let newItem = selectedItem + 1;
 
@@ -383,11 +404,11 @@ class Slider extends Component {
   }
 
   selectPrev() {
-    const { selectedItem, lowestVisibleIndex, sliderMoving, focused } = this.state;
+    const { selectedItem, lowestVisibleIndex, sliderMoving, focused, scrollable } = this.state;
     const { items } = this.props;
     const totalItems = items.length;
 
-    if (sliderMoving || !focused) return;
+    if (sliderMoving || !focused || (!scrollable && selectedItem === 0)) return;
 
     let newItem = selectedItem - 1;
 
@@ -434,7 +455,8 @@ class Slider extends Component {
       sliderMoving,
       sliderMoveDirection,
       sliderHidden,
-      movePercentage
+      movePercentage,
+      scrollable
     } = this.state;
     const { items } = this.props;
 
@@ -485,14 +507,20 @@ class Slider extends Component {
           onFocus={this.onFocus}
           onBlur={this.onBlur}>
           {sliderHasMoved && (
-            <SliderControl arrowDirection={"left"} onClick={this.handlePrevPage} />
+            <SliderControl 
+              arrowDirection={"left"} 
+              onClick={this.handlePrevPage}
+              hide={!scrollable} />
           )}
           <div style={sliderStyle}>
             <div className="slider-content" style={style}>
               {items.length > 0 ? this.renderSliderContent() : null}
             </div>
           </div>
-          <SliderControl arrowDirection={"right"} onClick={this.handleNextPage} />
+          <SliderControl 
+            arrowDirection={"right"} 
+            onClick={this.handleNextPage} 
+            hide={!scrollable} />
         </div>
       );
     }

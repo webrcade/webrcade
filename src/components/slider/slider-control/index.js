@@ -5,9 +5,9 @@ import chevronRight from "@iconify/icons-mdi/chevron-right";
 
 require("./style.scss");
 
-const SliderControl = ({ arrowDirection, onClick }) => {
+const SliderControl = ({ arrowDirection, onClick, hide }) => {
   return (
-    <div className={`slider-control ${arrowDirection}`} onClick={onClick}>
+    <div className={`slider-control ${arrowDirection}`} style={{ visibility: hide ? 'hidden' : 'visible' }} onClick={onClick}>
       <div className="slider-control-arrow" onClick={onClick}>
         <Icon icon={arrowDirection === "right" ? chevronRight : chevronLeft} />
       </div>

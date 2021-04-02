@@ -71,6 +71,9 @@ class WebrcadeFeed {
         const {...item} = i;
         item.id = index[0]++;
         itemsOut.push(item);
+        if (itemsOut.length > items.length) {
+          item.duplicate = true;
+        }
       });
     }
     return itemsOut;    
