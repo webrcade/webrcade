@@ -55,6 +55,14 @@ let types = [
     thumbnail: 'images/apps/mastersystem-thumb.png',
     validate: checkRom              
   }, {
+    key: 'wasm-genplus-gg',
+    name: 'Sega Game Gear',
+    // description: 'The Sega Master System is a third-generation 8-bit home video game console manufactured by Sega.',
+    location: locSms,
+    background: 'images/apps/gamegear-background.png',
+    thumbnail: 'images/apps/gamegear-thumb.png',
+    validate: checkRom              
+  }, {
     key: 'webprboom',
     name: 'Doom Classic',
     // description: 'The Sega Master System is a third-generation 8-bit home video game console manufactured by Sega.',
@@ -79,6 +87,7 @@ addAlias(types, 'genesis', 'wasm-genplus-md');
 addAlias(types, '7800', 'js7800');
 addAlias(types, 'nes', 'em-fceux');
 addAlias(types, 'sms', 'wasm-genplus-sms');
+addAlias(types, 'gg', 'wasm-genplus-gg');
 addAlias(types, 'doom', 'webprboom');
 
 const APP_TYPES = types;

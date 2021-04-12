@@ -25,4 +25,5 @@ yarn-error.log*
 /(old)
 
 /public/images/games
+buildall*
 *DO-NOT-CHECKIN*
