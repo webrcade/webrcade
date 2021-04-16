@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
 
 html {
   font-family: 'Quicksand', sans-serif;
@@ -42,6 +45,14 @@ a:hover {
 
 a:focus {
   color: #ce2f37;
+}
+
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
 }
 
 .webrcade {

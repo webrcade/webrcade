@@ -74,7 +74,6 @@ class FocusGrid {
           y++;
           while (y < comps.length && !comp) {
             comp = checkRowForComp(comps[y]);
-            console.log('check comp down: ' + comp);
             y++;
           }
           break;

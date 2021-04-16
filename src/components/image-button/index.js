@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { GamepadNotifier, GamepadEnum} from "../../input"
+import { GamepadNotifier, GamepadEnum } from "../../input"
 
 require("./style.scss");
 

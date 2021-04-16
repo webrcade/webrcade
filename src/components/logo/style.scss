@@ -1,0 +1,32 @@
+.logo {
+  // font-size: 5.4rem;
+  // font-family: 'Zen Dots';
+  font-size: 1.7rem;  
+  display: inline-block;
+  margin: 0 auto;
+  font-family: 'Orbitron';
+  display: flex;
+  align-items: center;
+  color: #999;
+  padding: .4rem;
+  opacity: .8;
+
+  &-left-text {
+    // margin-right: -.5rem;
+    // text-shadow: 2px 2px #aa0000;
+    margin-right: .05rem;    
+  }
+
+  &-right-text {
+    // margin-left: -.4rem;
+    // text-shadow: 2px 2px #aa0000;
+    margin-left: .05rem;    
+  }
+
+  &-image {    
+    // height: 7.1rem; 
+    // height: 2.2rem;     
+    height: 1.85rem;     
+    opacity: .7;
+  }
+}

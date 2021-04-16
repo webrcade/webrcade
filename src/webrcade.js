@@ -3,11 +3,11 @@ import Slider from "./components/slider";
 import AppDetails from "./components/app-details";
 import AppCategory from "./components/app-category";
 import ImageButton from "./components/image-button";
+import Logo from "./components/logo";
 import { GamepadNotifier, FocusGrid } from "./input"
 import { AppRegistry } from './apps';
 import { WebrcadeFeed, getDefaultFeed } from './feed';
 import { isDev } from '@webrcade/app-common'
-
 import PlayImageWhite from "./images/play-white.svg"
 import PlayImageBlack from "./images/play-black.svg"
 
@@ -68,26 +68,24 @@ export class Webrcade extends Component {
 
     // Returning to menu
     if (mode === ModeEnum.APP) {
-      let properExit = false; // In dev we can't access frame (different port)
       if (appRef.current) {
         try {
           const content = appRef.current.contentWindow;
-          if (content && content.app) {                          
-            properExit = true;
-
-            // Exit from app is asynchronous (allow for async saves, etc.)
-            content.app.exit(null, false)
-              .catch((e) => console.error(e)) // TODO: Proper error handling
-              .finally(() => this.setState({ mode: ModeEnum.MENU }));
+          if (content) {
+            content.postMessage("exit", "*");            
           }
         } catch (e) {
-          if (!isDev()) console.error(e);
+          // TODO: Proper error handling
+          console.error(e);
         }
-      }
-      if (!properExit) {
-        // We can't do a proper exit in dev mode (when back is pressed)
-        this.setState({ mode: ModeEnum.MENU });
-      }
+      }      
+    }
+  }
+
+  messageListener = (e) => {
+    const { ModeEnum } = this;
+    if (e.data === 'exitComplete') {
+      this.setState({ mode: ModeEnum.MENU });
     }
   }
 
@@ -96,6 +94,7 @@ export class Webrcade extends Component {
     const { mode } = this.state;
 
     window.addEventListener('popstate', this.popstateHandler, false);
+    window.addEventListener("message", this.messageListener);
 
     // Clear hash if displaying menu
     const hash = window.location.href.indexOf('#');
@@ -112,6 +111,7 @@ export class Webrcade extends Component {
 
   componentWillUnmount() {
     window.removeEventListener('popstate', this.popstateHandler);
+    window.removeEventListener("message", this.messageListener);
 
     // Stop the gamepad notifier
     GamepadNotifier.instance.stop();
@@ -181,8 +181,9 @@ export class Webrcade extends Component {
 
     return (
       <div className="webrcade">
-        <div className={'webrcade-outer' +
+        <div className={'webrcade-outer' +          
           (mode !== ModeEnum.MENU ? ' webrcade-outer--hide' : '')}>
+          <Logo/>
           <AppDetails
             title={title}
             description={description}
