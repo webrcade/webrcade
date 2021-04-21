@@ -4,10 +4,12 @@ import AppDetails from "./components/app-details";
 import AppCategory from "./components/app-category";
 import ImageButton from "./components/image-button";
 import Logo from "./components/logo";
+import Loading from "./components/loading";
 import { GamepadNotifier, FocusGrid } from "./input"
 import { AppRegistry } from './apps';
 import { WebrcadeFeed, getDefaultFeed } from './feed';
-import { isDev } from '@webrcade/app-common'
+import { isDev, UrlUtil, FetchAppData } from '@webrcade/app-common'
+
 import PlayImageWhite from "./images/play-white.svg"
 import PlayImageBlack from "./images/play-black.svg"
 
@@ -17,16 +19,18 @@ export class Webrcade extends Component {
   constructor() {
     super();
 
-    const feed = new WebrcadeFeed(getDefaultFeed(), (3 * this.MAX_SLIDES + 2));
-    const category = feed.getCategories()[0];
-
     this.state = {
-      category: category,
-      currentItem: category.items[0],
-      mode: this.ModeEnum.MENU,
-      menuMode: this.MenuModeEnum.APPS,
-      feed: feed
+      category: null,
+      currentItem: null,
+      feed: null,
+      mode: this.ModeEnum.LOADING,
+      menuMode: this.MenuModeEnum.APPS,      
+      loadingStatus: "Loading...",
+      initialFeed: true,
     };
+
+    const feedInfo = this.parseFeed(getDefaultFeed());
+    this.state = {...this.state, ...feedInfo}
 
     this.sliderRef = React.createRef();
     this.playButtonRef = React.createRef();
@@ -40,9 +44,13 @@ export class Webrcade extends Component {
     ]);
   }
 
+  MIN_LOADING_TIME = 1500;
   MAX_SLIDES = 8;
+  HASH_PLAY = "play";
+  RP_FEED = "feed";
 
   ModeEnum = {
+    LOADING: "loading",
     MENU: "menu",
     APP: "app"
   }
@@ -50,9 +58,7 @@ export class Webrcade extends Component {
   MenuModeEnum = {
     APPS: "apps",
     CATEGORIES: "categories"
-  }
-
-  HASH_PLAY = "play";
+  }  
 
   focusGrid = new FocusGrid();
 
@@ -62,7 +68,7 @@ export class Webrcade extends Component {
     return true;
   }
 
-  popstateHandler = (e) => {
+  popstateHandler = e => {
     const { ModeEnum, appRef } = this;
     const { mode } = this.state;
 
@@ -82,11 +88,24 @@ export class Webrcade extends Component {
     }
   }
 
-  messageListener = (e) => {
+  messageListener = e => {
     const { ModeEnum } = this;
     if (e.data === 'exitComplete') {
       this.setState({ mode: ModeEnum.MENU });
     }
+  }
+
+  parseFeed(feedContent) {
+    const feed = new WebrcadeFeed(feedContent, (3 * this.MAX_SLIDES + 2));
+    if (feed) {
+      const category = feed.getCategories()[0];
+      return {
+        feed: feed,
+        category: category,
+        currentItem: category.items[0]        
+      }
+    }
+    return null;
   }
 
   componentDidMount() {
@@ -98,7 +117,7 @@ export class Webrcade extends Component {
 
     // Clear hash if displaying menu
     const hash = window.location.href.indexOf('#');
-    if (mode === ModeEnum.MENU && hash >= 0) {
+    if (mode !== ModeEnum.APP && hash >= 0) {
       window.history.pushState(null, "", window.location.href.substring(0, hash));
     }      
 
@@ -115,16 +134,48 @@ export class Webrcade extends Component {
 
     // Stop the gamepad notifier
     GamepadNotifier.instance.stop();
-    GamepadNotifier.instance.setDefaultCallback(null);
+    GamepadNotifier.instance.setDefaultCallback(null);    
   }
 
   componentDidUpdate(prevProps, prevState) {
-    const { mode, initial } = this.state;
-    const { ModeEnum, sliderRef } = this;
+    const { mode, initial, initialFeed } = this.state;
+    const { ModeEnum, sliderRef, MIN_LOADING_TIME } = this;    
 
-    if (initial ||
+    const start = Date.now();
+    if (mode === ModeEnum.LOADING) {
+      if (initialFeed) {
+        const url = window.location.search;
+        const feed = UrlUtil.getParam(url, this.RP_FEED);      
+        if (feed) {
+          console.log('feed: ' + feed);
+          
+          const minWait = start + MIN_LOADING_TIME;   
+
+          this.setState({
+            loadingStatus: "Loading feed...",
+            initialFeed: false
+          });
+          
+          new FetchAppData(feed).fetch()
+            .then(response => response.json())
+            .then(json => this.parseFeed(json))
+            .then(feedInfo => this.setState(feedInfo))
+            .catch(msg => console.log('Error reading feed: ' + msg)) // TODO: Proper logging
+            .finally(() => {
+              let wait = minWait - Date.now();
+              wait = wait > 0 ? wait : 0;
+              setTimeout(() => this.setState({mode: ModeEnum.MENU}), wait);
+            })
+        } else {      
+          setTimeout(() => this.setState({mode: ModeEnum.MENU}), 
+            MIN_LOADING_TIME);
+        }
+      }
+    } else if (initial ||
       (prevState.mode === ModeEnum.APP && mode === ModeEnum.MENU)) {
-      this.setState({ initial: false });
+      this.setState({
+        initial: false
+      });
       setTimeout(() => {
         window.focus();
         sliderRef.current.focus();
@@ -246,13 +297,23 @@ export class Webrcade extends Component {
     )
   }
 
+  renderLoading() {
+    const { loadingStatus } = this.state;
+
+    return (
+      <div>
+        <Loading text={loadingStatus}/>
+      </div>
+    );
+  }
+
   render() {
     const { mode } = this.state;
     const { ModeEnum } = this;
 
     return (
       <>
-        {this.renderMenu()}
+        {mode === ModeEnum.LOADING ? this.renderLoading() : this.renderMenu()}
         {mode === ModeEnum.APP ? this.renderApp() : null}
       </>
     );

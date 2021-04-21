@@ -1,6 +1,4 @@
-.logo {
-  // font-size: 5.4rem;
-  // font-family: 'Zen Dots';
+%logo-shared {
   font-size: 1.7rem;  
   display: inline-block;
   margin: 0 auto;
@@ -8,25 +6,38 @@
   display: flex;
   align-items: center;
   color: #999;
-  padding: .4rem;
+  padding: .55rem;
+  
+}
+
+.logo {
+  @extend %logo-shared;
   opacity: .8;
 
   &-left-text {
-    // margin-right: -.5rem;
-    // text-shadow: 2px 2px #aa0000;
     margin-right: .05rem;    
   }
 
   &-right-text {
-    // margin-left: -.4rem;
-    // text-shadow: 2px 2px #aa0000;
     margin-left: .05rem;    
   }
 
   &-image {    
-    // height: 7.1rem; 
-    // height: 2.2rem;     
     height: 1.85rem;     
     opacity: .7;
+  }
+}
+
+.logoLarge {
+  @extend %logo-shared;
+  font-size: 6.7rem;  
+  color: white;
+
+  &-right-text {
+    margin-left: .05rem;  
+  }
+
+  &-image {    
+    height: 8rem;     
   }
 }
