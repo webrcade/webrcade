@@ -50,6 +50,8 @@ class WebrcadeFeed {
       );      
     }); 
 
+    this.uniqueCategoryCount = categories.length;
+
     // Expand valid categories
     categories = this.expandItems(categories.filter(c => {
       return c.items.length > 0;
@@ -80,6 +82,8 @@ class WebrcadeFeed {
   }
 
   getCategories() { return this.categories; }
+
+  getUniqueCategoryCount() { return this.uniqueCategoryCount; }
 
   getApps(categoryId) { 
     const category = this.categories.filter(c => c.id === categoryId);

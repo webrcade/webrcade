@@ -252,7 +252,7 @@ export class Webrcade extends Component {
             }
             bottom={
               <AppCategory
-                isSelectable={!isCategories}
+                isSelectable={!isCategories && feed.getUniqueCategoryCount() > 1}
                 onPad={e => focusGrid.moveFocus(e.type, categoryRef)}
                 ref={categoryRef}
                 label={categoryLabel}
