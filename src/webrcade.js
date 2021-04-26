@@ -24,7 +24,7 @@ export class Webrcade extends Component {
       currentItem: null,
       feed: null,
       mode: this.ModeEnum.LOADING,
-      menuMode: this.MenuModeEnum.APPS,      
+      menuMode: this.MenuModeEnum.CATEGORIES,      
       loadingStatus: "Loading...",
       initialFeed: true,
     };
@@ -96,13 +96,16 @@ export class Webrcade extends Component {
   }
 
   parseFeed(feedContent) {
+    const { MenuModeEnum } = this;
     const feed = new WebrcadeFeed(feedContent, (3 * this.MAX_SLIDES + 2));
     if (feed) {
       const category = feed.getCategories()[0];
+      const isCategories = feed.getUniqueCategoryCount() > 1;
       return {
         feed: feed,
         category: category,
-        currentItem: category.items[0]        
+        currentItem: isCategories ? category : category.items[0],
+        menuMode: isCategories ? MenuModeEnum.CATEGORIES : MenuModeEnum.APPS
       }
     }
     return null;
