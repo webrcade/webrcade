@@ -294,7 +294,7 @@ export class Webrcade extends Component {
           height="100%"
           frameBorder="0"
           allow="autoplay; gamepad"
-          title={reg.getTitle(currentItem)}
+          // title={reg.getTitle(currentItem)}
           src={reg.getLocation(currentItem)} />
       </div>
     )
