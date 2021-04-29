@@ -285,9 +285,12 @@ export class Webrcade extends Component {
     const { currentItem } = this.state;
     const reg = AppRegistry.instance;
 
-    return (
-      <div className="webrcade-app">
-        <iframe
+    
+    return (      
+      <div className="webrcade-app">        
+        {
+          // eslint-disable-next-line
+        }<iframe
           ref={appRef}
           style={!isDev() ? { display: "none" } : {}}
           width="100%"
