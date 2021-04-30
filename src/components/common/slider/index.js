@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import SliderControl from "./slider-control";
 import SliderItem from "./slider-item";
-import { GamepadNotifier, GamepadEnum } from "../../input"
+import { GamepadNotifier, GamepadEnum } from "../../../input"
 
 require("./style.scss");
 

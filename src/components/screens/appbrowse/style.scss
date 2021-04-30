@@ -1,0 +1,31 @@
+.webrcade {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  &-outer {
+    margin: auto;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 1920px;
+    background-color: #1d1d1d;
+    max-height: 56.25vw;
+    width: 100vw;
+  }
+
+  &-outer--hide {
+    display: none;
+  }
+
+  &-app {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0; 
+    top: 0;
+    z-index: 22
+  }
+}

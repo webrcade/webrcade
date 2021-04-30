@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import LogoImage from "../../images/logo/webrcade-logo-dark.svg"
-import LogoImageLarge from "../../images/logo/webrcade-logo-large.svg"
+import LogoImage from "../../../images/logo/webrcade-logo-dark.svg"
+import LogoImageLarge from "../../../images/logo/webrcade-logo-large.svg"
 
 require("./style.scss");
 

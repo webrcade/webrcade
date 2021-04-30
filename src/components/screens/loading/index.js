@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import Logo from '../logo';
+import Logo from '../../common/logo';
 
 require("./style.scss");
 
-export default class Loading extends Component {
+export default class LoadingScreen extends Component {
 
   getLoadingText(text) {
     return text ? 

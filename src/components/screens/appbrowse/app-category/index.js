@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Icon } from "@iconify/react";
 import chevronRight from "@iconify/icons-mdi/chevron-right";
-import { GamepadNotifier, GamepadEnum } from "../../input"
+import { GamepadNotifier, GamepadEnum } from "../../../../input"
 
 require("./style.scss");
 
