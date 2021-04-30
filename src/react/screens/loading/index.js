@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Logo from '../../common/logo';
+import Logo from '../../components/logo';
 
 require("./style.scss");
 

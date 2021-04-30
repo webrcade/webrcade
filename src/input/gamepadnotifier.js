@@ -1,8 +1,6 @@
 import { GamepadEnum } from './gamepadenum.js'
 
 class GamepadNotifier {
-  static instance = GamepadNotifier.instance || new GamepadNotifier();
-
   running = false;
   callbacks = [];
   padDown = false;

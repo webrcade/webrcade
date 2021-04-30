@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import { WebrcadeFeed, getDefaultFeed } from './feed';
+import { WebrcadeFeed, getDefaultFeed } from '../feed';
 import { UrlUtil, FetchAppData } from '@webrcade/app-common'
 
-import LoadingScreen from "./components/screens/loading";
-import AppBrowseScreen from "./components/screens/appbrowse"
-import AppScreen from "./components/screens/app";
+import LoadingScreen from "./screens/loading";
+import AppBrowseScreen from "./screens/appbrowse"
+import AppScreen from "./screens/app";
 
 require("./style.scss");
 

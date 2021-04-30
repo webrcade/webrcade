@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { Icon } from "@iconify/react";
 import chevronRight from "@iconify/icons-mdi/chevron-right";
-import { GamepadNotifier, GamepadEnum } from "../../../../input"
+import { WebrcadeContext } from '@webrcade/app-common'
+
+import { GamepadEnum } from "../../../../input"
 
 require("./style.scss");
 
@@ -40,11 +42,19 @@ export default class AppCategory extends Component {
   }
 
   componentDidMount() {
-    GamepadNotifier.instance.addCallback(this.gamepadCallback);
+    const { gamepadNotifier } = this.context;
+
+    if (gamepadNotifier) {
+      gamepadNotifier.addCallback(this.gamepadCallback);
+    }
   }
 
   componentWillUnmount() {
-    GamepadNotifier.instance.removeCallback(this.gamepadCallback);
+    const { gamepadNotifier } = this.context;
+
+    if (gamepadNotifier) {
+      gamepadNotifier.removeCallback(this.gamepadCallback);
+    }
   }
 
   onFocus = () => {
@@ -104,4 +114,6 @@ export default class AppCategory extends Component {
     );
   }
 };
+
+AppCategory.contextType = WebrcadeContext;
 

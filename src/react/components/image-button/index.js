@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import { GamepadNotifier, GamepadEnum } from "../../../input"
+import { WebrcadeContext } from '@webrcade/app-common'
+
+import { GamepadEnum } from "../../../input"
 
 require("./style.scss");
 
@@ -27,19 +29,27 @@ export default class ImageButton extends Component {
       case GamepadEnum.LEFT:
       case GamepadEnum.RIGHT:
         if (onPad) onPad(e);
-        break;        
-      default: 
+        break;
+      default:
         break;
     }
     return true;
   }
 
   componentDidMount() {
-    GamepadNotifier.instance.addCallback(this.gamepadCallback);
+    const { gamepadNotifier } = this.context;
+
+    if (gamepadNotifier) {
+      gamepadNotifier.addCallback(this.gamepadCallback);
+    }
   }
 
   componentWillUnmount() {
-    GamepadNotifier.instance.removeCallback(this.gamepadCallback);
+    const { gamepadNotifier } = this.context;
+
+    if (gamepadNotifier) {
+      gamepadNotifier.removeCallback(this.gamepadCallback);
+    }
   }
 
   onClick = e => {
@@ -76,8 +86,11 @@ export default class ImageButton extends Component {
         onFocus={this.onFocus}
         onBlur={this.onBlur}> {imgSrc ?
           <img alt={label} src={focused && hoverImgSrc ? hoverImgSrc : imgSrc}></img> : null}
-          <div>{label}</div>
+        <div>{label}</div>
       </button>
     );
   }
 };
+
+
+ImageButton.contextType = WebrcadeContext;

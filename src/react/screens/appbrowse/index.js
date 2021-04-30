@@ -1,11 +1,13 @@
 import React, { Component } from "react";
+import { WebrcadeContext } from '@webrcade/app-common'
+
 import { AppRegistry } from '../../../apps';
 import { GamepadNotifier, FocusGrid } from "../../../input"
 import AppDetails from "./app-details";
 import AppCategory from "./app-category";
-import Logo from "../../common/logo";
-import Slider from "../../common/slider";
-import ImageButton from "../../common/image-button";
+import Logo from "../../components/logo";
+import Slider from "../../components/slider";
+import ImageButton from "../../components/image-button";
 
 import PlayImageWhite from "../../../images/play-white.svg"
 import PlayImageBlack from "../../../images/play-black.svg"
@@ -43,6 +45,8 @@ export default class AppBrowseScreen extends Component {
   MAX_SLIDES = 8;
 
   focusGrid = new FocusGrid();
+  gamepadNotifier = new GamepadNotifier();  
+  screenContext = {gamepadNotifier: this.gamepadNotifier};
 
   gamepadCallback = e => {
     const { focusGrid } = this;
@@ -57,15 +61,15 @@ export default class AppBrowseScreen extends Component {
   }
 
   startGamepadNotifier() {
-    // Start the gamepad notifier 
-    GamepadNotifier.instance.start();
-    GamepadNotifier.instance.setDefaultCallback(this.gamepadCallback);
+    const { gamepadNotifier } = this;
+    gamepadNotifier.start();
+    gamepadNotifier.setDefaultCallback(this.gamepadCallback);
   }
 
   stopGamepadNotifier() {
-    // Stop the gamepad notifier
-    GamepadNotifier.instance.stop();
-    GamepadNotifier.instance.setDefaultCallback(null);
+    const { gamepadNotifier } = this;
+    gamepadNotifier.stop();
+    gamepadNotifier.setDefaultCallback(null);
   }
 
   componentDidMount() {
@@ -84,7 +88,7 @@ export default class AppBrowseScreen extends Component {
     } else {
       this.startGamepadNotifier();
     }
-  }
+  }  
 
   static getDerivedStateFromProps(props, state) {
     const { ModeEnum } = AppBrowseScreen;
@@ -102,7 +106,7 @@ export default class AppBrowseScreen extends Component {
           menuMode: isCategories ? ModeEnum.CATEGORIES : ModeEnum.APPS
         }
       }
-    }
+    }    
     return null;
   }
 
@@ -113,7 +117,7 @@ export default class AppBrowseScreen extends Component {
   render() {
     const { hide, onAppSelected } = this.props;
     const { category, currentItem, menuMode, feed } = this.state;
-    const { focusGrid, playButtonRef, sliderRef, categoryRef, MAX_SLIDES } = this;
+    const { focusGrid, playButtonRef, sliderRef, categoryRef, MAX_SLIDES, screenContext } = this;
     const { ModeEnum } = AppBrowseScreen;
 
     const reg = AppRegistry.instance;
@@ -152,49 +156,51 @@ export default class AppBrowseScreen extends Component {
     }
 
     return (
-      <div className="webrcade">
-        <div className={'webrcade-outer' +
-          (hide === true ? ' webrcade-outer--hide' : '')}>
-          <Logo />
-          <AppDetails
-            title={title}
-            description={description}
-            subTitle={subTitle}
-            backgroundSrc={backgroundSrc}
-            buttons={currentItem ?
-              <ImageButton
-                onPad={e => focusGrid.moveFocus(e.type, playButtonRef)}
-                onClick={onClick}
-                ref={playButtonRef}
-                imgSrc={!isCategories ? PlayImageBlack : null}
-                hoverImgSrc={!isCategories ? PlayImageWhite : null}
-                label={isCategories ? "SELECT" : "PLAY"}
-              /> : null
-            }
-            bottom={
-              <AppCategory
-                isSelectable={!isCategories && feed.getUniqueCategoryCount() > 1}
-                onPad={e => focusGrid.moveFocus(e.type, categoryRef)}
-                ref={categoryRef}
-                label={categoryLabel}
-                onClick={() => {
-                  this.setState({ menuMode: ModeEnum.CATEGORIES });
-                  sliderRef.current.focus();
-                }}
-              />
-            }
-          />
-          <Slider
-            maxSlides={MAX_SLIDES}
-            onPad={e => focusGrid.moveFocus(e.type, sliderRef)}
-            items={items}
-            ref={sliderRef}
-            getTitle={getTitle}
-            getThumbnailSrc={getThumbnailSrc}
-            onSelected={item => this.setState({ currentItem: item })}
-            onClick={() => playButtonRef.current.focus()} />
+      <WebrcadeContext.Provider value={screenContext}>
+        <div className="webrcade">
+          <div className={'webrcade-outer' +
+            (hide === true ? ' webrcade-outer--hide' : '')}>
+            <Logo />
+            <AppDetails
+              title={title}
+              description={description}
+              subTitle={subTitle}
+              backgroundSrc={backgroundSrc}
+              buttons={currentItem ?
+                <ImageButton
+                  onPad={e => focusGrid.moveFocus(e.type, playButtonRef)}
+                  onClick={onClick}
+                  ref={playButtonRef}
+                  imgSrc={!isCategories ? PlayImageBlack : null}
+                  hoverImgSrc={!isCategories ? PlayImageWhite : null}
+                  label={isCategories ? "SELECT" : "PLAY"}
+                /> : null
+              }
+              bottom={
+                <AppCategory
+                  isSelectable={!isCategories && feed.getUniqueCategoryCount() > 1}
+                  onPad={e => focusGrid.moveFocus(e.type, categoryRef)}
+                  ref={categoryRef}
+                  label={categoryLabel}
+                  onClick={() => {
+                    this.setState({ menuMode: ModeEnum.CATEGORIES });
+                    sliderRef.current.focus();
+                  }}
+                />
+              }
+            />
+            <Slider
+              maxSlides={MAX_SLIDES}
+              onPad={e => focusGrid.moveFocus(e.type, sliderRef)}
+              items={items}
+              ref={sliderRef}
+              getTitle={getTitle}
+              getThumbnailSrc={getThumbnailSrc}
+              onSelected={item => this.setState({ currentItem: item })}
+              onClick={() => playButtonRef.current.focus()} />
+          </div>
         </div>
-      </div>
+      </WebrcadeContext.Provider>
     );
   }
 };

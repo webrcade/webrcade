@@ -1,7 +1,9 @@
 import React, { Component } from "react";
+import { WebrcadeContext } from '@webrcade/app-common'
+
 import SliderControl from "./slider-control";
 import SliderItem from "./slider-item";
-import { GamepadNotifier, GamepadEnum } from "../../../input"
+import { GamepadEnum } from "../../../input"
 
 require("./style.scss");
 
@@ -57,13 +59,23 @@ class Slider extends Component {
   }
 
   componentDidMount() {
-    GamepadNotifier.instance.addCallback(this.gamepadCallback);
+    const { gamepadNotifier } = this.context;
+
+    if (gamepadNotifier) {
+      gamepadNotifier.addCallback(this.gamepadCallback);
+    }
+    
     window.addEventListener("resize", this.handleWindowResize);
     this.handleWindowResize();
   }
 
   componentWillUnmount() {
-    GamepadNotifier.instance.removeCallback(this.gamepadCallback);
+    const { gamepadNotifier } = this.context;
+
+    if (gamepadNotifier) {
+      gamepadNotifier.removeCallback(this.gamepadCallback);
+    }
+
     window.removeEventListener("resize", this.handleWindowResize);
   }  
 
@@ -480,7 +492,6 @@ class Slider extends Component {
           }%)`,
       };
     }
-
     
     let sliderStyle = {}
     if (sliderHidden) {
@@ -526,5 +537,7 @@ class Slider extends Component {
     }
   }
 }
+
+Slider.contextType = WebrcadeContext;
 
 export default Slider;
