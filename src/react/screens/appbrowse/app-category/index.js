@@ -1,9 +1,12 @@
 import React, { Component } from "react";
 import { Icon } from "@iconify/react";
 import chevronRight from "@iconify/icons-mdi/chevron-right";
-import { WebrcadeContext } from '@webrcade/app-common'
-
-import { GamepadEnum } from "../../../../input"
+import { 
+  WebrcadeContext, 
+  GamepadEnum,
+  Resources,
+  TEXT_IDS
+} from '@webrcade/app-common'
 
 require("./style.scss");
 
@@ -103,7 +106,7 @@ export default class AppCategory extends Component {
             onBlur={this.onBlur}
             onClick={this.onClick} className={mainClassName}>
             <div className="app-category-label"><span>{label}</span></div>
-            <div className="app-category-flyout"><span>Show Categories</span></div>
+            <div className="app-category-flyout"><span>{Resources.getText(TEXT_IDS.SHOW_CATEGORIES)}</span></div>
             <div className="app-category-caret"><Icon icon={chevronRight} /></div>
           </button>) : (
           <div className={mainClassName}>

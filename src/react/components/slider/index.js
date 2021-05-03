@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import { WebrcadeContext } from '@webrcade/app-common'
+import { WebrcadeContext, GamepadEnum } from '@webrcade/app-common'
 
 import SliderControl from "./slider-control";
 import SliderItem from "./slider-item";
-import { GamepadEnum } from "../../../input"
 
 require("./style.scss");
 

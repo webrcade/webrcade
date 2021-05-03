@@ -1,13 +1,18 @@
 import React, { Component } from "react";
-import { WebrcadeContext } from '@webrcade/app-common'
+import { 
+  WebrcadeContext,
+  ImageButton, 
+  FocusGrid, 
+  GamepadNotifier,
+  Resources,
+  TEXT_IDS
+} from '@webrcade/app-common'
 
 import { AppRegistry } from '../../../apps';
-import { GamepadNotifier, FocusGrid } from "../../../input"
 import AppDetails from "./app-details";
 import AppCategory from "./app-category";
 import Logo from "../../components/logo";
 import Slider from "../../components/slider";
-import ImageButton from "../../components/image-button";
 
 import PlayImageWhite from "../../../images/play-white.svg"
 import PlayImageBlack from "../../../images/play-black.svg"
@@ -132,7 +137,7 @@ export default class AppBrowseScreen extends Component {
         title = this.getCategoryTitle(currentItem);
         backgroundSrc = currentItem.background; /* TODO: Default */
         description = currentItem.description;
-        categoryLabel = "Categories";
+        categoryLabel = Resources.getText(TEXT_IDS.CATEGORIES);
         getTitle = item => item.title;
         getThumbnailSrc = item => item.thumbnail ? item.thumbnail : 'images/apps/folder.png';
         onClick = () => {
@@ -173,7 +178,7 @@ export default class AppBrowseScreen extends Component {
                   ref={playButtonRef}
                   imgSrc={!isCategories ? PlayImageBlack : null}
                   hoverImgSrc={!isCategories ? PlayImageWhite : null}
-                  label={isCategories ? "SELECT" : "PLAY"}
+                  label={Resources.getText(isCategories ? TEXT_IDS.SELECT_UC : TEXT_IDS.PLAY_UC)}
                 /> : null
               }
               bottom={
