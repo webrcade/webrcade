@@ -56,7 +56,11 @@ class AppRegistry {
     const { RP_PROPS, RP_DEBUG } = AppProps;
     const { props } = app;    
     const appType = APP_TYPES[app.type];
-    const outProps = { type: appType.type };    
+    const outProps = { 
+      type: appType.type,
+      title: this.getLongTitle(app),
+      app: this.getName(app)
+    };    
 
     if (props !== undefined) {
       Object.assign(outProps, props);

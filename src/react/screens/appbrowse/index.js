@@ -14,8 +14,8 @@ import AppCategory from "./app-category";
 import Logo from "../../components/logo";
 import Slider from "../../components/slider";
 
-import PlayImageWhite from "../../../images/play-white.svg"
-import PlayImageBlack from "../../../images/play-black.svg"
+import PlayImageWhite from "../../../images/play_arrow_white_24dp.svg"
+import PlayImageBlack from "../../../images/play_arrow_black_24dp.svg"
 
 require("./style.scss");
 
