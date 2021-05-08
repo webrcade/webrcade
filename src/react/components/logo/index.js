@@ -1,6 +1,8 @@
 import React, { Component } from "react";
-import LogoImage from "../../../images/logo/webrcade-logo-dark.svg"
-import LogoImageLarge from "../../../images/logo/webrcade-logo-large.svg"
+import { 
+  WebrcadeLogoDarkImage,
+  WebrcadeLogoLargeImage  
+} from '@webrcade/app-common'
 
 require("./style.scss");
 
@@ -9,7 +11,7 @@ export default class Logo extends Component {
     const { size } = this.props;
 
     const logoName = ( size === 'large' ? 'logoLarge' : 'logo');
-    const logo = ( size === 'large' ? LogoImageLarge : LogoImage);
+    const logo = ( size === 'large' ? WebrcadeLogoLargeImage : WebrcadeLogoDarkImage);
 
     return (
       <div className={logoName}>

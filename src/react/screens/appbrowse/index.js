@@ -5,7 +5,9 @@ import {
   FocusGrid, 
   GamepadNotifier,
   Resources,
-  TEXT_IDS
+  TEXT_IDS,
+  PlayArrowBlackImage,
+  PlayArrowWhiteImage
 } from '@webrcade/app-common'
 
 import { AppRegistry } from '../../../apps';
@@ -13,9 +15,6 @@ import AppDetails from "./app-details";
 import AppCategory from "./app-category";
 import Logo from "../../components/logo";
 import Slider from "../../components/slider";
-
-import PlayImageWhite from "../../../images/play_arrow_white_24dp.svg"
-import PlayImageBlack from "../../../images/play_arrow_black_24dp.svg"
 
 require("./style.scss");
 
@@ -176,8 +175,8 @@ export default class AppBrowseScreen extends Component {
                   onPad={e => focusGrid.moveFocus(e.type, playButtonRef)}
                   onClick={onClick}
                   ref={playButtonRef}
-                  imgSrc={!isCategories ? PlayImageBlack : null}
-                  hoverImgSrc={!isCategories ? PlayImageWhite : null}
+                  imgSrc={!isCategories ? PlayArrowBlackImage : null}
+                  hoverImgSrc={!isCategories ? PlayArrowWhiteImage : null}
                   label={Resources.getText(isCategories ? TEXT_IDS.SELECT_UC : TEXT_IDS.PLAY_UC)}
                 /> : null
               }
