@@ -6,6 +6,7 @@ const locSms = locGenesis;
 const loc2600 = isDev() ? `http://${localIp}:3050` : 'app/2600';
 const loc7800 = isDev() ? `http://${localIp}:3020` : 'app/7800';
 const locNes = isDev() ? `http://${localIp}:3030` : 'app/nes';
+const locSnes = isDev() ? `http://${localIp}:3060` : 'app/snes';
 const locDoom = isDev() ? `http://${localIp}:3040` : 'app/doom';
 
 const checkRom = app => {
@@ -16,13 +17,22 @@ const checkRom = app => {
 
 let types = [
   {
+    key: 'xnes',
+    name: 'Super Nintendo',
+    //description: 'The Atari 2600, originally branded as the Atari Video Computer System (Atari VCS) until November 1982, is a home video game console developed and produced by Atari, Inc.',
+    location: locSnes,
+    thumbnail: "images/apps/snes-thumb.png",        
+    background: "images/apps/snes-background.jpg",
+    validate: checkRom              
+  }, 
+  {
     key: 'javatari',
     name: 'Atari 2600',
     //description: 'The Atari 2600, originally branded as the Atari Video Computer System (Atari VCS) until November 1982, is a home video game console developed and produced by Atari, Inc.',
     location: loc2600,
     thumbnail: "images/apps/2600-thumb.png",        
     background: "images/apps/2600-background.jpg",
-    validate: app => true              
+    validate: checkRom
   }, {
     key: 'js7800',
     name: 'Atari 7800',
@@ -88,6 +98,7 @@ addAlias(types, 'genesis', 'wasm-genplus-md');
 addAlias(types, '2600', 'javatari');
 addAlias(types, '7800', 'js7800');
 addAlias(types, 'nes', 'em-fceux');
+addAlias(types, 'snes', 'xnes');
 addAlias(types, 'sms', 'wasm-genplus-sms');
 addAlias(types, 'gg', 'wasm-genplus-gg');
 addAlias(types, 'doom', 'webprboom');
