@@ -177,7 +177,10 @@ class Slider extends Component {
   // alter number of items in row on window resize
   handleWindowResize = () => {
     //alert(window.innerWidth);
-    if (window.innerWidth > 1440) {
+    if (window.innerWidth <= 950 && window.innerHeight <= 400) {
+      /* Mobile sizing (experimental) */
+      this.setState({ itemsInRow: 6 });
+    } else if (window.innerWidth > 1440) {
       this.setState({ itemsInRow: 8 });
     } else if (window.innerWidth >= 1152) {
       this.setState({ itemsInRow: 7 });
