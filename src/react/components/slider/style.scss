@@ -9,14 +9,25 @@
     white-space: nowrap;
   }
 
-  &:hover,
-  &:active {
-    .slider-control {
-      background-color: rgba(20, 20, 20, 0.7);
-    }
+  .slider-control {
+    background-color: rgba(20, 20, 20, 0.7);
+  }
 
-    .slider-control-arrow {
-      display: block;
+  @media (hover) {
+    .slider-control {
+      background-color: transparent;
+    }  
+
+    &:hover,
+    &:active {
+      .slider-control {
+        background-color: rgba(20, 20, 20, 0.7);
+        animation: fadein .5s;   
+      }
+
+      .slider-control-arrow {
+        display: block;
+      }
     }
   }
 

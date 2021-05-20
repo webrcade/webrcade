@@ -25,14 +25,17 @@
     left: 0;
   }
 
-  &-arrow {
-    display: none;
-  }
+  
+  @media (hover) {
+    &-arrow {
+      display: none;
+    }
 
-  &:hover,
-  &:active {
-    .slider-control-arrow {
-      transform: scale(1.3);
+    &:hover,
+    &:active {
+      .slider-control-arrow {
+        transform: scale(1.3);
+      }
     }
   }
 }

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { WebrcadeFeed, getDefaultFeed } from '../feed';
-import { UrlUtil, FetchAppData } from '@webrcade/app-common'
+import { UrlUtil, FetchAppData, isMobileSafari } from '@webrcade/app-common'
 
 import LoadingScreen from "./screens/loading";
 import AppBrowseScreen from "./screens/appbrowse"
@@ -70,6 +70,20 @@ export class Webrcade extends Component {
   componentDidMount() {
     const { ScreenEnum } = this;
     const { mode } = this.state;
+
+    // Hack for navigation bar issue on iOS
+    // TODO: Move to common under util?
+    if (isMobileSafari()) {
+      window.addEventListener('orientationchange', () => {
+        document.body.style.overflow = 'scroll';        
+        window.scrollTo(0, 0);
+        setTimeout(() => {
+          document.body.style.overflow = 'hidden';
+          window.scrollTo(0, 1);
+          setTimeout(() => window.scrollTo(0, 0), 50);
+        }, 500);
+      });
+    }
 
     window.addEventListener('popstate', this.popstateHandler, false);
     window.addEventListener("message", this.messageListener);
