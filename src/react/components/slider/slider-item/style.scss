@@ -15,9 +15,11 @@
       border-color: #e50914;  
     }
 
-    &:hover:not(&__selected) {
-      opacity: .6;
-      transition: .6s;
+    @media (hover) {
+      &:hover:not(&__selected) {
+        opacity: .6;
+        transition: .6s;
+      }
     }
 
     img {

@@ -129,9 +129,11 @@ export default class AppBrowseScreen extends Component {
     const items = isCategories ? feed.getCategories() : category.items;
 
     let title = '', backgroundSrc = null, description = null, subTitle = null,
-      categoryLabel = null, getTitle = null, getThumbnailSrc, onClick = null;
+      categoryLabel = null, getTitle = null, getThumbnailSrc, onClick = null,
+      itemId = 0;
 
     if (currentItem) {
+      itemId = currentItem.id;
       if (isCategories) {
         title = this.getCategoryTitle(currentItem);
         backgroundSrc = currentItem.background; /* TODO: Default */
@@ -166,6 +168,7 @@ export default class AppBrowseScreen extends Component {
             (hide === true ? ' webrcade-outer--hide' : '')}>
             <Logo />
             <AppDetails
+              itemKey={(isCategories ? 'cat:' : 'item:') + itemId}
               title={title}
               description={description}
               subTitle={subTitle}

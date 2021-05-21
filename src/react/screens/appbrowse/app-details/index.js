@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import TextScroll from "../../../components/textscroll"
 
 require("./style.scss");
 
@@ -6,7 +7,7 @@ export default class AppDetails extends Component {
   timeoutId = null;
 
   render() {
-    const { buttons, bottom, title, subTitle, description, backgroundSrc } = this.props;
+    const { buttons, bottom, title, subTitle, description, backgroundSrc, itemKey } = this.props;
 
     let imageStyle = backgroundSrc ? {
       backgroundImage: 'url(' + backgroundSrc + ')',
@@ -33,7 +34,9 @@ export default class AppDetails extends Component {
             <div className="app-details-content-container-app">{subTitle}</div>
           ) : null}
           {description ? (
-            <div className="app-details-content-container-description">{description}</div>
+            <div className="app-details-content-container-description">              
+              <TextScroll key={itemKey} text={description}/>
+            </div> 
           ) : null}
           <div className="app-details-content-container-buttons">{buttons}</div>
           <div className="app-details-content-container-bottom-comp">{bottom}</div>
