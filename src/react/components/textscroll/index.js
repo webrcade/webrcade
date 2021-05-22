@@ -32,7 +32,7 @@ export default class TextScroll extends Component {
     const f = () => {                        
       const boxHeight = boxEl.offsetHeight;
       const textHeight = textEl.offsetHeight;  
-      let adjustMult = (SCROLL_SPEED/heightEl.offsetHeight) | 0;      
+      let adjustMult = (SCROLL_SPEED / heightEl.offsetHeight) | 0;      
       if (adjustMult <= 0) adjustMult = 1;
       let interval = INTERVAL;
 
@@ -56,7 +56,7 @@ export default class TextScroll extends Component {
             pause = PAUSE; moved = true;
           } else {
             textEl.style.top = --topPos + 'px';
-            interval =  INTERVAL*adjustMult;
+            interval = INTERVAL * adjustMult;
           }
         } else if (moved) {
           pause = PAUSE; state++;
