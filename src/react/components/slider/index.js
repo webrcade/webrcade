@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { WebrcadeContext, GamepadEnum } from '@webrcade/app-common'
+import { WebrcadeContext, GamepadEnum, Swipe } from '@webrcade/app-common'
 
 import SliderControl from "./slider-control";
 import SliderItem from "./slider-item";
@@ -23,6 +23,7 @@ class Slider extends Component {
       uniqueItems: 0
     };
     this.keyDown = false;
+    this.swipe = null;
   }
 
   gamepadCallback = e => {
@@ -59,6 +60,13 @@ class Slider extends Component {
 
   componentDidMount() {
     const { gamepadNotifier } = this.context;
+    const { container } = this;
+
+    if (container) {
+      this.swipe = new Swipe(container);
+      this.swipe.onLeft = () => {this.focus(); this.handleNextPage()};
+      this.swipe.onRight = () => {this.focus(); this.handlePrevPage()};
+    }
 
     if (gamepadNotifier) {
       gamepadNotifier.addCallback(this.gamepadCallback);
@@ -70,6 +78,11 @@ class Slider extends Component {
 
   componentWillUnmount() {
     const { gamepadNotifier } = this.context;
+    const { swipe } = this;
+
+    if (swipe) {
+      swipe.unregister();
+    }
 
     if (gamepadNotifier) {
       gamepadNotifier.removeCallback(this.gamepadCallback);
