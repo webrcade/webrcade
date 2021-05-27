@@ -17,7 +17,7 @@ const checkRom = app => {
 
 let types = [
   {
-    key: 'xnes',
+    key: 'snes9x',
     name: 'Super Nintendo',
     //description: 'The Atari 2600, originally branded as the Atari Video Computer System (Atari VCS) until November 1982, is a home video game console developed and produced by Atari, Inc.',
     location: locSnes,
@@ -42,7 +42,7 @@ let types = [
     thumbnail: 'images/apps/7800-thumb.png',
     validate: checkRom
   }, {
-    key: 'wasm-genplus-md',
+    key: 'genplusgx-md',
     name: 'Sega Genesis',
     // description: 'The Sega Genesis, known as the Mega Drive outside North America, is a 16-bit fourth-generation home video game console developed and sold by Sega.',
     location: locGenesis,
@@ -50,7 +50,7 @@ let types = [
     thumbnail: 'images/apps/genesis-thumb.png',
     validate: checkRom
   }, {
-    key: 'em-fceux',
+    key: 'fceux',
     name: 'Nintendo Entertainment System',
     // description: 'The Nintendo Entertainment System (NES) is an 8-bit third-generation home video game console produced by Nintendo.',
     location: locNes,
@@ -58,7 +58,7 @@ let types = [
     thumbnail: 'images/apps/nes-thumb.png',
     validate: checkRom              
   }, {
-    key: 'wasm-genplus-sms',
+    key: 'genplusgx-sms',
     name: 'Sega Master System',
     // description: 'The Sega Master System is a third-generation 8-bit home video game console manufactured by Sega.',
     location: locSms,
@@ -66,7 +66,7 @@ let types = [
     thumbnail: 'images/apps/mastersystem-thumb.png',
     validate: checkRom              
   }, {
-    key: 'wasm-genplus-gg',
+    key: 'genplusgx-gg',
     name: 'Sega Game Gear',
     // description: 'The Sega Master System is a third-generation 8-bit home video game console manufactured by Sega.',
     location: locSms,
@@ -74,7 +74,7 @@ let types = [
     thumbnail: 'images/apps/gamegear-thumb.png',
     validate: checkRom              
   }, {
-    key: 'webprboom',
+    key: 'prboom',
     name: 'Doom Classic',
     // description: 'The Sega Master System is a third-generation 8-bit home video game console manufactured by Sega.',
     location: locDoom,
@@ -94,14 +94,14 @@ const addAlias = (types, alias, typeKey) => {
 }
 
 // Aliases
-addAlias(types, 'genesis', 'wasm-genplus-md');
 addAlias(types, '2600', 'javatari');
 addAlias(types, '7800', 'js7800');
-addAlias(types, 'nes', 'em-fceux');
-addAlias(types, 'snes', 'xnes');
-addAlias(types, 'sms', 'wasm-genplus-sms');
-addAlias(types, 'gg', 'wasm-genplus-gg');
-addAlias(types, 'doom', 'webprboom');
+addAlias(types, 'nes', 'fceux');
+addAlias(types, 'snes', 'snes9x');
+addAlias(types, 'genesis', 'genplusgx-md');
+addAlias(types, 'sms', 'genplusgx-sms');
+addAlias(types, 'gg', 'genplusgx-gg');
+addAlias(types, 'doom', 'prboom');
 
 const APP_TYPES = types;
 
