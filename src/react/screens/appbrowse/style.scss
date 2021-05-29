@@ -1,20 +1,18 @@
 .webrcade {
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  max-height: -webkit-fill-available;
 
   &-outer {
     margin: auto;
-    display: flex;
-    height: 100vh;
+    display: flex;    
     overflow: hidden;
     flex-direction: column;
     justify-content: center;
     max-width: 1920px;
     background-color: #1d1d1d;
-    max-height: 56.25vw;
+    height: 100vh;
     width: 100vw;
+    max-height: 56.25vw;
   }
 
   &-outer--hide {

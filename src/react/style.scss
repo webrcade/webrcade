@@ -11,17 +11,14 @@ body {
 
 @media only screen and (max-width: 864px) {
   .webrcade-outer {
-    height: 100vh;
     max-height: 90vw;
   }  
 }  
 
 @media only screen and (max-width: 1152px) and (min-width: 864px) {
   .webrcade-outer {
-    height: 100vh;
     max-height: 75vw;
   }
-
 }  
 
 @media only screen and (min-width: 1920px) {

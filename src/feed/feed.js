@@ -1,6 +1,6 @@
 import { AppRegistry } from '../apps'
 
-class WebrcadeFeed {
+class Feed {
   constructor(feed, minLength) {
     this.minLength = minLength;
     this.parseFeed(feed);
@@ -94,5 +94,5 @@ class WebrcadeFeed {
   }
 }
 
-export { WebrcadeFeed };
+export { Feed }
 

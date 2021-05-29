@@ -3,9 +3,7 @@ import { Icon } from "@iconify/react";
 import chevronRight from "@iconify/icons-mdi/chevron-right";
 import { 
   WebrcadeContext, 
-  GamepadEnum,
-  Resources,
-  TEXT_IDS
+  GamepadEnum
 } from '@webrcade/app-common'
 
 require("./style.scss");
@@ -93,7 +91,7 @@ export default class AppCategory extends Component {
   }
 
   render() {
-    const { label, isSelectable } = this.props;    
+    const { label, flyoutLabel, isSelectable } = this.props;    
     const mainClassName = 
       `${isSelectable ? "app-category" : "app-categories"} app-category-fade`;
 
@@ -106,7 +104,7 @@ export default class AppCategory extends Component {
             onBlur={this.onBlur}
             onClick={this.onClick} className={mainClassName}>
             <div className="app-category-label"><span>{label}</span></div>
-            <div className="app-category-flyout"><span>{Resources.getText(TEXT_IDS.SHOW_CATEGORIES)}</span></div>
+            <div className="app-category-flyout"><span>{flyoutLabel}</span></div>
             <div className="app-category-caret"><Icon icon={chevronRight} /></div>
           </button>) : (
           <div className={mainClassName}>

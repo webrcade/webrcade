@@ -33,6 +33,7 @@ export default class AppBrowseScreen extends Component {
     this.playButtonRef = React.createRef();
     this.categoryRef = React.createRef();
     this.appRef = React.createRef();
+    this.webrcadeDivRef = React.createRef();
 
     this.focusGrid.setComponents([
       [this.playButtonRef],
@@ -76,12 +77,21 @@ export default class AppBrowseScreen extends Component {
     gamepadNotifier.setDefaultCallback(null);
   }
 
+  onResize = () => {
+    console.log('resize:' + window.innerHeight);
+    this.webrcadeDivRef.current.style.height = window.innerHeight + "px";
+  }
+
   componentDidMount() {
     this.startGamepadNotifier();
+    window.addEventListener('resize', this.onResize);
+    window.addEventListener('orientationchange', this.onResize);
   }
 
   componentWillUnmount() {
     this.stopGamepadNotifier();
+    window.removeEventListener('resize', this.onResize);
+    window.removeEventListener('orientationchange', this.onResize);
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -112,7 +122,7 @@ export default class AppBrowseScreen extends Component {
       }
     }    
     return null;
-  }
+  } 
 
   getCategoryTitle(item) {
     return item.longTitle ? item.longTitle : item.title;
@@ -121,16 +131,18 @@ export default class AppBrowseScreen extends Component {
   render() {
     const { hide, onAppSelected } = this.props;
     const { category, currentItem, menuMode, feed } = this.state;
-    const { focusGrid, playButtonRef, sliderRef, categoryRef, MAX_SLIDES, screenContext } = this;
+    const { focusGrid, playButtonRef, sliderRef, categoryRef, webrcadeDivRef,
+       MAX_SLIDES, screenContext } = this;
     const { ModeEnum } = AppBrowseScreen;
 
     const reg = AppRegistry.instance;
     const isCategories = (menuMode === ModeEnum.CATEGORIES);
+    const isApps = (menuMode === ModeEnum.APPS);
     const items = isCategories ? feed.getCategories() : category.items;
 
     let title = '', backgroundSrc = null, description = null, subTitle = null,
       categoryLabel = null, getTitle = null, getThumbnailSrc, onClick = null,
-      itemId = 0;
+      flyoutLabel = '', itemId = 0;
 
     if (currentItem) {
       itemId = currentItem.id;
@@ -138,7 +150,7 @@ export default class AppBrowseScreen extends Component {
         title = this.getCategoryTitle(currentItem);
         backgroundSrc = currentItem.background; /* TODO: Default */
         description = currentItem.description;
-        categoryLabel = Resources.getText(TEXT_IDS.CATEGORIES);
+        categoryLabel = Resources.getText(TEXT_IDS.CATEGORIES);        
         getTitle = item => item.title;
         getThumbnailSrc = item => item.thumbnail ? item.thumbnail : 'images/apps/folder.png';
         onClick = () => {
@@ -155,6 +167,7 @@ export default class AppBrowseScreen extends Component {
         description = reg.getDescription(currentItem);
         subTitle = reg.getName(currentItem);
         categoryLabel = this.getCategoryTitle(category);
+        flyoutLabel = Resources.getText(TEXT_IDS.SHOW_CATEGORIES); 
         getTitle = item => reg.getTitle(item);
         getThumbnailSrc = item => reg.getThumbnail(item);
         onClick = () => { if (onAppSelected) onAppSelected(currentItem); }
@@ -163,7 +176,7 @@ export default class AppBrowseScreen extends Component {
 
     return (
       <WebrcadeContext.Provider value={screenContext}>
-        <div className="webrcade">
+        <div ref={webrcadeDivRef} style={{height: window.innerHeight + "px"}} className="webrcade">          
           <div className={'webrcade-outer' +
             (hide === true ? ' webrcade-outer--hide' : '')}>
             <Logo />
@@ -178,17 +191,18 @@ export default class AppBrowseScreen extends Component {
                   onPad={e => focusGrid.moveFocus(e.type, playButtonRef)}
                   onClick={onClick}
                   ref={playButtonRef}
-                  imgSrc={!isCategories ? PlayArrowBlackImage : null}
-                  hoverImgSrc={!isCategories ? PlayArrowWhiteImage : null}
+                  imgSrc={isApps ? PlayArrowBlackImage : null}
+                  hoverImgSrc={isApps ? PlayArrowWhiteImage : null}
                   label={Resources.getText(isCategories ? TEXT_IDS.SELECT_UC : TEXT_IDS.PLAY_UC)}
                 /> : null
               }
               bottom={
                 <AppCategory
-                  isSelectable={!isCategories && feed.getUniqueCategoryCount() > 1}
+                  isSelectable={isApps && feed.getUniqueCategoryCount() > 1}                  
                   onPad={e => focusGrid.moveFocus(e.type, categoryRef)}
                   ref={categoryRef}
                   label={categoryLabel}
+                  flyoutLabel={flyoutLabel}
                   onClick={() => {
                     this.setState({ menuMode: ModeEnum.CATEGORIES });
                     sliderRef.current.focus();

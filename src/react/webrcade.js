@@ -1,6 +1,11 @@
 import React, { Component } from "react";
-import { WebrcadeFeed, getDefaultFeed } from '../feed';
-import { UrlUtil, FetchAppData, isMobileSafari } from '@webrcade/app-common'
+import { Feed, getDefaultFeed } from '../feed';
+import { Feeds } from '../feed';
+import { 
+  UrlUtil, 
+  FetchAppData, 
+  applyIosNavBarHack 
+} from '@webrcade/app-common'
 
 import LoadingScreen from "./screens/loading";
 import AppBrowseScreen from "./screens/appbrowse"
@@ -16,6 +21,17 @@ export class Webrcade extends Component {
       mode: this.ScreenEnum.LOADING,
       loadingStatus: "Loading...",
       initialFeed: true,
+      feeds: new Feeds([
+        {
+          name: "feed1", 
+          url: "url",
+          thumbnail: "images/games/2600/asteroids-thumb.png"
+        }, {
+          name: "feed2", 
+          url: "url2",
+          thumbnail: "images/games/2600/atlantis-thumb.png"
+        }
+      ]),
       feed: this.parseFeed(getDefaultFeed()),
       app: null
     };
@@ -64,7 +80,7 @@ export class Webrcade extends Component {
   }
 
   parseFeed(feedContent) {
-    return new WebrcadeFeed(feedContent, (3 * this.MAX_SLIDES + 2));
+    return new Feed(feedContent, (3 * this.MAX_SLIDES + 2));
   }
 
   componentDidMount() {
@@ -72,18 +88,7 @@ export class Webrcade extends Component {
     const { mode } = this.state;
 
     // Hack for navigation bar issue on iOS
-    // TODO: Move to common under util?
-    if (isMobileSafari()) {
-      window.addEventListener('orientationchange', () => {
-        document.body.style.overflow = 'scroll';        
-        window.scrollTo(0, 0);
-        setTimeout(() => {
-          document.body.style.overflow = 'hidden';
-          window.scrollTo(0, 1);
-          setTimeout(() => window.scrollTo(0, 0), 50);
-        }, 500);
-      });
-    }
+    applyIosNavBarHack();
 
     window.addEventListener('popstate', this.popstateHandler, false);
     window.addEventListener("message", this.messageListener);
@@ -151,7 +156,8 @@ export class Webrcade extends Component {
     return (
       <AppBrowseScreen
         feed={feed}
-        hide={mode !== ScreenEnum.BROWSE} ref={browseScreenRef}
+        hide={mode !== ScreenEnum.BROWSE} 
+        ref={browseScreenRef}
         onAppSelected={(app) => {
           window.location.hash = HASH_PLAY;
           this.setState({ mode: ScreenEnum.APP, app: app })
