@@ -6,6 +6,12 @@ import {
   GamepadNotifier,
   Resources,
   TEXT_IDS,
+  AddCircleBlackImage,
+  AddCircleWhiteImage,
+  CloudDownloadBlackImage,
+  CloudDownloadWhiteImage,
+  DeleteForeverBlackImage,
+  DeleteForeverWhiteImage,
   PlayArrowBlackImage,
   PlayArrowWhiteImage
 } from '@webrcade/app-common'
@@ -15,6 +21,7 @@ import AppDetails from "./app-details";
 import AppCategory from "./app-category";
 import Logo from "../../components/logo";
 import Slider from "../../components/slider";
+import { Feeds } from "../../../feed";
 
 require("./style.scss");
 
@@ -26,23 +33,26 @@ export default class AppBrowseScreen extends Component {
     this.state = {
       category: null,
       currentItem: null,
-      menuMode: AppBrowseScreen.ModeEnum.CATEGORIES
+      menuMode: AppBrowseScreen.ModeEnum.CATEGORIES,
+      browseScreen: this
     };
 
     this.sliderRef = React.createRef();
     this.playButtonRef = React.createRef();
+    this.deleteButtonRef = React.createRef();
     this.categoryRef = React.createRef();
     this.appRef = React.createRef();
     this.webrcadeDivRef = React.createRef();
 
     this.focusGrid.setComponents([
-      [this.playButtonRef],
+      [this.playButtonRef, this.deleteButtonRef],
       [this.categoryRef],
       [this.sliderRef]
     ]);
   }
 
   static ModeEnum = {
+    FEEDS: "feeds",
     APPS: "apps",
     CATEGORIES: "categories"
   }
@@ -78,7 +88,6 @@ export default class AppBrowseScreen extends Component {
   }
 
   onResize = () => {
-    console.log('resize:' + window.innerHeight);
     this.webrcadeDivRef.current.style.height = window.innerHeight + "px";
   }
 
@@ -86,6 +95,12 @@ export default class AppBrowseScreen extends Component {
     this.startGamepadNotifier();
     window.addEventListener('resize', this.onResize);
     window.addEventListener('orientationchange', this.onResize);
+
+    // this.setState({
+    //     currentItem: this.props.feeds[0],
+    //     menuMode: AppBrowseScreen.ModeEnum.FEEDS
+    //   }
+    // );
   }
 
   componentWillUnmount() {
@@ -112,7 +127,12 @@ export default class AppBrowseScreen extends Component {
       const feed = props.feed;
       if (feed) {
         const category = feed.getCategories()[0];
-        const isCategories = feed.getUniqueCategoryCount() > 1;
+        const isCategories = feed.getUniqueCategoryCount() > 1;        
+        if (state && state.browseScreen) {
+          setTimeout(() => {
+            state.browseScreen.sliderRef.current.focus();
+          }, 0);
+        }
         return {
           feed: feed,
           category: category,
@@ -120,58 +140,109 @@ export default class AppBrowseScreen extends Component {
           menuMode: isCategories ? ModeEnum.CATEGORIES : ModeEnum.APPS
         }
       }
-    }    
+    }
     return null;
-  } 
+  }
 
-  getCategoryTitle(item) {
+  getLongTitle(item) {
     return item.longTitle ? item.longTitle : item.title;
   }
 
+  getFeedInfo(currentItem) {
+    const { onFeedLoad } = this.props;
+    const isAdd = currentItem.feedId === Feeds.ADD_ID;
+
+    return {
+      title: this.getLongTitle(currentItem),
+      subTitle: Feeds.getUrl(currentItem),      
+      description: currentItem.description,
+      backgroundSrc: currentItem.background, /* TODO: Default */
+      categoryLabel: Resources.getText(TEXT_IDS.FEEDS),            
+      playLabel: Resources.getText(isAdd ? TEXT_IDS.ADD_UC : TEXT_IDS.LOAD_UC),
+      playImg: isAdd ? AddCircleBlackImage : CloudDownloadBlackImage,
+      playHoverImg: isAdd ? AddCircleWhiteImage : CloudDownloadWhiteImage,      
+      isDeleteEnabled: Feeds.isDeleteEnabled(currentItem),
+      getTitle: item => item.title,
+      getThumbnailSrc: item => item.thumbnail ? item.thumbnail : 'images/feed.png',      
+      onClick: () => onFeedLoad(currentItem),    
+    }
+  }
+
+  getCategoryInfo(currentItem) {
+    const { sliderRef } = this;
+    const { ModeEnum } = AppBrowseScreen;
+
+    return {
+      title: this.getLongTitle(currentItem),
+      description: currentItem.description,
+      backgroundSrc: currentItem.background, /* TODO: Default */      
+      categoryLabel: Resources.getText(TEXT_IDS.CATEGORIES),
+      playLabel: Resources.getText(TEXT_IDS.SELECT_UC),
+      flyoutLabel: Resources.getText(TEXT_IDS.SHOW_FEEDS),
+      getTitle: item => item.title,
+      getThumbnailSrc: item => item.thumbnail ? item.thumbnail : 'images/folder.png',
+      onClick: () => {
+        this.setState({
+          menuMode: ModeEnum.APPS,
+          category: currentItem,
+          currentItem: currentItem.items[0],
+        });
+        sliderRef.current.focus();
+      },
+      categoryOnClick: () => {
+        this.setState({
+          currentItem: this.props.feeds[0],
+          menuMode: AppBrowseScreen.ModeEnum.FEEDS
+        });
+        sliderRef.current.focus();
+      }
+    }
+  }
+
+  getAppInfo(currentItem) {
+    const { sliderRef } = this;
+    const { onAppSelected } = this.props;
+    const { category } = this.state;
+    const { ModeEnum } = AppBrowseScreen;
+    const reg = AppRegistry.instance;
+
+    return {
+      title: reg.getLongTitle(currentItem),
+      subTitle: reg.getName(currentItem),      
+      description: reg.getDescription(currentItem),
+      backgroundSrc: reg.getBackground(currentItem),      
+      categoryLabel: this.getLongTitle(category),
+      flyoutLabel: Resources.getText(TEXT_IDS.SHOW_CATEGORIES),
+      playLabel: Resources.getText(TEXT_IDS.PLAY_UC),
+      playImg: PlayArrowBlackImage,
+      playHoverImg: PlayArrowWhiteImage,      
+      getTitle: item => reg.getTitle(item),
+      getThumbnailSrc: item => reg.getThumbnail(item),
+      onClick: () => { if (onAppSelected) onAppSelected(currentItem); },
+      categoryOnClick: () => {
+        this.setState({ menuMode: ModeEnum.CATEGORIES });
+        sliderRef.current.focus();
+      }
+    }
+  }
+
   render() {
-    const { hide, onAppSelected } = this.props;
+    const { feeds, hide, onFeedDelete } = this.props;
     const { category, currentItem, menuMode, feed } = this.state;
     const { focusGrid, playButtonRef, sliderRef, categoryRef, webrcadeDivRef,
        MAX_SLIDES, screenContext } = this;
     const { ModeEnum } = AppBrowseScreen;
-
-    const reg = AppRegistry.instance;
     const isCategories = (menuMode === ModeEnum.CATEGORIES);
-    const isApps = (menuMode === ModeEnum.APPS);
-    const items = isCategories ? feed.getCategories() : category.items;
+    const isFeeds = (menuMode === ModeEnum.FEEDS);
+    const items = isFeeds ?
+      feeds : isCategories ? feed.getCategories() : category.items;
 
-    let title = '', backgroundSrc = null, description = null, subTitle = null,
-      categoryLabel = null, getTitle = null, getThumbnailSrc, onClick = null,
-      flyoutLabel = '', itemId = 0;
+    let itemId = 0, info = null;
 
     if (currentItem) {
-      itemId = currentItem.id;
-      if (isCategories) {
-        title = this.getCategoryTitle(currentItem);
-        backgroundSrc = currentItem.background; /* TODO: Default */
-        description = currentItem.description;
-        categoryLabel = Resources.getText(TEXT_IDS.CATEGORIES);        
-        getTitle = item => item.title;
-        getThumbnailSrc = item => item.thumbnail ? item.thumbnail : 'images/apps/folder.png';
-        onClick = () => {
-          this.setState({
-            menuMode: ModeEnum.APPS,
-            category: currentItem,
-            currentItem: currentItem.items[0],
-          });
-          sliderRef.current.focus();
-        }
-      } else {
-        title = reg.getLongTitle(currentItem);
-        backgroundSrc = reg.getBackground(currentItem);
-        description = reg.getDescription(currentItem);
-        subTitle = reg.getName(currentItem);
-        categoryLabel = this.getCategoryTitle(category);
-        flyoutLabel = Resources.getText(TEXT_IDS.SHOW_CATEGORIES); 
-        getTitle = item => reg.getTitle(item);
-        getThumbnailSrc = item => reg.getThumbnail(item);
-        onClick = () => { if (onAppSelected) onAppSelected(currentItem); }
-      }
+      itemId = currentItem.id;      
+      info = isFeeds ? this.getFeedInfo(currentItem, itemId) :
+        isCategories ? this.getCategoryInfo(currentItem) : this.getAppInfo(currentItem);
     }
 
     return (
@@ -181,32 +252,41 @@ export default class AppBrowseScreen extends Component {
             (hide === true ? ' webrcade-outer--hide' : '')}>
             <Logo />
             <AppDetails
-              itemKey={(isCategories ? 'cat:' : 'item:') + itemId}
-              title={title}
-              description={description}
-              subTitle={subTitle}
-              backgroundSrc={backgroundSrc}
+              itemKey={(isFeeds ? "feed" : isCategories ? 'cat' : 'item') + ":" + itemId}
+              title={info.title}
+              description={info.description}
+              subTitle={info.subTitle}
+              backgroundSrc={info.backgroundSrc}
               buttons={currentItem ?
-                <ImageButton
-                  onPad={e => focusGrid.moveFocus(e.type, playButtonRef)}
-                  onClick={onClick}
-                  ref={playButtonRef}
-                  imgSrc={isApps ? PlayArrowBlackImage : null}
-                  hoverImgSrc={isApps ? PlayArrowWhiteImage : null}
-                  label={Resources.getText(isCategories ? TEXT_IDS.SELECT_UC : TEXT_IDS.PLAY_UC)}
-                /> : null
+                <>
+                  <ImageButton
+                    onPad={e => focusGrid.moveFocus(e.type, playButtonRef)}
+                    onClick={info.onClick}
+                    ref={playButtonRef}
+                    imgSrc={info.playImg}
+                    hoverImgSrc={info.playHoverImg}
+                    label={info.playLabel}
+                  /> 
+                  {info.isDeleteEnabled ?                 
+                    <ImageButton
+                      onPad={e => focusGrid.moveFocus(e.type, this.deleteButtonRef)}
+                      onClick={() => onFeedDelete(currentItem)}
+                      ref={this.deleteButtonRef}
+                      imgSrc={DeleteForeverBlackImage}
+                      hoverImgSrc={DeleteForeverWhiteImage}
+                      label={Resources.getText(TEXT_IDS.DELETE_UC)}
+                    /> 
+                  : null}
+                </> : null
               }
               bottom={
                 <AppCategory
-                  isSelectable={isApps && feed.getUniqueCategoryCount() > 1}                  
+                  isSelectable={info.flyoutLabel}                  
                   onPad={e => focusGrid.moveFocus(e.type, categoryRef)}
                   ref={categoryRef}
-                  label={categoryLabel}
-                  flyoutLabel={flyoutLabel}
-                  onClick={() => {
-                    this.setState({ menuMode: ModeEnum.CATEGORIES });
-                    sliderRef.current.focus();
-                  }}
+                  label={info.categoryLabel}
+                  flyoutLabel={info.flyoutLabel}
+                  onClick={info.categoryOnClick}
                 />
               }
             />
@@ -215,8 +295,8 @@ export default class AppBrowseScreen extends Component {
               onPad={e => focusGrid.moveFocus(e.type, sliderRef)}
               items={items}
               ref={sliderRef}
-              getTitle={getTitle}
-              getThumbnailSrc={getThumbnailSrc}
+              getTitle={info.getTitle}
+              getThumbnailSrc={info.getThumbnailSrc}
               onSelected={item => this.setState({ currentItem: item })}
               onClick={() => playButtonRef.current.focus()} />
           </div>

@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import { Feed, getDefaultFeed } from '../feed';
 import { Feeds } from '../feed';
-import { 
-  UrlUtil, 
-  FetchAppData, 
-  applyIosNavBarHack 
+import {
+  UrlUtil,
+  FetchAppData,
+  applyIosNavBarHack,
+  Resources,
+  TEXT_IDS
 } from '@webrcade/app-common'
 
 import LoadingScreen from "./screens/loading";
@@ -17,21 +19,20 @@ export class Webrcade extends Component {
   constructor() {
     super();
 
+    const feeds = new Feeds([
+      {
+        title: "New Art Feed",
+        description: "New Art Feed",
+        url: "https://raz0red.github.io/webrcade-design/feed-newart-rev3.json",
+        // thumbnail: "images/add.png",
+      }
+    ], this.MIN_SLIDES_LENGTH);
+
     this.state = {
       mode: this.ScreenEnum.LOADING,
       loadingStatus: "Loading...",
       initialFeed: true,
-      feeds: new Feeds([
-        {
-          name: "feed1", 
-          url: "url",
-          thumbnail: "images/games/2600/asteroids-thumb.png"
-        }, {
-          name: "feed2", 
-          url: "url2",
-          thumbnail: "images/games/2600/atlantis-thumb.png"
-        }
-      ]),
+      feeds: feeds,
       feed: this.parseFeed(getDefaultFeed()),
       app: null
     };
@@ -41,7 +42,8 @@ export class Webrcade extends Component {
   }
 
   MIN_LOADING_TIME = 1500;
-  MAX_SLIDES = 8;
+  MAX_SLIDES_PER_PAGE = 8;
+  MIN_SLIDES_LENGTH = (3 * this.MAX_SLIDES_PER_PAGE + 2);
 
   HASH_PLAY = "play";
   RP_FEED = "feed";
@@ -80,7 +82,7 @@ export class Webrcade extends Component {
   }
 
   parseFeed(feedContent) {
-    return new Feed(feedContent, (3 * this.MAX_SLIDES + 2));
+    return new Feed(feedContent, this.MIN_SLIDES_LENGTH);
   }
 
   componentDidMount() {
@@ -111,32 +113,22 @@ export class Webrcade extends Component {
     const { mode, initial, initialFeed } = this.state;
     const { ScreenEnum, MIN_LOADING_TIME, browseScreenRef } = this;
 
-    const start = Date.now();
     if (mode === ScreenEnum.LOADING) {
+      console.log("## initial feed: " + initialFeed);
       if (initialFeed) {
         const url = window.location.search;
         const feed = UrlUtil.getParam(url, this.RP_FEED);
         if (feed) {
-          console.log('feed: ' + feed);
-
           this.setState({
-            loadingStatus: "Loading feed...",
+            loadingStatus: Resources.getText(TEXT_IDS.LOADING_FEED),
             initialFeed: false
           });
-
-          new FetchAppData(feed).fetch()
-            .then(response => response.json())
-            .then(json => this.parseFeed(json))
-            .then(feed => { if (feed) this.setState({ feed: feed }) })
-            .catch(msg => console.log('Error reading feed: ' + msg)) // TODO: Proper logging
-            .finally(() => {
-              let wait = start + MIN_LOADING_TIME - Date.now();
-              wait = wait > 0 ? wait : 0;
-              setTimeout(() => this.setState({ mode: ScreenEnum.BROWSE }), wait);
-            })
+          this.loadFeedFromUrl(feed);
         } else {
-          setTimeout(() => this.setState({ mode: ScreenEnum.BROWSE }),
-            MIN_LOADING_TIME);
+          setTimeout(() => this.setState({
+            mode: ScreenEnum.BROWSE,
+            initialFeed: false
+          }), MIN_LOADING_TIME);
         }
       }
     } else if (initial ||
@@ -149,19 +141,71 @@ export class Webrcade extends Component {
     }
   }
 
+  loadFeedFromUrl(url) {
+    return new Promise((resolve, reject) => {
+      console.log('feed: ' + url);
+      const start = Date.now();
+      new FetchAppData(url).fetch()
+        .then(response => response.json())
+        .then(json => this.parseFeed(json))
+        .then(feed => {
+          if (feed) this.setState({ feed: feed });
+          resolve(feed);
+        })
+        .catch(msg => {
+          console.log('Error reading feed: ' + msg);
+          reject(msg);
+        }) // TODO: Proper logging
+        .finally(() => {
+          let wait = start + this.MIN_LOADING_TIME - Date.now();
+          wait = wait > 0 ? wait : 0;
+          setTimeout(() => this.setState({ mode: this.ScreenEnum.BROWSE }), wait);
+        });
+    });
+  }
+
+  loadFeed(feedInfo) {
+    console.log('load: ' + JSON.stringify(feedInfo))
+    if (feedInfo.feedId === Feeds.ADD_ID) {
+      console.log("# Add feed.")
+    } else {
+      this.setState({
+        mode: this.ScreenEnum.LOADING,
+        loadingStatus: Resources.getText(TEXT_IDS.LOADING_FEED),
+      }, () => {
+        if (feedInfo.feedId === Feeds.DEFAULT_ID) {
+          setTimeout(() => {
+            this.setState({
+              mode: this.ScreenEnum.BROWSE,
+              feed: this.parseFeed(getDefaultFeed()),
+            });
+          }, this.MIN_LOADING_TIME);
+        } else {
+          this.loadFeedFromUrl(feedInfo.url)
+            .then(feed => {
+              console.log("TODO: Update feed info: " + JSON.stringify(feedInfo));
+            })
+        }
+      });
+    }
+  }
+
   renderBrowse() {
-    const { feed, mode } = this.state;
+    const { feeds, feed, mode } = this.state;
     const { ScreenEnum, browseScreenRef, HASH_PLAY } = this;
 
     return (
       <AppBrowseScreen
+        feeds={feeds.getFeeds()}
         feed={feed}
-        hide={mode !== ScreenEnum.BROWSE} 
+        hide={mode !== ScreenEnum.BROWSE}
         ref={browseScreenRef}
         onAppSelected={(app) => {
           window.location.hash = HASH_PLAY;
           this.setState({ mode: ScreenEnum.APP, app: app })
         }}
+        onFeedLoad={f => this.loadFeed(f)}
+        onFeedDelete={f => console.log('delete: ' + JSON.stringify(f))}
       />
     );
   }

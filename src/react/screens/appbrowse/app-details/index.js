@@ -15,12 +15,13 @@ export default class AppDetails extends Component {
 
     let el = document.querySelector('.app-details-right');
     if (el) {
-      el.classList.remove('fade-in');
-      if (this.timeoutId) window.clearTimeout(this.timeoutId);
-      this.timeoutId = window.setTimeout(() => {
-        el.classList.add('fade-in');
-      }, 250);
+      el.classList.remove('fade-in');      
     }
+    if (this.timeoutId) window.clearTimeout(this.timeoutId);
+    this.timeoutId = window.setTimeout(() => {
+      el = document.querySelector('.app-details-right');
+      el.classList.add('fade-in');
+    }, 250);
 
     return (
       <div className="app-details-content">
@@ -31,7 +32,7 @@ export default class AppDetails extends Component {
         <div className="app-details-content-container">
           <div className="app-details-content-container-title">{title ? title : ''}</div>
           {subTitle ? (
-            <div className="app-details-content-container-app">{subTitle}</div>
+            <div className="app-details-content-container-subtitle">{subTitle}</div>
           ) : null}
           {description ? (
             <div className="app-details-content-container-description">              
