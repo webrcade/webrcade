@@ -191,7 +191,7 @@ export class Webrcade extends Component {
           if (feeds.updateFeed(url, feedJson)) {            
             storeFeeds(feeds);
           }
-          resolve(feed);
+          resolve([feed, feedJson]);
         })
         .catch(msg => {
           console.log('Error reading feed: ' + msg); // TODO: Proper logging
@@ -293,21 +293,28 @@ export class Webrcade extends Component {
   }
 
   renderAddFeed() {
+    const { ScreenEnum } = this;
     const { feeds } = this.state;
     return (
       <AddFeedScreen
         onAdd={(screen, url) => {
           if (url.length !== 0) {
+            screen.close();
             if (!feeds.getFeedForUrl(url)) {
-              feeds.addFeed({
-                title: "Test",
-                description: "Test",
-                url: url
+              this.setState({
+                mode: ScreenEnum.LOADING,
+                loadingStatus: Resources.getText(TEXT_IDS.LOADING_FEED),
+              }, () => {
+                this.loadFeedFromUrl(url)
+                  .then(([feed, feedJson]) => {
+                    feeds.addFeed({title: "New Feed", url: url});
+                    feeds.updateFeed(url, feedJson);
+                    storeFeeds(feeds);                    
+                  })
+                  .catch(e => console.error(e));
               });
-              storeFeeds(feeds);
             }
           }
-          screen.close();
         }}
         closeCallback={() => {
           this.setState({ showAddFeedScreen: false });
