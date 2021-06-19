@@ -1,0 +1,34 @@
+.yesno-screen {
+  &-inner {
+    &-content {
+      flex-grow: 1;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      &>div:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+
+      &-label {
+        font-size: 1.6rem;
+        color: #bbb;
+      }
+    }
+
+    &-buttons {
+      padding-top: 2rem;
+      display: flex;
+      justify-content: center;
+
+      &>button {
+        margin-right:1rem;
+      }  
+    }
+  }
+}
+
+
+

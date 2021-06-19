@@ -1,4 +1,6 @@
 import { FeedBase } from './feedbase.js'
+import { storage } from '../storage'
+const FEEDS_PROP = "feeds";
 
 class Feeds extends FeedBase {
   constructor(feeds, minLength) {
@@ -23,6 +25,62 @@ class Feeds extends FeedBase {
       return false;
     }
     return true;
+  }
+
+  updateFeed(url, feed) {
+    const index = this._getFeedIndexForUrl(url);
+    let changed = false;
+    if (index >= 0) {
+      const f = this.feeds[index];
+      const props = [
+        'title', 'longTitle', 'description', 'thumbnail', 'background'
+      ]
+      props.forEach(p => {
+        if (f[p] !== feed[p]) {
+          changed = true;
+          if (feed[p]) {
+            f[p] = feed[p];
+          } else {
+            delete f[p];
+          }
+        }
+      });
+    }
+    if (changed) {
+      this._expand();
+    }
+    return changed;
+  }
+
+  addFeed(f) {
+    if (f && f.url) {
+      const index = this._getFeedIndexForUrl(f.url);
+      if (index >= 0) return;
+    }
+    if (this._addFeed(f)) {
+      this._expand();
+    }    
+  }
+
+  _getFeedIndexForUrl(url) {
+    const index = this.feeds.findIndex(
+      feed => feed.url.toUpperCase() === url.toUpperCase());
+    return index;
+  }
+
+  getFeedForUrl(url) {
+    const index = this._getFeedIndexForUrl(url);
+    return index !== -1 ? this.feeds[index] : null;
+  }
+
+  removeFeed(feedId) {
+    const index = this.feeds.findIndex(f => {
+      return f.feedId === feedId;
+    });
+    if (index >= 0) {
+      this.feeds.splice(index, 1);
+      this._expand();
+    }
   }
 
   _addFeed(f) {
@@ -85,4 +143,28 @@ class Feeds extends FeedBase {
   }
 }
 
-export { Feeds }
+const loadFeeds = async (minSlidesLength) => {  
+  try {
+    const feedsProp = await storage.get(FEEDS_PROP);
+    return new Feeds(feedsProp ? feedsProp : [], minSlidesLength);
+  } catch(e) {
+    console.log("Error reading feeds: " + e); // TODO: Proper logging
+    return new Feeds([], minSlidesLength);
+  }
+}
+
+const storeFeeds = async (feeds) => {
+  const outFeeds = [];  
+  feeds.getDistinctFeeds().forEach(e => {
+    const f = {...e};
+    delete f.feedId;
+    outFeeds.push(f);
+  });
+  try {
+    await storage.put(FEEDS_PROP, outFeeds);
+  } catch (e) {
+    console.log("Error storing feeds: " + e); // TODO: Proper logging
+  }
+}
+
+export { Feeds, loadFeeds, storeFeeds }

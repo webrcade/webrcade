@@ -5,6 +5,7 @@ require("./style.scss");
 
 export default class AppDetails extends Component {
   timeoutId = null;
+  lastItemKey = null;
 
   render() {
     const { buttons, bottom, title, subTitle, description, backgroundSrc, itemKey } = this.props;
@@ -13,15 +14,18 @@ export default class AppDetails extends Component {
       backgroundImage: 'url(' + backgroundSrc + ')',
     } : {};
 
-    let el = document.querySelector('.app-details-right');
-    if (el) {
-      el.classList.remove('fade-in');      
+    if (itemKey !== this.lastItemKey) {
+      this.lastItemKey = itemKey;
+      let el = document.querySelector('.app-details-right');
+      if (el) {
+        el.classList.remove('fade-in');      
+      }
+      if (this.timeoutId) window.clearTimeout(this.timeoutId);
+      this.timeoutId = window.setTimeout(() => {
+        el = document.querySelector('.app-details-right');
+        el.classList.add('fade-in');
+      }, 250);
     }
-    if (this.timeoutId) window.clearTimeout(this.timeoutId);
-    this.timeoutId = window.setTimeout(() => {
-      el = document.querySelector('.app-details-right');
-      el.classList.add('fade-in');
-    }, 250);
 
     return (
       <div className="app-details-content">

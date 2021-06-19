@@ -10,6 +10,12 @@ class Feed extends FeedBase {
   _parseFeed(feed) {
     const reg = AppRegistry.instance;
 
+    // Ensure title
+    const title = feed.title;
+    if (title === undefined) {
+      throw new Error("Missing title");
+    }
+
     // Ensure categories are available
     let categories = feed.categories;
 

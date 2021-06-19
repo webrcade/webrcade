@@ -6,6 +6,7 @@ import {
   GamepadNotifier,
   Resources,
   TEXT_IDS,
+  toggleTabIndex,
   AddCircleBlackImage,
   AddCircleWhiteImage,
   CloudDownloadBlackImage,
@@ -95,12 +96,6 @@ export default class AppBrowseScreen extends Component {
     this.startGamepadNotifier();
     window.addEventListener('resize', this.onResize);
     window.addEventListener('orientationchange', this.onResize);
-
-    // this.setState({
-    //     currentItem: this.props.feeds[0],
-    //     menuMode: AppBrowseScreen.ModeEnum.FEEDS
-    //   }
-    // );
   }
 
   componentWillUnmount() {
@@ -110,12 +105,22 @@ export default class AppBrowseScreen extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    const { hide } = this.props;
+    const { hide, disable } = this.props;
+    const { sliderRef, webrcadeDivRef } = this;
 
-    if (hide) {
-      this.stopGamepadNotifier();
+    if (hide || disable) {
+      this.stopGamepadNotifier();      
+      if (disable && !prevProps.disable) {
+        toggleTabIndex(webrcadeDivRef.current, false);
+      }
     } else {
       this.startGamepadNotifier();
+      if (!disable && prevProps.disable) {
+        toggleTabIndex(webrcadeDivRef.current, true);
+      }
+      if (sliderRef && sliderRef.current) {
+        sliderRef.current.focus();
+      }
     }
   }  
 

@@ -1,17 +1,19 @@
 import React, { Component } from "react";
-import { Feed, getDefaultFeed } from '../feed';
-import { Feeds } from '../feed';
+import { Feed, getDefaultFeed, Feeds, loadFeeds, storeFeeds } from '../feed';
+import { storage } from '../storage';
 import {
-  UrlUtil,
   FetchAppData,
   applyIosNavBarHack,
   Resources,
-  TEXT_IDS
+  TEXT_IDS,
+  UrlUtil
 } from '@webrcade/app-common'
 
 import LoadingScreen from "./screens/loading";
-import AppBrowseScreen from "./screens/appbrowse"
+import AppBrowseScreen from "./screens/appbrowse";
 import AppScreen from "./screens/app";
+import AddFeedScreen from './screens/addfeed';
+import YesNoScreen from './screens/yesno';
 
 require("./style.scss");
 
@@ -19,22 +21,17 @@ export class Webrcade extends Component {
   constructor() {
     super();
 
-    const feeds = new Feeds([
-      {
-        title: "New Art Feed",
-        description: "New Art Feed",
-        url: "https://raz0red.github.io/webrcade-design/feed-newart-rev3.json",
-        // thumbnail: "images/add.png",
-      }
-    ], this.MIN_SLIDES_LENGTH);
-
     this.state = {
       mode: this.ScreenEnum.LOADING,
-      loadingStatus: "Loading...",
+      loadingStatus: Resources.getText(TEXT_IDS.LOADING_DOTS),
       initialFeed: true,
-      feeds: feeds,
+      feeds: null,
       feed: this.parseFeed(getDefaultFeed()),
-      app: null
+      app: null,
+      showAddFeedScreen: false,
+      renderYesNoScreen: false,
+      yesNoMessage: "",
+      yesNoCallback: null
     };
 
     this.appScreenFrameRef = React.createRef();
@@ -53,6 +50,8 @@ export class Webrcade extends Component {
     BROWSE: "browse",
     APP: "app"
   }
+
+  LAST_FEED_PROP = "lastfeed";
 
   popstateHandler = e => {
     const { ScreenEnum, appScreenFrameRef } = this;
@@ -111,25 +110,49 @@ export class Webrcade extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     const { mode, initial, initialFeed } = this.state;
-    const { ScreenEnum, MIN_LOADING_TIME, browseScreenRef } = this;
+    const {
+      ScreenEnum,
+      MIN_LOADING_TIME,
+      MIN_SLIDES_LENGTH,
+      LAST_FEED_PROP,
+      browseScreenRef
+    } = this;
 
-    if (mode === ScreenEnum.LOADING) {
-      console.log("## initial feed: " + initialFeed);
+    if (mode === ScreenEnum.LOADING) {      
       if (initialFeed) {
-        const url = window.location.search;
-        const feed = UrlUtil.getParam(url, this.RP_FEED);
-        if (feed) {
-          this.setState({
-            loadingStatus: Resources.getText(TEXT_IDS.LOADING_FEED),
-            initialFeed: false
+        // Load feeds from storage      
+        loadFeeds(MIN_SLIDES_LENGTH)
+          .then(feeds => {
+            let loadingFeed = false;
+            storage.get(LAST_FEED_PROP)
+              .then(f => {
+                // Check request parameter for feed url
+                let feed = UrlUtil.getParam(window.location.search, this.RP_FEED);
+                if (!feed) {
+                  // Check last feed url
+                  feed = f;
+                }    
+                if (feed && feed.length > 0) {
+                  loadingFeed = true;
+                  this.setState({
+                    loadingStatus: Resources.getText(TEXT_IDS.LOADING_FEED),
+                    initialFeed: false,
+                    feeds: feeds
+                  });
+                  return this.loadFeedFromUrl(feed);
+                }
+              })
+              .catch(e => console.error(e)) // TODO: Proper error handling
+              .finally(() => {
+                if (!loadingFeed) {
+                  setTimeout(() => this.setState({
+                    mode: ScreenEnum.BROWSE,
+                    initialFeed: false,
+                    feeds: feeds
+                  }), MIN_LOADING_TIME);
+                }
+              });
           });
-          this.loadFeedFromUrl(feed);
-        } else {
-          setTimeout(() => this.setState({
-            mode: ScreenEnum.BROWSE,
-            initialFeed: false
-          }), MIN_LOADING_TIME);
-        }
       }
     } else if (initial ||
       (prevState.mode === ScreenEnum.APP && mode === ScreenEnum.BROWSE)) {
@@ -142,56 +165,87 @@ export class Webrcade extends Component {
   }
 
   loadFeedFromUrl(url) {
-    return new Promise((resolve, reject) => {
-      console.log('feed: ' + url);
+    const { 
+      MIN_LOADING_TIME, 
+      LAST_FEED_PROP, 
+      ScreenEnum 
+    } = this;
+    const {
+      feeds
+    } = this.state;
+
+    console.log('feed: ' + url);
+    return new Promise((resolve, reject) => {      
       const start = Date.now();
+      let feedJson = null, newFeed = null;
       new FetchAppData(url).fetch()
         .then(response => response.json())
-        .then(json => this.parseFeed(json))
+        .then(json => {
+          feedJson = json;
+          return this.parseFeed(json);
+        })
         .then(feed => {
-          if (feed) this.setState({ feed: feed });
+          newFeed = feed;
+          storage.put(LAST_FEED_PROP, url)
+            .catch(e => console.error(e)); // TODO: Proper error handling
+          if (feeds.updateFeed(url, feedJson)) {            
+            storeFeeds(feeds);
+          }
           resolve(feed);
         })
         .catch(msg => {
-          console.log('Error reading feed: ' + msg);
+          console.log('Error reading feed: ' + msg); // TODO: Proper logging
           reject(msg);
-        }) // TODO: Proper logging
+        }) 
         .finally(() => {
-          let wait = start + this.MIN_LOADING_TIME - Date.now();
+          let wait = start + MIN_LOADING_TIME - Date.now();
           wait = wait > 0 ? wait : 0;
-          setTimeout(() => this.setState({ mode: this.ScreenEnum.BROWSE }), wait);
+          setTimeout(() => {
+            const newState = { mode: ScreenEnum.BROWSE };
+            if (newFeed) {
+              newState.feed = newFeed;
+            }
+            this.setState(newState);
+          }, wait);
         });
     });
   }
 
   loadFeed(feedInfo) {
+    const { 
+      MIN_LOADING_TIME, 
+      LAST_FEED_PROP, 
+      ScreenEnum 
+    } = this;
+
     console.log('load: ' + JSON.stringify(feedInfo))
     if (feedInfo.feedId === Feeds.ADD_ID) {
-      console.log("# Add feed.")
+      this.setState({ showAddFeedScreen: true });
     } else {
       this.setState({
-        mode: this.ScreenEnum.LOADING,
+        mode: ScreenEnum.LOADING,
         loadingStatus: Resources.getText(TEXT_IDS.LOADING_FEED),
       }, () => {
         if (feedInfo.feedId === Feeds.DEFAULT_ID) {
+          // Clear the last feed property
+          storage.put(LAST_FEED_PROP, "")
+            .catch(e => console.error(e)); // TODO: Proper error handling
           setTimeout(() => {
             this.setState({
-              mode: this.ScreenEnum.BROWSE,
+              mode: ScreenEnum.BROWSE,
               feed: this.parseFeed(getDefaultFeed()),
             });
-          }, this.MIN_LOADING_TIME);
+          }, MIN_LOADING_TIME);
         } else {
           this.loadFeedFromUrl(feedInfo.url)
-            .then(feed => {
-              console.log("TODO: Update feed info: " + JSON.stringify(feedInfo));
-            })
+            .catch(e => console.error(e)) // TODO: Proper error handling
         }
       });
     }
   }
 
   renderBrowse() {
-    const { feeds, feed, mode } = this.state;
+    const { feeds, feed, mode, showAddFeedScreen, showYesNoScreen } = this.state;
     const { ScreenEnum, browseScreenRef, HASH_PLAY } = this;
 
     return (
@@ -199,13 +253,24 @@ export class Webrcade extends Component {
         feeds={feeds.getFeeds()}
         feed={feed}
         hide={mode !== ScreenEnum.BROWSE}
+        disable={showAddFeedScreen || showYesNoScreen}
         ref={browseScreenRef}
         onAppSelected={(app) => {
           window.location.hash = HASH_PLAY;
           this.setState({ mode: ScreenEnum.APP, app: app })
         }}
         onFeedLoad={f => this.loadFeed(f)}
-        onFeedDelete={f => console.log('delete: ' + JSON.stringify(f))}
+        onFeedDelete={f => {
+          this.setState({
+            showYesNoScreen: true,
+            yesNoMessage: "Are you sure you want to delete the selected feed?",
+            yesNoCallback: (screen) => {
+              feeds.removeFeed(f.feedId);
+              storeFeeds(feeds);
+              screen.close();
+            }
+          });
+        }}
       />
     );
   }
@@ -227,14 +292,54 @@ export class Webrcade extends Component {
     );
   }
 
+  renderAddFeed() {
+    const { feeds } = this.state;
+    return (
+      <AddFeedScreen
+        onAdd={(screen, url) => {
+          if (url.length !== 0) {
+            if (!feeds.getFeedForUrl(url)) {
+              feeds.addFeed({
+                title: "Test",
+                description: "Test",
+                url: url
+              });
+              storeFeeds(feeds);
+            }
+          }
+          screen.close();
+        }}
+        closeCallback={() => {
+          this.setState({ showAddFeedScreen: false });
+        }}
+      />
+    );
+  }
+
+  renderYesNo() {
+    const { yesNoMessage, yesNoCallback } = this.state;
+    return (
+      <YesNoScreen
+        height="10rem"
+        message={yesNoMessage}
+        onYes={yesNoCallback}
+        closeCallback={() => {
+          this.setState({ showYesNoScreen: false });
+        }}
+      />
+    );
+  }
+
   render() {
-    const { mode } = this.state;
+    const { mode, showAddFeedScreen, showYesNoScreen, initialFeed } = this.state;
     const { ScreenEnum } = this;
 
     return (
       <>
+        {showYesNoScreen ? this.renderYesNo() : null}
+        {showAddFeedScreen ? this.renderAddFeed() : null}
         {mode === ScreenEnum.LOADING ? this.renderLoading() : null}
-        {mode !== ScreenEnum.LOADING ? this.renderBrowse() : null}
+        {mode !== ScreenEnum.LOADING || !initialFeed ? this.renderBrowse() : null}
         {mode === ScreenEnum.APP ? this.renderApp() : null}
       </>
     );
