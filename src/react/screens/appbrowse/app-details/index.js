@@ -8,7 +8,7 @@ export default class AppDetails extends Component {
   lastItemKey = null;
 
   render() {
-    const { buttons, bottom, title, subTitle, description, backgroundSrc, itemKey } = this.props;
+    const { backgroundSrc, bottom, buttons, description, itemKey, subTitle, title } = this.props;
 
     let imageStyle = backgroundSrc ? {
       backgroundImage: 'url(' + backgroundSrc + ')',

@@ -1,5 +1,7 @@
-import { FeedBase } from './feedbase.js'
 import { storage } from '../storage'
+import { FeedBase } from './feedbase.js'
+import { LOG } from '@webrcade/app-common'
+
 const FEEDS_PROP = "feeds";
 
 class Feeds extends FeedBase {
@@ -148,7 +150,7 @@ const loadFeeds = async (minSlidesLength) => {
     const feedsProp = await storage.get(FEEDS_PROP);
     return new Feeds(feedsProp ? feedsProp : [], minSlidesLength);
   } catch(e) {
-    console.log("Error reading feeds: " + e); // TODO: Proper logging
+    LOG.error("Error reading feeds: " + e); 
     return new Feeds([], minSlidesLength);
   }
 }
@@ -163,7 +165,7 @@ const storeFeeds = async (feeds) => {
   try {
     await storage.put(FEEDS_PROP, outFeeds);
   } catch (e) {
-    console.log("Error storing feeds: " + e); // TODO: Proper logging
+    LOG.error("Error storing feeds: " + e);
   }
 }
 

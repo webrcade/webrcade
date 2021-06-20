@@ -1,3 +1,5 @@
+import { LOG } from '@webrcade/app-common'
+
 class FeedBase {
   constructor(minLength) {
     this.minLength = minLength;  
@@ -6,7 +8,7 @@ class FeedBase {
   TITLE_SORT = (a, b) => a.title.localeCompare(b.title);
 
   _logInvalidObject(msg, object) {
-    console.info(msg + " : " + JSON.stringify(object));
+    LOG.info(msg + " : " + JSON.stringify(object));
   }
 
   _expandItems(items) {

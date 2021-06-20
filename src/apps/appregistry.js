@@ -52,9 +52,10 @@ class AppRegistry {
   }
 
   getLocation(app) {
-    const APP_TYPES = this.APP_TYPES;
-    const { RP_PROPS, RP_DEBUG } = AppProps;
+    const { RP_DEBUG, RP_PROPS } = AppProps;
     const { props } = app;    
+    const { APP_TYPES } = this;
+
     const appType = APP_TYPES[app.type];
     const outProps = { 
       type: appType.type,

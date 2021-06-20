@@ -1,10 +1,7 @@
 import React, { Component } from "react";
 import { Icon } from "@iconify/react";
 import chevronRight from "@iconify/icons-mdi/chevron-right";
-import { 
-  WebrcadeContext, 
-  GamepadEnum
-} from '@webrcade/app-common'
+import { GamepadEnum, WebrcadeContext } from '@webrcade/app-common'
 
 require("./style.scss");
 
@@ -91,7 +88,7 @@ export default class AppCategory extends Component {
   }
 
   render() {
-    const { label, flyoutLabel, isSelectable } = this.props;    
+    const { flyoutLabel, isSelectable, label } = this.props;    
     const mainClassName = 
       `${isSelectable ? "app-category" : "app-categories"} app-category-fade`;
 

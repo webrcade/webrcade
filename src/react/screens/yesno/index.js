@@ -1,10 +1,6 @@
 import React from "react";
 import PromptScreen from '../../components/promptscreen'
-import {
-  ImageButton,
-  Resources,
-  TEXT_IDS
-} from '@webrcade/app-common'
+import { ImageButton, Resources, TEXT_IDS } from '@webrcade/app-common'
 
 require("./style.scss");
 
@@ -30,15 +26,8 @@ export default class YesNoScreen extends PromptScreen {
   }
 
   renderContent() {
-    const {
-      yesButtonRef,
-      noButtonRef,
-      focusGrid,  
-    } = this;
-    const {
-      message,
-      onYes    
-    } = this.props;
+    const { focusGrid, noButtonRef, yesButtonRef } = this;
+    const { message, onYes } = this.props;
 
     return (
       <>

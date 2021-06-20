@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { 
-  WebrcadeContext,
-  ImageButton, 
+  toggleTabIndex,  
   FocusGrid, 
   GamepadNotifier,
+  ImageButton,     
   Resources,
-  TEXT_IDS,
-  toggleTabIndex,
+  WebrcadeContext,
+  LOG,
+  TEXT_IDS,  
   AddCircleBlackImage,
   AddCircleWhiteImage,
   CloudDownloadBlackImage,
@@ -17,12 +18,12 @@ import {
   PlayArrowWhiteImage
 } from '@webrcade/app-common'
 
-import { AppRegistry } from '../../../apps';
-import AppDetails from "./app-details";
 import AppCategory from "./app-category";
+import AppDetails from "./app-details";
+import { AppRegistry } from '../../../apps';
+import { Feeds } from "../../../feed";
 import Logo from "../../components/logo";
 import Slider from "../../components/slider";
-import { Feeds } from "../../../feed";
 
 require("./style.scss");
 
@@ -128,7 +129,9 @@ export default class AppBrowseScreen extends Component {
     const { ModeEnum } = AppBrowseScreen;
 
     if (!state || props.feed !== state.feed) {
-      console.log('feed has changed');
+
+      LOG.info('feed has changed');
+      
       const feed = props.feed;
       if (feed) {
         const category = feed.getCategories()[0];
@@ -233,10 +236,11 @@ export default class AppBrowseScreen extends Component {
 
   render() {
     const { feeds, hide, onFeedDelete } = this.props;
-    const { category, currentItem, menuMode, feed } = this.state;
-    const { focusGrid, playButtonRef, sliderRef, categoryRef, webrcadeDivRef,
-       MAX_SLIDES, screenContext } = this;
+    const { category, currentItem, feed, menuMode } = this.state;
+    const {  categoryRef, focusGrid, playButtonRef, screenContext, sliderRef, 
+      webrcadeDivRef, MAX_SLIDES } = this;
     const { ModeEnum } = AppBrowseScreen;
+
     const isCategories = (menuMode === ModeEnum.CATEGORIES);
     const isFeeds = (menuMode === ModeEnum.FEEDS);
     const items = isFeeds ?

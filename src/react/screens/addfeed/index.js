@@ -3,10 +3,11 @@ import PromptScreen from '../../components/promptscreen';
 import { storage } from '../../../storage';
 import {
   ImageButton,
+  Resources,
   TextField,
   // AddCircleBlackImage,
   // AddCircleWhiteImage,
-  Resources,
+  LOG,
   TEXT_IDS
 } from '@webrcade/app-common'
 
@@ -47,20 +48,16 @@ export default class AddFeedScreen extends PromptScreen {
           locationFieldRef.current.field.value = val;
         }
       })
-      .catch(e => console.error(e)) // TODO: Proper error handling
+      .catch(e => LOG.error(e))
   }
 
   _onAdd() {
-    const {
-      locationFieldRef,
-      LAST_URL_PROP
-    } = this;
+    const { locationFieldRef, LAST_URL_PROP } = this;
     const { onAdd } = this.props;
-    
+
     // Store last value
     const val = locationFieldRef.current.field.value.trim();
-    storage.put(LAST_URL_PROP, val)
-      .catch(e => console.error(e)); // TODO: Proper error handling
+    storage.put(LAST_URL_PROP, val).catch(e => LOG.error(e));
     onAdd(this, val);    
   }
 
@@ -68,8 +65,8 @@ export default class AddFeedScreen extends PromptScreen {
     const {
       addButtonRef,
       cancelButtonRef,
-      locationFieldRef,
       focusGrid,
+      locationFieldRef      
     } = this;
 
     return (

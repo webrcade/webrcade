@@ -76,4 +76,3 @@ class Feed extends FeedBase {
 }
 
 export { Feed }
-

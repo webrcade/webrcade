@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { isDev } from '@webrcade/app-common'
 import { AppRegistry } from '../../../apps';
+import { isDev } from '@webrcade/app-common'
 
 require("./style.scss");
 

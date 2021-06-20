@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { WebrcadeContext, GamepadEnum, Swipe } from '@webrcade/app-common'
-
+import { GamepadEnum, Swipe, WebrcadeContext, LOG } from '@webrcade/app-common'
 import SliderControl from "./slider-control";
 import SliderItem from "./slider-item";
 
@@ -135,8 +134,8 @@ class Slider extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    const { items, onSelected, maxSlides } = this.props;
-    const { selectedItem, itemsInRow } = this.state;
+    const { items, maxSlides, onSelected } = this.props;
+    const { itemsInRow, selectedItem } = this.state;
 
     if ((prevState.selectedItem !== selectedItem) && onSelected) {
       onSelected(items[selectedItem]);
@@ -207,8 +206,8 @@ class Slider extends Component {
   // render the slider contents
   renderSliderContent = () => {
     // console.log('RENDER');
-    const { sliderHasMoved, itemsInRow, lowestVisibleIndex, selectedItem, focused, scrollable } = this.state;
-    const { items, getTitle, getThumbnailSrc } = this.props;
+    const { focused, itemsInRow, lowestVisibleIndex, scrollable, selectedItem, sliderHasMoved } = this.state;
+    const { getTitle, getThumbnailSrc, items } = this.props;
     const totalItems = items.length;
 
     // slider content made up of left, mid, and right portions to allow continous cycling
@@ -217,7 +216,7 @@ class Slider extends Component {
     const right = [];
 
     if (lowestVisibleIndex >= totalItems ) {
-      console.log('Index out of bounds, not rendering.');
+      LOG.info('Index out of bounds, not rendering.');
       return;
     }
 
@@ -304,7 +303,7 @@ class Slider extends Component {
   };
 
   handlePrevPage = () => {
-    const { lowestVisibleIndex, itemsInRow, sliderMoving, focused, scrollable } = this.state;
+    const { focused, itemsInRow, lowestVisibleIndex, scrollable, sliderMoving } = this.state;
     const { items } = this.props;
     const totalItems = items.length;
 
@@ -352,8 +351,8 @@ class Slider extends Component {
   };
 
   handleNextPage = () => {
-    const { sliderHasMoved, lowestVisibleIndex, itemsInRow, sliderMoving, 
-      focused, scrollable } = this.state;
+    const { focused, itemsInRow, lowestVisibleIndex, scrollable, 
+      sliderHasMoved, sliderMoving } = this.state;
     const { items } = this.props;
     const totalItems = items.length;
 
@@ -408,10 +407,11 @@ class Slider extends Component {
   }
 
   selectNext() {
-    const { selectedItem, lowestVisibleIndex, itemsInRow, sliderMoving, 
-      focused, scrollable, uniqueItems } = this.state;
-    const max = lowestVisibleIndex + itemsInRow;
+    const { focused, itemsInRow, lowestVisibleIndex, scrollable, selectedItem, 
+      sliderMoving, uniqueItems } = this.state;
     const { items } = this.props;
+
+    const max = lowestVisibleIndex + itemsInRow;    
     const totalItems = items.length;
 
     if (sliderMoving || !focused || 
@@ -431,8 +431,9 @@ class Slider extends Component {
   }
 
   selectPrev() {
-    const { selectedItem, lowestVisibleIndex, sliderMoving, focused, scrollable } = this.state;
+    const { focused, lowestVisibleIndex, scrollable, selectedItem, sliderMoving } = this.state;
     const { items } = this.props;
+
     const totalItems = items.length;
 
     if (sliderMoving || !focused || (!scrollable && selectedItem === 0)) return;
@@ -477,13 +478,13 @@ class Slider extends Component {
 
   render() {
     const {
-      sliderHasMoved,
       itemsInRow,
-      sliderMoving,
-      sliderMoveDirection,
-      sliderHidden,
       movePercentage,
-      scrollable
+      scrollable,
+      sliderHasMoved,      
+      sliderHidden,
+      sliderMoveDirection,
+      sliderMoving      
     } = this.state;
     const { items } = this.props;
 

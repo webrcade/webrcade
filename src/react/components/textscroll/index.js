@@ -18,8 +18,8 @@ export default class TextScroll extends Component {
   PAUSE = 100;
 
   componentDidMount() {
-    const { textRef, containerRef, heightRef, FADE_CLASS, INTERVAL, 
-      SCROLL_SPEED, PAUSE, FADE_PAUSE } = this;
+    const { containerRef, heightRef, textRef, FADE_CLASS, FADE_PAUSE, 
+      INTERVAL, PAUSE, SCROLL_SPEED } = this;
     const textEl = textRef.current;
     const boxEl = containerRef.current;
     const heightEl = heightRef.current;
@@ -77,7 +77,7 @@ export default class TextScroll extends Component {
   }
 
   render() {
-    const { textRef, containerRef, heightRef } = this;
+    const { containerRef, heightRef, textRef } = this;
     const { text } = this.props;
 
     return (

@@ -1,7 +1,4 @@
-import {
-  WebrcadeContext, 
-  Screen
-} from '@webrcade/app-common'
+import { Screen, WebrcadeContext } from '@webrcade/app-common'
 
 require("./style.scss");
 
@@ -11,13 +8,8 @@ export default class PromptScreen extends Screen {
   }
 
   render() {    
-    const {
-      screenContext,
-      screenStyles,      
-    } = this;
-    const {
-      height
-    } = this.props;
+    const { screenContext, screenStyles } = this;
+    const { height } = this.props;
 
     const styles = {};
     if (height) {
