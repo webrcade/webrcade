@@ -3,7 +3,8 @@ import {
   toggleTabIndex,  
   FocusGrid, 
   GamepadNotifier,
-  ImageButton,     
+  ImageButton,   
+  Message,  
   Resources,
   WebrcadeContext,
   LOG,
@@ -131,7 +132,7 @@ export default class AppBrowseScreen extends Component {
     if (!state || props.feed !== state.feed) {
 
       LOG.info('feed has changed');
-      
+
       const feed = props.feed;
       if (feed) {
         const category = feed.getCategories()[0];
@@ -260,6 +261,7 @@ export default class AppBrowseScreen extends Component {
           <div className={'webrcade-outer' +
             (hide === true ? ' webrcade-outer--hide' : '')}>
             <Logo />
+            <Message />
             <AppDetails
               itemKey={(isFeeds ? "feed" : isCategories ? 'cat' : 'item') + ":" + itemId}
               title={info.title}

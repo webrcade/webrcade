@@ -16,7 +16,6 @@ import {
   applyIosNavBarHack,
   showMessage,
   FetchAppData,
-  Message,
   Resources,
   UrlUtil,
   LOG,
@@ -339,7 +338,6 @@ export class Webrcade extends Component {
 
     return (
       <>
-        <Message />
         {showYesNoScreen ? this.renderYesNo() : null}
         {showAddFeedScreen ? this.renderAddFeed() : null}
         {mode === ScreenEnum.LOADING ? this.renderLoading() : null}
