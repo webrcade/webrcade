@@ -1,0 +1,206 @@
+{
+  "title": "Homebrew",
+  "categories": [
+    {
+      "title": "Atari 2600",
+      "longTitle": "Atari 2600 Games",
+      "background": "",
+      "thumbnail": "",
+      "description": "The Atari 2600, originally branded as the Atari Video Computer System (Atari VCS) until November 1982, is a home video game console developed and produced by Atari, Inc. Released on September 11, 1977, it popularized the use of microprocessor-based hardware and of games stored on swappable ROM cartridges.",
+      "items": [
+        {
+          "title": "Aardvark",
+          "description": "Guide Oscar the Aardvark in his quest for tasty ant eggs and the most delicious ants hidden deep below ground. But be careful with your tongue, you could get an unexpected bite!",
+          "type": "2600",
+          "thumbnail": "images/games/homebrew/2600/aardvark-thumb.png",
+          "background": "images/games/homebrew/2600/aardvark-demo-background.png",
+          "props": {
+            "rom": "http://192.168.1.179:3000/roms/2600/Aardvark.bin"
+          }
+        },
+        {
+          "title": "Amoeba Jump",
+          "description": "In this game you play as Mr. Amoeba, a friendly microbe who enjoys eating bacteria pretty much indiscriminately. However, you first have to jump up the platforms and earn 1,000 points before those delicious bacteria start appearing.",
+          "type": "2600",
+          "thumbnail": "images/games/homebrew/2600/amoebajump-thumb.png",
+          "background": "images/games/homebrew/2600/amoebajump-background.png",
+          "props": {
+            "rom": "http://192.168.1.179:3000/roms/2600/AmoebaJump.bin"
+          }
+        },        
+        {
+          "title": "Blinky Goes Up",
+          "description": "Blinky Goes Up is an original platform game for the Atari 2600 by Jan Hermanns. Your goal is to ascend through each level in this vertical scrolling platformer, collecting every gold nugget along the way.",
+          "type": "2600",
+          "thumbnail": "images/games/homebrew/2600/blinky-thumb.png",
+          "background": "images/games/homebrew/2600/blinky-background.png",
+          "props": {
+            "rom": "http://192.168.1.179:3000/roms/2600/blinky.bin"
+          }
+        },        
+        {
+          "title": "Doggone It!",
+          "description": "Doggone It! is a one-player game. You control Hank, a delivery driver who suffers from cynophobia (fear of dogs). Hank must grab packages one at a time from the back of his truck and deliver them to the recipients at the bottom of the screen.",
+          "type": "2600",
+          "thumbnail": "images/games/homebrew/2600/doggoneit-thumb2.png",
+          "background": "images/games/homebrew/2600/doggoneit-background.png",
+          "props": {
+            "rom": "http://192.168.1.179:3000/roms/2600/Doggone_It!.bin"
+          }
+        },
+        {
+          "title": "Fall Down",
+          "description": "Fall Down pits the ever-opposed forces of RED and BLUE against each other in an ultimate battle to capture scrolling platforms! The first player to fall past a platform captures it and scores a point.",
+          "type": "2600",
+          "thumbnail": "images/games/homebrew/2600/falldown-thumb.png",
+          "background": "images/games/homebrew/2600/falldown-background.png",
+          "props": {
+            "rom": "http://192.168.1.179:3000/roms/2600/falldown.bin"
+          }
+        },
+        {
+          "title": "Gunfight",
+          "description": "It's shoot-out time and you've got to be faster than your opponent or the computer. Move, dodge, or hide behind a covered wagon or cactus. But whatever you do, don't waste your time because your opponent is shooting back. Gunfight is heavily inspired by the 1975 Midway arcade game Gun Fight.",
+          "type": "2600",
+          "thumbnail": "images/games/homebrew/2600/gunfight-thumb.png",
+          "background": "images/games/homebrew/2600/gunfight-background.png",
+          "props": {
+            "rom": "http://192.168.1.179:3000/roms/2600/gunfight.bin"
+          }
+        },        
+        {
+          "title": "Halo 2600",
+          "description": "Halo 2600 is a 2010 action-adventure game developed by Ed Fries and published by AtariAge for the Atari 2600, a video game console released in 1977 that ended production in 1992. Inspired by the Halo video games series, the game sees players control Master Chief and fight through 64 screens with varied enemies.",
+          "type": "2600",
+          "thumbnail": "images/games/homebrew/2600/halo2600-thumb.png",
+          "background": "images/games/homebrew/2600/halo2600-background.png",
+          "props": {
+            "rom": "http://192.168.1.179:3000/roms/2600/Halo2600.bin"
+          }
+        },        
+        {
+          "title": "Hunchy 2",
+          "description": "Hunchy II is a sequel to the 1982 classic arcade game Hunch Back which is loosely based on the novel \"The Hunchback of Notre Dame\" (1831) by Victor Hugo. Your task is to guide the hunchbacked Quasimodo in his quest to rescue the gypsy girl Esmeralda from the cathedral of Notre Dame.",
+          "type": "2600",
+          "thumbnail": "images/games/homebrew/2600/hunchy2-thumb.png",
+          "background": "images/games/homebrew/2600/hunchy2-background.png",
+          "props": {
+            "rom": "http://192.168.1.179:3000/roms/2600/hunchy2.bin"
+          }
+        },        
+        {
+          "title": "Juno First",
+          "description": "There is no one left. No attack fleet. No reinforcements. Just you and a handful of reserve ships. Enemy forces are threatening the Juno colony – Earth’s last defense post. You must fend off wave after wave of enemy ships, skimming dangerously above the planet’s force field. How long can you hold them off?",
+          "type": "2600",
+          "thumbnail": "images/games/homebrew/2600/junofirst-thumb.png",
+          "background": "images/games/homebrew/2600/junofirst-background.png",
+          "props": {
+            "rom": "http://192.168.1.179:3000/roms/2600/junofirst.bin"
+          }
+        },
+        {
+          "title": "Ninjish Guy (Pre)",
+          "longTitle": "Ninjish Guy in Low Res World (Pre-release)",
+          "description": "Ninjish Guy in Low-Res World is a platform game where you have to jump, slide and stomp your way through more than forty labyrinthine screens plagued with enemies, fire, sharks and other hazards, plus some tough bosses that will try to destroy you.",
+          "type": "2600",
+          "thumbnail": "images/games/homebrew/2600/ninjish-thumb.png",
+          "background": "images/games/homebrew/2600/ninjish-background.png",
+          "props": {
+            "rom": "http://192.168.1.179:3000/roms/2600/NinjishGuy_prerelease.bin"
+          }
+        },
+        {
+          "title": "Oystron",
+          "description": "In the Irata solar system lies the planet Stella. It is surrounded by an energy belt. In this belt there live space oysters. They make good food, so there are other outer space creatures living among them, that eat the oysters.",
+          "type": "2600",
+          "thumbnail": "images/games/homebrew/2600/oystron-thumb.png",
+          "background": "images/games/homebrew/2600/oystron-background.png",
+          "props": {
+            "rom": "http://192.168.1.179:3000/roms/2600/OYSTR29.BIN"
+          }
+        },        
+        {
+          "title": "Robot City",
+          "description": "Robot City is based on the very addicting Odyssey 2 prototype game Robot City written by Graham Thomasson. The year is 2601. An unknown mechanical life form has touched down on the dark side of the moon. Any attempt to halt the progress of the “Robot City” is met with resistance from the hundreds of intelligent robot tanks (iBots) that swarm all over it.",
+          "type": "2600",
+          "thumbnail": "images/games/homebrew/2600/robotcity-thumb.png",
+          "background": "images/games/homebrew/2600/robotcity-background.png",
+          "props": {
+            "rom": "http://192.168.1.179:3000/roms/2600/robotcity_rc8.bin"
+          }
+        },        
+        {
+          "title": "Seawolf",
+          "description": "In Seawolf you command a submarine lurking below the surface of the ocean, where you need to attack enemy convoys while avoiding depth charges and other dangers. But use your resources wisely, as you don't want to be a sitting duck when you run out of torpedoes, or worse, fuel! And watch out for the Red Cross ships, as they have a surprise for you if you accidently target them!",
+          "type": "2600",
+          "thumbnail": "images/games/homebrew/2600/seawolf-thumb.png",
+          "background": "images/games/homebrew/2600/seawolf-background.png",
+          "props": {
+            "rom": "http://192.168.1.179:3000/roms/2600/seawolf.bin"
+          }
+        },        
+        {
+          "title": "Skeleton+",
+          "description": "Skeleton+ is a 3D maze game written by Eric Ball. In order to escape this labyrinth you need to hunt down and eliminate 80 skeletons lurking about without being killed yourself! There are eight mazes, with each maze containing 10 skeletons.",
+          "type": "2600",
+          "thumbnail": "images/games/homebrew/2600/skeleton-thumb2.png",
+          "background": "images/games/homebrew/2600/skeleton-background2.png",
+          "props": {
+            "rom": "http://192.168.1.179:3000/roms/2600/skelplus.bin"
+          }
+        },        
+        {
+          "title": "Space Instigators",
+          "description": "Space Instigators is a version of the popular arcade game Space Invaders that is more faithful to the original than Atari's 2600 port. This version fits nine invaders in a row without flicker, an impressive feat on the Atari 2600. The graphics, colors and sounds are truer to the original version than Atari's effort.",
+          "type": "2600",
+          "thumbnail": "images/games/homebrew/2600/spaceinstigators-thumb.png",
+          "background": "images/games/homebrew/2600/spaceinstigators-background.png",
+          "props": {
+            "rom": "http://192.168.1.179:3000/roms/2600/SpaceInstigators.bin"
+          }
+        },        
+        {
+          "title": "Star Fire",
+          "description": "Star Fire is based on the 1979 arcade game of the same name. The gameplay is a wave-based space shoot'em-up, with several surprises that you won't find in the original arcade game. It carefully tries to not only adopt most features of the original, but to enhance the gameplay whereever possible as well.",
+          "type": "2600",
+          "thumbnail": "images/games/homebrew/2600/starfire-thumb2.png",
+          "background": "images/games/homebrew/2600/starfire-background.png",
+          "props": {
+            "rom": "http://192.168.1.179:3000/roms/2600/starntsc.bin"
+          }
+        },        
+        {
+          "title": "Stay Frosty",
+          "description": "You were just chilling out at the North Pole, when a short-circuiting string of Christmas lights on Santa's barn set the reindeer dust on fire. Now magic fireballs are threatening to melt everything. It's up to you to put them out so you can keep your cool, however that's not an easy task for someone made of frozen water!",
+          "type": "2600",
+          "thumbnail": "images/games/homebrew/2600/stayfrosty-thumb.png",
+          "background": "images/games/homebrew/2600/stayfrosty-background.png",
+          "props": {
+            "rom": "http://192.168.1.179:3000/roms/2600/StayFrosty.bin"
+          }
+        },        
+        {
+          "title": "Toyshop Trouble",
+          "description": "Santa's counting on you to ensure that all the toys are painted correctly! Can you get the job done before Santa's sleigh is loaded up on Christmas Eve? You don't want to be responsible for children waking up Christmas morning without toys under their trees, do you? Time to juggle those cans of paint and get moving!",
+          "type": "2600",
+          "thumbnail": "images/games/homebrew/2600/toyshop-trouble-thumb.png",
+          "background": "images/games/homebrew/2600/toyshop-trouble-background.png",
+          "props": {
+            "rom": "http://192.168.1.179:3000/roms/2600/ToyshopTrouble.bin"
+          }
+        },
+        {
+          "title": "Thrust",
+          "description": "The resistance is about to launch a major offensive against the Intergalactic Empire. You have been commissioned by the resistance to steal Klystron pods from the Empire's storage planets. Each planet is defended by a battery of \"Limpet\" guns, powered by a nuclear power plant.",
+          "type": "2600",
+          "thumbnail": "images/games/homebrew/2600/thrust-thumb.png",
+          "background": "images/games/homebrew/2600/thrust-background.png",
+          "props": {
+            "rom": "http://192.168.1.179:3000/roms/2600/thrust.bin"
+          }
+        }
+      ]
+    }
+  ]
+}
+
