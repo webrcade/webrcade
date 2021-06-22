@@ -4,8 +4,8 @@
     {
       "title": "Atari 2600",
       "longTitle": "Atari 2600 Games",
-      "background": "",
-      "thumbnail": "",
+      "background": "images/homebrew/2600-background.png",
+      "thumbnail": "images/homebrew/2600-thumb.png",
       "description": "The Atari 2600, originally branded as the Atari Video Computer System (Atari VCS) until November 1982, is a home video game console developed and produced by Atari, Inc. Released on September 11, 1977, it popularized the use of microprocessor-based hardware and of games stored on swappable ROM cartridges.",
       "items": [
         {
@@ -197,6 +197,47 @@
           "background": "images/homebrew/2600/thrust-background.png",
           "props": {
             "rom": "http://192.168.1.179:3000/roms/2600/thrust.bin"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Doom Classic",
+      "longTitle": "Doom Classic Games",
+      "background": "",
+      "thumbnail": "images/homebrew/doom-thumb.png",
+      "description": "Doom is a 1993 first-person shooter (FPS) game developed by id Software for MS-DOS. The ability for user-generated content to provide custom levels and other game modifications using WAD files became a popular aspect of Doom. Gaining the first large mod-making community, Doom affected the culture surrounding first-person shooters, and also the industry.",
+      "items": [
+        {
+          "title": "Doom 1 (Shareware)",
+          "description": "Doom is a 1993 first-person shooter (FPS) game developed by id Software for MS-DOS. Players assume the role of a space marine, popularly known as Doomguy, fighting his way through hordes of invading demons from Hell. The first episode, comprising nine levels, was distributed freely as shareware and played by an estimated 15–20 million people within two years.",
+          "type": "doom",
+          "thumbnail": "images/homebrew/doom/doom1-thumb.png",
+          "background": "images/homebrew/doom/doom1-background.png",
+          "props": {
+            "game": "doom1"
+          }
+        },
+        {
+          "title": "Freedoom 1",
+          "longTitle": "Freedoom Phase 1",
+          "description": "The Freedoom project aims to create a complete, free content first person shooter game. Phase 1contains four episodes, nine levels each, totalling 36 levels. This game aims for compatibility with The Ultimate Doom mods, also known as plain Doom or Doom 1.",
+          "type": "doom",
+          "thumbnail": "images/homebrew/doom/freedoom1-thumb.png",
+          "background": "images/homebrew/doom/freedoom1-background.png",
+          "props": {
+            "game": "freedoom1"
+          }
+        },
+        {
+          "title": "Freedoom 2",
+          "longTitle": "Freedoom Phase 2",
+          "description": "The Freedoom project aims to create a complete, free content first person shooter game. Phase 2 includes 32 levels in one long episode, featuring extra monsters and a double-barrelled shotgun. This project aims for compatibility with Doom II mods.",
+          "type": "doom",
+          "thumbnail": "images/homebrew/doom/freedoom2-thumb.png",
+          "background": "images/homebrew/doom/freedoom2-background.png",
+          "props": {
+            "game": "freedoom2"
           }
         }
       ]
