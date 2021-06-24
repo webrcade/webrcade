@@ -5,7 +5,7 @@
       "title": "Atari 2600",
       "longTitle": "Atari 2600 Games",
       "background": "images/homebrew/2600-background.png",
-      "thumbnail": "",
+      "thumbnail": "images/homebrew/2600-thumb.png",
       "description": "The Atari 2600, originally branded as the Atari Video Computer System (Atari VCS) until November 1982, is a home video game console developed and produced by Atari, Inc. Released on September 11, 1977, it popularized the use of microprocessor-based hardware and of games stored on swappable ROM cartridges.",
       "items": [
         {
@@ -89,6 +89,16 @@
           }
         },        
         {
+          "title": "I Ran",
+          "description": "It's just another typical running day in the city. Jump, Slide and run to reach the end avoiding obstacles like snakes, elves, giant bullets, UFOs and maybe a giraffe.",
+          "type": "2600",
+          "thumbnail": "images/homebrew/2600/iran-thumb.png",
+          "background": "images/homebrew/2600/iran-background.png",
+          "props": {
+            "rom": "../../roms/2600/iran_final.bin"
+          }
+        },
+        {
           "title": "Juno First",
           "description": "There is no one left. No attack fleet. No reinforcements. Just you and a handful of reserve ships. Enemy forces are threatening the Juno colony – Earth’s last defense post. You must fend off wave after wave of enemy ships, skimming dangerously above the planet’s force field. How long can you hold them off?",
           "type": "2600",
@@ -120,6 +130,16 @@
           }
         },        
         {
+          "title": "Peril",
+          "description": "In the depths of a haunted facility the evil RoboKing has awakened. Only a pilot with ninjish reflexes can survive the perilous mission and destroy the evil RoboKing. Avoid the obstacle, defeat the evil guardians and face the evil boss.",
+          "type": "2600",
+          "thumbnail": "images/homebrew/2600/peril-thumb.png",
+          "background": "images/homebrew/2600/peril-background.png",
+          "props": {
+            "rom": "../../roms/2600/NewPeril-RC1.bin"
+          }
+        },                
+        {
           "title": "Robot City",
           "description": "Robot City is based on the very addicting Odyssey 2 prototype game Robot City written by Graham Thomasson. The year is 2601. An unknown mechanical life form has touched down on the dark side of the moon. Any attempt to halt the progress of the “Robot City” is met with resistance from the hundreds of intelligent robot tanks (iBots) that swarm all over it.",
           "type": "2600",
@@ -147,6 +167,17 @@
           "background": "images/homebrew/2600/skeleton-background2.png",
           "props": {
             "rom": "../../roms/2600/skelplus.bin"
+          }
+        },        
+        {
+          "title": "Slide Boy",
+          "longTitle": "Slide Boy in Maze Land",
+          "description": "Slide your way out of dangerous mazes, avoid the obstacles, activate some switches and exit each room before the time run out.",
+          "type": "2600",
+          "thumbnail": "images/homebrew/2600/slideboy-thumb.png",
+          "background": "images/homebrew/2600/slideboy-background.png",
+          "props": {
+            "rom": "../../roms/2600/slideboy_final.bin"
           }
         },        
         {
@@ -197,6 +228,182 @@
           "background": "images/homebrew/2600/thrust-background.png",
           "props": {
             "rom": "../../roms/2600/thrust.bin"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Atari 7800",
+      "longTitle": "Atari 7800 Games",
+      "background": "",
+      "thumbnail": "images/homebrew/7800-thumb.png",
+      "description": "The Atari 7800 ProSystem, or simply the Atari 7800, is a home video game console officially released by Atari Corporation in 1986 as the successor to both the Atari 2600 and Atari 5200.",
+      "items": [           
+        { 
+          "title": "Bentley Bear",         
+          "longTitle": "Bentley Bear's Crystal Quest",
+          "type": "7800",
+          "thumbnail": "images/homebrew/7800/bentley-thumb.png",
+          "background": "images/homebrew/7800/bentley-background.png",
+          "description": "Your goal in Bentley Bear's Crystal Quest is to retrieve all five Crystals that Berthilda has stolen while avoiding all of the enemies, hazards, and pitfalls that await you in your quest. You begin the game with three turns, and you can earn more along the way. You also have an energy meter, which depletes as you work your way through each level.",
+          "props": {
+            "rom": "../../roms/7800/Bentley Bear's Crystal Quest (20151220).a78"
+          }      
+        },
+        {          
+          "title": "Dragon's Cache",
+          "type": "7800",
+          "thumbnail": "images/homebrew/7800/dragoncache-thumb.png",
+          "background": "images/homebrew/7800/dragoncache-background.png",
+          "description": "In Dragon’s Cache you must match three or more gemstones in rows, columns, or diagonal lines as they fall from the top of the board. Unmatched gems will stay on the board until they are matched. The game will end when enough unmatched gems accumulate to reach past the top of the board, or, if you’re in racing mode, you reduce your predefined score to zero.",
+          "props": {
+            "rom": "../../roms/7800/Dragon's Cache (20210207).a78"
+          }      
+        },
+        {          
+          "title": "Dragon's Descent",
+          "type": "7800",
+          "thumbnail": "images/homebrew/7800/dragondescent-thumb.png",
+          "background": "images/homebrew/7800/dragondescent-background.png",
+          "description": "Dragon’s Descent is a roguelike action game. The player can explore thousands of levels, with a variety of encounters and an escalating challenge as they descend through a sprawling labyrinth.",
+          "props": {
+            "rom": "../../roms/7800/Dragon's Descent (20210107).a78"
+          }      
+        },
+        {          
+          "title": "E.X.O.",
+          "longTitle": "E.X.O. (Alpha)",
+          "type": "7800",
+          "thumbnail": "images/homebrew/7800/exo-thumb.png",
+          "background": "images/homebrew/7800/exo-background.png",
+          "description": "Your objective is to rescue your 4 team members who are all inconveniently being held in different places. Heavily inspired by games like Cybernoid, Starquake, Exile and even Adventure (Flick screen shooter/adventure/explore type games), E.X.O draws on these archetypes.",
+          "props": {
+            "rom": "../../roms/7800/E X O (Alpha 35) (20210320).a78"
+          }      
+        },       
+        {          
+          "title": "Failsafe",
+          "type": "7800",
+          "thumbnail": "images/homebrew/7800/failsafe-thumb.png",
+          "background": "images/homebrew/7800/failsafe-background.png",
+          "description": "In FailSafe you must make your way through five different terrains in search of the Depot where you will pick up Fail-Safe clues. One letter in the code, in its correct position, appears in the center of your fuel gauge. The sixth terrain is the most dangerous of all - the missile silo is heavily guarded by all enemies, including a mine field! If you make your way past that, you will have to enter the four-digit hexadecimal code to stop the launch and save the world.",
+          "props": {
+            "rom": "../../roms/7800/FailSafe (NTSC) (20100227).a78"
+          }      
+        },       
+        { 
+          "title": "Flappy Bird",         
+          "longTitle": "Flappy Bird (Beta)",
+          "type": "7800",
+          "thumbnail": "images/homebrew/7800/flappybird-thumb.png",
+          "background": "images/homebrew/7800/flappybird-background.png",
+          "description": "Flappy Bird is a side-scroller where the player controls a bird, attempting to fly between columns of green pipes without hitting them.",
+          "props": {
+            "rom": "../../roms/7800/Flappy Bird (Beta) (20141221).a78"
+          }      
+        },                       
+        {          
+          "title": "Knight Guy",
+          "longTitle": "Knight Guy in Low Res World: Castle Days",
+          "type": "7800",
+          "thumbnail": "images/homebrew/7800/knightguy-thumb.png",
+          "background": "images/homebrew/7800/knightguy-background.png",
+          "description": "An evil dragon kidnapped your beloved pet! Go and rescue him. 100 screens plagued with perils, multiple bosses, and a challenging final boss.",
+          "props": {
+            "rom": "../../roms/7800/Knight Guy In Low Res World - Castle Days (RC 01-1) (20201001).a78"
+          }      
+        },
+        {          
+          "title": "Meteor Shower",
+          "type": "7800",
+          "thumbnail": "images/homebrew/7800/meteorshower-thumb.png",
+          "background": "images/homebrew/7800/meteorshower-background.png",
+          "description": "Meteors are falling to Earth! Defend Earth’s surface by blasting away at the falling rocks… But beware! Alien forces have learned what was happening and are taking advantage of our vulnerability to attack us!",
+          "props": {
+            "rom": "../../roms/7800/Meteor Shower (NTSC) (20120218).a78"
+          }      
+        },
+        {          
+          "title": "Millie and Molly",
+          "longTitle": "Millie and Molly (Demo)",
+          "type": "7800",
+          "thumbnail": "images/homebrew/7800/milliemolly-thumb.png",
+          "background": "images/homebrew/7800/milliemolly-background.png",
+          "description": "Millie and Molly is a retro inspired puzzle game featuring 100 levels spread over five themed worlds. This is an Atari 7800 conversion of the Commodore 64 retro smash created by Carleton Handley.",
+          "props": {
+            "rom": "../../roms/7800/Millie And Molly (Demo) (20201206).a78"
+          }      
+        },        
+        {          
+          "title": "Serpentine",
+          "type": "7800",
+          "thumbnail": "images/homebrew/7800/serpentine-thumb.png",
+          "background": "images/homebrew/7800/serpentine-background.png",
+          "description": "The goal of Serpentine is to eat the other serpents and avoid being eaten. Head-on collisions with snakes that aren't smaller than you will result in death. You can grow by eating frogs, eggs, and smaller snakes head-on. You can eat the tail/side segments of snakes of any size.",
+          "props": {
+            "rom": "../../roms/7800/Serpentine (20161029).a78"
+          }      
+        },                
+        { 
+          "title": "Slide Boy",         
+          "longTitle": "Slide Boy in Mazeland",
+          "type": "7800",
+          "thumbnail": "images/homebrew/7800/slideboy-thumb.png",
+          "background": "images/homebrew/7800/slideboy-background.png",
+          "description": "Slide your way out of dangerous mazes, avoid the obstacles, activate some switches and exit each room before the time run out.",
+          "props": {
+            "rom": "../../roms/7800/slideboyinmazeland_20210512.a78"
+          }      
+        },                
+        {          
+          "title": "TiME Salvo",
+          "type": "7800",
+          "thumbnail": "images/homebrew/7800/timesalvo-thumb.png",
+          "background": "images/homebrew/7800/timesalvo-background.png",
+          "description": "The Time Traveler journeyed to the year 802,701 and discovered that humanity has split into two distinct species. Gentle humanoids called the Eloi are tended to as cattle by the other species - foul underground creatures called the Morlocks. In T:ME Salvo, you take control of the furious Time Traveler, in his futile effort to break the cycle.",
+          "props": {
+            "rom": "../../roms/7800/TiME Salvo (20160910).a78"
+          }      
+        }        
+      ]
+    },    
+    {
+      "title": "Doom Classic",
+      "longTitle": "Doom Classic Games",
+      "background": "images/homebrew/doom-background3.png",
+      "thumbnail": "images/homebrew/doom-thumb.png",
+      "description": "Doom is a 1993 first-person shooter (FPS) game developed by id Software for MS-DOS. The ability for user-generated content to provide custom levels and other game modifications using WAD files became a popular aspect of Doom. Gaining the first large mod-making community, Doom affected the culture surrounding first-person shooters, and also the industry.",
+      "items": [
+        {
+          "title": "Doom 1 (Shareware)",
+          "description": "Doom is a 1993 first-person shooter (FPS) game developed by id Software for MS-DOS. Players assume the role of a space marine, popularly known as Doomguy, fighting his way through hordes of invading demons from Hell. The first episode, comprising nine levels, was distributed freely as shareware and played by an estimated 15–20 million people within two years.",
+          "type": "doom",
+          "thumbnail": "images/homebrew/doom/doom1-thumb.png",
+          "background": "images/homebrew/doom/doom1-background.png",
+          "props": {
+            "game": "doom1"
+          }
+        },
+        {
+          "title": "Freedoom 1",
+          "longTitle": "Freedoom Phase 1",
+          "description": "The Freedoom project aims to create a complete, free content first person shooter game. Phase 1contains four episodes, nine levels each, totalling 36 levels. This game aims for compatibility with The Ultimate Doom mods, also known as plain Doom or Doom 1.",
+          "type": "doom",
+          "thumbnail": "images/homebrew/doom/freedoom1-thumb.png",
+          "background": "images/homebrew/doom/freedoom1-background.png",
+          "props": {
+            "game": "freedoom1"
+          }
+        },
+        {
+          "title": "Freedoom 2",
+          "longTitle": "Freedoom Phase 2",
+          "description": "The Freedoom project aims to create a complete, free content first person shooter game. Phase 2 includes 32 levels in one long episode, featuring extra monsters and a double-barrelled shotgun. This project aims for compatibility with Doom II mods.",
+          "type": "doom",
+          "thumbnail": "images/homebrew/doom/freedoom2-thumb.png",
+          "background": "images/homebrew/doom/freedoom2-background.png",
+          "props": {
+            "game": "freedoom2"
           }
         }
       ]
