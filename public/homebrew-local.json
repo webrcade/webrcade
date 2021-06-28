@@ -4,7 +4,7 @@
     {
       "title": "Atari 2600",
       "longTitle": "Atari 2600 Games",
-      "background": "images/homebrew/2600-background6.png",
+      "background": "images/homebrew/2600-background.png",
       "thumbnail": "images/homebrew/2600-thumb.png",
       "description": "The Atari 2600, originally branded as the Atari Video Computer System (Atari VCS) until November 1982, is a home video game console developed and produced by Atari, Inc. Released on September 11, 1977, it popularized the use of microprocessor-based hardware and of games stored on swappable ROM cartridges.",
       "items": [
@@ -164,7 +164,7 @@
           "description": "Skeleton+ is a 3D maze game written by Eric Ball. In order to escape this labyrinth you need to hunt down and eliminate 80 skeletons lurking about without being killed yourself! There are eight mazes, with each maze containing 10 skeletons.",
           "type": "2600",
           "thumbnail": "images/homebrew/2600/skeleton-thumb2.png",
-          "background": "images/homebrew/2600/skeleton-background2.png",
+          "background": "images/homebrew/2600/skeleton-background.png",
           "props": {
             "rom": "http://192.168.1.179:3000/roms/2600/skelplus.bin"
           }
@@ -235,7 +235,7 @@
     {
       "title": "Atari 7800",
       "longTitle": "Atari 7800 Games",
-      "background": "images/homebrew/7800-background4.png",
+      "background": "images/homebrew/7800-background.png",
       "thumbnail": "images/homebrew/7800-thumb.png",
       "description": "The Atari 7800 ProSystem, or simply the Atari 7800, is a home video game console officially released by Atari Corporation in 1986 as the successor to both the Atari 2600 and Atari 5200.",
       "items": [
@@ -370,7 +370,7 @@
     {
       "title": "Nintendo SNES",
       "longTitle": "Super Nintendo Games",
-      "background": "images/apps/snes-background.jpg",
+      "background": "images/homebrew/snes-background.png",
       "thumbnail": "images/homebrew/snes-thumb.png",
       "description": "The SNES is Nintendo's second programmable home console, following the Nintendo Entertainment System (NES). The console introduced advanced graphics and sound capabilities compared with other systems at the time.",
       "items": [        
@@ -482,7 +482,7 @@
     {
       "title": "Sega Master System",
       "longTitle": "Sega Master System Games",
-      "background": "",
+      "background": "images/homebrew/mastersystem-background.png",
       "thumbnail": "images/homebrew/mastersystem-thumb.png",
       "description": "The Sega Master System is a third-generation 8-bit home video game console manufactured by Sega. It was originally a remodeled export version of the Sega Mark III, the third iteration of the SG-1000 series of consoles.",
       "items": [
@@ -617,7 +617,7 @@
     {
       "title": "Sega Game Gear",
       "longTitle": "Sega Game Gear Games",
-      "background": "images/apps/gamegear-background.png",
+      "background": "images/homebrew/gamegear-background.png",
       "thumbnail": "images/homebrew/gamegear-thumb.png",
       "description": "The Game Gear is an 8-bit fourth generation handheld game console released by Sega on October 6, 1990 in Japan and in April 1991 throughout North America and Europe. The Game Gear primarily competed with Nintendo's Game Boy, the Atari Lynx, and NEC's TurboExpress. It shares much of its hardware with the Master System.",
       "items": [        
@@ -698,7 +698,7 @@
     {
       "title": "Doom Classic",
       "longTitle": "Doom Classic Games",
-      "background": "images/homebrew/doom-background3.png",
+      "background": "images/homebrew/doom-background.png",
       "thumbnail": "images/homebrew/doom-thumb.png",
       "description": "Doom is a 1993 first-person shooter (FPS) game developed by id Software for MS-DOS. The ability for user-generated content to provide custom levels and other game modifications using WAD files became a popular aspect of Doom. Gaining the first large mod-making community, Doom affected the culture surrounding first-person shooters, and also the industry.",
       "items": [

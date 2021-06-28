@@ -4,7 +4,7 @@
     {
       "title": "Atari 2600",
       "longTitle": "Atari 2600 Games",
-      "background": "images/homebrew/2600-background5.png",
+      "background": "images/homebrew/2600-background.png",
       "thumbnail": "images/homebrew/2600-thumb.png",
       "description": "The Atari 2600, originally branded as the Atari Video Computer System (Atari VCS) until November 1982, is a home video game console developed and produced by Atari, Inc. Released on September 11, 1977, it popularized the use of microprocessor-based hardware and of games stored on swappable ROM cartridges.",
       "items": [
@@ -109,7 +109,7 @@
           }
         },
         {
-          "title": "Ninjish Guy (Pre)",
+          "title": "Ninjish Guy",
           "longTitle": "Ninjish Guy in Low Res World (Pre-release)",
           "description": "Ninjish Guy in Low-Res World is a platform game where you have to jump, slide and stomp your way through more than forty labyrinthine screens plagued with enemies, fire, sharks and other hazards, plus some tough bosses that will try to destroy you.",
           "type": "2600",
@@ -164,7 +164,7 @@
           "description": "Skeleton+ is a 3D maze game written by Eric Ball. In order to escape this labyrinth you need to hunt down and eliminate 80 skeletons lurking about without being killed yourself! There are eight mazes, with each maze containing 10 skeletons.",
           "type": "2600",
           "thumbnail": "images/homebrew/2600/skeleton-thumb2.png",
-          "background": "images/homebrew/2600/skeleton-background2.png",
+          "background": "images/homebrew/2600/skeleton-background.png",
           "props": {
             "rom": "../../roms/2600/skelplus.bin"
           }
@@ -235,7 +235,7 @@
     {
       "title": "Atari 7800",
       "longTitle": "Atari 7800 Games",
-      "background": "images/homebrew/7800-background2.png",
+      "background": "images/homebrew/7800-background.png",
       "thumbnail": "images/homebrew/7800-thumb.png",
       "description": "The Atari 7800 ProSystem, or simply the Atari 7800, is a home video game console officially released by Atari Corporation in 1986 as the successor to both the Atari 2600 and Atari 5200.",
       "items": [
@@ -368,9 +368,121 @@
       ]
     },
     {
+      "title": "Nintendo SNES",
+      "longTitle": "Super Nintendo Games",
+      "background": "images/homebrew/snes-background.png",
+      "thumbnail": "images/homebrew/snes-thumb.png",
+      "description": "The SNES is Nintendo's second programmable home console, following the Nintendo Entertainment System (NES). The console introduced advanced graphics and sound capabilities compared with other systems at the time.",
+      "items": [        
+        {
+          "title": "Christmas Craze",
+          "description": "The first SNES homebrew game by RetroZone, Christmas Craze. Dodge aliens and grab gifts or fight your friends with snowballs in two player present picking battles.",
+          "type": "snes",
+          "thumbnail": "images/homebrew/snes/christmascraze-thumb.png",
+          "background": "images/homebrew/snes/christmascraze-background.png",
+          "props": {
+            "rom": "../../roms/snes/Christmas_Craze.smc"
+          }
+        },
+        {
+          "title": "Classic Kong Complete",
+          "description": "Classic Kong Complete is a homebrew remake of Donkey Kong with updated graphics and sound. Classic Kong includes all four levels from the original arcade game.",
+          "type": "snes",
+          "thumbnail": "images/homebrew/snes/classickong-thumb.png",
+          "background": "images/homebrew/snes/classickong-background.png",
+          "props": {
+            "rom": "../../roms/snes/Classic Kong Complete (U) V2-01.smc"
+          }
+        },
+        {
+          "title": "Gunman Clive",
+          "longTitle": "Gunman Clive (Demo)",
+          "description": "Gunman Clive is a platform game developed and published by Swedish indie video game development studio Hörberg Productions. The game follows a lone gunslinger in a futuristic Wild West as he tries to save the mayor's daughter from a group of technologically well-armed bandits.",
+          "type": "snes",
+          "thumbnail": "images/homebrew/snes/gunmanclive-thumb.png",
+          "background": "images/homebrew/snes/gunmanclive-background.png",
+          "props": {
+            "rom": "../../roms/snes/GunmanClive.smc"
+          }
+        },
+        {
+          "title": "Jet Pilot Rising",
+          "description": "Jet Pilot Rising is a homebrew game created by Dieter Von Laser. The game itself is a one button affair. You guide a cat riding a rocket, collecting coins and avoiding enemies and obstacles.",
+          "type": "snes",
+          "thumbnail": "images/homebrew/snes/jetpilotrising-thumb.png",
+          "background": "images/homebrew/snes/jetpilotrising-background.png",
+          "props": {
+            "rom": "../../roms/snes/Jet Pilot Rising (J) (V1.1).sfc"
+          }
+        },
+        {
+          "title": "MazezaM Challenge",
+          "description": "MazezaM Challenge (pronounced \"may-zam\") is a simple puzzle game based on MazezaM from Malcolm Tyrrell. You will have to go through 33 levels of mazes. You enter the maze on the left and you have to get to the exit on the right by pushing rows of blocks left and right.",
+          "type": "snes",
+          "thumbnail": "images/homebrew/snes/mazezam-thumb.png",
+          "background": "images/homebrew/snes/mazezam-background.png",
+          "props": {
+            "rom": "../../roms/snes/MazezaM.sfc"
+          }
+        },        
+        {
+          "title": "Rodas Cross",
+          "longTitle": "Rodas Cross (Demo)",
+          "description": "Demo release of an action-adventure game with RPG elements for the Super Nintendo developed by Kaffeeware.",
+          "type": "snes",
+          "thumbnail": "images/homebrew/snes/rodascross-thumb.png",
+          "background": "images/homebrew/snes/rodascross-background.png",
+          "props": {
+            "rom": "../../roms/snes/rodas_cross_demo_v1_03.smc"
+          }
+        },
+        {
+          "title": "Skipp and Friends",
+          "description": "The object of the game is to move all three characters to the exit in each level. Each player has 2 limited special abilities that you may use to help advance through the level. The in-game status bar displays the name of each ability and how many times it can be used during that level.",
+          "type": "snes",
+          "thumbnail": "images/homebrew/snes/skippandfriends-thumb.png",
+          "background": "images/homebrew/snes/skippandfriends-background.png",
+          "props": {
+            "rom": "../../roms/snes/SAF_hardware.smc"
+          }
+        },
+        {
+          "title": "Super Boss Gaiden",
+          "description": "The very last Nintendo PlayStation prototype has fallen in the hands of the public, and homebrew enthusiasts have already managed to fully emulate the system. Instead of calmly discussing the situation and planning out the proper legal counter action, the boss promptly switches to rampage mode and proceeds to punch, kick and throw everything in sight, including employees and PlayStation mascots.",
+          "type": "snes",
+          "thumbnail": "images/homebrew/snes/superbossgaiden-thumb.png",
+          "background": "images/homebrew/snes/superbossgaiden-background.png",
+          "props": {
+            "rom": "../../roms/snes/Super Boss Gaiden (J) (V1.2).sfc"
+          }
+        },
+        {
+          "title": "REM",
+          "longTitle": "REM (Demo)",
+          "description": "A single level demo of an eery homebrew platform game for the Super Nintendo.",
+          "type": "snes",
+          "thumbnail": "images/homebrew/snes/rem-thumb.png",
+          "background": "images/homebrew/snes/rem-background.png",
+          "props": {
+            "rom": "../../roms/snes/rem.sfc"
+          }
+        },
+        {
+          "title": "Uwol: Quest for Money",
+          "description": "Uwol enjoys a quiet retirement at his cozy house in the beach of Pepinoni (province of Badajoz), so he doesn’t realize that somebody has stolen all his money from the bank. Luckly, his good ol’ friend Meemaid, the evil sorceress-turned-super heroine learned about the incident as she was using the ATM in the very moment the bank was being robbed. That’s why they decide to head back over to the new and refurnished Storm Palace to regain the lost fortune.",
+          "type": "snes",
+          "thumbnail": "images/homebrew/snes/uwol-thumb.png",
+          "background": "images/homebrew/snes/uwol-background.png",
+          "props": {
+            "rom": "../../roms/snes/questformoney.sfc"
+          }
+        }        
+      ]
+    },
+    {
       "title": "Sega Master System",
       "longTitle": "Sega Master System Games",
-      "background": "",
+      "background": "images/homebrew/mastersystem-background.png",
       "thumbnail": "images/homebrew/mastersystem-thumb.png",
       "description": "The Sega Master System is a third-generation 8-bit home video game console manufactured by Sega. It was originally a remodeled export version of the Sega Mark III, the third iteration of the SG-1000 series of consoles.",
       "items": [
@@ -488,13 +600,105 @@
           "props": {
             "rom": "../../roms/sms/mojon-twins--super-uwol.sg"
           }
+        },
+        {
+          "title": "Wing Warriors",
+          "type": "sms",
+          "thumbnail": "images/homebrew/sms/wingwarriors-thumb.png",
+          "background": "images/homebrew/sms/wingwarriors-background.png",
+          "description": "Wing Warriors is a multi-platform game developed in 2015 for MSX and in 2019 for Master System, Game Gear, and Gameboy. It’s a classic shooting game with some bullet-hell reminiscences. 6 stages with 3 bosses, 3 different players to choose from, and a lot of bullets to avoid.",
+          "props": {
+            "sms2": true,
+            "rom": "../../roms/sms/WingWarriors.sms"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Sega Game Gear",
+      "longTitle": "Sega Game Gear Games",
+      "background": "images/homebrew/gamegear-background.png",
+      "thumbnail": "images/homebrew/gamegear-thumb.png",
+      "description": "The Game Gear is an 8-bit fourth generation handheld game console released by Sega on October 6, 1990 in Japan and in April 1991 throughout North America and Europe. The Game Gear primarily competed with Nintendo's Game Boy, the Atari Lynx, and NEC's TurboExpress. It shares much of its hardware with the Master System.",
+      "items": [        
+        {
+          "title": "Dangerous Demolition",
+          "description": "Dangerous Demolition is a small arcade/action game for the Game Gear. It's a mix between breakout and a shooter. The balls help you destroy bricks walls, but they can also kill you! Hopefully, you can shoot them to guide them in the right direction.",
+          "type": "gg",
+          "thumbnail": "images/homebrew/gg/dangerousdemolition-thumb.png",
+          "background": "images/homebrew/gg/dangerousdemolition-background.png",
+          "props": {
+            "rom": "../../roms/gg/dangerousdemolition.gg"
+          }
+        },
+        {
+          "title": "Fire Track",
+          "description": "A conversion of the BBC Micro game Fire Track for the Sega Game Gear. Firetrack is a vertically-scrolling shooter programmed by Nick Pelling and released for the BBC Micro and Commodore 64 platforms in 1987 by Electric Dreams Software.",
+          "type": "gg",
+          "thumbnail": "images/homebrew/gg/firetrack-thumb.png",
+          "background": "images/homebrew/gg/firetrack-background.png",
+          "props": {
+            "rom": "../../roms/gg/ftrack.gg"
+          }
+        },        
+        {
+          "title": "Nibbles",
+          "description": "Nibbles is a snake-like game developed by Martin Konrad for the Sega Game Gear. Eat the fruits, avoid the obstacles, and don't run into your growing body.",
+          "type": "gg",
+          "thumbnail": "images/homebrew/gg/nibbles-thumb.png",
+          "background": "images/homebrew/gg/nibbles-background.png",
+          "props": {
+            "rom": "../../roms/gg/nibbles.gg"
+          }
+        },
+        {
+          "title": "Swabby",
+          "description": "You must take control of Swabby as he travels through three challenging rounds of 8-bit craziness. Start on Altered Beast's graveyard, and proceed to Sonic's Green Zone. Then prepare for the last stage, which is set in the unforgiving streets of Shinobi.",
+          "type": "gg",
+          "thumbnail": "images/homebrew/gg/swabby-thumb.png",
+          "background": "images/homebrew/gg/swabby-background.png",
+          "props": {
+            "rom": "../../roms/gg/Swabby-GG-1.11.gg"
+          }
+        },
+        {
+          "title": "Turrican",
+          "longTitle": "Turrican (Demo)",
+          "description": "Demo version of Turrican ported to the Sega Game Gear. Turrican can be described as a cross between Metroid and Psycho-Nics Oscar. While the huge levels and the morph-ball function were inspired by Metroid, the overall graphics design and weapons were inspired by Psycho-Nics Oscar.",
+          "type": "gg",
+          "thumbnail": "images/homebrew/gg/turrican-thumb.png",
+          "background": "images/homebrew/gg/turrican-background.png",
+          "props": {
+            "rom": "../../roms/gg/ggt_demo.gg"
+          }
+        },
+        {
+          "title": "Wing Warriors",
+          "description": "Wing Warriors is a multi-platform game developed in 2015 for MSX and in 2019 for Master System, Game Gear, and Gameboy. It’s a classic shooting game with some bullet-hell reminiscences. 6 stages with 3 bosses, 3 different players to choose from, and a lot of bullets to avoid.",
+          "type": "gg",
+          "thumbnail": "images/homebrew/gg/wingwarriors-thumb.png",
+          "background": "images/homebrew/gg/wingwarriors-background.png",
+          "props": {
+            "rom": "../../roms/gg/WingWarriors.gg"
+          }
+        },
+        {
+          "title": "Zoop'em Up",
+          "longTitle": "Zoop 'em Up (Demo)",
+          "description": "Zoop'em Up is a shoot'em up game for the Sega Game Gear. It was developed for the SMS Power Rush Coding Competition. It is only a demonstration version and lacks sound.",
+          "type": "gg",
+          "thumbnail": "images/homebrew/gg/zoopemup-thumb.png",
+          "background": "images/homebrew/gg/zoopemup-background.png",
+          "props": {
+            "rom": "../../roms/gg/zoopemup.gg"
+          }
         }
       ]
     },
     {
       "title": "Doom Classic",
       "longTitle": "Doom Classic Games",
-      "background": "images/homebrew/doom-background3.png",
+      "background": "images/homebrew/doom-background.png",
       "thumbnail": "images/homebrew/doom-thumb.png",
       "description": "Doom is a 1993 first-person shooter (FPS) game developed by id Software for MS-DOS. The ability for user-generated content to provide custom levels and other game modifications using WAD files became a popular aspect of Doom. Gaining the first large mod-making community, Doom affected the culture surrounding first-person shooters, and also the industry.",
       "items": [
