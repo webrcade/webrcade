@@ -615,6 +615,214 @@
       ]
     },
     {
+      "title": "Sega Genesis",
+      "longTitle": "Sega Genesis Games",
+      "background": "",
+      "thumbnail": "images/homebrew/genesis-thumb.png",
+      "description": "The Sega Genesis, known as the Mega Drive outside North America, is a 16-bit fourth-generation home video game console developed and sold by Sega.",
+      "items": [                        
+        {
+          "title": "Arkagis Revolution",
+          "longTitle": "Arkagis Revolution (Trial)",
+          "description": "A top-down shooter for Sega Genesis/Mega Drive with mode 7 style rotation! Year 2612. Humans have started to travel space and colonizing other planets. For decades, the nation of Arkagis has been under the power of a dictator. The United Space Colonies have sent an army to bring down the dictator and free Arkagis.",
+          "type": "genesis",
+          "thumbnail": "images/homebrew/genesis/arkargisrevolution-thumb.png",
+          "background": "images/homebrew/genesis/arkargisrevolution-background.png",
+          "props": {
+            "rom": "http://192.168.1.179:3000/roms/genesis/Arkagis Revolution - Trial Version (Rev 00).bin"
+          }
+        },
+        {
+          "title": "Cave Story",
+          "description": "Cave Story (Japanese: 洞窟物語, Hepburn: Dōkutsu Monogatari) is a 2004 Metroidvania platform-adventure game. It was developed over five years by Japanese developer Daisuke \"Pixel\" Amaya in his free time. Cave Story features 2D platform mechanics and is reminiscent of the games Amaya played in his youth, such as Metroid and Castlevania (both released in 1986).",
+          "type": "genesis",
+          "thumbnail": "images/homebrew/genesis/cavestory-thumb.png",
+          "background": "images/homebrew/genesis/cavestory-background.png",
+          "props": {
+            "rom": "http://192.168.1.179:3000/roms/genesis/cavestory.bin"
+          }
+        },
+        {
+          "title": "Demons of Asteborg",
+          "longTitle": "Demons of Asteborg (Demo)",
+          "description": "Demons Of Asteborg is a new original title for the Sega Genesis which will be released both as a physical cartridge and as a downloadable ROM for emulators and flash cards. It is a platform-based game with some metroidvania elements inspired by a lot of others MegaDrive/Genesis titles like Ghouls’n Ghosts, Castlevania, Mickey Mania, Space Harrier or Panzer Dragoon.",
+          "type": "genesis",
+          "thumbnail": "images/homebrew/genesis/demonsofasteborg-thumb.png",
+          "background": "images/homebrew/genesis/demonsofasteborg-background.png",
+          "props": {
+            "rom": "http://192.168.1.179:3000/roms/genesis/Demons_of_Asteborg_DEMO_v21072020.bin"
+          }
+        },
+        {
+          "title": "IK+ Deluxe",
+          "description": "Fight your way through this stunning sequel to International Karate. Spectacular animated backgrounds, amazing moves including double head-kick and bon-bending backflips.",
+          "type": "genesis",
+          "thumbnail": "images/homebrew/genesis/ikplus-thumb.png",
+          "background": "images/homebrew/genesis/ikplus-background.png",
+          "props": {
+            "rom": "http://192.168.1.179:3000/roms/genesis/ikplusdeluxe.bin"
+          }
+        },
+        {
+          "title": "Irena Genesis",
+          "longTitle": "Irena Genesis Metal Fury (Demo)",
+          "description": "Switch into battle mode to control the ultimate warship and battle the mighty Emperor Zerox's army who reign with an iron fist on planet Xellia. Find and destroy the magnetic field source which holds the intergalactic ship that you escort or become the leader of the rebellion by releasing the enslaved population for millennia. Help Major Celina Pelinsky accomplish this most perilous mission, but are you really ready to fight for freedom?",
+          "type": "genesis",
+          "thumbnail": "images/homebrew/genesis/irena-thumb.png",
+          "background": "images/homebrew/genesis/irena-background.png",
+          "props": {
+            "rom": "http://192.168.1.179:3000/roms/genesis/irena-ks-demo-update-21012021203626.bin"
+          }
+        },
+        {
+          "title": "Ixion",
+          "description": "Nendo's Ixion for the Sega Genesis is an interesting take on the bullet hell shooter genre. In this game you must avoid the onslaught of bullets without having the ability to fire back.",
+          "type": "genesis",
+          "thumbnail": "images/homebrew/genesis/ixion-thumb.png",
+          "background": "images/homebrew/genesis/ixion-background.png",
+          "props": {
+            "rom": "http://192.168.1.179:3000/roms/genesis/ixion.bin"
+          }
+        },        
+        {
+          "title": "Lethal Wedding",
+          "longTitle": "Lethal Wedding (Demo)",
+          "description": "Get ready to Bride Hard as you fight through insane odds and some mother-daughter issues! Say \"I do\" to bullets and blood in this top-down RPG shooter!",
+          "type": "genesis",
+          "thumbnail": "images/homebrew/genesis/lethalwedding-thumb.png",
+          "background": "images/homebrew/genesis/lethalwedding-background.png",
+          "props": {
+            "rom": "http://192.168.1.179:3000/roms/genesis/LW_build_0446.bin"
+          }
+        },
+        {
+          "title": "Mega Q*bert",
+          "description": "Mega Q*bert is a new game for Sega Mega Drive/Sega Genesis. Featured are 2 different game modes. Mega mode contains 80 levels to beat, often filled with new irregular blocks that make things harder and more complex enemies, while Arcade mode is a recreation of original arcade game (based on the NES iteration, to be more exact). Both modes offer simultaneous cooperative gameplay.",
+          "type": "genesis",
+          "thumbnail": "images/homebrew/genesis/megaqbert-thumb.png",
+          "background": "images/homebrew/genesis/megaqbert-background.png",
+          "props": {
+            "rom": "http://192.168.1.179:3000/roms/genesis/Mega Qbert.bin"
+          }
+        },
+        {
+          "title": "Old Towers",
+          "description": "In Old Towers you play as a little explorer in towers full of deadly traps and ugly skulls. Your only weapons are quick-thinking and skill. Old Towers is inspired by Tomb Of The Mask from Playgendary.",
+          "type": "genesis",
+          "thumbnail": "images/homebrew/genesis/oldtowers-thumb.png",
+          "background": "images/homebrew/genesis/oldtowers-background.png",
+          "props": {
+            "rom": "http://192.168.1.179:3000/roms/genesis/oldtowers.bin"
+          }
+        },
+        {
+          "title": "Omega Blast",
+          "description": "Omega Blast was created by homebrew developer Nendo. It is a bullet hell shooter in which you have 2 minutes to blast everything you possibly can to achieve the highest score.",
+          "type": "genesis",
+          "thumbnail": "images/homebrew/genesis/omegablast-thumb.png",
+          "background": "images/homebrew/genesis/omegablast-background.png",
+          "props": {
+            "rom": "http://192.168.1.179:3000/roms/genesis/omega_blast.bin"
+          }
+        },
+        {
+          "title": "Papi Commando Remix",
+          "longTitle": "Papi Commando Remix (Demo)",
+          "description": "An independently developed project by Studio Vetea, published by WaterMelon. The evil Ceplusplus has sent a thief to Papi's home and has stolen his CommoStrad! Papi Commando must wear his headband yet again and wages war to recover his computer!",
+          "type": "genesis",
+          "thumbnail": "images/homebrew/genesis/papicommandoremix-thumb.png",
+          "background": "images/homebrew/genesis/papicommandoremix-background.png",
+          "props": {
+            "rom": "http://192.168.1.179:3000/roms/genesis/papicommandoremix.bin"
+          }
+        },
+        {
+          "title": "Phantom Gear",
+          "longTitle": "Phantom Gear (Demo)",
+          "description": "Phantom Gear mixes elements from a variety of classic action platformers for a unique and exciting package, and allows players to approach the game how they see fit. Lock ‘n’ load to power through levels, or use your skills and abilities to search for Gears and Orbs.",
+          "type": "genesis",
+          "thumbnail": "images/homebrew/genesis/phantomgear-thumb.png",
+          "background": "images/homebrew/genesis/phantomgear-background.png",
+          "props": {
+            "rom": "http://192.168.1.179:3000/roms/genesis/phantom_gear_0.21.bin"
+          }
+        }, 
+        {
+          "title": "Pringles",
+          "description": "There are three worlds with three levels each. Collect all the Pringles you can and don’t jump in the wrong direction!",
+          "type": "genesis",
+          "thumbnail": "images/homebrew/genesis/pringles-thumb.png",
+          "background": "images/homebrew/genesis/pringles-background.png",
+          "props": {
+            "rom": "http://192.168.1.179:3000/roms/genesis/PRINGLES.BIN"
+          }
+        },        
+        {
+          "title": "Project MD",
+          "longTitle": "Project MD (Unfinished)",
+          "description": "In this game, you play as Stephany, who loves playing games. She finds everyday life boring, so she creates a virtual world to roam around in and enjoy. However, she will soon realize that not all is happy in this realm.",
+          "type": "genesis",
+          "thumbnail": "images/homebrew/genesis/projectmd-thumb.png",
+          "background": "images/homebrew/genesis/projectmd-background.png",
+          "props": {
+            "rom": "http://192.168.1.179:3000/roms/genesis/projmd-20120429.bin"
+          }
+        },        
+        {
+          "title": "Rick Dangerous",
+          "description": "Will Rick Dangerous, intrepid Super Hero and part-time stamp collector, survive his first mission in the Aztec temple of the tribe? Should he do so, Rick will face new hazards in the Egyptian tomb and the enemy fortress.",
+          "type": "genesis",
+          "thumbnail": "images/homebrew/genesis/rickdangerous-thumb.png",
+          "background": "images/homebrew/genesis/rickdangerous-background.png",
+          "props": {
+            "rom": "http://192.168.1.179:3000/roms/genesis/rickdangerous.bin"
+          }
+        },
+        {
+          "title": "Tanglewood",
+          "longTitle": "Tanglewood (Demo)",
+          "description": "Set in a fictional world, the game follows a young creature, Nymn, who is separated from the family pack after the sun sets. Unable to get back to the safety of the underground home, Nymn must find a way to survive the night terrors and get to morning.",
+          "type": "genesis",
+          "thumbnail": "images/homebrew/genesis/tanglewood-thumb.png",
+          "background": "images/homebrew/genesis/tanglewood-background.png",
+          "props": {
+            "rom": "http://192.168.1.179:3000/roms/genesis/TANGLEWD.BIN"
+          }
+        },               
+        {
+          "title": "VilQ Adventure",
+          "description": "A non-stop side scrolling jump, run, and slider in which you need to avoid the enemies, pick up food, and get as far as possible to reach the highest score.",
+          "type": "genesis",
+          "thumbnail": "images/homebrew/genesis/vilq-thumb.png",
+          "background": "images/homebrew/genesis/vilq-background.png",
+          "props": {
+            "rom": "http://192.168.1.179:3000/roms/genesis/vilqadventure.bin"
+          }
+        },                       
+        {
+          "title": "Xump 2",
+          "longTitle": "Xump 2: Back to Space",
+          "description": "Xump 2 is a simple multi-platform puzzler by Retroguru. Help Misuki clean up deserted space fields. Obstacles like mines, teleport sectors and arrow walkways appear progressively throughout the game.",
+          "type": "genesis",
+          "thumbnail": "images/homebrew/genesis/xump2-thumb.png",
+          "background": "images/homebrew/genesis/xump2-background.png",
+          "props": {
+            "rom": "http://192.168.1.179:3000/roms/genesis/xump2_100-digital (free release).bin"
+          }
+        },
+        {
+          "title": "Zero Tolerance",
+          "description": "Zero Tolerance is a 1994 video game developed by Technopop and published by Accolade exclusively for the Sega Mega Drive/Genesis video game console. It was one of the few Mega Drive/Genesis first person shooters, besides Bloodshot and the Duke Nukem 3D port. This game was deemed publicly distributable, provided no changes to the game are ever made, by Technopop very recently.",
+          "type": "genesis",
+          "thumbnail": "images/homebrew/genesis/zerotolerance-thumb.png",
+          "background": "images/homebrew/genesis/zerotolerance-background.png",
+          "props": {
+            "rom": "http://192.168.1.179:3000/roms/genesis/ZEROTOL.BIN"
+          }
+        }
+      ]
+    },
+    {
       "title": "Sega Game Gear",
       "longTitle": "Sega Game Gear Games",
       "background": "images/homebrew/gamegear-background.png",
