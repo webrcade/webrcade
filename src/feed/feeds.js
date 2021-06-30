@@ -115,10 +115,11 @@ class Feeds extends FeedBase {
     expandedFeeds.unshift({
       feedId: Feeds.DEFAULT_ID,
       title: "Default",
-      description: "Description goes here.",
       longTitle: "Default Feed",
+      description: "The default feed contains a collection of high-quality publicly available games and demos across the various platforms (emulators, engines, etc.) that are supported by WebЯcade.",
       url: Feeds.NONE_URL,      
-      thumbnail: "images/apps/test/default-feed.png"
+      thumbnail: "default-feed/images/default-thumb.png",
+      background: "default-feed/images/default-background.png"
     })
 
     // Add
