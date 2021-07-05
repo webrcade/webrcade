@@ -105,7 +105,6 @@ class Feeds extends FeedBase {
   }
   
   _expand() {
-        
     let expandedFeeds = [...this.feeds];
 
     // Sort
@@ -126,14 +125,14 @@ class Feeds extends FeedBase {
     expandedFeeds.unshift({
       feedId: Feeds.ADD_ID,
       title: "Add Feed",
-      description: "Add Feed",
       longTitle: "Add Feed",
+      description: "Use the \"Add\" button below to register a new feed with WebЯcade. Provide the location (URL) of the feed when prompted, and then press the \"OK\" button.",
       url: Feeds.NONE_URL,      
-      thumbnail: "images/add.png"
+      thumbnail: "images/add-thumb.png",
+      background: "images/add-background.png"
     })
 
     expandedFeeds = this._expandItems(expandedFeeds);
-
     this.expandedFeeds = expandedFeeds;
   }
 

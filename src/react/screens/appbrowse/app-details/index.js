@@ -10,6 +10,10 @@ export default class AppDetails extends Component {
   render() {
     const { backgroundSrc, bottom, buttons, description, itemKey, subTitle, title } = this.props;
 
+    // const img = new Image();
+    // img.onload = () => { console.log('loaded!') }
+    // img.src = backgroundSrc;
+
     let imageStyle = backgroundSrc ? {
       backgroundImage: 'url(' + backgroundSrc + ')',
     } : {};
@@ -22,8 +26,10 @@ export default class AppDetails extends Component {
       }
       if (this.timeoutId) window.clearTimeout(this.timeoutId);
       this.timeoutId = window.setTimeout(() => {
+        // TODO: Image load, set image, and then fade in...
         el = document.querySelector('.app-details-right');
         el.classList.add('fade-in');
+
       }, 250);
     }
 

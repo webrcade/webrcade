@@ -23,6 +23,8 @@ class Slider extends Component {
     };
     this.keyDown = false;
     this.swipe = null;
+    this.setMinHeight = false;
+    this.minHeightTimeoutId = null;
   }
 
   gamepadCallback = e => {
@@ -72,6 +74,7 @@ class Slider extends Component {
     }
     
     window.addEventListener("resize", this.handleWindowResize);
+    window.addEventListener("orientationchange", this.handleWindowResize);
     this.handleWindowResize();
   }
 
@@ -88,6 +91,7 @@ class Slider extends Component {
     }
 
     window.removeEventListener("resize", this.handleWindowResize);
+    window.removeEventListener("orientationchange", this.handleWindowResize);
   }  
 
   shouldComponentUpdate(nextProps, nextState) {
@@ -117,7 +121,7 @@ class Slider extends Component {
             this.setState({
               sliderHidden: false
             });
-          }, 150);  
+          }, 250);  
 
           if (onSelected) {
             onSelected(nextProps.items[0]);
@@ -188,6 +192,7 @@ class Slider extends Component {
 
   // alter number of items in row on window resize
   handleWindowResize = () => {
+    this.resetMinHeight();
     //alert(window.innerWidth);
     if (window.innerWidth <= 950 && window.innerHeight <= 400) {
       /* Mobile sizing (experimental) */
@@ -207,8 +212,14 @@ class Slider extends Component {
   renderSliderContent = () => {
     // console.log('RENDER');
     const { focused, itemsInRow, lowestVisibleIndex, scrollable, selectedItem, sliderHasMoved } = this.state;
-    const { getTitle, getThumbnailSrc, items } = this.props;
+    const { getTitle, getThumbnailSrc, getDefaultThumbnailSrc, items } = this.props;
     const totalItems = items.length;
+
+    const onImageLoadedFunc = (e) => {      
+      if (!this.setMinHeight) {
+        this.resetMinHeight();
+      }
+    }
 
     // slider content made up of left, mid, and right portions to allow continous cycling
     const left = [];
@@ -277,11 +288,13 @@ class Slider extends Component {
         <SliderItem
           title={getTitle ? getTitle(item) : ''}
           thumbnailSrc={getThumbnailSrc ? getThumbnailSrc(item) : ''}
+          defaultThumbnailSrc={getDefaultThumbnailSrc ? getDefaultThumbnailSrc(item) : ''}
           key={`${item.id}-${index}`}
           width={100 / itemsInRow}
           selected={selectedItem === index && focused}
           onClick={() => { this.handleItemClicked(index) }}
           hide={hide}
+          onImageLoaded={onImageLoadedFunc}
         />
       );
     }
@@ -474,6 +487,25 @@ class Slider extends Component {
       return true;
     }
     return false;
+  }
+
+  resetMinHeight() {
+    const { container } = this;
+    if (!container) return;
+
+    console.log("Resetting min height.");
+    if (this.minHeightTimeoutId) {
+      window.clearTimeout(this.minHeightTimeoutId)
+    }
+    container.style.minHeight = '0px';
+    this.minHeightTimeoutId = setTimeout(() => {        
+      const height = container.offsetHeight;
+      if (height > 0) {
+        container.style.minHeight = container.offsetHeight + "px";         
+        console.log("Min height: " + container.style.minHeight);
+        this.setMinHeight = true;
+      }    
+    }, 1000);    
   }
 
   render() {

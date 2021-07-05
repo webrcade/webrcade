@@ -161,18 +161,21 @@ export default class AppBrowseScreen extends Component {
     const { onFeedLoad } = this.props;
     const isAdd = currentItem.feedId === Feeds.ADD_ID;
 
+    const defaultThumbnail = 'images/feed.png';
+
     return {
       title: this.getLongTitle(currentItem),
       subTitle: Feeds.getUrl(currentItem),      
       description: currentItem.description,
-      backgroundSrc: currentItem.background, /* TODO: Default */
+      backgroundSrc: currentItem.background ? currentItem.background : 'images/feed-background.png',
       categoryLabel: Resources.getText(TEXT_IDS.FEEDS),            
       playLabel: Resources.getText(isAdd ? TEXT_IDS.ADD_UC : TEXT_IDS.LOAD_UC),
       playImg: isAdd ? AddCircleBlackImage : CloudDownloadBlackImage,
       playHoverImg: isAdd ? AddCircleWhiteImage : CloudDownloadWhiteImage,      
       isDeleteEnabled: Feeds.isDeleteEnabled(currentItem),
       getTitle: item => item.title,
-      getThumbnailSrc: item => item.thumbnail ? item.thumbnail : 'images/feed.png',      
+      getThumbnailSrc: item => item.thumbnail ? item.thumbnail : defaultThumbnail,      
+      getDefaultThumbnailSrc: () => defaultThumbnail,
       onClick: () => onFeedLoad(currentItem),    
     }
   }
@@ -180,6 +183,8 @@ export default class AppBrowseScreen extends Component {
   getCategoryInfo(currentItem) {
     const { sliderRef } = this;
     const { ModeEnum } = AppBrowseScreen;
+
+    const defaultThumbnail = 'images/folder.png';
 
     return {
       title: this.getLongTitle(currentItem),
@@ -189,7 +194,8 @@ export default class AppBrowseScreen extends Component {
       playLabel: Resources.getText(TEXT_IDS.SELECT_UC),
       flyoutLabel: Resources.getText(TEXT_IDS.SHOW_FEEDS),
       getTitle: item => item.title,
-      getThumbnailSrc: item => item.thumbnail ? item.thumbnail : 'images/folder.png',
+      getThumbnailSrc: item => item.thumbnail ? item.thumbnail : defaultThumbnail,
+      getDefaultThumbnailSrc: () => defaultThumbnail,
       onClick: () => {
         this.setState({
           menuMode: ModeEnum.APPS,
@@ -227,6 +233,7 @@ export default class AppBrowseScreen extends Component {
       playHoverImg: PlayArrowWhiteImage,      
       getTitle: item => reg.getTitle(item),
       getThumbnailSrc: item => reg.getThumbnail(item),
+      getDefaultThumbnailSrc: item => reg.getDefaultThumbnail(item),
       onClick: () => { if (onAppSelected) onAppSelected(currentItem); },
       categoryOnClick: () => {
         this.setState({ menuMode: ModeEnum.CATEGORIES });
@@ -308,6 +315,7 @@ export default class AppBrowseScreen extends Component {
               ref={sliderRef}
               getTitle={info.getTitle}
               getThumbnailSrc={info.getThumbnailSrc}
+              getDefaultThumbnailSrc={info.getDefaultThumbnailSrc}
               onSelected={item => this.setState({ currentItem: item })}
               onClick={() => playButtonRef.current.focus()} />
           </div>

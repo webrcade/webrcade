@@ -28,16 +28,24 @@ class AppRegistry {
     APP_TYPES[app.type].validate(app);
   }
 
-  getBackground(app) {
+  getDefaultBackground(app) {
     const APP_TYPES = this.APP_TYPES;
+    return APP_TYPES[app.type].background;
+  }
+
+  getDefaultThumbnail(app) {
+    const APP_TYPES = this.APP_TYPES;
+    return APP_TYPES[app.type].thumbnail;
+  }
+
+  getBackground(app) {
     return app.background !== undefined ? 
-      app.background : APP_TYPES[app.type].background;
+      app.background : this.getDefaultBackground(app);
   }
 
   getThumbnail(app) {
-    const APP_TYPES = this.APP_TYPES;
     return app.thumbnail !== undefined ? 
-      app.thumbnail : APP_TYPES[app.type].thumbnail;
+      app.thumbnail : this.getDefaultThumbnail(app);
   }
 
   getDescription(app) {

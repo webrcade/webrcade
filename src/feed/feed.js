@@ -47,7 +47,7 @@ class Feed extends FeedBase {
           }
           return true;
         }).sort(this.TITLE_SORT)
-      );      
+      );
     }); 
 
     this.uniqueCategoryCount = categories.length;
