@@ -383,6 +383,17 @@
           "props": {
             "rom": "default-feed/content/nes/Alter_Ego.nes"
           }
+        },        
+        {
+          "title": "Battle Kid",          
+          "longTitle": "Battle Kid: Fortress of Peril (Demo)",
+          "type": "nes",
+          "thumbnail": "default-feed/images/nes/battlekid-thumb.png",
+          "background": "default-feed/images/nes/battlekid-background.png",
+          "description": "Battle Kid is very similar to I Wanna Be the Guy, an indie freeware game for the PC, in terms of the design of the main character and the projectile weapon he possesses, the trial-and-error difficulty, and instant death mechanics of all enemies and hazards. However, the similarities end here as the actual gameplay and control is much more in the likeness of Mega Man games on the NES and the boss fights at the end of each major stage.",
+          "props": {
+            "rom": "default-feed/content/nes/BattleKid-Demo.nes"
+          }
         },
         {
           "title": "Battle Kid 2",
@@ -448,6 +459,17 @@
           }
         },
         {
+          "title": "Legends of Owlia",
+          "longTitle": "The Legends of Owlia",
+          "type": "nes",
+          "thumbnail": "default-feed/images/nes/owlia-thumb.png",
+          "background": "default-feed/images/nes/owlia-background.png",
+          "description": "The Legends of Owlia is Gradual Games' second release for the NES. It is an action-adventure game inspired by StarTropics, Crystalis, and the Legend of Zelda. Guide heroine Adlanniel and her owl friend Tyto to free the great owls and defeat Mermon king of the Mermen.",
+          "props": {
+            "rom": "default-feed/content/nes/owlia.nes"
+          }
+        },
+        {
           "title": "NES Virus Cleaner",
           "type": "nes",
           "thumbnail": "default-feed/images/nes/nesvirus-thumb.png",
@@ -469,6 +491,16 @@
             "rom": "default-feed/content/nes/nomolos.nes"
           }
         },
+        {
+          "title": "PROTO DERE .NES",
+          "type": "nes",
+          "thumbnail": "default-feed/images/nes/protodere-thumb.png",
+          "background": "default-feed/images/nes/protodere-background.png",
+          "description": "In ‘PROTO DERE .NES’, you play as a character trying to escape a burning underground mine. Use your athletic prowess to jump over fires and climb ladders to reach the exit.",
+          "props": {
+            "rom": "default-feed/content/nes/PROTO DERE.NES"
+          }
+        },        
         {
           "title": "Sir Ababol",
           "type": "nes",
