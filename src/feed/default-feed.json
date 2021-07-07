@@ -368,6 +368,130 @@
       ]
     },
     {
+      "title": "Nintendo NES",
+      "longTitle": "Nintendo Entertainment System Games",
+      "background": "default-feed/images/nes-background.png",
+      "thumbnail": "default-feed/images/nes-thumb.png",
+      "description": "The Nintendo Entertainment System (NES) is an 8-bit third-generation home video game console produced by Nintendo. Nintendo first released it in Japan as the Family Computer, commonly known as the Famicom, in 1983. The NES, a remodelled version, was released internationally in the following years.",
+      "items": [
+        {
+          "title": "Alter Ego",
+          "type": "nes",
+          "thumbnail": "default-feed/images/nes/alterego-thumb.png",
+          "background": "default-feed/images/nes/alterego-background.png",
+          "description": "You control a hero who has a phantom twin, his alter ego. When the hero moves, his alter ego moves in a mirrored fashion. In some levels the movements are mirrored horizontally, in others vertically. You can switch between the hero and his alter ego a limited number of times per level.",
+          "props": {
+            "rom": "default-feed/content/nes/Alter_Ego.nes"
+          }
+        },
+        {
+          "title": "Battle Kid 2",
+          "longTitle": "Battle Kid 2: Mountain of Torment (Demo)",
+          "type": "nes",
+          "thumbnail": "default-feed/images/nes/battlekid2-thumb.png",
+          "background": "default-feed/images/nes/battlekid2-background.png",
+          "description": "The next phase of the vile group's plan has begun! The Supermech have have been destroyed, but that was only the beginning. You must venture through a giant mountain base and overcome its many dangers. Along the way, items will be found to allow access to new areas and grant you new abilities. An even bigger game than before awaits! Will the torment get to you?",
+          "props": {
+            "rom": "default-feed/content/nes/BattleKid2-NewDemo.nes"
+          }
+        },
+        {
+          "title": "Blade Buster",
+          "type": "nes",
+          "thumbnail": "default-feed/images/nes/bladebuster-thumb.png",
+          "background": "default-feed/images/nes/bladebuster-background.png",
+          "description": "Blade Buster is a score attack shmup that comes with two game modes; two and five minutes, each ending with an epic boss battle.",
+          "props": {
+            "rom": "default-feed/content/nes/BladeBuster.nes"
+          }
+        },
+        {
+          "title": "Driar",
+          "type": "nes",
+          "thumbnail": "default-feed/images/nes/driar-thumb.png",
+          "background": "default-feed/images/nes/driar-background.png",
+          "description": "Driar is a platform-game for the Nintendo Entertainment System/Famicom written by Stefan Adolfsson and David Eriksson. Take control of Driar and collect all the stars on each level to progress. You can walk around the screen (if you exit the screen on the right side you will reappear on the left side). There are 38 levels in total.",
+          "props": {
+            "pal": true,
+            "rom": "default-feed/content/nes/Driar.nes"
+          }
+        },        
+        {
+          "title": "Elite",
+          "type": "nes",
+          "thumbnail": "default-feed/images/nes/elite-thumb.png",
+          "background": "default-feed/images/nes/elite-background.png",
+          "description": "Elite is a space trading video game. It was originally written and developed for the BBC Micro and Acorn Electron computers. Elite's open-ended game model and revolutionary 3D graphics earned it a place as a classic and a genre maker in gaming history.",
+          "props": {
+            "pal": true,
+            "rom": "default-feed/content/nes/elite.nes"
+          }
+        },                
+        {
+          "title": "Lan Master",
+          "type": "nes",
+          "thumbnail": "default-feed/images/nes/lanmaster-thumb.png",
+          "background": "default-feed/images/nes/lanmaster-background.png",
+          "description": "Your goal is to connect a set of computers with the provided fragments of wires. To accomplish this, you need to rotate the wires and computers appropriately within the alloted time limit.",
+          "props": {
+            "rom": "default-feed/content/nes/Lan_Master.nes"
+          }
+        },
+        {
+          "title": "Lawn Mower",
+          "type": "nes",
+          "thumbnail": "default-feed/images/nes/lawnmower-thumb.png",
+          "background": "default-feed/images/nes/lawnmower-background.png",
+          "description": "You control a lawn mower, with a goal of cutting ten lawns. The speed of the mower can be controlled by pressing a button. If you run out of fuel, the game is over.",
+          "props": {
+            "rom": "default-feed/content/nes/Lawn_Mower.nes"
+          }
+        },
+        {
+          "title": "NES Virus Cleaner",
+          "type": "nes",
+          "thumbnail": "default-feed/images/nes/nesvirus-thumb.png",
+          "background": "default-feed/images/nes/nesvirus-background.png",
+          "description": "In this game, you take on the role of a virus cleaning program, collecting bugs and avoiding hazards.",
+          "props": {
+            "pal": true,
+            "rom": "default-feed/content/nes/nes_virus_cleaner.nes"
+          }
+        },
+        {
+          "title": "Nomolos",
+          "longTitle": "Nomolos: Storming the Catsle",
+          "type": "nes",
+          "thumbnail": "default-feed/images/nes/nomolos-thumb.png",
+          "background": "default-feed/images/nes/nomolos-background.png",
+          "description": "Guide Nomolos through 12 action packed levels and defeat 4 of Boulder's most fearsome henchmen before finally confronting the evil Hippo in her lair, the Catsle.",
+          "props": {
+            "rom": "default-feed/content/nes/nomolos.nes"
+          }
+        },
+        {
+          "title": "Sir Ababol",
+          "type": "nes",
+          "thumbnail": "default-feed/images/nes/sirababol-thumb.png",
+          "background": "default-feed/images/nes/sirababol-background.png",
+          "description": "Sir Ababol is a 2D platform game about Sir Ababol, a young crusader from Manchester City who lives in the 11th century. He witnesses the courage of St. George from Capadocia against the infidels and stumbles over a rock, falling into the Alcoraz River that carries him to the Monegros' Desert. When he wakes up he realizes he has lost his sword.",
+          "props": {
+            "rom": "default-feed/content/nes/Sir Ababol (2013)(The Mojon Twins)[!].nes"
+          }
+        },
+        {
+          "title": "Streemerz",
+          "type": "nes",
+          "thumbnail": "default-feed/images/nes/streemerz-thumb.png",
+          "background": "default-feed/images/nes/streemerz-background.png",
+          "description": "Try climbing to the top of this one by throwing streamers and climbing them. On your way up you better watch out for the various pie throwing clowns, burning candles, and bouncing balls.",
+          "props": {
+            "rom": "default-feed/content/nes/streemerz-v02.nes"
+          }
+        }        
+      ]
+    },
+    {
       "title": "Nintendo SNES",
       "longTitle": "Super Nintendo Games",
       "background": "default-feed/images/snes-background.png",
