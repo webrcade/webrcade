@@ -22,8 +22,11 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+test-feed.json
+test.html
 /(old)
-
+/(old images)
+/public/images/apps
 /public/images/games
 buildall*
 *DO-NOT-CHECKIN*
