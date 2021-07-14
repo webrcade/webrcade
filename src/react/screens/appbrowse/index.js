@@ -189,7 +189,7 @@ export default class AppBrowseScreen extends Component {
     return {
       title: this.getLongTitle(currentItem),
       description: currentItem.description,
-      backgroundSrc: currentItem.background, /* TODO: Default */      
+      backgroundSrc: currentItem.background ? currentItem.background : 'images/folder-background.png' , 
       categoryLabel: Resources.getText(TEXT_IDS.CATEGORIES),
       playLabel: Resources.getText(TEXT_IDS.SELECT_UC),
       flyoutLabel: Resources.getText(TEXT_IDS.SHOW_FEEDS),
