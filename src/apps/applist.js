@@ -1,6 +1,6 @@
-import { isDev } from '@webrcade/app-common'
+import { config, isDev } from '@webrcade/app-common'
 
-const localIp = "192.168.1.179";
+const localIp = config.getLocalIp();
 const locGenesis = isDev() ? `http://${localIp}:3010` : 'app/genesis';
 const locSms = locGenesis;
 const loc2600 = isDev() ? `http://${localIp}:3050` : 'app/2600';
