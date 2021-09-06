@@ -29,7 +29,6 @@ export default class AppDetails extends Component {
         // TODO: Image load, set image, and then fade in...
         el = document.querySelector('.app-details-right');
         el.classList.add('fade-in');
-
       }, 250);
     }
 

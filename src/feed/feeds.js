@@ -115,7 +115,7 @@ class Feeds extends FeedBase {
       feedId: Feeds.DEFAULT_ID,
       title: "Default",
       longTitle: "Default Feed",
-      description: "The default feed contains a collection of high-quality publicly available games and demos across the various platforms (emulators, engines, etc.) that are supported by WebЯcade.",
+      description: "The default feed contains a collection of high-quality publicly available games and demos across the various platforms (emulators, engines, etc.) that are supported by webЯcade.",
       url: Feeds.NONE_URL,      
       thumbnail: "default-feed/images/default-thumb.png",
       background: "default-feed/images/default-background.png"
@@ -126,7 +126,7 @@ class Feeds extends FeedBase {
       feedId: Feeds.ADD_ID,
       title: "Add Feed",
       longTitle: "Add Feed",
-      description: "Use the \"Add\" button below to register a new feed with WebЯcade. Provide the location (URL) of the feed when prompted, and then press the \"OK\" button.",
+      description: "Use the \"Add\" button below to register a new feed with webЯcade. Provide the location (URL) of the feed when prompted, and then press the \"OK\" button.",
       url: Feeds.NONE_URL,      
       thumbnail: "images/add-thumb.png",
       background: "images/add-background.png"

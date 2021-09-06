@@ -18,7 +18,7 @@ export default class Logo extends Component {
         <div className={logoName + '-left-text'}>web</div>
         <img className={logoName + '-image'} alt="webЯcade" src={logo}></img>
         <div className={logoName + '-right-text'}>cade</div>
-       </div>
+      </div>
     );
   }
 };
