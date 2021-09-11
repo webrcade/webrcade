@@ -30,7 +30,7 @@ export class Webrcade extends Component {
 
     this.state = {
       mode: this.ScreenEnum.LOADING,
-      loadingStatus: Resources.getText(TEXT_IDS.LOADING_DOTS),
+      loadingStatus: Resources.getText(TEXT_IDS.LOADING_FEED),
       initialFeed: true,
       feeds: null,
       feed: this.parseFeed(getDefaultFeed()),

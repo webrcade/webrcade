@@ -8,35 +8,53 @@ export default class AppDetails extends Component {
   lastItemKey = null;
 
   render() {
-    const { backgroundSrc, bottom, buttons, description, itemKey, subTitle, title } = this.props;
-
-    // const img = new Image();
-    // img.onload = () => { console.log('loaded!') }
-    // img.src = backgroundSrc;
-
-    let imageStyle = backgroundSrc ? {
-      backgroundImage: 'url(' + backgroundSrc + ')',
-    } : {};
+    const { backgroundSrc, defaultBackgroundSrc, bottom, buttons, description, itemKey, subTitle, title } = this.props;
 
     if (itemKey !== this.lastItemKey) {
       this.lastItemKey = itemKey;
+
+      // Remove display of right details
       let el = document.querySelector('.app-details-right');
       if (el) {
         el.classList.remove('fade-in');      
       }
-      if (this.timeoutId) window.clearTimeout(this.timeoutId);
-      this.timeoutId = window.setTimeout(() => {
-        // TODO: Image load, set image, and then fade in...
-        el = document.querySelector('.app-details-right');
-        el.classList.add('fade-in');
-      }, 250);
-    }
+
+      // Common fade in
+      const fadeIn = () => {
+        if (this.timeoutId) window.clearTimeout(this.timeoutId);
+        this.timeoutId = window.setTimeout(() => {
+          // TODO: Image load, set image, and then fade in...
+          el = document.querySelector('.app-details-right');
+          el.classList.add('fade-in');
+        }, 250);
+      }
+
+      const displayBackground = (src) => {
+        if (this.detailsRightRef) {
+          this.detailsRightRef.style.backgroundImage = 'url(' + src + ')'
+          fadeIn();
+        } else {
+          console.error('Detailed right ref is not defined.');
+        }
+      }
+
+      // Attempt to load the background image
+      const img = new Image();
+      img.onload = () => { displayBackground(img.src); };
+      img.onerror = () => {
+        // If an error occurred, attempt to load default background
+        const defaultImg = new Image();
+        defaultImg.onload = () => { displayBackground(defaultImg.src); };
+        defaultImg.src = defaultBackgroundSrc;
+      }
+      img.src = backgroundSrc;  
+    }  
 
     return (
       <div className="app-details-content">
         <div className="app-details-background">
           <div className="app-details-left"></div>
-          <div className="app-details-right" style={imageStyle}></div>
+          <div ref={(detailsRight) => { this.detailsRightRef = detailsRight; }} className="app-details-right"></div>
         </div>
         <div className="app-details-content-container">
           <div className="app-details-content-container-title">{title ? title : ''}</div>

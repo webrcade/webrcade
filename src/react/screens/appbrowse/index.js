@@ -168,6 +168,7 @@ export default class AppBrowseScreen extends Component {
       subTitle: Feeds.getUrl(currentItem),      
       description: currentItem.description,
       backgroundSrc: currentItem.background ? currentItem.background : 'images/feed-background.png',
+      defaultBackgroundSrc: 'images/feed-background.png',        
       categoryLabel: Resources.getText(TEXT_IDS.FEEDS),            
       playLabel: Resources.getText(isAdd ? TEXT_IDS.ADD_UC : TEXT_IDS.LOAD_UC),
       playImg: isAdd ? AddCircleBlackImage : CloudDownloadBlackImage,
@@ -190,6 +191,7 @@ export default class AppBrowseScreen extends Component {
       title: this.getLongTitle(currentItem),
       description: currentItem.description,
       backgroundSrc: currentItem.background ? currentItem.background : 'images/folder-background.png' , 
+      defaultBackgroundSrc: 'images/folder-background.png',        
       categoryLabel: Resources.getText(TEXT_IDS.CATEGORIES),
       playLabel: Resources.getText(TEXT_IDS.SELECT_UC),
       flyoutLabel: Resources.getText(TEXT_IDS.SHOW_FEEDS),
@@ -225,7 +227,8 @@ export default class AppBrowseScreen extends Component {
       title: reg.getLongTitle(currentItem),
       subTitle: reg.getName(currentItem),      
       description: reg.getDescription(currentItem),
-      backgroundSrc: reg.getBackground(currentItem),      
+      backgroundSrc: reg.getBackground(currentItem),   
+      defaultBackgroundSrc: reg.getDefaultBackground(currentItem),   
       categoryLabel: this.getLongTitle(category),
       flyoutLabel: Resources.getText(TEXT_IDS.SHOW_CATEGORIES),
       playLabel: Resources.getText(TEXT_IDS.PLAY_UC),
@@ -275,6 +278,7 @@ export default class AppBrowseScreen extends Component {
               description={info.description}
               subTitle={info.subTitle}
               backgroundSrc={info.backgroundSrc}
+              defaultBackgroundSrc={info.defaultBackgroundSrc}
               buttons={currentItem ?
                 <>
                   <ImageButton
