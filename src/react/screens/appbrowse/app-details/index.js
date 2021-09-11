@@ -30,11 +30,13 @@ export default class AppDetails extends Component {
       }
 
       const displayBackground = (src) => {
-        if (this.detailsRightRef) {
-          this.detailsRightRef.style.backgroundImage = 'url(' + src + ')'
-          fadeIn();
-        } else {
-          console.error('Detailed right ref is not defined.');
+        if (itemKey === this.lastItemKey) {
+          if (this.detailsRightRef) {
+            this.detailsRightRef.style.backgroundImage = 'url(' + src + ')'
+            fadeIn();
+          } else {
+            console.error('Detailed right ref is not defined.');
+          }
         }
       }
 
