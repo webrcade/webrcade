@@ -227,7 +227,7 @@
           "thumbnail": "default-feed/images/2600/thrust-thumb.png",
           "background": "default-feed/images/2600/thrust-background.png",
           "props": {
-            "rom": "default-feed/content/2600/thrust.bin"
+            "rom": "default-feed/content/2600/Thrust.bin"
           }
         }
       ]
