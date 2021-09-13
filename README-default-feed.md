@@ -24,4 +24,23 @@
 | Stay Frosty | Darrell Spice, Jr. | [Atari 2600](https://docs.webrcade.com/apps/emulators/2600/) | http://www.spiceware.org/atari_stay_frosty.html |
 | Thrust | Thomas Jentzsch | [Atari 2600](https://docs.webrcade.com/apps/emulators/2600/) | https://atariage.com/software_page.php?SoftwareLabelID=872 |
 | Toyshop Trouble | John Payson (Zach Matley, Bob Montgomery) | [Atari 2600](https://docs.webrcade.com/apps/emulators/2600/) | https://atariage.com/software_page.php?SoftwareLabelID=2787 |
+| Bentley Bear's Crystal Quest | Bob DeCrescenzo | [Atari 7800](https://docs.webrcade.com/apps/emulators/7800/) | https://atariage.com/forums/topic/199637-work-in-progress-bentley-bear-crystal-quest/ |
+| Dragon's Cache | Todd Furmanski | [Atari 7800](https://docs.webrcade.com/apps/emulators/7800/) | https://atariage.com/forums/topic/299210-dragons-cache-vs-puzzle-drop-game-now-available-for-purchase/ |
+| Dragon's Descent | Todd Furmanski | [Atari 7800](https://docs.webrcade.com/apps/emulators/7800/) | https://atariage.com/forums/topic/291525-dragons-descent-actionroguelike-for-the-7800-ported-from-the-2600/ |
+| E.X.O. | Muddyfunster | [Atari 7800](https://docs.webrcade.com/apps/emulators/7800/) | https://atariage.com/forums/topic/315935-exo-elite-xeno-operations-atari-7800-wip/ |
+| FailSafe | Bob DeCrescenzo | [Atari 7800](https://docs.webrcade.com/apps/emulators/7800/) | https://atariage.com/forums/topic/154189-failsafe-7800-wip/ |
+| Flappy Bird | Matthias Luedtke | [Atari 7800](https://docs.webrcade.com/apps/emulators/7800/) | https://atariage.com/forums/topic/232996-flappy-bird/ |
+| Knight Guy in Low Res World: Castle Days | Vladimir Zúñiga | [Atari 7800](https://docs.webrcade.com/apps/emulators/7800/) | https://atariage.com/forums/topic/308716-knight-guy-in-low-res-world-castle-days/ |
+| Meteor Shower | Bob DeCrescenzo | [Atari 7800](https://docs.webrcade.com/apps/emulators/7800/) | https://atariage.com/forums/topic/182308-meteor-shower |
+| Millie and Molly (Demo) | Matthew Smith, Mike Saarna | [Atari 7800](https://docs.webrcade.com/apps/emulators/7800/) | https://atariage.com/forums/topic/306911-millie-and-molly-atari-7800/ |
+| Serpentine |  Mike Saarna | [Atari 7800](https://docs.webrcade.com/apps/emulators/7800/) | https://atariage.com/forums/topic/258291-serpentine-7800/ |
+| Slide Boy in Maze Land  | Vladimir Zúñiga | [Atari 7800](https://docs.webrcade.com/apps/emulators/7800/) | https://atariage.com/forums/topic/320173-slide-boy-in-maze-land-7800-version/ |
+| TiME Salvo | Mike Saarna | [Atari 7800](https://docs.webrcade.com/apps/emulators/7800/) | https://atariage.com/forums/topic/224469-salvo/ |
+| Dangerous Demolition | Dr. Ludos | [Sega Game Gear](https://docs.webrcade.com/apps/emulators/gamegear/) | https://www.smspower.org/Homebrew/DangerousDemolition-GG |
+| Fire Track | Ben Ryves | [Sega Game Gear](https://docs.webrcade.com/apps/emulators/gamegear/) | https://www.smspower.org/Homebrew/FireTrack-GG |
+| Nibbles | Martin Konrad | [Sega Game Gear](https://docs.webrcade.com/apps/emulators/gamegear/) | https://www.smspower.org/Homebrew/GGNibbles-GG |
+| Swabby | Anders S. Jensen | [Sega Game Gear](https://docs.webrcade.com/apps/emulators/gamegear/) | https://www.smspower.org/Homebrew/Swabby-GG |
+| Turrican (Demo) | Martin Konrad | [Sega Game Gear](https://docs.webrcade.com/apps/emulators/gamegear/) | https://www.smspower.org/Homebrew/GGTurrican-GG |
+| Wing Warriors | Fran Matsusaka | [Sega Game Gear](https://docs.webrcade.com/apps/emulators/gamegear/) | https://www.smspower.org/Homebrew/WingWarriors-SMS |
+| Zoop 'Em Up | Martin Konrad | [Sega Game Gear](https://docs.webrcade.com/apps/emulators/gamegear/) | https://www.smspower.org/Homebrew/ZoopEmUp-GG |
 
