@@ -60,6 +60,19 @@
 | Skipp and Friends |   Mukunda Johnson, Ken Snyder, Steven Velema, Hubert Lamontagne | [Nintendo SNES](https://docs.webrcade.com/apps/emulators/snes/) | https://pdroms.de/supernintendoentertainmentsystem/skipp-and-friends-snes-game |
 | Super Boss Gaiden |  German duo Dieter Laser, ChronoMoogle | [Nintendo SNES](https://docs.webrcade.com/apps/emulators/snes/) | https://superbossgaiden.superfamicom.org/ |
 | Uwol: Quest for Money |  Alekmaul, The Mojon Twins | [Nintendo SNES](https://docs.webrcade.com/apps/emulators/snes/) | https://www.mojontwins.com/juegos_mojonos/uwol-quest-for-money/<br>https://www.portabledev.com/jeux/supernes/uwol-snes/ |
+| Astro Force | Enrique Ruiz  | [Sega Master System](https://docs.webrcade.com/apps/emulators/mastersystem/) | https://www.smspower.org/Homebrew/AstroForce-SMS |
+| Bara Burū | Kagesan | [Sega Master System](https://docs.webrcade.com/apps/emulators/mastersystem/) | https://www.smspower.org/Homebrew/BaraBur%C5%AB-SMS |
+| Bruce Lee | Kagesan | [Sega Master System](https://docs.webrcade.com/apps/emulators/mastersystem/) | https://www.smspower.org/Homebrew/BruceLee-SMS |
+| CIMMERiAN (Demo) | Ichigobankai | [Sega Master System](https://docs.webrcade.com/apps/emulators/mastersystem/) | https://www.smspower.org/Homebrew/CIMMERiAN-SMS |
+| CIMMERiAN (Demo) | Ichigobankai | [Sega Master System](https://docs.webrcade.com/apps/emulators/mastersystem/) | https://www.smspower.org/Homebrew/CIMMERiAN-SMS |
+| DARC | Richard Cornelisse | [Sega Master System](https://docs.webrcade.com/apps/emulators/mastersystem/) | https://www.smspower.org/Homebrew/DARC-SMS |
+| Flight of Pigarus | Kagesan | [Sega Master System](https://docs.webrcade.com/apps/emulators/mastersystem/) | https://www.smspower.org/Homebrew/FlightOfPigarus-SMS |
+| Galactic Revenge | Enrique Ruiz | [Sega Master System](https://docs.webrcade.com/apps/emulators/mastersystem/) | https://www.smspower.org/Homebrew/GalacticRevenge-SMS |
+| Mecha 8 (Demo) | îscar Toledo G. | [Sega Master System](https://docs.webrcade.com/apps/emulators/mastersystem/) | https://www.smspower.org/Homebrew/Mecha8Demo-SMS |
+| Monkey Lad | Eric Fry, surt, Niloct | [Sega Master System](https://docs.webrcade.com/apps/emulators/mastersystem/) | https://www.smspower.org/Homebrew/MonkeyLad-SMS |
+| Silver Valley | Enrique Ruiz | [Sega Master System](https://docs.webrcade.com/apps/emulators/mastersystem/) | https://www.smspower.org/Homebrew/SilverValley-SMS |
+| Super Uwol! | na_th_an, anjuel, Davidian, Zenman | [Sega Master System](https://docs.webrcade.com/apps/emulators/mastersystem/) | http://www.mojontwins.com/juegos_mojonos/super-uwol-sg-1000/ |
+| Wing Warriors |  Fran Matsusaka | [Sega Master System](https://docs.webrcade.com/apps/emulators/mastersystem/) | https://www.smspower.org/Homebrew/WingWarriors-SMS |
 | Dangerous Demolition | Dr. Ludos | [Sega Game Gear](https://docs.webrcade.com/apps/emulators/gamegear/) | https://www.smspower.org/Homebrew/DangerousDemolition-GG |
 | Fire Track | Ben Ryves | [Sega Game Gear](https://docs.webrcade.com/apps/emulators/gamegear/) | https://www.smspower.org/Homebrew/FireTrack-GG |
 | Nibbles | Martin Konrad | [Sega Game Gear](https://docs.webrcade.com/apps/emulators/gamegear/) | https://www.smspower.org/Homebrew/GGNibbles-GG |
@@ -67,4 +80,8 @@
 | Turrican (Demo) | Martin Konrad | [Sega Game Gear](https://docs.webrcade.com/apps/emulators/gamegear/) | https://www.smspower.org/Homebrew/GGTurrican-GG |
 | Wing Warriors | Fran Matsusaka | [Sega Game Gear](https://docs.webrcade.com/apps/emulators/gamegear/) | https://www.smspower.org/Homebrew/WingWarriors-SMS |
 | Zoop 'Em Up (Demo) | Martin Konrad | [Sega Game Gear](https://docs.webrcade.com/apps/emulators/gamegear/) | https://www.smspower.org/Homebrew/ZoopEmUp-GG |
+
+
+
+
 
