@@ -50,6 +50,16 @@
 | PROTO DERE .NES | AppSir Games | [Nintendo NES](https://docs.webrcade.com/apps/emulators/nes/) | https://www.appsirgames.com/p/nes-game.html |
 | Sir Ababol |  The Mojon Twins  | [Nintendo NES](https://docs.webrcade.com/apps/emulators/nes/) | https://www.mojontwins.com/juegos_mojonos/sir-ababol-nes/ |
 | Streemerz |  Faux Game Company (Mr. Podunkian)  | [Nintendo NES](https://docs.webrcade.com/apps/emulators/nes/) | https://www.fauxgame.com/ |
+| Christmas Craze | Shiru | [Nintendo SNES](https://docs.webrcade.com/apps/emulators/snes/) | https://shiru.untergrund.net/software.shtml |
+| Classic Kong Complete | Shiru | [Nintendo SNES](https://docs.webrcade.com/apps/emulators/snes/) | https://shiru.untergrund.net/software.shtml |
+| Gunman Clive (Demo) | Bertil Hörberg | [Nintendo SNES](https://docs.webrcade.com/apps/emulators/snes/) | http://www.gunmanclive.com/snes/ |
+| Jet Pilot Rising |  Dieter Von Laser | [Nintendo SNES](https://docs.webrcade.com/apps/emulators/snes/) | https://snescentral.com/article.php?id=1091 |
+| MazezaM Challenge |  PortableDev | [Nintendo SNES](https://docs.webrcade.com/apps/emulators/snes/) | https://www.portabledev.com/jeux/supernes/mazezam-snes/ |
+| REM (Demo) |  rmn0 | [Nintendo SNES](https://docs.webrcade.com/apps/emulators/snes/) | https://github.com/rmn0/rem |
+| Rodas Cross (Demo) |  Kaffeeware | [Nintendo SNES](https://docs.webrcade.com/apps/emulators/snes/) | https://kaffeeware.github.io/ |
+| Skipp and Friends |   Mukunda Johnson, Ken Snyder, Steven Velema, Hubert Lamontagne | [Nintendo SNES](https://docs.webrcade.com/apps/emulators/snes/) | https://pdroms.de/supernintendoentertainmentsystem/skipp-and-friends-snes-game |
+| Super Boss Gaiden |  German duo Dieter Laser, ChronoMoogle | [Nintendo SNES](https://docs.webrcade.com/apps/emulators/snes/) | https://superbossgaiden.superfamicom.org/ |
+| Uwol: Quest for Money |  Alekmaul, The Mojon Twins | [Nintendo SNES](https://docs.webrcade.com/apps/emulators/snes/) | https://www.mojontwins.com/juegos_mojonos/uwol-quest-for-money/<br>https://www.portabledev.com/jeux/supernes/uwol-snes/ |
 | Dangerous Demolition | Dr. Ludos | [Sega Game Gear](https://docs.webrcade.com/apps/emulators/gamegear/) | https://www.smspower.org/Homebrew/DangerousDemolition-GG |
 | Fire Track | Ben Ryves | [Sega Game Gear](https://docs.webrcade.com/apps/emulators/gamegear/) | https://www.smspower.org/Homebrew/FireTrack-GG |
 | Nibbles | Martin Konrad | [Sega Game Gear](https://docs.webrcade.com/apps/emulators/gamegear/) | https://www.smspower.org/Homebrew/GGNibbles-GG |
