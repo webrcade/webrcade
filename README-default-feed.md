@@ -36,11 +36,25 @@
 | Serpentine |  Mike Saarna | [Atari 7800](https://docs.webrcade.com/apps/emulators/7800/) | https://atariage.com/forums/topic/258291-serpentine-7800/ |
 | Slide Boy in Maze Land  | Vladimir Zúñiga | [Atari 7800](https://docs.webrcade.com/apps/emulators/7800/) | https://atariage.com/forums/topic/320173-slide-boy-in-maze-land-7800-version/ |
 | TiME Salvo | Mike Saarna | [Atari 7800](https://docs.webrcade.com/apps/emulators/7800/) | https://atariage.com/forums/topic/224469-salvo/ |
+| Alter Ego | Shiru, Denis Grachev | [Nintendo NES](https://docs.webrcade.com/apps/emulators/nes/) | https://www.nesworld.com/cgi-bin/yabb/YaBB.pl?num=1311514833 |
+| Battle Kid: Fortress of Peril (Demo) | Sivak Games | [Nintendo NES](https://docs.webrcade.com/apps/emulators/nes/) | https://www.retrousb.com/product_info.php?products_id=86 |
+| Battle Kid 2: Mountain of Torment (Demo) | Sivak Games | [Nintendo NES](https://docs.webrcade.com/apps/emulators/nes/) | https://www.retrousb.com/product_info.php?products_id=121 |
+| Blade Buster | High Level Challenge | [Nintendo NES](https://docs.webrcade.com/apps/emulators/nes/) | http://hlc6502.web.fc2.com/ |
+| Driar  | Stefan Adolfsson, David Eriksson | [Nintendo NES](https://docs.webrcade.com/apps/emulators/nes/) | http://driar.se/ |
+| Elite  | Ian Bell, David Braben  | [Nintendo NES](https://docs.webrcade.com/apps/emulators/nes/) | http://www.iancgbell.clara.net/elite/index.htm |
+| Lan Master | Shiru | [Nintendo NES](https://docs.webrcade.com/apps/emulators/nes/) | https://shiru.untergrund.net/software.shtml |
+| Lawn Mower | Shiru | [Nintendo NES](https://docs.webrcade.com/apps/emulators/nes/) | https://shiru.untergrund.net/software.shtml |
+| Legends of Owlia, The | Gradual Games | [Nintendo NES](https://docs.webrcade.com/apps/emulators/nes/) | http://www.gradualgames.com/p/the-legends-of-owlia_1.html |
+| NES Virus Cleaner | Sly Dog Studios | [Nintendo NES](https://docs.webrcade.com/apps/emulators/nes/) | https://unlicensednintendo.com/index.php/NES_Virus_Cleaner_(Sly_Dog_Studios) |
+| Nomolos: Storming the CATsle | Gradual Games | [Nintendo NES](https://docs.webrcade.com/apps/emulators/nes/) | http://www.gradualgames.com/ |
+| PROTO DERE .NES | AppSir Games | [Nintendo NES](https://docs.webrcade.com/apps/emulators/nes/) | https://www.appsirgames.com/p/nes-game.html |
+| Sir Ababol |  The Mojon Twins  | [Nintendo NES](https://docs.webrcade.com/apps/emulators/nes/) | https://www.mojontwins.com/juegos_mojonos/sir-ababol-nes/ |
+| Streemerz |  Faux Game Company (Mr. Podunkian)  | [Nintendo NES](https://docs.webrcade.com/apps/emulators/nes/) | https://www.fauxgame.com/ |
 | Dangerous Demolition | Dr. Ludos | [Sega Game Gear](https://docs.webrcade.com/apps/emulators/gamegear/) | https://www.smspower.org/Homebrew/DangerousDemolition-GG |
 | Fire Track | Ben Ryves | [Sega Game Gear](https://docs.webrcade.com/apps/emulators/gamegear/) | https://www.smspower.org/Homebrew/FireTrack-GG |
 | Nibbles | Martin Konrad | [Sega Game Gear](https://docs.webrcade.com/apps/emulators/gamegear/) | https://www.smspower.org/Homebrew/GGNibbles-GG |
 | Swabby | Anders S. Jensen | [Sega Game Gear](https://docs.webrcade.com/apps/emulators/gamegear/) | https://www.smspower.org/Homebrew/Swabby-GG |
 | Turrican (Demo) | Martin Konrad | [Sega Game Gear](https://docs.webrcade.com/apps/emulators/gamegear/) | https://www.smspower.org/Homebrew/GGTurrican-GG |
 | Wing Warriors | Fran Matsusaka | [Sega Game Gear](https://docs.webrcade.com/apps/emulators/gamegear/) | https://www.smspower.org/Homebrew/WingWarriors-SMS |
-| Zoop 'Em Up | Martin Konrad | [Sega Game Gear](https://docs.webrcade.com/apps/emulators/gamegear/) | https://www.smspower.org/Homebrew/ZoopEmUp-GG |
+| Zoop 'Em Up (Demo) | Martin Konrad | [Sega Game Gear](https://docs.webrcade.com/apps/emulators/gamegear/) | https://www.smspower.org/Homebrew/ZoopEmUp-GG |
 
