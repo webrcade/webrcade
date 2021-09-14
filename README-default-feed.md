@@ -79,8 +79,22 @@
 | Turrican (Demo) | Martin Konrad | [Sega Game Gear](https://docs.webrcade.com/apps/emulators/gamegear/) | https://www.smspower.org/Homebrew/GGTurrican-GG |
 | Wing Warriors | Fran Matsusaka | [Sega Game Gear](https://docs.webrcade.com/apps/emulators/gamegear/) | https://www.smspower.org/Homebrew/WingWarriors-SMS |
 | Zoop 'Em Up (Demo) | Martin Konrad | [Sega Game Gear](https://docs.webrcade.com/apps/emulators/gamegear/) | https://www.smspower.org/Homebrew/ZoopEmUp-GG |
-
-
-
-
-
+| Arkagis Revolution (Trial)  | Sik | [Sega Genesis](https://docs.webrcade.com/apps/emulators/genesis/) | https://arkagis.com/revolution/ |
+| Cave Story  | Andrew DeRosier | [Sega Genesis](https://docs.webrcade.com/apps/emulators/genesis/) | https://github.com/andwn/cave-story-md |
+| Demons of Asteborg (Demo)  | Neofid Studios | [Sega Genesis](https://docs.webrcade.com/apps/emulators/genesis/) | https://www.demonsofasteborg.com/ |
+| IK+ Deluxe |  Igor, Troudki, Yannus Stark, Kaot | [Sega Genesis](https://docs.webrcade.com/apps/emulators/genesis/) | https://z-team.itch.io/ik-deluxe-version-sega-megadrive |
+| Irena Genesis Metal Fury  | White Ninja | [Sega Genesis](https://docs.webrcade.com/apps/emulators/genesis/) | https://white-ninja.itch.io/irena-genesis-metal-fury |
+| Ixion   | Nendo | [Sega Genesis](https://docs.webrcade.com/apps/emulators/genesis/) | https://nendo16.jimdofree.com/ |
+| Lethal Wedding (Demo)   | Mega Cat Studios | [Sega Genesis](https://docs.webrcade.com/apps/emulators/genesis/) | https://megacatstudios.com/products/lethal-wedding |
+| Mega Q*bert   | Jaklub | [Sega Genesis](https://docs.webrcade.com/apps/emulators/genesis/) | http://gendev.spritesmind.net/forum/viewtopic.php?f=8&t=2456 |
+| Old Towers   | RetroSouls | [Sega Genesis](https://docs.webrcade.com/apps/emulators/genesis/) | https://retrosouls.itch.io/old-towers |
+| Omega Blast | Nendo | [Sega Genesis](https://docs.webrcade.com/apps/emulators/genesis/) | https://nendo16.jimdofree.com/omega-blast/ |
+| Papi Commando Remix (Demo) | Studio Vetea | [Sega Genesis](https://docs.webrcade.com/apps/emulators/genesis/) | https://vetea.itch.io/papi-commando-remix-megadrive |
+| Phantom Gear (Demo) | Bits Rule | [Sega Genesis](https://docs.webrcade.com/apps/emulators/genesis/) | https://megacatstudios.com/products/phantom-gear-demo |
+| Pringles | Future Driver | [Sega Genesis](https://docs.webrcade.com/apps/emulators/genesis/) | http://68000.web.fc2.com/pringles.html |
+| Project MD (Unfinished) | Sik | [Sega Genesis](https://docs.webrcade.com/apps/emulators/genesis/) | https://github.com/sikthehedgehog/projectmd |
+| Rick Dangerous | Pascal, Foxy, Stef | [Sega Genesis](https://docs.webrcade.com/apps/emulators/genesis/) | http://www.pascalorama.com/rick-dangerous/ |
+| Tanglewood (Demo) | Big Evil Corporation | [Sega Genesis](https://docs.webrcade.com/apps/emulators/genesis/) | https://tanglewoodgame.com |
+| VilQ Adventure | AceMan, Axi0maT, Koyot1222 | [Sega Genesis](https://docs.webrcade.com/apps/emulators/genesis/) | https://demozoo.org/productions/179589/ |
+| Xump 2: Back to Space | Florent Veroce, Christian Damm, Jakub Szelag, Andrew Lemon | [Sega Genesis](https://docs.webrcade.com/apps/emulators/genesis/) | https://www.retroguru.com/xump2/ |
+| Zero Tolerance | Technopop  | [Sega Genesis](https://docs.webrcade.com/apps/emulators/genesis/) | http://www.technopop.net/ |
