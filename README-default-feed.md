@@ -64,7 +64,6 @@
 | Bara Burū | Kagesan | [Sega Master System](https://docs.webrcade.com/apps/emulators/mastersystem/) | https://www.smspower.org/Homebrew/BaraBur%C5%AB-SMS |
 | Bruce Lee | Kagesan | [Sega Master System](https://docs.webrcade.com/apps/emulators/mastersystem/) | https://www.smspower.org/Homebrew/BruceLee-SMS |
 | CIMMERiAN (Demo) | Ichigobankai | [Sega Master System](https://docs.webrcade.com/apps/emulators/mastersystem/) | https://www.smspower.org/Homebrew/CIMMERiAN-SMS |
-| CIMMERiAN (Demo) | Ichigobankai | [Sega Master System](https://docs.webrcade.com/apps/emulators/mastersystem/) | https://www.smspower.org/Homebrew/CIMMERiAN-SMS |
 | DARC | Richard Cornelisse | [Sega Master System](https://docs.webrcade.com/apps/emulators/mastersystem/) | https://www.smspower.org/Homebrew/DARC-SMS |
 | Flight of Pigarus | Kagesan | [Sega Master System](https://docs.webrcade.com/apps/emulators/mastersystem/) | https://www.smspower.org/Homebrew/FlightOfPigarus-SMS |
 | Galactic Revenge | Enrique Ruiz | [Sega Master System](https://docs.webrcade.com/apps/emulators/mastersystem/) | https://www.smspower.org/Homebrew/GalacticRevenge-SMS |
