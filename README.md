@@ -4,9 +4,9 @@
 
 ## Overview
 
-WebЯcade consists of a simple [web-based front end](https://docs.webrcade.com/userguide/) that provides the ability to play popular gaming content entirely within the context of the browser across a [wide variety of platforms](https://docs.webrcade.com/platforms/). Gamepads are supported (Bluetooth and USB) for front-end navigation and when playing games.
+WebЯcade consists of an intuitive [web-based front end](https://docs.webrcade.com/userguide/) that enables playing popular gaming content entirely within the context of the browser across a [wide variety of platforms](https://docs.webrcade.com/platforms/). Gamepads are supported (Bluetooth and USB) for both front-end navigation and when playing games.
 
-The content for playing games (binaries, etc.) and populating the front-end (images, etc.) is collected from [cloud-based resources](https://docs.webrcade.com/feeds/resources/) based on [user-defined feeds](https://docs.webrcade.com/feeds/) that are registered via the webЯcade front-end.
+The content for playing games (binaries, etc.) and populating the front-end (images, etc.) is collected from [cloud-based resources](https://docs.webrcade.com/feeds/resources/) based on [user-defined feeds](https://docs.webrcade.com/feeds/). Each item contained in a feed is associated with an application type. [Application types](https://docs.webrcade.com/apps/) include [emulators](https://docs.webrcade.com/apps/emulators/) (Atari, Sega, Nintendo) and [game engines](https://docs.webrcade.com/apps/engines/) (Classic Doom). 
 
 | [![](https://docs.webrcade.com/assets/images/platforms/ios/safari-full.png?raw=true)](https://play.webrcade.com) | 
 |:--:| 
@@ -30,7 +30,7 @@ The recommended steps for getting started with webЯcade are listed below:
 
 TODO
 
-## Detailed Description
+## What is webЯcade? (Details)
 
 The following lists attempt to further describe webЯcade in terms of its primary features versus those features that are not a direct focus.
 
