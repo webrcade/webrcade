@@ -1,6 +1,8 @@
-# Default Feed README
+# AUTHORS Default Feed
 
-| Game | Author(s)  | Application | Site |
+TODO
+
+| Game | Author(s)  | Application | Links(s) |
 |---|---|---|---|
 | Aardvark | Thomas Jentzsch | [Atari 2600](https://docs.webrcade.com/apps/emulators/2600/) | https://atariage.com/forums/topic/319647-aardvark-rom-release/ | [Atari 2600](https://docs.webrcade.com/apps/emulators/2600/) |
 | Amoeba Jump | Dion Olsthoorn | [Atari 2600](https://docs.webrcade.com/apps/emulators/2600/) | https://atariage.com/forums/topic/280211-amoeba-jump/ |
