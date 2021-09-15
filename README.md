@@ -37,7 +37,7 @@ The following lists attempt to further describe webЯcade in terms of its primar
 **Primary features:**
 
 * Runs entirely within the web browser leveraging JavaScript, WebAssembly, and the HTML5 gamepad and audio interfaces
-* Adaptive user interface supports a [wide variety of platforms](https://docs.webrcade.com/platforms/) (Xbox Series X|S, iOS, Android, Windows, macOS)
+* Adaptive user interface that supports a [wide variety of platforms](https://docs.webrcade.com/platforms/) (Xbox Series X|S, iOS, Android, Windows, macOS)
 * Native gamepad support (Bluetooth and USB) for both front-end navigation and while playing games
 * [User-defined cloud-based feeds](https://docs.webrcade.com/feeds/) identify the resources (images, etc.) required to populate the front-end as well as the content (binaries, etc.) required to play games
 * Each feed item (game, etc.) has an associated application type. [Application types](https://docs.webrcade.com/apps/) include [emulators](https://docs.webrcade.com/apps/emulators/) (Atari, Sega, Nintendo) and [game engines](https://docs.webrcade.com/apps/engines/) (Classic Doom). The quantity and types of applications will continue to expand over time.
