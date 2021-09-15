@@ -8,9 +8,14 @@ WebЯcade consists of a simple [web-based front end](https://docs.webrcade.com/u
 
 The content for playing games (binaries, etc.) and populating the front-end (images, etc.) is collected from [cloud-based resources](https://docs.webrcade.com/feeds/resources/) based on [user-defined feeds](https://docs.webrcade.com/feeds/) that are registered via the webЯcade front-end.
 
-[![](https://docs.webrcade.com/assets/images/platforms/ios/safari-full.png?raw=true)](https://play.webrcade.com)
+<figure>
+  <a href="https://play.webrcade.com">
+    <img src="https://docs.webrcade.com/assets/images/platforms/ios/safari-full.png">
+  </a>
+  <figcaption style="text-align: center; font-style:italic">webЯcade on iPhone</figcaption>
+</figure>
 
-## Play Now
+## Play Now.
 
 Play webЯcade now at [play.webrcade.com](https://play.webrcade.com).
 
@@ -24,7 +29,11 @@ The recommended steps for getting started with webЯcade are listed below:
 * Read the documentation for the [Platform](https://docs.webrcade.com/platforms/) you will be using with webЯcade to learn platform-specific details such as how to optimize the experience and how to connect controllers.
 * Review the documentation for each [Application](https://docs.webrcade.com/apps/) that is launched to determine its keyboard and gamepad mappings as well as any other application-specific notes (an application is the emulator or engine being used to play a particular game, etc.).
 
-## Details
+## Default Feed
+
+TODO
+
+## Detailed Description
 
 The following lists attempt to further describe webЯcade in terms of its primary features versus those features that are not a direct focus.
 
