@@ -8,12 +8,9 @@ WebЯcade consists of a simple [web-based front end](https://docs.webrcade.com/u
 
 The content for playing games (binaries, etc.) and populating the front-end (images, etc.) is collected from [cloud-based resources](https://docs.webrcade.com/feeds/resources/) based on [user-defined feeds](https://docs.webrcade.com/feeds/) that are registered via the webЯcade front-end.
 
-<figure>
-  <a href="https://play.webrcade.com">
-    <img src="https://docs.webrcade.com/assets/images/platforms/ios/safari-full.png">
-  </a>
-  <figcaption style="text-align: center; font-style:italic">webЯcade on iPhone</figcaption>
-</figure>
+| [![](https://docs.webrcade.com/assets/images/platforms/ios/safari-full.png?raw=true)](https://play.webrcade.com) | 
+|:--:| 
+| *webЯcade on iOS (iPhone)* |
 
 ## Play Now.
 
