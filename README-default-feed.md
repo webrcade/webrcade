@@ -98,3 +98,6 @@
 | VilQ Adventure | AceMan, Axi0maT, Koyot1222 | [Sega Genesis](https://docs.webrcade.com/apps/emulators/genesis/) | https://demozoo.org/productions/179589/ |
 | Xump 2: Back to Space | Florent Veroce, Christian Damm, Jakub Szelag, Andrew Lemon | [Sega Genesis](https://docs.webrcade.com/apps/emulators/genesis/) | https://www.retroguru.com/xump2/ |
 | Zero Tolerance | Technopop  | [Sega Genesis](https://docs.webrcade.com/apps/emulators/genesis/) | http://www.technopop.net/ |
+| Doom 1 (Shareware) | id Software  | [Doom Classic](https://docs.webrcade.com/apps/engines/doom/) | https://www.idsoftware.com/en-us/ |
+| Freedoom Phase 1 | Contributors to the Freedoom project  | [Doom Classic](https://docs.webrcade.com/apps/engines/doom/) | https://freedoom.github.io/ |
+| Freedoom Phase 2 | Contributors to the Freedoom project  | [Doom Classic](https://docs.webrcade.com/apps/engines/doom/) | https://freedoom.github.io/ |
