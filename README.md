@@ -16,7 +16,7 @@ Play webЯcade now at [play.webrcade.com](https://play.webrcade.com).
 
 ## Documentation
 
-The [webЯcade Documentation](https://docs.webrcade.com/) consists of a [User Guide](https://docs.webrcade.com/userguide/), instructions specific to each [Platform](https://docs.webrcade.com/platforms/) supported by webЯcade, detailed information (button mappings, etc.) for the various [Application Types](https://docs.webrcade.com/apps/) (emulators, etc.), and guidance for developing your own [Feeds](https://docs.webrcade.com/feeds/).
+The [webЯcade Documentation](https://docs.webrcade.com/) consists of a [User Guide](https://docs.webrcade.com/userguide/), instructions specific to each [Platform](https://docs.webrcade.com/platforms/) (OS, devices) supported by webЯcade, detailed information (button mappings, etc.) for the various [Application Types](https://docs.webrcade.com/apps/) (emulators, etc.), and guidance for developing your own [Feeds](https://docs.webrcade.com/feeds/).
 
 The following steps are recommended for getting started with webЯcade:
 
