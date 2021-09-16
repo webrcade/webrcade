@@ -44,12 +44,9 @@ The following lists attempt to further describe webЯcade in terms of its primar
 
 **Not focused on:**
 
-* Directly playing locally stored game content (ROMs, etc.)
-*(Technically possible by using a local web server, but not a primary use case)*
-* The "latest and greatest" emulator features and compatibility
-*(Primary emphasis is on compatibility with popular game content across a variety of platforms while minimizing resource requirements)*
-* Touch-based (virtual) gamepad controls
-*(The focus is on native gamepad support via Bluetooth and USB)*
+* Directly playing locally stored game content (ROMs, etc.)<br>*(Technically possible by using a local web server, but not a primary use case)*
+* The "latest and greatest" emulator features and compatibility<br>*(Primary emphasis is on compatibility with popular game content across a variety of platforms while minimizing resource requirements)*
+* Touch-based (virtual) gamepad controls<br>*(The focus is on native gamepad support via Bluetooth and USB)*
 
 ## LICENSE
 
