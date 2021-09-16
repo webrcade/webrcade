@@ -21,12 +21,12 @@ The [webЯcade Documentation](https://docs.webrcade.com/) consists of a [User Gu
 The following steps are recommended for getting started with webЯcade:
 
 * Review the [User Guide](https://docs.webrcade.com/userguide/) in order to familiarize yourself with the webЯcade front-end.
-* Read the documentation for the [Platform](https://docs.webrcade.com/platforms/) you will be using with webЯcade to learn platform-specific details such as how to optimize the experience and how to connect gamepads.
+* Read the documentation for the [Platform](https://docs.webrcade.com/platforms/) (OS, device) you will be using with webЯcade to learn platform-specific details such as how to optimize the experience and how to connect gamepads.
 * Review the documentation for each [Application](https://docs.webrcade.com/apps/) that is launched to determine its keyboard and gamepad mappings as well as any other application-specific notes (an application is the emulator or engine being used to play a particular game, etc.).
 
 ## Default Feed
 
-The default feed contains a collection of high-quality publicly available games and demos across the various [application types](https://docs.webrcade.com/apps/) ([emulators](https://docs.webrcade.com/apps/emulators/), [engines](https://docs.webrcade.com/apps/engines/), etc.) that are supported by webЯcade.
+The default feed consists of high-quality publicly available games and demos across the various [application types](https://docs.webrcade.com/apps/) ([emulators](https://docs.webrcade.com/apps/emulators/), [engines](https://docs.webrcade.com/apps/engines/), etc.) that are supported by webЯcade.
 
 The [default feed AUTHORS page](./AUTHORS-default-feed.md) includes the list of titles that are included in the default feed, their authors, and related links. 
 
