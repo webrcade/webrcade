@@ -11,42 +11,34 @@ export default class AppDetails extends Component {
     const { backgroundSrc, defaultBackgroundSrc, bottom, buttons, description, itemKey, subTitle, title } = this.props;
     // TODO: Fix this hack 
     const key = itemKey + title + (backgroundSrc ? backgroundSrc : '');  
-
-    if (key !== this.lastKey) {
+    const detailsRightRef = this.detailsRightRef;
+    
+    if ((key !== this.lastKey) && detailsRightRef) {
       this.lastKey = key;
       const WAIT = 250;
       const start = new Date().getTime();
       
       if (this.timeoutId) window.clearTimeout(this.timeoutId);
 
-      // Remove display of right details
-      let el = document.querySelector('.app-details-right');
-      if (el) {
-        el.classList.remove('fade-in');              
-      }
-      if (this.detailsRightRef) {
-        this.detailsRightRef.style.backgroundImage = 'none';
-      }
+      // Remove display of right details      
+      detailsRightRef.classList.remove('fade-in');              
+      detailsRightRef.style.backgroundImage = 'none';
 
       // Common fade in
       const fadeIn = () => {
         const elapsed = new Date().getTime() - start;
         const wait = (elapsed > WAIT ? 0 : (WAIT - elapsed));
         this.timeoutId = window.setTimeout(() => {
-          if ((key === this.lastKey) && el) {
-            el.classList.add('fade-in');
+          if (key === this.lastKey) {
+            detailsRightRef.classList.add('fade-in');
           }          
         }, wait);
       }
 
       const displayBackground = (src) => {
         if (key === this.lastKey) {
-          if (this.detailsRightRef) {            
-            this.detailsRightRef.style.backgroundImage = 'url(' + src + ')'
-            fadeIn();
-          } else {
-            console.error('Detailed right ref is not defined.');
-          }
+          detailsRightRef.style.backgroundImage = 'url(' + src + ')'
+          fadeIn();
         }
       }
 

@@ -7,7 +7,7 @@ The following individuals have contributed to the development of webЯcade.
 
 <span></span>
 
-* [Rincewind](https://forums.launchbox-app.com/profile/69944-rincewind/) 
+* [Rincewind](https://forums.launchbox-app.com/profile/69944-rincewind/) (Neal Rishman)
   * Default icons and backgrounds
 
 <span></span>
