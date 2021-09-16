@@ -2,7 +2,7 @@
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-WebЯcade consists of an intuitive [web-based front end](https://docs.webrcade.com/userguide/) that enables playing popular gaming content entirely within the context of the browser across a [wide variety of platforms](https://docs.webrcade.com/platforms/). Gamepads are supported (Bluetooth and USB) for both front-end navigation and while playing games.
+WebЯcade consists of an intuitive [web-based front end](https://docs.webrcade.com/userguide/) that enables playing popular gaming content entirely within the context of the browser across a [wide variety of platforms](https://docs.webrcade.com/platforms/) (Xbox Series X|S, iOS, Android, Windows, macOS). Gamepads are supported (Bluetooth and USB) for both front-end navigation and while playing games.
 
 The content for playing games (binaries, etc.) and populating the front-end (images, etc.) is collected from [cloud-based resources](https://docs.webrcade.com/feeds/resources/) based on [user-defined feeds](https://docs.webrcade.com/feeds/). Each feed item (game, etc.) has an associated application type. [Application types](https://docs.webrcade.com/apps/) include [emulators](https://docs.webrcade.com/apps/emulators/) (Atari, Sega, Nintendo) and [game engines](https://docs.webrcade.com/apps/engines/) (Classic Doom). 
 
