@@ -8,7 +8,7 @@ The content for playing games (binaries, etc.) and populating the front-end (ima
 
 | [![](https://docs.webrcade.com/assets/images/platforms/ios/safari-full.png?raw=true)](https://play.webrcade.com) | 
 |:--:| 
-| *webЯcade on iOS (iPhone)* |
+| *webЯcade on Safari for iOS (iPhone)* |
 
 ## Play Now.
 
