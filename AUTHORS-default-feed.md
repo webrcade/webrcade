@@ -1,6 +1,11 @@
 # AUTHORS Default Feed
 
-TODO
+The default feed contains a collection of high-quality publicly available games and demos across the various [application types](https://docs.webrcade.com/apps/) ([emulators](https://docs.webrcade.com/apps/emulators/), [engines](https://docs.webrcade.com/apps/engines/), etc.) that are supported by webЯcade.
+
+The following table includes the list of titles that are included in the default feed, their authors, and related links. 
+
+A best effort attempt was made to ensure that the titles listed below could be included in the default feed. If for any reason the owner of a title listed below would like to have it removed, please send an email to [webrcade@webrcade.com](mailto:webrcade@webrcade.com) or create a new [GitHub Issue](https://github.com/webrcade/webrcade/issues).
+<br/>
 
 | Game | Author(s)  | Application | Links(s) |
 |---|---|---|---|
