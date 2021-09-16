@@ -32,7 +32,7 @@ The [default feed AUTHORS page](./AUTHORS-default-feed.md) includes the list of 
 
 ## What is (and is not) webЯcade?
 
-The following lists attempt to further describe webЯcade in terms of its primary focus versus those items that are not a direct focus.
+The following lists further describe webЯcade in terms of its focus.
 
 **Primary focus:**
 
