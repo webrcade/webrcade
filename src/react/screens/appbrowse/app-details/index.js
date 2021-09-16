@@ -5,33 +5,43 @@ require("./style.scss");
 
 export default class AppDetails extends Component {
   timeoutId = null;
-  lastItemKey = null;
+  lastKey = null;
 
   render() {
     const { backgroundSrc, defaultBackgroundSrc, bottom, buttons, description, itemKey, subTitle, title } = this.props;
+    // TODO: Fix this hack 
+    const key = itemKey + title + (backgroundSrc ? backgroundSrc : '');  
 
-    if (itemKey !== this.lastItemKey) {
-      this.lastItemKey = itemKey;
+    if (key !== this.lastKey) {
+      this.lastKey = key;
+      const WAIT = 250;
+      const start = new Date().getTime();
+      
+      if (this.timeoutId) window.clearTimeout(this.timeoutId);
 
       // Remove display of right details
       let el = document.querySelector('.app-details-right');
       if (el) {
-        el.classList.remove('fade-in');      
+        el.classList.remove('fade-in');              
+      }
+      if (this.detailsRightRef) {
+        this.detailsRightRef.style.backgroundImage = 'none';
       }
 
       // Common fade in
       const fadeIn = () => {
-        if (this.timeoutId) window.clearTimeout(this.timeoutId);
+        const elapsed = new Date().getTime() - start;
+        const wait = (elapsed > WAIT ? 0 : (WAIT - elapsed));
         this.timeoutId = window.setTimeout(() => {
-          // TODO: Image load, set image, and then fade in...
-          el = document.querySelector('.app-details-right');
-          el.classList.add('fade-in');
-        }, 250);
+          if ((key === this.lastKey) && el) {
+            el.classList.add('fade-in');
+          }          
+        }, wait);
       }
 
       const displayBackground = (src) => {
-        if (itemKey === this.lastItemKey) {
-          if (this.detailsRightRef) {
+        if (key === this.lastKey) {
+          if (this.detailsRightRef) {            
             this.detailsRightRef.style.backgroundImage = 'url(' + src + ')'
             fadeIn();
           } else {

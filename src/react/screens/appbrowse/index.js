@@ -218,7 +218,7 @@ export default class AppBrowseScreen extends Component {
 
   getAppInfo(currentItem) {
     const { sliderRef } = this;
-    const { onAppSelected } = this.props;
+    const { onAppSelected, feed } = this.props;
     const { category } = this.state;
     const { ModeEnum } = AppBrowseScreen;
     const reg = AppRegistry.instance;
@@ -239,7 +239,10 @@ export default class AppBrowseScreen extends Component {
       getDefaultThumbnailSrc: item => reg.getDefaultThumbnail(item),
       onClick: () => { if (onAppSelected) onAppSelected(currentItem); },
       categoryOnClick: () => {
-        this.setState({ menuMode: ModeEnum.CATEGORIES });
+        this.setState({ 
+          currentItem: feed.getCategories()[0],
+          menuMode: ModeEnum.CATEGORIES 
+        });
         sliderRef.current.focus();
       }
     }
@@ -248,7 +251,7 @@ export default class AppBrowseScreen extends Component {
   render() {
     const { feeds, hide, onFeedDelete } = this.props;
     const { category, currentItem, feed, menuMode } = this.state;
-    const {  categoryRef, focusGrid, playButtonRef, screenContext, sliderRef, 
+    const { categoryRef, focusGrid, playButtonRef, screenContext, sliderRef, 
       webrcadeDivRef, MAX_SLIDES } = this;
     const { ModeEnum } = AppBrowseScreen;
 
