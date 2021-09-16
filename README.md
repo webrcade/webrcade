@@ -32,9 +32,9 @@ The [default feed AUTHORS page](./AUTHORS-default-feed.md) includes the list of 
 
 ## What is (and is not) webЯcade?
 
-The following lists attempt to further describe webЯcade in terms of its primary features versus those features that are not a direct focus.
+The following lists attempt to further describe webЯcade in terms of its primary focus versus those items that are not a direct focus.
 
-**Primary features:**
+**Primary focus:**
 
 * Runs entirely within the web browser leveraging JavaScript, WebAssembly, and the HTML5 gamepad and audio interfaces
 * Adaptive user interface that supports a [wide variety of platforms](https://docs.webrcade.com/platforms/) (Xbox Series X|S, iOS, Android, Windows, macOS)
