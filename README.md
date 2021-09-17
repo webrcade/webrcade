@@ -6,9 +6,14 @@ WebЯcade consists of an intuitive [web-based front end](https://docs.webrcade.c
 
 The content for playing games (binaries, etc.) and populating the front-end (images, etc.) is collected from [cloud-based resources](https://docs.webrcade.com/feeds/resources/) based on [user-defined feeds](https://docs.webrcade.com/feeds/). Each feed item (game, etc.) has an associated application type. [Application types](https://docs.webrcade.com/apps/) include [emulators](https://docs.webrcade.com/apps/emulators/) (Atari, Sega, Nintendo) and [game engines](https://docs.webrcade.com/apps/engines/) (Classic Doom). 
 
-| [![](https://docs.webrcade.com/assets/images/platforms/ios/safari-full.png?raw=true)](https://play.webrcade.com) | 
-|:--:| 
-| *webЯcade on Safari for iOS (iPhone)* |
+
+<p align="center">
+ <a href="https://play.webrcade.com">
+  <img src="https://docs.webrcade.com/assets/images/platforms/ios/safari-full.png?raw=true" width="97%">
+ </a>
+ <br>
+ <i>webЯcade on Safari for iOS (iPhone)</i>
+</p>
 
 ## Play Now.
 
