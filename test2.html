@@ -1,0 +1,85 @@
+<html>
+  <body>
+    
+
+    <form>
+        <button id="input1" type="button">Focus</button>
+    </form>
+      
+    <div id='output'></div>
+
+    <dialog id="myDialog">This is an open dialog window</dialog>
+
+    <script>
+        const addText = (text) =>  {
+            document.getElementById('output').innerHTML += "<div>" + text + "</div>";    
+        }
+
+        window.onblur = (e) => {
+            e.preventDefault();
+            addText("Window blur");
+            setTimeout (() => {
+                window.focus();
+            }, 10);
+        }
+
+        const pollGamepads = () => {
+            let gamepads = navigator.getGamepads ? navigator.getGamepads() : (navigator.webkitGetGamepads ? navigator.webkitGetGamepads : []);
+            for (let i = 0; i < gamepads.length; i++) {
+                let gp = gamepads[i];
+                if (gp) {
+                    for (let j = 0; j < gp.buttons.length; j++) {
+                        if (gp.buttons[j].pressed) {
+                            addText('Button pressed: ' + j);
+                            if (!document.hasFocus()) {           
+                                window.focus();                                
+                                addText("lostFocus");                                
+                            }                            
+                        }
+                    }
+                }            
+            }                
+        }
+
+        setInterval(pollGamepads, 500);
+
+        document.addEventListener('keydown', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            addText('keydown: ' + e.code);
+        });
+        document.addEventListener('keyup', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            addText('keyup:  ' + e.code);
+            return false;
+        });
+        document.addEventListener('keypress', (e) => {
+            e.preventDefault();
+            e.stopPropagation();            
+            addText('keypress:  ' + e.code);
+            return false;
+        });
+
+
+        setTimeout(() => {
+            document.getElementById("input1").focus();
+        }, 100);
+
+        addText(navigator.vendorSub);
+        addText(navigator.appVersion);
+        addText(navigator.platform);        
+        addText(navigator.product);
+        addText(navigator.userAgentData);
+        for (var i = 0; i < navigator.plugins.length; i++) {
+            addText(navigator.plugins[i].name);
+        }    
+
+        document.onfullscreenchange = function ( event ) {
+            addText("FULL SCREEN CHANGE")
+        };
+        
+        
+    </script>
+  </body>
+</html>
