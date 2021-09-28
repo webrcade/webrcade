@@ -115,7 +115,7 @@ class Feeds extends FeedBase {
       feedId: Feeds.DEFAULT_ID,
       title: "Default",
       longTitle: "Default Feed",
-      description: "The default feed contains a collection of high-quality publicly available games and demos across the various platforms (emulators, engines, etc.) that are supported by webЯcade.",
+      description: "The default feed contains a collection of high-quality publicly available games and demos across the various applications (emulators, engines, etc.) that are supported by webЯcade.",
       url: Feeds.NONE_URL,      
       thumbnail: "default-feed/images/default-thumb.png",
       background: "default-feed/images/default-background.png"
