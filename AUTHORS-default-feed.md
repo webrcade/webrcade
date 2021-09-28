@@ -1,6 +1,6 @@
 # AUTHORS Default Feed
 
-The default consists of of high-quality publicly available games and demos across the various [application types](https://docs.webrcade.com/apps/) ([emulators](https://docs.webrcade.com/apps/emulators/), [engines](https://docs.webrcade.com/apps/engines/), etc.) that are supported by webЯcade.
+The default feed consists of of high-quality publicly available games and demos across the various [application types](https://docs.webrcade.com/apps/) ([emulators](https://docs.webrcade.com/apps/emulators/), [engines](https://docs.webrcade.com/apps/engines/), etc.) that are supported by webЯcade.
 
 The following table includes the list of titles that are included in the default feed, their respective authors, and related links. 
 
