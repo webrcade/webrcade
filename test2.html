@@ -1,6 +1,15 @@
 <html>
   <body>
-    
+
+    <script>
+        window.alert(
+            "Due to an apparent bug in the Xbox Edge browser, focus is lost when the \"View\" button is pressed. This dialog is being displayed as an attempt to restore focus.\n\n" +
+            "Please use the alternate buttons for \"Select\", \"Start\", and \"Show Pause Dialog\" actions. (see \"Xbox Series X|S Platform\" section in the webRcade documentation).\n\n" +
+            "https://docs.webrcade.com/platforms/xbox\n(\"Alternate controls\" section)\n\n" +
+            "Press the \"B\" button to continue."
+        );
+    </script>
+
 
     <form>
         <button id="input1" type="button">Focus</button>
@@ -11,16 +20,26 @@
     <dialog id="myDialog">This is an open dialog window</dialog>
 
     <script>
-        const addText = (text) =>  {
+        const addText = (text) =>  {                  
             document.getElementById('output').innerHTML += "<div>" + text + "</div>";    
         }
 
+        document.addEventListener("visibilitychange", function() {
+            if (document.hidden){
+                addText("Browser tab is hidden")
+            } else {
+                addText("Browser tab is visible")
+            }
+        });
+
         window.onblur = (e) => {
-            e.preventDefault();
+            e.preventDefault();            
             addText("Window blur");
-            setTimeout (() => {
-                window.focus();
-            }, 10);
+            addText(document.activeElement);
+            // setTimeout (() => {
+            //     alert('lost focus');
+            //     window.focus();
+            // }, 10);
         }
 
         const pollGamepads = () => {
@@ -33,7 +52,8 @@
                             addText('Button pressed: ' + j);
                             if (!document.hasFocus()) {           
                                 window.focus();                                
-                                addText("lostFocus");                                
+                                addText("lostFocus");    
+                                //                         window.alert('lost focus');                            
                             }                            
                         }
                     }
@@ -44,20 +64,31 @@
         setInterval(pollGamepads, 500);
 
         document.addEventListener('keydown', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            addText('keydown: ' + e.code);
+            //e.preventDefault();
+            //e.stopPropagation();
+            window.focus();                                
+            addText('keydown: ' + e.keyCode);
+
+            if (e.keyCode === 208) {
+                setTimeout(() => {
+                    if (!document.hasFocus()) {
+                        window.alert('test');
+                    }
+                }, 100);
+            }
         });
         document.addEventListener('keyup', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            addText('keyup:  ' + e.code);
+            //e.preventDefault();
+            //e.stopPropagation();
+            window.focus();                                
+            addText('keyup:  ' + e.keyCode);
             return false;
         });
         document.addEventListener('keypress', (e) => {
-            e.preventDefault();
-            e.stopPropagation();            
-            addText('keypress:  ' + e.code);
+            //e.preventDefault();
+            //e.stopPropagation();            
+            window.focus();                                
+            addText('keypress:  ' + e.keyCode);
             return false;
         });
 
@@ -77,8 +108,7 @@
 
         document.onfullscreenchange = function ( event ) {
             addText("FULL SCREEN CHANGE")
-        };
-        
+        };        
         
     </script>
   </body>
