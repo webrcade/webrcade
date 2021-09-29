@@ -13,6 +13,7 @@ import AppScreen from "./screens/app";
 import LoadingScreen from "./screens/loading";
 import YesNoScreen from './screens/yesno';
 import {
+  applyXboxFullscreenHack,
   applyIosNavBarHack,
   showMessage,
   FetchAppData,
@@ -97,6 +98,8 @@ export class Webrcade extends Component {
 
     // Hack for navigation bar issue on iOS
     applyIosNavBarHack();
+    // Hack for Xbox full screen bug
+    applyXboxFullscreenHack();
 
     window.addEventListener('popstate', this.popstateHandler, false);
     window.addEventListener("message", this.messageListener);
