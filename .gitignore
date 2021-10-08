@@ -29,5 +29,6 @@ test.html
 /(old images)
 /public/images/apps
 /public/images/games
+/public/broken-feed.json
 buildall*
 *DO-NOT-CHECKIN*
