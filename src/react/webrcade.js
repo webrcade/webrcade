@@ -273,7 +273,7 @@ export class Webrcade extends Component {
               // Remove last feed prop if it matches the deleted feed
               storage.get(LAST_FEED_PROP)
                 .then(lastUrl => {                   
-                  if (lastUrl === f.url) {
+                  if (lastUrl && (lastUrl.toUpperCase()  === f.url.toUpperCase())) {
                     LOG.info("Removing last feed URL (was deleted).");
                     return storage.put(LAST_FEED_PROP, "");
                   } else {
