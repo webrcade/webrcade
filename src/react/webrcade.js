@@ -193,6 +193,10 @@ export class Webrcade extends Component {
         .then(feed => {
           newFeed = feed;
           storage.put(LAST_FEED_PROP, url).catch(e => LOG.error(e));
+
+          // Add the feed (no-op if already exists)
+          feeds.addFeed({ title: "New Feed", url: url });
+          // Update the feed          
           if (feeds.updateFeed(url, feedJson)) {
             storeFeeds(feeds);
           }
@@ -243,7 +247,7 @@ export class Webrcade extends Component {
 
   renderBrowse() {
     const { feed, feeds, mode, showAddFeedScreen, showYesNoScreen } = this.state;
-    const { browseScreenRef, ScreenEnum, HASH_PLAY } = this;
+    const { browseScreenRef, ScreenEnum, HASH_PLAY, LAST_FEED_PROP } = this;
 
     return (
       <AppBrowseScreen
@@ -262,8 +266,21 @@ export class Webrcade extends Component {
             showYesNoScreen: true,
             yesNoMessage: Resources.getText(TEXT_IDS.CONFIRM_DELETE_FEED),
             yesNoCallback: (screen) => {
+              // Remove feed
               feeds.removeFeed(f.feedId);
+              // Update feeds
               storeFeeds(feeds);
+              // Remove last feed prop if it matches the deleted feed
+              storage.get(LAST_FEED_PROP)
+                .then(lastUrl => {                   
+                  if (lastUrl === f.url) {
+                    LOG.info("Removing last feed URL (was deleted).");
+                    return storage.put(LAST_FEED_PROP, "");
+                  } else {
+                    return null;
+                  }
+                })
+                .catch(e => LOG.error(e))
               screen.close();
             }
           });
