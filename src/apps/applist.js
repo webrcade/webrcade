@@ -3,11 +3,13 @@ import { config, isDev } from '@webrcade/app-common'
 const localIp = config.getLocalIp();
 const locGenesis = isDev() ? `http://${localIp}:3010` : 'app/genesis';
 const locSms = locGenesis;
-const loc2600 = isDev() ? `http://${localIp}:3050` : 'app/2600';
+
 const loc7800 = isDev() ? `http://${localIp}:3020` : 'app/7800';
 const locNes = isDev() ? `http://${localIp}:3030` : 'app/nes';
-const locSnes = isDev() ? `http://${localIp}:3060` : 'app/snes';
 const locDoom = isDev() ? `http://${localIp}:3040` : 'app/doom';
+const loc2600 = isDev() ? `http://${localIp}:3050` : 'app/2600';
+const locSnes = isDev() ? `http://${localIp}:3060` : 'app/snes';
+const locGba = isDev() ? `http://${localIp}:3070` : 'app/gba';
 
 const checkRom = app => {
   if (app.props === undefined || app.props.rom === undefined) {
@@ -85,6 +87,13 @@ let types = [
         throw new Error("Missing 'game' property");
       }
     }
+  }, {
+    key: 'vba-m-gba',
+    name: 'Nintendo Game Boy Advance',
+    location: locGba,
+    background: 'images/app/gba-background.png',
+    thumbnail: 'images/app/gba-thumb.png',
+    validate: checkRom              
   }
 ];
 
@@ -102,6 +111,7 @@ addAlias(types, 'genesis', 'genplusgx-md');
 addAlias(types, 'sms', 'genplusgx-sms');
 addAlias(types, 'gg', 'genplusgx-gg');
 addAlias(types, 'doom', 'prboom');
+addAlias(types, 'gba', 'vba-m-gba');
 
 const APP_TYPES = types;
 
