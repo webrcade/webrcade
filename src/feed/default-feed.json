@@ -649,7 +649,9 @@
           "thumbnail": "default-feed/images/gba/anguna-thumb.png",
           "background": "default-feed/images/gba/anguna-background.png",
           "props": {
-            "rom": "default-feed/content/gba/anguna.gba"
+            "rom": "default-feed/content/gba/anguna.gba",
+            "saveType": 2,
+            "flashSize": 65536
           }
         },
         {
@@ -659,7 +661,9 @@
           "thumbnail": "default-feed/images/gba/anotherworld-thumb.png",
           "background": "default-feed/images/gba/anotherworld-background.png",
           "props": {
-            "rom": "default-feed/content/gba/Another_world.gba"
+            "rom": "default-feed/content/gba/Another_world.gba",
+            "saveType": 2,
+            "flashSize": 65536
           }
         },        
         {
@@ -680,7 +684,9 @@
           "thumbnail": "default-feed/images/gba/blastarena-thumb.png",
           "background": "default-feed/images/gba/blastarena-background.png",
           "props": {
-            "rom": "default-feed/content/gba/BlastArenaAdvance_Mathew_Carr.gba"
+            "rom": "default-feed/content/gba/BlastArenaAdvance_Mathew_Carr.gba",
+            "saveType": 2,
+            "flashSize": 65536
           }
         },                
         {
@@ -690,7 +696,8 @@
           "thumbnail": "default-feed/images/gba/brokencircle-thumb.png",
           "background": "default-feed/images/gba/brokencircle-background.png",
           "props": {
-            "rom": "default-feed/content/gba/Broken Circle (Proto).gba"
+            "rom": "default-feed/content/gba/Broken Circle (Proto).gba",
+            "saveType": 1
           }
         },
         {
@@ -701,7 +708,9 @@
           "background": "default-feed/images/gba/flappybird-background.png",
           "props": {
             "rom": "default-feed/content/gba/flappybird.gba",
-            "rotation": 270
+            "rotation": 270,
+            "saveType": 2,
+            "flashSize": 65536
           }
         },      
         {
@@ -742,7 +751,9 @@
           "thumbnail": "default-feed/images/gba/powder-thumb.png",
           "background": "default-feed/images/gba/powder-background.png",
           "props": {
-            "rom": "default-feed/content/gba/powder117.gba"
+            "rom": "default-feed/content/gba/powder117.gba",
+            "saveType": 2,
+            "flashSize": 65536
           }
         }, 
         {
@@ -796,28 +807,7 @@
           "props": {
             "rom": "default-feed/content/gba/sushi.gba"
           }
-        },
-        {
-          "title": "Vulkanon",
-          "description": "A homebrew bullet hell shooter for Gameboy Advance. Vulkanon builds upon the \"Shooting\" side challenges found in BulletGBA and delves further into mini-game territory.",
-          "type": "gba",
-          "thumbnail": "default-feed/images/gba/vulkanon-thumb.png",
-          "background": "default-feed/images/gba/vulkanon-background.png",
-          "props": {
-            "rom": "default-feed/content/gba/vulkanon-2.1.rom.gba"
-          }
-        },
-        {
-          "title": "Werewolf Tale",
-          "fullTitle": "a Werewolf Tale",
-          "description": "This game is a unique combination of puzzler and beat-em-up styled games where you run along the walls and have to defeat creatures. You play the role of a werewolf who enters Dracula's castle. You must survive and make it to Dracula's room to free yourself.",
-          "type": "gba",
-          "thumbnail": "default-feed/images/gba/werewolftale-thumb.png",
-          "background": "default-feed/images/gba/werewolftale-background.png",
-          "props": {
-            "rom": "default-feed/content/gba/aWerewolfTale.gba"
-          }
-        }                
+        }
       ]
     },
     {
