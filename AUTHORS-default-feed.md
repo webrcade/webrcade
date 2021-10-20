@@ -61,12 +61,26 @@ A best effort attempt was made to ensure that the titles listed below could be i
 | Classic Kong Complete | Shiru | [Nintendo SNES](https://docs.webrcade.com/apps/emulators/snes/) | https://shiru.untergrund.net/software.shtml |
 | Gunman Clive (Demo) | Bertil Hörberg | [Nintendo SNES](https://docs.webrcade.com/apps/emulators/snes/) | http://www.gunmanclive.com/snes/ |
 | Jet Pilot Rising |  Dieter Von Laser | [Nintendo SNES](https://docs.webrcade.com/apps/emulators/snes/) | https://snescentral.com/article.php?id=1091 |
-| MazezaM Challenge |  PortableDev | [Nintendo SNES](https://docs.webrcade.com/apps/emulators/snes/) | https://www.portabledev.com/jeux/supernes/mazezam-snes/ |
+| MazezaM Challenge |  Alekmaul | [Nintendo SNES](https://docs.webrcade.com/apps/emulators/snes/) | https://www.portabledev.com/jeux/supernes/mazezam-snes/ |
 | REM (Demo) |  rmn0 | [Nintendo SNES](https://docs.webrcade.com/apps/emulators/snes/) | https://github.com/rmn0/rem |
 | Rodas Cross (Demo) |  Kaffeeware | [Nintendo SNES](https://docs.webrcade.com/apps/emulators/snes/) | https://kaffeeware.github.io/ |
 | Skipp and Friends |   Mukunda Johnson, Ken Snyder, Steven Velema, Hubert Lamontagne | [Nintendo SNES](https://docs.webrcade.com/apps/emulators/snes/) | https://pdroms.de/supernintendoentertainmentsystem/skipp-and-friends-snes-game |
 | Super Boss Gaiden |  German duo Dieter Laser, ChronoMoogle | [Nintendo SNES](https://docs.webrcade.com/apps/emulators/snes/) | https://superbossgaiden.superfamicom.org/ |
 | Uwol: Quest for Money |  Alekmaul, The Mojon Twins | [Nintendo SNES](https://docs.webrcade.com/apps/emulators/snes/) | https://www.mojontwins.com/juegos_mojonos/uwol-quest-for-money/<br>https://www.portabledev.com/jeux/supernes/uwol-snes/ |
+| Anguna |  Bite the Chili Productions | [Nintendo GBA](https://docs.webrcade.com/apps/emulators/gba/) | http://www.tolberts.net/anguna/ |
+| Another World | Eric Chahi and Cyril Cogordan | [Nintendo GBA](https://docs.webrcade.com/apps/emulators/gba/) | https://gbadev.org/demos.php?showinfo=1279 |
+| Astrohawk Advance (Demo) | Paul Lay | [Nintendo GBA](https://docs.webrcade.com/apps/emulators/gba/) | https://gbadev.org/demos.php?showinfo=357 |
+| Blast Arena Advance | Mathew Carr | [Nintendo GBA](https://docs.webrcade.com/apps/emulators/gba/) | https://www.mrdictionary.net/blastarenacart/ |
+| Broken Circle | 7 Raven Studio | [Nintendo GBA](https://docs.webrcade.com/apps/emulators/gba/) | https://www.giantbomb.com/broken-circle/3030-25333/ |
+| Flappy Bird | Jay van Hutten | [Nintendo GBA](https://docs.webrcade.com/apps/emulators/gba/) | http://jayvanhutten.com/flappy/ |
+| MazezaM Challenge | Alekmaul | [Nintendo GBA](https://docs.webrcade.com/apps/emulators/gba/) | https://www.portabledev.com/jeux/supernes/mazezam-snes/ |
+| Motocross Challenge | DHG  | [Nintendo GBA](https://docs.webrcade.com/apps/emulators/gba/) | https://www.giantbomb.com/motocross-challenge/3030-19653/ |
+| POWDER | Jeff Lait | [Nintendo GBA](https://docs.webrcade.com/apps/emulators/gba/) | http://www.zincland.com/powder/index.php |
+| Power Pig | Genecyst | [Nintendo GBA](https://docs.webrcade.com/apps/emulators/gba/) | https://www.neoflash.com/forum/index.php/topic,7675.0.html |
+| Simonchu | Jagos | [Nintendo GBA](https://docs.webrcade.com/apps/emulators/gba/) | https://pdroms.de/files/nintendo-gameboyadvance-gba/simonchu |
+| Super Mario Last Quest |  YodaJr, Omg | [Nintendo GBA](https://docs.webrcade.com/apps/emulators/gba/) | https://www.neoflash.com/forum/index.php/topic,4997.0.html |
+| Super Wings |  eKid | [Nintendo GBA](https://docs.webrcade.com/apps/emulators/gba/) | https://www.neoflash.com/forum/index.php/topic,4961.0.html |
+| Sushi the Cat |  N3TKaT and Kamui | [Nintendo GBA](https://docs.webrcade.com/apps/emulators/gba/) | https://pdroms.de/files/nintendo-gameboyadvance-gba/sushi-the-cat |
 | Astro Force | Enrique Ruiz  | [Sega Master System](https://docs.webrcade.com/apps/emulators/mastersystem/) | https://www.smspower.org/Homebrew/AstroForce-SMS |
 | Bara Burū | Kagesan | [Sega Master System](https://docs.webrcade.com/apps/emulators/mastersystem/) | https://www.smspower.org/Homebrew/BaraBur%C5%AB-SMS |
 | Bruce Lee | Kagesan | [Sega Master System](https://docs.webrcade.com/apps/emulators/mastersystem/) | https://www.smspower.org/Homebrew/BruceLee-SMS |
