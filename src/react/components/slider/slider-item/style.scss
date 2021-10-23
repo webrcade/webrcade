@@ -31,6 +31,15 @@
       overflow: hidden;
     }  
 
+    .img-hidden {
+      opacity: 0;
+    }
+
+    .img-fade-in {
+      opacity: 1 !important;
+      transition: .2s  ease-in;
+    }    
+
     .slider-item-title {
       position: absolute;
       display: block;
