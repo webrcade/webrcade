@@ -20,6 +20,7 @@ import {
 preloadImages([
   WebrcadeLogoDarkImage,
   WebrcadeLogoLargeImage,
+  "images/default-thumb.png",  
   AddCircleBlackImage,
   AddCircleWhiteImage,
   CloudDownloadBlackImage,
@@ -27,7 +28,7 @@ preloadImages([
   DeleteForeverBlackImage,
   DeleteForeverWhiteImage,
   PlayArrowBlackImage,
-  PlayArrowWhiteImage
+  PlayArrowWhiteImage  
 ]);
 
 ReactDOM.render(
