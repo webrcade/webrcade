@@ -289,7 +289,7 @@ class Slider extends Component {
           title={getTitle ? getTitle(item) : ''}
           thumbnailSrc={getThumbnailSrc ? getThumbnailSrc(item) : ''}
           defaultThumbnailSrc={getDefaultThumbnailSrc ? getDefaultThumbnailSrc(item) : ''}
-          key={`${item.id}-${index}`}
+          key={`${item.title}-${index}`}
           width={100 / itemsInRow}
           selected={selectedItem === index && focused}
           onClick={() => { this.handleItemClicked(index) }}
