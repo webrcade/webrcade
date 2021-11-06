@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { AppRegistry } from '../../../apps';
-import { isDev, LOG } from '@webrcade/app-common'
+import { isDev, AppRegistry, LOG } from '@webrcade/app-common'
 
 require("./style.scss");
 
@@ -22,7 +21,6 @@ export default class AppScreen extends Component {
       this.frameRetryId = null;
     }
   }
-
 
   messageListener = e => {
     if (e.data === 'appLoaded') {

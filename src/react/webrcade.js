@@ -1,10 +1,6 @@
 import React, { Component } from "react";
 import {
   getDefaultFeed,
-  loadFeeds,
-  storeFeeds,
-  Feed,
-  Feeds,
 } from '../feed';
 import { storage } from '../storage';
 import AddFeedScreen from './screens/addfeed';
@@ -15,8 +11,12 @@ import YesNoScreen from './screens/yesno';
 import {
   applyXboxFullscreenHack,
   applyIosNavBarHack,
+  loadFeeds,
   showMessage,
+  storeFeeds,
   FetchAppData,
+  Feed,
+  Feeds,
   Resources,
   UrlUtil,
   LOG,
