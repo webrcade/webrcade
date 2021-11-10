@@ -5,7 +5,6 @@ import {
 import { storage } from '../storage';
 import AddFeedScreen from './screens/addfeed';
 import AppBrowseScreen from "./screens/appbrowse";
-import AppScreen from "./screens/app";
 import LoadingScreen from "./screens/loading";
 import YesNoScreen from './screens/yesno';
 import {
@@ -14,6 +13,7 @@ import {
   loadFeeds,
   showMessage,
   storeFeeds,
+  AppScreen,
   FetchAppData,
   Feed,
   Feeds,
