@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { 
   toggleTabIndex,  
+  AppRegistry,
+  Feeds,
   FocusGrid, 
   GamepadNotifier,
   ImageButton,   
@@ -21,8 +23,6 @@ import {
 
 import AppCategory from "./app-category";
 import AppDetails from "./app-details";
-import { AppRegistry } from '../../../apps';
-import { Feeds } from "../../../feed";
 import Logo from "../../components/logo";
 import Slider from "../../components/slider";
 
