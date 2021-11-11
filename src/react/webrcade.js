@@ -13,6 +13,7 @@ import {
   loadFeeds,
   showMessage,
   storeFeeds,
+  AppProps,
   AppScreen,
   FetchAppData,
   Feed,
@@ -49,6 +50,7 @@ export class Webrcade extends Component {
   MIN_LOADING_TIME = 1500;
   MAX_SLIDES_PER_PAGE = 8;
   MIN_SLIDES_LENGTH = (3 * this.MAX_SLIDES_PER_PAGE + 2);
+  EDITOR_TEST_FEED = "editor.testFeed";
 
   HASH_PLAY = "play";
   RP_FEED = "feed";
@@ -134,22 +136,64 @@ export class Webrcade extends Component {
         loadFeeds(MIN_SLIDES_LENGTH)
           .then(feeds => {
             let loadingFeed = false;
+
+            // Do we need to check for a test feed from the editor?
+            const editTest = UrlUtil.getParam(
+              window.location.search, AppProps.RP_EDITOR_TEST);
+            const checkEditTest = (editTest && editTest === AppProps.RV_EDITOR_TEST_ENABLED);
+
+            let lastFeedProp = null;
             storage.get(LAST_FEED_PROP)
-              .then(f => {
-                // Check request parameter for feed url
-                let feed = UrlUtil.getParam(window.location.search, this.RP_FEED);
-                if (!feed) {
-                  // Check last feed url
-                  feed = f;
+              .then(value => { lastFeedProp = value; })
+              .then(() => {
+                if(checkEditTest) {
+                  // Load test feed
+                  return storage.get(this.EDITOR_TEST_FEED);
+                } else {
+                  return null;
                 }
-                if (feed && feed.length > 0) {
+              })
+              .then((testFeed) => {
+                if (testFeed && testFeed.length > 0) {
+                  // Using the test feed...
+                  const feed = this.parseFeed(JSON.parse(testFeed));
+
+                  // Clear the test feed
+                  storage.put(this.EDITOR_TEST_FEED, "");
+
                   loadingFeed = true;
-                  this.setState({
+                  this.setState({                    
                     loadingStatus: Resources.getText(TEXT_IDS.LOADING_FEED),
                     initialFeed: false,
                     feeds: feeds
+                  }, () => {
+                    this.setState({
+                      feed: feed,
+                      mode: ScreenEnum.BROWSE
+                    });
                   });
-                  return this.loadFeedFromUrl(feed);
+                  return true;
+                } else {
+                  return false;
+                }
+              })
+              .then((usingTestFeed) => {
+                if (!usingTestFeed) {
+                  // Check request parameter for feed url
+                  let feed = UrlUtil.getParam(window.location.search, this.RP_FEED);
+                  if (!feed) {
+                    // Check last feed url
+                    feed = lastFeedProp;
+                  }
+                  if (feed && feed.length > 0) {
+                    loadingFeed = true;
+                    this.setState({
+                      loadingStatus: Resources.getText(TEXT_IDS.LOADING_FEED),
+                      initialFeed: false,
+                      feeds: feeds
+                    });
+                    return this.loadFeedFromUrl(feed);
+                  }
                 }
               })
               .catch(e => LOG.info(e))
