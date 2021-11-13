@@ -2,6 +2,8 @@ import React, { useRef, useState } from "react";
 
 require("./style.scss");
 
+const preventDefault = (e) => { e.preventDefault(); }
+
 const SliderItem = ({ width, selected, onClick, title, thumbnailSrc, defaultThumbnailSrc, hide, onImageLoaded }) => {
 
   const imgRef = useRef(null);
@@ -47,6 +49,7 @@ const SliderItem = ({ width, selected, onClick, title, thumbnailSrc, defaultThum
       <div className={'slider-item-container' + (selected ? ' slider-item-container__selected' : '')}>
         <img         
           src="images/default-thumb.png"
+          onContextMenu={preventDefault}
           key={thumbnailSrc} 
           alt={title} 
           ref={imgRef} 
