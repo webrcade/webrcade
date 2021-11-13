@@ -1,5 +1,9 @@
 {
   "title": "Default",
+  "longTitle": "Default Feed",
+  "description": "The default feed contains a collection of high-quality publicly available games and demos across the various applications (emulators, engines, etc.) that are supported by webЯcade.",
+  "thumbnail": "default-feed/images/default-thumb.png",
+  "background": "default-feed/images/default-background.png",
   "categories": [
     {
       "title": "Atari 2600",
