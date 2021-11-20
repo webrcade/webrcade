@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { 
-  hideMessage,
   toggleTabIndex,  
   FocusGrid, 
   GamepadNotifier,
