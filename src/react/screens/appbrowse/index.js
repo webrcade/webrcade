@@ -1,26 +1,19 @@
 import React, { Component } from "react";
 import { 
+  hideMessage,
   toggleTabIndex,  
-  AppRegistry,
-  Feeds,
   FocusGrid, 
   GamepadNotifier,
   ImageButton,   
   Message,  
-  Resources,
   WebrcadeContext,
   LOG,
-  TEXT_IDS,  
-  AddCircleBlackImage,
-  AddCircleWhiteImage,
-  CloudDownloadBlackImage,
-  CloudDownloadWhiteImage,
-  DeleteForeverBlackImage,
-  DeleteForeverWhiteImage,
-  PlayArrowBlackImage,
-  PlayArrowWhiteImage
 } from '@webrcade/app-common'
 
+import * as Xbox from '../../../util/xbox';
+import getAppInfo from "./app";
+import getCategoryInfo from "./category";
+import getFeedInfo from "./feed";
 import AppCategory from "./app-category";
 import AppDetails from "./app-details";
 import Logo from "../../components/logo";
@@ -32,23 +25,26 @@ export default class AppBrowseScreen extends Component {
 
   constructor() {
     super();
+    
+    this.ModeEnum = AppBrowseScreen.ModeEnum;
 
     this.state = {
       category: null,
       currentItem: null,
-      menuMode: AppBrowseScreen.ModeEnum.CATEGORIES,
+      menuMode: this.ModeEnum.CATEGORIES,
       browseScreen: this
     };
 
     this.sliderRef = React.createRef();
-    this.playButtonRef = React.createRef();
-    this.deleteButtonRef = React.createRef();
+    this.button1Ref = React.createRef();
+    this.button2Ref = React.createRef();
     this.categoryRef = React.createRef();
     this.appRef = React.createRef();
-    this.webrcadeDivRef = React.createRef();
+    this.webrcadeDivRef = React.createRef();    
+    this.browsingModeListener = null;
 
     this.focusGrid.setComponents([
-      [this.playButtonRef, this.deleteButtonRef],
+      [this.button1Ref, this.button2Ref],
       [this.categoryRef],
       [this.sliderRef]
     ]);
@@ -94,14 +90,26 @@ export default class AppBrowseScreen extends Component {
     this.webrcadeDivRef.current.style.height = window.innerHeight + "px";
   }
 
-  componentDidMount() {
+  componentDidMount() {    
+    const { context } = this.props;
+    const { gamepadNotifier } = this;
+    
+    if (!this.browsingModeListener) {
+      // This attempts to detect the Xbox browser's "Browsing Mode"
+      this.browsingModeListener = new Xbox.BrowsingModeListener(
+        gamepadNotifier, () => { context.showXboxBrowsingAlert(); }          
+      );
+    }
+
     this.startGamepadNotifier();
+    this.browsingModeListener.registerListeners();
     window.addEventListener('resize', this.onResize);
-    window.addEventListener('orientationchange', this.onResize);
+    window.addEventListener('orientationchange', this.onResize);    
   }
 
   componentWillUnmount() {
     this.stopGamepadNotifier();
+    this.browsingModeListener.unregisterListeners();
     window.removeEventListener('resize', this.onResize);
     window.removeEventListener('orientationchange', this.onResize);
   }
@@ -112,11 +120,15 @@ export default class AppBrowseScreen extends Component {
 
     if (hide || disable) {
       this.stopGamepadNotifier();      
+      this.browsingModeListener.unregisterListeners();
+
       if (disable && !prevProps.disable) {
         toggleTabIndex(webrcadeDivRef.current, false);
       }
     } else {
       this.startGamepadNotifier();
+      this.browsingModeListener.registerListeners();
+
       if (!disable && prevProps.disable) {
         toggleTabIndex(webrcadeDivRef.current, true);
       }
@@ -157,103 +169,12 @@ export default class AppBrowseScreen extends Component {
     return item.longTitle ? item.longTitle : item.title;
   }
 
-  getFeedInfo(currentItem) {
-    const { onFeedLoad } = this.props;
-    const isAdd = currentItem.feedId === Feeds.ADD_ID;
-
-    const defaultThumbnail = 'images/feed.png';
-
-    return {
-      title: this.getLongTitle(currentItem),
-      subTitle: Feeds.getUrl(currentItem),      
-      description: currentItem.description,
-      backgroundSrc: currentItem.background ? currentItem.background : 'images/feed-background.png',
-      defaultBackgroundSrc: 'images/feed-background.png',        
-      categoryLabel: Resources.getText(TEXT_IDS.FEEDS),            
-      playLabel: Resources.getText(isAdd ? TEXT_IDS.ADD_UC : TEXT_IDS.LOAD_UC),
-      playImg: isAdd ? AddCircleBlackImage : CloudDownloadBlackImage,
-      playHoverImg: isAdd ? AddCircleWhiteImage : CloudDownloadWhiteImage,      
-      isDeleteEnabled: Feeds.isDeleteEnabled(currentItem),
-      getTitle: item => item.title,
-      getThumbnailSrc: item => item.thumbnail ? item.thumbnail : defaultThumbnail,      
-      getDefaultThumbnailSrc: () => defaultThumbnail,
-      onClick: () => onFeedLoad(currentItem),    
-    }
-  }
-
-  getCategoryInfo(currentItem) {
-    const { sliderRef } = this;
-    const { ModeEnum } = AppBrowseScreen;
-
-    const defaultThumbnail = 'images/folder.png';
-
-    return {
-      title: this.getLongTitle(currentItem),
-      description: currentItem.description,
-      backgroundSrc: currentItem.background ? currentItem.background : 'images/folder-background.png' , 
-      defaultBackgroundSrc: 'images/folder-background.png',        
-      categoryLabel: Resources.getText(TEXT_IDS.CATEGORIES),
-      playLabel: Resources.getText(TEXT_IDS.SELECT_UC),
-      flyoutLabel: Resources.getText(TEXT_IDS.SHOW_FEEDS),
-      getTitle: item => item.title,
-      getThumbnailSrc: item => item.thumbnail ? item.thumbnail : defaultThumbnail,
-      getDefaultThumbnailSrc: () => defaultThumbnail,
-      onClick: () => {
-        this.setState({
-          menuMode: ModeEnum.APPS,
-          category: currentItem,
-          currentItem: currentItem.items[0],
-        });
-        sliderRef.current.focus();
-      },
-      categoryOnClick: () => {
-        this.setState({
-          currentItem: this.props.feeds[0],
-          menuMode: AppBrowseScreen.ModeEnum.FEEDS
-        });
-        sliderRef.current.focus();
-      }
-    }
-  }
-
-  getAppInfo(currentItem) {
-    const { sliderRef } = this;
-    const { onAppSelected, feed } = this.props;
-    const { category } = this.state;
-    const { ModeEnum } = AppBrowseScreen;
-    const reg = AppRegistry.instance;
-
-    return {
-      title: reg.getLongTitle(currentItem),
-      subTitle: reg.getName(currentItem),      
-      description: reg.getDescription(currentItem),
-      backgroundSrc: reg.getBackground(currentItem),   
-      defaultBackgroundSrc: reg.getDefaultBackground(currentItem),   
-      categoryLabel: this.getLongTitle(category),
-      flyoutLabel: Resources.getText(TEXT_IDS.SHOW_CATEGORIES),
-      playLabel: Resources.getText(TEXT_IDS.PLAY_UC),
-      playImg: PlayArrowBlackImage,
-      playHoverImg: PlayArrowWhiteImage,      
-      getTitle: item => reg.getTitle(item),
-      getThumbnailSrc: item => reg.getThumbnail(item),
-      getDefaultThumbnailSrc: item => reg.getDefaultThumbnail(item),
-      onClick: () => { if (onAppSelected) onAppSelected(currentItem); },
-      categoryOnClick: () => {
-        this.setState({ 
-          currentItem: feed.getCategories()[0],
-          menuMode: ModeEnum.CATEGORIES 
-        });
-        sliderRef.current.focus();
-      }
-    }
-  }
-
   render() {
-    const { feeds, hide, onFeedDelete } = this.props;
+    const { feeds, hide } = this.props;
     const { category, currentItem, feed, menuMode } = this.state;
-    const { categoryRef, focusGrid, playButtonRef, screenContext, sliderRef, 
+    const { categoryRef, focusGrid, button1Ref, screenContext, sliderRef, 
       webrcadeDivRef, MAX_SLIDES } = this;
-    const { ModeEnum } = AppBrowseScreen;
+    const { ModeEnum } = this;
 
     const isCategories = (menuMode === ModeEnum.CATEGORIES);
     const isFeeds = (menuMode === ModeEnum.FEEDS);
@@ -264,19 +185,21 @@ export default class AppBrowseScreen extends Component {
 
     if (currentItem) {
       itemId = currentItem.id;      
-      info = isFeeds ? this.getFeedInfo(currentItem, itemId) :
-        isCategories ? this.getCategoryInfo(currentItem) : this.getAppInfo(currentItem);
+      info = isFeeds ? getFeedInfo(this, currentItem, itemId) :
+        isCategories ? getCategoryInfo(this, currentItem) : 
+          getAppInfo(this, currentItem);
     }
 
     return (
-      <WebrcadeContext.Provider value={screenContext}>
-        <div ref={webrcadeDivRef} style={{height: window.innerHeight + "px"}} className="webrcade">          
+      <WebrcadeContext.Provider value={screenContext}>      
+        <div ref={webrcadeDivRef} style={{height: window.innerHeight + "px"}} className="webrcade">                  
           <div className={'webrcade-outer' +
             (hide === true ? ' webrcade-outer--hide' : '')}>
-            <Logo />
             <Message />
+            <Logo />            
             <AppDetails
-              itemKey={(isFeeds ? "feed" : isCategories ? 'cat' : 'item') + ":" + itemId}
+              //itemKey={(isFeeds ? "feed" : isCategories ? 'cat' : 'item') + ":" + itemId}
+              itemKey={itemId}
               title={info.title}
               description={info.description}
               subTitle={info.subTitle}
@@ -285,21 +208,21 @@ export default class AppBrowseScreen extends Component {
               buttons={currentItem ?
                 <>
                   <ImageButton
-                    onPad={e => focusGrid.moveFocus(e.type, playButtonRef)}
+                    onPad={e => focusGrid.moveFocus(e.type, button1Ref)}
                     onClick={info.onClick}
-                    ref={playButtonRef}
-                    imgSrc={info.playImg}
-                    hoverImgSrc={info.playHoverImg}
-                    label={info.playLabel}
+                    ref={button1Ref}
+                    imgSrc={info.button1Img}
+                    hoverImgSrc={info.button1HoverImg}
+                    label={info.button1Label}
                   /> 
-                  {info.isDeleteEnabled ?                 
+                  {info.isButton2Enabled ?                 
                     <ImageButton
-                      onPad={e => focusGrid.moveFocus(e.type, this.deleteButtonRef)}
-                      onClick={() => onFeedDelete(currentItem)}
-                      ref={this.deleteButtonRef}
-                      imgSrc={DeleteForeverBlackImage}
-                      hoverImgSrc={DeleteForeverWhiteImage}
-                      label={Resources.getText(TEXT_IDS.DELETE_UC)}
+                      onPad={e => focusGrid.moveFocus(e.type, this.button2Ref)}
+                      onClick={info.button2OnClick}
+                      ref={this.button2Ref}
+                      imgSrc={info.button2Img}
+                      hoverImgSrc={info.button2HoverImg}
+                      label={info.button2Label}
                     /> 
                   : null}
                 </> : null
@@ -324,10 +247,11 @@ export default class AppBrowseScreen extends Component {
               getThumbnailSrc={info.getThumbnailSrc}
               getDefaultThumbnailSrc={info.getDefaultThumbnailSrc}
               onSelected={item => this.setState({ currentItem: item })}
-              onClick={() => playButtonRef.current.focus()} />
+              onClick={() => button1Ref.current.focus()} />
           </div>
         </div>
       </WebrcadeContext.Provider>
     );
   }
 };
+

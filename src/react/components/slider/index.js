@@ -283,13 +283,15 @@ class Slider extends Component {
     const sliderContents = [];
     for (let index of combinedIndex) {      
       const item = items[index];      
+      const thumbnailSrc = getThumbnailSrc ? getThumbnailSrc(item) : '';
+      const key = item.id ? item.id : `${item.title}-${index}-${thumbnailSrc}`;
       const hide = item.duplicate === true && !scrollable;
       sliderContents.push(
         <SliderItem
           title={getTitle ? getTitle(item) : ''}
           thumbnailSrc={getThumbnailSrc ? getThumbnailSrc(item) : ''}
           defaultThumbnailSrc={getDefaultThumbnailSrc ? getDefaultThumbnailSrc(item) : ''}
-          key={`${item.title}-${index}`}
+          key={key}
           width={100 / itemsInRow}
           selected={selectedItem === index && focused}
           onClick={() => { this.handleItemClicked(index) }}

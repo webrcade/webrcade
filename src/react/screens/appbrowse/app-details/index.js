@@ -9,8 +9,7 @@ export default class AppDetails extends Component {
 
   render() {
     const { backgroundSrc, defaultBackgroundSrc, bottom, buttons, description, itemKey, subTitle, title } = this.props;
-    // TODO: Fix this hack 
-    const key = itemKey + title + (backgroundSrc ? backgroundSrc : '');  
+    const key = itemKey;  
     const detailsRightRef = this.detailsRightRef;
     
     if ((key !== this.lastKey) && detailsRightRef) {
