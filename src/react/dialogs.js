@@ -9,7 +9,6 @@ import AlertScreen from './screens/alert'
 import YesNoScreen from './screens/yesno';
 
 import {
-  storeFeeds,
   Resources,
   LOG,
   TEXT_IDS,
@@ -32,12 +31,8 @@ export default function Dialogs(props) {
                 loadingStatus: Resources.getText(TEXT_IDS.LOADING_FEED),
               }, () => {
                 loadFeedFromUrl(url)
-                  .then(([feed, feedJson]) => {
-                    feeds.addFeed({ title: "New Feed", url: url });
-                    feeds.updateFeed(url, feedJson);
-                    storeFeeds(feeds);
-                  })
-                  .catch(e => LOG.info(e));
+                  .then(([feed, feedJson]) => feeds.addRemoteFeed(url, feedJson))
+                  .catch(e => LOG.error(e));
               });
             }
           }

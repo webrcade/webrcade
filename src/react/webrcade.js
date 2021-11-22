@@ -64,7 +64,7 @@ export class Webrcade extends Component {
     APP: "app"
   }
 
-  LAST_FEED_PROP = "lastfeed";
+  LAST_FEED_PROP = "lastfeedId";
 
   popstateHandler = e => {
     const { appScreenFrameRef, ScreenEnum } = this;

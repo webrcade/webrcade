@@ -51,7 +51,7 @@ export default class TextScroll extends Component {
           }
         }
       } else {
-        if ((textHeight + topPos) > boxHeight) {
+        if ((textHeight + topPos) > (boxHeight + 1)) {
           if (!moved) {
             pause = PAUSE; moved = true;
           } else {

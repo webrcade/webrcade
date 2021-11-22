@@ -3,6 +3,7 @@ import {
   toggleTabIndex,  
   FocusGrid, 
   GamepadNotifier,
+  FileButton,
   ImageButton,   
   Message,  
   WebrcadeContext,
@@ -197,7 +198,6 @@ export default class AppBrowseScreen extends Component {
             <Message />
             <Logo />            
             <AppDetails
-              //itemKey={(isFeeds ? "feed" : isCategories ? 'cat' : 'item') + ":" + itemId}
               itemKey={itemId}
               title={info.title}
               description={info.description}
@@ -214,15 +214,26 @@ export default class AppBrowseScreen extends Component {
                     hoverImgSrc={info.button1HoverImg}
                     label={info.button1Label}
                   /> 
-                  {info.isButton2Enabled ?                 
-                    <ImageButton
-                      onPad={e => focusGrid.moveFocus(e.type, this.button2Ref)}
-                      onClick={info.button2OnClick}
-                      ref={this.button2Ref}
-                      imgSrc={info.button2Img}
-                      hoverImgSrc={info.button2HoverImg}
-                      label={info.button2Label}
-                    /> 
+                  {info.isButton2Enabled ? (                
+                    (info.button2OnFile ? (
+                      <FileButton
+                        onPad={e => focusGrid.moveFocus(e.type, this.button2Ref)}
+                        onFileSelect={info.button2OnFile}
+                        ref={this.button2Ref}
+                        imgSrc={info.button2Img}
+                        hoverImgSrc={info.button2HoverImg}
+                        label={info.button2Label}
+                      /> 
+                    ) : (
+                      <ImageButton
+                        onPad={e => focusGrid.moveFocus(e.type, this.button2Ref)}
+                        onClick={info.button2OnClick}
+                        ref={this.button2Ref}
+                        imgSrc={info.button2Img}
+                        hoverImgSrc={info.button2HoverImg}
+                        label={info.button2Label}
+                      /> 
+                    )))
                   : null}
                 </> : null
               }
