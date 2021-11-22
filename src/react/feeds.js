@@ -47,9 +47,9 @@ const loadInitialFeed = () => {
           }
         })
         .then((testFeed) => {
-          if (testFeed && testFeed.length > 0) {
+          if (testFeed) {
             // Test feed was found, use it
-            const feed = parseFeed(JSON.parse(testFeed));
+            const feed = parseFeed(testFeed);
             // Clear the test feed
             storage.put(EDITOR_TEST_FEED, "");
             // Mark that we are going to be loading a feed

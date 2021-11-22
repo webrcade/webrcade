@@ -91,10 +91,7 @@ export default class AddFeedScreen extends PromptScreen {
         <div className='addfeed-screen-inner-buttons'>
           <ImageButton
             ref={addButtonRef}
-            //label={Resources.getText(TEXT_IDS.ADD)}
             label={Resources.getText(TEXT_IDS.OK)}
-            // imgSrc={AddCircleBlackImage}
-            // hoverImgSrc={AddCircleWhiteImage}
             onPad={e => focusGrid.moveFocus(e.type, addButtonRef)}
             onClick={() => this._onAdd()}
           />
