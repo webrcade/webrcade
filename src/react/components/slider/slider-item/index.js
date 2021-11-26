@@ -37,15 +37,17 @@ const SliderItem = ({ width, selected, onClick, title, thumbnailSrc, defaultThum
           const proxyTarget = e.target;
           showImage(proxyTarget.src);
         }
-        proxyImg.onerror = (e) => {            
+        proxyImg.onerror = (e) => {
           if (defaultThumbnailSrc) {
             loadDefault();
           }  
         }
-        const url = encodeURIComponent(img.src);
+        const url = encodeURIComponent(img.src)/*.replace("'", "%27")*/;
         proxyImg.src = `https://images.weserv.nl/?url=${url}&w=400&h=300&fit=cover`; 
       }
-      showImage(img.src); 
+      else {
+        showImage(img.src);
+      }
     };
     img.onerror = () => {
       // If an error occurred, attempt to load default thumbnail
