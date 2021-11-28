@@ -204,6 +204,7 @@ export default class AppBrowseScreen extends Component {
               subTitle={info.subTitle}
               backgroundSrc={info.backgroundSrc}
               defaultBackgroundSrc={info.defaultBackgroundSrc}
+              pixelated={info.backgroundPixelated}
               buttons={currentItem ?
                 <>
                   <ImageButton

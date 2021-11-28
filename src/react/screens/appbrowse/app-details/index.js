@@ -8,7 +8,7 @@ export default class AppDetails extends Component {
   lastKey = null;
 
   render() {
-    const { backgroundSrc, defaultBackgroundSrc, bottom, buttons, description, itemKey, subTitle, title } = this.props;
+    const { backgroundSrc, defaultBackgroundSrc, bottom, buttons, description, itemKey, subTitle, title, pixelated } = this.props;
     const key = itemKey;  
     const detailsRightRef = this.detailsRightRef;
     
@@ -53,11 +53,14 @@ export default class AppDetails extends Component {
       img.src = backgroundSrc;  
     }  
 
+    const rightClass = 
+      "app-details-right" + (pixelated ? " app-details-right--pixelated" : "")
+
     return (
       <div className="app-details-content">
         <div className="app-details-background">
           <div className="app-details-left"></div>
-          <div ref={(detailsRight) => { this.detailsRightRef = detailsRight; }} className="app-details-right"></div>
+          <div ref={(detailsRight) => { this.detailsRightRef = detailsRight; }} className={rightClass}></div>
         </div>
         <div className="app-details-content-container">
           <div className="app-details-content-container-title">{title ? title : ''}</div>

@@ -23,6 +23,8 @@ yarn-debug.log*
 yarn-error.log*
 
 public/default-feed.json
+public/roms.json
+public/roms.json.zip
 feeds
 test-feed.json
 test.html
@@ -32,4 +34,5 @@ test.html
 /public/images/games
 /public/broken-feed.json
 buildall*
+builddats.cmd
 *DO-NOT-CHECKIN*

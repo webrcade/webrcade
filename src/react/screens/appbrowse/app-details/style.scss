@@ -93,7 +93,6 @@
 
   &-right {
     opacity: 0;
-    //image-rendering: pixelated;
     //background: url(https://img1.cgtrader.com/items/2266200/5f9f3e10dd/nes-nintendo-entertainment-system-3d-model-low-poly-obj-blend.jpg);
     /* background: url(https://img1.cgtrader.com/items/23387/364fd58bef/atari-joystick-3d-model-max-obj-3ds.jpg);                                    */
     /* background: url(https://img-new.cgtrader.com/items/1875254/e248f68b2f/sega-genesis-3d-model-max-obj-mtl-3ds-fbx-c4d-lwo-lw-lws.jpg);                              */
@@ -106,6 +105,10 @@
     background-position: center;
     width: 60%;
   }
+
+  &-right--pixelated {
+    image-rendering: pixelated;
+  }  
 }
 
 .fade-in {

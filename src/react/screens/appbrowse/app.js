@@ -19,6 +19,7 @@ const getAppInfo = (appBrowse, currentItem) => {
     subTitle: reg.getName(currentItem),      
     description: reg.getDescription(currentItem),
     backgroundSrc: reg.getBackground(currentItem),   
+    backgroundPixelated: currentItem.backgroundPixelated,
     defaultBackgroundSrc: reg.getDefaultBackground(currentItem),   
     categoryLabel: appBrowse.getLongTitle(category),
     flyoutLabel: Resources.getText(TEXT_IDS.SHOW_CATEGORIES),
