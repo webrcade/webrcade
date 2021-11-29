@@ -29,7 +29,7 @@ export default class TextScroll extends Component {
     let state = 0;
     let moved = false;
 
-    const f = () => {                        
+    this.scrollFunction = () => {                        
       const boxHeight = boxEl.offsetHeight;
       const textHeight = textEl.offsetHeight;  
       let adjustMult = (SCROLL_SPEED / heightEl.offsetHeight) | 0;      
@@ -63,10 +63,10 @@ export default class TextScroll extends Component {
         }
       }
 
-      this.intervalId = setTimeout(f, interval);
+      this.intervalId = setTimeout(this.scrollFunction, interval);
     };
     
-    this.intervalId = setTimeout(f, INTERVAL);
+    this.intervalId = setTimeout(this.scrollFunction, INTERVAL);
   }
 
   componentWillUnmount() {
@@ -80,9 +80,59 @@ export default class TextScroll extends Component {
     const { containerRef, heightRef, textRef } = this;
     const { text } = this.props;
 
+    const lines = text.split("\n");    
+    const textLines = [];
+
+    // let inPara = false;
+    // let paraLines = [];
+    // let count = 0;
+    // for (let i = 0; i < lines.length; i++) {
+    //   const line = lines[i].trim();
+    //   if (line.length == 0) {
+    //     if (!inPara) {
+    //       inPara = true;
+    //       count = 0;
+    //     } else if (paraLines.length > 0) {          
+    //       textLines.push(<p>{paraLines}</p>)
+    //       inPara = false;
+    //       paraLines = [];
+    //       count = 0;
+    //     }
+    //   } else {
+    //     const target = inPara ? paraLines : textLines;
+    //     target.push(<>{count > 0 ? <br/> : null}{line}</>);
+    //     count++;
+    //   }
+    // }
+    // if (paraLines.length > 0) {
+    //   textLines.push(<p>{paraLines}</p>);      
+    // }
+
+    for (let i = 0; i < lines.length; i++) {
+      const line = lines[i].trim();
+      if (line.length > 0) {
+        textLines.push(<>{line}</>);
+        break;
+      }
+    }
+
     return (
-      <div className="scroll-container" ref={containerRef}>
-        <div className="scroll-text" ref={textRef}>{text}</div>
+      <div 
+        className="scroll-container" 
+        ref={containerRef}
+        onMouseEnter={() => {
+          if (this.intervalId) {
+            clearInterval(this.intervalId)
+            this.intervalId = null;
+          }    
+        }}
+        onMouseLeave={() => {
+          this.intervalId = setTimeout(this.scrollFunction, this.INTERVAL);
+        }}
+      >
+        <div className="scroll-text" ref={textRef}>
+          {textLines}          
+        </div>
         <div className="scroll-height" ref={heightRef}>M</div>
       </div>        
     );
