@@ -42,7 +42,7 @@ const SliderItem = ({ width, selected, onClick, title, thumbnailSrc, defaultThum
             loadDefault();
           }  
         }
-        const url = encodeURIComponent(img.src)/*.replace("'", "%27")*/;
+        const url = encodeURIComponent(encodeURI(img.src));
         proxyImg.src = `https://images.weserv.nl/?url=${url}&w=400&h=300&fit=cover&output=gif`; 
       }
       else {
