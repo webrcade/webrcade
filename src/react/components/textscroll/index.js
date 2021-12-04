@@ -76,45 +76,52 @@ export default class TextScroll extends Component {
     }    
   }
 
+  MIN_LENGTH = 155;
+
   render() {
-    const { containerRef, heightRef, textRef } = this;
+    const { containerRef, heightRef, textRef, MIN_LENGTH } = this;
     const { text } = this.props;
 
     const lines = text.split("\n");    
     const textLines = [];
 
-    // let inPara = false;
-    // let paraLines = [];
-    // let count = 0;
-    // for (let i = 0; i < lines.length; i++) {
-    //   const line = lines[i].trim();
-    //   if (line.length == 0) {
-    //     if (!inPara) {
-    //       inPara = true;
-    //       count = 0;
-    //     } else if (paraLines.length > 0) {          
-    //       textLines.push(<p>{paraLines}</p>)
-    //       inPara = false;
-    //       paraLines = [];
-    //       count = 0;
-    //     }
-    //   } else {
-    //     const target = inPara ? paraLines : textLines;
-    //     target.push(<>{count > 0 ? <br/> : null}{line}</>);
-    //     count++;
-    //   }
-    // }
-    // if (paraLines.length > 0) {
-    //   textLines.push(<p>{paraLines}</p>);      
-    // }
-
+    let inPara = false;
+    let paraLines = [];
+    let count = 0;
+    let len = 0;
     for (let i = 0; i < lines.length; i++) {
-      const line = lines[i].trim();
-      if (line.length > 0) {
-        textLines.push(<>{line}</>);
+      if (len > MIN_LENGTH) {
         break;
       }
+      const line = lines[i].trim();
+      len += line.length;
+      if (line.length === 0) {
+        if (!inPara) {
+          inPara = true;
+          count = 0;
+        } else if (paraLines.length > 0) {          
+          textLines.push(<p>{paraLines}</p>)
+          inPara = false;
+          paraLines = [];
+          count = 0;
+        }
+      } else {
+        const target = inPara ? paraLines : textLines;
+        target.push(<>{count > 0 ? <br/> : null}{line}</>);
+        count++;
+      }
     }
+    if (paraLines.length > 0) {
+      textLines.push(<p>{paraLines}</p>);      
+    }
+
+    // for (let i = 0; i < lines.length; i++) {
+    //   const line = lines[i].trim();
+    //   if (line.length > 0) {
+    //     textLines.push(<>{line}</>);
+    //     break;
+    //   }
+    // }
 
     return (
       <div 
