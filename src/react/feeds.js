@@ -118,9 +118,11 @@ const loadInitialFeed = () => {
 }
 
 const addLocalFeed = (file) => {
-  const { ScreenEnum, MIN_LOADING_TIME } = webrcade;
-  const { feeds } = webrcade.state;
-
+  const { 
+    ScreenEnum, 
+    MIN_LOADING_TIME, 
+    MIN_SLIDES_LENGTH 
+  } = webrcade;
   const start = Date.now();
 
   const fileReader =
@@ -142,13 +144,21 @@ const addLocalFeed = (file) => {
   return new Promise((resolve, reject) => {
     webrcade.setState({
       mode: ScreenEnum.LOADING,
-      loadingStatus: Resources.getText(TEXT_IDS.LOADING_FEED),
+      loadingStatus: Resources.getText(TEXT_IDS.LOADING_FEED),      
     }, () => {
       let feedJson = null;
       let feedObj = null;
       fileReader
         .then(feed => { feedJson = feed; return parseFeed(feed); })
-        .then(fo => { feedObj = fo; return feeds.addLocalFeed(feedJson); })
+        .then(fo => {
+          feedObj = fo;
+          // Load feeds again (may have been updated externally)
+          return loadFeeds(MIN_SLIDES_LENGTH);
+        })
+        .then(newFeeds => { 
+          webrcade.setState({feeds: newFeeds});
+          return newFeeds.addLocalFeed(feedJson); 
+        })
         .then(localFeed => loadFeedFromLocal(localFeed))
         .then(() => resolve(feedObj))
         .catch(msg => {
@@ -177,7 +187,8 @@ const loadFeedFromLocal = (localFeed) => {
     const start = Date.now();
     let newFeed = null;
     let errorMessage = null;
-    feeds.getLocalFeed(localFeed.localId)
+    // TODO: If feed has been deleted, gets error during parse (NPE)
+    feeds.getLocalFeed(localFeed.localId) 
       .then(feed => parseFeed(feed))
       .then(feed => {
         if (localFeed.feedId) {
@@ -207,11 +218,18 @@ const loadFeedFromLocal = (localFeed) => {
 }
 
 const loadFeedFromUrl = (url) => {
-  const { ScreenEnum, LAST_FEED_PROP, MIN_LOADING_TIME } = webrcade;
-  const { feeds } = webrcade.state;
+  const { 
+    ScreenEnum, 
+    LAST_FEED_PROP, 
+    MIN_LOADING_TIME,
+    MIN_SLIDES_LENGTH
+  } = webrcade;
 
   LOG.info('feed: ' + url);
 
+  const newState = {
+    mode: ScreenEnum.BROWSE
+  }
   return new Promise((resolve, reject) => {
     const start = Date.now();
     let feedJson = null, newFeed = null;
@@ -222,8 +240,16 @@ const loadFeedFromUrl = (url) => {
         feedJson = json;
         return parseFeed(json);
       })
-      .then(feed => { newFeed = feed; return feed; })
-      .then(() => feeds.addRemoteFeed(url, feedJson))
+      .then(feed => { 
+        newFeed = feed; 
+        return feed; 
+      })
+      // Reload feeds (may habe been changed externally)
+      .then(() => loadFeeds(MIN_SLIDES_LENGTH))
+      .then((feeds) => {
+        newState.feeds = feeds;
+        return feeds.addRemoteFeed(url, feedJson);
+      })
       .then(addedFeed => {
         if (addedFeed && addedFeed.feedId) {
           storage.put(
@@ -242,8 +268,9 @@ const loadFeedFromUrl = (url) => {
         wait = wait > 0 ? wait : 0;
         setTimeout(() => {
           if (errorMessage) showMessage(errorMessage);
-          const newState = { mode: ScreenEnum.BROWSE };
-          if (newFeed) newState.feed = newFeed;
+          if (newFeed) {
+            newState.feed = newFeed;
+          }
           webrcade.setState(newState);
         }, wait);
       });
@@ -280,15 +307,22 @@ const loadFeed = (feedInfo) => {
   }
 }
 
-const deleteFeed = (feed, feeds) => {
-  const { LAST_FEED_PROP } = webrcade;
+const deleteFeed = (feed) => {
+  const { LAST_FEED_PROP, MIN_SLIDES_LENGTH } = webrcade;
 
   webrcade.getContext().showYesNoScreen(true,
     Resources.getText(TEXT_IDS.CONFIRM_DELETE_FEED),
     async (screen) => {
       // Remove feed
       try {
-        await feeds.removeFeed(feed.feedId);
+        // Reload feeds prior to deletion (may have been modified externally)
+        const newFeeds = await loadFeeds(MIN_SLIDES_LENGTH);
+        if (newFeeds) {
+          await newFeeds.removeFeed(feed.feedId);
+          webrcade.setState({
+            feeds: newFeeds
+          })
+        }
       } catch (e) {
         LOG.error(e);
         showMessage(Resources.getText(TEXT_IDS.ERROR_DELETING_FEED));

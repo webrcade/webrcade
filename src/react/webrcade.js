@@ -164,7 +164,7 @@ export class Webrcade extends Component {
           this.setState({ mode: ScreenEnum.APP, app: app })
         }}
         onFeedLoad={f => loadFeed(f)}
-        onFeedDelete={f => deleteFeed(f, feeds)}
+        onFeedDelete={f => deleteFeed(f)}
       />
     );
   }

@@ -16,7 +16,6 @@ import {
 
 export default function Dialogs(props) {
   const { webrcade } = props;
-  const { feeds } = webrcade.state;
   const { ctx, ScreenEnum } = webrcade;
 
   const renderAddFeed = () => {
@@ -25,13 +24,19 @@ export default function Dialogs(props) {
         onAdd={(screen, url) => {
           if (url.length !== 0) {
             screen.close();
-            if (!feeds.getFeedForUrl(url)) {
+            if (!webrcade.state.feeds.getFeedForUrl(url)) {
               webrcade.setState({
                 mode: ScreenEnum.LOADING,
                 loadingStatus: Resources.getText(TEXT_IDS.LOADING_FEED),
               }, () => {
                 loadFeedFromUrl(url)
-                  .then(([feed, feedJson]) => feeds.addRemoteFeed(url, feedJson))
+                  .then(([feed, feedJson]) => {
+                    // Loading the feed from a URL causes feeds to be re-read
+                    // Get the latest version of feeds from state prior to
+                    // adding.
+                    const feeds = webrcade.state.feeds;
+                    return feeds.addRemoteFeed(url, feedJson)
+                  })
                   .catch(e => LOG.error(e));
               });
             }
