@@ -480,7 +480,6 @@
           "background": "default-feed/images/nes/nesvirus-background.png",
           "description": "In this game, you take on the role of a virus cleaning program, collecting bugs and avoiding hazards.",
           "props": {
-            "pal": true,
             "rom": "default-feed/content/nes/nes_virus_cleaner.nes"
           }
         },
