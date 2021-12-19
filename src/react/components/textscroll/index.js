@@ -76,7 +76,8 @@ export default class TextScroll extends Component {
     }    
   }
 
-  MIN_LENGTH = 155;
+  MAX_LENGTH = 600;
+  MIN_LINE = 64;
 
   render() {
     const { containerRef, heightRef, textRef, MIN_LENGTH } = this;
@@ -89,31 +90,76 @@ export default class TextScroll extends Component {
     let paraLines = [];
     let count = 0;
     let len = 0;
-    for (let i = 0; i < lines.length; i++) {
-      if (len > MIN_LENGTH) {
+    let exit = false;
+
+    for (let i = 0; i < lines.length && !exit; i++) {
+      if (len >= this.MAX_LENGTH) {
+        // console.log('length exceeds max, breaking');
         break;
       }
-      const line = lines[i].trim();
-      len += line.length;
-      if (line.length === 0) {
+      let line = lines[i].trim();      
+      let lineLen = line.length;
+      let newLen = len + lineLen;
+      if (newLen > this.MAX_LENGTH) {
+        // console.log('pre: ' + line + ", len = " + line.length);
+        let lastChar = line.length - (newLen - this.MAX_LENGTH);
+        if (lastChar < this.MIN_LINE) {
+          lastChar = this.MIN_LINE;
+        }
+        line = line.substring(0, lastChar);
+        let lastSpace = line.lastIndexOf('.');
+        const lastExc = line.lastIndexOf('!');
+        if (lastExc > lastSpace) {
+          lastSpace = lastExc;
+        }
+        const lastSemi = line.lastIndexOf(';');
+        if (lastSemi > lastSpace) {
+          lastSpace = lastSemi;
+        }
+        if (lastSpace < 0) {
+          lastSpace = line.lastIndexOf(' ');
+        }
+        if (lastSpace > 0) {          
+          const endChar = line.charAt(lastSpace - 1);
+          if (endChar === ',' || endChar === ':' || endChar === ';' ||
+            endChar === '[' || endChar === '(' || endChar === '&' ||
+            endChar === '!' || endChar === '?') {
+            lastSpace--;
+          }
+          line = line.substring(0, lastSpace).trim();                   
+        }
+        if (line.length > 0) {          
+          line += "...";
+        }
+        lineLen = line.length;
+        // console.log('marking to exit');
+        exit = true;      
+      }      
+      // console.log(line);
+      // console.log('line: ' + lineLen);
+      if (lineLen === 0) {
+        // console.log('empty line: ' + this.MIN_LINE);
+        len += this.MIN_LINE;         
         if (!inPara) {
           inPara = true;
-          count = 0;
+          count = 0;          
         } else if (paraLines.length > 0) {          
-          textLines.push(<p>{paraLines}</p>)
-          inPara = false;
+          textLines.push(<div className="scroll-block">{paraLines}</div>)
           paraLines = [];
           count = 0;
         }
       } else {
+        len += (lineLen < this.MIN_LINE ? this.MIN_LINE : lineLen);
         const target = inPara ? paraLines : textLines;
         target.push(<>{count > 0 ? <br/> : null}{line}</>);
         count++;
       }
+      // console.log('currentTotal: ' + len);
     }
     if (paraLines.length > 0) {
-      textLines.push(<p>{paraLines}</p>);      
+      textLines.push(<div className="scroll-block">{paraLines}</div>);      
     }
+    // console.log('total: ' + len);
 
     // for (let i = 0; i < lines.length; i++) {
     //   const line = lines[i].trim();
