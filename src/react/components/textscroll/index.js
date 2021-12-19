@@ -80,7 +80,7 @@ export default class TextScroll extends Component {
   MIN_LINE = 64;
 
   render() {
-    const { containerRef, heightRef, textRef, MIN_LENGTH } = this;
+    const { containerRef, heightRef, textRef } = this;
     const { text } = this.props;
 
     const lines = text.split("\n");    
