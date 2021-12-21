@@ -139,7 +139,28 @@ class Slider extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     const { items, maxSlides, onSelected } = this.props;
-    const { itemsInRow, selectedItem } = this.state;
+    const { itemsInRow, selectedItem, lowestVisibleIndex} = this.state;
+    
+    if (prevState.itemsInRow != itemsInRow) {
+      const maxIndex = items.length - 1;
+      let endIndex = lowestVisibleIndex + itemsInRow - 1;
+      let extra = 0;
+      if (endIndex > maxIndex) {
+        extra = endIndex - maxIndex;
+        endIndex = maxIndex;
+      }
+
+      let inRange = (selectedItem >= lowestVisibleIndex && selectedItem <= endIndex);
+      if (!inRange && extra > 0) {
+        inRange = (selectedItem >= 0 && selectedItem <= (extra - 1))
+      }
+      if (!inRange) {
+        console.log('Reset selected item due to items in row changing.');
+        this.setState({
+          selectedItem: extra > 0 ? (extra - 1) : (lowestVisibleIndex + itemsInRow - 1)
+        });  
+      }
+    }
 
     if ((prevState.selectedItem !== selectedItem) && onSelected) {
       onSelected(items[selectedItem]);
