@@ -139,26 +139,32 @@ class Slider extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     const { items, maxSlides, onSelected } = this.props;
-    const { itemsInRow, selectedItem, lowestVisibleIndex} = this.state;
-    
-    if (prevState.itemsInRow !== itemsInRow) {
-      const maxIndex = items.length - 1;
-      let endIndex = lowestVisibleIndex + itemsInRow - 1;
-      let extra = 0;      
-      if (endIndex > maxIndex) {
-        extra = endIndex - maxIndex;
-        endIndex = maxIndex;
-      }
+    const { itemsInRow, selectedItem, lowestVisibleIndex, scrollable} = this.state;
 
-      let inRange = (selectedItem >= lowestVisibleIndex && selectedItem <= endIndex);
-      if (!inRange && extra > 0) {
-        inRange = (selectedItem >= 0 && selectedItem <= (extra - 1))
-      }
-      if (!inRange) {
-        console.log('Reset selected item due to items in row changing.');
-        this.setState({
-          selectedItem: extra > 0 ? (extra - 1) : (lowestVisibleIndex + itemsInRow - 1)
-        });  
+    // console.log('selected: ' + selectedItem);
+    // console.log('lowest visible:' + lowestVisibleIndex);
+    // console.log('items in row: ' + itemsInRow);
+    
+    if (prevState.scrollable && !scrollable) {
+      console.log("Reset selected item due to scrollable changing.");
+      this.setState({
+        selectedItem: 0,
+        lowestVisibleIndex: 0
+      });
+    } else {
+      if (prevState.itemsInRow !== itemsInRow) {
+        const maxIndex = items.length - 1;
+        let endIndex = lowestVisibleIndex + itemsInRow - 1;
+        if (endIndex > maxIndex) {
+          endIndex = maxIndex;
+        }
+        const inRange = (selectedItem >= lowestVisibleIndex && selectedItem <= endIndex);
+        if (!inRange) {
+          console.log('Reset selected item due to items in row changing.');
+          this.setState({
+            selectedItem: lowestVisibleIndex
+          });
+        }
       }
     }
 
