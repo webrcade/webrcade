@@ -141,10 +141,10 @@ class Slider extends Component {
     const { items, maxSlides, onSelected } = this.props;
     const { itemsInRow, selectedItem, lowestVisibleIndex} = this.state;
     
-    if (prevState.itemsInRow != itemsInRow) {
+    if (prevState.itemsInRow !== itemsInRow) {
       const maxIndex = items.length - 1;
       let endIndex = lowestVisibleIndex + itemsInRow - 1;
-      let extra = 0;
+      let extra = 0;      
       if (endIndex > maxIndex) {
         extra = endIndex - maxIndex;
         endIndex = maxIndex;
