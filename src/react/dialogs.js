@@ -31,11 +31,8 @@ export default function Dialogs(props) {
               }, () => {
                 loadFeedFromUrl(url)
                   .then(([feed, feedJson]) => {
-                    // Loading the feed from a URL causes feeds to be re-read
-                    // Get the latest version of feeds from state prior to
-                    // adding.
-                    const feeds = webrcade.state.feeds;
-                    return feeds.addRemoteFeed(url, feedJson)
+                    // Loading the feed will add it as well.
+                    // So, nothing to do here...
                   })
                   .catch(e => LOG.error(e));
               });

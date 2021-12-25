@@ -244,7 +244,7 @@ const loadFeedFromUrl = (url) => {
         newFeed = feed; 
         return feed; 
       })
-      // Reload feeds (may habe been changed externally)
+      // Reload feeds (may have been changed externally)
       .then(() => loadFeeds(MIN_SLIDES_LENGTH))
       .then((feeds) => {
         newState.feeds = feeds;
