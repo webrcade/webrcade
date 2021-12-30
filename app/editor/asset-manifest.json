@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "./static/css/main.50b4391d.chunk.css",
-    "main.js": "./static/js/main.58c471a6.chunk.js",
-    "main.js.map": "./static/js/main.58c471a6.chunk.js.map",
+    "main.js": "./static/js/main.c05e8ab6.chunk.js",
+    "main.js.map": "./static/js/main.c05e8ab6.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.015de522.js",
     "runtime-main.js.map": "./static/js/runtime-main.015de522.js.map",
     "static/js/2.08347b01.chunk.js": "./static/js/2.08347b01.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.015de522.js",
     "static/js/2.08347b01.chunk.js",
     "static/css/main.50b4391d.chunk.css",
-    "static/js/main.58c471a6.chunk.js"
+    "static/js/main.c05e8ab6.chunk.js"
   ]
 }
