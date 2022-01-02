@@ -639,8 +639,8 @@
       ]
     },
     {
-      "title": "Nintendo Game Boy Games",
-      "longTitle": "Nintendo Game Boy",
+      "title": "Nintendo Game Boy",
+      "longTitle": "Nintendo Game Boy Games",
       "background": "https://play.webrcade.com/default-feed/images/gb-background.png",
       "thumbnail": "https://play.webrcade.com/default-feed/images/gb-thumb.png",
       "description": "The Game Boy is an 8-bit handheld game console developed and manufactured by Nintendo. The Game Boy was designed by Nintendo's chief engineer Gunpei Yokoi and its Nintendo R&D1 team.",
@@ -762,7 +762,7 @@
     },
     {
       "title": "Nintendo GBA",
-      "longTitle": "Game Boy Advance Games",
+      "longTitle": "Nintendo Game Boy Advance Games",
       "background": "https://play.webrcade.com/default-feed/images/gba-background.png",
       "thumbnail": "https://play.webrcade.com/default-feed/images/gba-thumb.png",
       "description": "The Game Boy Advance (GBA) is a 32-bit handheld game console developed, manufactured and marketed by Nintendo as the successor to the Game Boy Color. Contrary to the previous Game Boy models, which have the \"portrait\" form factor of the original Game Boy, the Game Boy Advance was designed in a \"landscape\" form factor, putting the buttons to the sides of the device instead of below the screen.",
