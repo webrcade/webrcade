@@ -639,6 +639,128 @@
       ]
     },
     {
+      "title": "Nintendo Game Boy Games",
+      "longTitle": "Nintendo Game Boy",
+      "background": "https://play.webrcade.com/default-feed/images/gb-background.png",
+      "thumbnail": "https://play.webrcade.com/default-feed/images/gb-thumb.png",
+      "description": "The Game Boy is an 8-bit handheld game console developed and manufactured by Nintendo. The Game Boy was designed by Nintendo's chief engineer Gunpei Yokoi and its Nintendo R&D1 team.",
+      "items": [
+        {
+          "title": "Dangan",
+          "type": "gb",          
+          "description": "Dangan GB is a short simplistic boss-rush/bullet-hell SHMUP released for the Game Boy to celebrate the console's 30th anniversary.",
+          "thumbnail": "https://play.webrcade.com/default-feed/images/gb/dangan-thumb.png",
+          "background": "https://play.webrcade.com/default-feed/images/gb/dangan-background.png",
+          "props": {
+            "rom": "https://play.webrcade.com/default-feed/content/gb/dangan.gb",
+            "hwType": 1
+          }
+        },
+        {          
+          "title": "Tuff",
+          "type": "gb",
+          "description": "Tuff is an original game for Nintendo's black and white Game Boy, based on a mix of Jump'n'Run and Metroidvania style game elements.",
+          "thumbnail": "https://play.webrcade.com/default-feed/images/gb/tuff-thumb.png",
+          "background": "https://play.webrcade.com/default-feed/images/gb/tuff-background.png",
+          "props": {
+            "rom": "https://play.webrcade.com/default-feed/content/gb/tuff.gb",
+            "hwType": 1
+          }
+        },
+        {          
+          "title": "Bouncing Ball",
+          "longTitle": "The Bouncing Ball",
+          "description": "In this game you are in control of a little ball, which is constantly bouncing around. Your goal is to bounce through all 50 unique levels by collecting every heart you can find on your way.",
+          "type": "gb",
+          "thumbnail": "https://play.webrcade.com/default-feed/images/gb/bouncingball-thumb.png",
+          "background": "https://play.webrcade.com/default-feed/images/gb/bouncingball-background.png",
+          "props": {
+            "rom": "https://play.webrcade.com/default-feed/content/gb/THEBOUNCINGBALL.GB",
+            "hwType": 3,
+            "colors": 1,
+            "palette": 1
+          }
+        },
+        {          
+          "title": "Super Princess",
+          "type": "gb",
+          "description": "The evil Lord Zurrapa has stolen the kingdom's crown and now our Super Princess has to take it back! Unveil the secrets of the maze, kill all enemies and bring the glory back to the country!",
+          "thumbnail": "https://play.webrcade.com/default-feed/images/gb/superprincess-thumb.png",
+          "background": "https://play.webrcade.com/default-feed/images/gb/superprincess-background.png",
+          "props": {
+            "rom": "https://play.webrcade.com/default-feed/content/gb/SuperPrincess.gb",
+            "hwType": 3,
+            "colors": 1,
+            "palette": 1
+          }
+        },
+        {
+          "title": "Polka Sheep",
+          "type": "gb",          
+          "description": "All the sheep of the flock have been captured in mysterious giant bubbles! Help Polka Sheep rescue his friends using his velcro powers! He can fasten himself to all velcro surfaces within the environments. Avoid hundreds of evil wolves, thousands of kawaii parrots and millions of poisoned spikes to liberate all your friends! It’s an epic fight to restore peace in the flock.",
+          "thumbnail": "https://play.webrcade.com/default-feed/images/gb/polkasheep-thumb.png",
+          "background": "https://play.webrcade.com/default-feed/images/gb/polkasheep-background.png",
+          "props": {
+            "rom": "https://play.webrcade.com/default-feed/content/gb/PolkaSheep.gb",
+            "hwType": 3,
+            "colors": 1,
+            "palette": 1
+          }
+        },
+        {          
+          "title": "Into the Blue",
+          "description": "This game consists of a vertical play field with panels rising from the bottom. The panels can be rearranged and will disappear if three (or more) matching panels are lined up in a horizontal or vertical row. This game is inspired by the Sega Genesis title Megapanel.",
+          "type": "gb",
+          "thumbnail": "https://play.webrcade.com/default-feed/images/gb/intotheblue-thumb.png",
+          "background": "https://play.webrcade.com/default-feed/images/gb/intotheblue-background.png",
+          "props": {
+            "rom": "https://play.webrcade.com/default-feed/content/gb/Into%20the%20Blue.gb",
+            "hwType": 1
+          }
+        },
+        {
+          "title": "Rocket Man",
+          "longTitle": "Rocket Man (Demo) ",
+          "description": "Rocket man is a young aspiring hero with great passion for technology. One day he runs into Light, a villain with telekinetic powers who plans to take control of the city. Accompanied by his virtual assistant Ellie, Rocket Man must defeat Light and his robot henchmen to bring peace back to the city.",
+          "thumbnail": "https://play.webrcade.com/default-feed/images/gb/rocketman-thumb.png",
+          "background": "https://play.webrcade.com/default-feed/images/gb/rocketman-background.png",
+          "type": "gb",
+          "props": {
+            "rom": "https://play.webrcade.com/default-feed/content/gb/Rocket%20Man%20%28Demo%29%20v1.2.1.gb",
+            "hwType": 5,
+            "border": 1
+          }
+        },
+        {
+          "title": "Tobu Tobu Girl",
+          "type": "gb",          
+          "description": "Your cat is floating into the atmosphere and you are the only one who can save it. Jump, dash, and flap your arms to maneuver around perilous obstacles racing against the clock to retrieve your pet friend before it is too late!",
+          "thumbnail": "https://play.webrcade.com/default-feed/images/gb/tobutobu-thumb.png",
+          "background": "https://play.webrcade.com/default-feed/images/gb/tobutobu-background.png",
+          "props": {
+            "rom": "https://play.webrcade.com/default-feed/content/gb/tobu.gb",
+            "hwType": 3,
+            "colors": 1,
+            "palette": 1            
+          }
+        },
+        {
+          
+          "title": "Lumberjack",
+          "description": "Lumberjack is a Game Boy homebrew where you help the world's most fragile lumberjack cut down an endless tree while avoiding getting killed by little owls, flimsy branches, or just standing still for too long.",
+          "type": "gb",
+          "thumbnail": "https://play.webrcade.com/default-feed/images/gb/lumberjack-thumb.png",
+          "background": "https://play.webrcade.com/default-feed/images/gb/lumberjack-background.png",
+          "props": {
+            "rom": "https://play.webrcade.com/default-feed/content/gb/ind-lj.gb",
+            "hwType": 3,
+            "colors": 1,
+            "palette": 1
+          }
+        }
+      ]
+    },
+    {
       "title": "Nintendo GBA",
       "longTitle": "Game Boy Advance Games",
       "background": "https://play.webrcade.com/default-feed/images/gba-background.png",
