@@ -639,8 +639,8 @@
       ]
     },
     {
-      "title": "Nintendo Game Boy Games",
-      "longTitle": "Nintendo Game Boy",
+      "title": "Nintendo Game Boy",
+      "longTitle": "Nintendo Game Boy Games",
       "background": "default-feed/images/gb-background.png",
       "thumbnail": "default-feed/images/gb-thumb.png",
       "description": "The Game Boy is an 8-bit handheld game console developed and manufactured by Nintendo. The Game Boy was designed by Nintendo's chief engineer Gunpei Yokoi and its Nintendo R&D1 team.",
@@ -758,11 +758,94 @@
             "palette": 1
           }
         }
+      
+      ]
+    },
+    {
+      "title": "Nintendo GBC",
+      "longTitle": "Nintendo Game Boy Color Games",
+      "description": "The Game Boy Color (commonly abbreviated as GBC) is a handheld game console, manufactured by Nintendo. It is the successor to the Game Boy and is part of the Game Boy family. The GBC features a color screen rather than monochrome, but it is not backlit. It is slightly thicker and taller and features a slightly smaller screen than the Game Boy Pocket, its immediate predecessor in the Game Boy line.",
+      "thumbnail": "default-feed/images/gbc-thumb.png",
+      "background": "default-feed/images/gbc-background.png",
+      "items": [
+        {
+          "title": "Space Invasion",
+          "description": "Space Invasion takes the classic alien invasion genre a step further with full color action, tons of levels, and a variety of aliens, each armed with a different weapon. It's up to you and your three shields to protect the earth.",
+          "type": "gbc",
+          "thumbnail": "default-feed/images/gbc/spaceinvasion-thumb.png",
+          "background": "default-feed/images/gbc/spaceinvasion-background.png",          
+          "props": {
+            "rom": "default-feed/content/gbc/SpaceInvasion01.gb"
+          }          
+        },
+        {
+          "title": "µCity",
+          "description": " µCity (also spelled 'uCity', pronounced 'micro-city'), the open-source city-building game for Game Boy Color. The aim of the game is to build a city. Simple enough.",
+          "type": "gbc",
+          "thumbnail": "default-feed/images/gbc/ucity-thumb.png",
+          "background": "default-feed/images/gbc/ucity-background.png",          
+          "props": {
+            "rom": "default-feed/content/gbc/ucity.gbc"
+          }          
+        },
+        {
+          "title": "Spelunky",
+          "description": "An attempt to demake Spelunky 2 for the Game Boy Color. In Spelunky players journey deep underground and explore amazing places filled with traps, treasure, and secrets.",
+          "type": "gbc",          
+          "thumbnail": "default-feed/images/gbc/spelunky-thumb.png",
+          "background": "default-feed/images/gbc/spelunky-background.png",          
+          "props": {
+            "rom": "default-feed/content/gbc/GBCspelunky.gbc"
+          }                    
+        },
+        {
+          "title": "Infinity",
+          "longTitle": "Infinity (Preview)",
+          "description": "Infinity is a role-playing game for the Game Boy Color handheld game console, developed by Affinix Software primarily between the years 1999 and 2001. The game is incomplete and should be considered alpha/preview quality. In 2021, development on the game resumed and will hopefully see a commercial release soon.",
+          "type": "gbc",
+          "thumbnail": "default-feed/images/gbc/infinity-thumb.png",
+          "background": "default-feed/images/gbc/infinity-background.png",          
+          "props": {
+            "rom": "default-feed/content/gbc/infinity.gb"
+          }
+        },
+        {
+          "title": "Floracy",
+          "longTitle": "Floracy (Demo)",
+          "description": "\"Floracy\" is a roleplaying game with elements of strategy and action games, in which the player breeds plantlike creatures for exciting animated combats. Felix, hero of the video game \"Felix und die Rache der Null\", spends his time growing plants on his farm, which will develop into creatures after a while, the Floracy.",
+          "type": "gbc",
+          "thumbnail": "default-feed/images/gbc/florancy-thumb.png",
+          "background": "default-feed/images/gbc/florancy-background.png",          
+          "props": {
+            "rom": "default-feed/content/gbc/Floracy.GBC"
+          }
+        },
+        {
+          "title": "Super JetPak DX",
+          "description": "Your Astronaut is lost out at the furthest edges of an alien galaxy. Help him return home by deftly maneuvering over each planet's surface with your jet pack. Build the rocket ship, fuel it, and take off to the next planet.",
+          "type": "gbc",                            
+          "thumbnail": "default-feed/images/gbc/jetpak-thumb.png",
+          "background": "default-feed/images/gbc/jetpak-background.png",          
+          "props": {
+            "rom": "default-feed/content/gbc/JetPakDX.gb"
+          }
+        },
+        {
+          "title": "Last Crown Warriors",
+          "longTitle": "Last Crown Warriors (Demo)",          
+          "description": "Action/strategy game for the Nintendo Game Boy. Take on waves of enemies as you try to conquer all of the bases within each stage. Each warrior has his own custom weapon, and each stage its own enemies.",
+          "type": "gbc",
+          "thumbnail": "default-feed/images/gbc/lastcrown-thumb.png",
+          "background": "default-feed/images/gbc/lastcrown-background.png",          
+          "props": {
+            "rom": "default-feed/content/gbc/Last%20Crown%20Warriors%20(Demo)%202.1.1.gb"
+          }          
+        }
       ]
     },
     {
       "title": "Nintendo GBA",
-      "longTitle": "Game Boy Advance Games",
+      "longTitle": "Nintendo Game Boy Advance Games",
       "background": "default-feed/images/gba-background.png",
       "thumbnail": "default-feed/images/gba-thumb.png",
       "description": "The Game Boy Advance (GBA) is a 32-bit handheld game console developed, manufactured and marketed by Nintendo as the successor to the Game Boy Color. Contrary to the previous Game Boy models, which have the \"portrait\" form factor of the original Game Boy, the Game Boy Advance was designed in a \"landscape\" form factor, putting the buttons to the sides of the device instead of below the screen.",
