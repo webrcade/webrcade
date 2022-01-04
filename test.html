@@ -1,0 +1,25 @@
+<html>
+  <body>
+    <div id='foo'></div>
+    <script>
+      const ticks = 1000/60;
+      const start = performance.now();
+      let next = performance.now() + ticks;
+      let frame = 0;
+      const f = () => {
+        next = next + ticks;
+        const now = performance.now();
+        frame++;
+        if ((frame % 600) == 0) {
+          document.getElementById('foo').innerHTML = '' + (1000.0/((now - start)/frame)).toFixed(2);
+        }  
+        if (now < next) {
+          setTimeout(f, next - now);
+        } else {
+          setTimeout(f, 0);
+        }
+      }
+      setTimeout(f, 0);
+    </script>
+  </body>
+</html>
