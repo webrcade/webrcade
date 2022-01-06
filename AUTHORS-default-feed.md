@@ -58,7 +58,6 @@ A best effort attempt was made to ensure that the titles listed below could be i
 | Sir Ababol |  The Mojon Twins  | [Nintendo NES](https://docs.webrcade.com/apps/emulators/nes/) | https://www.mojontwins.com/juegos_mojonos/sir-ababol-nes/ |
 | Streemerz |  Faux Game Company (Mr. Podunkian)  | [Nintendo NES](https://docs.webrcade.com/apps/emulators/nes/) | https://www.fauxgame.com/ |
 | Christmas Craze | Shiru | [Nintendo SNES](https://docs.webrcade.com/apps/emulators/snes/) | https://shiru.untergrund.net/software.shtml |
-| Classic Kong Complete | Shiru | [Nintendo SNES](https://docs.webrcade.com/apps/emulators/snes/) | https://shiru.untergrund.net/software.shtml |
 | Gunman Clive (Demo) | Bertil Hörberg | [Nintendo SNES](https://docs.webrcade.com/apps/emulators/snes/) | http://www.gunmanclive.com/snes/ |
 | Jet Pilot Rising |  Dieter Von Laser | [Nintendo SNES](https://docs.webrcade.com/apps/emulators/snes/) | https://snescentral.com/article.php?id=1091 |
 | MazezaM Challenge |  Alekmaul | [Nintendo SNES](https://docs.webrcade.com/apps/emulators/snes/) | https://www.portabledev.com/jeux/supernes/mazezam-snes/ |
@@ -67,6 +66,15 @@ A best effort attempt was made to ensure that the titles listed below could be i
 | Skipp and Friends |   Mukunda Johnson, Ken Snyder, Steven Velema, Hubert Lamontagne | [Nintendo SNES](https://docs.webrcade.com/apps/emulators/snes/) | https://pdroms.de/supernintendoentertainmentsystem/skipp-and-friends-snes-game |
 | Super Boss Gaiden |  German duo Dieter Laser, ChronoMoogle | [Nintendo SNES](https://docs.webrcade.com/apps/emulators/snes/) | https://superbossgaiden.superfamicom.org/ |
 | Uwol: Quest for Money |  Alekmaul, The Mojon Twins | [Nintendo SNES](https://docs.webrcade.com/apps/emulators/snes/) | https://www.mojontwins.com/juegos_mojonos/uwol-quest-for-money/<br>https://www.portabledev.com/jeux/supernes/uwol-snes/ |
+| Bouncing Ball, The | HuCABBAGE | [Nintendo Game Boy](https://docs.webrcade.com/apps/emulators/gb/) | https://gamejolt.com/games/the-bouncing-ball-gb/86699 |
+| Dangan | Snorpung and Nordloef | [Nintendo Game Boy](https://docs.webrcade.com/apps/emulators/gb/) | https://snorpung.itch.io/dangan-gb |
+| Into the Blue | Jonas Fischbach | [Nintendo Game Boy](https://docs.webrcade.com/apps/emulators/gb/) | https://the-green-screen.com/278-2/#welcome |
+| Lumberjack | JMD, Koyot1222, TmK, rv6502 | [Nintendo Game Boy](https://docs.webrcade.com/apps/emulators/gb/) | https://demozoo.org/productions/179603/ |
+| Polka Sheep | zal0, sergeeo, and kirblu | [Nintendo Game Boy](https://docs.webrcade.com/apps/emulators/gb/) | https://gamejolt.com/games/PolkaSheeep/267409 |
+| Rocket Man (Demo) | Imanolea, Seiyouh, NAP.VGM | [Nintendo Game Boy](https://docs.webrcade.com/apps/emulators/gb/) | https://imanoleasgames.blogspot.com/2016/06/rocket-man-demo.html |
+| Super Princess' 2092 EXODUS | Zalo, sergeeo | [Nintendo Game Boy](https://docs.webrcade.com/apps/emulators/gb/) |https://sergeeo.itch.io/super-princess-2092-exodus |
+| Tobu Tobu Girl | Simon Larsen | [Nintendo Game Boy](https://docs.webrcade.com/apps/emulators/gb/) | https://tangramgames.dk/tobutobugirl/ |
+| Tuff | Ivo Wetzel | [Nintendo Game Boy](https://docs.webrcade.com/apps/emulators/gb/) | https://github.com/BonsaiDen/Tuff.gb |
 | Anguna |  Bite the Chili Productions | [Nintendo GBA](https://docs.webrcade.com/apps/emulators/gba/) | http://www.tolberts.net/anguna/ |
 | Another World | Eric Chahi and Cyril Cogordan | [Nintendo GBA](https://docs.webrcade.com/apps/emulators/gba/) | https://gbadev.org/demos.php?showinfo=1279 |
 | Astrohawk Advance (Demo) | Paul Lay | [Nintendo GBA](https://docs.webrcade.com/apps/emulators/gba/) | https://gbadev.org/demos.php?showinfo=357 |
@@ -78,7 +86,6 @@ A best effort attempt was made to ensure that the titles listed below could be i
 | POWDER | Jeff Lait | [Nintendo GBA](https://docs.webrcade.com/apps/emulators/gba/) | http://www.zincland.com/powder/index.php |
 | Power Pig | Genecyst | [Nintendo GBA](https://docs.webrcade.com/apps/emulators/gba/) | https://www.neoflash.com/forum/index.php/topic,7675.0.html |
 | Simonchu | Jagos | [Nintendo GBA](https://docs.webrcade.com/apps/emulators/gba/) | https://pdroms.de/files/nintendo-gameboyadvance-gba/simonchu |
-| Super Mario Last Quest |  YodaJr, Omg | [Nintendo GBA](https://docs.webrcade.com/apps/emulators/gba/) | https://www.neoflash.com/forum/index.php/topic,4997.0.html |
 | Super Wings |  eKid | [Nintendo GBA](https://docs.webrcade.com/apps/emulators/gba/) | https://www.neoflash.com/forum/index.php/topic,4961.0.html |
 | Sushi the Cat |  N3TKaT and Kamui | [Nintendo GBA](https://docs.webrcade.com/apps/emulators/gba/) | https://pdroms.de/files/nintendo-gameboyadvance-gba/sushi-the-cat |
 | Astro Force | Enrique Ruiz  | [Sega Master System](https://docs.webrcade.com/apps/emulators/mastersystem/) | https://www.smspower.org/Homebrew/AstroForce-SMS |
