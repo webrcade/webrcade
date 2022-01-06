@@ -75,6 +75,13 @@ A best effort attempt was made to ensure that the titles listed below could be i
 | Super Princess' 2092 EXODUS | Zalo, sergeeo | [Nintendo Game Boy](https://docs.webrcade.com/apps/emulators/gb/) |https://sergeeo.itch.io/super-princess-2092-exodus |
 | Tobu Tobu Girl | Simon Larsen | [Nintendo Game Boy](https://docs.webrcade.com/apps/emulators/gb/) | https://tangramgames.dk/tobutobugirl/ |
 | Tuff | Ivo Wetzel | [Nintendo Game Boy](https://docs.webrcade.com/apps/emulators/gb/) | https://github.com/BonsaiDen/Tuff.gb |
+| Floracy (Demo) | Kritzelkratz 3000 | [Nintendo Game Boy Color](https://docs.webrcade.com/apps/emulators/gbc/) | https://gbhh.avivace.com/game/floracy-demo |
+| Infinity (Preview) | Affinix Software | [Nintendo Game Boy Color](https://docs.webrcade.com/apps/emulators/gbc/) | https://www.infinitygbc.com/ |
+| Last Crown Warriors (Demo) | Light Games | [Nintendo Game Boy Color](https://docs.webrcade.com/apps/emulators/gbc/) | https://lightgamesgb.com/portfolio/last-crown-warriors/ |
+| Space Invasion |  Thalamus Interactive | [Nintendo Game Boy Color](https://docs.webrcade.com/apps/emulators/gbc/) | https://www.nesworld.com/article.php?system=gbc&data=gbchomebrew |
+| Spelunky |  sukus  | [Nintendo Game Boy Color](https://docs.webrcade.com/apps/emulators/gbc/) | https://github.com/sukus21/GBC-spelunky |
+| Super JetPak DX |   Asobi.tech  | [Nintendo Game Boy Color](https://docs.webrcade.com/apps/emulators/gbc/) | https://gamejolt.com/games/jetpak-dx-gameboy-color/138865 |
+| µCity |  Antonio Niño Díaz   | [Nintendo Game Boy Color](https://docs.webrcade.com/apps/emulators/gbc/) | https://github.com/AntonioND/ucity |
 | Anguna |  Bite the Chili Productions | [Nintendo GBA](https://docs.webrcade.com/apps/emulators/gba/) | http://www.tolberts.net/anguna/ |
 | Another World | Eric Chahi and Cyril Cogordan | [Nintendo GBA](https://docs.webrcade.com/apps/emulators/gba/) | https://gbadev.org/demos.php?showinfo=1279 |
 | Astrohawk Advance (Demo) | Paul Lay | [Nintendo GBA](https://docs.webrcade.com/apps/emulators/gba/) | https://gbadev.org/demos.php?showinfo=357 |
