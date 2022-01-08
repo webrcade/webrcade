@@ -71,6 +71,7 @@ A best effort attempt was made to ensure that the titles listed below could be i
 | Into the Blue | Jonas Fischbach | [Nintendo Game Boy](https://docs.webrcade.com/apps/emulators/gb/) | https://the-green-screen.com/278-2/#welcome |
 | Lumberjack | JMD, Koyot1222, TmK, rv6502 | [Nintendo Game Boy](https://docs.webrcade.com/apps/emulators/gb/) | https://demozoo.org/productions/179603/ |
 | Polka Sheep | zal0, sergeeo, and kirblu | [Nintendo Game Boy](https://docs.webrcade.com/apps/emulators/gb/) | https://gamejolt.com/games/PolkaSheeep/267409 |
+| Retroid | Jonas Fischbach | [Nintendo Game Boy](https://docs.webrcade.com/apps/emulators/gb/) | https://the-green-screen.com/292-2/#welcome |
 | Rocket Man (Demo) | Imanolea, Seiyouh, NAP.VGM | [Nintendo Game Boy](https://docs.webrcade.com/apps/emulators/gb/) | https://imanoleasgames.blogspot.com/2016/06/rocket-man-demo.html |
 | Super Princess' 2092 EXODUS | Zalo, sergeeo | [Nintendo Game Boy](https://docs.webrcade.com/apps/emulators/gb/) |https://sergeeo.itch.io/super-princess-2092-exodus |
 | Tobu Tobu Girl | Simon Larsen | [Nintendo Game Boy](https://docs.webrcade.com/apps/emulators/gb/) | https://tangramgames.dk/tobutobugirl/ |

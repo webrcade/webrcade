@@ -636,6 +636,19 @@
       "description": "The Game Boy is an 8-bit handheld game console developed and manufactured by Nintendo. The Game Boy was designed by Nintendo's chief engineer Gunpei Yokoi and its Nintendo R&D1 team.",
       "items": [
         {
+          "title": "Retroid",
+          "type": "gb",          
+          "description": "\"Retroid\" is a Game Boy game based on the classic arcade game that was originally published as \"Breakout\" by Atari and later brought to perfection as \"Arkanoid\" by the Japanese software firm Taito. The player controls a paddle at the bottom of the screen that reflects a ball to destroy bricks at the top of the screen.",
+          "thumbnail": "default-feed/images/gb/retroid-thumb.png",
+          "background": "default-feed/images/gb/retroid-background.png",
+          "props": {
+            "rom": "default-feed/content/gb/Retroid.gb",
+            "hwType": 3,
+            "colors": 1,
+            "palette": 1
+          }
+        },
+        {
           "title": "Dangan",
           "type": "gb",          
           "description": "Dangan GB is a short simplistic boss-rush/bullet-hell SHMUP released for the Game Boy to celebrate the console's 30th anniversary.",
