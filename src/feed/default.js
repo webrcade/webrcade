@@ -6,10 +6,10 @@ const RAW_PREFIX = "https://raw.githubusercontent.com/webrcade/webrcade/master/p
 const getImage = (url) => {
   // TODO: Add this back, right now prior to release forcing close to production test scenario
   // return (isDev() ? "http://" + config.getLocalIp() + ":3000/" : RAW_PREFIX) + url;
-  return RAW_PREFIX + url;
+  return url;
 }
 const getRom = (url) => {
-  return getImage(url);
+  return RAW_PREFIX + url;
 }
 
 const getDefaultFeed = () => {
