@@ -112,7 +112,7 @@ mkdir -p "$DIST_OUT_APP/nes"  || { fail 'Error creating nes output directory.'; 
 cp -R build/. "$DIST_OUT_APP/nes" || { fail 'failed to copy nes to out.'; }
 
 ##
-## webrcade\webrcade-app-vba-m
+## webrcade-app-vba-m
 ##
 
 cd "$DIR/../webrcade-app-vba-m" || { fail 'Unable to change to vba-m.'; }
