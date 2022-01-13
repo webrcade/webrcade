@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 
 import {
-  getDefaultFeed,
+  getDefaultFeed, 
+  setDefaultFeed,
 } from '../feed';
 
 import {
@@ -22,9 +23,11 @@ import {
   applyIosNavBarHack,
   getXboxViewMessage,
   AppScreen,
+  FetchAppData,
   Resources,
   LOG,
   TEXT_IDS,
+  config,
 } from '@webrcade/app-common'
 
 require("./style.scss");
@@ -135,7 +138,29 @@ export class Webrcade extends Component {
 
     if (mode === ScreenEnum.LOADING) {
       if (initialFeed) {
-        loadInitialFeed();
+        if (config.isPublicServer()) {
+          loadInitialFeed(null);
+        } else {
+          // Attempt to load default feed from public server
+          let feedJson = null;
+          let defFeed = null;
+          new FetchAppData("https://play.webrcade.com/default-feed.json").fetch()
+            .then(response => response.json())
+            .then(json => {
+              feedJson = json;
+              return parseFeed(json)
+            })
+            .then(feed => {             
+                // set default feed
+                setDefaultFeed(feedJson);                
+                // set feed here
+                defFeed = feed;
+            })
+            .catch(e => LOG.info(e))
+            .finally(() => {
+              loadInitialFeed(defFeed);  
+            })
+        }
       }
     } else if (initial ||
       (prevState.mode === ScreenEnum.APP && mode === ScreenEnum.BROWSE)) {

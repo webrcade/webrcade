@@ -1,19 +1,50 @@
 import DEFAULT_FEED from './default-feed.json'
-// import { config, isDev } from '@webrcade/app-common'
+import { config, isDev } from '@webrcade/app-common'
 
-const RAW_PREFIX = "https://raw.githubusercontent.com/webrcade/webrcade/master/public/";
+const EMPTY_FEED = {
+  title: "Empty Feed",
+  categories: [
+    {
+      title: "Empty Category",
+      items: [
+        {
+          title: "Empty Item",
+          type: "2600",
+          props: {
+            rom: "http://127.0.0.1/no-place-like"
+          }
+        }
+      ]
+    }
+  ]
+};
+
+let defaultFeed = EMPTY_FEED;
 
 const getImage = (url) => {
-  // TODO: Add this back, right now prior to release forcing close to production test scenario
-  // return (isDev() ? "http://" + config.getLocalIp() + ":3000/" : RAW_PREFIX) + url;
   return url;
 }
+
 const getRom = (url) => {
-  return RAW_PREFIX + url;
+  return (isDev() ? 
+    (config.getLocalUrl() + "/") : 
+    (config.getRawContentRoot() ? config.getRawContentRoot() : "../../" )) + url;
 }
 
 const getDefaultFeed = () => {
-  const feed = JSON.parse(JSON.stringify(DEFAULT_FEED));
+  return JSON.parse(JSON.stringify(defaultFeed));
+};
+
+const setDefaultFeed = (feed) => {
+  config.setEmptyDefaultFeed(feed === EMPTY_FEED);
+  defaultFeed = feed;  
+}
+
+// Mark default as empty 
+config.setEmptyDefaultFeed(true);
+
+if (config.isPublicServer()) {
+  const feed = DEFAULT_FEED;
   feed.categories.forEach(c => {
     if (c.background) {
       c.background = getImage(c.background);
@@ -30,13 +61,11 @@ const getDefaultFeed = () => {
       }
       const props = i.props;
       if (props.rom) {
-        //props.rom = (isDev() ? "http://" + config.getLocalIp() + ":3000/" : "../../") + props.rom;
         props.rom = getRom(props.rom);
       }
     })
   });
+  setDefaultFeed(feed);
+}
 
-  return feed;
-};
-
-export { getDefaultFeed }
+export { getDefaultFeed, setDefaultFeed }   
