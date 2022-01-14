@@ -33,7 +33,7 @@ The following steps are recommended for getting started with webЯcade:
 
 The default feed consists of high-quality publicly available games and demos across the various [application types](https://docs.webrcade.com/apps/) ([emulators](https://docs.webrcade.com/apps/emulators/), [engines](https://docs.webrcade.com/apps/engines/), etc.) that are supported by webЯcade.
 
-The [default feed AUTHORS page](./AUTHORS-default-feed.md) includes the list of titles that are included in the default feed, their respective authors, and related links. 
+The [default feed AUTHORS page](https://github.com/webrcade/webrcade-default-feed/blob/main/AUTHORS-default-feed.md) includes the list of titles that are included in the default feed, their respective authors, and related links. 
 
 ## What is (and is not) webЯcade?
 
