@@ -1,5 +1,5 @@
 import DEFAULT_FEED from './default-feed.json'
-import { config, isDev } from '@webrcade/app-common'
+import { config } from '@webrcade/app-common'
 
 const EMPTY_FEED = {
   title: "Empty Feed",
@@ -22,13 +22,14 @@ const EMPTY_FEED = {
 let defaultFeed = EMPTY_FEED;
 
 const getImage = (url) => {
-  return url;
+  return config.getDefaultFeedImagesRoot() + url;
 }
 
 const getRom = (url) => {
-  return (isDev() ? 
-    (config.getLocalUrl() + "/") : 
-    (config.getRawContentRoot() ? config.getRawContentRoot() : "../../" )) + url;
+  return config.getDefaultFeedContentRoot() + url;
+  // return (isDev() ? 
+  //   (config.getLocalUrl() + "/") : 
+  //   (config.getDefaultFeedContentRoot() ? config.getDefaultFeedContentRoot() : "../../" )) + url;
 }
 
 const getDefaultFeed = () => {
