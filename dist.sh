@@ -126,12 +126,14 @@ cp -R build/. "$DIST_OUT_APP/gba" || { fail 'failed to copy gba to out.'; }
 ## webrcade-app-prboom
 ##
 
-cd "$DIR/../webrcade-app-prboom" || { fail 'Unable to change to prboom.'; }
-npm install . || { fail 'Unable to install prboom dependencies.'; }
-npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
-npm run build || { fail 'Unable to build prboom.'; }
-mkdir -p "$DIST_OUT_APP/doom"  || { fail 'Error creating doom output directory.'; }
-cp -R build/. "$DIST_OUT_APP/doom" || { fail 'failed to copy doom to out.'; }
+if test -d "$DIR/../webrcade-app-prboom"; then
+    cd "$DIR/../webrcade-app-prboom" || { fail 'Unable to change to prboom.'; }
+    npm install . || { fail 'Unable to install prboom dependencies.'; }
+    npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
+    npm run build || { fail 'Unable to build prboom.'; }
+    mkdir -p "$DIST_OUT_APP/doom"  || { fail 'Error creating doom output directory.'; }
+    cp -R build/. "$DIST_OUT_APP/doom" || { fail 'failed to copy doom to out.'; }
+fi    
 
 ##
 ## webrcade-editor
