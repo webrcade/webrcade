@@ -4,10 +4,13 @@
 
 FROM node:12.13.1 as builder
 
+RUN apt-get update -y && apt-get install -y zip
+
 RUN mkdir webrcade 
 COPY \  
   copy-default-feed.js \
   dist.sh \
+  dist-package.sh \
   package.json \
   package-lock.json \  
   ./webrcade/
@@ -28,15 +31,16 @@ RUN \
 
 COPY docker/config.json /webrcade-app-common/src/conf/
 
-RUN cd /webrcade && ./dist.sh
+RUN cd /webrcade && ./dist.sh 
 RUN wget -O - https://webrcade.github.io/webrcade-utils/cors.php > /webrcade/dist/out/cors.php
+RUN cd /webrcade && ./dist-package.sh
 
 ###############################################################################
 # Image
 ###############################################################################
 
 FROM php:8.0-apache
-COPY --from=builder ./webrcade/dist/out/ /var/www/html
+COPY --from=builder ./webrcade/dist/package /var/www/html
 
 RUN a2enmod headers
 
