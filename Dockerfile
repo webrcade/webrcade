@@ -20,8 +20,8 @@ COPY src ./webrcade/src
 RUN chmod +x /webrcade/dist.sh
 
 RUN \
-  git clone -b build https://github.com/webrcade/webrcade-app-common.git && \
-  git clone -b build https://github.com/webrcade/webrcade-editor.git && \
+  git clone https://github.com/webrcade/webrcade-app-common.git && \
+  git clone https://github.com/webrcade/webrcade-editor.git && \
   git clone https://github.com/webrcade/webrcade-app-snes9x.git && \
   git clone https://github.com/webrcade/webrcade-app-genplusgx.git && \
   git clone https://github.com/webrcade/webrcade-app-javatari.git && \
