@@ -27,6 +27,7 @@ jobs:
     - name: Clone dependencies
       run: |
         cd src && \
+        rm -rf webrcade/public/default-feed/content && \
         git clone https://github.com/webrcade/webrcade-app-common.git && \
         git clone https://github.com/webrcade/webrcade-editor.git && \
         git clone https://github.com/webrcade/webrcade-app-snes9x.git && \
