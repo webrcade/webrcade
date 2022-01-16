@@ -10,6 +10,7 @@
 
 # production
 /build
+/dist
 
 # misc
 .DS_Store
@@ -22,17 +23,14 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+default-feed-*
 public/default-feed.json
+public/default-feed-editor.json
 public/roms.json
 public/roms.json.zip
 feeds
-test-feed.json
-test.html
 /(old)
 /(old images)
-/public/images/apps
-/public/images/games
-/public/broken-feed.json
 buildall*
 builddats.cmd
 *DO-NOT-CHECKIN*

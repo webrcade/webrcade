@@ -15,7 +15,7 @@ import {
 
 let webrcade = null;
 
-const loadInitialFeed = () => {
+const loadInitialFeed = (defaultFeed) => {
   const {
     ScreenEnum, 
     EDITOR_TEST_FEED, 
@@ -76,7 +76,7 @@ const loadInitialFeed = () => {
           if (!usingTestFeed) {
             // Check request parameter for feed url
             const feedUrl = UrlUtil.getParam(window.location.search, webrcade.RP_FEED);
-            // If a Feed URL was specfied or a last feed was found
+            // If a Feed URL was specified or a last feed was found
             if ((feedUrl && feedUrl.length > 0) || lastFeedId) {
               webrcade.setState({
                 loadingStatus: Resources.getText(TEXT_IDS.LOADING_FEED),
@@ -107,11 +107,16 @@ const loadInitialFeed = () => {
         .catch(e => LOG.info(e))
         .finally(() => {
           if (!loadingFeed) {
-            setTimeout(() => webrcade.setState({
+            const nextState = {
               mode: ScreenEnum.BROWSE,
               initialFeed: false,
               feeds: feeds
-            }), MIN_LOADING_TIME);
+            };
+            if (defaultFeed) {
+              nextState.feed = defaultFeed;
+            }
+            setTimeout(() => webrcade.setState(nextState), 
+              MIN_LOADING_TIME);
           }
         });
     });

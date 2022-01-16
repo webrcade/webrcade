@@ -1,0 +1,55 @@
+
+name: Build
+
+on: [push, pull_request]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        submodules: recursive
+        path: src/webrcade
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}        
+
+    - name: Clone dependencies
+      run: |
+        cd src && \
+        git clone -b build https://github.com/webrcade/webrcade-app-common.git && \
+        git clone -b build https://github.com/webrcade/webrcade-editor.git && \
+        git clone https://github.com/webrcade/webrcade-app-snes9x.git && \
+        git clone https://github.com/webrcade/webrcade-app-genplusgx.git && \
+        git clone https://github.com/webrcade/webrcade-app-javatari.git && \
+        git clone https://github.com/webrcade/webrcade-app-js7800.git && \
+        git clone https://github.com/webrcade/webrcade-app-fceux.git && \
+        git clone https://github.com/webrcade/webrcade-app-vba-m.git 
+        
+    - uses: actions/upload-artifact@v2
+      with:
+        name: webrcade-full-source
+        path: src
+
+    - name: Perform build
+      run: |
+        cd src/webrcade && \
+        chmod +x dist.sh && \
+        ./dist.sh && \
+        chmod +x dist-package.sh && \
+        ./dist-package.sh
+        
+    - uses: actions/upload-artifact@v2
+      with:
+        name: webrcade-dist
+        path: src/webrcade/dist/package
