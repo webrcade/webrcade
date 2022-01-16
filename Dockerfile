@@ -17,7 +17,7 @@ COPY \
 COPY public ./webrcade/public
 COPY src ./webrcade/src
 
-RUN chmod +x /webrcade/dist.sh
+RUN chmod +x /webrcade/dist.sh && chmod +x /webrcade/dist-package.sh
 
 RUN \
   git clone https://github.com/webrcade/webrcade-app-common.git && \
@@ -31,7 +31,7 @@ RUN \
 
 COPY docker/config.json /webrcade-app-common/src/conf/
 
-RUN cd /webrcade && ./dist.sh 
+RUN cd /webrcade && ./dist.sh
 RUN wget -O - https://webrcade.github.io/webrcade-utils/cors.php > /webrcade/dist/out/cors.php
 RUN cd /webrcade && ./dist-package.sh
 
