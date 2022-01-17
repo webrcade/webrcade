@@ -11,6 +11,7 @@ COPY \
   copy-default-feed.js \
   dist.sh \
   dist-package.sh \
+  dist-clone-deps.sh \
   package.json \
   package-lock.json \  
   ./webrcade/

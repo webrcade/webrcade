@@ -28,7 +28,7 @@ jobs:
       run: |
         cd src && \
         chmod +x webrcade/dist-clone-deps.sh && \
-        webrcadedist-clone-deps.sh && \
+        webrcade/dist-clone-deps.sh && \
         rm -rf webrcade/public/default-feed/content
         
     - uses: actions/upload-artifact@v2
