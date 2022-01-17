@@ -14,7 +14,6 @@ function fail() {
 }
 
 # Clone dependencies
-cp -R "$DIST_OUT" "$DIST_PKG/play" || { fail 'Unable to copy output.'; }
 git clone https://github.com/webrcade/webrcade-app-common.git || 
   { fail 'Unable to clone common'; }
 git clone https://github.com/webrcade/webrcade-editor.git || 
