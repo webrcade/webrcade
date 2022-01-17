@@ -1,6 +1,6 @@
 # webЯcade: Feed-driven gaming
 
-[![Actions Status](https://github.com/webrcade/webrcade/workflows/Build/badge.svg)](https://github.com/opendxl/opendxl-broker/actions)
+[![Actions Status](https://github.com/webrcade/webrcade/workflows/Build/badge.svg)](https://github.com/webrcade/webrcade/actions)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Docker Build Status](https://img.shields.io/docker/cloud/build/raz0red/webrcade.svg)](https://hub.docker.com/r/raz0red/webrcade/)
 
