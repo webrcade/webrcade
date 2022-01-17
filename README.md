@@ -2,7 +2,7 @@
 
 [![Actions Status](https://github.com/webrcade/webrcade/workflows/Build/badge.svg)](https://github.com/webrcade/webrcade/actions)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Docker Build Status](https://img.shields.io/docker/cloud/build/raz0red/webrcade.svg)](https://hub.docker.com/r/raz0red/webrcade/)
+[![Docker Build Status](https://img.shields.io/docker/cloud/build/webrcade/webrcade.svg)](https://hub.docker.com/r/webrcade/webrcade/)
 
 WebЯcade consists of an intuitive [web-based front end](https://docs.webrcade.com/userguide/) that enables playing popular gaming content entirely within the context of the browser across a [wide variety of platforms](https://docs.webrcade.com/platforms/) (Xbox Series X|S, iOS, Android, Windows, macOS). Gamepads are supported (Bluetooth and USB) for both front-end navigation and while playing games.
 
