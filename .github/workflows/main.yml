@@ -27,15 +27,9 @@ jobs:
     - name: Clone dependencies
       run: |
         cd src && \
-        rm -rf webrcade/public/default-feed/content && \
-        git clone https://github.com/webrcade/webrcade-app-common.git && \
-        git clone https://github.com/webrcade/webrcade-editor.git && \
-        git clone https://github.com/webrcade/webrcade-app-snes9x.git && \
-        git clone https://github.com/webrcade/webrcade-app-genplusgx.git && \
-        git clone https://github.com/webrcade/webrcade-app-javatari.git && \
-        git clone https://github.com/webrcade/webrcade-app-js7800.git && \
-        git clone https://github.com/webrcade/webrcade-app-fceux.git && \
-        git clone https://github.com/webrcade/webrcade-app-vba-m.git 
+        chmod +x webrcade/dist-package.sh && \
+        webrcade/dist-package.sh && \
+        rm -rf webrcade/public/default-feed/content
         
     - uses: actions/upload-artifact@v2
       with:

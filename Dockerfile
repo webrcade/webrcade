@@ -17,17 +17,11 @@ COPY \
 COPY public ./webrcade/public
 COPY src ./webrcade/src
 
-RUN chmod +x /webrcade/dist.sh && chmod +x /webrcade/dist-package.sh
+RUN chmod +x /webrcade/dist.sh && \
+  chmod +x /webrcade/dist-package.sh && \
+  chome +x /webrcade/dist-clone-deps.sh 
 
-RUN \
-  git clone https://github.com/webrcade/webrcade-app-common.git && \
-  git clone https://github.com/webrcade/webrcade-editor.git && \
-  git clone https://github.com/webrcade/webrcade-app-snes9x.git && \
-  git clone https://github.com/webrcade/webrcade-app-genplusgx.git && \
-  git clone https://github.com/webrcade/webrcade-app-javatari.git && \
-  git clone https://github.com/webrcade/webrcade-app-js7800.git && \
-  git clone https://github.com/webrcade/webrcade-app-fceux.git && \
-  git clone https://github.com/webrcade/webrcade-app-vba-m.git
+RUN cd / && /webrcade/dist-clone-deps.sh
 
 COPY docker/config.json /webrcade-app-common/src/conf/
 
