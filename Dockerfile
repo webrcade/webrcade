@@ -20,7 +20,7 @@ COPY src ./webrcade/src
 
 RUN chmod +x /webrcade/dist.sh && \
   chmod +x /webrcade/dist-package.sh && \
-  chome +x /webrcade/dist-clone-deps.sh 
+  chmod +x /webrcade/dist-clone-deps.sh 
 
 RUN cd / && /webrcade/dist-clone-deps.sh
 
