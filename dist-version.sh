@@ -1,9 +1,7 @@
 #!/bin/bash
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-DIST="$DIR/dist"
-DIST_OUT="$DIST/out"
-VERSION_FILE_DEST="$DIST_OUT/public/VERSION"
+VERSION_FILE_DEST="$DIR/public"
 
 #
 # Function that is invoked when the script fails.
