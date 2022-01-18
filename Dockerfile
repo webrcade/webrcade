@@ -28,7 +28,11 @@ COPY docker/config.json /webrcade-app-common/src/conf/
 
 RUN cd /webrcade && ./dist.sh
 RUN wget -O - https://webrcade.github.io/webrcade-utils/cors.php > /webrcade/dist/out/cors.php
-RUN cd /webrcade && ./dist-package.sh
+RUN cd /webrcade && \
+  ./dist-package.sh && \
+  chmod +x ./dist-version.sh && \
+  ./dist-version.sh "Docker Build" && \
+  cp ./CHANGELOG.md public
 
 ###############################################################################
 # Image
