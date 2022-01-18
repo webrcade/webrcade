@@ -10,29 +10,31 @@ RUN mkdir webrcade
 COPY \  
   copy-default-feed.js \
   dist.sh \
-  dist-package.sh \
+  dist-package.sh \  
   dist-clone-deps.sh \
+  dist-version.sh \
   package.json \
   package-lock.json \  
   ./webrcade/
 COPY public ./webrcade/public
+COPY CHANGELOG.md ./webrcade/public
 COPY src ./webrcade/src
 
 RUN chmod +x /webrcade/dist.sh && \
   chmod +x /webrcade/dist-package.sh && \
-  chmod +x /webrcade/dist-clone-deps.sh 
+  chmod +x /webrcade/dist-clone-deps.sh \
+  chmod +x /webrcade/dist-version.sh
 
 RUN cd / && /webrcade/dist-clone-deps.sh
 
 COPY docker/config.json /webrcade-app-common/src/conf/
 
-RUN cd /webrcade && ./dist.sh
+RUN cd /webrcade && \
+  ./dist-version.sh "Docker Build" && \
+  ./dist.sh
 RUN wget -O - https://webrcade.github.io/webrcade-utils/cors.php > /webrcade/dist/out/cors.php
 RUN cd /webrcade && \
-  ./dist-package.sh && \
-  chmod +x ./dist-version.sh && \
-  ./dist-version.sh "Docker Build" && \
-  cp ./CHANGELOG.md public
+  ./dist-package.sh  
 
 ###############################################################################
 # Image
