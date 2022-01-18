@@ -30,7 +30,9 @@ jobs:
         chmod +x webrcade/dist-clone-deps.sh && \
         webrcade/dist-clone-deps.sh && \
         rm -rf webrcade/public/default-feed/content && \
-        ( find . -type d -name ".git" ) | xargs rm -rf
+        ( find . -type d -name ".git" ) | xargs rm -rf && \
+        chmod +x webrcade/dist-version.sh && \
+        webrcade/dist-version.sh "CI Build"
         
     - uses: actions/upload-artifact@v2
       with:
