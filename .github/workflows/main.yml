@@ -30,7 +30,7 @@ jobs:
         chmod +x webrcade/dist-clone-deps.sh && \
         webrcade/dist-clone-deps.sh && \
         rm -rf webrcade/public/default-feed/content && \
-        find . -name ".git" -exec rm -R {} \;
+        ( find . -type d -name ".git" ) | xargs rm -rf
         
     - uses: actions/upload-artifact@v2
       with:
