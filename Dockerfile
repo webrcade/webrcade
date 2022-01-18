@@ -14,7 +14,8 @@ COPY \
   dist-clone-deps.sh \
   dist-version.sh \
   package.json \
-  package-lock.json \  
+  package-lock.json \
+  VERSION \
   ./webrcade/
 COPY public ./webrcade/public
 COPY CHANGELOG.md ./webrcade/public
