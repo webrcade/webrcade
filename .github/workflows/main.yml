@@ -33,7 +33,8 @@ jobs:
         ( find . -type d -name ".git" ) | xargs rm -rf && \
         cd webrcade && \
         chmod +x ./dist-version.sh && \
-        ./dist-version.sh "CI Build"
+        ./dist-version.sh "CI Build" && \
+        cp ./CHANGELOG.md public
         
     - uses: actions/upload-artifact@v2
       with:
