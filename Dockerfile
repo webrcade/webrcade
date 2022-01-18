@@ -7,10 +7,10 @@ FROM node:12.13.1 as builder
 RUN apt-get update -y && apt-get install -y zip
 
 RUN mkdir webrcade 
-COPY \  
+COPY \
   copy-default-feed.js \
   dist.sh \
-  dist-package.sh \  
+  dist-package.sh \
   dist-clone-deps.sh \
   dist-version.sh \
   package.json \
