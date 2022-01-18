@@ -7,28 +7,35 @@ FROM node:12.13.1 as builder
 RUN apt-get update -y && apt-get install -y zip
 
 RUN mkdir webrcade 
-COPY \  
+COPY \
   copy-default-feed.js \
   dist.sh \
   dist-package.sh \
   dist-clone-deps.sh \
+  dist-version.sh \
   package.json \
-  package-lock.json \  
+  package-lock.json \
+  VERSION \
   ./webrcade/
 COPY public ./webrcade/public
+COPY CHANGELOG.md ./webrcade/public
 COPY src ./webrcade/src
 
 RUN chmod +x /webrcade/dist.sh && \
   chmod +x /webrcade/dist-package.sh && \
-  chmod +x /webrcade/dist-clone-deps.sh 
+  chmod +x /webrcade/dist-clone-deps.sh && \
+  chmod +x /webrcade/dist-version.sh
 
 RUN cd / && /webrcade/dist-clone-deps.sh
 
 COPY docker/config.json /webrcade-app-common/src/conf/
 
-RUN cd /webrcade && ./dist.sh
+RUN cd /webrcade && \
+  ./dist-version.sh "Docker Build" && \
+  ./dist.sh
 RUN wget -O - https://webrcade.github.io/webrcade-utils/cors.php > /webrcade/dist/out/cors.php
-RUN cd /webrcade && ./dist-package.sh
+RUN cd /webrcade && \
+  ./dist-package.sh  
 
 ###############################################################################
 # Image
