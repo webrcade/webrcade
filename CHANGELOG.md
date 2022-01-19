@@ -1,6 +1,7 @@
 ## Change log
 
 ### Pending (0.0.1-SNAPSHOT)
+    - Potential workaround for inconsistent Xbox Edge VSync (requestAnimationFrame)
     - Fixed Android rotation issue when added to home screen
     - Added automatic URL remapping for Google Drive and Dropbox (no longer necessary to manually modify URLs)
     - Moved default feed to its own GitHub repository (old URLs should remap automatically)
