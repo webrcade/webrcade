@@ -25,6 +25,7 @@ import {
   AppScreen,
   FetchAppData,
   Resources,
+  APP_FRAME_ID,
   LOG,
   TEXT_IDS,
   config,
@@ -44,10 +45,10 @@ export class Webrcade extends Component {
       initialFeed: true,
       feeds: null,
       feed: parseFeed(getDefaultFeed()),
-      app: null
+      app: null,
+      browseHidden: false
     };
 
-    this.appScreenFrameRef = React.createRef();
     this.browseScreenRef = React.createRef();
 
     this.ctx = new WebrcadeScreenContext(this, this.state);
@@ -70,14 +71,15 @@ export class Webrcade extends Component {
   LAST_FEED_PROP = "lastfeedId";
 
   popstateHandler = e => {
-    const { appScreenFrameRef, ScreenEnum } = this;
+    const { ScreenEnum } = this;
     const { mode } = this.state;
 
     // Returning to menu
     if (mode === ScreenEnum.APP) {
-      if (appScreenFrameRef.current) {
+      const iframe = document.getElementById(APP_FRAME_ID);
+      if (iframe) {
         try {
-          const content = appScreenFrameRef.current.contentWindow;
+          const content = iframe.contentWindow;
           if (content) {
             content.postMessage("exit", "*");
           }
@@ -173,7 +175,7 @@ export class Webrcade extends Component {
   }
 
   renderBrowse() {
-    const { feed, feeds, mode } = this.state;
+    const { browseHidden, feed, feeds, mode } = this.state;
     const { ctx, browseScreenRef, ScreenEnum, HASH_PLAY } = this;
 
     return (
@@ -181,12 +183,12 @@ export class Webrcade extends Component {
         context={ctx}
         feeds={feeds.getFeeds()}
         feed={feed}
-        hide={mode !== ScreenEnum.BROWSE}
+        hide={mode !== ScreenEnum.BROWSE || browseHidden}
         disable={ctx.isDialogOpen()}
         ref={browseScreenRef}
         onAppSelected={(app) => {
           window.location.hash = HASH_PLAY;
-          this.setState({ mode: ScreenEnum.APP, app: app })
+          this.setState({ mode: ScreenEnum.APP, app: app, browseHidden: true })
         }}
         onFeedLoad={f => loadFeed(f)}
         onFeedDelete={f => deleteFeed(f)}
@@ -195,11 +197,17 @@ export class Webrcade extends Component {
   }
 
   renderApp() {
-    const { appScreenFrameRef } = this;
     const { app } = this.state;
 
     return (
-      <AppScreen app={app} frameRef={appScreenFrameRef} />
+      <AppScreen 
+        app={app} 
+        exitCallback={() => {
+          this.setState({
+            browseHidden: false
+          })
+        }}
+      />
     );
   }
 
