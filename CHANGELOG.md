@@ -1,5 +1,9 @@
 ## Change log
 
+
+### Pending (0.0.2-SNAPSHOT)
+    - ...
+
 ### 01/20/22 (0.0.1)
     - Automatic VSync disable if unable to maintain frame rate
     - Fixed Android rotation issue when added to home screen
