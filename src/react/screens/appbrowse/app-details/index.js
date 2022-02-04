@@ -36,7 +36,6 @@ export default class AppDetails extends Component {
 
       const displayBackground = (src) => {
         if (key === this.lastKey) {           
-          console.log(src);
           detailsRightRef.style.backgroundImage = "url(\"" + src + "\")";
           fadeIn();
         }
