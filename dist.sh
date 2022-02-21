@@ -123,6 +123,17 @@ mkdir -p "$DIST_OUT_APP/gba"  || { fail 'Error creating gba output directory.'; 
 cp -R build/. "$DIST_OUT_APP/gba" || { fail 'failed to copy gba to out.'; }
 
 ##
+## webrcade-app-mednafen
+##
+
+cd "$DIR/../webrcade-app-mednafen" || { fail 'Unable to change to mednafen.'; }
+npm install . || { fail 'Unable to install mednafen dependencies.'; }
+npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
+npm run build || { fail 'Unable to build mednafen.'; }
+mkdir -p "$DIST_OUT_APP/mednafen"  || { fail 'Error creating mednafen output directory.'; }
+cp -R build/. "$DIST_OUT_APP/mednafen" || { fail 'failed to copy mednafen to out.'; }
+
+##
 ## webrcade-app-prboom
 ##
 
