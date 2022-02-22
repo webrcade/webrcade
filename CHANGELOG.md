@@ -1,8 +1,15 @@
 ## Change log
 
 
-### Pending (0.0.2-SNAPSHOT)
-    - ...
+### 02/21/22 (0.0.2)
+    - Added the following applications (emulators):
+      - Bandai WonderSwan
+      - Bandai WonderSwan Color
+      - NEC PC Engine (TurboGrafx-16)
+      - NEC SuperGrafx
+      - Neo Geo Pocket
+      - Neo Geo Pocket Color
+      - Nintendo Virtual Boy
 
 ### 01/20/22 (0.0.1)
     - Automatic VSync disable if unable to maintain frame rate
