@@ -197,11 +197,12 @@ export class Webrcade extends Component {
   }
 
   renderApp() {
-    const { app } = this.state;
-
+    const { app, feed } = this.state;
+    
     return (
       <AppScreen 
         app={app} 
+        feedProps={feed.getProps()}
         exitCallback={() => {
           this.setState({
             browseHidden: false
