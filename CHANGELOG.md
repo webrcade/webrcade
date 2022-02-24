@@ -1,5 +1,7 @@
 ## Change log
 
+### Pending (0.0.3)
+    - ...
 
 ### 02/21/22 (0.0.2)
     - Added the following applications (emulators):
