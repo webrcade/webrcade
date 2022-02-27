@@ -1,6 +1,6 @@
 ## Change log
 
-### 02/28/22 (0.0.3)
+### Pending (0.0.3)
     - Added the following application (emulator):
       - Atari Lynx
 
