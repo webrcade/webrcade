@@ -45,8 +45,11 @@ cd "$DIR" || { fail 'Unable to change to webrcade.'; }
 # dats
 cd public || { fail 'Unable to change to public.'; }
 npm install archiver || { fail 'Unable to install archiver.'; }
+wget -O - https://webrcade.github.io/webrcade-utils/createdats-fbneo.js > createdats-fbneo.js || 
+    { fail 'Unable to retrieve create fbneo dats.'; }
 wget -O - https://webrcade.github.io/webrcade-utils/createdats.js > createdats.js || 
     { fail 'Unable to retrieve create dats.'; }
+node createdats-fbneo.js || { fail 'Unable to execute create dats fbneo.'; }
 node createdats.js || { fail 'Unable to execute create dats.'; }
 rm createdats.js || { fail 'Unable remove create dats.'; }
 cd "$DIR" || { fail 'Unable to change to webrcade.'; }
