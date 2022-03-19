@@ -1,5 +1,12 @@
 ## Change log
 
+### 03/18/22 (0.0.3)     
+    - Added the following application (emulator):
+      - Atari Lynx
+    - New implementation of NES display layer
+    - Adjusted Atari 7800 screen sizes
+    - GBA save game fixes
+    - Editor categories tab now supports copy/paste (including between feeds)
 
 ### 02/21/22 (0.0.2)
     - Added the following applications (emulators):
