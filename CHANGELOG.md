@@ -1,5 +1,8 @@
 ## Change log
 
+### 03/30/22 (0.0.3.1)     
+    -  Additional GBA save game fixes
+
 ### 03/18/22 (0.0.3)     
     - Added the following application (emulator):
       - Atari Lynx
