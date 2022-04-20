@@ -574,12 +574,12 @@ class Slider extends Component {
     if (sliderHidden) {
       sliderStyle = {
         transform: 'translateY(150%)',
-        opacity: 0
+        opacity: 1
       }
     } else {
       sliderStyle = {
         transform: 'translateY(0%)',
-        transition: '.65s, opacity .8s ease-in-out',
+        transition: '.8s',
         opacity: 1
       }
     }
