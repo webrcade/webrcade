@@ -1,5 +1,8 @@
 ## Change log
 
+### 05/18/22 (0.0.3.2)     
+    -  Resolve application redirects (caused reload of previous game)
+
 ### 03/30/22 (0.0.3.1)     
     -  Additional GBA save game fixes
 
