@@ -10,6 +10,8 @@ import {
   LOG,
 } from '@webrcade/app-common'
 
+import * as Session from "./session"
+
 import * as Xbox from '../../../util/xbox';
 import getAppInfo from "./app";
 import getCategoryInfo from "./category";
@@ -48,6 +50,7 @@ export default class AppBrowseScreen extends Component {
       [this.categoryRef],
       [this.sliderRef]
     ]);
+    this.focusGrid.setDefaultComponent(this.sliderRef);
   }
 
   static ModeEnum = {
@@ -147,7 +150,28 @@ export default class AppBrowseScreen extends Component {
 
       const feed = props.feed;
       if (feed) {
-        const category = feed.getCategories()[0];
+
+        // Determine category and item for new feed (based on session state)
+        let category = null;
+        let item = null;
+        if (feed.getTitle() === Session.getLastFeedTitle()) {
+          category = feed.findCategoryByTitle(Session.getLastCategoryTitle());
+        }        
+        if (!category) {
+          category = feed.getCategories()[0];
+        } else {
+          const lastItemTitle = Session.getLastItemTitle();
+          if (lastItemTitle) {
+            for (let i = 0; i < category.items.length; i++) {
+              const ci = category.items[i];
+              if (ci.title === lastItemTitle) {                
+                item = ci;
+                break;
+              } 
+            }
+          }          
+        }
+
         const isCategories = feed.getUniqueCategoryCount() > 1;        
         if (state && state.browseScreen) {
           setTimeout(() => {
@@ -157,8 +181,8 @@ export default class AppBrowseScreen extends Component {
         return {
           feed: feed,
           category: category,
-          currentItem: isCategories ? category : category.items[0],
-          menuMode: isCategories ? ModeEnum.CATEGORIES : ModeEnum.APPS
+          currentItem: (isCategories && !item) ? category : (item ? item : category.items[0]),
+          menuMode: (isCategories && !item) ? ModeEnum.CATEGORIES : ModeEnum.APPS
         }
       }
     }
@@ -181,13 +205,27 @@ export default class AppBrowseScreen extends Component {
     const items = isFeeds ?
       feeds : isCategories ? feed.getCategories() : category.items;
 
-    let itemId = 0, info = null;
+    let itemId = 0, info = null, lastFeedItemMatch = false;;
 
     if (currentItem) {
       itemId = currentItem.id;      
       info = isFeeds ? getFeedInfo(this, currentItem, itemId) :
         isCategories ? getCategoryInfo(this, currentItem) : 
           getAppInfo(this, currentItem);
+
+      if ((feed.getTitle() === Session.getLastFeedTitle()) && 
+        (category && (category.title === Session.getLastCategoryTitle())) &&
+        (currentItem.title === Session.getLastItemTitle())) {
+        // console.log(feed.getTitle());
+        // console.log(category.title);
+        // console.log(currentItem.title);
+        lastFeedItemMatch = true;
+      } else {
+        // console.log("### NOT MATCH!");
+        // console.log(feed.getTitle());
+        // console.log(category.title);
+        // console.log(currentItem.title);
+      }
     }
 
     return (
@@ -257,6 +295,7 @@ export default class AppBrowseScreen extends Component {
               getTitle={info.getTitle}
               getThumbnailSrc={info.getThumbnailSrc}
               getDefaultThumbnailSrc={info.getDefaultThumbnailSrc}
+              lastItemTitle={lastFeedItemMatch ? Session.getLastItemTitle() : null}
               onSelected={item => this.setState({ currentItem: item })}
               onClick={() => button1Ref.current.focus()} />
           </div>
