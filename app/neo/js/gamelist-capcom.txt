@@ -1,0 +1,731 @@
+This list contains all games supported by FinalBurn Neo.
+
+724 games supported in total; X = excluded from build; D = included in debug build only; NW = not working
+
+  name		  status  full name						  parent	  year	  company	  hardware	  remarks
++---------------+-------+-------------------------------------------------------+---------------+-------+---------------+---------------+---------------------------------------+
+| 1941u		|  	| 1941 - Counter Attack (900227 USA)			| 1941		| 1990	| Capcom	| CPS1		| 					| 41u_30.11f| src/burn/drv/capcom/d_cps1.cpp|
+| 1941		|  	| 1941 - Counter Attack (900227 World)			| 		| 1990	| Capcom	| CPS1		| 					| 41em_30.11f| src/burn/drv/capcom/d_cps1.cpp|
+| 1941j		|  	| 1941 - Counter Attack (Japan)				| 1941		| 1990	| Capcom	| CPS1		| 					| 41_36.12f| src/burn/drv/capcom/d_cps1.cpp|
+| 1941r1	|  	| 1941 - Counter Attack (World)				| 1941		| 1990	| Capcom	| CPS1		| 					| 41e_30.11f| src/burn/drv/capcom/d_cps1.cpp|
+| 1944		|  	| 1944 - the loop master (000620 Euro)			| 		| 2000	| Eighting / Rai| CPS2		| 					| nffe.03| src/burn/drv/capcom/d_cps2.cpp|
+| 1944j		|  	| 1944 - the loop master (000620 Japan)			| 1944		| 2000	| Eighting / Rai| CPS2		| 					| nffj.03| src/burn/drv/capcom/d_cps2.cpp|
+| 1944d		|  	| 1944 - the loop master (000620 USA Phoenix Edition)	| 1944		| 2000	| bootleg	| CPS2		| 					| nffud.03| src/burn/drv/capcom/d_cps2.cpp|
+| 1944ad	|  	| 1944 - the loop master (000620 USA Phoenix Edition, alt)| 1944		| 2000	| bootleg	| CPS2		| 					| nffuad.03| src/burn/drv/capcom/d_cps2.cpp|
+| 1944u		|  	| 1944 - the loop master (000620 USA)			| 1944		| 2000	| Eighting / Rai| CPS2		| 					| nffu.03| src/burn/drv/capcom/d_cps2.cpp|
+| 19xxar1	|  	| 19XX - the war against destiny (951207 Asia)		| 19xx		| 1995	| Capcom	| CPS2		| 					| 19xa.03| src/burn/drv/capcom/d_cps2.cpp|
+| 19xxjr2	|  	| 19XX - the war against destiny (951207 Japan)		| 19xx		| 1995	| Capcom	| CPS2		| 					| 19xj.03| src/burn/drv/capcom/d_cps2.cpp|
+| 19xxd		|  	| 19XX - the war against destiny (951207 USA Phoenix Edition)| 19xx		| 1995	| bootleg	| CPS2		| 					| 19xud.03| src/burn/drv/capcom/d_cps2.cpp|
+| 19xxu		|  	| 19XX - the war against destiny (951207 USA)		| 19xx		| 1995	| Capcom	| CPS2		| 					| 19xu.03| src/burn/drv/capcom/d_cps2.cpp|
+| 19xxb		|  	| 19XX - the war against destiny (951218 Brazil)	| 19xx		| 1995	| Capcom	| CPS2		| 					| 19xb.03a| src/burn/drv/capcom/d_cps2.cpp|
+| 19xxh		|  	| 19XX - the war against destiny (951218 Hispanic)	| 19xx		| 1995	| Capcom	| CPS2		| 					| 19xh.03a| src/burn/drv/capcom/d_cps2.cpp|
+| 19xxjr1	|  	| 19XX - the war against destiny (951225 Japan)		| 19xx		| 1995	| Capcom	| CPS2		| 					| 19xj.03a| src/burn/drv/capcom/d_cps2.cpp|
+| 19xxa		|  	| 19XX - the war against destiny (960104 Asia)		| 19xx		| 1995	| Capcom	| CPS2		| 					| 09xa.03b| src/burn/drv/capcom/d_cps2.cpp|
+| 19xx		|  	| 19XX - the war against destiny (960104 Euro)		| 		| 1995	| Capcom	| CPS2		| 					| 19xe.03b| src/burn/drv/capcom/d_cps2.cpp|
+| 19xxj		|  	| 19XX - the war against destiny (960104 Japan, yellow case)| 19xx		| 1996	| Capcom	| CPS2		| 					| 19xj-03b.6a| src/burn/drv/capcom/d_cps2.cpp|
+| cworld2j	|  	| Adventure Quiz Capcom World 2 (920611 Japan)		| 		| 1992	| Capcom	| CPS1		| 					| q5_36.12f| src/burn/drv/capcom/d_cps1.cpp|
+| cworld2ja	|  	| Adventure Quiz Capcom World 2 (Japan 920611, B-Board 90629B-3, no battery)| cworld2j| 1992| Capcom	| CPS1		| 					| q5 - 34_90629b.8f| src/burn/drv/capcom/d_cps1.cpp|
+| cworld2jb	|  	| Adventure Quiz Capcom World 2 (Japan 920611, B-Board 91634B-2)| cworld2j| 1992	| Capcom	| CPS1		| 					| q5 - 23_91634b.8f| src/burn/drv/capcom/d_cps1.cpp|
+| avspa		|  	| Alien vs Predator (940520 Asia)			| avsp		| 1994	| Capcom	| CPS2		| 					| avpa.03d| src/burn/drv/capcom/d_cps2.cpp|
+| avspd		|  	| Alien vs Predator (940520 Euro Phoenix Edition)	| avsp		| 1994	| bootleg	| CPS2		| 					| avped.03d| src/burn/drv/capcom/d_cps2.cpp|
+| avsp		|  	| Alien vs Predator (940520 Euro)			| 		| 1994	| Capcom	| CPS2		| 					| avpe.03d| src/burn/drv/capcom/d_cps2.cpp|
+| avsph		|  	| Alien vs Predator (940520 Hispanic)			| avsp		| 1994	| Capcom	| CPS2		| 					| avph.03d| src/burn/drv/capcom/d_cps2.cpp|
+| avspj		|  	| Alien vs Predator (940520 Japan)			| avsp		| 1994	| Capcom	| CPS2		| 					| avpj.03d| src/burn/drv/capcom/d_cps2.cpp|
+| avspu		|  	| Alien vs Predator (940520 USA)			| avsp		| 1994	| Capcom	| CPS2		| 					| avpu.03d| src/burn/drv/capcom/d_cps2.cpp|
+| area88r	|  	| Area 88 (Japan Resale ver.)				| unsquad	| 1989	| Daipro / Capco| CPS1		| 					| araj_23.8f| src/burn/drv/capcom/d_cps1.cpp|
+| area88	|  	| Area 88 (Japan)					| unsquad	| 1989	| Daipro / Capco| CPS1		| 					| ar_36.12f| src/burn/drv/capcom/d_cps1.cpp|
+| armwarar1	|  	| Armored Warriors (940920 Asia)			| armwar	| 1994	| Capcom	| CPS2		| 					| pwga.03a| src/burn/drv/capcom/d_cps2.cpp|
+| armwaru1	|  	| Armored Warriors (940920 USA)				| armwar	| 1994	| Capcom	| CPS2		| 					| pwgu.03a| src/burn/drv/capcom/d_cps2.cpp|
+| armwar1d	|  	| Armored Warriors (941011 Europe Phoenix Edition)	| armwar	| 1994	| bootleg	| CPS2		| 					| pwged.03b| src/burn/drv/capcom/d_cps2.cpp|
+| armwarr1	|  	| Armored Warriors (941011 Europe)			| armwar	| 1994	| Capcom	| CPS2		| 					| pwge.03b| src/burn/drv/capcom/d_cps2.cpp|
+| armwara	|  	| Armored Warriors (941024 Asia)			| armwar	| 1994	| Capcom	| CPS2		| 					| pwga.03b| src/burn/drv/capcom/d_cps2.cpp|
+| armwar	|  	| Armored Warriors (941024 Europe)			| 		| 1994	| Capcom	| CPS2		| 					| pwge.03c| src/burn/drv/capcom/d_cps2.cpp|
+| armwaru	|  	| Armored Warriors (941024 USA)				| armwar	| 1994	| Capcom	| CPS2		| 					| pwgu.03b| src/burn/drv/capcom/d_cps2.cpp|
+| batcira	|  	| Battle Circuit (970319 Asia)				| batcir	| 1997	| Capcom	| CPS2		| 					| btca.03| src/burn/drv/capcom/d_cps2.cpp|
+| batcird	|  	| Battle Circuit (970319 Euro Phoenix Edition)		| batcir	| 1997	| bootleg	| CPS2		| 					| btced.03| src/burn/drv/capcom/d_cps2.cpp|
+| batcir	|  	| Battle Circuit (970319 Euro)				| 		| 1997	| Capcom	| CPS2		| 					| btce.03| src/burn/drv/capcom/d_cps2.cpp|
+| batcirj	|  	| Battle Circuit (970319 Japan)				| batcir	| 1997	| Capcom	| CPS2		| 					| btcj.03| src/burn/drv/capcom/d_cps2.cpp|
+| punisherbz	|  	| Biaofeng Zhanjing (Chinese bootleg)			| punisher	| 2002	| bootleg	| CPS1		| 					| 23.096| src/burn/drv/capcom/d_cps1.cpp|
+| dinou		|  	| Cadillacs & Dinosaurs (930201 USA)			| dino		| 1993	| Capcom	| CPS1 / QSound	| 					| cdu_23a.8f| src/burn/drv/capcom/d_cps1.cpp|
+| dino		|  	| Cadillacs & Dinosaurs (930201 World)			| 		| 1993	| Capcom	| CPS1 / QSound	| 					| cde_23a.8f| src/burn/drv/capcom/d_cps1.cpp|
+| dinoa		|  	| Cadillacs & Dinosaurs (930223 Asia TW)		| dino		| 1993	| Capcom	| CPS1 / QSound	| 					| cdt_23.8f| src/burn/drv/capcom/d_cps1.cpp|
+| dinosyn	|  	| Cadillacs and Dinosaurs (28th-Anniversary, Hack)	| dino		| 2021-03-25| Hack		| CPS1 / QSound	| 					| dinosyn.bin| src/burn/drv/capcom/d_cps1.cpp|
+| dinopic	|  	| Cadillacs and Dinosaurs (bootleg set 1 (with PIC16c57), 930201 etc)| dino	| 1993	| Capcom	| CPS1		| No sound				| 5.bin| src/burn/drv/capcom/d_cps1.cpp|
+| dinopic2	|  	| Cadillacs and Dinosaurs (bootleg set 2 (with PIC16c57), 930201 etc)| dino	| 1993	| Capcom	| CPS1		| No sound				| 27c4000-m12481.bin| src/burn/drv/capcom/d_cps1.cpp|
+| dinopic3	|  	| Cadillacs and Dinosaurs (bootleg set 3 (with PIC16c57), 930201 etc)| dino	| 1993	| Capcom	| CPS1		| No sound				| tk1-305_27c800.bin| src/burn/drv/capcom/d_cps1.cpp|
+| dinoh		|  	| Cadillacs and Dinosaurs (bootleg set 3, 930223 Asia TW)| dino		| 1993	| bootleg	| CPS1 / QSound	| 					| cda_23h.rom| src/burn/drv/capcom/d_cps1.cpp|
+| dinopic4	|  	| Cadillacs and Dinosaurs (bootleg set 4 (with PIC16c57), 930201 etc)| dino	| 1993	| Capcom	| CPS1		| No sound				| 27c4000-m15377-a-5.bin| src/burn/drv/capcom/d_cps1.cpp|
+| dinopic5	|  	| Cadillacs and Dinosaurs (bootleg set 5 (with PIC16c57), 930223 Asia TW)| dino| 1993	| Capcom	| CPS1		| 					| cad_28.bin| src/burn/drv/capcom/d_cps1.cpp|
+| dinohc	|  	| Cadillacs and Dinosaurs (Chinese bootleg, 930223 Asia TW)| dino		| 1993	| bootleg	| CPS1		| 					| 23| src/burn/drv/capcom/d_cps1.cpp|
+| dinods	|  	| Cadillacs and Dinosaurs (God of War Edition, Hack)	| dino		| 2021-04-08| Hack		| CPS1 / QSound	| 					| dinods.bin| src/burn/drv/capcom/d_cps1.cpp|
+| dinogae	|  	| Cadillacs and Dinosaurs (GOTVG 10th Anniversary Edition, Hack)| dino	| 2021-03-03| Hack		| CPS1 / QSound	| 					| dinogae.bin| src/burn/drv/capcom/d_cps1.cpp|
+| dinoeh	|  	| Cadillacs and Dinosaurs (hack, 930201 etc)		| dino		| 1993	| Capcom	| CPS1 / QSound	| 					| dinoeh.23| src/burn/drv/capcom/d_cps1.cpp|
+| dinot		|  	| Cadillacs and Dinosaurs Turbo (bootleg set 1, 930223 Asia TW)| dino		| 1993	| bootleg	| CPS1 / QSound	| 					| kl2-r1.800| src/burn/drv/capcom/d_cps1.cpp|
+| dinotpic	|  	| Cadillacs and Dinosaurs Turbo (bootleg set 2 (with PIC16c57), 930201 etc)| dino| 1993	| bootleg	| CPS1		| No sound				| cd-d.800| src/burn/drv/capcom/d_cps1.cpp|
+| dinoj		|  	| Cadillacs Kyouryuu-Shinseiki (930201 Japan)		| dino		| 1993	| Capcom	| CPS1 / QSound	| 					| cdj_23a.8f| src/burn/drv/capcom/d_cps1.cpp|
+| cscluba	|  	| Capcom Sports Club (970722 Asia)			| csclub	| 1997	| Capcom	| CPS2		| 					| csca.03| src/burn/drv/capcom/d_cps2.cpp|
+| csclub1d	|  	| Capcom Sports Club (970722 Euro Phoenix Edition)	| csclub	| 1997	| bootleg	| CPS2		| 					| csce_d.03| src/burn/drv/capcom/d_cps2.cpp|
+| csclub1	|  	| Capcom Sports Club (970722 Euro)			| csclub	| 1997	| Capcom	| CPS2		| 					| csce.03| src/burn/drv/capcom/d_cps2.cpp|
+| csclubh	|  	| Capcom Sports Club (970722 Hispanic)			| csclub	| 1997	| Capcom	| CPS2		| 					| csch.03| src/burn/drv/capcom/d_cps2.cpp|
+| csclubj	|  	| Capcom Sports Club (970722 Japan)			| csclub	| 1997	| Capcom	| CPS2		| 					| cscj.03| src/burn/drv/capcom/d_cps2.cpp|
+| csclubjy	|  	| Capcom Sports Club (970722 Japan, yellow case)	| csclub	| 1997	| Capcom	| CPS2		| 					| cscj.03| src/burn/drv/capcom/d_cps2.cpp|
+| csclub	|  	| Capcom Sports Club (971017 Euro)			| 		| 1997	| Capcom	| CPS2		| 					| csce.03a| src/burn/drv/capcom/d_cps2.cpp|
+| captcommjr1	|  	| Captain Commando (910928 Japan)			| captcomm	| 1991	| Capcom	| CPS1		| 					| ccj_23b.8f| src/burn/drv/capcom/d_cps1.cpp|
+| captcommu	|  	| Captain Commando (910928 USA)				| captcomm	| 1991	| Capcom	| CPS1		| 					| ccu_23b.8f| src/burn/drv/capcom/d_cps1.cpp|
+| captcommr1	|  	| Captain Commando (911014 World)			| captcomm	| 1991	| Capcom	| CPS1		| 					| cce_23d.8f| src/burn/drv/capcom/d_cps1.cpp|
+| captcommj	|  	| Captain Commando (911202 Japan)			| captcomm	| 1991	| Capcom	| CPS1		| 					| ccj_23f.8f| src/burn/drv/capcom/d_cps1.cpp|
+| captcomm	|  	| Captain Commando (911202 World)			| 		| 1991	| Capcom	| CPS1		| 					| cce_23f.8f| src/burn/drv/capcom/d_cps1.cpp|
+| captcommb	|  	| Captain Commando (bootleg set 1, 911014 other country)| captcomm	| 1991	| bootleg	| CPS1		| 					| 25.bin| src/burn/drv/capcom/d_cps1.cpp|
+| captcommb2	|   NW	| Captain Commando (bootleg set 2 (with 2xMSM5205), 911014 other country)| captcomm| 1991| bootleg	| CPS1		| unemulated graphics			| 5.bin| src/burn/drv/capcom/d_cps1.cpp|
+| captcommb3	|  	| Captain Commando (bootleg set 3 (with YM2151 + 2xMSM5205), 911014 other country)| captcomm| 1991| bootleg| CPS1		| 					| 5.bin| src/burn/drv/capcom/d_cps1.cpp|
+| captcommp4	|  	| Captain Commando (Enhanced edition 1 V 4, Hack)	| captcomm	| 2015-12-05| hack		| CPS1		| 					| captcommp4_23d.8f| src/burn/drv/capcom/d_cps1.cpp|
+| captcommr1pwx	|  	| Captain Commando (Unlimited Bullet)			| captcomm	| 2021-02-24| Hack		| CPS1		| 					| ccub.bin| src/burn/drv/capcom/d_cps1.cpp|
+| cawingbl	|  	| Carrier Air Wing (bootleg set 1 (with 2xYM2203 + 2xMSM5205), U.S. navy 901012 etc)| cawing| 1990| bootleg| CPS1		| 					| caw2.bin| src/burn/drv/capcom/d_cps1.cpp|
+| cawingb2	|  	| Carrier Air Wing (bootleg set 2 (with 2xYM2203 + 2xMSM5205), U.S. navy 901012 etc)| cawing| 1990| bootleg| CPS1		| 					| 8.8| src/burn/drv/capcom/d_cps1.cpp|
+| cawingr1	|  	| Carrier Air Wing (U.S. navy 901009 etc)		| cawing	| 1990	| Capcom	| CPS1		| 					| cae_30.11f| src/burn/drv/capcom/d_cps1.cpp|
+| cawing	|  	| Carrier Air Wing (U.S. navy 901012 etc)		| 		| 1990	| Capcom	| CPS1		| 					| cae_30a.11f| src/burn/drv/capcom/d_cps1.cpp|
+| cawingur1	|  	| Carrier Air Wing (U.S. navy 901012 USA)		| cawing	| 1990	| Capcom	| CPS1		| 					| cau_30a.11f| src/burn/drv/capcom/d_cps1.cpp|
+| cawingu	|  	| Carrier Air Wing (U.S. navy 901130 USA)		| cawing	| 1990	| Capcom	| CPS1		| 					| cau_36.12f| src/burn/drv/capcom/d_cps1.cpp|
+| cps1demo	|  	| Chaos Demo (CPS-1)					| 		| 2000	| Chaos		| CPS1		| 					| cd30-36.bin| src/burn/drv/capcom/d_cps1.cpp|
+| chikij	|  	| Chiki Chiki Boys (900619 Japan)			| mtwins	| 1990	| Capcom	| CPS1		| 					| chj_36a.12f| src/burn/drv/capcom/d_cps1.cpp|
+| choko		|  	| Choko (010820 Japan)					| 		| 2001	| Mitchell	| CPS2		| 					| tkoj.03| src/burn/drv/capcom/d_cps2.cpp|
+| cybotsj	|  	| Cyberbots - fullmetal madness (950420 Japan)		| cybots	| 1995	| Capcom	| CPS2		| 					| cybj.03| src/burn/drv/capcom/d_cps2.cpp|
+| cybots	|  	| Cyberbots - fullmetal madness (950424 Euro)		| 		| 1995	| Capcom	| CPS2		| 					| cybe.03| src/burn/drv/capcom/d_cps2.cpp|
+| cybotsud	|  	| Cyberbots - fullmetal madness (950424 USA Phoenix Edition)| cybots	| 1995	| bootleg	| CPS2		| 					| cybu_d.03| src/burn/drv/capcom/d_cps2.cpp|
+| cybotsu	|  	| Cyberbots - fullmetal madness (950424 USA)		| cybots	| 1995	| Capcom	| CPS2		| 					| cybu.03| src/burn/drv/capcom/d_cps2.cpp|
+| cybotsjd	|  	| Cyberbots - fullmetal madness (Japan 950424) (decrypted bootleg)| cybots| 1995	| bootleg	| CPS2		| 					| cybj_d.03| src/burn/drv/capcom/d_cps2.cpp|
+| daimakaib	|  	| Dai Makai-Mura (bootleg, Japan)			| ghouls	| 1988	| Capcom	| CPS1		| 					| dmjb2.bin| src/burn/drv/capcom/d_cps1.cpp|
+| daimakair	|  	| Dai Makai-Mura (Japan Resale Ver.)			| ghouls	| 1988	| Capcom	| CPS1		| 					| damj_23.8f| src/burn/drv/capcom/d_cps1.cpp|
+| daimakai	|  	| Dai Makai-Mura (Japan)				| ghouls	| 1988	| Capcom	| CPS1		| 					| dmj_38.12f| src/burn/drv/capcom/d_cps1.cpp|
+| dstlka	|  	| Darkstalkers - the night warriors (940705 Asia)	| dstlk		| 1994	| Capcom	| CPS2		| 					| vama.03a| src/burn/drv/capcom/d_cps2.cpp|
+| dstlk		|  	| Darkstalkers - the night warriors (940705 Euro)	| 		| 1994	| Capcom	| CPS2		| 					| vame.03a| src/burn/drv/capcom/d_cps2.cpp|
+| dstlku1d	|  	| Darkstalkers - the night warriors (940705 USA Phoenix Edition)| dstlk	| 1994	| bootleg	| CPS2		| 					| vamud.03a| src/burn/drv/capcom/d_cps2.cpp|
+| dstlkur1	|  	| Darkstalkers - the night warriors (940705 USA)	| dstlk		| 1994	| Capcom	| CPS2		| 					| vamu.03a| src/burn/drv/capcom/d_cps2.cpp|
+| dstlkh	|  	| Darkstalkers - the night warriors (940818 Hispanic)	| dstlk		| 1994	| Capcom	| CPS2		| 					| vamh.03c| src/burn/drv/capcom/d_cps2.cpp|
+| dstlku	|  	| Darkstalkers - the night warriors (940818 USA)	| dstlk		| 1994	| Capcom	| CPS2		| 					| vamu.03b| src/burn/drv/capcom/d_cps2.cpp|
+| dimahoo	|  	| Dimahoo (000121 Euro)					| 		| 2000	| 8ing / Raizing| CPS2		| 					| gmde.03| src/burn/drv/capcom/d_cps2.cpp|
+| dimahoud	|  	| Dimahoo (000121 USA Phoenix Edition)			| dimahoo	| 2000	| bootleg	| CPS2		| 					| gmdud.03| src/burn/drv/capcom/d_cps2.cpp|
+| dimahoou	|  	| Dimahoo (000121 USA)					| dimahoo	| 2000	| 8ing / Raizing| CPS2		| 					| gmdu.03| src/burn/drv/capcom/d_cps2.cpp|
+| dinohunt	|  	| Dinosaur Hunter (Chinese bootleg, 930223 Asia TW)	| dino		| 1993	| bootleg	| CPS1		| 					| u23| src/burn/drv/capcom/d_cps1.cpp|
+| ddsomjr1	|  	| Dungeons & Dragons - shadow over mystara (960206 Japan)| ddsom		| 1996	| Capcom	| CPS2		| 					| dd2j.03b| src/burn/drv/capcom/d_cps2.cpp|
+| ddsomar1	|  	| Dungeons & Dragons - shadow over mystara (960208 Asia)| ddsom		| 1996	| Capcom	| CPS2		| 					| dd2a.03c| src/burn/drv/capcom/d_cps2.cpp|
+| ddsomr3	|  	| Dungeons & Dragons - shadow over mystara (960208 Euro)| ddsom		| 1996	| Capcom	| CPS2		| 					| dd2e.03a| src/burn/drv/capcom/d_cps2.cpp|
+| ddsomr2	|  	| Dungeons & Dragons - shadow over mystara (960209 Euro)| ddsom		| 1996	| Capcom	| CPS2		| 					| dd2e.03b| src/burn/drv/capcom/d_cps2.cpp|
+| ddsomur1	|  	| Dungeons & Dragons - shadow over mystara (960209 USA)	| ddsom		| 1996	| Capcom	| CPS2		| 					| dd2u.03d| src/burn/drv/capcom/d_cps2.cpp|
+| ddsomb	|  	| Dungeons & Dragons - shadow over mystara (960223 Brazil)| ddsom		| 1996	| Capcom	| CPS2		| 					| dd2b.03a| src/burn/drv/capcom/d_cps2.cpp|
+| ddsomr1	|  	| Dungeons & Dragons - shadow over mystara (960223 Euro)| ddsom		| 1996	| Capcom	| CPS2		| 					| dd2e.03d| src/burn/drv/capcom/d_cps2.cpp|
+| ddsomh	|  	| Dungeons & Dragons - shadow over mystara (960223 Hispanic)| ddsom		| 1996	| Capcom	| CPS2		| 					| dd2h.03a| src/burn/drv/capcom/d_cps2.cpp|
+| ddsomjr2	|  	| Dungeons & Dragons - shadow over mystara (960223 Japan)| ddsom		| 1996	| Capcom	| CPS2		| 					| dd2j.03b| src/burn/drv/capcom/d_cps2.cpp|
+| ddsoma	|  	| Dungeons & Dragons - shadow over mystara (960619 Asia)| ddsom		| 1996	| Capcom	| CPS2		| 					| dd2a.03g| src/burn/drv/capcom/d_cps2.cpp|
+| ddsom		|  	| Dungeons & Dragons - shadow over mystara (960619 Euro)| 		| 1996	| Capcom	| CPS2		| 					| dd2e.03e| src/burn/drv/capcom/d_cps2.cpp|
+| ddsomj	|  	| Dungeons & Dragons - shadow over mystara (960619 Japan)| ddsom		| 1996	| Capcom	| CPS2		| 					| dd2j.03g| src/burn/drv/capcom/d_cps2.cpp|
+| ddsomud	|  	| Dungeons & Dragons - shadow over mystara (960619 USA Phoenix Edition)| ddsom	| 1996	| bootleg	| CPS2		| 					| dd2ud.03g| src/burn/drv/capcom/d_cps2.cpp|
+| ddsomu	|  	| Dungeons & Dragons - shadow over mystara (960619 USA)	| ddsom		| 1996	| Capcom	| CPS2		| 					| dd2u.03g| src/burn/drv/capcom/d_cps2.cpp|
+| ddtodar1	|  	| Dungeons & Dragons - tower of doom (940113 Asia)	| ddtod		| 1994	| Capcom	| CPS2		| 					| dada.03a| src/burn/drv/capcom/d_cps2.cpp|
+| ddtodr1	|  	| Dungeons & Dragons - tower of doom (940113 Euro)	| ddtod		| 1994	| Capcom	| CPS2		| 					| dade.03a| src/burn/drv/capcom/d_cps2.cpp|
+| ddtodhr2	|  	| Dungeons & Dragons - tower of doom (940113 Hispanic)	| ddtod		| 1994	| Capcom	| CPS2		| 					| dadh.03a| src/burn/drv/capcom/d_cps2.cpp|
+| ddtodjr2	|  	| Dungeons & Dragons - tower of doom (940113 Japan)	| ddtod		| 1994	| Capcom	| CPS2		| 					| dadj.03a| src/burn/drv/capcom/d_cps2.cpp|
+| ddtodur1	|  	| Dungeons & Dragons - tower of doom (940113 USA)	| ddtod		| 1994	| Capcom	| CPS2		| 					| dadu.03a| src/burn/drv/capcom/d_cps2.cpp|
+| ddtodhr1	|  	| Dungeons & Dragons - tower of doom (940125 Hispanic)	| ddtod		| 1994	| Capcom	| CPS2		| 					| dadh.03b| src/burn/drv/capcom/d_cps2.cpp|
+| ddtodjr1	|  	| Dungeons & Dragons - tower of doom (940125 Japan)	| ddtod		| 1994	| Capcom	| CPS2		| 					| dadj.03b| src/burn/drv/capcom/d_cps2.cpp|
+| ddtodu	|  	| Dungeons & Dragons - tower of doom (940125 USA)	| ddtod		| 1994	| Capcom	| CPS2		| 					| dadu.03b| src/burn/drv/capcom/d_cps2.cpp|
+| ddtoda	|  	| Dungeons & Dragons - tower of doom (940412 Asia)	| ddtod		| 1994	| Capcom	| CPS2		| 					| dada.03c| src/burn/drv/capcom/d_cps2.cpp|
+| ddtodd	|  	| Dungeons & Dragons - tower of doom (940412 Euro Phoenix Edition)| ddtod	| 1994	| bootleg	| CPS2		| 					| daded.03c| src/burn/drv/capcom/d_cps2.cpp|
+| ddtod		|  	| Dungeons & Dragons - tower of doom (940412 Euro)	| 		| 1994	| Capcom	| CPS2		| 					| dade.03c| src/burn/drv/capcom/d_cps2.cpp|
+| ddtodh	|  	| Dungeons & Dragons - tower of doom (940412 Hispanic)	| ddtod		| 1994	| Capcom	| CPS2		| 					| dadh.03c| src/burn/drv/capcom/d_cps2.cpp|
+| ddtodj	|  	| Dungeons & Dragons - tower of doom (940412 Japan)	| ddtod		| 1994	| Capcom	| CPS2		| 					| dadj.03c| src/burn/drv/capcom/d_cps2.cpp|
+| dynwar	|  	| Dynasty Wars (US set 1)				| 		| 1989	| Capcom	| CPS1		| 					| 30.11f| src/burn/drv/capcom/d_cps1.cpp|
+| dynwara	|  	| Dynasty Wars (US set 2)				| dynwar	| 1989	| Capcom	| CPS1		| 					| tke_36.12f| src/burn/drv/capcom/d_cps1.cpp|
+| ecofghtra	|  	| Eco Fighters (931203 Asia)				| ecofghtr	| 1993	| Capcom	| CPS2		| 					| ueca.03| src/burn/drv/capcom/d_cps2.cpp|
+| ecofghtr	|  	| Eco Fighters (931203 etc)				| 		| 1993	| Capcom	| CPS2		| 					| uece.03| src/burn/drv/capcom/d_cps2.cpp|
+| ecofghtrh	|  	| Eco Fighters (931203 Hispanic)			| ecofghtr	| 1993	| Capcom	| CPS2		| 					| uech.03| src/burn/drv/capcom/d_cps2.cpp|
+| ecofghtru1	|  	| Eco Fighters (931203 USA)				| ecofghtr	| 1993	| Capcom	| CPS2		| 					| uecu.03| src/burn/drv/capcom/d_cps2.cpp|
+| ecofghtrd	|  	| Eco Fighters (931203 World Phoenix Edition)		| ecofghtr	| 1993	| bootleg	| CPS2		| 					| ueced.03| src/burn/drv/capcom/d_cps2.cpp|
+| ecofghtru	|  	| Eco Fighters (940215 USA)				| ecofghtr	| 1993	| Capcom	| CPS2		| 					| uecu.03a| src/burn/drv/capcom/d_cps2.cpp|
+| fcrash	|  	| Final Crash (bootleg (with 2xYM2203 + 2xMSM5205))	| ffight	| 1990	| Playmark	| CPS1		| 					| 9.bin| src/burn/drv/capcom/d_cps1.cpp|
+| ffightj1	|  	| Final Fight (900112 Japan)				| ffight	| 1989	| Capcom	| CPS1		| 					| ffj_36.12f| src/burn/drv/capcom/d_cps1.cpp|
+| ffightua	|  	| Final Fight (900112 USA)				| ffight	| 1989	| Capcom	| CPS1		| 					| ffu_36.11f| src/burn/drv/capcom/d_cps1.cpp|
+| ffightj2	|  	| Final Fight (900305 Japan)				| ffight	| 1989	| Capcom	| CPS1		| 					| ffj_36a.12f| src/burn/drv/capcom/d_cps1.cpp|
+| ffightj3	|  	| Final Fight (900405 Japan)				| ffight	| 1989	| Capcom	| CPS1		| 					| ffj_36.12f| src/burn/drv/capcom/d_cps1.cpp|
+| ffightub	|  	| Final Fight (900424 USA)				| ffight	| 1989	| Capcom	| CPS1		| 					| ffu_30_3.11f| src/burn/drv/capcom/d_cps1.cpp|
+| ffightj4	|  	| Final Fight (900613 Japan)				| ffight	| 1989	| Capcom	| CPS1		| 					| ff_36.12f| src/burn/drv/capcom/d_cps1.cpp|
+| ffightuc	|  	| Final Fight (900613 USA)				| ffight	| 1989	| Capcom	| CPS1		| 					| ffu_30.11f| src/burn/drv/capcom/d_cps1.cpp|
+| ffightbl	|  	| Final Fight (bootleg set 1 (with 2xYM2203 + 2xMSM5205), World)| ffight| 1990	| bootleg	| CPS1		| 					| fg-e.bin| src/burn/drv/capcom/d_cps1.cpp|
+| ffightbla	|  	| Final Fight (bootleg set 2 (with 2xYM2203 + 2xMSM5205), World))| ffight| 1990	| bootleg	| CPS1		| 					| 9.bin| src/burn/drv/capcom/d_cps1.cpp|
+| ffightj	|  	| Final Fight (Japan)					| ffight	| 1989	| Capcom	| CPS1		| 					| ff36.bin| src/burn/drv/capcom/d_cps1.cpp|
+| ffightu	|  	| Final Fight (USA, set 1)				| ffight	| 1989	| Capcom	| CPS1		| 					| ff_36.11f| src/burn/drv/capcom/d_cps1.cpp|
+| ffightu1	|  	| Final Fight (USA, set 2)				| ffight	| 1989	| Capcom	| CPS1		| 					| ff_36.11f| src/burn/drv/capcom/d_cps1.cpp|
+| ffightu2	|  	| Final Fight (USA, set 3)				| ffight	| 1989	| Capcom	| CPS1		| 					| ffu_h0.12f| src/burn/drv/capcom/d_cps1.cpp|
+| ffight	|  	| Final Fight (World, set 1)				| 		| 1989	| Capcom	| CPS1		| 					| ff_36.11f| src/burn/drv/capcom/d_cps1.cpp|
+| ffighta	|  	| Final Fight (World, set 2)				| ffight	| 1989	| Capcom	| CPS1		| 					| ffe_30.11f| src/burn/drv/capcom/d_cps1.cpp|
+| ffightae	|  	| Final Fight 30th Anniversary Edition			| ffight	| 2019	| hack		| CPS1		| 					| ff-23m.8h| src/burn/drv/capcom/d_cps1.cpp|
+| forgottnj	|  	| Forgotten Worlds (Japan)				| forgottn	| 1988	| Capcom	| CPS1		| 					| 11.14f| src/burn/drv/capcom/d_cps1.cpp|
+| forgottnua	|  	| Forgotten Worlds (US, B-Board 88618B-2, rev A)	| forgottn	| 1988	| Capcom	| CPS1		| 					| lwu_11a.14f| src/burn/drv/capcom/d_cps1.cpp|
+| forgottnuaa	|  	| Forgotten Worlds (US, B-Board 88618B-2, rev AA)	| forgottn	| 1988	| Capcom	| CPS1		| 					| lwu_11aa.14f| src/burn/drv/capcom/d_cps1.cpp|
+| forgottnuc	|  	| Forgotten Worlds (US, B-Board 88618B-2, Rev C)	| forgottn	| 1988	| Capcom	| CPS1		| 					| lw11c.14f| src/burn/drv/capcom/d_cps1.cpp|
+| forgottnue	|  	| Forgotten Worlds (US, B-Board 88618B-2, Rev E)	| forgottn	| 1988	| Capcom	| CPS1		| 					| lw11e.14f| src/burn/drv/capcom/d_cps1.cpp|
+| forgottnu	|  	| Forgotten Worlds (US, B-Board 88621B-2, rev C)	| forgottn	| 1988	| Capcom	| CPS1		| 					| lw11c.12f| src/burn/drv/capcom/d_cps1.cpp|
+| forgottna	|  	| Forgotten Worlds (World)				| forgottn	| 1988	| Capcom	| CPS1		| 					| lw11.12f| src/burn/drv/capcom/d_cps1.cpp|
+| forgottn	|  	| Forgotten Worlds (World, newer)			| 		| 1988	| Capcom	| CPS1		| 					| lw40.12f| src/burn/drv/capcom/d_cps1.cpp|
+| cps1frog	|  	| Frog Feast (CPS-1)					| 		| 2006	| Rastersoft (Ho| CPS1		| 					| frog30-36.bin| src/burn/drv/capcom/d_cps1.cpp|
+| ganbare	|  	| Ganbare! Marine Kun (Marine 2K0411 JPN)		| 		| 2000	| Capcom	| CPS1		| 					| mrnj_23d.8f| src/burn/drv/capcom/d_cps1.cpp|
+| ghoulsu	|  	| Ghouls'n Ghosts (US)					| ghouls	| 1988	| Capcom	| CPS1		| 					| dmu_29.10h| src/burn/drv/capcom/d_cps1.cpp|
+| ghouls	|  	| Ghouls'n Ghosts (World)				| 		| 1988	| Capcom	| CPS1		| 					| dme_29.10h| src/burn/drv/capcom/d_cps1.cpp|
+| gigawinga	|  	| Giga Wing (990222 Asia)				| gigawing	| 1999	| Takumi (Capcom| CPS2		| 					| ggwa.03a| src/burn/drv/capcom/d_cps2.cpp|
+| gigawingb	|  	| Giga Wing (990222 Brazil)				| gigawing	| 1999	| Takumi (Capcom| CPS2		| 					| ggwb.03| src/burn/drv/capcom/d_cps2.cpp|
+| gigawingh	|  	| Giga Wing (990222 Hispanic)				| gigawing	| 1999	| Takumi (Capcom| CPS2		| 					| ggwh.03a| src/burn/drv/capcom/d_cps2.cpp|
+| gigawingd	|  	| Giga Wing (990222 USA Phoenix Edition)		| gigawing	| 1999	| bootleg	| CPS2		| 					| ggwu_d.03| src/burn/drv/capcom/d_cps2.cpp|
+| gigawing	|  	| Giga Wing (990222 USA)				| 		| 1999	| Takumi (Capcom| CPS2		| 					| ggwu.03| src/burn/drv/capcom/d_cps2.cpp|
+| gigawingjd	|  	| Giga Wing (990223 Japan Phoenix Edition)		| gigawing	| 1999	| bootleg	| CPS2		| 					| ggwjd.03a| src/burn/drv/capcom/d_cps2.cpp|
+| gigawingj	|  	| Giga Wing (990223 Japan)				| gigawing	| 1999	| Takumi (Capcom| CPS2		| 					| ggwj.03a| src/burn/drv/capcom/d_cps2.cpp|
+| gigaman2	|  	| Gigaman 2: The Power Fighters (bootleg)		| megaman2	| 1996	| bootleg	| CPS2		| No Sound (MCU not dumped)		| sys_rom1.bin| src/burn/drv/capcom/d_cps2.cpp|
+| gmahou	|  	| Great Mahou Daisakusen (000121 Japan)			| dimahoo	| 2000	| 8ing / Raizing| CPS2		| 					| gmdj.03| src/burn/drv/capcom/d_cps2.cpp|
+| gulunpa	|  	| Gulun.Pa! (Japan 931220 L)				| 		| 1993	| Capcom	| Miscellaneous	| 					| 26| src/burn/drv/capcom/d_cps1.cpp|
+| halfway	|  	| Halfway To Hell: Progear Red Label (2016-1-17 Red label ver)| progear	| 2016	| The Halfway Ho| CPS2		| 					| halfway.03| src/burn/drv/capcom/d_cps2.cpp|
+| hsf2j1	|  	| Hyper Street Fighter II: The Anniversary Edition (031222 Japan)| hsf2	| 2004	| Capcom	| CPS2		| 					| hs2j.03| src/burn/drv/capcom/d_cps2.cpp|
+| hsf2d		|  	| Hyper Street Fighter II: The Anniversary Edition (040202 Asia Phoenix Edition)| hsf2| 2004| bootleg	| CPS2		| 					| hs2ad.03| src/burn/drv/capcom/d_cps2.cpp|
+| hsf2da	|  	| Hyper Street Fighter II: The Anniversary Edition (040202 Asia Phoenix Edition, alt)| hsf2| 2004| bootleg	| CPS2		| 					| hs2ad.03| src/burn/drv/capcom/d_cps2.cpp|
+| hsf2a		|  	| Hyper Street Fighter II: The Anniversary Edition (040202 Asia)| hsf2	| 2004	| Capcom	| CPS2		| 					| hs2a.03| src/burn/drv/capcom/d_cps2.cpp|
+| hsf2j		|  	| Hyper Street Fighter II: The Anniversary Edition (040202 Japan)| hsf2	| 2004	| Capcom	| CPS2		| 					| hs2j.03c| src/burn/drv/capcom/d_cps2.cpp|
+| hsf2		|  	| Hyper Street Fighter II: The Anniversary Edition (040202 USA)| 		| 2004	| Capcom	| CPS2		| 					| hs2u.03| src/burn/drv/capcom/d_cps2.cpp|
+| jojobar1	|  	| JoJo's Bizarre Adventure: Heritage for the Future / JoJo no Kimyou na Bouken: Mirai e no Isan (Euro 990913)| jojoba| 1999| Capcom| CPS-3| 				| jojoba_euro.29f400.u2| src/burn/drv/cps3/d_cps3.cpp|
+| jojobaner1	|  	| JoJo's Bizarre Adventure: Heritage for the Future / JoJo no Kimyou na Bouken: Mirai e no Isan (Euro 990913, NO CD)| jojoba| 1999| Capcom| CPS-3| 			| jojoba_euro_nocd.29f400.u2| src/burn/drv/cps3/d_cps3.cpp|
+| jojoba	|  	| JoJo's Bizarre Adventure: Heritage for the Future / JoJo no Kimyou na Bouken: Mirai e no Isan (Euro 990927)| | 1999| Capcom| CPS-3| 					| jojoba_euro_.29f400.u2| src/burn/drv/cps3/d_cps3.cpp|
+| jojobane	|  	| JoJo's Bizarre Adventure: Heritage for the Future / JoJo no Kimyou na Bouken: Mirai e no Isan (Euro 990927, NO CD)| jojoba| 1999| Capcom| CPS-3| 			| jojoba_euro_nocd.29f400.u2| src/burn/drv/cps3/d_cps3.cpp|
+| jojobajr1	|  	| JoJo's Bizarre Adventure: Heritage for the Future / JoJo no Kimyou na Bouken: Mirai e no Isan (Japan 990913)| jojoba| 1999| Capcom| CPS-3| 				| jojoba_japan.29f400.u2| src/burn/drv/cps3/d_cps3.cpp|
+| jojobanr1	|  	| JoJo's Bizarre Adventure: Heritage for the Future / JoJo no Kimyou na Bouken: Mirai e no Isan (Japan 990913, NO CD)| jojoba| 1999| Capcom| CPS-3| 			| jojoba_japan_nocd.29f400.u2| src/burn/drv/cps3/d_cps3.cpp|
+| jojobaj	|  	| JoJo's Bizarre Adventure: Heritage for the Future / JoJo no Kimyou na Bouken: Mirai e no Isan (Japan 990927)| jojoba| 1999| Capcom| CPS-3| 				| jojoba_japan.29f400.u2| src/burn/drv/cps3/d_cps3.cpp|
+| jojoban	|  	| JoJo's Bizarre Adventure: Heritage for the Future / JoJo no Kimyou na Bouken: Mirai e no Isan (Japan 990927, NO CD)| jojoba| 1999| Capcom| CPS-3| 			| jojoba_japan_nocd.29f400.u2| src/burn/drv/cps3/d_cps3.cpp|
+| jojoar2	|  	| JoJo's Venture / JoJo no Kimyou na Bouken (Asia 981202)| jojo		| 1998	| Capcom	| CPS-3		| 					| jojo_asia.29f400.u2| src/burn/drv/cps3/d_cps3.cpp|
+| jojonr2	|  	| JoJo's Venture / JoJo no Kimyou na Bouken (Asia 981202, NO CD)| jojo	| 1998	| Capcom	| CPS-3		| 					| jojo_asia_nocd.29f400.u2| src/burn/drv/cps3/d_cps3.cpp|
+| jojoar1	|  	| JoJo's Venture / JoJo no Kimyou na Bouken (Asia 990108)| jojo		| 1998	| Capcom	| CPS-3		| 					| jojo_asia.29f400.u2| src/burn/drv/cps3/d_cps3.cpp|
+| jojonr1	|  	| JoJo's Venture / JoJo no Kimyou na Bouken (Asia 990108, NO CD)| jojo	| 1998	| Capcom	| CPS-3		| 					| jojo_asia_nocd.29f400.u2| src/burn/drv/cps3/d_cps3.cpp|
+| jojoa		|  	| JoJo's Venture / JoJo no Kimyou na Bouken (Asia 990128)| jojo		| 1998	| Capcom	| CPS-3		| 					| jojo_asia.29f400.u2| src/burn/drv/cps3/d_cps3.cpp|
+| jojon		|  	| JoJo's Venture / JoJo no Kimyou na Bouken (Asia 990128, NO CD)| jojo	| 1998	| Capcom	| CPS-3		| 					| jojo_asia_nocd.29f400.u2| src/burn/drv/cps3/d_cps3.cpp|
+| jojor2	|  	| JoJo's Venture / JoJo no Kimyou na Bouken (Euro 981202)| jojo		| 1998	| Capcom	| CPS-3		| 					| jojo_euro.29f400.u2| src/burn/drv/cps3/d_cps3.cpp|
+| jojor1	|  	| JoJo's Venture / JoJo no Kimyou na Bouken (Euro 990108)| jojo		| 1998	| Capcom	| CPS-3		| 					| jojo_euro.29f400.u2| src/burn/drv/cps3/d_cps3.cpp|
+| jojo		|  	| JoJo's Venture / JoJo no Kimyou na Bouken (Euro 990128)| 		| 1998	| Capcom	| CPS-3		| 					| jojo_euro.29f400.u2| src/burn/drv/cps3/d_cps3.cpp|
+| jojojr2	|  	| JoJo's Venture / JoJo no Kimyou na Bouken (Japan 981202)| jojo		| 1998	| Capcom	| CPS-3		| 					| jojo_japan.29f400.u2| src/burn/drv/cps3/d_cps3.cpp|
+| jojojr1	|  	| JoJo's Venture / JoJo no Kimyou na Bouken (Japan 990108)| jojo		| 1998	| Capcom	| CPS-3		| 					| jojo_japan.29f400.u2| src/burn/drv/cps3/d_cps3.cpp|
+| jojoj		|  	| JoJo's Venture / JoJo no Kimyou na Bouken (Japan 990128)| jojo		| 1998	| Capcom	| CPS-3		| 					| jojo_japan.29f400.u2| src/burn/drv/cps3/d_cps3.cpp|
+| jojour2	|  	| JoJo's Venture / JoJo no Kimyou na Bouken (USA 981202)| jojo		| 1998	| Capcom	| CPS-3		| 					| jojo_usa.29f400.u2| src/burn/drv/cps3/d_cps3.cpp|
+| jojour1	|  	| JoJo's Venture / JoJo no Kimyou na Bouken (USA 990108)| jojo		| 1998	| Capcom	| CPS-3		| 					| jojo_usa.29f400.u2| src/burn/drv/cps3/d_cps3.cpp|
+| jojou		|  	| JoJo's Venture / JoJo no Kimyou na Bouken (USA 990128)| jojo		| 1998	| Capcom	| CPS-3		| 					| jojo_usa.29f400.u2| src/burn/drv/cps3/d_cps3.cpp|
+| jurassic99	|  	| Jurassic 99 (Cadillacs and Dinosaurs bootleg with EM78P447AP, 930201 ?)| dino| 1993	| bootleg	| CPS1		| No sound				| 210204_rom2.bin| src/burn/drv/capcom/d_cps1.cpp|
+| jyangoku	|  	| Jyangokushi  -Haoh no Saihai- (990527 Japan)		| 		| 1999	| Mitchell	| CPS2		| 					| majj.03| src/burn/drv/capcom/d_cps2.cpp|
+| kenseim	| D	| Ken Sei Mogura: Street Fighter II (Japan 940418, Ver 1.00)| 		| 1994	| Capcom / Togo | CPS1		| 					| knm_23.8f| src/burn/drv/capcom/d_kenseim.h|
+| knights	|  	| Knights of the Round (911127 etc)			| 		| 1991	| Capcom	| CPS1		| 					| kr_23e.8f| src/burn/drv/capcom/d_cps1.cpp|
+| knightsja	|  	| Knights of the Round (911127 Japan, B-Board 89625B-1)	| knights	| 1991	| Capcom	| CPS1		| 					| krj_36.12f| src/burn/drv/capcom/d_cps1.cpp|
+| knightsj	|  	| Knights of the Round (911127 Japan, B-Board 91634B-2)	| knights	| 1991	| Capcom	| CPS1		| 					| kr_23j.8f| src/burn/drv/capcom/d_cps1.cpp|
+| knightsu	|  	| Knights of the Round (911127 USA)			| knights	| 1991	| Capcom	| CPS1		| 					| kr_23u.8f| src/burn/drv/capcom/d_cps1.cpp|
+| knightsb	|  	| Knights of the Round (bootleg set 1 (with YM2151 + 2xMSM5205), 911127 etc)| knights| 1991| bootleg	| CPS1		| 					| 5.ic172| src/burn/drv/capcom/d_cps1.cpp|
+| knightsb2	|  	| Knights of the Round (bootleg set 2, 911127 etc)	| knights	| 1991	| bootleg	| CPS1		| 					| left.code.040| src/burn/drv/capcom/d_cps1.cpp|
+| knightsb3	|   NW	| Knights of the Round (bootleg set 3 (with 2xMSM5205), 911127 etc)| knights| 1991	| bootleg	| CPS1		| unemulated graphics			| 5.bin| src/burn/drv/capcom/d_cps1.cpp|
+| knightsb4	|  	| Knights of the Round (bootleg set 4 (with YM2151 + 2xMSM5205), 911127 etc)| knights| 1991| bootleg	| CPS1		| 					| 3.bin| src/burn/drv/capcom/d_cps1.cpp|
+| knightsb5	|  	| Knights of the Round (bootleg set 5, 911127 Japan)	| knights	| 1991	| bootleg	| CPS1		| 					| 23.096| src/burn/drv/capcom/d_cps1.cpp|
+| knightsh	|  	| Knights of the Round (hack set 1)			| knights	| 1991	| hack		| CPS1		| 					| krh_23.rom| src/burn/drv/capcom/d_cps1.cpp|
+| knightsh2	|  	| Knights of the Round (hack set 2, 911127 etc)		| knights	| 1991	| hack		| CPS1		| 					| krha_23.rom| src/burn/drv/capcom/d_cps1.cpp|
+| lostwrldo	|  	| Lost Worlds (Japan Old ver.)				| forgottn	| 1988	| Capcom	| CPS1		| 					| lw_11.14f| src/burn/drv/capcom/d_cps1.cpp|
+| lostwrld	|  	| Lost Worlds (Japan)					| forgottn	| 1988	| Capcom	| CPS1		| 					| lw_11c.14f| src/burn/drv/capcom/d_cps1.cpp|
+| mswordj	|  	| Magic Sword (23.06.1990 Japan)			| msword	| 1990	| Capcom	| CPS1		| 					| msj_36.12f| src/burn/drv/capcom/d_cps1.cpp|
+| mswordr1	|  	| Magic Sword - heroic fantasy (23.06.1990 other country)| msword	| 1990	| Capcom	| CPS1		| 					| ms_30.11f| src/burn/drv/capcom/d_cps1.cpp|
+| msword	|  	| Magic Sword - heroic fantasy (25.07.1990 other country)| 		| 1990	| Capcom	| CPS1		| 					| mse_30.11f| src/burn/drv/capcom/d_cps1.cpp|
+| mswordu	|  	| Magic Sword - heroic fantasy (25.07.1990 USA)		| msword	| 1990	| Capcom	| CPS1		| 					| msu_30.11f| src/burn/drv/capcom/d_cps1.cpp|
+| mmatrixa	|  	| Mars Matrix (000412 Asia)				| mmatrix	| 2000	| Takumi (Capcom| CPS2		| 					| mmxa.03| src/burn/drv/capcom/d_cps2.cpp|
+| mmatrixj	|  	| Mars Matrix (000412 Japan)				| mmatrix	| 2000	| Takumi (Capcom| CPS2		| 					| mmxj.03| src/burn/drv/capcom/d_cps2.cpp|
+| mmatrixd	|  	| Mars Matrix (000412 USA Phoenix Edition)		| mmatrix	| 2000	| bootleg	| CPS2		| 					| mmxud.03| src/burn/drv/capcom/d_cps2.cpp|
+| mmatrix	|  	| Mars Matrix (000412 USA)				| 		| 2000	| Takumi (Capcom| CPS2		| 					| mmxu.03| src/burn/drv/capcom/d_cps2.cpp|
+| msha		|  	| Marvel Super Heroes (951024 Asia)			| msh		| 1995	| Capcom	| CPS2		| 					| msha.03e| src/burn/drv/capcom/d_cps2.cpp|
+| mshbr1	|  	| Marvel Super Heroes (951024 Brazil)			| msh		| 1995	| Capcom	| CPS2		| 					| mshb.03b| src/burn/drv/capcom/d_cps2.cpp|
+| msh		|  	| Marvel Super Heroes (951024 Euro)			| 		| 1995	| Capcom	| CPS2		| 					| mshe.03e| src/burn/drv/capcom/d_cps2.cpp|
+| mshjr1	|  	| Marvel Super Heroes (951024 Japan)			| msh		| 1995	| Capcom	| CPS2		| 					| mshj.03f| src/burn/drv/capcom/d_cps2.cpp|
+| mshud		|  	| Marvel Super Heroes (951024 USA Phoenix Edition)	| msh		| 1995	| bootleg	| CPS2		| 					| mshud.03| src/burn/drv/capcom/d_cps2.cpp|
+| mshu		|  	| Marvel Super Heroes (951024 USA)			| msh		| 1995	| Capcom	| CPS2		| 					| mshu.03| src/burn/drv/capcom/d_cps2.cpp|
+| mshb		|  	| Marvel Super Heroes (951117 Brazil)			| msh		| 1995	| Capcom	| CPS2		| 					| mshb.03c| src/burn/drv/capcom/d_cps2.cpp|
+| mshh		|  	| Marvel Super Heroes (951117 Hispanic)			| msh		| 1995	| Capcom	| CPS2		| 					| mshh.03c| src/burn/drv/capcom/d_cps2.cpp|
+| mshj		|  	| Marvel Super Heroes (951117 Japan)			| msh		| 1995	| Capcom	| CPS2		| 					| mshj.03g| src/burn/drv/capcom/d_cps2.cpp|
+| mshvsfa1	|  	| Marvel Super Heroes vs Street Fighter (970620 Asia)	| mshvsf	| 1997	| Capcom	| CPS2		| 					| mvsa.03| src/burn/drv/capcom/d_cps2.cpp|
+| mshvsfa	|  	| Marvel Super Heroes vs Street Fighter (970625 Asia)	| mshvsf	| 1997	| Capcom	| CPS2		| 					| mvsa.03f| src/burn/drv/capcom/d_cps2.cpp|
+| mshvsfb1	|  	| Marvel Super Heroes vs Street Fighter (970625 Brazil)	| mshvsf	| 1997	| Capcom	| CPS2		| 					| mvsb.03f| src/burn/drv/capcom/d_cps2.cpp|
+| mshvsf	|  	| Marvel Super Heroes vs Street Fighter (970625 Euro)	| 		| 1997	| Capcom	| CPS2		| 					| mvse.03f| src/burn/drv/capcom/d_cps2.cpp|
+| mshvsfh	|  	| Marvel Super Heroes vs Street Fighter (970625 Hispanic)| mshvsf	| 1997	| Capcom	| CPS2		| 					| mvsh.03f| src/burn/drv/capcom/d_cps2.cpp|
+| mshvsfj2	|  	| Marvel Super Heroes vs Street Fighter (970625 Japan)	| mshvsf	| 1997	| Capcom	| CPS2		| 					| mvsj.03g| src/burn/drv/capcom/d_cps2.cpp|
+| mshvsfu1d	|  	| Marvel Super Heroes vs Street Fighter (970625 USA Phoenix Edition)| mshvsf| 1997	| bootleg	| CPS2		| 					| mvsu_d.03d| src/burn/drv/capcom/d_cps2.cpp|
+| mshvsfu1	|  	| Marvel Super Heroes vs Street Fighter (970625 USA)	| mshvsf	| 1997	| Capcom	| CPS2		| 					| mvsu.03d| src/burn/drv/capcom/d_cps2.cpp|
+| mshvsfj1	|  	| Marvel Super Heroes vs Street Fighter (970702 Japan)	| mshvsf	| 1997	| Capcom	| CPS2		| 					| mvsj.03h| src/burn/drv/capcom/d_cps2.cpp|
+| mshvsfj	|  	| Marvel Super Heroes vs Street Fighter (970707 Japan)	| mshvsf	| 1997	| Capcom	| CPS2		| 					| mvsj.03i| src/burn/drv/capcom/d_cps2.cpp|
+| mshvsfb	|  	| Marvel Super Heroes vs Street Fighter (970827 Brazil)	| mshvsf	| 1997	| Capcom	| CPS2		| 					| mvsb.03g| src/burn/drv/capcom/d_cps2.cpp|
+| mshvsfu	|  	| Marvel Super Heroes vs Street Fighter (970827 USA)	| mshvsf	| 1997	| Capcom	| CPS2		| 					| mvsu.03g| src/burn/drv/capcom/d_cps2.cpp|
+| mvscur1	|  	| Marvel vs Capcom - clash of super heroes (971222 USA)	| mvsc		| 1998	| Capcom	| CPS2		| 					| mvcu.03| src/burn/drv/capcom/d_cps2.cpp|
+| mvscar1	|  	| Marvel vs Capcom - clash of super heroes (980112 Asia)| mvsc		| 1998	| Capcom	| CPS2		| 					| mvca.03| src/burn/drv/capcom/d_cps2.cpp|
+| mvscr1	|  	| Marvel vs Capcom - clash of super heroes (980112 Euro)| mvsc		| 1998	| Capcom	| CPS2		| 					| mvce.03| src/burn/drv/capcom/d_cps2.cpp|
+| mvscjr1	|  	| Marvel vs Capcom - clash of super heroes (980112 Japan)| mvsc		| 1998	| Capcom	| CPS2		| 					| mvcj.03| src/burn/drv/capcom/d_cps2.cpp|
+| mvsca		|  	| Marvel vs Capcom - clash of super heroes (980123 Asia)| mvsc		| 1998	| Capcom	| CPS2		| 					| mvca.03a| src/burn/drv/capcom/d_cps2.cpp|
+| mvscb		|  	| Marvel vs Capcom - clash of super heroes (980123 Brazil)| mvsc		| 1998	| Capcom	| CPS2		| 					| mvcb.03a| src/burn/drv/capcom/d_cps2.cpp|
+| mvsc		|  	| Marvel vs Capcom - clash of super heroes (980123 Euro)| 		| 1998	| Capcom	| CPS2		| 					| mvce.03a| src/burn/drv/capcom/d_cps2.cpp|
+| mvsch		|  	| Marvel vs Capcom - clash of super heroes (980123 Hispanic)| mvsc		| 1998	| Capcom	| CPS2		| 					| mvch.03| src/burn/drv/capcom/d_cps2.cpp|
+| mvscj		|  	| Marvel vs Capcom - clash of super heroes (980123 Japan)| mvsc		| 1998	| Capcom	| CPS2		| 					| mvcj.03a| src/burn/drv/capcom/d_cps2.cpp|
+| mvscjsing	|  	| Marvel vs Capcom - clash of super heroes (980123 Japan, single PCB)| mvsc	| 1998	| Capcom	| CPS2		| 					| mvc_ja.simm1| src/burn/drv/capcom/d_cps2.cpp|
+| mvscud	|  	| Marvel vs Capcom - clash of super heroes (980123 USA Phoenix Edition)| mvsc	| 1998	| bootleg	| CPS2		| 					| mvcud.03d| src/burn/drv/capcom/d_cps2.cpp|
+| mvscu		|  	| Marvel vs Capcom - clash of super heroes (980123 USA)	| mvsc		| 1998	| Capcom	| CPS2		| 					| mvcu.03d| src/burn/drv/capcom/d_cps2.cpp|
+| mmancp2ur2	|  	| Mega Man - The Power Battle (950925 USA, SAMPLE Version)| megaman	| 1995	| Capcom	| CPS2		| 					| rcmu.03| src/burn/drv/capcom/d_cps2.cpp|
+| mmancp2ur1	|  	| Mega Man - The Power Battle (950926 USA, SAMPLE Version)| megaman	| 1995	| Capcom	| CPS2		| 					| rcmu.03a| src/burn/drv/capcom/d_cps2.cpp|
+| megamana	|  	| Mega Man - the power battle (951006 Asia)		| megaman	| 1995	| Capcom	| CPS1		| 					| rcma_23b.8f| src/burn/drv/capcom/d_cps1.cpp|
+| megaman	|  	| Mega Man - the power battle (951006 USA)		| 		| 1995	| Capcom	| CPS1		| 					| rcmu_23b.8f| src/burn/drv/capcom/d_cps1.cpp|
+| mmancp2u	|  	| Mega Man - The Power Battle (951006 USA, SAMPLE Version)| megaman	| 1995	| Capcom	| CPS2		| 					| rcmu.03b| src/burn/drv/capcom/d_cps2.cpp|
+| megaman2a	|  	| Mega Man 2 - the power fighters (960708 Asia)		| megaman2	| 1996	| Capcom	| CPS2		| 					| rm2a.03| src/burn/drv/capcom/d_cps2.cpp|
+| megamn2d	|  	| Mega Man 2 - the power fighters (960708 USA Phoenix Edition)| megaman2	| 1996	| bootleg	| CPS2		| 					| rm2ud.03| src/burn/drv/capcom/d_cps2.cpp|
+| megaman2	|  	| Mega Man 2 - the power fighters (960708 USA)		| 		| 1996	| Capcom	| CPS2		| 					| rm2u.03| src/burn/drv/capcom/d_cps2.cpp|
+| megaman2h	|  	| Mega Man 2 - the power fighters (960712 Hispanic)	| megaman2	| 1996	| Capcom	| CPS2		| 					| rm2h.03| src/burn/drv/capcom/d_cps2.cpp|
+| mtwins	|  	| Mega Twins (chiki chiki boys 900619 etc)		| 		| 1990	| Capcom	| CPS1		| 					| che_30.11f| src/burn/drv/capcom/d_cps1.cpp|
+| mercs		|  	| Mercs (900302 etc)					| 		| 1990	| Capcom	| CPS1		| 					| so2_30e.11f| src/burn/drv/capcom/d_cps1.cpp|
+| mercsur1	|  	| Mercs (900302 USA)					| mercs		| 1990	| Capcom	| CPS1		| 					| so2_30.11f| src/burn/drv/capcom/d_cps1.cpp|
+| mercsu	|  	| Mercs (900608 USA)					| mercs		| 1990	| Capcom	| CPS1		| 					| so2_30a.11f| src/burn/drv/capcom/d_cps1.cpp|
+| mpangr1	|  	| Mighty! Pang (000925 Euro)				| mpang		| 2000	| Mitchell	| CPS2		| 					| mpne.03b| src/burn/drv/capcom/d_cps2.cpp|
+| mpanga	|  	| Mighty! Pang (001010 Asia)				| mpang		| 2000	| Mitchell	| CPS2		| 					| mpn_03a.6a| src/burn/drv/capcom/d_cps2.cpp|
+| mpang		|  	| Mighty! Pang (001010 Euro)				| 		| 2000	| Mitchell	| CPS2		| 					| mpne.03c| src/burn/drv/capcom/d_cps2.cpp|
+| mpangu	|  	| Mighty! Pang (001010 USA)				| mpang		| 2000	| Mitchell	| CPS2		| 					| mpnu.03| src/burn/drv/capcom/d_cps2.cpp|
+| mpangjd	|  	| Mighty! Pang (001011 Japan Phoenix Edition)		| mpang		| 2000	| bootleg	| CPS2		| 					| mpnj-pnx.03| src/burn/drv/capcom/d_cps2.cpp|
+| mpangj	|  	| Mighty! Pang (001011 Japan)				| mpang		| 2000	| Mitchell	| CPS2		| 					| mpnj.03a| src/burn/drv/capcom/d_cps2.cpp|
+| mbomberj	|  	| Muscle Bomber - the body explosion (930713 Japan)	| slammast	| 1993	| Capcom	| CPS1		| 					| mbj_23e.8f| src/burn/drv/capcom/d_cps1.cpp|
+| mbombdje	| X	| Muscle Bomber Duo - heat up warriors (931206 Japan E)	| mbombrd	| 1993	| Capcom	| CPS1		| 					| mbd_26.bin| src/burn/drv/capcom/d_cps1.cpp|
+| mbombrdj	|  	| Muscle Bomber Duo - heat up warriors (931206 Japan)	| mbombrd	| 1993	| Capcom	| CPS1		| 					| mbdj_26.11e| src/burn/drv/capcom/d_cps1.cpp|
+| mbombrda	| X	| Muscle Bomber Duo - ultimate team battle (931206 Asia)| mbombrd	| 1993	| Capcom	| CPS1		| 					| mbd_26.bin| src/burn/drv/capcom/d_cps1.cpp|
+| mbombrdh	| X	| Muscle Bomber Duo - ultimate team battle (931206 Hispanic)| mbombrd	| 1993	| Capcom	| CPS1		| 					| mbd_26.bin| src/burn/drv/capcom/d_cps1.cpp|
+| mbombrdu	| X	| Muscle Bomber Duo - ultimate team battle (931206 USA)	| mbombrd	| 1993	| Capcom	| CPS1		| 					| mbd_26.bin| src/burn/drv/capcom/d_cps1.cpp|
+| mbombrd	|  	| Muscle Bomber Duo - ultimate team battle (931206 World)| 		| 1993	| Capcom	| CPS1		| 					| mbde_26.11e| src/burn/drv/capcom/d_cps1.cpp|
+| nemor1	|  	| Nemo (90 11 09 etc)					| nemo		| 1990	| Capcom	| CPS1		| 					| nme_30.11f| src/burn/drv/capcom/d_cps1.cpp|
+| nemoj		|  	| Nemo (90 11 20 Japan)					| nemo		| 1990	| Capcom	| CPS1		| 					| nmj_36a.12f| src/burn/drv/capcom/d_cps1.cpp|
+| nemo		|  	| Nemo (90 11 30 etc)					| 		| 1990	| Capcom	| CPS1		| 					| nme_30a.11f| src/burn/drv/capcom/d_cps1.cpp|
+| nwarra	|  	| Night Warriors - darkstalkers' revenge (950302 Asia)	| nwarr		| 1995	| Capcom	| CPS2		| 					| vpha.03b| src/burn/drv/capcom/d_cps2.cpp|
+| nwarr		|  	| Night Warriors - darkstalkers' revenge (950316 Euro)	| 		| 1995	| Capcom	| CPS2		| 					| vphe.03f| src/burn/drv/capcom/d_cps2.cpp|
+| nwarrb	|  	| Night Warriors - darkstalkers' revenge (950403 Brazil)| nwarr		| 1995	| Capcom	| CPS2		| 					| vphb.03d| src/burn/drv/capcom/d_cps2.cpp|
+| nwarrh	|  	| Night Warriors - darkstalkers' revenge (950403 Hispanic)| nwarr		| 1995	| Capcom	| CPS2		| 					| vphh.03d| src/burn/drv/capcom/d_cps2.cpp|
+| nwarrud	|  	| Night Warriors - darkstalkers' revenge (950406 USA Phoenix Edition)| nwarr	| 1995	| bootleg	| CPS2		| 					| vphud.03f| src/burn/drv/capcom/d_cps2.cpp|
+| nwarru	|  	| Night Warriors - darkstalkers' revenge (950406 USA)	| nwarr		| 1995	| Capcom	| CPS2		| 					| vphu.03f| src/burn/drv/capcom/d_cps2.cpp|
+| pang3r1	|  	| Pang! 3 (950511 Euro)					| pang3		| 1995	| Mitchell	| CPS1		| 					| pa3e_17.11l| src/burn/drv/capcom/d_cps1.cpp|
+| pang3r1a	|  	| Pang! 3 (950511 Euro, alt)				| pang3		| 1995	| Mitchell	| CPS1		| 					| d.t.11l| src/burn/drv/capcom/d_cps1.cpp|
+| pang3		|  	| Pang! 3 (950601 Euro)					| 		| 1995	| Mitchell	| CPS1		| 					| pa3e_17a.11l| src/burn/drv/capcom/d_cps1.cpp|
+| pang3b	|  	| Pang! 3 (bootleg set 1, 950511 Euro)			| pang3		| 1995	| Mitchell	| CPS1		| 					| pa3w_17.11l| src/burn/drv/capcom/d_cps1.cpp|
+| pang3b2	|   NW	| Pang! 3 (bootleg set 2, 950601 Euro)			| pang3		| 1995	| Mitchell	| CPS1		| 					| 16.u70| src/burn/drv/capcom/d_cps1.cpp|
+| pang3b3	|  	| Pang! 3 (bootleg set 3, 950511 Euro)			| pang3		| 1995	| Mitchell	| CPS1		| 					| u11l1_17.bin| src/burn/drv/capcom/d_cps1.cpp|
+| pang3b4	|  	| Pang! 3 (bootleg set 4, 950511 Euro)			| pang3		| 1995	| Mitchell	| CPS1		| 					| pa3_17bl.11l| src/burn/drv/capcom/d_cps1.cpp|
+| pang3b5	|  	| Pang! 3 (bootleg set 5, 950601 Euro)			| pang3		| 1995	| Mitchell	| CPS1		| 					| 17.11l| src/burn/drv/capcom/d_cps1.cpp|
+| pang3j	|  	| Pang! 3: Kaitou Tachi no Karei na Gogo (950511 Japan)	| pang3		| 1995	| Mitchell	| CPS1		| 					| pa3j_17.11l| src/burn/drv/capcom/d_cps1.cpp|
+| pnickj	|  	| Pnickies (940608 Japan)				| 		| 1994	| Compile (Capco| CPS1		| 					| pnij_36.12f| src/burn/drv/capcom/d_cps1.cpp|
+| pnicku	| X	| Pnickies (940608 USA)					| pnickj	| 1994	| Compile (Capco| CPS1		| 					| pnij36.bin| src/burn/drv/capcom/d_cps1.cpp|
+| pfghtj	|  	| Pocket Fighter (970904 Japan)				| sgemf		| 1997	| Capcom	| CPS2		| 					| pcfj.03| src/burn/drv/capcom/d_cps2.cpp|
+| pokonyan	|  	| Pokonyan (Japan 940322)				| 		| 1994	| Capcom	| CPS1		| 					| xmqq-12f.bin| src/burn/drv/capcom/d_cps1.cpp|
+| pgearr1	|  	| Powered Gear - strategic variant armor equipment (940916 Japan)| armwar| 1994	| Capcom	| CPS2		| 					| pwgj.03| src/burn/drv/capcom/d_cps2.cpp|
+| pgear		|  	| Powered Gear - strategic variant armor equipment (941024 Japan)| armwar| 1994	| Capcom	| CPS2		| 					| pwgj.03a| src/burn/drv/capcom/d_cps2.cpp|
+| progeara	|  	| Progear (010117 Asia)					| progear	| 2001	| Capcom / Cave	| CPS2		| 					| pgaa.03| src/burn/drv/capcom/d_cps2.cpp|
+| progear	|  	| Progear (010117 USA)					| 		| 2001	| Capcom / Cave	| CPS2		| 					| pgau.03| src/burn/drv/capcom/d_cps2.cpp|
+| progearjd	|  	| Progear No Arashi (010117 Japan Phoenix Edition)	| progear	| 2001	| bootleg	| CPS2		| 					| pgaj_d.03| src/burn/drv/capcom/d_cps2.cpp|
+| progearj	|  	| Progear No Arashi (010117 Japan)			| progear	| 2001	| Capcom / Cave	| CPS2		| 					| pgaj.03| src/burn/drv/capcom/d_cps2.cpp|
+| progearjbl	|  	| Progear No Arashi (010117 Japan, decrypted set)	| progear	| 2001	| bootleg	| CPS2		| 					| pgaj_bl.03| src/burn/drv/capcom/d_cps2.cpp|
+| progearud	|  	| Progear(010117 USA Phoenix Edition)			| progear	| 2001	| bootleg	| CPS2		| 					| pgau_d.03| src/burn/drv/capcom/d_cps2.cpp|
+| pzloop2jr1	|  	| Puzz Loop 2 (010205 Japan)				| pzloop2	| 2001	| Mitchell, dist| CPS2		| 					| pl2j.03a| src/burn/drv/capcom/d_cps2.cpp|
+| pzloop2jd	|  	| Puzz Loop 2 (010226 Japan Phoenix Edition)		| pzloop2	| 2001	| bootleg	| CPS2		| 					| pl2j_d.03a| src/burn/drv/capcom/d_cps2.cpp|
+| pzloop2j	|  	| Puzz Loop 2 (010226 Japan)				| pzloop2	| 2001	| Mitchell, dist| CPS2		| 					| pl2j.03c| src/burn/drv/capcom/d_cps2.cpp|
+| pzloop2	|  	| Puzz Loop 2 (010302 Euro)				| 		| 2001	| Mitchell, dist| CPS2		| 					| pl2e.03| src/burn/drv/capcom/d_cps2.cpp|
+| qadjr		|  	| Quiz & Dragons (940921 Japan Resale Ver.)		| qad		| 1992	| Capcom	| CPS1		| 					| qad_23a.8f| src/burn/drv/capcom/d_cps1.cpp|
+| qad		|  	| Quiz & Dragons (capcom quiz game 920701 USA)		| 		| 1992	| Capcom	| CPS1		| 					| qdu_36a.12f| src/burn/drv/capcom/d_cps1.cpp|
+| qndream	|  	| Quiz Nanairo Dreams - nijiirochou no kiseki (nanairo dreams 960826 Japan)| | 1996	| Capcom	| CPS2		| 					| tqzj.03a| src/burn/drv/capcom/d_cps2.cpp|
+| qtono2j	|  	| Quiz Tonosama no Yabou 2 Zenkoku-ban (tonosama 2 950123 Japan)| 	| 1995	| Capcom	| CPS1		| 					| tn2j_30.11e| src/burn/drv/capcom/d_cps1.cpp|
+| redearthr1	|  	| Red Earth / War-Zard (Euro 961023)			| redearth	| 1996	| Capcom	| CPS-3		| 					| redearth_euro.29f400.u2| src/burn/drv/cps3/d_cps3.cpp|
+| redearth	|  	| Red Earth / War-Zard (Euro 961121)			| 		| 1996	| Capcom	| CPS-3		| 					| redearth_euro.29f400.u2| src/burn/drv/cps3/d_cps3.cpp|
+| ringdesta	|  	| Ring of Destruction - slammasters II (940831 Asia)	| ringdest	| 1994	| Capcom	| CPS2		| 					| smba.03a| src/burn/drv/capcom/d_cps2.cpp|
+| ringdestb	|  	| Ring of Destruction - slammasters II (940902 Brazil)	| ringdest	| 1994	| Capcom	| CPS2		| 					| smbb.03b| src/burn/drv/capcom/d_cps2.cpp|
+| ringdstd	|  	| Ring of Destruction - slammasters II (940902 Euro Phoenix Edition)| ringdest| 1994	| bootleg	| CPS2		| 					| smbed.03b| src/burn/drv/capcom/d_cps2.cpp|
+| ringdest	|  	| Ring of Destruction - slammasters II (940902 Euro)	| 		| 1994	| Capcom	| CPS2		| 					| smbe.03b| src/burn/drv/capcom/d_cps2.cpp|
+| ringdesth	|  	| Ring of Destruction - slammasters II (940902 Hispanic)| ringdest	| 1994	| Capcom	| CPS2		| 					| smbh.03b| src/burn/drv/capcom/d_cps2.cpp|
+| rockmanj	|  	| Rockman - the power battle (950922 Japan)		| megaman	| 1995	| Capcom	| CPS1		| 					| rcm_23a.8f| src/burn/drv/capcom/d_cps1.cpp|
+| rockman2j	|  	| Rockman 2 - the power fighters (960708 Japan)		| megaman2	| 1996	| Capcom	| CPS2		| 					| rm2j.03| src/burn/drv/capcom/d_cps2.cpp|
+| rmancp2j	|  	| Rockman: The Power Battle (950922 Japan)		| megaman	| 1999	| Capcom	| CPS2		| 					| rcmj.03a| src/burn/drv/capcom/d_cps2.cpp|
+| wofa		|  	| Sangokushi II (921005 Asia)				| wof		| 1992	| Capcom	| CPS1 / QSound	| 					| tk2a_23c.8f| src/burn/drv/capcom/d_cps1.cpp|
+| wofabl	|  	| Sangokushi II (bootleg)				| wof		| 1992	| hack		| CPS1		| 					| 5.prg.040| src/burn/drv/capcom/d_cps1.cpp|
+| wofah		|  	| Sangokushi II (hack set 1, 921005 Asia)		| wof		| 1992	| hack		| CPS1 / QSound	| 					| htk2a_23b.rom| src/burn/drv/capcom/d_cps1.cpp|
+| wofaha	|  	| Sangokushi II (hack set 2, 921005 Asia)		| wof		| 1992	| hack		| CPS1 / QSound	| 					| htk2ah_23b.rom| src/burn/drv/capcom/d_cps1.cpp|
+| wofahb	|  	| Sangokushi II (hack set 3, 921005 Asia)		| wof		| 1992	| hack		| CPS1 / QSound	| 					| tk2ah_23b.rom| src/burn/drv/capcom/d_cps1.cpp|
+| wofhfh	|  	| Sangokushi II: Huo Fenghuang (Chinese bootleg, 921005 Asia)| wof		| 1992	| bootleg	| CPS1		| 					| 23| src/burn/drv/capcom/d_cps1.cpp|
+| wof3js	|  	| Sangokushi II: San Jian Sheng (Chinese bootleg set 1, 921005 Asia)| wof	| 1992	| bootleg	| CPS1		| 					| 3js_23.rom| src/burn/drv/capcom/d_cps1.cpp|
+| wof3jsa	|  	| Sangokushi II: San Jian Sheng (Chinese bootleg set 2, 921005 Asia)| wof	| 1992	| bootleg	| CPS1		| 					| cx2.040| src/burn/drv/capcom/d_cps1.cpp|
+| wof3sj	|  	| Sangokushi II: San Sheng Jian (Chinese bootleg set 1, 921005 Asia)| wof	| 1992	| bootleg	| CPS1		| 					| k6b.040| src/burn/drv/capcom/d_cps1.cpp|
+| wof3sja	|  	| Sangokushi II: San Sheng Jian (Chinese bootleg set 2, 921005 Asia)| wof	| 1992	| bootleg	| CPS1		| 					| 3js.800| src/burn/drv/capcom/d_cps1.cpp|
+| wofh		|  	| Sangokushi II: Sanguo Yingxiong Zhuan (Chinese bootleg set 1, 921005 Asia)| wof| 1992	| bootleg	| CPS1		| 					| sgyx.800| src/burn/drv/capcom/d_cps1.cpp|
+| wofha		|  	| Sangokushi II: Sanguo Yingxiong Zhuan (Chinese bootleg set 2, 921005 Asia)| wof| 1992	| bootleg	| CPS1		| 					| fg-c.040| src/burn/drv/capcom/d_cps1.cpp|
+| sgyxz		|  	| Sangokushi II: Sanguo Yingxiong Zhuan (Chinese bootleg set 3, 921005 Asia)| wof| 1992	| bootleg	| CPS1		| 					| sgyxz_prg2.bin| src/burn/drv/capcom/d_cps1.cpp|
+| wofsj		|  	| Sangokushi II: Sheng Jian Sanguo (Chinese bootleg set 1, 921005 Asia)| wof	| 1992	| bootleg	| CPS1		| Imperfect Graphics			| c-c47b.040| src/burn/drv/capcom/d_cps1.cpp|
+| wofsja	|  	| Sangokushi II: Sheng Jian Sanguo (Chinese bootleg set 2, 921005 Asia)| wof	| 1992	| bootleg	| CPS1		| Imperfect Graphics			| one.800| src/burn/drv/capcom/d_cps1.cpp|
+| wofsjb	|  	| Sangokushi II: Sheng Jian Sanguo (Chinese bootleg set 3, 921005 Asia)| wof	| 1992	| bootleg	| CPS1		| No sound				| c-d140.040| src/burn/drv/capcom/d_cps1.cpp|
+| wofsjc	|  	| Sangokushi II: Sheng Jian Sanguo (Chinese bootleg set 4, 921005 Asia)| wof	| 1992	| bootleg	| CPS1		| Imperfect graphics			| 2223.bin| src/burn/drv/capcom/d_cps1.cpp|
+| wofchdx	|  	| Sangokushi III Gaiden: Kakou-On's Revenge DX (hack)	| wofch		| 2018	| Hack		| CPS Changer	| 					| tk2(ch)dx_23.8f| src/burn/drv/capcom/d_cps1.cpp|
+| slampic	|  	| Saturday Night Slam Masters (bootleg with PIC16C57, set 1, 930713 etc)| slammast| 1993| bootleg	| CPS1		| No Sound				| 5.bin| src/burn/drv/capcom/d_cps1.cpp|
+| slampic2	|   NW	| Saturday Night Slam Masters (bootleg with PIC16C57, set 2, 930713 etc)| slammast| 1993| bootleg	| CPS1		| No Sound				| 4.bin| src/burn/drv/capcom/d_cps1.cpp|
+| slammasa	| X	| Saturday Night Slam Masters (Slam Masters 930301 Asia)| slammast	| 1993	| Capcom	| CPS1		| 					| mba_23e.rom| src/burn/drv/capcom/d_cps1.cpp|
+| slammash	| X	| Saturday Night Slam Masters (Slam Masters 930713 Hispanic)| slammast	| 1993	| Capcom	| CPS1		| 					| mbh_23e.rom| src/burn/drv/capcom/d_cps1.cpp|
+| slammastu	|  	| Saturday Night Slam Masters (slam masters 930713 USA)	| slammast	| 1993	| Capcom	| CPS1		| 					| mbu_23e.8f| src/burn/drv/capcom/d_cps1.cpp|
+| slammast	|  	| Saturday Night Slam Masters (Slam Masters 930713 World)| 		| 1993	| Capcom	| CPS1		| 					| mbe_23e.8f| src/burn/drv/capcom/d_cps1.cpp|
+| mercsj	|  	| Senjo no Ookami II (Ookami 2 900302 Japan)		| mercs		| 1990	| Capcom	| CPS1		| 					| so2_36.12f| src/burn/drv/capcom/d_cps1.cpp|
+| sfach		| X	| Street Fighter Alpha (CPS Changer, 950727 Publicity US)| sfzch		| 1995	| Capcom	| CPS Changer	| 					| sfach23| src/burn/drv/capcom/d_cps1.cpp|
+| sfar3		|  	| Street Fighter Alpha - warriors' dreams (950605 Euro)	| sfa		| 1995	| Capcom	| CPS2		| 					| sfze.03a| src/burn/drv/capcom/d_cps2.cpp|
+| sfar2		|  	| Street Fighter Alpha - warriors' dreams (950627 Euro)	| sfa		| 1995	| Capcom	| CPS2		| 					| sfze.03b| src/burn/drv/capcom/d_cps2.cpp|
+| sfau		|  	| Street Fighter Alpha - warriors' dreams (950627 USA)	| sfa		| 1995	| Capcom	| CPS2		| 					| sfzu.03a| src/burn/drv/capcom/d_cps2.cpp|
+| sfar1		|  	| Street Fighter Alpha - warriors' dreams (950718 Euro)	| sfa		| 1995	| Capcom	| CPS2		| 					| sfze.03c| src/burn/drv/capcom/d_cps2.cpp|
+| sfad		|  	| Street Fighter Alpha - warriors' dreams (950727 Euro Phoenix Edition)| sfa	| 1995	| bootleg	| CPS2		| 					| sfzed.03d| src/burn/drv/capcom/d_cps2.cpp|
+| sfa		|  	| Street Fighter Alpha - warriors' dreams (950727 Euro)	| 		| 1995	| Capcom	| CPS2		| 					| sfze.03d| src/burn/drv/capcom/d_cps2.cpp|
+| sfaud		|  	| Street Fighter Alpha - warriors' dreams (950727 USA Phoenix Edition)| sfa	| 1995	| bootleg	| CPS2		| 					| sfzud.03a| src/burn/drv/capcom/d_cps2.cpp|
+| sfa2		|  	| Street Fighter Alpha 2 (960229 Euro)			| 		| 1996	| Capcom	| CPS2		| 					| sz2e.03| src/burn/drv/capcom/d_cps2.cpp|
+| sfa2ur1	|  	| Street Fighter Alpha 2 (960306 USA)			| sfa2		| 1996	| Capcom	| CPS2		| 					| sz2u.03| src/burn/drv/capcom/d_cps2.cpp|
+| sfa2u		|  	| Street Fighter Alpha 2 (960430 USA)			| sfa2		| 1996	| Capcom	| CPS2		| 					| sz2u.03a| src/burn/drv/capcom/d_cps2.cpp|
+| sfa2uhc	|  	| Street Fighter Alpha 2 - Unlock Hidden Characters (Hack By Yumeji)| sfa2	| 2009	| Hack		| CPS2		| 					| sz2uhc.03| src/burn/drv/capcom/d_cps2.cpp|
+| sfa3us	|  	| Street Fighter Alpha 3 (980616 USA, SAMPLE Version)	| sfa3		| 1998	| Capcom	| CPS2		| 					| sz3-usam_03.6a| src/burn/drv/capcom/d_cps2.cpp|
+| sfa3b		|  	| Street Fighter Alpha 3 (980629 Brazil)		| sfa3		| 1998	| Capcom	| CPS2		| 					| sz3b.03| src/burn/drv/capcom/d_cps2.cpp|
+| sfa3hr1	|  	| Street Fighter Alpha 3 (980629 Hispanic)		| sfa3		| 1998	| Capcom	| CPS2		| 					| sz3h.03| src/burn/drv/capcom/d_cps2.cpp|
+| sfa3ur1	|  	| Street Fighter Alpha 3 (980629 USA)			| sfa3		| 1998	| Capcom	| CPS2		| 					| sz3u.03| src/burn/drv/capcom/d_cps2.cpp|
+| sfa3		|  	| Street Fighter Alpha 3 (980904 Euro)			| 		| 1998	| Capcom	| CPS2		| 					| sz3e.03c| src/burn/drv/capcom/d_cps2.cpp|
+| sfa3h		|  	| Street Fighter Alpha 3 (980904 Hispanic)		| sfa3		| 1998	| Capcom	| CPS2		| 					| sz3h.03c| src/burn/drv/capcom/d_cps2.cpp|
+| sfa3ud	|  	| Street Fighter Alpha 3 (980904 USA Phoenix Edition)	| sfa3		| 1998	| bootleg	| CPS2		| 					| sz3ud.03c| src/burn/drv/capcom/d_cps2.cpp|
+| sfa3u		|  	| Street Fighter Alpha 3 (980904 USA)			| sfa3		| 1998	| Capcom	| CPS2		| 					| sz3u.03c| src/burn/drv/capcom/d_cps2.cpp|
+| sfa3xl	|  	| Street Fighter Alpha 3 - Xiang Long Edition (Hack by pipi899, Ver.2009-05-10)| sfa3| 2009	| Hack		| CPS2		| 					| sz3e-xl.03c| src/burn/drv/capcom/d_cps2.cpp|
+| sf2amf	|  	| Street Fighter II - Champion Edition (Alpha Magic-F bootleg set 1, 920313 etc)| sf2ce| 1992| bootleg	| CPS1		| 					| 5.amf| src/burn/drv/capcom/d_cps1.cpp|
+| sf2amf2	|  	| Street Fighter II - Champion Edition (Alpha Magic-F bootleg set 2, 920313 etc)| sf2ce| 1992| bootleg	| CPS1		| 					| m5m27c401.u222| src/burn/drv/capcom/d_cps1.cpp|
+| sf2amf3	|  	| Street Fighter II - Champion Edition (Alpha Magic-F bootleg set 3, 920313 etc)| sf2ce| 1992| bootleg	| CPS1		| 					| u222-2i| src/burn/drv/capcom/d_cps1.cpp|
+| sf2amf4	|  	| Street Fighter II - Champion Edition (Alpha Magic-F bootleg set 4, 920313 etc)| sf2ce| 1992| bootleg	| CPS1		| 					| sfu9-1.040| src/burn/drv/capcom/d_cps1.cpp|
+| sf2amf5	|  	| Street Fighter II - Champion Edition (Alpha Magic-F bootleg set 5, 920313 etc)| sf2ce| 1992| bootleg	| CPS1		| 					| stf2th-7.bin| src/burn/drv/capcom/d_cps1.cpp|
+| sf2amf6	|  	| Street Fighter II - Champion Edition (Alpha Magic-F bootleg set 6, 920313 etc)| sf2ce| 1992| bootleg	| CPS1		| 					| t-2.u52| src/burn/drv/capcom/d_cps1.cpp|
+| sf2amf7	|  	| Street Fighter II - Champion Edition (Alpha Magic-F bootleg set 7, 920313 etc)| sf2ce| 1992| bootleg	| CPS1		| 					| 2.u222| src/burn/drv/capcom/d_cps1.cpp|
+| sf2amf8	|  	| Street Fighter II - Champion Edition (Alpha Magic-F bootleg set 8, 920313 etc)| sf2ce| 1992| bootleg	| CPS1		| 					| u222| src/burn/drv/capcom/d_cps1.cpp|
+| sf2em		|  	| Street Fighter II - The World Warrior (910129 World)	| sf2		| 1991	| Capcom	| CPS1		| 					| sf2e_30.11e| src/burn/drv/capcom/d_cps1.cpp|
+| sf2ea		|  	| Street Fighter II - The World Warrior (910204 World)	| sf2		| 1991	| Capcom	| CPS1		| 					| sf2e_30a.11e| src/burn/drv/capcom/d_cps1.cpp|
+| sf2en		|  	| Street Fighter II - The World Warrior (910204 World, conversion)| sf2	| 1991	| Capcom	| CPS1		| 					| epr-b-05.12f| src/burn/drv/capcom/d_cps1.cpp|
+| sf2ua		|  	| Street Fighter II - The World Warrior (910206 USA)	| sf2		| 1991	| Capcom	| CPS1		| 					| sf2u_30a.11e| src/burn/drv/capcom/d_cps1.cpp|
+| sf2ja		|  	| Street Fighter II - The World Warrior (910214 Japan)	| sf2		| 1991	| Capcom	| CPS1		| 					| sf2j_30a.11e| src/burn/drv/capcom/d_cps1.cpp|
+| sf2ub		|  	| Street Fighter II - The World Warrior (910214 USA)	| sf2		| 1991	| Capcom	| CPS1		| 					| sf2u_30b.11e| src/burn/drv/capcom/d_cps1.cpp|
+| sf2eb		|  	| Street Fighter II - The World Warrior (910214 World)	| sf2		| 1991	| Capcom	| CPS1		| 					| sf2e_30b.11e| src/burn/drv/capcom/d_cps1.cpp|
+| sf2ue		|  	| Street Fighter II - The World Warrior (910228 USA)	| sf2		| 1991	| Capcom	| CPS1		| 					| sf2u_30e.11e| src/burn/drv/capcom/d_cps1.cpp|
+| sf2ee		|  	| Street Fighter II - The World Warrior (910228 World)	| sf2		| 1991	| Capcom	| CPS1		| 					| sf2e_30e.11e| src/burn/drv/capcom/d_cps1.cpp|
+| sf2jc		|  	| Street Fighter II - The World Warrior (910306 Japan)	| sf2		| 1991	| Capcom	| CPS1		| 					| sf2j_30c.11e| src/burn/drv/capcom/d_cps1.cpp|
+| sf2uc		|  	| Street Fighter II - The World Warrior (910306 USA)	| sf2		| 1991	| Capcom	| CPS1		| 					| sf2u_30c.11e| src/burn/drv/capcom/d_cps1.cpp|
+| sf2ud		|  	| Street Fighter II - The World Warrior (910318 USA)	| sf2		| 1991	| Capcom	| CPS1		| 					| sf2u_30d.11e| src/burn/drv/capcom/d_cps1.cpp|
+| sf2ed		|  	| Street Fighter II - The World Warrior (910318 World)	| sf2		| 1991	| Capcom	| CPS1		| 					| sf2e_30d.11e| src/burn/drv/capcom/d_cps1.cpp|
+| sf2jf		|  	| Street Fighter II - The World Warrior (910411 Japan)	| sf2		| 1991	| Capcom	| CPS1		| 					| sf2j_30f.11e| src/burn/drv/capcom/d_cps1.cpp|
+| sf2uf		|  	| Street Fighter II - The World Warrior (910411 USA)	| sf2		| 1991	| Capcom	| CPS1		| 					| sf2u_30f.11e| src/burn/drv/capcom/d_cps1.cpp|
+| sf2ef		|  	| Street Fighter II - The World Warrior (910411 World)	| sf2		| 1991	| Capcom	| CPS1		| 					| sf2e_30f.11e| src/burn/drv/capcom/d_cps1.cpp|
+| sf2jh		|  	| Street Fighter II - The World Warrior (910522 Japan)	| sf2		| 1991	| Capcom	| CPS1		| 					| sf2j_30h.11e| src/burn/drv/capcom/d_cps1.cpp|
+| sf2ug		|  	| Street Fighter II - The World Warrior (910522 USA, rev G)| sf2		| 1991	| Capcom	| CPS1		| 					| sf2u_30g.11e| src/burn/drv/capcom/d_cps1.cpp|
+| sf2uh		|  	| Street Fighter II - The World Warrior (910522 USA, rev H)| sf2		| 1991	| Capcom	| CPS1		| 					| sf2u_30h.11e| src/burn/drv/capcom/d_cps1.cpp|
+| sf2ui		|  	| Street Fighter II - The World Warrior (910522 USA, rev I)| sf2		| 1991	| Capcom	| CPS1		| 					| sf2u_30i.11e| src/burn/drv/capcom/d_cps1.cpp|
+| sf2		|  	| Street Fighter II - The World Warrior (910522 World)	| 		| 1991	| Capcom	| CPS1		| 					| sf2e_30g.11e| src/burn/drv/capcom/d_cps1.cpp|
+| sf2uk		|  	| Street Fighter II - The World Warrior (911101 USA)	| sf2		| 1991	| Capcom	| CPS1		| 					| sf2u_30k.11e| src/burn/drv/capcom/d_cps1.cpp|
+| sf2j		|  	| Street Fighter II - The World Warrior (911210 Japan, CPS-B-13)| sf2	| 1991	| Capcom	| CPS1		| 					| sf2j30.bin| src/burn/drv/capcom/d_cps1.cpp|
+| sf2j17	|  	| Street Fighter II - The World Warrior (911210 Japan, CPS-B-17)| sf2	| 1991	| Capcom	| CPS1		| 					| sf2_30l.11e| src/burn/drv/capcom/d_cps1.cpp|
+| sf2jla	|  	| Street Fighter II - The World Warrior (911210 Japan, rev L)| sf2		| 1991	| Capcom	| CPS1		| 					| sf-2_30l.bin| src/burn/drv/capcom/d_cps1.cpp|
+| sf2jl		|  	| Street Fighter II - The World Warrior (920312 Japan)	| sf2		| 1991	| Capcom	| CPS1		| 					| sf-2_30l.11e| src/burn/drv/capcom/d_cps1.cpp|
+| sf2um		|  	| Street Fighter II - The World Warrior (920312 USA)	| sf2		| 1991	| Capcom	| CPS1		| 					| sf-2u_30m.11e| src/burn/drv/capcom/d_cps1.cpp|
+| sf2rules	|  	| Street Fighter II - The World Warrior (bootleg with rules screen, 910214 etc)| sf2| 1991	| Capcom	| CPS1		| 					| prh2.u222| src/burn/drv/capcom/d_cps1.cpp|
+| sf2b		|  	| Street Fighter II - The World Warrior (bootleg, 910214 etc, set 1  (with YM2151 + 2xMSM5205))| sf2| 1992| bootleg| CPS1		| row scroll issues			| pf1-2-sg076.bin| src/burn/drv/capcom/d_cps1.cpp|
+| sf2b2		|  	| Street Fighter II - The World Warrior (bootleg, 910214 etc, set 2)| sf2	| 1992	| bootleg	| CPS1		| 					| 2.bin| src/burn/drv/capcom/d_cps1.cpp|
+| sf2b3		|  	| Street Fighter II - The World Warrior (bootleg, 910214 etc, set 3)| sf2	| 1991	| Capcom	| CPS1		| 					| sf2e_30b.11e| src/burn/drv/capcom/d_cps1.cpp|
+| sf2b4		|  	| Street Fighter II - The World Warrior (bootleg, 910214 etc, set 4)| sf2	| 1991	| Capcom	| CPS1		| 					| sf2e_30b.11e| src/burn/drv/capcom/d_cps1.cpp|
+| sf2qp2	|  	| Street Fighter II - The World Warrior (Quicken bootleg, 910522 USA)| sf2	| 1991	| bootleg	| CPS1		| 					| qkn.33| src/burn/drv/capcom/d_cps1.cpp|
+| sf2qp1	|  	| Street Fighter II - The World Warrior (Quicken Pt-I bootleg, 910214 USA)| sf2| 1991	| bootleg	| CPS1		| 					| stfii-qkn-cps-17.33| src/burn/drv/capcom/d_cps1.cpp|
+| sf2rk		|  	| Street Fighter II - The World Warrior (RK bootleg, 910214 etc)| sf2	| 1991	| Capcom	| CPS1		| 					| w6.u222| src/burn/drv/capcom/d_cps1.cpp|
+| sf2stt	|  	| Street Fighter II - The World Warrior (STT, TAB Austria bootleg, 910214 etc)| sf2| 1992	| bootleg	| CPS1		| 					| prg part 1.stt| src/burn/drv/capcom/d_cps1.cpp|
+| sf2ebbl2	|  	| Street Fighter II - The World Warrior (TAB Austria bootleg set 2, 910214 etc)| sf2| 1992	| bootleg	| CPS1		| 					| 27c020.7| src/burn/drv/capcom/d_cps1.cpp|
+| sf2ebbl3	|  	| Street Fighter II - The World Warrior (TAB Austria bootleg set 3, 910214 etc)| sf2| 1992	| bootleg	| CPS1		| 					| ce91e-b.bin| src/burn/drv/capcom/d_cps1.cpp|
+| sf2ebbl	|  	| Street Fighter II - The World Warrior (TAB Austria bootleg, 910214 etc)| sf2| 1992	| bootleg	| CPS1		| 					| 12.bin| src/burn/drv/capcom/d_cps1.cpp|
+| sf2thndr	|  	| Street Fighter II - The World Warrior (Thunder Edition bootleg, 910214 etc, set 1)| sf2| 1991| bootleg	| CPS1		| 					| 17_30.11e| src/burn/drv/capcom/d_cps1.cpp|
+| sf2thndr2	|  	| Street Fighter II - The World Warrior (Thunder Edition bootleg, 910214 etc, set 2)| sf2| 1991| bootleg	| CPS1		| 					| 31.bin| src/burn/drv/capcom/d_cps1.cpp|
+| sf2ly		|  	| Street Fighter II - The World Warrior (with bosses like Champion Edition, 910522 Japan, CPS-B-11)| sf2| 1991| Capcom| CPS1	| 					| 23| src/burn/drv/capcom/d_cps1.cpp|
+| sf2mix	|  	| Street Fighter II Mix (v0.99a)			| sf2ce		| 2020	| Hack		| CPS1		| 					| smxe_23b.8f| src/burn/drv/capcom/d_cps1.cpp|
+| sf2cebltw	|  	| Street Fighter II' - Champion Edition (920313 'Taiwan' bootleg with PAL)| sf2ce| 1992	| bootleg	| CPS1		| 					| 27.12e| src/burn/drv/capcom/d_cps1.cpp|
+| sf2ceeabl	|  	| Street Fighter II' - Champion Edition (920313 etc bootleg set 1)| sf2ce	| 1992	| bootleg	| CPS1		| 					| joe-922| src/burn/drv/capcom/d_cps1.cpp|
+| sf2ceeab2	|  	| Street Fighter II' - Champion Edition (920313 etc bootleg set 2)| sf2ce	| 1992	| bootleg	| CPS1		| 					| 222e| src/burn/drv/capcom/d_cps1.cpp|
+| sf2ceuabl	|  	| Street Fighter II' - Champion Edition (920313 USA bootleg set 1)| sf2ce	| 1992	| bootleg	| CPS1		| 					| u222chp| src/burn/drv/capcom/d_cps1.cpp|
+| sf2ceuab10	|  	| Street Fighter II' - Champion Edition (920313 USA bootleg set 10)| sf2ce	| 1992	| bootleg	| CPS1		| 					| sf2h14.7| src/burn/drv/capcom/d_cps1.cpp|
+| sf2ceuab11	|  	| Street Fighter II' - Champion Edition (920313 USA bootleg set 11)| sf2ce	| 1992	| bootleg	| CPS1		| Some graphic issues due to roms	| 7.bin| src/burn/drv/capcom/d_cps1.cpp|
+| sf2ceuab2	|  	| Street Fighter II' - Champion Edition (920313 USA bootleg set 2)| sf2ce	| 1992	| bootleg	| CPS1		| 					| k4-222| src/burn/drv/capcom/d_cps1.cpp|
+| sf2ceuab3	|  	| Street Fighter II' - Champion Edition (920313 USA bootleg set 3)| sf2ce	| 1992	| bootleg	| CPS1		| 					| yyc-2.2| src/burn/drv/capcom/d_cps1.cpp|
+| sf2ceuab4	|  	| Street Fighter II' - Champion Edition (920313 USA bootleg set 4)| sf2ce	| 1992	| bootleg	| CPS1		| 					| ms6.u196| src/burn/drv/capcom/d_cps1.cpp|
+| sf2ceuab5	|  	| Street Fighter II' - Champion Edition (920313 USA bootleg set 5)| sf2ce	| 1992	| bootleg	| CPS1		| 					| 7.bin| src/burn/drv/capcom/d_cps1.cpp|
+| sf2ceuab6	|  	| Street Fighter II' - Champion Edition (920313 USA bootleg set 6)| sf2ce	| 1992	| bootleg	| CPS1		| 					| s92u_23a.8f| src/burn/drv/capcom/d_cps1.cpp|
+| sf2ceuab7	|  	| Street Fighter II' - Champion Edition (920313 USA bootleg set 7)| sf2ce	| 1992	| bootleg	| CPS1		| 					| 1k.31.e13| src/burn/drv/capcom/d_cps1.cpp|
+| sf2ceuab8	|  	| Street Fighter II' - Champion Edition (920313 USA bootleg set 8)| sf2ce	| 1992	| bootleg	| CPS1		| Some graphic issues due to roms	| sf2h14.7| src/burn/drv/capcom/d_cps1.cpp|
+| sf2ceuab9	|  	| Street Fighter II' - Champion Edition (920313 USA bootleg set 9)| sf2ce	| 1992	| bootleg	| CPS1		| Some graphic issues due to roms	| sf2h14.7| src/burn/drv/capcom/d_cps1.cpp|
+| sf2cejabl	|  	| Street Fighter II' - Champion Edition (920322 Japan bootleg set 1)| sf2ce	| 1992	| bootleg	| CPS1		| 					| sfu7-1.040| src/burn/drv/capcom/d_cps1.cpp|
+| sf2cejab2	|  	| Street Fighter II' - Champion Edition (920322 Japan bootleg set 2)| sf2ce	| 1992	| bootleg	| CPS1		| 					| u7-1.040| src/burn/drv/capcom/d_cps1.cpp|
+| sf2ceucbl	|  	| Street Fighter II' - Champion Edition (920803 USA bootleg)| sf2ce		| 1992	| bootleg	| CPS1		| 					| s92u_23c.8f| src/burn/drv/capcom/d_cps1.cpp|
+| sf2accp2	|  	| Street Fighter II' - Champion Edition (Accelerator Pt.II bootleg, 920313 Testron)| sf2ce| 1992| bootleg	| CPS1		| 					| sf2ca-23.bin| src/burn/drv/capcom/d_cps1.cpp|
+| sf2acc	|  	| Street Fighter II' - Champion Edition (Accelerator! bootleg set 1, 920313 USA)| sf2ce| 1992| bootleg	| CPS1		| 					| sf2ca_23-c.bin| src/burn/drv/capcom/d_cps1.cpp|
+| sf2acca	|  	| Street Fighter II' - Champion Edition (Accelerator! bootleg set 2, 920310 Accelerator!)| sf2ce| 1992| bootleg| CPS1		| 					| 23-c.8f| src/burn/drv/capcom/d_cps1.cpp|
+| sf2cebr	| X	| Street Fighter II' - Champion Edition (bootleg, Brazil)| sf2ce		| 1992	| Capcom	| CPS1		| 					| sf2cebr.23| src/burn/drv/capcom/d_cps1.cpp|
+| sf2ceh	| X	| Street Fighter II' - Champion Edition (bootleg, Hispanic)| sf2ce		| 1992	| Capcom	| CPS1		| 					| sf2ceh.23| src/burn/drv/capcom/d_cps1.cpp|
+| sf2ceb2	|  	| Street Fighter II' - Champion Edition (bootleg, set 1)| sf2ce		| 1992	| bootleg	| CPS1		| 					| 3.ic172| src/burn/drv/capcom/d_cps1.cpp|
+| sf2ceb3	|  	| Street Fighter II' - Champion Edition (bootleg, set 2)| sf2ce		| 1992	| bootleg	| CPS1		| 					| 3.ic172| src/burn/drv/capcom/d_cps1.cpp|
+| sf2dkot2	|  	| Street Fighter II' - Champion Edition (Double K.O. Turbo II bootleg, 902140 USA)| sf2ce| 1992| bootleg	| CPS1		| 					| turboii.23| src/burn/drv/capcom/d_cps1.cpp|
+| sf2bhh	|  	| Street Fighter II' - Champion Edition (Hungh-Hsi bootleg, 920313 Taiwan)| sf2ce| 1992	| bootleg	| CPS1		| 					| 23| src/burn/drv/capcom/d_cps1.cpp|
+| sf2level	|  	| Street Fighter II' - Champion Edition (Level Select bootleg, 920322  USA)| sf2ce| 1992	| bootleg	| CPS1		| 					| rj313.u196.800| src/burn/drv/capcom/d_cps1.cpp|
+| sf2md		|  	| Street Fighter II' - Champion Edition (Magic Delta, bootleg, 920313 etc)| sf2ce| 1992	| bootleg	| CPS1		| 					| 27040.6| src/burn/drv/capcom/d_cps1.cpp|
+| sf2mega	|  	| Street Fighter II' - Champion Edition (Mega Co bootleg set 1, 920313 etc)| sf2ce| 1992	| Mega Co	| CPS1		| 					| ch222esp| src/burn/drv/capcom/d_cps1.cpp|
+| sf2mega2	|  	| Street Fighter II' - Champion Edition (Mega Co bootleg set 2, 920313 etc)| sf2ce| 1992	| Mega Co	| CPS1		| 					| sf3a-1.040| src/burn/drv/capcom/d_cps1.cpp|
+| sf2ceb4	|  	| Street Fighter II' - Champion Edition (Playmark bootleg, set 2)| sf2ce	| 1992	| bootleg (Playm| CPS1		| 					| 3.ic172| src/burn/drv/capcom/d_cps1.cpp|
+| sf2ceb5	|  	| Street Fighter II' - Champion Edition (Playmark bootleg, set 3)| sf2ce	| 1992	| bootleg (Playm| CPS1		| 					| 3.ic171| src/burn/drv/capcom/d_cps1.cpp|
+| sf2rb		|  	| Street Fighter II' - Champion Edition (Rainbow bootleg set 1, 920322 etc)| sf2ce| 1992	| bootleg	| CPS1		| 					| sf2d__23.rom| src/burn/drv/capcom/d_cps1.cpp|
+| sf2rb2	|  	| Street Fighter II' - Champion Edition (Rainbow bootleg set 2, 920322 etc)| sf2ce| 1992	| bootleg	| CPS1		| 					| 27.bin| src/burn/drv/capcom/d_cps1.cpp|
+| sf2rb3	|  	| Street Fighter II' - Champion Edition (Rainbow bootleg set 3, 920322 etc)| sf2ce| 1992	| bootleg	| CPS1		| 					| sf2_ce_rb.23| src/burn/drv/capcom/d_cps1.cpp|
+| sf2rb4	|  	| Street Fighter II' - Champion Edition (Rainbow bootleg set 4, 920322 Japan)| sf2ce| 1992	| bootleg	| CPS1		| 					| u222ne| src/burn/drv/capcom/d_cps1.cpp|
+| sf2rb5	|  	| Street Fighter II' - Champion Edition (Rainbow bootleg set 5, 920322 Japan)| sf2ce| 1992	| bootleg	| CPS1		| 					| sfu8-1.040| src/burn/drv/capcom/d_cps1.cpp|
+| sf2rb6	|  	| Street Fighter II' - Champion Edition (Rainbow bootleg set 6, 920313 etc)| sf2ce| 1992	| bootleg	| CPS1		| 					| cebl_23| src/burn/drv/capcom/d_cps1.cpp|
+| sf2re		|  	| Street Fighter II' - Champion Edition (RE, bootleg)	| sf2ce		| 1992	| bootleg	| CPS1		| imperfect graphics			| 4.u222| src/burn/drv/capcom/d_cps1.cpp|
+| sf2red	|  	| Street Fighter II' - Champion Edition (Red Wave bootleg set 1, 920313 etc)| sf2ce| 1992	| bootleg	| CPS1		| 					| sf2red.23| src/burn/drv/capcom/d_cps1.cpp|
+| sf2red2	|  	| Street Fighter II' - Champion Edition (Red Wave bootleg set 2, 920313 etc)| sf2ce| 1992	| bootleg	| CPS1		| 					| sf3d5-1040| src/burn/drv/capcom/d_cps1.cpp|
+| sf2redp2	|  	| Street Fighter II' - Champion Edition (Red Wave PtII bootleg, 920313 etc)| sf2ce| 1992	| bootleg	| CPS1		| 					| sf2red.23| src/burn/drv/capcom/d_cps1.cpp|
+| sf2sl73a	|  	| Street Fighter II' - Champion Edition (Sheng Long v 7.3a)| sf2ce		| 2013	| Drakon	| CPS1		| 					| sf2ced_23b.8f| src/burn/drv/capcom/d_cps1.cpp|
+| sf2cet	|  	| Street Fighter II' - Champion Edition (street fighter 2' 920313 Taiwan)| sf2ce| 1992	| Capcom	| CPS1		| 					| s92t_23a.8f| src/burn/drv/capcom/d_cps1.cpp|
+| sf2ceua	|  	| Street Fighter II' - Champion Edition (street fighter 2' 920313 USA)| sf2ce	| 1992	| Capcom	| CPS1		| 					| s92u_23a.8f| src/burn/drv/capcom/d_cps1.cpp|
+| sf2ceea	|  	| Street Fighter II' - Champion Edition (street fighter 2' 920313 World)| sf2ce| 1992	| Capcom	| CPS1		| 					| s92e_23a.8f| src/burn/drv/capcom/d_cps1.cpp|
+| sf2ceja	|  	| Street Fighter II' - Champion Edition (street fighter 2' 920322 Japan)| sf2ce| 1992	| Capcom	| CPS1		| 					| s92j_23a.8f| src/burn/drv/capcom/d_cps1.cpp|
+| sf2cejb	|  	| Street Fighter II' - Champion Edition (street fighter 2' 920513 Japan)| sf2ce| 1992	| Capcom	| CPS1		| 					| s92j_23b.8f| src/burn/drv/capcom/d_cps1.cpp|
+| sf2ceub	|  	| Street Fighter II' - Champion Edition (street fighter 2' 920513 USA)| sf2ce	| 1992	| Capcom	| CPS1		| 					| s92u_23b.8f| src/burn/drv/capcom/d_cps1.cpp|
+| sf2ce		|  	| Street Fighter II' - Champion Edition (street fighter 2' 920513 World)| | 1992	| Capcom	| CPS1		| 					| s92e_23b.8f| src/burn/drv/capcom/d_cps1.cpp|
+| sf2cejc	|  	| Street Fighter II' - Champion Edition (street fighter 2' 920803 Japan)| sf2ce| 1992	| Capcom	| CPS1		| 					| s92j_23c.8f| src/burn/drv/capcom/d_cps1.cpp|
+| sf2ceuc	|  	| Street Fighter II' - Champion Edition (street fighter 2' 920803 USA)| sf2ce	| 1992	| Capcom	| CPS1		| 					| s92u_23c.8f| src/burn/drv/capcom/d_cps1.cpp|
+| sf2tlona	|  	| Street Fighter II' - Champion Edition (Tu Long bootleg set 1, 811102 001)| sf2ce| 1992	| bootleg	| CPS1		| 					| tl4mt.1| src/burn/drv/capcom/d_cps1.cpp|
+| sf2tlonb	|  	| Street Fighter II' - Champion Edition (Tu Long bootleg set 2, 811102 001)| sf2ce| 1992	| bootleg	| CPS1		| 					| tl4m.1| src/burn/drv/capcom/d_cps1.cpp|
+| sf2tlonc	|  	| Street Fighter II' - Champion Edition (Tu Long bootleg set 3, 811102 001)| sf2ce| 1992	| bootleg	| CPS1		| 					| sf11-1.040| src/burn/drv/capcom/d_cps1.cpp|
+| sf2ceupl	|  	| Street Fighter II' - Champion Edition (UPL bootleg)	| sf2ce		| 1992	| bootleg (UPL)	| CPS1		| 					| s2.u222| src/burn/drv/capcom/d_cps1.cpp|
+| sf2v004	|  	| Street Fighter II' - Champion Edition (V004 bootleg set 1, 102092 USA)| sf2ce| 1992	| bootleg	| CPS1		| 					| sf2v004.23| src/burn/drv/capcom/d_cps1.cpp|
+| sf2v0042	|  	| Street Fighter II' - Champion Edition (V004 bootleg set 2, 920313 etc)| sf2ce| 1992	| bootleg	| CPS1		| 					| sf3g-1.040| src/burn/drv/capcom/d_cps1.cpp|
+| sf2v0043	|  	| Street Fighter II' - Champion Edition (V004 bootleg set 3, 920313 etc)| sf2ce| 1992	| bootleg	| CPS1		| 					| 22_08-92.7f| src/burn/drv/capcom/d_cps1.cpp|
+| sf2yyc	|  	| Street Fighter II' - Champion Edition (YYC bootleg set 1, 920313 etc)| sf2ce	| 1992	| bootleg	| CPS1		| 					| b12.rom| src/burn/drv/capcom/d_cps1.cpp|
+| sf2yyc2	|  	| Street Fighter II' - Champion Edition (YYC bootleg set 2, 920313 etc)| sf2ce	| 1992	| bootleg	| CPS1		| 					| sf6-1.040| src/burn/drv/capcom/d_cps1.cpp|
+| sf2hfub	| D NW	| Street Fighter II' - Hyper Fighting (bootleg set 3, street fighter 2' T 921209 USA)| sf2hf| 1992| bootleg	| CPS1		| 					| s2tu-23| src/burn/drv/capcom/d_cps1.cpp|
+| sf2hfu	|  	| Street Fighter II' - Hyper Fighting (street fighter 2' T 921209 USA)| sf2hf	| 1992	| Capcom	| CPS1		| 					| s2tu_23.8f| src/burn/drv/capcom/d_cps1.cpp|
+| sf2hf		|  	| Street Fighter II' - Hyper Fighting (street fighter 2' T 921209 World)| | 1992	| Capcom	| CPS1		| 					| s2te_23.8f| src/burn/drv/capcom/d_cps1.cpp|
+| sf2mdt	|  	| Street Fighter II' - Magic Delta Turbo (bootleg set 1 (with YM2151 + 2xMSM5205), 920313 etc)| sf2ce| 1992| bootleg| CPS1		| 					| 3.ic172| src/burn/drv/capcom/d_cps1.cpp|
+| sf2mdta	|  	| Street Fighter II' - Magic Delta Turbo (bootleg set 2 (with YM2151 + 2xMSM5205), 920313 etc)| sf2ce| 1992| bootleg| CPS1		| 					| 3.mdta| src/burn/drv/capcom/d_cps1.cpp|
+| sf2mdtb	|  	| Street Fighter II' - Magic Delta Turbo (bootleg set 3 (with YM2151 + 2xMSM5205), 920313 etc)| sf2ce| 1992| bootleg| CPS1		| 					| 3.ic172| src/burn/drv/capcom/d_cps1.cpp|
+| sf2mdtc	|  	| Street Fighter II' - Magic Delta Turbo (bootleg set 4 (with YM2151 + 2xMSM5205), 920313 etc)| sf2ce| 1992| Playmark bootl| CPS1	| 					| 3.ic171| src/burn/drv/capcom/d_cps1.cpp|
+| sf2mkot	|  	| Street Fighter II' - Magic KO Turbo!! - Nightmare Crack| sf2ce		| 1992	| bootleg	| CPS1		| 					| u222.bin| src/burn/drv/capcom/d_cps1.cpp|
+| sf2koryu	|  	| Street Fighter II' - Xiang Long (bootleg set 1, 811102 001)| sf2ce		| 1992	| bootleg	| CPS1		| 					| u222.rom| src/burn/drv/capcom/d_cps1.cpp|
+| sf2koryu2	|  	| Street Fighter II' - Xiang Long (bootleg set 2, 811102 001)| sf2ce		| 1992	| bootleg	| CPS1		| 					| sf10-3040| src/burn/drv/capcom/d_cps1.cpp|
+| sf2koryu3	|  	| Street Fighter II' - Xiang Long (bootleg set 3, 811102 001)| sf2ce		| 1992	| bootleg	| CPS1		| 					| 27c040.u222| src/burn/drv/capcom/d_cps1.cpp|
+| sf2hfjb	|  	| Street Fighter II' Turbo - Hyper Fighting (bootleg set 1, 921209 Japan)| sf2hf| 1992	| Capcom	| CPS1		| 					| 222-040.13| src/burn/drv/capcom/d_cps1.cpp|
+| sf2hfjb2	|  	| Street Fighter II' Turbo - Hyper Fighting (bootleg set 2, 921209 Japan)| sf2hf| 1992	| Capcom	| CPS1		| 					| sf12-1.040| src/burn/drv/capcom/d_cps1.cpp|
+| sf2hfj	|  	| Street Fighter II' Turbo - Hyper Fighting (street fighter 2' T 921209 Japan)| sf2hf| 1992	| Capcom	| CPS1		| 					| s2tj_23.8f| src/burn/drv/capcom/d_cps1.cpp|
+| sf2dongb	|  	| Street Fighter II': Champion Edition (Dongfang Bubai protection bootleg, etc 920313)| sf2ce| 1992| bootleg	| CPS1		| 					| 1.8f| src/burn/drv/capcom/d_cps1.cpp|
+| sf2ceb	|  	| Street Fighter II': Champion Edition (Playmark bootleg, set 1)| sf2ce	| 1992	| bootleg (Playm| CPS1		| 					| 3.ic171| src/burn/drv/capcom/d_cps1.cpp|
+| sfiii2n	|  	| Street Fighter III 2nd Impact: Giant Attack (Asia 970930, NO CD)| sfiii2| 1997	| Capcom	| CPS-3		| 					| sfiii2_asia_nocd.29f400.u2| src/burn/drv/cps3/d_cps3.cpp|
+| sfiii2j	|  	| Street Fighter III 2nd Impact: Giant Attack (Japan 970930)| sfiii2	| 1997	| Capcom	| CPS-3		| 					| sfiii2_japan.29f400.u2| src/burn/drv/cps3/d_cps3.cpp|
+| sfiii2	|  	| Street Fighter III 2nd Impact: Giant Attack (USA 970930)| 		| 1997	| Capcom	| CPS-3		| 					| sfiii2_usa.29f400.u2| src/burn/drv/cps3/d_cps3.cpp|
+| sfiii4n	|  	| Street Fighter III 3rd Strike: Fight for the Future (4rd Arrange Edition 2013)| sfiii3| 2013| hack	| CPS-3		| 					| sfiii3_japan_nocd.29f400.u2| src/burn/drv/cps3/d_cps3.cpp|
+| sfiii3r1	|  	| Street Fighter III 3rd Strike: Fight for the Future (Euro 990512)| sfiii3| 1999	| Capcom	| CPS-3		| 					| sfiii3_euro.29f400.u2| src/burn/drv/cps3/d_cps3.cpp|
+| sfiii3	|  	| Street Fighter III 3rd Strike: Fight for the Future (Euro 990608)| 	| 1999	| Capcom	| CPS-3		| 					| sfiii3_euro.29f400.u2| src/burn/drv/cps3/d_cps3.cpp|
+| sfiii3jr1	|  	| Street Fighter III 3rd Strike: Fight for the Future (Japan 990512)| sfiii3| 1999	| Capcom	| CPS-3		| 					| sfiii3_japan.29f400.u2| src/burn/drv/cps3/d_cps3.cpp|
+| sfiii3nr1	|  	| Street Fighter III 3rd Strike: Fight for the Future (Japan 990512, NO CD)| sfiii3| 1999| Capcom	| CPS-3		| 					| sfiii3_japan_nocd.29f400.u2| src/burn/drv/cps3/d_cps3.cpp|
+| sfiii3j	|  	| Street Fighter III 3rd Strike: Fight for the Future (Japan 990608)| sfiii3| 1999	| Capcom	| CPS-3		| 					| sfiii3_japan.29f400.u2| src/burn/drv/cps3/d_cps3.cpp|
+| sfiii3n	|  	| Street Fighter III 3rd Strike: Fight for the Future (Japan 990608, NO CD)| sfiii3| 1999| Capcom	| CPS-3		| 					| sfiii3_japan_nocd.29f400.u2| src/burn/drv/cps3/d_cps3.cpp|
+| sfiii3ur1	|  	| Street Fighter III 3rd Strike: Fight for the Future (USA 990512)| sfiii3| 1999	| Capcom	| CPS-3		| 					| sfiii3_usa.29f400.u2| src/burn/drv/cps3/d_cps3.cpp|
+| sfiii3u	|  	| Street Fighter III 3rd Strike: Fight for the Future (USA 990608)| sfiii3| 1999	| Capcom	| CPS-3		| 					| sfiii3_usa.29f400.u2| src/burn/drv/cps3/d_cps3.cpp|
+| sfiii3th	|  	| Street Fighter III 3rd Strike: Fight for the Future | re:THIRD update| sfiii3| 2021	| hack		| CPS-3		| 					| sfiii3_japan_nocd.29f400.u2| src/burn/drv/cps3/d_cps3.cpp|
+| sfiiia	|  	| Street Fighter III: New Generation (Asia 970204)	| sfiii		| 1997	| Capcom	| CPS-3		| 					| sfiii_asia_region_bd.29f400.u2| src/burn/drv/cps3/d_cps3.cpp|
+| sfiiin	|  	| Street Fighter III: New Generation (Asia 970204, NO CD, bios set 1)| sfiii	| 1997	| Capcom	| CPS-3		| 					| sfiii_asia_nocd.29f400.u2| src/burn/drv/cps3/d_cps3.cpp|
+| sfiiina	|  	| Street Fighter III: New Generation (Asia 970204, NO CD, bios set 2)| sfiii	| 1997	| Capcom	| CPS-3		| 					| sfiii_asia_nocd.29f400.u2| src/burn/drv/cps3/d_cps3.cpp|
+| sfiii		|  	| Street Fighter III: New Generation (Euro 970204)	| 		| 1997	| Capcom	| CPS-3		| 					| sfiii_euro.29f400.u2| src/burn/drv/cps3/d_cps3.cpp|
+| sfiiih	|  	| Street Fighter III: New Generation (Hispanic 970204)	| sfiii		| 1997	| Capcom	| CPS-3		| 					| sfiii_hispanic.29f400.u2| src/burn/drv/cps3/d_cps3.cpp|
+| sfiiij	|  	| Street Fighter III: New Generation (Japan 970204)	| sfiii		| 1997	| Capcom	| CPS-3		| 					| sfiii_japan.29f400.u2| src/burn/drv/cps3/d_cps3.cpp|
+| sfiiiu	|  	| Street Fighter III: New Generation (USA 970204)	| sfiii		| 1997	| Capcom	| CPS-3		| 					| sfiii_usa_region_b1.29f400.u2| src/burn/drv/cps3/d_cps3.cpp|
+| sfzar1	|  	| Street Fighter Zero (950605 Asia)			| sfa		| 1995	| Capcom	| CPS2		| 					| sfza.03a| src/burn/drv/capcom/d_cps2.cpp|
+| sfzjr2	|  	| Street Fighter Zero (950605 Japan)			| sfa		| 1995	| Capcom	| CPS2		| 					| sfzj.03a| src/burn/drv/capcom/d_cps2.cpp|
+| sfza		|  	| Street Fighter Zero (950627 Asia)			| sfa		| 1995	| Capcom	| CPS2		| 					| sfza.03b| src/burn/drv/capcom/d_cps2.cpp|
+| sfzhr1	|  	| Street Fighter Zero (950627 Hispanic)			| sfa		| 1995	| Capcom	| CPS2		| 					| sfzh.03c| src/burn/drv/capcom/d_cps2.cpp|
+| sfzjr1	|  	| Street Fighter Zero (950627 Japan)			| sfa		| 1995	| Capcom	| CPS2		| 					| sfzj.03b| src/burn/drv/capcom/d_cps2.cpp|
+| sfzh		|  	| Street Fighter Zero (950718 Hispanic)			| sfa		| 1995	| Capcom	| CPS2		| 					| sfzh.03d| src/burn/drv/capcom/d_cps2.cpp|
+| sfzbr1	|  	| Street Fighter Zero (950727 Brazil)			| sfa		| 1995	| Capcom	| CPS2		| 					| sfzb.03e| src/burn/drv/capcom/d_cps2.cpp|
+| sfzj		|  	| Street Fighter Zero (950727 Japan)			| sfa		| 1995	| Capcom	| CPS2		| 					| sfzj.03c| src/burn/drv/capcom/d_cps2.cpp|
+| sfzb		|  	| Street Fighter Zero (951109 Brazil)			| sfa		| 1995	| Capcom	| CPS2		| 					| sfzb.03g| src/burn/drv/capcom/d_cps2.cpp|
+| sfzcha	|  	| Street Fighter Zero (CPS Changer, 040820 Japan)	| sfzch		| 2005	| Capcom	| CPS Changer	| 					| 23| src/burn/drv/capcom/d_cps1.cpp|
+| sfzbch	| X	| Street Fighter Zero (CPS Changer, 950727 Brazil)	| sfzch		| 1995	| Capcom	| CPS Changer	| 					| sfbch23| src/burn/drv/capcom/d_cps1.cpp|
+| sfzech	| X	| Street Fighter Zero (CPS Changer, 950727 Euro)	| sfzch		| 1995	| Capcom	| CPS Changer	| 					| sfzech23| src/burn/drv/capcom/d_cps1.cpp|
+| sfzhch	| X	| Street Fighter Zero (CPS Changer, 950727 Hispanic)	| sfzch		| 1995	| Capcom	| CPS Changer	| 					| sfzhch23| src/burn/drv/capcom/d_cps1.cpp|
+| sfzach	| X	| Street Fighter Zero (CPS Changer, 950925 Asia)	| sfzch		| 1995	| Capcom	| CPS Changer	| 					| sfzach23| src/burn/drv/capcom/d_cps1.cpp|
+| sfzch		|  	| Street Fighter Zero (CPS Changer, 951020 Japan)	| 		| 1995	| Capcom	| CPS Changer	| 					| sfzch23| src/burn/drv/capcom/d_cps1.cpp|
+| sfz2ad	|  	| Street Fighter Zero 2 (960227 Asia Phoenix Edition)	| sfa2		| 1996	| bootleg	| CPS2		| 					| sz2ad.03a| src/burn/drv/capcom/d_cps2.cpp|
+| sfz2a		|  	| Street Fighter Zero 2 (960227 Asia)			| sfa2		| 1996	| Capcom	| CPS2		| 					| sz2a.03a| src/burn/drv/capcom/d_cps2.cpp|
+| sfz2jd	|  	| Street Fighter Zero 2 (960227 Japan Phoenix Edition)	| sfa2		| 1996	| bootleg	| CPS2		| 					| sz2j_d.03a| src/burn/drv/capcom/d_cps2.cpp|
+| sfz2jr1	|  	| Street Fighter Zero 2 (960227 Japan)			| sfa2		| 1996	| Capcom	| CPS2		| 					| sz2j.03a| src/burn/drv/capcom/d_cps2.cpp|
+| sfz2n		|  	| Street Fighter Zero 2 (960229 Oceania)		| sfa2		| 1996	| Capcom	| CPS2		| 					| sz2n.03| src/burn/drv/capcom/d_cps2.cpp|
+| sfz2br1	|  	| Street Fighter Zero 2 (960304 Brazil)			| sfa2		| 1996	| Capcom	| CPS2		| 					| sz2b.03| src/burn/drv/capcom/d_cps2.cpp|
+| sfz2h		|  	| Street Fighter Zero 2 (960304 Hispanic)		| sfa2		| 1996	| Capcom	| CPS2		| 					| sz2h.03| src/burn/drv/capcom/d_cps2.cpp|
+| sfz2j		|  	| Street Fighter Zero 2 (960430 Japan)			| sfa2		| 1996	| Capcom	| CPS2		| 					| sz2j.03b| src/burn/drv/capcom/d_cps2.cpp|
+| sfz2b		|  	| Street Fighter Zero 2 (960531 Brazil)			| sfa2		| 1996	| Capcom	| CPS2		| 					| sz2b.03b| src/burn/drv/capcom/d_cps2.cpp|
+| sfz2alj	|  	| Street Fighter Zero 2 Alpha (960805 Japan)		| sfz2al	| 1996	| Capcom	| CPS2		| 					| szaj.03a| src/burn/drv/capcom/d_cps2.cpp|
+| sfz2alb	|  	| Street Fighter Zero 2 Alpha (960813 Brazil)		| sfz2al	| 1996	| Capcom	| CPS2		| 					| szab.03| src/burn/drv/capcom/d_cps2.cpp|
+| sfz2alh	|  	| Street Fighter Zero 2 Alpha (960813 Hispanic)		| sfz2al	| 1996	| Capcom	| CPS2		| 					| szah.03| src/burn/drv/capcom/d_cps2.cpp|
+| sfz2ald	|  	| Street Fighter Zero 2 Alpha (960826 Asia Phoenix Edition)| sfz2al	| 1996	| bootleg	| CPS2		| 					| szaad.03| src/burn/drv/capcom/d_cps2.cpp|
+| sfz2al	|  	| Street Fighter Zero 2 Alpha (960826 Asia)		| 		| 1996	| Capcom	| CPS2		| 					| szaa.03| src/burn/drv/capcom/d_cps2.cpp|
+| sfz2adl	|  	| Street Fighter Zero 2 Alpha - Dragon Level (Hack by pipi899, Ver.2009-04-24)| sfz2al| 2009| Hack		| CPS2		| 					| szaj-dl.03a| src/burn/drv/capcom/d_cps2.cpp|
+| sfz3jr2d	|  	| Street Fighter Zero 3 (980629 Japan Phoenix Edition)	| sfa3		| 1998	| bootleg	| CPS2		| 					| sz3j_d.03| src/burn/drv/capcom/d_cps2.cpp|
+| sfz3jr2	|  	| Street Fighter Zero 3 (980629 Japan)			| sfa3		| 1998	| Capcom	| CPS2		| 					| sz3j.03| src/burn/drv/capcom/d_cps2.cpp|
+| sfz3ar1	|  	| Street Fighter Zero 3 (980701 Asia)			| sfa3		| 1998	| Capcom	| CPS2		| 					| sz3a.03a| src/burn/drv/capcom/d_cps2.cpp|
+| sfz3jr1	|  	| Street Fighter Zero 3 (980727 Japan)			| sfa3		| 1998	| Capcom	| CPS2		| 					| sz3j.03a| src/burn/drv/capcom/d_cps2.cpp|
+| sfz3a		|  	| Street Fighter Zero 3 (980904 Asia)			| sfa3		| 1998	| Capcom	| CPS2		| 					| sz3a.03d| src/burn/drv/capcom/d_cps2.cpp|
+| sfz3j		|  	| Street Fighter Zero 3 (980904 Japan)			| sfa3		| 1998	| Capcom	| CPS2		| 					| sz3j.03c| src/burn/drv/capcom/d_cps2.cpp|
+| sfz3te	|  	| Street Fighter Zero 3 Training Edition v1.1 (980629 Japan)| sfa3		| 2020	| hack		| CPS2		| 					| sz3te.03| src/burn/drv/capcom/d_cps2.cpp|
+| ffightjh	|  	| Street Smart / Final Fight (Japan, hack)		| ffight	| 1989	| Capcom	| CPS1		| 					| ff_23.8f| src/burn/drv/capcom/d_cps1.cpp|
+| strider	|  	| Strider (US set 1)					| 		| 1989	| Capcom	| CPS1		| 					| 30.11f| src/burn/drv/capcom/d_cps1.cpp|
+| striderua	|  	| Strider (US set 2)					| strider	| 1989	| Capcom	| CPS1		| 					| 30.11f| src/burn/drv/capcom/d_cps1.cpp|
+| strideruc	|  	| Strider (US, Street Fighter II conversion)		| strider	| 1989	| Capcom	| CPS1		| 					| 34.8f| src/burn/drv/capcom/d_cps1.cpp|
+| striderjr	|  	| Strider Hiryu (Japan Resale Ver.)			| strider	| 1989	| Capcom	| CPS1		| 					| sthj_23.8f| src/burn/drv/capcom/d_cps1.cpp|
+| striderj	|  	| Strider Hiryu (Japan)					| strider	| 1989	| Capcom	| CPS1		| 					| sth_36.12f| src/burn/drv/capcom/d_cps1.cpp|
+| sgemfa	|  	| Super Gem Fighter Mini Mix (970904 Asia)		| sgemf		| 1997	| Capcom	| CPS2		| 					| pcfa.03| src/burn/drv/capcom/d_cps2.cpp|
+| sgemfh	|  	| Super Gem Fighter Mini Mix (970904 Hispanic)		| sgemf		| 1997	| Capcom	| CPS2		| 					| pcfh.03| src/burn/drv/capcom/d_cps2.cpp|
+| sgemfd	|  	| Super Gem Fighter Mini Mix (970904 USA Phoenix Edition)| sgemf		| 1997	| bootleg	| CPS2		| 					| pcfud.03| src/burn/drv/capcom/d_cps2.cpp|
+| sgemf		|  	| Super Gem Fighter Mini Mix (970904 USA)		| 		| 1997	| Capcom	| CPS2		| 					| pcfu.03| src/burn/drv/capcom/d_cps2.cpp|
+| smbombr1	|  	| Super Muscle Bomber - the international blowout (940808 Japan)| ringdest| 1994	| Capcom	| CPS2		| 					| smbj.03| src/burn/drv/capcom/d_cps2.cpp|
+| smbomb	|  	| Super Muscle Bomber - the international blowout (940831 Japan)| ringdest| 1994	| Capcom	| CPS2		| 					| smbj.03a| src/burn/drv/capcom/d_cps2.cpp|
+| spf2tb	|  	| Super Puzzle Fighter II Turbo (Boss Hack)(USA 960620)	| spf2t		| 200?	| Hack		| CPS2		| 					| pzfu_boss.03a| src/burn/drv/capcom/d_cps2.cpp|
+| spf2tcb	|  	| Super Puzzle Fighter II Turbo (Color Blind Hack)	| spf2t		| 1996	| Capcom	| CPS2		| 					| pzfe.03| src/burn/drv/capcom/d_cps2.cpp|
+| spf2ta	|  	| Super Puzzle Fighter II Turbo (Super Puzzle Fighter 2 Turbo 960529 Asia)| spf2t| 1996	| Capcom	| CPS2		| 					| pzfa.03| src/burn/drv/capcom/d_cps2.cpp|
+| spf2t		|  	| Super Puzzle Fighter II Turbo (Super Puzzle Fighter 2 Turbo 960529 Euro)| | 1996	| Capcom	| CPS2		| 					| pzfe.03| src/burn/drv/capcom/d_cps2.cpp|
+| spf2th	|  	| Super Puzzle Fighter II Turbo (Super Puzzle Fighter 2 Turbo 960531 Hispanic)| spf2t| 1996	| Capcom	| CPS2		| 					| pzfh.03| src/burn/drv/capcom/d_cps2.cpp|
+| spf2td	|  	| Super Puzzle Fighter II Turbo (Super Puzzle Fighter 2 Turbo 960620 USA Phoenix Edition)| spf2t| 1996| bootleg| CPS2		| 					| pzfu_d.03a| src/burn/drv/capcom/d_cps2.cpp|
+| spf2tu	|  	| Super Puzzle Fighter II Turbo (Super Puzzle Fighter 2 Turbo 960620 USA)| spf2t| 1996	| Capcom	| CPS2		| 					| pzfu.03a| src/burn/drv/capcom/d_cps2.cpp|
+| spf2xjd	|  	| Super Puzzle Fighter II X (Super Puzzle Fighter 2 X 960531 Japan Phoenix Edition)| spf2t| 1996| bootleg	| CPS2		| 					| pzfjd.03a| src/burn/drv/capcom/d_cps2.cpp|
+| spf2xj	|  	| Super Puzzle Fighter II X (Super Puzzle Fighter 2 X 960531 Japan)| spf2t	| 1996	| Capcom	| CPS2		| 					| pzfj.03a| src/burn/drv/capcom/d_cps2.cpp|
+| ssf2jr2	|  	| Super Street Fighter II - the new challengers (super street fighter 2 930910 Japan)| ssf2| 1993| Capcom	| CPS2		| 					| ssfj.03| src/burn/drv/capcom/d_cps2.cpp|
+| ssf2d		|  	| Super Street Fighter II - the new challengers (super street fighter 2 930911 etc Phoenix Edition)| ssf2| 1993| bootleg| CPS2	| 					| ssfed.03| src/burn/drv/capcom/d_cps2.cpp|
+| ssf2r1	|  	| Super Street Fighter II - the new challengers (super street fighter 2 930911 etc)| ssf2| 1993| Capcom	| CPS2		| 					| ssfe.03| src/burn/drv/capcom/d_cps2.cpp|
+| ssf2h		|  	| Super Street Fighter II - the new challengers (super street fighter 2 930911 Hispanic)| ssf2| 1993| Capcom| CPS2		| 					| ssfh.03| src/burn/drv/capcom/d_cps2.cpp|
+| ssf2jr1	|  	| Super Street Fighter II - the new challengers (super street fighter 2 930911 Japan)| ssf2| 1993| Capcom	| CPS2		| 					| ssfj.03a| src/burn/drv/capcom/d_cps2.cpp|
+| ssf2ud	|  	| Super Street Fighter II - the new challengers (super street fighter 2 930911 USA Phoenix Edition)| ssf2| 1993| bootleg| CPS2	| 					| ssfud.03a| src/burn/drv/capcom/d_cps2.cpp|
+| ssf2u		|  	| Super Street Fighter II - the new challengers (super street fighter 2 930911 USA)| ssf2| 1993| Capcom	| CPS2		| 					| ssfu.03a| src/burn/drv/capcom/d_cps2.cpp|
+| ssf2ar1	|  	| Super Street Fighter II - the new challengers (super street fighter 2 930914 Asia)| ssf2| 1993| Capcom	| CPS2		| 					| ssfa.03a| src/burn/drv/capcom/d_cps2.cpp|
+| ssf2a		|  	| Super Street Fighter II - the new challengers (super street fighter 2 931005 Asia)| ssf2| 1993| Capcom	| CPS2		| 					| ssfa.03b| src/burn/drv/capcom/d_cps2.cpp|
+| ssf2		|  	| Super Street Fighter II - the new challengers (super street fighter 2 931005 etc)| | 1993| Capcom	| CPS2		| 					| ssfe-03b| src/burn/drv/capcom/d_cps2.cpp|
+| ssf2j		|  	| Super Street Fighter II - the new challengers (super street fighter 2 931005 Japan)| ssf2| 1993| Capcom	| CPS2		| 					| ssfj.03b| src/burn/drv/capcom/d_cps2.cpp|
+| ssf2tbr1	|  	| Super Street Fighter II - the tournament battle (930911 etc)| ssf2		| 1993	| Capcom	| CPS2		| Linkup feature not implemented	| ssfe.03t| src/burn/drv/capcom/d_cps2.cpp|
+| ssf2tbj1	|  	| Super Street Fighter II - the tournament battle (930911 Japan)| ssf2	| 1993	| Capcom	| CPS2		| Linkup feature not implemented	| ssfj.03t| src/burn/drv/capcom/d_cps2.cpp|
+| ssf2tbu	|  	| Super Street Fighter II - the tournament battle (930911 USA)| ssf2		| 1993	| Capcom	| CPS2		| Linkup feature not implemented	| ssfu.03t| src/burn/drv/capcom/d_cps2.cpp|
+| ssf2tba	|  	| Super Street Fighter II - the tournament battle (931005 Asia)| ssf2		| 1993	| Capcom	| CPS2		| Linkup feature not implemented	| ssfa.03tb| src/burn/drv/capcom/d_cps2.cpp|
+| ssf2tbh	|  	| Super Street Fighter II - the tournament battle (931005 Hispanic)| ssf2	| 1993	| Capcom	| CPS2		| Linkup feature not implemented	| ssfh.03tb| src/burn/drv/capcom/d_cps2.cpp|
+| ssf2tbj	|  	| Super Street Fighter II - the tournament battle (931005 Japan)| ssf2	| 1993	| Capcom	| CPS2		| Linkup feature not implemented	| ssftj.03b| src/burn/drv/capcom/d_cps2.cpp|
+| ssf2tbd	|  	| Super Street Fighter II - the tournament battle (931119 etc Phoenix Edition)| ssf2| 1993	| bootleg	| CPS2		| Linkup feature not implemented	| ssfed.3tc| src/burn/drv/capcom/d_cps2.cpp|
+| ssf2tb	|  	| Super Street Fighter II - the tournament battle (931119 etc)| ssf2		| 1993	| Capcom	| CPS2		| Linkup feature not implemented	| ssfe.03tc| src/burn/drv/capcom/d_cps2.cpp|
+| ssf2tad	|  	| Super Street Fighter II Turbo (super street fighter 2 X 940223 Asia Phoenix Edition)| ssf2t| 1994| bootleg	| CPS2		| 					| sfxad.03c| src/burn/drv/capcom/d_cps2.cpp|
+| ssf2ta	|  	| Super Street Fighter II Turbo (super street fighter 2 X 940223 Asia)| ssf2t	| 1994	| Capcom	| CPS2		| 					| sfxa.03c| src/burn/drv/capcom/d_cps2.cpp|
+| ssf2td	|  	| Super Street Fighter II Turbo (super street fighter 2 X 940223 etc Phoenix Edition)| ssf2t| 1994| bootleg	| CPS2		| 					| sfxed.03c| src/burn/drv/capcom/d_cps2.cpp|
+| ssf2t		|  	| Super Street Fighter II Turbo (super street fighter 2 X 940223 etc)| 	| 1994	| Capcom	| CPS2		| 					| sfxe.03c| src/burn/drv/capcom/d_cps2.cpp|
+| ssf2th	|  	| Super Street Fighter II Turbo (super street fighter 2 X 940223 Hispanic)| ssf2t| 1994	| Capcom	| CPS2		| 					| sfxh.03c| src/burn/drv/capcom/d_cps2.cpp|
+| ssf2tur1	|  	| Super Street Fighter II Turbo (super street fighter 2 X 940223 USA)| ssf2t	| 1994	| Capcom	| CPS2		| 					| sfxu.03c| src/burn/drv/capcom/d_cps2.cpp|
+| ssf2tu	|  	| Super Street Fighter II Turbo (super street fighter 2 X 940323 USA)| ssf2t	| 1994	| Capcom	| CPS2		| 					| sfxu.03e| src/burn/drv/capcom/d_cps2.cpp|
+| ssf2tnl	|  	| Super Street Fighter II Turbo New Legacy v0.4 (Beta) (Hack by Born2SPD)| ssf2t| 2020	| hack		| CPS2		| 					| sfxe.03c| src/burn/drv/capcom/d_cps2.cpp|
+| ssf2xjr1d	|  	| Super Street Fighter II X - grand master challenge (super street fighter 2 X 940223 Japan Phoenix Edition)| ssf2t| 1994| bootleg| CPS2| 					| sfxjd.03c| src/burn/drv/capcom/d_cps2.cpp|
+| ssf2xjr1r	|  	| Super Street Fighter II X - grand master challenge (super street fighter 2 X 940223 Japan rent version)| ssf2t| 1994| Capcom| CPS2| 					| sfxo.03c| src/burn/drv/capcom/d_cps2.cpp|
+| ssf2xjr1	|  	| Super Street Fighter II X - grand master challenge (super street fighter 2 X 940223 Japan)| ssf2t| 1994| Capcom| CPS2		| 					| sfxj.03c| src/burn/drv/capcom/d_cps2.cpp|
+| ssf2xj	|  	| Super Street Fighter II X - grand master challenge (super street fighter 2 X 940311 Japan)| ssf2t| 1994| Capcom| CPS2		| 					| sfxj.03d| src/burn/drv/capcom/d_cps2.cpp|
+| dynwarjr	|  	| Tenchi wo Kurau (Japan Resale Ver.)			| dynwar	| 1989	| Capcom	| CPS1		| 					| tk1j_23.8f| src/burn/drv/capcom/d_cps1.cpp|
+| dynwarj	|  	| Tenchi wo Kurau (Japan)				| dynwar	| 1989	| Capcom	| CPS1		| 					| 36.12f| src/burn/drv/capcom/d_cps1.cpp|
+| wofj		|  	| Tenchi wo Kurau II - Sekiheki no Tatakai (921031 Japan)| wof		| 1992	| Capcom	| CPS1 / QSound	| 					| tk2j_23c.8f| src/burn/drv/capcom/d_cps1.cpp|
+| wofch		|  	| Tenchi wo Kurau II - Sekiheki no Tatakai (CPS Changer, 921031 Japan)| 	| 1992	| Capcom	| CPS Changer	| 					| tk2=ch=_23.8f| src/burn/drv/capcom/d_cps1.cpp|
+| wofjh		|  	| Tenchi wo Kurau II - Sekiheki no Tatakai (hack, 921031 Japan)| wof		| 1992	| hack		| CPS1 / QSound	| 					| tk2j23h.bin| src/burn/drv/capcom/d_cps1.cpp|
+| wofjdr	|  	| Tenchi wo Kurau II - Sekiheki no Tatakai (Master Edition, Hack)| wof	| 2021-02-24| Hack		| CPS1 / QSound	| 					| wofjdr.bin| src/burn/drv/capcom/d_cps1.cpp|
+| wofchp	|  	| Tenchi wo Kurau II - Sekiheki no Tatakai (PS/SS Version)| wofch		| 2019	| hack		| CPS Changer	| 					| eh-23.8f| src/burn/drv/capcom/d_cps1.cpp|
+| kodr2		|  	| The King of Dragons (910731 etc)			| kod		| 1991	| Capcom	| CPS1		| 					| kde_30.11e| src/burn/drv/capcom/d_cps1.cpp|
+| kodb		|  	| The King of Dragons (bootleg, 910731 etc)		| kod		| 1991	| Capcom	| CPS1		| 					| 3.ic172| src/burn/drv/capcom/d_cps1.cpp|
+| kodh		|  	| The King of Dragons (hack)				| kod		| 2002	| Capcom	| CPS1		| 					| 23.096| src/burn/drv/capcom/d_cps1.cpp|
+| kodja		|  	| The King of Dragons (Japan 910805, B-Board 89625B-1)	| kod		| 1991	| Capcom	| CPS1		| 					| kdj_36a.12f| src/burn/drv/capcom/d_cps1.cpp|
+| kodj		|  	| The King of Dragons (Japan 910805, B-Board 90629B-3)	| kod		| 1991	| Capcom	| CPS1		| 					| kdj_30a.11e| src/burn/drv/capcom/d_cps1.cpp|
+| kodda		|  	| The King of Dragons (Phoenix bootleg, 910731 etc)	| kod		| 1991	| Capcom	| CPS1		| 					| 8f| src/burn/drv/capcom/d_cps1.cpp|
+| kodu		|  	| The King of Dragons (US 910910)			| kod		| 1991	| Capcom	| CPS1		| 					| kdu_30b.11e| src/burn/drv/capcom/d_cps1.cpp|
+| kodr1		|  	| The King of Dragons (World 910711)			| kod		| 1991	| Capcom	| CPS1		| 					| kde_30.11e| src/burn/drv/capcom/d_cps1.cpp|
+| kod		|  	| The King of Dragons (World 910805)			| 		| 1991	| Capcom	| CPS1		| 					| kde_30a.11e| src/burn/drv/capcom/d_cps1.cpp|
+| punisherh	|  	| The Punisher (930422 Hispanic)			| punisher	| 1993	| Capcom	| CPS1 / QSound	| 					| psh_26.11e| src/burn/drv/capcom/d_cps1.cpp|
+| punisherj	|  	| The Punisher (930422 Japan)				| punisher	| 1993	| Capcom	| CPS1 / QSound	| 					| psj_23.8f| src/burn/drv/capcom/d_cps1.cpp|
+| punisheru	|  	| The Punisher (930422 USA)				| punisher	| 1993	| Capcom	| CPS1 / QSound	| 					| psu_26.11e| src/burn/drv/capcom/d_cps1.cpp|
+| punisher	|  	| The Punisher (930422 World)				| 		| 1993	| Capcom	| CPS1 / QSound	| 					| pse_26.11e| src/burn/drv/capcom/d_cps1.cpp|
+| punipic	|  	| The Punisher (bootleg set 1 (with PIC16c57), 930422 etc)| punisher	| 1993	| bootleg	| CPS1		| No sound				| cpu5.bin| src/burn/drv/capcom/d_cps1.cpp|
+| punipic2	|  	| The Punisher (bootleg set 2 (with PIC16c57), 930422 etc)| punisher	| 1993	| bootleg	| CPS1		| No sound				| prg4.bin| src/burn/drv/capcom/d_cps1.cpp|
+| punipic3	|  	| The Punisher (bootleg set 3 (with PIC16c57), 930422 etc)| punisher	| 1993	| bootleg	| CPS1		| No sound				| psb5b.rom| src/burn/drv/capcom/d_cps1.cpp|
+| punisherb	|  	| The Punisher (bootleg, 930422 etc)			| punisher	| 1993	| bootleg	| CPS1		| 					| 18.bin| src/burn/drv/capcom/d_cps1.cpp|
+| 3wondersh	|  	| Three Wonders (bootleg set 1, wonder 3 910520 etc)	| 3wonders	| 1991	| Capcom	| CPS1		| 					| 22.bin| src/burn/drv/capcom/d_cps1.cpp|
+| 3wondersb	|  	| Three Wonders (bootleg set 2, wonder 3 910520 etc)	| 3wonders	| 1991	| Capcom	| CPS1		| 					| 274001.4| src/burn/drv/capcom/d_cps1.cpp|
+| 3wondersha	|  	| Three Wonders (bootleg set 3, wonder 3 910520 etc)	| 3wonders	| 1991	| Capcom	| CPS1		| 					| b01.22| src/burn/drv/capcom/d_cps1.cpp|
+| 3wondersr1	|  	| Three Wonders (wonder 3 910513 etc)			| 3wonders	| 1991	| Capcom	| CPS1		| 					| rte_30.11f| src/burn/drv/capcom/d_cps1.cpp|
+| 3wonders	|  	| Three Wonders (wonder 3 910520 etc)			| 		| 1991	| Capcom	| CPS1		| 					| rte_30a.11f| src/burn/drv/capcom/d_cps1.cpp|
+| 3wondersu	|  	| Three Wonders (wonder 3 910520 USA)			| 3wonders	| 1991	| Capcom	| CPS1		| 					| rtu_30a.11f| src/burn/drv/capcom/d_cps1.cpp|
+| mtwinsb	|  	| Twins (bootleg of Mega Twins)				| mtwins	| 1993	| David Inc. (bo| CPS1		| 					| 2-prg-27c4001.bin| src/burn/drv/capcom/d_cps1.cpp|
+| unsquad	|  	| U.N. Squadron (US)					| 		| 1989	| Daipro / Capco| CPS1		| 					| aru_30.11f| src/burn/drv/capcom/d_cps1.cpp|
+| cawingj	|  	| U.S. Navy (901012 Japan)				| cawing	| 1990	| Capcom	| CPS1		| 					| caj_36a.12f| src/burn/drv/capcom/d_cps1.cpp|
+| uecology	|  	| Ultimate Ecology (931203 Japan)			| ecofghtr	| 1993	| Capcom	| CPS2		| 					| uecj.03| src/burn/drv/capcom/d_cps2.cpp|
+| vampjr1	|  	| Vampire - the night warriors (940630 Japan)		| dstlk		| 1994	| Capcom	| CPS2		| 					| vamj.03| src/burn/drv/capcom/d_cps2.cpp|
+| vampj		|  	| Vampire - the night warriors (940705 Japan)		| dstlk		| 1994	| Capcom	| CPS2		| 					| vamj.03a| src/burn/drv/capcom/d_cps2.cpp|
+| vampja	|  	| Vampire - the night warriors (940705 Japan, alt)	| dstlk		| 1994	| Capcom	| CPS2		| 					| vamj.03a| src/burn/drv/capcom/d_cps2.cpp|
+| vhuntjr2	|  	| Vampire Hunter - darkstalkers' revenge (950302 Japan)	| nwarr		| 1995	| Capcom	| CPS2		| 					| vphj.03b| src/burn/drv/capcom/d_cps2.cpp|
+| vhuntjr1s	|  	| Vampire Hunter - darkstalkers' revenge (950307 Japan stop version)| nwarr	| 1995	| Capcom	| CPS2		| 					| vphjstop.03b| src/burn/drv/capcom/d_cps2.cpp|
+| vhuntjr1	|  	| Vampire Hunter - darkstalkers' revenge (950307 Japan)	| nwarr		| 1995	| Capcom	| CPS2		| 					| vphj.03c| src/burn/drv/capcom/d_cps2.cpp|
+| vhuntj	|  	| Vampire Hunter - darkstalkers' revenge (950316 Japan)	| nwarr		| 1995	| Capcom	| CPS2		| 					| vphj.03f| src/burn/drv/capcom/d_cps2.cpp|
+| vhunt2d	|  	| Vampire Hunter 2 - darkstalkers revenge (970913 Japan Phoenix Edition)| vhunt2| 1997| bootleg	| CPS2		| 					| vh2j_d.03a| src/burn/drv/capcom/d_cps2.cpp|
+| vhunt2r1	|  	| Vampire Hunter 2 - darkstalkers revenge (970913 Japan)| vhunt2	| 1997	| Capcom	| CPS2		| 					| vh2j.03| src/burn/drv/capcom/d_cps2.cpp|
+| vhunt2	|  	| Vampire Hunter 2 - darkstalkers revenge (970929 Japan)| 		| 1997	| Capcom	| CPS2		| 					| vh2j.03a| src/burn/drv/capcom/d_cps2.cpp|
+| vsava		|  	| Vampire Savior - the lord of vampire (970519 Asia)	| vsav		| 1997	| Capcom	| CPS2		| 					| vm3a.03d| src/burn/drv/capcom/d_cps2.cpp|
+| vsavb		|  	| Vampire Savior - the lord of vampire (970519 Brazil)	| vsav		| 1997	| Capcom	| CPS2		| 					| vm3b.03d| src/burn/drv/capcom/d_cps2.cpp|
+| vsavd		|  	| Vampire Savior - the lord of vampire (970519 Euro Phoenix Edition)| vsav	| 1997	| bootleg	| CPS2		| 					| vm3ed.03d| src/burn/drv/capcom/d_cps2.cpp|
+| vsav		|  	| Vampire Savior - the lord of vampire (970519 Euro)	| 		| 1997	| Capcom	| CPS2		| 					| vm3e.03d| src/burn/drv/capcom/d_cps2.cpp|
+| vsavh		|  	| Vampire Savior - the lord of vampire (970519 Hispanic)| vsav		| 1997	| Capcom	| CPS2		| 					| vm3h.03a| src/burn/drv/capcom/d_cps2.cpp|
+| vsavj		|  	| Vampire Savior - the lord of vampire (970519 Japan)	| vsav		| 1997	| Capcom	| CPS2		| 					| vm3j.03d| src/burn/drv/capcom/d_cps2.cpp|
+| vsavu		|  	| Vampire Savior - the lord of vampire (970519 USA)	| vsav		| 1997	| Capcom	| CPS2		| 					| vm3u.03d| src/burn/drv/capcom/d_cps2.cpp|
+| vsav2d	|  	| Vampire Savior 2 - the lord of vampire (970913 Japan Phoenix Edition)| vsav2	| 1997	| bootleg	| CPS2		| 					| vs2j_d.03| src/burn/drv/capcom/d_cps2.cpp|
+| vsav2		|  	| Vampire Savior 2 - the lord of vampire (970913 Japan)	| 		| 1997	| Capcom	| CPS2		| 					| vs2j.03| src/burn/drv/capcom/d_cps2.cpp|
+| varthr1	|  	| Varth - operation thunderstorm (920612 etc)		| varth		| 1992	| Capcom	| CPS1		| 					| vae_30a.11f| src/burn/drv/capcom/d_cps1.cpp|
+| varthu	|  	| Varth - operation thunderstorm (920612 USA)		| varth		| 1992	| Capcom (Romsta| CPS1		| 					| vau_23a.8f| src/burn/drv/capcom/d_cps1.cpp|
+| varth		|  	| Varth - operation thunderstorm (920714 etc)		| 		| 1992	| Capcom	| CPS1		| 					| vae_30b.11f| src/burn/drv/capcom/d_cps1.cpp|
+| varthjr	|  	| Varth - operation thunderstorm (920714 Japan Resale Ver.)| varth		| 1992	| Capcom	| CPS1		| 					| vaj_23b.8f| src/burn/drv/capcom/d_cps1.cpp|
+| varthj	|  	| Varth - operation thunderstorm (920714 Japan)		| varth		| 1992	| Capcom	| CPS1		| 					| vaj_36b.12f| src/burn/drv/capcom/d_cps1.cpp|
+| varthb	|  	| Varth - operation thunderstorm (bootleg, 920612 etc)	| varth		| 1992	| bootleg	| CPS1		| 					| 2| src/burn/drv/capcom/d_cps1.cpp|
+| warzardr1	|  	| War-Zard / Red Earth (Japan 961023)			| redearth	| 1996	| Capcom	| CPS-3		| 					| warzard_japan.29f400.u2| src/burn/drv/cps3/d_cps3.cpp|
+| warzard	|  	| War-Zard / Red Earth (Japan 961121)			| redearth	| 1996	| Capcom	| CPS-3		| 					| warzard_japan.29f400.u2| src/burn/drv/cps3/d_cps3.cpp|
+| wofr1		|  	| Warriors of Fate (921002 etc)				| wof		| 1992	| Capcom	| CPS1 / QSound	| 					| tk2e_23b.8f| src/burn/drv/capcom/d_cps1.cpp|
+| wofu		|  	| Warriors of Fate (921031 USA)				| wof		| 1992	| Capcom	| CPS1 / QSound	| 					| tk2u_23c.8f| src/burn/drv/capcom/d_cps1.cpp|
+| wof		|  	| Warriors of Fate (921031 World)			| 		| 1992	| Capcom	| CPS1 / QSound	| 					| tk2e_23c.8f| src/burn/drv/capcom/d_cps1.cpp|
+| wofpic	|  	| Warriors of Fate (bootleg with PIC16C57, 921002 etc)	| wof		| 1992	| bootleg	| CPS1		| no sound				| 2.4m| src/burn/drv/capcom/d_cps1.cpp|
+| wofr1bl	|  	| Warriors of Fate (bootleg, 921002 etc)		| wof		| 1992	| bootleg	| CPS1		| 					| 3-f2ab.040| src/burn/drv/capcom/d_cps1.cpp|
+| woffr		| X	| Warriors of Fate (French Translation)			| wof		| 1992	| Capcom	| CPS1 / QSound	| 					| tk2e_23bfr.rom| src/burn/drv/capcom/d_cps1.cpp|
+| willowj	|  	| Willow (Japan, Japanese)				| willow	| 1989	| Capcom	| CPS1		| 					| wl_36.12f| src/burn/drv/capcom/d_cps1.cpp|
+| willowuo	|  	| Willow (USA Old Ver.)					| willow	| 1989	| Capcom	| CPS1		| 					| wlu_30.11f| src/burn/drv/capcom/d_cps1.cpp|
+| willowu	|  	| Willow (USA)						| willow	| 1989	| Capcom	| CPS1		| 					| wlu_30.11f| src/burn/drv/capcom/d_cps1.cpp|
+| willow	|  	| Willow (World)					| 		| 1989	| Capcom	| CPS1		| 					| wle_30.11f| src/burn/drv/capcom/d_cps1.cpp|
+| wonder3	|  	| Wonder 3 (910520 Japan)				| 3wonders	| 1991	| Capcom	| CPS1		| 					| rtj_36.12f| src/burn/drv/capcom/d_cps1.cpp|
+| xmcotajr	|  	| X-Men - children of the atom (941208 Japan, rent version)| xmcota	| 1994	| Capcom	| CPS2		| 					| xmno.03a| src/burn/drv/capcom/d_cps2.cpp|
+| xmcotaar2	|  	| X-Men - children of the atom (941217 Asia)		| xmcota	| 1995	| Capcom	| CPS2		| 					| xmna.03a| src/burn/drv/capcom/d_cps2.cpp|
+| xmcotaj3	|  	| X-Men - children of the atom (941217 Japan)		| xmcota	| 1994	| Capcom	| CPS2		| 					| xmnj.03a| src/burn/drv/capcom/d_cps2.cpp|
+| xmcotaar1	|  	| X-Men - children of the atom (941219 Asia)		| xmcota	| 1995	| Capcom	| CPS2		| 					| xmna.03b| src/burn/drv/capcom/d_cps2.cpp|
+| xmcotaj2	|  	| X-Men - children of the atom (941219 Japan)		| xmcota	| 1994	| Capcom	| CPS2		| 					| xmnj.03b| src/burn/drv/capcom/d_cps2.cpp|
+| xmcotaj1	|  	| X-Men - children of the atom (941222 Japan)		| xmcota	| 1994	| Capcom	| CPS2		| 					| xmnj.03d| src/burn/drv/capcom/d_cps2.cpp|
+| xmcotaa	|  	| X-Men - children of the atom (950105 Asia)		| xmcota	| 1995	| Capcom	| CPS2		| 					| xmna.03e| src/burn/drv/capcom/d_cps2.cpp|
+| xmcotar1d	|  	| X-Men - children of the atom (950105 Euro Phoenix Edition)| xmcota	| 1995	| bootleg	| CPS2		| 					| xmned.03e| src/burn/drv/capcom/d_cps2.cpp|
+| xmcotar1	|  	| X-Men - children of the atom (950105 Euro)		| xmcota	| 1995	| Capcom	| CPS2		| 					| xmne.03e| src/burn/drv/capcom/d_cps2.cpp|
+| xmcotahr1	|  	| X-Men - children of the atom (950105 Hispanic)	| xmcota	| 1995	| Capcom	| CPS2		| 					| xmnh.03d| src/burn/drv/capcom/d_cps2.cpp|
+| xmcotaj	|  	| X-Men - children of the atom (950105 Japan)		| xmcota	| 1994	| Capcom	| CPS2		| 					| xmnj.03e| src/burn/drv/capcom/d_cps2.cpp|
+| xmcotau	|  	| X-Men - children of the atom (950105 USA)		| xmcota	| 1995	| Capcom	| CPS2		| 					| xmnu.03e| src/burn/drv/capcom/d_cps2.cpp|
+| xmcotab	|  	| X-Men - children of the atom (950331 Brazil)		| xmcota	| 1995	| Capcom	| CPS2		| 					| xmnb.03c| src/burn/drv/capcom/d_cps2.cpp|
+| xmcota	|  	| X-Men - children of the atom (950331 Euro)		| 		| 1995	| Capcom	| CPS2		| 					| xmne.03f| src/burn/drv/capcom/d_cps2.cpp|
+| xmcotah	|  	| X-Men - children of the atom (950331 Hispanic)	| xmcota	| 1995	| Capcom	| CPS2		| 					| xmnh.03f| src/burn/drv/capcom/d_cps2.cpp|
+| xmvsfjr3	|  	| X-Men vs Street Fighter (960909 Japan)		| xmvsf		| 1996	| Capcom	| CPS2		| 					| xvsj.03c| src/burn/drv/capcom/d_cps2.cpp|
+| xmvsfar3	|  	| X-Men vs Street Fighter (960910 Asia)			| xmvsf		| 1996	| Capcom	| CPS2		| 					| xvsa.03d| src/burn/drv/capcom/d_cps2.cpp|
+| xmvsfr1	|  	| X-Men vs Street Fighter (960910 Euro)			| xmvsf		| 1996	| Capcom	| CPS2		| 					| xvse.03d| src/burn/drv/capcom/d_cps2.cpp|
+| xmvsfjr2	|  	| X-Men vs Street Fighter (960910 Japan)		| xmvsf		| 1996	| Capcom	| CPS2		| 					| xvsj.03d| src/burn/drv/capcom/d_cps2.cpp|
+| xmvsfur2	|  	| X-Men vs Street Fighter (960910 USA)			| xmvsf		| 1996	| Capcom	| CPS2		| 					| xvsu.03d| src/burn/drv/capcom/d_cps2.cpp|
+| xmvsfar2	|  	| X-Men vs Street Fighter (960919 Asia)			| xmvsf		| 1996	| Capcom	| CPS2		| 					| xvsa.03e| src/burn/drv/capcom/d_cps2.cpp|
+| xmvsfar1	|  	| X-Men vs Street Fighter (961004 Asia)			| xmvsf		| 1996	| Capcom	| CPS2		| 					| xvsa.03| src/burn/drv/capcom/d_cps2.cpp|
+| xmvsf		|  	| X-Men vs Street Fighter (961004 Euro)			| 		| 1996	| Capcom	| CPS2		| 					| xvse.03f| src/burn/drv/capcom/d_cps2.cpp|
+| xmvsfh	|  	| X-Men vs Street Fighter (961004 Hispanic)		| xmvsf		| 1996	| Capcom	| CPS2		| 					| xvsh.03a| src/burn/drv/capcom/d_cps2.cpp|
+| xmvsfjr1	|  	| X-Men vs Street Fighter (961004 Japan)		| xmvsf		| 1996	| Capcom	| CPS2		| 					| xvsj.03i| src/burn/drv/capcom/d_cps2.cpp|
+| xmvsfu1d	|  	| X-Men vs Street Fighter (961004 USA Phoenix Edition)	| xmvsf		| 1996	| bootleg	| CPS2		| 					| xvsud.03h| src/burn/drv/capcom/d_cps2.cpp|
+| xmvsfur1	|  	| X-Men vs Street Fighter (961004 USA)			| xmvsf		| 1996	| Capcom	| CPS2		| 					| xvsu.03i| src/burn/drv/capcom/d_cps2.cpp|
+| xmvsfa	|  	| X-Men vs Street Fighter (961023 Asia)			| xmvsf		| 1996	| Capcom	| CPS2		| 					| xvsa.03k| src/burn/drv/capcom/d_cps2.cpp|
+| xmvsfb	|  	| X-Men vs Street Fighter (961023 Brazil)		| xmvsf		| 1996	| Capcom	| CPS2		| 					| xvsb.03h| src/burn/drv/capcom/d_cps2.cpp|
+| xmvsfj	|  	| X-Men vs Street Fighter (961023 Japan)		| xmvsf		| 1996	| Capcom	| CPS2		| 					| xvsj.03k| src/burn/drv/capcom/d_cps2.cpp|
+| xmvsfu	|  	| X-Men vs Street Fighter (961023 USA)			| xmvsf		| 1996	| Capcom	| CPS2		| 					| xvsu.03k| src/burn/drv/capcom/d_cps2.cpp|
++---------------+-------+-------------------------------------------------------+---------------+-------+---------------+---------------+-------------------------------------------------------+

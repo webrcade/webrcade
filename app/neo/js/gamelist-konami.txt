@@ -1,0 +1,396 @@
+This list contains all games supported by FinalBurn Neo.
+
+389 games supported in total; X = excluded from build; D = included in debug build only; NW = not working
+
+  name		  status  full name						  parent	  year	  company	  hardware	  remarks
++---------------+-------+-------------------------------------------------------+---------------+-------+---------------+---------------+---------------------------------------+
+| 88games	|  	| '88 Games						| 		| 1988	| Konami	| GX861		| 					| 861m01.k18| src/burn/drv/konami/d_88games.cpp|
+| ajax		|  	| Ajax							| 		| 1987	| Konami	| GX770		| 					| 770_m01.n11| src/burn/drv/konami/d_ajax.cpp|
+| ajaxj		|  	| Ajax (Japan)						| ajax		| 1987	| Konami	| GX770		| 					| 770_l01.n11| src/burn/drv/konami/d_ajax.cpp|
+| akumajoun	|  	| Akuma-Jou Dracula (Japan ver. N)			| hcastle	| 1988	| Konami	| GX768		| 					| 768n03.k12| src/burn/drv/konami/d_hcastle.cpp|
+| akumajou	|  	| Akuma-Jou Dracula (Japan ver. P)			| hcastle	| 1988	| Konami	| GX768		| 					| 768p03.k12| src/burn/drv/konami/d_hcastle.cpp|
+| aliensa	|  	| Aliens (Asia)						| aliens	| 1990	| Konami	| GX875		| 					| 875_r02.e24| src/burn/drv/konami/d_aliens.cpp|
+| aliensj	|  	| Aliens (Japan set 1)					| aliens	| 1990	| Konami	| GX875		| 					| 875_m02.e24| src/burn/drv/konami/d_aliens.cpp|
+| aliensj2	|  	| Aliens (Japan set 2)					| aliens	| 1990	| Konami	| GX875		| 					| 875_j2_2.e24| src/burn/drv/konami/d_aliens.cpp|
+| aliensu	|  	| Aliens (US set 1)					| aliens	| 1990	| Konami	| GX875		| 					| 875_n02.e24| src/burn/drv/konami/d_aliens.cpp|
+| aliensu2	|  	| Aliens (US set 2)					| aliens	| 1990	| Konami	| GX875		| 					| 875_h02.e24| src/burn/drv/konami/d_aliens.cpp|
+| aliens	|  	| Aliens (World set 1)					| 		| 1990	| Konami	| GX875		| 					| 875_j02.e24| src/burn/drv/konami/d_aliens.cpp|
+| aliens2	|  	| Aliens (World set 2)					| aliens	| 1990	| Konami	| GX875		| 					| 875_p02.e24| src/burn/drv/konami/d_aliens.cpp|
+| aliens3	|  	| Aliens (World set 3)					| aliens	| 1990	| Konami	| GX875		| 					| 875_w3_2.e24| src/burn/drv/konami/d_aliens.cpp|
+| asterixaad	|  	| Asterix (ver AAD)					| asterix	| 1992	| Konami	| GX068		| 					| 068_aa_d01.8c| src/burn/drv/konami/d_asterix.cpp|
+| asterixeaa	|  	| Asterix (ver EAA)					| asterix	| 1992	| Konami	| GX068		| 					| 068_ea_a01.8c| src/burn/drv/konami/d_asterix.cpp|
+| asterixeac	|  	| Asterix (ver EAC)					| asterix	| 1992	| Konami	| GX068		| 					| 068_ea_c01.8c| src/burn/drv/konami/d_asterix.cpp|
+| asterix	|  	| Asterix (ver EAD)					| 		| 1992	| Konami	| GX068		| 					| 068_ea_d01.8c| src/burn/drv/konami/d_asterix.cpp|
+| asterixj	|  	| Asterix (ver JAD)					| asterix	| 1992	| Konami	| GX068		| 					| 068_ja_d01.8c| src/burn/drv/konami/d_asterix.cpp|
+| atlantol	|   NW	| Atlant Olimpic					| trackfld	| 1996	| bootleg	| Miscellaneous	| 					| atl37| src/burn/drv/konami/d_trackfld.cpp|
+| battlntsj	|  	| Battlantis (Japan, program code E)			| battlnts	| 1987	| Konami	| GX777		| 					| 777_e02.7e| src/burn/drv/konami/d_battlnts.cpp|
+| battlntsa	|  	| Battlantis (program code F)				| battlnts	| 1987	| Konami	| GX777		| 					| 777_f02.7e| src/burn/drv/konami/d_battlnts.cpp|
+| battlnts	|  	| Battlantis (program code G)				| 		| 1987	| Konami	| GX777		| 					| 777_g02.7e| src/burn/drv/konami/d_battlnts.cpp|
+| blswhstla	|  	| Bells & Whistles (Asia, version M)			| blswhstl	| 1991	| Konami	| GX060		| 					| 060_m02.e09| src/burn/drv/konami/d_tmnt.cpp|
+| blswhstl	|  	| Bells & Whistles (World, version L)			| 		| 1991	| Konami	| GX060		| 					| 060_l02.e09| src/burn/drv/konami/d_tmnt.cpp|
+| bikkuric	|  	| Bikkuri Card (Japan)					| 		| 1987	| Peni Soft	| Miscellaneous	| 					| 1.a16| src/burn/drv/konami/d_timeplt.cpp|
+| bishi		|  	| Bishi Bashi Championship Mini Game Senshuken (ver JAA, 3 Players)| 	| 1996	| Konami	| Miscellaneous	| Imperfect gfx (one gfx rom bad, bad pr| 575jaa05.12e| src/burn/drv/konami/d_bishi.cpp|
+| blkpnthr	|  	| Black Panther						| 		| 1987	| Konami	| GX604		| 					| 604-f02.18b| src/burn/drv/konami/d_nemesis.cpp|
+| bladestle	|  	| Blades of Steel (version E, Trackball)		| bladestl	| 1987	| Konami	| GX797		| 					| 797-e01.19c| src/burn/drv/konami/d_bladestl.cpp|
+| bladestll	|  	| Blades of Steel (version L, Trackball)		| bladestl	| 1987	| Konami	| GX797		| 					| 797-l01.19c| src/burn/drv/konami/d_bladestl.cpp|
+| bladestl	|  	| Blades of Steel (version T, Joystick)			| 		| 1987	| Konami	| GX797		| 					| 797-t01.19c| src/burn/drv/konami/d_bladestl.cpp|
+| blockhl	|  	| Block Hole						| 		| 1989	| Konami	| GX973		| 					| 973l02.e21| src/burn/drv/konami/d_blockhl.cpp|
+| bottom9n	|  	| Bottom of the Ninth (ver. N)				| bottom9	| 1989	| Konami	| GX891		| 					| 891n03.k17| src/burn/drv/konami/d_bottom9.cpp|
+| bottom9	|  	| Bottom of the Ninth (ver. T)				| 		| 1989	| Konami	| GX891		| 					| 891n03.k17| src/burn/drv/konami/d_bottom9.cpp|
+| bubsys	|   NW	| Bubble System BIOS					| 		| 1985	| Konami	| Bios Only	| 					| boot.bin| src/burn/drv/konami/d_nemesis.cpp|
+| buckyaa	|  	| Bucky O'Hare (ver AA)					| bucky		| 1992	| Konami	| GX173		| 					| 173aa01.q4| src/burn/drv/konami/d_moo.cpp|
+| buckyaab	|  	| Bucky O'Hare (ver AAB)				| bucky		| 1992	| Konami	| GX173		| 					| 173aab01.q5| src/burn/drv/konami/d_moo.cpp|
+| buckyea	|  	| Bucky O'Hare (ver EA)					| bucky		| 1992	| Konami	| GX173		| 					| 2.d5| src/burn/drv/konami/d_moo.cpp|
+| bucky		|  	| Bucky O'Hare (ver EAB)				| 		| 1992	| Konami	| GX173		| 					| 173eab01.q5| src/burn/drv/konami/d_moo.cpp|
+| buckyjaa	|  	| Bucky O'Hare (ver JAA)				| bucky		| 1992	| Konami	| GX173		| 					| 173jaa01.05| src/burn/drv/konami/d_moo.cpp|
+| buckyuab	|  	| Bucky O'Hare (ver UAB)				| bucky		| 1992	| Konami	| GX173		| 					| 173uab01.q5| src/burn/drv/konami/d_moo.cpp|
+| cashquiz	|  	| Cash Quiz (Type B, Version 5)				| 		| 1986	| Zilec-Zenitone| Miscellaneous	| Missing graphics due to undumped ROM!	| cashqcv5.ic3| src/burn/drv/konami/d_pingpong.cpp|
+| chkun		|  	| Chance Kun (Japan)					| 		| 1988	| Peni Soft	| Miscellaneous	| 					| n1.16a| src/burn/drv/konami/d_timeplt.cpp|
+| chqflag	|  	| Chequered Flag					| 		| 1988	| Konami	| Miscellaneous	| 					| 717e10| src/burn/drv/konami/d_chqflag.cpp|
+| chqflagj	|  	| Chequered Flag (Japan)				| chqflag	| 1988	| Konami	| Miscellaneous	| 					| 717e10| src/burn/drv/konami/d_chqflag.cpp|
+| circuscc	|  	| Circus Charlie (Centuri)				| circusc	| 1984	| Konami (Centur| GX380		| 					| 380_u05.3h| src/burn/drv/konami/d_circusc.cpp|
+| circusce	|  	| Circus Charlie (Centuri, earlier)			| circusc	| 1984	| Konami (Centur| GX380		| 					| 380_p05.3h| src/burn/drv/konami/d_circusc.cpp|
+| circusc	|  	| Circus Charlie (level select, set 1)			| 		| 1984	| Konami	| GX380		| 					| 380_s05.3h| src/burn/drv/konami/d_circusc.cpp|
+| circusc2	|  	| Circus Charlie (level select, set 2)			| circusc	| 1984	| Konami	| GX380		| 					| 380_w05.3h| src/burn/drv/konami/d_circusc.cpp|
+| circusc3	|  	| Circus Charlie (level select, set 3)			| circusc	| 1984	| Konami	| GX380		| 					| 380_w05.3h| src/burn/drv/konami/d_circusc.cpp|
+| circusc4	|  	| Circus Charlie (no level select)			| circusc	| 1984	| Konami	| GX380		| 					| 380_r05.3h| src/burn/drv/konami/d_circusc.cpp|
+| citybombj	|  	| City Bomber (Japan)					| citybomb	| 1987	| Konami	| GX787		| 					| 787-h10.15k| src/burn/drv/konami/d_nemesis.cpp|
+| citybomb	|  	| City Bomber (World)					| 		| 1987	| Konami	| GX787		| 					| 787-g10.15k| src/burn/drv/konami/d_nemesis.cpp|
+| combatsc	|  	| Combat School (joystick)				| 		| 1988	| Konami	| GX611		| 					| 611g01.rom| src/burn/drv/konami/d_combatsc.cpp|
+| contrab	|  	| Contra (bootleg)					| contra	| 1987	| bootleg	| GX633		| 					| 3.ic20| src/burn/drv/konami/d_contra.cpp|
+| contrabj	|  	| Contra (Japan bootleg, set 1)				| contra	| 1987	| bootleg	| GX633		| 					| 2.2k| src/burn/drv/konami/d_contra.cpp|
+| contrabj1	|  	| Contra (Japan bootleg, set 2)				| contra	| 1987	| bootleg	| GX633		| 					| 2__,contrabtj2.2k| src/burn/drv/konami/d_contra.cpp|
+| contraj	|  	| Contra (Japan, set 1)					| contra	| 1987	| Konami	| GX633		| 					| 633n03.18a| src/burn/drv/konami/d_contra.cpp|
+| contraj1	|  	| Contra (Japan, set 2)					| contra	| 1987	| Konami	| GX633		| 					| 633k03.18a| src/burn/drv/konami/d_contra.cpp|
+| contra	|  	| Contra (US / Asia, set 1)				| 		| 1987	| Konami	| GX633		| 					| 633m03.18a| src/burn/drv/konami/d_contra.cpp|
+| contra1	|  	| Contra (US / Asia, set 2)				| contra	| 1987	| Konami	| GX633		| 					| 633i03.18a| src/burn/drv/konami/d_contra.cpp|
+| contrae	|  	| Contra (US / Asia, set 3)				| contra	| 1987	| Konami	| GX633		| 					| 633_e03.18a| src/burn/drv/konami/d_contra.cpp|
+| crazycop	|  	| Crazy Cop (Japan)					| gbusters	| 1988	| Konami	| GX878		| 					| 878m02.k13| src/burn/drv/konami/d_gbusters.cpp|
+| crimfghtj	|  	| Crime Fighters (Japan 2 Players)			| crimfght	| 1989	| Konami	| GX821		| 					| 821p02.f24| src/burn/drv/konami/d_crimfght.cpp|
+| crimfghtu	|  	| Crime Fighters (US 4 Players)				| crimfght	| 1989	| Konami	| GX821		| 					| 821l02.f24| src/burn/drv/konami/d_crimfght.cpp|
+| crimfght	|  	| Crime Fighters (World 2 players)			| 		| 1989	| Konami	| GX821		| 					| 821r02.f24| src/burn/drv/konami/d_crimfght.cpp|
+| vendetta2pp	|  	| Crime Fighters 2 (Japan, 2 Players ver. P)		| vendetta	| 1991	| Konami	| GX081		| 					| 081p01.17c| src/burn/drv/konami/d_vendetta.cpp|
+| vendettan	|  	| Crime Fighters 2 (Japan, 4 Players ver. N)		| vendetta	| 1991	| Konami	| GX081		| 					| 081n01.17c| src/burn/drv/konami/d_vendetta.cpp|
+| cuebrickj	|  	| Cue Brick (Japan)					| cuebrick	| 1989	| Konami	| GX903		| 					| 903_e05.6n| src/burn/drv/konami/d_twin16.cpp|
+| cuebrick	|  	| Cue Brick (World, version D)				| 		| 1989	| Konami	| GX903		| 					| 903d25.g12| src/burn/drv/konami/d_tmnt.cpp|
+| dairesya	|  	| Dai Ressya Goutou (Japan)				| ironhors	| 1986	| Konami (Kawaku| GX560		| 					| 560-k03.13c| src/burn/drv/konami/d_ironhors.cpp|
+| darkadv	|  	| Dark Adventure					| devilw	| 1987	| Konami	| GX687		| 					| 687_n05.6n| src/burn/drv/konami/d_twin16.cpp|
+| detatwin	|  	| Detana!! Twin Bee (Japan ver. J)			| blswhstl	| 1991	| Konami	| GX060		| 					| 060_j02.e09| src/burn/drv/konami/d_tmnt.cpp|
+| devstors2	|  	| Devastators (ver. 2)					| devstors	| 1988	| Konami	| GX890		| Minor Video glitches in level 2.	| 890_202.k11| src/burn/drv/konami/d_mainevt.cpp|
+| devstorsv	|  	| Devastators (ver. V)					| devstors	| 1988	| Konami	| GX890		| Minor Video glitches in level 2.	| 890v02.k11| src/burn/drv/konami/d_mainevt.cpp|
+| devstorsx	|  	| Devastators (ver. X)					| devstors	| 1988	| Konami	| GX890		| Minor Video glitches in level 2.	| 890x02.k11| src/burn/drv/konami/d_mainevt.cpp|
+| devstors	|  	| Devastators (ver. Z)					| 		| 1988	| Konami	| GX890		| Minor Video glitches in level 2.	| 890z02.k11| src/burn/drv/konami/d_mainevt.cpp|
+| devilw	|  	| Devil World						| 		| 1987	| Konami	| GX687		| 					| 687_t05.6n| src/burn/drv/konami/d_twin16.cpp|
+| ddribble	|  	| Double Dribble					| 		| 1986	| Konami	| GX690		| 					| 690c03.bin| src/burn/drv/konami/d_ddribble.cpp|
+| ddribblep	|  	| Double Dribble (prototype?)				| ddribble	| 1986	| Konami	| GX690		| 					| ebs_11-19.c19| src/burn/drv/konami/d_ddribble.cpp|
+| dbza		|  	| Dragonball Z (rev A)					| dbz		| 1993	| Banpresto	| Miscellaneous	| 					| 222a11.9e| src/burn/drv/konami/d_dbz.cpp|
+| dbz		|  	| Dragonball Z (rev B)					| 		| 1993	| Banpresto	| Miscellaneous	| 					| 222b11.9e| src/burn/drv/konami/d_dbz.cpp|
+| dbz2		|  	| Dragonball Z 2 - Super Battle				| 		| 1994	| Banpresto	| Miscellaneous	| 					| a9e.9e| src/burn/drv/konami/d_dbz.cpp|
+| esckids	|  	| Escape Kids (Asia, 4 Players)				| 		| 1991	| Konami	| GX975		| 					| 17c.bin| src/burn/drv/konami/d_vendetta.cpp|
+| esckidsj	|  	| Escape Kids (Japan, 2 Players)			| esckids	| 1991	| Konami	| GX975		| 					| 975r01| src/burn/drv/konami/d_vendetta.cpp|
+| farwest	| D NW	| Far West						| ironhors	| 1986	| bootleg?	| GX560		| 					| ironhors.008| src/burn/drv/konami/d_ironhors.cpp|
+| fastlane	|  	| Fast Lane						| 		| 1987	| Konami	| GX752		| 					| 752_m02.9h| src/burn/drv/konami/d_fastlane.cpp|
+| finalizrb	|  	| Finalizer - Super Transformation (bootleg)		| finalizr	| 1985	| bootleg	| GX523		| 					| finalizr.5| src/burn/drv/konami/d_finalzr.cpp|
+| finalizr	|  	| Finalizer - Super Transformation (set 1)		| 		| 1985	| Konami	| GX523		| 					| 523k01.9c| src/burn/drv/konami/d_finalzr.cpp|
+| finalizra	|  	| Finalizer - Super Transformation (set 2)		| finalizr	| 1985	| Konami	| GX523		| 					| 1.9c| src/burn/drv/konami/d_finalzr.cpp|
+| flkatck	|  	| Flak Attack (Japan)					| mx5000	| 1987	| Konami	| GX669		| 					| 669_p01.16c| src/burn/drv/konami/d_flkatck.cpp|
+| flkatcka	|  	| Flak Attack (Japan, PWB 450593 sub-board)		| mx5000	| 1987	| Konami	| GX669		| 					| 669_p01.16c| src/burn/drv/konami/d_flkatck.cpp|
+| gijoea	|  	| G.I. Joe (Asia, AA)					| gijoe		| 1992	| Konami	| GX069		| 					| 069aa03.14e| src/burn/drv/konami/d_gijoe.cpp|
+| gijoej	|  	| G.I. Joe (Japan, JAA)					| gijoe		| 1992	| Konami	| GX069		| 					| 069jaa03.14e| src/burn/drv/konami/d_gijoe.cpp|
+| gijoeua	|  	| G.I. Joe (US, UAA)					| gijoe		| 1992	| Konami	| GX069		| 					| 069uaa03.14e| src/burn/drv/konami/d_gijoe.cpp|
+| gijoeu	|  	| G.I. Joe (US, UAB)					| gijoe		| 1992	| Konami	| GX069		| 					| 069uab03.14e| src/burn/drv/konami/d_gijoe.cpp|
+| gijoe		|  	| G.I. Joe (World, EAB, set 1)				| 		| 1992	| Konami	| GX069		| 					| 069eab03.14e| src/burn/drv/konami/d_gijoe.cpp|
+| gijoeea	|  	| G.I. Joe (World, EB8, prototype?)			| gijoe		| 1992	| Konami	| GX069		| 					| rom3.14e| src/burn/drv/konami/d_gijoe.cpp|
+| gaiapols	|  	| Gaiapolis (ver EAF)					| 		| 1993	| Konami	| GX123		| 					| 123e07.24m| src/burn/drv/konami/d_mystwarr.cpp|
+| gaiapolsj	|  	| Gaiapolis (ver JAF)					| gaiapols	| 1993	| Konami	| GX123		| 					| 123e07.24m| src/burn/drv/konami/d_mystwarr.cpp|
+| gaiapolsu	|  	| Gaiapolis (ver UAF)					| gaiapols	| 1993	| Konami	| GX123		| 					| 123e07.24m| src/burn/drv/konami/d_mystwarr.cpp|
+| gwarrior	|  	| Galactic Warriors					| 		| 1985	| Konami	| GX578		| 					| 400-a06.15l| src/burn/drv/konami/d_nemesis.cpp|
+| gbusters	|  	| Gang Busters (set 1)					| 		| 1988	| Konami	| GX878		| 					| 878n02.k13| src/burn/drv/konami/d_gbusters.cpp|
+| gbustersa	|  	| Gang Busters (set 2)					| gbusters	| 1988	| Konami	| GX878		| 					| 878_02.k13| src/burn/drv/konami/d_gbusters.cpp|
+| garuka	|  	| Garuka (Japan ver. W)					| devstors	| 1988	| Konami	| GX890		| Minor Video glitches in level 2.	| 890w02.k11| src/burn/drv/konami/d_mainevt.cpp|
+| gradiusb	|  	| Gradius (Bubble System)				| nemesis	| 1985	| Konami	| Miscellaneous	| 					| boot.bin| src/burn/drv/konami/d_nemesis.cpp|
+| gradius	|  	| Gradius (Japan, ROM version)				| nemesis	| 1985	| Konami	| GX456		| 					| 400-a06.15l| src/burn/drv/konami/d_nemesis.cpp|
+| gradius2	|  	| Gradius II - GOFER no Yabou (Japan New ver.)		| vulcan	| 1988	| Konami	| GX785		| 					| 785_x05.6n| src/burn/drv/konami/d_twin16.cpp|
+| gradius2a	|  	| Gradius II - GOFER no Yabou (Japan Old ver.)		| vulcan	| 1988	| Konami	| GX785		| 					| 785_p05.6n| src/burn/drv/konami/d_twin16.cpp|
+| gradius2b	|  	| Gradius II - GOFER no Yabou (Japan Older ver.)	| vulcan	| 1988	| Konami	| GX785		| 					| 785_p05.6n| src/burn/drv/konami/d_twin16.cpp|
+| gradius3a	|  	| Gradius III (Asia)					| gradius3	| 1989	| Konami	| GX945		| 					| 945_13.f15| src/burn/drv/konami/d_gradius3.cpp|
+| gradius3j	|  	| Gradius III (Japan, program code S)			| gradius3	| 1989	| Konami	| GX945		| 					| 945_s13.f15| src/burn/drv/konami/d_gradius3.cpp|
+| gradius3js	|  	| Gradius III (Japan, program code S, split)		| gradius3	| 1989	| Konami	| GX945		| 					| 945_s13.f15| src/burn/drv/konami/d_gradius3.cpp|
+| gradius3	|  	| Gradius III (World, program code R)			| 		| 1989	| Konami	| GX945		| 					| 945_r13.f15| src/burn/drv/konami/d_gradius3.cpp|
+| gberet	|  	| Green Beret						| 		| 1985	| Konami	| GX577		| 					| 577l03.10c| src/burn/drv/konami/d_gberet.cpp|
+| gberetb	|  	| Green Beret (bootleg)					| gberet	| 1985	| bootleg	| GX577		| 					| 2-ic82.10g| src/burn/drv/konami/d_gberet.cpp|
+| gryzor	|  	| Gryzor (Set 1)					| contra	| 1987	| Konami	| GX633		| 					| 633j03.18a| src/burn/drv/konami/d_contra.cpp|
+| gryzor1	|  	| Gryzor (Set 2)					| contra	| 1987	| Konami	| GX633		| 					| 633g2.18a| src/burn/drv/konami/d_contra.cpp|
+| gyrussb	|  	| Gyruss (bootleg)					| gyruss	| 1983	| bootleg	| GX347		| 					| 1.bin| src/burn/drv/konami/d_gyruss.cpp|
+| gyrussce	|  	| Gyruss (Centuri)					| gyruss	| 1983	| Konami (Centur| GX347		| 					| gya-1.11j| src/burn/drv/konami/d_gyruss.cpp|
+| gyruss	|  	| Gyruss (Konami)					| 		| 1983	| Konami	| GX347		| 					| gyrussk.1| src/burn/drv/konami/d_gyruss.cpp|
+| hpuncher	|  	| Hard Puncher (Japan)					| fround	| 1988	| Konami	| GX870		| 					| 870_h05.6n| src/burn/drv/konami/d_twin16.cpp|
+| hcastlee	|  	| Haunted Castle (ver. E)				| hcastle	| 1988	| Konami	| GX768		| 					| 768e03.k12| src/burn/drv/konami/d_hcastle.cpp|
+| hcastlek	|  	| Haunted Castle (ver. K)				| hcastle	| 1988	| Konami	| GX768		| 					| 768k03.k12| src/burn/drv/konami/d_hcastle.cpp|
+| hcastle	|  	| Haunted Castle (ver. M)				| 		| 1988	| Konami	| GX768		| 					| m03.k12| src/burn/drv/konami/d_hcastle.cpp|
+| hexionb	|  	| Hexion (Bootleg, Asia ver. AAA)			| hexion	| 1992	| Bootleg	| GX122		| 					| hexionb.u2| src/burn/drv/konami/d_hexion.cpp|
+| hexion	|  	| Hexion (Japan ver. JAB)				| 		| 1992	| Konami	| GX122		| 					| 122__j_a__b01.16f| src/burn/drv/konami/d_hexion.cpp|
+| hipoly	|   NW	| Hipoly (bootleg of Hyper Olympic)			| trackfld	| 1983	| bootleg	| Miscellaneous	| 					| 2.1a| src/burn/drv/konami/d_trackfld.cpp|
+| hotchase	|  	| Hot Chase (set 1)					| 		| 1988	| Konami	| Miscellaneous	| 					| 763k05| src/burn/drv/konami/d_wecleman.cpp|
+| hotchasea	|  	| Hot Chase (set 2)					| hotchase	| 1988	| Konami	| Miscellaneous	| 					| 763r05.r16| src/burn/drv/konami/d_wecleman.cpp|
+| hcrashc	|  	| Hyper Crash (version C)				| hcrash	| 1987	| Konami	| GX790		| 					| 790-c03.t9| src/burn/drv/konami/d_nemesis.cpp|
+| hcrash	|  	| Hyper Crash (version D)				| 		| 1987	| Konami	| GX790		| 					| 790-d03.t9| src/burn/drv/konami/d_nemesis.cpp|
+| hyprolym	|  	| Hyper Olympic						| trackfld	| 1983	| Konami	| Miscellaneous	| 					| 361-d01.a01| src/burn/drv/konami/d_trackfld.cpp|
+| hpolym84	|  	| Hyper Olympic '84					| hyperspt	| 1984	| Konami	| GX330		| 					| c01| src/burn/drv/konami/d_hyperspt.cpp|
+| hyprolymb	|   NW	| Hyper Olympic (bootleg, set 1)			| trackfld	| 1983	| bootleg	| Miscellaneous	| 					| blue.a1| src/burn/drv/konami/d_trackfld.cpp|
+| hyprolymba	|   NW	| Hyper Olympic (bootleg, set 2)			| trackfld	| 1983	| bootleg	| Miscellaneous	| 					| 1.a1| src/burn/drv/konami/d_trackfld.cpp|
+| hyperspt	|  	| Hyper Sports						| 		| 1984	| Konami (Centur| GX330		| 					| c01| src/burn/drv/konami/d_hyperspt.cpp|
+| hypersptb	|   NW	| Hyper Sports (bootleg)				| hyperspt	| 1984	| bootleg	| GX330		| imcomplete sound			| 1.5g| src/burn/drv/konami/d_hyperspt.cpp|
+| hypsptsp	|  	| Hyper Sports Special (Japan)				| 88games	| 1988	| Konami	| GX861		| 					| 861f03.k18| src/burn/drv/konami/d_88games.cpp|
+| ironhors	|  	| Iron Horse						| 		| 1986	| Konami	| GX560		| 					| 560_k03.13c| src/burn/drv/konami/d_ironhors.cpp|
+| jackalbl	|  	| Jackal (bootleg, Rotary Joystick)			| jackal	| 1986	| bootleg	| Miscellaneous	| 					| epr-a-3.bin| src/burn/drv/konami/d_jackal.cpp|
+| jackal	|  	| Jackal (World, 8-way Joystick)			| 		| 1986	| Konami	| Miscellaneous	| 					| 631_v02.15d| src/burn/drv/konami/d_jackal.cpp|
+| jackalr	|  	| Jackal (World, Rotary Joystick)			| jackal	| 1986	| Konami	| Miscellaneous	| 					| 631_q02.15d| src/burn/drv/konami/d_jackal.cpp|
+| jailbrek	|  	| Jail Break						| 		| 1986	| Konami	| GX507		| 					| 507p03.11d| src/burn/drv/konami/d_jailbrek.cpp|
+| jailbrekb	|  	| Jail Break (bootleg)					| jailbrek	| 1986	| bootleg	| GX507		| 					| 1.k6| src/burn/drv/konami/d_jailbrek.cpp|
+| junofrst	|  	| Juno First						| 		| 1983	| Konami	| GX310		| 					| jfa_b9.bin| src/burn/drv/konami/d_junofrst.cpp|
+| junofrstg	|  	| Juno First (Gottlieb)					| junofrst	| 1983	| Konami (Gottli| GX310		| 					| jfg_a.9b| src/burn/drv/konami/d_junofrst.cpp|
+| kicker	|  	| Kicker						| 		| 1985	| Konami	| GX477		| 					| 477-l03.d9| src/burn/drv/konami/d_shaolins.cpp|
+| kittenk	|  	| Kitten Kaboodle					| 		| 1988	| Konami	| GX712		| 					| kitten.15k| src/burn/drv/konami/d_nemesis.cpp|
+| rockragej	|  	| Koi no Hotrock (Japan)				| rockrage	| 1986	| Konami	| GX620		| 					| 620k01.16c| src/burn/drv/konami/d_rockrage.cpp|
+| konami88	|  	| Konami '88						| 88games	| 1988	| Konami	| GX861		| 					| 861.e03| src/burn/drv/konami/d_88games.cpp|
+| konamigt	|  	| Konami GT						| 		| 1985	| Konami	| GX561		| 					| 561-c01.12a| src/burn/drv/konami/d_nemesis.cpp|
+| rf2		|  	| Konami RF2 - Red Fighter				| konamigt	| 1985	| Konami	| GX561		| 					| 400-a06.15l| src/burn/drv/konami/d_nemesis.cpp|
+| kontest	|  	| Konami Test Board (GX800, Japan)			| 		| 1987?	| Konami	| GX800		| 					| 800b01.10d| src/burn/drv/konami/d_kontest.cpp|
+| pingpong	|  	| Konami's Ping-Pong					| 		| 1985	| Konami	| GX555		| 					| 555_e04.7a| src/burn/drv/konami/d_pingpong.cpp|
+| dadandrn	|  	| Kyukyoku Sentai Dadandarn (ver JAA)			| mmaulers	| 1993	| Konami	| GX170		| 					| 170jaa07.24m| src/burn/drv/konami/d_mystwarr.cpp|
+| divebomb	|  	| Kyuukoukabakugekitai - Dive Bomber Squad (Japan, prototype)| 		| 1989	| Konami	| GX840		| bugs are normal!			| u20.27256| src/burn/drv/konami/d_divebomb.cpp|
+| labyrunr	|  	| Labyrinth Runner (Japan)				| tricktrp	| 1987	| Konami	| GX771		| 					| 771j04.10f| src/burn/drv/konami/d_labyrunr.cpp|
+| labyrunrk	|  	| Labyrinth Runner (World Ver. K)			| tricktrp	| 1987	| Konami	| GX771		| 					| 771k04.10f| src/burn/drv/konami/d_labyrunr.cpp|
+| lethaleneaa	|  	| Lethal Enforcers (ver EAA, 09/09/92 09:44)		| lethalen	| 1992	| Konami	| GX191		| 					| 191_a01.u4| src/burn/drv/konami/d_lethal.cpp|
+| lethaleneab	|  	| Lethal Enforcers (ver EAB, 10/14/92 19:53)		| lethalen	| 1992	| Konami	| GX191		| 					| 191eab01.u4| src/burn/drv/konami/d_lethal.cpp|
+| lethalenead	|  	| Lethal Enforcers (ver EAD, 11/11/92 10:52)		| lethalen	| 1992	| Konami	| GX191		| 					| 191ead01.u4| src/burn/drv/konami/d_lethal.cpp|
+| lethaleneae	|  	| Lethal Enforcers (ver EAE, 11/19/92 16:24)		| lethalen	| 1992	| Konami	| GX191		| 					| 191eae01.u4| src/burn/drv/konami/d_lethal.cpp|
+| lethalenj	| D NW	| Lethal Enforcers (ver JAD, 12/04/92 17:16)		| lethalen	| 1992	| Konami	| GX191		| no sprites!				| 191jad01.u4| src/burn/drv/konami/d_lethal.cpp|
+| lethalenua	|  	| Lethal Enforcers (ver UAA, 08/17/92 21:38)		| lethalen	| 1992	| Konami	| GX191		| 					| 191uaa01.u4| src/burn/drv/konami/d_lethal.cpp|
+| lethalenub	|  	| Lethal Enforcers (ver UAB, 09/01/92 11:12)		| lethalen	| 1992	| Konami	| GX191		| 					| 191uab01.u4| src/burn/drv/konami/d_lethal.cpp|
+| lethalen	|  	| Lethal Enforcers (ver UAE, 11/19/92 15:04)		| 		| 1992	| Konami	| GX191		| 					| 191uae01.u4| src/burn/drv/konami/d_lethal.cpp|
+| lethalenux	|  	| Lethal Enforcers (ver unknown, US, 08/06/92 15:11, hacked/proto?)| lethalen| 1992	| Konami	| GX191		| 					| 191xxx01.u4| src/burn/drv/konami/d_lethal.cpp|
+| lifefrcej	|  	| Lifeforce (Japan)					| salamand	| 1987	| Konami	| GX587		| 					| 587-n02.18b| src/burn/drv/konami/d_nemesis.cpp|
+| lifefrce	|  	| Lifeforce (US)					| salamand	| 1986	| Konami	| GX587		| 					| 587-k02.18b| src/burn/drv/konami/d_nemesis.cpp|
+| lgtnfghta	|  	| Lightning Fighters (Asia)				| lgtnfght	| 1990	| Konami	| GX939		| 					| 939j_02.e11| src/burn/drv/konami/d_tmnt.cpp|
+| lgtnfghtu	|  	| Lightning Fighters (US)				| lgtnfght	| 1990	| Konami	| GX939		| 					| 939m02.e11| src/burn/drv/konami/d_tmnt.cpp|
+| lgtnfght	|  	| Lightning Fighters (World)				| 		| 1990	| Konami	| GX939		| 					| 939k02.e11| src/burn/drv/konami/d_tmnt.cpp|
+| miaj		|  	| M.I.A. - Missing in Action (version R) (Japan)	| mia		| 1989	| Konami	| GX808		| 					| 808_r05.6n| src/burn/drv/konami/d_twin16.cpp|
+| mia2		|  	| M.I.A. - Missing in Action (version S)		| mia		| 1989	| Konami	| GX808		| 					| 808s20.h17| src/burn/drv/konami/d_tmnt.cpp|
+| mia		|  	| M.I.A. - Missing in Action (version T)		| 		| 1989	| Konami	| GX808		| 					| 808t20.h17| src/burn/drv/konami/d_tmnt.cpp|
+| mstadium	|  	| Main Stadium (Japan ver. 4)				| bottom9	| 1989	| Konami	| GX891		| 					| 891-403.k17| src/burn/drv/konami/d_bottom9.cpp|
+| majuu		|  	| Majuu no Ohkoku					| devilw	| 1987	| Konami	| GX687		| 					| 687_s05.6n| src/burn/drv/konami/d_twin16.cpp|
+| manhatan	|  	| Manhattan 24 Bunsyo (Japan)				| jailbrek	| 1986	| Konami	| GX507		| 					| 507n03.11d| src/burn/drv/konami/d_jailbrek.cpp|
+| mtlchampa	|  	| Martial Champion (ver AAA)				| mtlchamp	| 1993	| Konami	| GX234		| 					| 234aaa01.20f| src/burn/drv/konami/d_mystwarr.cpp|
+| mtlchamp1	|  	| Martial Champion (ver EAA)				| mtlchamp	| 1993	| Konami	| GX234		| 					| 234eaa01.20f| src/burn/drv/konami/d_mystwarr.cpp|
+| mtlchamp	|  	| Martial Champion (ver EAB)				| 		| 1993	| Konami	| GX234		| 					| 234eab01.20f| src/burn/drv/konami/d_mystwarr.cpp|
+| mtlchampj	|  	| Martial Champion (ver JAA)				| mtlchamp	| 1993	| Konami	| GX234		| 					| 234jaa01.20f| src/burn/drv/konami/d_mystwarr.cpp|
+| mtlchampu1	|  	| Martial Champion (ver UAD)				| mtlchamp	| 1993	| Konami	| GX234		| 					| 234uad01.20f| src/burn/drv/konami/d_mystwarr.cpp|
+| mtlchampu	|  	| Martial Champion (ver UAE)				| mtlchamp	| 1993	| Konami	| GX234		| 					| 234uae01.20f| src/burn/drv/konami/d_mystwarr.cpp|
+| megazoneh	|  	| Mega Zone (program code H)				| megazone	| 1983	| Konami (Kosuka| GX319		| 					| 319_h07.11h| src/burn/drv/konami/d_megazone.cpp|
+| megazonei	|  	| Mega Zone (program code I)				| megazone	| 1983	| Konami	| GX319		| 					| 319_i07.11h| src/burn/drv/konami/d_megazone.cpp|
+| megazonej	|  	| Mega Zone (program code J)				| megazone	| 1983	| Konami (Interl| GX319		| 					| 319_j07.11h| src/burn/drv/konami/d_megazone.cpp|
+| megazone	|  	| Mega Zone (program code L)				| 		| 1983	| Konami	| GX319		| 					| 319_l07.11h| src/burn/drv/konami/d_megazone.cpp|
+| megazonea	|  	| Mega Zone (unknown program code 1)			| megazone	| 1983	| Konami (Interl| GX319		| 					| ic59_cpu.bin| src/burn/drv/konami/d_megazone.cpp|
+| megazoneb	|  	| Mega Zone (unknown program code 2)			| megazone	| 1983	| Konami	| GX319		| 					| 7.11h| src/burn/drv/konami/d_megazone.cpp|
+| merlinmm	|  	| Merlins Money Maze					| 		| 1986	| Zilec-Zenitone| Miscellaneous	| 					| merlinmm.ic2| src/burn/drv/konami/d_pingpong.cpp|
+| metamrpha	|  	| Metamorphic Force (ver AAA)				| metamrph	| 1993	| Konami	| GX224		| 					| 224aaa01.15h| src/burn/drv/konami/d_mystwarr.cpp|
+| metamrphe	|  	| Metamorphic Force (ver EAA - alternate)		| metamrph	| 1993	| Konami	| GX224		| 					| 3.15h| src/burn/drv/konami/d_mystwarr.cpp|
+| metamrph	|  	| Metamorphic Force (ver EAA)				| 		| 1993	| Konami	| GX224		| 					| 224eaa01.15h| src/burn/drv/konami/d_mystwarr.cpp|
+| metamrphj	|  	| Metamorphic Force (ver JAA)				| metamrph	| 1993	| Konami	| GX224		| 					| 224jaa01.15h| src/burn/drv/konami/d_mystwarr.cpp|
+| metamrphu	|  	| Metamorphic Force (ver UAA)				| metamrph	| 1993	| Konami	| GX224		| 					| 224uaa01.15h| src/burn/drv/konami/d_mystwarr.cpp|
+| mikie		|  	| Mikie							| 		| 1984	| Konami	| GX469		| 					| n14.11c| src/burn/drv/konami/d_mikie.cpp|
+| mikiehs	|  	| Mikie (High School Graffiti)				| mikie		| 1984	| Konami	| GX469		| 					| l14.11c| src/burn/drv/konami/d_mikie.cpp|
+| mogura	|  	| Mogura Desse						| 		| 1991	| Konami	| Miscellaneous	| Konami test board			| gx141.5n| src/burn/drv/konami/d_mogura.cpp|
+| mmaulers	|  	| Monster Maulers (ver EAA)				| 		| 1993	| Konami	| GX170		| 					| 170eaa07.24m| src/burn/drv/konami/d_mystwarr.cpp|
+| mrgoemon	|  	| Mr. Goemon (Japan)					| 		| 1986	| Konami	| GX621		| 					| 621d01.10c| src/burn/drv/konami/d_gberet.cpp|
+| mx5000	|  	| MX5000						| 		| 1987	| Konami	| GX669		| 					| 669_r01.16c| src/burn/drv/konami/d_flkatck.cpp|
+| mystwarraa	|  	| Mystic Warriors (ver AAA)				| mystwarr	| 1993	| Konami	| GX128		| 					| 128aaa01.20f| src/burn/drv/konami/d_mystwarr.cpp|
+| mystwarra	|  	| Mystic Warriors (ver AAB)				| mystwarr	| 1993	| Konami	| GX128		| 					| 128aab01.20f| src/burn/drv/konami/d_mystwarr.cpp|
+| mystwarr	|  	| Mystic Warriors (ver EAA)				| 		| 1993	| Konami	| GX128		| 					| 128eaa01.20f| src/burn/drv/konami/d_mystwarr.cpp|
+| mystwarrj	|  	| Mystic Warriors (ver JAA)				| mystwarr	| 1993	| Konami	| GX128		| 					| 128jaa01.20f| src/burn/drv/konami/d_mystwarr.cpp|
+| mystwarru	|  	| Mystic Warriors (ver UAA)				| mystwarr	| 1993	| Konami	| GX128		| 					| 128uaa01.20f| src/burn/drv/konami/d_mystwarr.cpp|
+| nemesis	|  	| Nemesis (ROM version)					| 		| 1985	| Konami	| GX400		| 					| 456-d01.12a| src/burn/drv/konami/d_nemesis.cpp|
+| nemesisuk	|  	| Nemesis (World?, ROM version)				| nemesis	| 1985	| Konami	| GX400		| 					| 456-e01.12a| src/burn/drv/konami/d_nemesis.cpp|
+| nyanpani	|  	| Nyan Nyan Panic (Japan)				| kittenk	| 1988	| Konami	| GX712		| 					| 712-j10.15k| src/burn/drv/konami/d_nemesis.cpp|
+| orius		|  	| Orius (ver UAA)					| xexex		| 1991	| Konami	| GX067		| 					| 067uaa01.16d| src/burn/drv/konami/d_xexex.cpp|
+| pandoras	|  	| Pandora's Palace					| 		| 1984	| Konami / Inter| GX328		| 					| pand_j13.cpu| src/burn/drv/konami/d_pandoras.cpp|
+| parodiusa	|  	| Parodius DA! (Asia)					| parodius	| 1990	| Konami	| GX955		| 					| b-18.f5| src/burn/drv/konami/d_parodius.cpp|
+| parodiusj	|  	| Parodius DA! (Japan)					| parodius	| 1990	| Konami	| GX955		| 					| 955e01.f5| src/burn/drv/konami/d_parodius.cpp|
+| parodius	|  	| Parodius DA! (World, set 1)				| 		| 1990	| Konami	| GX955		| 					| 955l01.f5| src/burn/drv/konami/d_parodius.cpp|
+| parodiuse	|  	| Parodius DA! (World, set 2)				| parodius	| 1990	| Konami	| GX955		| 					| 2.f5| src/burn/drv/konami/d_parodius.cpp|
+| pootan	|  	| Pootan						| pooyan	| 1982	| bootleg	| GX320		| 					| poo_ic22.bin| src/burn/drv/konami/d_pooyan.cpp|
+| pooyan	|  	| Pooyan						| 		| 1982	| Konami	| GX320		| 					| 1.4a| src/burn/drv/konami/d_pooyan.cpp|
+| pooyans	|  	| Pooyan (Stern)					| pooyan	| 1982	| [Konami] (Ster| GX320		| 					| ic22_a4.cpu| src/burn/drv/konami/d_pooyan.cpp|
+| psurge	|  	| Power Surge						| 		| 1988	| Vision Electro| Miscellaneous	| 					| p1| src/burn/drv/konami/d_timeplt.cpp|
+| punkshotj	|  	| Punk Shot (Japan 2 Players)				| punkshot	| 1990	| Konami	| GX907		| 					| 907z02.i7| src/burn/drv/konami/d_tmnt.cpp|
+| punkshot2	|  	| Punk Shot (US 2 Players)				| punkshot	| 1990	| Konami	| GX907		| 					| 907m02.i7| src/burn/drv/konami/d_tmnt.cpp|
+| punkshot	|  	| Punk Shot (US 4 Players)				| 		| 1990	| Konami	| GX907		| 					| 907-j02.i7| src/burn/drv/konami/d_tmnt.cpp|
+| punkshot2e	|  	| Punk Shot (World 2 Players)				| punkshot	| 1990	| Konami	| GX907		| 					| 907_2.i7| src/burn/drv/konami/d_tmnt.cpp|
+| quarth	|  	| Quarth (Japan)					| blockhl	| 1989	| Konami	| GX973		| 					| 973j02.e21| src/burn/drv/konami/d_blockhl.cpp|
+| qgakumon	|  	| Quiz Gakumon no Susume (Japan ver. JA2 Type L)	| 		| 1993	| Konami	| GX248		| 					| 248jaa02.8e| src/burn/drv/konami/d_tmnt.cpp|
+| rackemup	|  	| Rack 'em Up (program code L)				| 		| 1987	| Konami	| GX765		| 					| 765_l02.7e| src/burn/drv/konami/d_battlnts.cpp|
+| reaktor	|  	| Reaktor (Track & Field conversion)			| 		| 1987	| Zilec		| Miscellaneous	| 					| prog3.bin| src/burn/drv/konami/d_trackfld.cpp|
+| ringohja	|  	| Ring no Ohja (Japan 2 Players ver. N)			| mainevt	| 1988	| Konami	| GX799		| 					| 799n02.k11| src/burn/drv/konami/d_mainevt.cpp|
+| roadf		|  	| Road Fighter (set 1)					| 		| 1984	| Konami	| GX461		| 					| g05_g01.bin| src/burn/drv/konami/d_hyperspt.cpp|
+| roadf2	|  	| Road Fighter (set 2)					| roadf		| 1984	| Konami	| GX461		| 					| 5g| src/burn/drv/konami/d_hyperspt.cpp|
+| roadf3	|  	| Road Fighter (set 3, conversion hack on Hyper Sports PCB)| roadf		| 1984	| hack		| GX330		| 					| 1-2.g7| src/burn/drv/konami/d_hyperspt.cpp|
+| rocnrope	|  	| Roc'n Rope						| 		| 1983	| Konami	| GX364		| 					| rr1.1h| src/burn/drv/konami/d_rocnrope.cpp|
+| rocnropek	|  	| Roc'n Rope (Kosuka)					| rocnrope	| 1983	| Konami / Kosuk| GX364		| 					| rnr_h1.vid| src/burn/drv/konami/d_rocnrope.cpp|
+| rockragea	|  	| Rock'n Rage (prototype?)				| rockrage	| 1986	| Konami	| GX620		| 					| 620n01.16c| src/burn/drv/konami/d_rockrage.cpp|
+| rockrage	|  	| Rock'n Rage (World)					| 		| 1986	| Konami	| GX620		| 					| 620q01.16c| src/burn/drv/konami/d_rockrage.cpp|
+| rollergj	|  	| Rollergames (Japan)					| rollerg	| 1991	| Konami	| GX999		| 					| 999v02.bin| src/burn/drv/konami/d_rollerg.cpp|
+| rollerg	|  	| Rollergames (US)					| 		| 1991	| Konami	| GX999		| 					| 999m02.g7| src/burn/drv/konami/d_rollerg.cpp|
+| ropeman	|  	| Ropeman (bootleg of Roc'n Rope)			| rocnrope	| 1983	| bootleg	| GX364		| 					| r1.1j| src/burn/drv/konami/d_rocnrope.cpp|
+| rushatck	|  	| Rush'n Attack (US)					| gberet	| 1985	| Konami	| GX577		| 					| 577h03.10c| src/burn/drv/konami/d_gberet.cpp|
+| spyu		|  	| S.P.Y. - Special Project Y (US ver. M)		| spy		| 1989	| Konami	| GX857		| 					| 857m03.bin| src/burn/drv/konami/d_spy.cpp|
+| spy		|  	| S.P.Y. - Special Project Y (World ver. N)		| 		| 1989	| Konami	| GX857		| 					| 857n03.bin| src/burn/drv/konami/d_spy.cpp|
+| salamand	|  	| Salamander (version D)				| 		| 1986	| Konami	| GX587		| 					| 587-d02.18b| src/burn/drv/konami/d_nemesis.cpp|
+| salamandj	|  	| Salamander (version J)				| salamand	| 1986	| Konami	| GX587		| 					| 587-j02.18b| src/burn/drv/konami/d_nemesis.cpp|
+| scotrsht	|  	| Scooter Shooter					| 		| 1985	| Konami	| Miscellaneous	| 					| gx545_g03_12c.bin| src/burn/drv/konami/d_scotrsht.cpp|
+| shaolins	|  	| Shao-lin's Road (set 1)				| kicker	| 1985	| Konami	| GX477		| 					| 477l03.d9| src/burn/drv/konami/d_shaolins.cpp|
+| shaolinb	|  	| Shao-lin's Road (set 2)				| kicker	| 1985	| Konami	| GX477		| 					| 3.h4| src/burn/drv/konami/d_shaolins.cpp|
+| mikiej	|  	| Shinnyuushain Tooru-kun				| mikie		| 1984	| Konami	| GX469		| 					| n14.11c| src/burn/drv/konami/d_mikie.cpp|
+| spaceplt	|  	| Space Pilot (set 1)					| timeplt	| 1982	| bootleg	| GX393		| 					| sp1| src/burn/drv/konami/d_timeplt.cpp|
+| spaceplta	|  	| Space Pilot (set 2)					| timeplt	| 1982	| bootleg	| GX393		| 					| 1| src/burn/drv/konami/d_timeplt.cpp|
+| ssridersabd	|  	| Sunset Riders (2 Players ver. ABD)			| ssriders	| 1991	| Konami	| GX064		| 					| 064abd02.8e| src/burn/drv/konami/d_tmnt.cpp|
+| ssridersebc	|  	| Sunset Riders (2 Players ver. EBC)			| ssriders	| 1991	| Konami	| GX064		| 					| 064ebc02.8e| src/burn/drv/konami/d_tmnt.cpp|
+| ssridersebd	|  	| Sunset Riders (2 Players ver. EBD)			| ssriders	| 1991	| Konami	| GX064		| 					| 064ebd02.8e| src/burn/drv/konami/d_tmnt.cpp|
+| ssridersjbd	|  	| Sunset Riders (2 Players ver. JBD)			| ssriders	| 1991	| Konami	| GX064		| 					| 064jbd02.8e| src/burn/drv/konami/d_tmnt.cpp|
+| ssridersubc	|  	| Sunset Riders (2 Players ver. UBC)			| ssriders	| 1991	| Konami	| GX064		| 					| 064ubc02.8e| src/burn/drv/konami/d_tmnt.cpp|
+| ssridersadd	|  	| Sunset Riders (4 Players ver. ADD)			| ssriders	| 1991	| Konami	| GX064		| 					| 064add02.8e| src/burn/drv/konami/d_tmnt.cpp|
+| ssriderseaa	|  	| Sunset Riders (4 Players ver. EAA)			| ssriders	| 1991	| Konami	| GX064		| 					| 064eaa02.8e| src/burn/drv/konami/d_tmnt.cpp|
+| ssriders	|  	| Sunset Riders (4 Players ver. EAC)			| 		| 1991	| Konami	| GX064		| 					| 064eac02.8e| src/burn/drv/konami/d_tmnt.cpp|
+| ssridersjac	|  	| Sunset Riders (4 Players ver. JAC)			| ssriders	| 1991	| Konami	| GX064		| 					| 064jac02.8e| src/burn/drv/konami/d_tmnt.cpp|
+| ssridersjad	|  	| Sunset Riders (4 Players ver. JAD)			| ssriders	| 1991	| Konami	| GX064		| 					| 064jad02.8e| src/burn/drv/konami/d_tmnt.cpp|
+| ssridersuab	|  	| Sunset Riders (4 Players ver. UAB)			| ssriders	| 1991	| Konami	| GX064		| 					| 064uab02.8e| src/burn/drv/konami/d_tmnt.cpp|
+| ssridersuac	|  	| Sunset Riders (4 Players ver. UAC)			| ssriders	| 1991	| Konami	| GX064		| 					| 064uac02.8e| src/burn/drv/konami/d_tmnt.cpp|
+| ssridersuda	|  	| Sunset Riders (4 Players ver. UDA)			| ssriders	| 1991	| Konami	| GX064		| 					| 064uda02.8e| src/burn/drv/konami/d_tmnt.cpp|
+| ssridersb	| D NW	| Sunset Riders (bootleg 4 Players ver. ADD)		| ssriders	| 1991	| Konami	| GX064		| 					| sunsetb.03| src/burn/drv/konami/d_tmnt.cpp|
+| sbaskete	|  	| Super Basketball (version E, encrypted)		| sbasketb	| 1984	| Konami	| Miscellaneous	| 					| 405e05.14j| src/burn/drv/konami/d_sbasketb.cpp|
+| sbasketg	|  	| Super Basketball (version G, encrypted)		| sbasketb	| 1984	| Konami	| Miscellaneous	| 					| 405g05.14j| src/burn/drv/konami/d_sbasketb.cpp|
+| sbasketh	|  	| Super Basketball (version H, unprotected)		| sbasketb	| 1984	| Konami	| Miscellaneous	| 					| 405h05.14j| src/burn/drv/konami/d_sbasketb.cpp|
+| sbasketb	|  	| Super Basketball (version I, encrypted)		| 		| 1984	| Konami	| Miscellaneous	| 					| 405g05.14j| src/burn/drv/konami/d_sbasketb.cpp|
+| sbishi	|  	| Super Bishi Bashi Championship (ver JAA, 2 Players)	| 		| 1998	| Konami	| Miscellaneous	| Imperfect gfx (bad priorities)	| 675jaa05.12e| src/burn/drv/konami/d_bishi.cpp|
+| sbishika	|  	| Super Bishi Bashi Championship (ver KAA, 3 Players)	| sbishi	| 1998	| Konami	| Miscellaneous	| Imperfect gfx (bad priorities)	| 675kaa05.12e| src/burn/drv/konami/d_bishi.cpp|
+| sbishik	|  	| Super Bishi Bashi Championship (ver KAB, 3 Players)	| sbishi	| 1998	| Konami	| Miscellaneous	| Imperfect gfx (bad priorities)	| kab05.12e| src/burn/drv/konami/d_bishi.cpp|
+| scontra	|  	| Super Contra						| 		| 1988	| Konami	| GX775		| 					| 775-e02.k11| src/burn/drv/konami/d_thunderx.cpp|
+| scontraj	|  	| Super Contra (Japan)					| scontra	| 1988	| Konami	| GX775		| 					| 775-f02.bin| src/burn/drv/konami/d_thunderx.cpp|
+| suratka	|  	| Surprise Attack (Asia ver. L)				| suratk	| 1990	| Konami	| GX911		| 					| 911j01.f5| src/burn/drv/konami/d_surpratk.cpp|
+| suratkj	|  	| Surprise Attack (Japan ver. M)			| suratk	| 1990	| Konami	| GX911		| 					| 911m01.f5| src/burn/drv/konami/d_surpratk.cpp|
+| suratk	|  	| Surprise Attack (World ver. K)			| 		| 1990	| Konami	| GX911		| 					| 911j01.f5| src/burn/drv/konami/d_surpratk.cpp|
+| tmht2pa	|  	| Teenage Mutant Hero Turtles (UK 2 Players, version ?)	| tmnt		| 1989	| Konami	| GX963		| 					| 963-_23.j17| src/burn/drv/konami/d_tmnt.cpp|
+| tmht2p	|  	| Teenage Mutant Hero Turtles (UK 2 Players, version U)	| tmnt		| 1989	| Konami	| GX963		| 					| 963-u23.j17| src/burn/drv/konami/d_tmnt.cpp|
+| tmhtb		|  	| Teenage Mutant Hero Turtles (UK 4 Players, version ?)	| tmnt		| 1989	| Konami	| GX963		| 					| unk3.i17| src/burn/drv/konami/d_tmnt.cpp|
+| tmht		|  	| Teenage Mutant Hero Turtles (UK 4 Players, version F)	| tmnt		| 1989	| Konami	| GX963		| 					| 963-f23.j17| src/burn/drv/konami/d_tmnt.cpp|
+| tmhta		|  	| Teenage Mutant Hero Turtles (UK 4 Players, version S)	| tmnt		| 1989	| Konami	| GX963		| 					| 963-s23.j17| src/burn/drv/konami/d_tmnt.cpp|
+| tmht22pe	|  	| Teenage Mutant Hero Turtles - Turtles in Time (2 Players ver. EBA)| tmnt2	| 1991	| Konami	| GX063		| 					| 063eba02.8e| src/burn/drv/konami/d_tmnt.cpp|
+| tmht24pe	|  	| Teenage Mutant Hero Turtles - Turtles in Time (4 Players ver. EAA)| tmnt2	| 1991	| Konami	| GX063		| 					| 063eaa02.8e| src/burn/drv/konami/d_tmnt.cpp|
+| tmnta		|  	| Teenage Mutant Ninja Turtles (Asia 4 Players, version ?)| tmnt		| 1990	| Konami	| GX963		| 					| tmnt j17.bin| src/burn/drv/konami/d_tmnt.cpp|
+| tmnt2pj	|  	| Teenage Mutant Ninja Turtles (Japan 2 Players, version 1)| tmnt		| 1990	| Konami	| GX963		| 					| 963-123.j17| src/burn/drv/konami/d_tmnt.cpp|
+| tmntj		|  	| Teenage Mutant Ninja Turtles (Japan 4 Players, version 2)| tmnt		| 1990	| Konami	| GX963		| 					| 963_223.j17| src/burn/drv/konami/d_tmnt.cpp|
+| tmnt2po	|  	| Teenage Mutant Ninja Turtles (Oceania 2 Players, version ?)| tmnt		| 1989	| Konami	| GX963		| 					| tmnt123.j17| src/burn/drv/konami/d_tmnt.cpp|
+| tmntuc	|  	| Teenage Mutant Ninja Turtles (US 4 Players, version H)| tmnt		| 1989	| Konami	| GX963		| 					| 963-h23.j17| src/burn/drv/konami/d_tmnt.cpp|
+| tmntub	|  	| Teenage Mutant Ninja Turtles (US 4 Players, version J)| tmnt		| 1989	| Konami	| GX963		| 					| 963-j23.j17| src/burn/drv/konami/d_tmnt.cpp|
+| tmntua	|  	| Teenage Mutant Ninja Turtles (US 4 Players, version N)| tmnt		| 1989	| Konami	| GX963		| 					| 963-n23.j17| src/burn/drv/konami/d_tmnt.cpp|
+| tmntu		|  	| Teenage Mutant Ninja Turtles (US 4 Players, version R)| tmnt		| 1989	| Konami	| GX963		| 					| 963-r23.j17| src/burn/drv/konami/d_tmnt.cpp|
+| tmnt		|  	| Teenage Mutant Ninja Turtles (World 4 Players, version X)| 		| 1989	| Konami	| GX963		| 					| 963-x23.j17| src/burn/drv/konami/d_tmnt.cpp|
+| tmnt22pu	|  	| Teenage Mutant Ninja Turtles - Turtles in Time (2 Players ver. UDA)| tmnt2	| 1991	| Konami	| GX063		| 					| 063uda02.8e| src/burn/drv/konami/d_tmnt.cpp|
+| tmnt2a	|  	| Teenage Mutant Ninja Turtles - Turtles in Time (4 Players ver. ADA)| tmnt2	| 1991	| Konami	| GX063		| 					| 063ada02.8e| src/burn/drv/konami/d_tmnt.cpp|
+| tmnt2		|  	| Teenage Mutant Ninja Turtles - Turtles in Time (4 Players ver. UAA)| 	| 1991	| Konami	| GX063		| 					| 063uaa02.8e| src/burn/drv/konami/d_tmnt.cpp|
+| tmnt24pu	|  	| Teenage Mutant Ninja Turtles - Turtles in Time (4 Players ver. UEA)| tmnt2	| 1991	| Konami	| GX063		| 					| 063uea02.8e| src/burn/drv/konami/d_tmnt.cpp|
+| froundl	|  	| The Final Round (ver. L)				| fround	| 1988	| Konami	| GX870		| 					| 870_l21.bin| src/burn/drv/konami/d_twin16.cpp|
+| fround	|  	| The Final Round (ver. M)				| 		| 1988	| Konami	| GX870		| 					| 870_m21.bin| src/burn/drv/konami/d_twin16.cpp|
+| thehustlj	|  	| The Hustler (Japan, program code J)			| rackemup	| 1987	| Konami	| GX765		| 					| 765_j02.7e| src/burn/drv/konami/d_battlnts.cpp|
+| thehustl	|  	| The Hustler (Japan, program code M)			| rackemup	| 1987	| Konami	| GX765		| 					| 765_m02.7e| src/burn/drv/konami/d_battlnts.cpp|
+| mainevt2p	|  	| The Main Event (2 Players ver. X)			| mainevt	| 1988	| Konami	| GX799		| 					| 799x02.k11| src/burn/drv/konami/d_mainevt.cpp|
+| mainevto	|  	| The Main Event (4 Players ver. F)			| mainevt	| 1988	| Konami	| GX799		| 					| 799f02.k11| src/burn/drv/konami/d_mainevt.cpp|
+| mainevt	|  	| The Main Event (4 Players ver. Y)			| 		| 1988	| Konami	| GX799		| 					| 799y02.k11| src/burn/drv/konami/d_mainevt.cpp|
+| mastkin	|  	| The Masters of Kin					| 		| 1988	| Du Tech	| Miscellaneous	| Colors are wrong			| mk3| src/burn/drv/konami/d_trackfld.cpp|
+| simpsons2pa	|  	| The Simpsons (2 Players Asia)				| simpsons	| 1991	| Konami	| GX072		| 					| 072-g02.16c| src/burn/drv/konami/d_simpsons.cpp|
+| simpsons2pj	|  	| The Simpsons (2 Players Japan)			| simpsons	| 1991	| Konami	| GX072		| 					| 072-s02.16c| src/burn/drv/konami/d_simpsons.cpp|
+| simpsons2p	|  	| The Simpsons (2 Players World, set 1)			| simpsons	| 1991	| Konami	| GX072		| 					| 072-g02.16c| src/burn/drv/konami/d_simpsons.cpp|
+| simpsons2p2	|  	| The Simpsons (2 Players World, set 2)			| simpsons	| 1991	| Konami	| GX072		| 					| 072-g02.16c| src/burn/drv/konami/d_simpsons.cpp|
+| simpsons2p3	|  	| The Simpsons (2 Players World, set 3)			| simpsons	| 1991	| Konami	| GX072		| 					| 072-g02.16c| src/burn/drv/konami/d_simpsons.cpp|
+| simpsons4pa	|  	| The Simpsons (4 Players Asia)				| simpsons	| 1991	| Konami	| GX072		| 					| 072-v02.16c| src/burn/drv/konami/d_simpsons.cpp|
+| simpsons	|  	| The Simpsons (4 Players World, set 1)			| 		| 1991	| Konami	| GX072		| 					| 072-g02.16c| src/burn/drv/konami/d_simpsons.cpp|
+| simpsons4pe	|  	| The Simpsons (4 Players World, set 2)			| simpsons	| 1991	| Konami	| GX072		| 					| 072-g02.16c| src/burn/drv/konami/d_simpsons.cpp|
+| thunderxj	|  	| Thunder Cross (Japan)					| thunderx	| 1988	| Konami	| GX873		| 					| 873-n03.k15| src/burn/drv/konami/d_thunderx.cpp|
+| thunderx	|  	| Thunder Cross (set 1)					| 		| 1988	| Konami	| GX873		| 					| 873-s03.k15| src/burn/drv/konami/d_thunderx.cpp|
+| thunderxa	|  	| Thunder Cross (set 2)					| thunderx	| 1988	| Konami	| GX873		| 					| 873-k03.k15| src/burn/drv/konami/d_thunderx.cpp|
+| thunderxb	|  	| Thunder Cross (set 3)					| thunderx	| 1988	| Konami	| GX873		| 					| 873-03.k15| src/burn/drv/konami/d_thunderx.cpp|
+| thndrx2a	|  	| Thunder Cross II (Asia)				| thndrx2	| 1991	| Konami	| GX073		| 					| 073-aa-m02.11c| src/burn/drv/konami/d_tmnt.cpp|
+| thndrx2j	|  	| Thunder Cross II (Japan)				| thndrx2	| 1991	| Konami	| GX073		| 					| 073-ja-k02.11c| src/burn/drv/konami/d_tmnt.cpp|
+| thndrx2	|  	| Thunder Cross II (World)				| 		| 1991	| Konami	| GX073		| 					| 073-ea-l02.11c| src/burn/drv/konami/d_tmnt.cpp|
+| timeplt	|  	| Time Pilot						| 		| 1982	| Konami	| GX393		| 					| tm1| src/burn/drv/konami/d_timeplt.cpp|
+| tp84		|  	| Time Pilot '84 (set 1)				| 		| 1984	| Konami	| GX388		| 					| 388_f04.7j| src/burn/drv/konami/d_tp84.cpp|
+| tp84a		|  	| Time Pilot '84 (set 2)				| tp84		| 1984	| Konami	| GX388		| 					| 388_f04.7j| src/burn/drv/konami/d_tp84.cpp|
+| tp84b		|  	| Time Pilot '84 (set 3)				| tp84		| 1984	| Konami	| GX388		| 					| 388j05.8j| src/burn/drv/konami/d_tp84.cpp|
+| timeplta	|  	| Time Pilot (Atari)					| timeplt	| 1982	| Konami (Atari | GX393		| 					| cd_e1.bin| src/burn/drv/konami/d_timeplt.cpp|
+| timepltc	|  	| Time Pilot (Centuri)					| timeplt	| 1982	| Konami (Centur| GX393		| 					| cd1y| src/burn/drv/konami/d_timeplt.cpp|
+| jackalj	|  	| Tokushu Butai Jackal (Japan, 8-way Joystick)		| jackal	| 1986	| Konami	| Miscellaneous	| 					| 631_t02.15d| src/burn/drv/konami/d_jackal.cpp|
+| topgunbl	|  	| Top Gunner (bootleg, Rotary Joystick)			| jackal	| 1986	| bootleg	| Miscellaneous	| 					| t-3.c5| src/burn/drv/konami/d_jackal.cpp|
+| topgunr	|  	| Top Gunner (US, 8-way Joystick)			| jackal	| 1986	| Konami	| Miscellaneous	| 					| 631_u02.15d| src/burn/drv/konami/d_jackal.cpp|
+| trackfld	|  	| Track & Field						| 		| 1983	| Konami	| Miscellaneous	| 					| a01_e01.bin| src/burn/drv/konami/d_trackfld.cpp|
+| trackfldc	|  	| Track & Field (Centuri)				| trackfld	| 1983	| Konami (Centur| Miscellaneous	| 					| f01.1a| src/burn/drv/konami/d_trackfld.cpp|
+| trackfldnz	|  	| Track & Field (NZ bootleg?)				| trackfld	| 1982	| bootleg? (Gold| Miscellaneous	| 					| gold.7a| src/burn/drv/konami/d_trackfld.cpp|
+| tricktrp	|  	| Trick Trap (World?)					| 		| 1987	| Konami	| GX771		| 					| 771e04| src/burn/drv/konami/d_labyrunr.cpp|
+| trigon	|  	| Trigon (Japan)					| lgtnfght	| 1990	| Konami	| GX939		| 					| 939j02.e11| src/burn/drv/konami/d_tmnt.cpp|
+| tutankhm	|  	| Tutankham						| 		| 1982	| Konami	| GX350		| 					| m1.1h| src/burn/drv/konami/d_tutankhm.cpp|
+| tutankhms	|  	| Tutankham (Stern Electronics)				| tutankhm	| 1982	| Konami (Stern | GX350		| 					| m1.1h| src/burn/drv/konami/d_tutankhm.cpp|
+| twinbeeb	|  	| TwinBee (Bubble System)				| twinbee	| 1985	| Konami	| Miscellaneous	| 					| boot.bin| src/burn/drv/konami/d_nemesis.cpp|
+| twinbee	|  	| TwinBee (ROM version)					| 		| 1985	| Konami	| GX412		| 					| 400-a06.15l| src/burn/drv/konami/d_nemesis.cpp|
+| typhoon	|  	| Typhoon						| ajax		| 1987	| Konami	| GX770		| 					| 770_k01.n11| src/burn/drv/konami/d_ajax.cpp|
+| ultraman	|  	| Ultraman (Japan)					| 		| 1991	| Banpresto / Ba| GX910		| 					| 910-b01.c11| src/burn/drv/konami/d_ultraman.cpp|
+| vendetta2pd	|  	| Vendetta (Asia, 2 Players ver. D)			| vendetta	| 1991	| Konami	| GX081		| 					| 081d01.17c| src/burn/drv/konami/d_vendetta.cpp|
+| vendetta2pu	|  	| Vendetta (Asia, 2 Players ver. U)			| vendetta	| 1991	| Konami	| GX081		| 					| 081u01.17c| src/burn/drv/konami/d_vendetta.cpp|
+| vendettaz	|  	| Vendetta (Asia, 4 Players ver. Z)			| vendetta	| 1991	| Konami	| GX081		| 					| 081z01.17c| src/burn/drv/konami/d_vendetta.cpp|
+| vendettar	|  	| Vendetta (US, 4 Players ver. R)			| vendetta	| 1991	| Konami	| GX081		| 					| 081r01.17c| src/burn/drv/konami/d_vendetta.cpp|
+| vendetta2pun	|  	| Vendetta (World, 2 Players ver. ?)			| vendetta	| 1991	| Konami	| GX081		| 					| 1.17c| src/burn/drv/konami/d_vendetta.cpp|
+| vendetta2peba	|  	| Vendetta (World, 2 Players ver. EB-A?)		| vendetta	| 1991	| Konami	| GX081		| 					| 081-eb-a01.17c| src/burn/drv/konami/d_vendetta.cpp|
+| vendetta2pw	|  	| Vendetta (World, 2 Players ver. W)			| vendetta	| 1991	| Konami	| GX081		| 					| 081w01.17c| src/burn/drv/konami/d_vendetta.cpp|
+| vendetta	|  	| Vendetta (World, 4 Players ver. T)			| 		| 1991	| Konami	| GX081		| 					| 081t01.17c| src/burn/drv/konami/d_vendetta.cpp|
+| vendettaun	|  	| Vendetta (World, 4 Players, ver. ?)			| vendetta	| 1991	| Konami	| GX081		| 					| 1.17c| src/burn/drv/konami/d_vendetta.cpp|
+| venus		|  	| Venus							| gyruss	| 1983	| bootleg	| GX347		| 					| r1| src/burn/drv/konami/d_gyruss.cpp|
+| viostormab	|  	| Violent Storm (ver AAB)				| viostorm	| 1993	| Konami	| GX168		| 					| 168aab01.15h| src/burn/drv/konami/d_mystwarr.cpp|
+| viostorma	|  	| Violent Storm (ver AAC)				| viostorm	| 1993	| Konami	| GX168		| 					| 168aac01.15h| src/burn/drv/konami/d_mystwarr.cpp|
+| viostormeb	|  	| Violent Storm (ver EAB)				| viostorm	| 1993	| Konami	| GX168		| 					| 168eab01.15h| src/burn/drv/konami/d_mystwarr.cpp|
+| viostorm	|  	| Violent Storm (ver EAC)				| 		| 1993	| Konami	| GX224		| 					| 168eac01.15h| src/burn/drv/konami/d_mystwarr.cpp|
+| viostormj	|  	| Violent Storm (ver JAC)				| viostorm	| 1993	| Konami	| GX168		| 					| 168jac01.b01| src/burn/drv/konami/d_mystwarr.cpp|
+| viostormub	|  	| Violent Storm (ver UAB)				| viostorm	| 1993	| Konami	| GX168		| 					| 168uab01.15h| src/burn/drv/konami/d_mystwarr.cpp|
+| viostormu	|  	| Violent Storm (ver UAC)				| viostorm	| 1993	| Konami	| GX168		| 					| 168uac01.15h| src/burn/drv/konami/d_mystwarr.cpp|
+| vulcan	|  	| Vulcan Venture (New)					| 		| 1988	| Konami	| GX785		| 					| 785_w05.6n| src/burn/drv/konami/d_twin16.cpp|
+| vulcana	|  	| Vulcan Venture (Old)					| vulcan	| 1988	| Konami	| GX785		| 					| 785_r05.6n| src/burn/drv/konami/d_twin16.cpp|
+| vulcanb	|  	| Vulcan Venture (Oldest)				| vulcan	| 1988	| Konami	| GX785		| 					| 785_n05.6n| src/burn/drv/konami/d_twin16.cpp|
+| weclemanc	|  	| WEC Le Mans 24 (v1.26)				| wecleman	| 1986	| Konami	| Miscellaneous	| 					| 17h| src/burn/drv/konami/d_wecleman.cpp|
+| weclemana	|  	| WEC Le Mans 24 (v2.00)				| wecleman	| 1986	| Konami	| Miscellaneous	| 					| 602f08.17h| src/burn/drv/konami/d_wecleman.cpp|
+| weclemanb	|  	| WEC Le Mans 24 (v2.00, hack)				| wecleman	| 1988	| hack		| Miscellaneous	| 					| 602f08.17h| src/burn/drv/konami/d_wecleman.cpp|
+| wecleman	|  	| WEC Le Mans 24 (v2.01)				| 		| 1986	| Konami	| Miscellaneous	| 					| 602g08.17h| src/burn/drv/konami/d_wecleman.cpp|
+| moomesabl	| D NW	| Wild West C.O.W.-Boys of Moo Mesa (bootleg)		| moomesa	| 1992	| bootleg	| GX151		| 					| moo03.rom| src/burn/drv/konami/d_moo.cpp|
+| moomesaaab	|  	| Wild West C.O.W.-Boys of Moo Mesa (ver AAB)		| moomesa	| 1992	| Konami	| GX151		| 					| 151b01.q5| src/burn/drv/konami/d_moo.cpp|
+| moomesa	|  	| Wild West C.O.W.-Boys of Moo Mesa (ver EAB)		| 		| 1992	| Konami	| GX151		| 					| 151b01.q5| src/burn/drv/konami/d_moo.cpp|
+| moomesauab	|  	| Wild West C.O.W.-Boys of Moo Mesa (ver UAB)		| moomesa	| 1992	| Konami	| GX151		| 					| 151b01.q5| src/burn/drv/konami/d_moo.cpp|
+| moomesauac	|  	| Wild West C.O.W.-Boys of Moo Mesa (ver UAC)		| moomesa	| 1992	| Konami	| GX151		| 					| 151c01.q5| src/burn/drv/konami/d_moo.cpp|
+| wizzquiz	|   NW	| Wizz Quiz (Konami version)				| 		| 1985	| Zilec-Zenitone| Miscellaneous	| 					| pros.rom| src/burn/drv/konami/d_trackfld.cpp|
+| wizzquiza	|   NW	| Wizz Quiz (version 4)					| wizzquiz	| 1985	| Zilec-Zenitone| Miscellaneous	| 					| ic9_a1.bin| src/burn/drv/konami/d_trackfld.cpp|
+| xmen2pa	|  	| X-Men (2 Players ver AAA)				| xmen		| 1992	| Konami	| GX065		| 					| 065-aaa04.10d| src/burn/drv/konami/d_xmen.cpp|
+| xmen2pe	|  	| X-Men (2 Players ver EAA)				| xmen		| 1992	| Konami	| GX065		| 					| 065-eaa04.10d| src/burn/drv/konami/d_xmen.cpp|
+| xmen2pj	|  	| X-Men (2 Players ver JAA)				| xmen		| 1992	| Konami	| GX065		| 					| 065-jaa04.10d| src/burn/drv/konami/d_xmen.cpp|
+| xmen2pu	|  	| X-Men (2 Players ver UAB)				| xmen		| 1992	| Konami	| GX065		| 					| 065-uab04.10d| src/burn/drv/konami/d_xmen.cpp|
+| xmenaa	|  	| X-Men (4 Players ver ADA)				| xmen		| 1992	| Konami	| GX065		| 					| 065-ada04.10d| src/burn/drv/konami/d_xmen.cpp|
+| xmena		|  	| X-Men (4 Players ver AEA)				| xmen		| 1992	| Konami	| GX065		| 					| 065-aea04.10d| src/burn/drv/konami/d_xmen.cpp|
+| xmen		|  	| X-Men (4 Players ver EBA)				| 		| 1992	| Konami	| GX065		| 					| 065-eba04.10d| src/burn/drv/konami/d_xmen.cpp|
+| xmenj		|  	| X-Men (4 Players ver JBA)				| xmen		| 1992	| Konami	| GX065		| 					| 065-jba04.10d| src/burn/drv/konami/d_xmen.cpp|
+| xmenja	|  	| X-Men (4 Players ver JEA)				| xmen		| 1992	| Konami	| GX065		| 					| 065-jea04.10d| src/burn/drv/konami/d_xmen.cpp|
+| xmenu		|  	| X-Men (4 Players ver UBB)				| xmen		| 1992	| Konami	| GX065		| 					| 065-ubb04.10d| src/burn/drv/konami/d_xmen.cpp|
+| xmenua	|  	| X-Men (4 Players ver UEB)				| xmen		| 1992	| Konami	| GX065		| 					| 065-ueb04.10d| src/burn/drv/konami/d_xmen.cpp|
+| xmen6p	|  	| X-Men (6 Players ver ECB)				| xmen		| 1992	| Konami	| GX065		| 					| 065-ecb04.18g| src/burn/drv/konami/d_xmen.cpp|
+| xmen6pu	|  	| X-Men (6 Players ver UCB)				| xmen		| 1992	| Konami	| GX065		| 					| 065-ucb04.18g| src/burn/drv/konami/d_xmen.cpp|
+| xexexa	|  	| Xexex (ver AAA)					| xexex		| 1991	| Konami	| GX067		| 					| 067aaa01.16d| src/burn/drv/konami/d_xexex.cpp|
+| xexex		|  	| Xexex (ver EAA)					| 		| 1991	| Konami	| GX067		| 					| 067eaa01.16d| src/burn/drv/konami/d_xexex.cpp|
+| xexexj	|  	| Xexex (ver JAA)					| xexex		| 1991	| Konami	| GX067		| 					| 067jaa01.16d| src/burn/drv/konami/d_xexex.cpp|
+| yieartf	|  	| Yie Ar Kung-Fu (GX361 conversion)			| yiear		| 1985	| Konami	| Miscellaneous	| 					| 2.2a| src/burn/drv/konami/d_trackfld.cpp|
+| yiear2	|  	| Yie Ar Kung-Fu (program code G)			| yiear		| 1985	| Konami	| GX407		| 					| 407_g08.10d| src/burn/drv/konami/d_yiear.cpp|
+| yiear		|  	| Yie Ar Kung-Fu (program code I)			| 		| 1985	| Konami	| GX407		| 					| 407_i08.10d| src/burn/drv/konami/d_yiear.cpp|
++---------------+-------+-------------------------------------------------------+---------------+-------+---------------+---------------+-------------------------------------------------------+
