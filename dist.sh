@@ -4,6 +4,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 DIST="$DIR/dist"
 DIST_OUT="$DIST/out"
 DIST_OUT_APP="$DIST_OUT/app"
+UTILS="$DIR/../webrcade-utils"
 
 #
 # Function that is invoked when the script fails.
@@ -44,7 +45,6 @@ npm link || { fail 'Unable to make common linkable.'; }
 cd "$DIR" || { fail 'Unable to change to webrcade.'; }
 # dats
 cd public || { fail 'Unable to change to public.'; }
-UTILS="../../webrcade-utils"
 mkdir -p "$UTILS" || { fail "Unable to create utils dir"}
 cd "$UTILS" || { fail "Unable to change to utils dir"}
 npm install archiver || { fail 'Unable to install archiver.'; }
