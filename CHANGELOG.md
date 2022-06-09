@@ -4,8 +4,7 @@
     - FBNeo support, 6907 games total, (Neo Geo, Capcom, Konami, etc.)
       - Neo Geo:
         - BIOS Selection (per item and globally)
-        - Selecting between AES (console) and MVS (arcade) (per item and
-          globally)
+        - Selecting between AES (console) and MVS (arcade) hardware
       - Save persistence (High scores, settings, memory cards, etc.)
       - Support for specifying audio samples for games that support it
       - Default SRAM (NVRAM) for games that require it (Williams, etc.)
