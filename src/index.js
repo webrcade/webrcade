@@ -11,6 +11,7 @@ import {
   CloudDownloadWhiteImage,
   DeleteForeverBlackImage,
   DeleteForeverWhiteImage,
+  GamepadWhiteImage,
   PlayArrowBlackImage,
   PlayArrowWhiteImage,
   WebrcadeLogoDarkImage,
@@ -27,6 +28,7 @@ preloadImages([
   CloudDownloadWhiteImage,
   DeleteForeverBlackImage,
   DeleteForeverWhiteImage,
+  GamepadWhiteImage,
   PlayArrowBlackImage,
   PlayArrowWhiteImage  
 ]);

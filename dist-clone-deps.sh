@@ -31,4 +31,4 @@ git clone https://github.com/webrcade/webrcade-app-fceux.git ||
 git clone https://github.com/webrcade/webrcade-app-vba-m.git || 
   { fail 'Unable to clone vba-m'; }
 git clone https://github.com/webrcade/webrcade-app-mednafen.git || 
-  { fail 'Unable to clone vba-m'; }
+  { fail 'Unable to clone mednafen'; }

@@ -17,7 +17,7 @@ function fail() {
     exit 1
 }
 
-## 
+##
 ## create output directories
 ##
 if [ -d "$DIST_OUT" ]; then
@@ -45,9 +45,13 @@ cd "$DIR" || { fail 'Unable to change to webrcade.'; }
 # dats
 cd public || { fail 'Unable to change to public.'; }
 npm install archiver || { fail 'Unable to install archiver.'; }
-wget -O - https://webrcade.github.io/webrcade-utils/createdats.js > createdats.js || 
+wget -O - https://webrcade.github.io/webrcade-utils/createdats-fbneo.js > createdats-fbneo.js ||
+    { fail 'Unable to retrieve create fbneo dats.'; }
+wget -O - https://webrcade.github.io/webrcade-utils/createdats.js > createdats.js ||
     { fail 'Unable to retrieve create dats.'; }
+node createdats-fbneo.js || { fail 'Unable to execute create dats fbneo.'; }
 node createdats.js || { fail 'Unable to execute create dats.'; }
+rm createdats-fbneo.js || { fail 'Unable remove create dats fbneo.'; }
 rm createdats.js || { fail 'Unable remove create dats.'; }
 cd "$DIR" || { fail 'Unable to change to webrcade.'; }
 # build
@@ -134,6 +138,17 @@ mkdir -p "$DIST_OUT_APP/mednafen"  || { fail 'Error creating mednafen output dir
 cp -R build/. "$DIST_OUT_APP/mednafen" || { fail 'failed to copy mednafen to out.'; }
 
 ##
+## webrcade-app-fbneo
+##
+
+cd "$DIR/../webrcade-app-fbneo" || { fail 'Unable to change to fbneo.'; }
+npm install . || { fail 'Unable to install fbneo dependencies.'; }
+npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
+npm run build || { fail 'Unable to build fbneo.'; }
+mkdir -p "$DIST_OUT_APP/neo"  || { fail 'Error creating fbneo output directory.'; }
+cp -R build/. "$DIST_OUT_APP/neo" || { fail 'failed to copy mednafen to out.'; }
+
+##
 ## webrcade-app-prboom
 ##
 
@@ -144,7 +159,7 @@ if test -d "$DIR/../webrcade-app-prboom"; then
     npm run build || { fail 'Unable to build prboom.'; }
     mkdir -p "$DIST_OUT_APP/doom"  || { fail 'Error creating doom output directory.'; }
     cp -R build/. "$DIST_OUT_APP/doom" || { fail 'failed to copy doom to out.'; }
-fi    
+fi
 
 ##
 ## webrcade-editor
