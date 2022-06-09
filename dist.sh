@@ -44,15 +44,20 @@ npm link || { fail 'Unable to make common linkable.'; }
 cd "$DIR" || { fail 'Unable to change to webrcade.'; }
 # dats
 cd public || { fail 'Unable to change to public.'; }
+UTILS="../../webrcade-utils"
+mkdir -p "$UTILS" || { fail "Unable to create utils dir"}
+cd "$UTILS" || { fail "Unable to change to utils dir"}
 npm install archiver || { fail 'Unable to install archiver.'; }
 wget -O - https://webrcade.github.io/webrcade-utils/createdats-fbneo.js > createdats-fbneo.js ||
     { fail 'Unable to retrieve create fbneo dats.'; }
 wget -O - https://webrcade.github.io/webrcade-utils/createdats.js > createdats.js ||
     { fail 'Unable to retrieve create dats.'; }
-node createdats-fbneo.js || { fail 'Unable to execute create dats fbneo.'; }
-node createdats.js || { fail 'Unable to execute create dats.'; }
-rm createdats-fbneo.js || { fail 'Unable remove create dats fbneo.'; }
-rm createdats.js || { fail 'Unable remove create dats.'; }
+cd "$DIR" || { fail 'Unable to change to webrcade.'; }
+cd public || { fail 'Unable to change to public.'; }
+node "$UTILS/createdats-fbneo.js" || { fail 'Unable to execute create dats fbneo.'; }
+node "$UTILS/createdats.js" || { fail 'Unable to execute create dats.'; }
+rm "$UTILS/createdats-fbneo.js" || { fail 'Unable remove create dats fbneo.'; }
+rm "$UTILS/createdats.js" || { fail 'Unable remove create dats.'; }
 cd "$DIR" || { fail 'Unable to change to webrcade.'; }
 # build
 npm install . || { fail 'Unable to install webrcade dependencies.'; }
