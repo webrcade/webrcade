@@ -1,4 +1,11 @@
 import React, { Component } from "react";
+
+import {
+  ImageButton,
+  SettingsRedImage,
+  SettingsWhiteImage,
+} from '@webrcade/app-common'
+
 import TextScroll from "../../../components/textscroll"
 
 require("./style.scss");
@@ -8,19 +15,21 @@ export default class AppDetails extends Component {
   lastKey = null;
 
   render() {
-    const { backgroundSrc, defaultBackgroundSrc, bottom, buttons, description, itemKey, subTitle, title, pixelated } = this.props;
-    const key = itemKey;  
+    const { backgroundSrc, defaultBackgroundSrc, bottom, buttons,
+      description, disable, focusGrid, itemKey, subTitle, title, pixelated,
+      settingsButtonRef } = this.props;
+    const key = itemKey;
     const detailsRightRef = this.detailsRightRef;
-    
+
     if ((key !== this.lastKey) && detailsRightRef) {
       this.lastKey = key;
       const WAIT = 250;
       const start = new Date().getTime();
-      
+
       if (this.timeoutId) window.clearTimeout(this.timeoutId);
 
-      // Remove display of right details      
-      detailsRightRef.classList.remove('fade-in');              
+      // Remove display of right details
+      detailsRightRef.classList.remove('fade-in');
       detailsRightRef.style.backgroundImage = 'none';
 
       // Common fade in
@@ -30,12 +39,12 @@ export default class AppDetails extends Component {
         this.timeoutId = window.setTimeout(() => {
           if (key === this.lastKey) {
             detailsRightRef.classList.add('fade-in');
-          }          
+          }
         }, wait);
       }
 
       const displayBackground = (src) => {
-        if (key === this.lastKey) {           
+        if (key === this.lastKey) {
           detailsRightRef.style.backgroundImage = "url(\"" + src + "\")";
           fadeIn();
         }
@@ -50,17 +59,29 @@ export default class AppDetails extends Component {
         defaultImg.onload = () => { displayBackground(defaultImg.src); };
         defaultImg.src = defaultBackgroundSrc;
       }
-      img.src = backgroundSrc;  
-    }  
+      img.src = backgroundSrc;
+    }
 
-    const rightClass = 
+    const rightClass =
       "app-details-right" + (pixelated ? " app-details-right--pixelated" : "")
 
     return (
       <div className="app-details-content">
         <div className="app-details-background">
           <div className="app-details-left"></div>
-          <div ref={(detailsRight) => { this.detailsRightRef = detailsRight; }} className={rightClass}></div>
+          {!disable ? (
+            <div className="details-header-nav">
+              <ImageButton
+                className={"details-header-nav-button"}
+                onPad={e => focusGrid.moveFocus(e.type, settingsButtonRef)}
+                onClick={() => console.log("Show settings dialog.")}
+                ref={settingsButtonRef}
+                imgSrc={SettingsWhiteImage}
+              />
+            </div>
+          ) : null }
+          <div ref={(detailsRight) => { this.detailsRightRef = detailsRight; }} className={rightClass}>
+          </div>
         </div>
         <div className="app-details-content-container">
           <div className="app-details-content-container-title">{title ? title : ''}</div>
@@ -68,9 +89,9 @@ export default class AppDetails extends Component {
             <div className="app-details-content-container-subtitle">{subTitle}</div>
           ) : null}
           {description ? (
-            <div className="app-details-content-container-description">              
+            <div className="app-details-content-container-description">
               <TextScroll key={itemKey} text={description}/>
-            </div> 
+            </div>
           ) : null}
           <div className="app-details-content-container-buttons">{buttons}</div>
           <div className="app-details-content-container-bottom-comp">{bottom}</div>

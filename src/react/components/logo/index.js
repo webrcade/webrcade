@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import { 
+import {
   WebrcadeLogoDarkImage,
-  WebrcadeLogoLargeImage  
+  WebrcadeLogoLargeImage
 } from '@webrcade/app-common'
 
 require("./style.scss");
 
-export default class Logo extends Component {  
+export default class Logo extends Component {
   render() {
     const { size } = this.props;
 
