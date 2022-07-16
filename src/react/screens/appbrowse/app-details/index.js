@@ -2,7 +2,6 @@ import React, { Component } from "react";
 
 import {
   ImageButton,
-  SettingsRedImage,
   SettingsWhiteImage,
 } from '@webrcade/app-common'
 
@@ -16,8 +15,8 @@ export default class AppDetails extends Component {
 
   render() {
     const { backgroundSrc, defaultBackgroundSrc, bottom, buttons,
-      description, disable, focusGrid, itemKey, subTitle, title, pixelated,
-      settingsButtonRef } = this.props;
+      description, disable, focusGrid, itemKey, onSettings, subTitle,
+      title, pixelated, settingsButtonRef } = this.props;
     const key = itemKey;
     const detailsRightRef = this.detailsRightRef;
 
@@ -74,7 +73,7 @@ export default class AppDetails extends Component {
               <ImageButton
                 className={"details-header-nav-button"}
                 onPad={e => focusGrid.moveFocus(e.type, settingsButtonRef)}
-                onClick={() => console.log("Show settings dialog.")}
+                onClick={() => onSettings()}
                 ref={settingsButtonRef}
                 imgSrc={SettingsWhiteImage}
               />

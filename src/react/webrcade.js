@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import {
-  getDefaultFeed, 
+  getDefaultFeed,
   setDefaultFeed,
 } from '../feed';
 
@@ -22,6 +22,7 @@ import {
   addXboxFullscreenCallback,
   applyIosNavBarHack,
   getXboxViewMessage,
+  settings,
   AppScreen,
   FetchAppData,
   Resources,
@@ -140,29 +141,31 @@ export class Webrcade extends Component {
 
     if (mode === ScreenEnum.LOADING) {
       if (initialFeed) {
-        if (config.isPublicServer()) {
-          loadInitialFeed(null);
-        } else {
-          // Attempt to load default feed from public server
-          let feedJson = null;
-          let defFeed = null;
-          new FetchAppData("https://play.webrcade.com/default-feed.json").fetch()
-            .then(response => response.json())
-            .then(json => {
-              feedJson = json;
-              return parseFeed(json)
-            })
-            .then(feed => {             
+        settings.load().finally(() => {
+          if (config.isPublicServer()) {
+            loadInitialFeed(null);
+          } else {
+            // Attempt to load default feed from public server
+            let feedJson = null;
+            let defFeed = null;
+            new FetchAppData("https://play.webrcade.com/default-feed.json").fetch()
+              .then(response => response.json())
+              .then(json => {
+                feedJson = json;
+                return parseFeed(json)
+              })
+              .then(feed => {
                 // set default feed
-                setDefaultFeed(feedJson);                
+                setDefaultFeed(feedJson);
                 // set feed here
                 defFeed = feed;
-            })
-            .catch(e => LOG.info(e))
-            .finally(() => {
-              loadInitialFeed(defFeed);  
-            })
-        }
+              })
+              .catch(e => LOG.info(e))
+              .finally(() => {
+                loadInitialFeed(defFeed);
+              })
+          }
+        });
       }
     } else if (initial ||
       (prevState.mode === ScreenEnum.APP && mode === ScreenEnum.BROWSE)) {
@@ -192,16 +195,17 @@ export class Webrcade extends Component {
         }}
         onFeedLoad={f => loadFeed(f)}
         onFeedDelete={f => deleteFeed(f)}
+        onSettings={() => ctx.showSettingsEditor(true)}
       />
     );
   }
 
   renderApp() {
     const { app, feed } = this.state;
-    
+
     return (
-      <AppScreen 
-        app={app} 
+      <AppScreen
+        app={app}
         feedProps={feed.getProps()}
         exitCallback={() => {
           this.setState({

@@ -199,7 +199,7 @@ export default class AppBrowseScreen extends Component {
   }
 
   render() {
-    const { disable, feeds, hide } = this.props;
+    const { disable, feeds, hide, onSettings } = this.props;
     const { category, currentItem, feed, menuMode } = this.state;
     const { categoryRef, focusGrid, button1Ref, screenContext, settingsRef,
       settingsDetailsRef, sliderRef, webrcadeDivRef, MAX_SLIDES } = this;
@@ -246,7 +246,7 @@ export default class AppBrowseScreen extends Component {
                 <ImageButton
                     className={"settings-button"}
                     onPad={e => focusGrid.moveFocus(e.type, settingsRef)}
-                    onClick={() => console.log("Show settings dialog.")}
+                    onClick={() => onSettings()}
                     ref={settingsRef}
                     imgSrc={SettingsWhiteImage}
                   />
@@ -263,6 +263,7 @@ export default class AppBrowseScreen extends Component {
               focusGrid={focusGrid}
               pixelated={info.backgroundPixelated}
               disable={disable}
+              onSettings={onSettings}
               buttons={currentItem ?
                 <>
                   <ImageButton

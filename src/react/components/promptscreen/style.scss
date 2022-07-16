@@ -1,21 +1,21 @@
 .prompt-screen {
   position: absolute;
   display: flex;
-  z-index: 51;
+  z-index: 1000;
   top: 0px;
   right: 0px;
   left: 0px;
   bottom: 0px;
-  align-items: center;  
+  align-items: center;
 
   &-inner {
-    //height: 20rem;    
+    //height: 20rem;
     width: 100vw;
     overflow: hidden;
     max-width: 1920px;
     margin: 0 auto;
     position: relative;
-    background-color: rgba(25, 25, 25, .9); 
+    background-color: rgba(25, 25, 25, .9);
     display: flex;
     padding: 3em;
     flex-direction: column;

@@ -7,12 +7,25 @@ class WebrcadeScreenContext {
       renderYesNoScreen: false,
       yesNoScreenProps: {},
       renderAddFeedScreen: false,
-      renderAlertScreen: false
+      renderAlertScreen: false,
+      renderSettingsEditor: false
     }
   }
 
   getWebrcade() {
     return this.webrcade;
+  }
+
+  showSettingsEditor(open) {
+    const { webrcade } = this;
+    webrcade.setState({
+      renderSettingsEditor: open
+    });
+  }
+
+  isSettingsEditorOpen() {
+    const { webrcade } = this;
+    return webrcade.state.renderSettingsEditor;
   }
 
   showAddFeedScreen(open) {
@@ -27,7 +40,7 @@ class WebrcadeScreenContext {
     return webrcade.state.renderAddFeedScreen;
   }
 
-  showAlertScreen(open, message = "", onOk = null, showButton = true) {
+  showAlertScreen(open, message = "", onOk = null, showButton = true, disableAnimation = false) {
     const { webrcade } = this;
 
     if (open) {
@@ -36,7 +49,8 @@ class WebrcadeScreenContext {
         alertScreenProps: {
           message: message,
           onOk: onOk,
-          showButton: showButton
+          showButton: showButton,
+          disableAnimation: disableAnimation
         }
       });
     } else {
@@ -97,7 +111,8 @@ class WebrcadeScreenContext {
     return (
       this.isAlertScreenOpen() ||
       this.isAddFeedScreenOpen() ||
-      this.isYesNoScreenOpen()
+      this.isYesNoScreenOpen() ||
+      this.isSettingsEditorOpen()
     );
   }
 }
