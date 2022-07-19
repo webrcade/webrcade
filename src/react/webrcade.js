@@ -38,6 +38,9 @@ export class Webrcade extends Component {
   constructor() {
     super();
 
+    // Check to ensure resources are resolving
+    Resources.check();
+
     setFeedsWebrcade(this);
 
     this.state = {
