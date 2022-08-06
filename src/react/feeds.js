@@ -16,117 +16,122 @@ import {
 let webrcade = null;
 
 const loadInitialFeed = (defaultFeed) => {
-  const {
-    ScreenEnum, 
-    EDITOR_TEST_FEED, 
-    LAST_FEED_PROP,
-    MIN_LOADING_TIME, 
-    MIN_SLIDES_LENGTH
-  } = webrcade;
+  return new Promise((resolve, reject) => {
+    const {
+      ScreenEnum,
+      EDITOR_TEST_FEED,
+      LAST_FEED_PROP,
+      MIN_LOADING_TIME,
+      MIN_SLIDES_LENGTH
+    } = webrcade;
 
-  // Load feeds from storage      
-  loadFeeds(MIN_SLIDES_LENGTH)
-    .then(feeds => {
-      let loadingFeed = false;
+    // Load feeds from storage
+    loadFeeds(MIN_SLIDES_LENGTH)
+      .then(feeds => {
+        let loadingFeed = false;
 
-      // Do we need to check for a test feed from the editor?
-      const editTest = UrlUtil.getParam(
-        window.location.search, AppProps.RP_EDITOR_TEST);
-      const checkEditTest = (editTest && editTest === AppProps.RV_EDITOR_TEST_ENABLED);
+        // Do we need to check for a test feed from the editor?
+        const editTest = UrlUtil.getParam(
+          window.location.search, AppProps.RP_EDITOR_TEST);
+        const checkEditTest = (editTest && editTest === AppProps.RV_EDITOR_TEST_ENABLED);
 
-      // Capture the last feed identifier
-      let lastFeedId = null;
-      storage.get(LAST_FEED_PROP)
-        .then(value => { lastFeedId = value; })
-        .then(() => {
-          if (checkEditTest) {
-            // Get the test feed from storage (if applicable)
-            return storage.get(EDITOR_TEST_FEED);
-          } else {
-            return null;
-          }
-        })
-        .then((testFeed) => {
-          if (testFeed) {
-            // Test feed was found, use it
-            const feed = parseFeed(testFeed);
-            // Clear the test feed
-            storage.put(EDITOR_TEST_FEED, "");
-            // Mark that we are going to be loading a feed
-            loadingFeed = true;
-            // Show the loading scrren
-            webrcade.setState({
-              loadingStatus: Resources.getText(TEXT_IDS.LOADING_FEED),
-              initialFeed: false,
-              feeds: feeds
-            }, () => {
-              // After loading screen, set to the test feed
-              webrcade.setState({
-                feed: feed,
-                mode: ScreenEnum.BROWSE
-              });
-            });
-            return true;
-          } else {
-            return false;
-          }
-        })
-        .then((usingTestFeed) => {
-          // If we are not using the test feed
-          if (!usingTestFeed) {
-            // Check request parameter for feed url
-            const feedUrl = UrlUtil.getParam(window.location.search, webrcade.RP_FEED);
-            // If a Feed URL was specified or a last feed was found
-            if ((feedUrl && feedUrl.length > 0) || lastFeedId) {
+        // Capture the last feed identifier
+        let lastFeedId = null;
+        storage.get(LAST_FEED_PROP)
+          .then(value => { lastFeedId = value; })
+          .then(() => {
+            if (checkEditTest) {
+              // Get the test feed from storage (if applicable)
+              return storage.get(EDITOR_TEST_FEED);
+            } else {
+              return null;
+            }
+          })
+          .then((testFeed) => {
+            if (testFeed) {
+              // Test feed was found, use it
+              const feed = parseFeed(testFeed);
+              // Clear the test feed
+              storage.put(EDITOR_TEST_FEED, "");
+              // Mark that we are going to be loading a feed
+              loadingFeed = true;
+              // Show the loading scrren
               webrcade.setState({
                 loadingStatus: Resources.getText(TEXT_IDS.LOADING_FEED),
                 initialFeed: false,
                 feeds: feeds
+              }, () => {
+                // After loading screen, set to the test feed
+                webrcade.setState({
+                  feed: feed,
+                  mode: ScreenEnum.BROWSE
+                });
               });
+              return true;
+            } else {
+              return false;
+            }
+          })
+          .then((usingTestFeed) => {
+            // If we are not using the test feed
+            if (!usingTestFeed) {
+              // Check request parameter for feed url
+              const feedUrl = UrlUtil.getParam(window.location.search, webrcade.RP_FEED);
+              // If a Feed URL was specified or a last feed was found
+              if ((feedUrl && feedUrl.length > 0) || lastFeedId) {
+                webrcade.setState({
+                  loadingStatus: Resources.getText(TEXT_IDS.LOADING_FEED),
+                  initialFeed: false,
+                  feeds: feeds
+                });
 
-              if (feedUrl) {                
-                // Load the feed URL that was specified
-                loadingFeed = true;
-                return loadFeedFromUrl(feedUrl);
-              } else {
-                // Attempt to find the feed associated with the feedId
-                const feed = feeds.getFeedWithId(lastFeedId);
-                if (feed) {
-                  if (feed.url && feed.url.length > 0) {
-                    loadingFeed = true;
-                    return loadFeedFromUrl(feed.url);
-                  } else if (feed.localId) {
-                    loadingFeed = true;
-                    return loadFeedFromLocal(feed);
+                if (feedUrl) {
+                  // Load the feed URL that was specified
+                  loadingFeed = true;
+                  return loadFeedFromUrl(feedUrl);
+                } else {
+                  // Attempt to find the feed associated with the feedId
+                  const feed = feeds.getFeedWithId(lastFeedId);
+                  if (feed) {
+                    if (feed.url && feed.url.length > 0) {
+                      loadingFeed = true;
+                      return loadFeedFromUrl(feed.url);
+                    } else if (feed.localId) {
+                      loadingFeed = true;
+                      return loadFeedFromLocal(feed);
+                    }
                   }
                 }
               }
             }
-          }
-        })
-        .catch(e => LOG.info(e))
-        .finally(() => {
-          if (!loadingFeed) {
-            const nextState = {
-              mode: ScreenEnum.BROWSE,
-              initialFeed: false,
-              feeds: feeds
-            };
-            if (defaultFeed) {
-              nextState.feed = defaultFeed;
+          })
+          .catch(e => LOG.info(e))
+          .finally(() => {
+            if (!loadingFeed) {
+              const nextState = {
+                mode: ScreenEnum.BROWSE,
+                initialFeed: false,
+                feeds: feeds
+              };
+              if (defaultFeed) {
+                nextState.feed = defaultFeed;
+              }
+              setTimeout(() => {
+                webrcade.setState(nextState, () => { resolve() })
+              }, MIN_LOADING_TIME);
+            } else {
+              resolve();
             }
-            setTimeout(() => webrcade.setState(nextState), 
-              MIN_LOADING_TIME);
-          }
-        });
+          });
+      });
     });
 }
 
 const addLocalFeed = (file) => {
-  const { 
-    ScreenEnum, 
-    MIN_LOADING_TIME, 
-    MIN_SLIDES_LENGTH 
+  const {
+    ScreenEnum,
+    MIN_LOADING_TIME,
+    MIN_SLIDES_LENGTH
   } = webrcade;
   const start = Date.now();
 
@@ -149,7 +154,7 @@ const addLocalFeed = (file) => {
   return new Promise((resolve, reject) => {
     webrcade.setState({
       mode: ScreenEnum.LOADING,
-      loadingStatus: Resources.getText(TEXT_IDS.LOADING_FEED),      
+      loadingStatus: Resources.getText(TEXT_IDS.LOADING_FEED),
     }, () => {
       let feedJson = null;
       let feedObj = null;
@@ -160,9 +165,9 @@ const addLocalFeed = (file) => {
           // Load feeds again (may have been updated externally)
           return loadFeeds(MIN_SLIDES_LENGTH);
         })
-        .then(newFeeds => { 
+        .then(newFeeds => {
           webrcade.setState({feeds: newFeeds});
-          return newFeeds.addLocalFeed(feedJson); 
+          return newFeeds.addLocalFeed(feedJson);
         })
         .then(localFeed => loadFeedFromLocal(localFeed))
         .then(() => resolve(feedObj))
@@ -184,7 +189,7 @@ const loadFeedFromLocal = (localFeed) => {
   const { ScreenEnum, LAST_FEED_PROP, MIN_LOADING_TIME } = webrcade;
   const { feeds } = webrcade.state;
 
-  return new Promise((resolve, reject) => {    
+  return new Promise((resolve, reject) => {
     if (!localFeed.localId) {
       reject("Unable to find local feed identifier in feed.");
     }
@@ -193,7 +198,7 @@ const loadFeedFromLocal = (localFeed) => {
     let newFeed = null;
     let errorMessage = null;
     // TODO: If feed has been deleted, gets error during parse (NPE)
-    feeds.getLocalFeed(localFeed.localId) 
+    feeds.getLocalFeed(localFeed.localId)
       .then(feed => parseFeed(feed))
       .then(feed => {
         if (localFeed.feedId) {
@@ -223,9 +228,9 @@ const loadFeedFromLocal = (localFeed) => {
 }
 
 const loadFeedFromUrl = (url) => {
-  const { 
-    ScreenEnum, 
-    LAST_FEED_PROP, 
+  const {
+    ScreenEnum,
+    LAST_FEED_PROP,
     MIN_LOADING_TIME,
     MIN_SLIDES_LENGTH
   } = webrcade;
@@ -245,9 +250,9 @@ const loadFeedFromUrl = (url) => {
         feedJson = json;
         return parseFeed(json);
       })
-      .then(feed => { 
-        newFeed = feed; 
-        return feed; 
+      .then(feed => {
+        newFeed = feed;
+        return feed;
       })
       // Reload feeds (may have been changed externally)
       .then(() => loadFeeds(MIN_SLIDES_LENGTH))

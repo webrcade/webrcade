@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv='cache-control' content='no-cache'>
+  <meta http-equiv='expires' content='0'>
+  <meta http-equiv='pragma' content='no-cache'>
+  <title>webЯcade</title>
+</head>
+
+<body>
+  <script>
+    const getQueryValue = (name) => {
+      var query = window.location.search.substring(1);
+      var vars = query.split('&');
+      for (var i = 0; i < vars.length; i++) {
+        var pair = vars[i].split('=');
+        if (decodeURIComponent(pair[0]) == name) {
+          return decodeURIComponent(pair[1]).replace(/\+/g, ' ');
+        }
+      }
+      return null;
+    }
+
+    const PREFIX = "dropbox.";
+    const VERIFIER_PROP = `${PREFIX}verifier`;
+
+    Object.keys(sessionStorage).forEach(function (key) {
+      if (key.startsWith(PREFIX) && key !== VERIFIER_PROP) {
+        sessionStorage.removeItem(key);
+      }
+    });
+
+    sessionStorage.setItem(`${PREFIX}redirect`, true);
+    const error = getQueryValue("error");
+    if (error) {
+      sessionStorage.setItem(`${PREFIX}error`, error);
+    }
+    const errorDesc = getQueryValue("error_description");
+    if (errorDesc) {
+      sessionStorage.setItem(`${PREFIX}errorDesc`, errorDesc);
+    }
+    const code = getQueryValue("code");
+    if (code) {
+      sessionStorage.setItem(`${PREFIX}code`, code);
+    }
+
+    const index = window.location.href.indexOf("/dropbox");
+    window.location.href = window.location.href.substring(0, index);
+
+  </script>
+</body>
+
+</html>

@@ -2,12 +2,20 @@ import React from "react";
 import { Component } from "react";
 
 import {
+  dropbox,
   settings,
+  showMessage,
+  CloudWhiteImage,
   EditorScreen,
   FieldsTab,
   FieldRow,
   FieldLabel,
   FieldControl,
+  ImageButton,
+  LinkBlackImage,
+  LinkWhiteImage,
+  LinkOffBlackImage,
+  LinkOffWhiteImage,
   Resources,
   Switch,
   TelevisionWhiteImage,
@@ -22,7 +30,9 @@ export class SettingsEditor extends Component {
     const values = {
       expApps: settings.isExpAppsEnabled(),
       vsync: settings.isVsyncEnabled(),
-      bilinear: settings.isBilinearFilterEnabled()
+      bilinear: settings.isBilinearFilterEnabled(),
+      cloudStorage: settings.isCloudStorageEnabled(),
+      dbLinked: settings.getDbToken() !== null
     };
     this.state = {
       tabIndex: null,
@@ -55,14 +65,15 @@ export class SettingsEditor extends Component {
           settings.setExpAppsEnabled(values.expApps);
           settings.setVsyncEnabled(values.vsync);
           settings.setBilinearFilterEnabled(values.bilinear);
+          settings.setCloudStorageEnabled(values.cloudStorage);
           if (originalValues.expApps !== values.expApps) {
             ctx.showAlertScreen(true,
               Resources.getText(TEXT_IDS.RELOAD_EXP_APPS),
               () => {
                 settings.save().finally(() => {
                   window.location.reload();
-              });
-            }, true, true);
+                });
+              }, true, true);
           } else {
             settings.save().finally(() => {
               onClose();
@@ -83,12 +94,23 @@ export class SettingsEditor extends Component {
               setValues={setValues}
             />
           )
-        },{
+        }, {
+          image: CloudWhiteImage,
+          label: Resources.getText(TEXT_IDS.CLOUD_STORAGE),
+          content: (
+            <CloudStorageTab
+              isActive={tabIndex === 1}
+              setFocusGridComps={setFocusGridComps}
+              values={values}
+              setValues={setValues}
+            />
+          )
+        }, {
           image: TuneWhiteImage,
           label: Resources.getText(TEXT_IDS.ADVANCED_SETTINGS),
           content: (
             <AdvancedSettingsTab
-              isActive={tabIndex === 1}
+              isActive={tabIndex === 2}
               setFocusGridComps={setFocusGridComps}
               values={values}
               setValues={setValues}
@@ -129,7 +151,7 @@ class AdvancedSettingsTab extends FieldsTab {
       <>
         <FieldRow>
           <FieldLabel>
-          {Resources.getText(TEXT_IDS.EXPERIMENTAL_APPS)}
+            {Resources.getText(TEXT_IDS.EXPERIMENTAL_APPS)}
           </FieldLabel>
           <FieldControl>
             <Switch
@@ -211,3 +233,95 @@ class DisplaySettingsTab extends FieldsTab {
   }
 }
 DisplaySettingsTab.contextType = WebrcadeContext;
+
+class CloudStorageTab extends FieldsTab {
+  constructor() {
+    super();
+    this.cloudStorageRef = React.createRef();
+    this.dropboxRef = React.createRef();
+    this.gridComps = [
+      [this.cloudStorageRef],
+      [this.dropboxRef],
+    ]
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const { gridComps } = this;
+    const { setFocusGridComps } = this.props;
+    const { isActive } = this.props;
+
+    if (isActive && (isActive !== prevProps.isActive)) {
+      setFocusGridComps(gridComps);
+    }
+  }
+
+  render() {
+    const { cloudStorageRef, dropboxRef } = this;
+    const { focusGrid } = this.context;
+    const { setValues, values } = this.props;
+
+    return (
+      <>
+        <FieldRow>
+          <FieldLabel>
+            {Resources.getText(TEXT_IDS.ENABLED)}
+          </FieldLabel>
+          <FieldControl>
+            <Switch
+              ref={cloudStorageRef}
+              onPad={e => focusGrid.moveFocus(e.type, cloudStorageRef)}
+              onChange={e => {
+                setValues({ ...values, ...{ cloudStorage: e.target.checked } });
+              }}
+              checked={values.cloudStorage}
+            />
+          </FieldControl>
+        </FieldRow>
+        {values.cloudStorage &&
+          <>
+            <FieldRow>
+              <FieldLabel>
+                {Resources.getText(TEXT_IDS.DROPBOX)}
+              </FieldLabel>
+              <FieldControl>
+                <div>
+                  <ImageButton
+                    ref={dropboxRef}
+                    imgSrc={values.dbLinked ? LinkOffBlackImage : LinkBlackImage}
+                    hoverImgSrc={values.dbLinked ? LinkOffWhiteImage : LinkWhiteImage}
+                    label={Resources.getText(values.dbLinked ? TEXT_IDS.UNLINK : TEXT_IDS.LINK)}
+                    onPad={e => focusGrid.moveFocus(e.type, dropboxRef)}
+                    onClick={() => {
+                      if (!values.dbLinked) {
+                        // Force cloud storage to be enabled
+                        settings.setCloudStorageEnabled(true);
+                        settings.save().finally(() => {
+                          dropbox.link()
+                            .catch((e) => showMessage(e));
+                        });
+                      } else {
+                        settings.setDbToken(null);
+                        settings.save().finally(() => {
+                          setValues({ ...values, ...{ dbLinked: false } });
+                        });
+                      }
+                    }}
+                  />
+                </div>
+              </FieldControl>
+            </FieldRow>
+            <FieldRow>
+              <FieldLabel>
+                {Resources.getText(TEXT_IDS.STATUS)}
+              </FieldLabel>
+              <FieldControl>
+                <div>{Resources.getText(values.dbLinked ? TEXT_IDS.LINKED : TEXT_IDS.UNLINKED)}</div>
+              </FieldControl>
+            </FieldRow>
+          </>
+        }
+      </>
+    );
+  }
+}
+CloudStorageTab.contextType = WebrcadeContext;

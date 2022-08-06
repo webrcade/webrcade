@@ -23,6 +23,7 @@ import {
   applyIosNavBarHack,
   getXboxViewMessage,
   settings,
+  showMessage,
   AppScreen,
   FetchAppData,
   Resources,
@@ -30,6 +31,7 @@ import {
   LOG,
   TEXT_IDS,
   config,
+  dropbox,
 } from '@webrcade/app-common'
 
 require("./style.scss");
@@ -142,32 +144,47 @@ export class Webrcade extends Component {
     const { initial, initialFeed, mode } = this.state;
     const { browseScreenRef, ScreenEnum, } = this;
 
+    let errorMessage = null;
+    const displayMessage = (msg) => {
+      if (msg) {
+        setTimeout(() => {
+          showMessage(msg);
+        }, 10);
+      }
+    }
+
     if (mode === ScreenEnum.LOADING) {
       if (initialFeed) {
         settings.load().finally(() => {
-          if (config.isPublicServer()) {
-            loadInitialFeed(null);
-          } else {
-            // Attempt to load default feed from public server
-            let feedJson = null;
-            let defFeed = null;
-            new FetchAppData("https://play.webrcade.com/default-feed.json").fetch()
-              .then(response => response.json())
-              .then(json => {
-                feedJson = json;
-                return parseFeed(json)
-              })
-              .then(feed => {
-                // set default feed
-                setDefaultFeed(feedJson);
-                // set feed here
-                defFeed = feed;
-              })
-              .catch(e => LOG.info(e))
-              .finally(() => {
-                loadInitialFeed(defFeed);
-              })
-          }
+          dropbox.checkLinkResult()
+            .catch(e => { errorMessage = e })
+            .finally(() => {
+              if (config.isPublicServer()) {
+                loadInitialFeed(null)
+                  .then(() =>displayMessage(errorMessage));
+              } else {
+                // Attempt to load default feed from public server
+                let feedJson = null;
+                let defFeed = null;
+                new FetchAppData("https://play.webrcade.com/default-feed.json").fetch()
+                  .then(response => response.json())
+                  .then(json => {
+                    feedJson = json;
+                    return parseFeed(json)
+                  })
+                  .then(feed => {
+                    // set default feed
+                    setDefaultFeed(feedJson);
+                    // set feed here
+                    defFeed = feed;
+                  })
+                  .catch(e => LOG.info(e))
+                  .finally(() => {
+                    loadInitialFeed(defFeed)
+                      .then(() => displayMessage(errorMessage));
+                  })
+              }
+          })
         });
       }
     } else if (initial ||
