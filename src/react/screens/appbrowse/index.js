@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {
+  settings,
   toggleTabIndex,
   FocusGrid,
   GamepadNotifier,
@@ -233,25 +234,29 @@ export default class AppBrowseScreen extends Component {
       }
     }
 
+    const hideTitleBar = settings.getHideTitleBar();
+
     return (
       <WebrcadeContext.Provider value={screenContext}>
         <div ref={webrcadeDivRef} style={{height: window.innerHeight + "px"}} className="webrcade">
           <div className={'webrcade-outer' +
             (hide === true ? ' webrcade-outer--hide' : '')}>
             <Message />
-            <div className="header-nav">
-              <div className="header-nav-left">&nbsp;</div>
-              <div className="header-nav-center"><Logo /></div>
-              <div className="header-nav-right">
-                <ImageButton
-                    className={"settings-button"}
-                    onPad={e => focusGrid.moveFocus(e.type, settingsRef)}
-                    onClick={() => onSettings()}
-                    ref={settingsRef}
-                    imgSrc={SettingsWhiteImage}
-                  />
+            {!hideTitleBar && (
+              <div className="header-nav">
+                <div className="header-nav-left">&nbsp;</div>
+                <div className="header-nav-center"><Logo /></div>
+                <div className="header-nav-right">
+                  <ImageButton
+                      className={"settings-button"}
+                      onPad={e => focusGrid.moveFocus(e.type, settingsRef)}
+                      onClick={() => onSettings()}
+                      ref={settingsRef}
+                      imgSrc={SettingsWhiteImage}
+                    />
+                </div>
               </div>
-            </div>
+            )}
             <AppDetails
               itemKey={itemId}
               title={info.title}

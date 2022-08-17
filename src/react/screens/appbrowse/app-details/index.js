@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import {
+  settings,
   ImageButton,
   SettingsWhiteImage,
 } from '@webrcade/app-common'
@@ -64,12 +65,17 @@ export default class AppDetails extends Component {
     const rightClass =
       "app-details-right" + (pixelated ? " app-details-right--pixelated" : "")
 
+    const headerNavStyles = {}
+    if (settings.getHideTitleBar()) {
+      headerNavStyles['display'] = 'block';
+    }
+
     return (
       <div className="app-details-content">
         <div className="app-details-background">
           <div className="app-details-left"></div>
           {!disable ? (
-            <div className="details-header-nav">
+            <div className="details-header-nav" style={headerNavStyles}>
               <ImageButton
                 className={"details-header-nav-button"}
                 onPad={e => focusGrid.moveFocus(e.type, settingsButtonRef)}

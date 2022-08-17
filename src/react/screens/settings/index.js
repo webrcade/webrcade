@@ -17,6 +17,7 @@ import {
   LinkOffBlackImage,
   LinkOffWhiteImage,
   Resources,
+  // SettingsWhiteImage,
   Switch,
   TelevisionWhiteImage,
   TuneWhiteImage,
@@ -32,6 +33,7 @@ export class SettingsEditor extends Component {
       vsync: settings.isVsyncEnabled(),
       bilinear: settings.isBilinearFilterEnabled(),
       cloudStorage: settings.isCloudStorageEnabled(),
+      hideTitleBar: settings.getHideTitleBar(),
       dbLinked: settings.getDbToken() !== null
     };
     this.state = {
@@ -66,6 +68,7 @@ export class SettingsEditor extends Component {
           settings.setVsyncEnabled(values.vsync);
           settings.setBilinearFilterEnabled(values.bilinear);
           settings.setCloudStorageEnabled(values.cloudStorage);
+          settings.setHideTitleBar(values.hideTitleBar);
           if (originalValues.expApps !== values.expApps) {
             ctx.showAlertScreen(true,
               Resources.getText(TEXT_IDS.RELOAD_EXP_APPS),
@@ -83,7 +86,18 @@ export class SettingsEditor extends Component {
         onClose={onClose}
         focusGridComps={focusGridComps}
         onTabChange={(oldTab, newTab) => this.setState({ tabIndex: newTab })}
-        tabs={[{
+        tabs={[/*{
+          image: SettingsWhiteImage,
+          label: Resources.getText(TEXT_IDS.GENERAL_SETTINGS),
+          content: (
+            <GeneralSettingsTab
+              isActive={tabIndex === 0}
+              setFocusGridComps={setFocusGridComps}
+              values={values}
+              setValues={setValues}
+            />
+          )
+        },*/ {
           image: TelevisionWhiteImage,
           label: Resources.getText(TEXT_IDS.DISPLAY_SETTINGS),
           content: (
@@ -123,12 +137,12 @@ export class SettingsEditor extends Component {
 }
 SettingsEditor.contextType = WebrcadeContext;
 
-class AdvancedSettingsTab extends FieldsTab {
+class GeneralSettingsTab extends FieldsTab {
   constructor() {
     super();
-    this.showExperimentalAppsRef = React.createRef();
+    this.hideTitleBarRef = React.createRef();
     this.gridComps = [
-      [this.showExperimentalAppsRef]
+      [this.hideTitleBarRef]
     ]
   }
 
@@ -143,7 +157,56 @@ class AdvancedSettingsTab extends FieldsTab {
   }
 
   render() {
-    const { showExperimentalAppsRef } = this;
+    const { hideTitleBarRef } = this;
+    const { focusGrid } = this.context;
+    const { setValues, values } = this.props;
+
+    return (
+      <>
+        <FieldRow>
+          <FieldLabel>
+            {Resources.getText(TEXT_IDS.HIDE_TITLE_BAR)}
+          </FieldLabel>
+          <FieldControl>
+            <Switch
+              ref={hideTitleBarRef}
+              onPad={e => focusGrid.moveFocus(e.type, hideTitleBarRef)}
+              onChange={e => {
+                setValues({ ...values, ...{ hideTitleBar: e.target.checked } });
+              }}
+              checked={values.hideTitleBar}
+            />
+          </FieldControl>
+        </FieldRow>
+      </>
+    );
+  }
+}
+GeneralSettingsTab.contextType = WebrcadeContext;
+
+class AdvancedSettingsTab extends FieldsTab {
+  constructor() {
+    super();
+    this.showExperimentalAppsRef = React.createRef();
+    this.hideTitleBarRef = React.createRef();
+    this.gridComps = [
+      [this.showExperimentalAppsRef],
+      [this.hideTitleBarRef],
+    ]
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const { gridComps } = this;
+    const { setFocusGridComps } = this.props;
+    const { isActive } = this.props;
+
+    if (isActive && (isActive !== prevProps.isActive)) {
+      setFocusGridComps(gridComps);
+    }
+  }
+
+  render() {
+    const { hideTitleBarRef, showExperimentalAppsRef } = this;
     const { focusGrid } = this.context;
     const { setValues, values } = this.props;
 
@@ -161,6 +224,21 @@ class AdvancedSettingsTab extends FieldsTab {
                 setValues({ ...values, ...{ expApps: e.target.checked } });
               }}
               checked={values.expApps}
+            />
+          </FieldControl>
+        </FieldRow>
+        <FieldRow>
+          <FieldLabel>
+            {Resources.getText(TEXT_IDS.HIDE_TITLE_BAR)}
+          </FieldLabel>
+          <FieldControl>
+            <Switch
+              ref={hideTitleBarRef}
+              onPad={e => focusGrid.moveFocus(e.type, hideTitleBarRef)}
+              onChange={e => {
+                setValues({ ...values, ...{ hideTitleBar: e.target.checked } });
+              }}
+              checked={values.hideTitleBar}
             />
           </FieldControl>
         </FieldRow>
