@@ -1,6 +1,7 @@
 import { getDefaultFeed, } from '../feed';
 import { storage } from '../storage';
 import {
+  getFeedAsJson,
   loadFeeds,
   showMessage,
   AppProps,
@@ -135,22 +136,6 @@ const addLocalFeed = (file) => {
   } = webrcade;
   const start = Date.now();
 
-  const fileReader =
-    new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.onerror = (e) => {
-        reject('Error reading feed: ' + e);
-      }
-      reader.onload = (e) => {
-        try {
-          resolve(JSON.parse(e.target.result))
-        } catch (e) {
-          reject('Error reading feed: ' + e);
-        }
-      }
-      reader.readAsText(file)
-    });
-
   return new Promise((resolve, reject) => {
     webrcade.setState({
       mode: ScreenEnum.LOADING,
@@ -158,8 +143,8 @@ const addLocalFeed = (file) => {
     }, () => {
       let feedJson = null;
       let feedObj = null;
-      fileReader
-        .then(feed => { feedJson = feed; return parseFeed(feed); })
+      getFeedAsJson(file)
+        .then(feed => { console.log(feed); feedJson = feed; return parseFeed(feed); })
         .then(fo => {
           feedObj = fo;
           // Load feeds again (may have been updated externally)
@@ -245,7 +230,8 @@ const loadFeedFromUrl = (url) => {
     let feedJson = null, newFeed = null;
     let errorMessage = null;
     new FetchAppData(url).fetch()
-      .then(response => response.json())
+      .then(response => response.blob())
+      .then(blob => getFeedAsJson(blob))
       .then(json => {
         feedJson = json;
         return parseFeed(json);
