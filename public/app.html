@@ -1,5 +1,4 @@
 <html>
-
 <head>
   <meta charset="utf-8" />
   <link rel="icon" href="./favicon.ico" />
@@ -10,103 +9,9 @@
   <meta name="theme-color" content="#000000" />
   <meta name="description" content="webЯcade" />
   <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="msapplication-TileImage" content="ms-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="android-icon-192x192.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-  <link rel="manifest" href="./app-manifest.json" />
   <title>webЯcade</title>
-</head>
-
-<body style="margin: 0; padding: 0; overflow: hidden; background-color: black">
   <script>
-    /**
-    *
-    *  Base64 encode / decode
-    *  http://www.webtoolkit.info
-    *
-    **/
-    const B64_PATTERN = new RegExp('^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$');
-    var Base64 = {
-      // private property
-      _keyStr: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/="
-
-      // public method for decoding
-      , decode: function (input) {
-        var output = "";
-        var chr1, chr2, chr3;
-        var enc1, enc2, enc3, enc4;
-        var i = 0;
-
-        input = input.replace(/[^A-Za-z0-9\+\/\=]/g, "");
-        while (i < input.length) {
-          enc1 = this._keyStr.indexOf(input.charAt(i++));
-          enc2 = this._keyStr.indexOf(input.charAt(i++));
-          enc3 = this._keyStr.indexOf(input.charAt(i++));
-          enc4 = this._keyStr.indexOf(input.charAt(i++));
-
-          chr1 = (enc1 << 2) | (enc2 >> 4);
-          chr2 = ((enc2 & 15) << 4) | (enc3 >> 2);
-          chr3 = ((enc3 & 3) << 6) | enc4;
-
-          output = output + String.fromCharCode(chr1);
-
-          if (enc3 != 64) {
-            output = output + String.fromCharCode(chr2);
-          }
-
-          if (enc4 != 64) {
-            output = output + String.fromCharCode(chr3);
-          }
-
-        } // Whend
-
-        output = Base64._utf8_decode(output);
-
-        return output;
-      } // End Function decode
-
-      // private method for UTF-8 decoding
-      , _utf8_decode: function (utftext) {
-        var string = "";
-        var i = 0;
-        var c, c1, c2, c3;
-        c = c1 = c2 = 0;
-
-        while (i < utftext.length) {
-          c = utftext.charCodeAt(i);
-
-          if (c < 128) {
-            string += String.fromCharCode(c);
-            i++;
-          }
-          else if ((c > 191) && (c < 224)) {
-            c2 = utftext.charCodeAt(i + 1);
-            string += String.fromCharCode(((c & 31) << 6) | (c2 & 63));
-            i += 2;
-          }
-          else {
-            c2 = utftext.charCodeAt(i + 1);
-            c3 = utftext.charCodeAt(i + 2);
-            string += String.fromCharCode(((c & 15) << 12) | ((c2 & 63) << 6) | (c3 & 63));
-            i += 3;
-          }
-
-        } // Whend
-
-        return string;
-      } // End Function _utf8_decode
-    }
+    const B64_PATTERN=new RegExp("^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$");var Base64={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",decode:function(a){var g,h,i,j,e,c,f,d="",b=0;for(a=a.replace(/[^A-Za-z0-9\+\/\=]/g,"");b<a.length;)j=this._keyStr.indexOf(a.charAt(b++)),e=this._keyStr.indexOf(a.charAt(b++)),c=this._keyStr.indexOf(a.charAt(b++)),f=this._keyStr.indexOf(a.charAt(b++)),g=j<<2|e>>4,h=(15&e)<<4|c>>2,i=(3&c)<<6|f,d+=String.fromCharCode(g),64!=c&&(d+=String.fromCharCode(h)),64!=f&&(d+=String.fromCharCode(i));return Base64._utf8_decode(d)},_utf8_decode:function(c){var b,d,f,e="",a=0;for(b=d=0;a<c.length;)(b=c.charCodeAt(a))<128?(e+=String.fromCharCode(b),a++):b>191&&b<224?(d=c.charCodeAt(a+1),e+=String.fromCharCode((31&b)<<6|63&d),a+=2):(d=c.charCodeAt(a+1),f=c.charCodeAt(a+2),e+=String.fromCharCode((15&b)<<12|(63&d)<<6|63&f),a+=3);return e}}
 
     const getQueryValue = (name) => {
       var query = window.location.search.substring(1);
@@ -126,6 +31,25 @@
     url = decodeURIComponent(url);
     url = url.substring(5);
 
+    const addMeta = (name, content) => {
+      const meta = document.createElement('meta');
+      meta.name = name;
+      meta.content = content;
+      document.head.appendChild(meta);
+    }
+
+    const addLink = (rel, sizes, href, type) => {
+      const link = document.createElement('link');
+      link.sizes = sizes
+      link.rel = rel;
+      link.href = href;
+      if (type) {
+        link.type = type;
+      }
+      document.head.appendChild(link);
+    }
+
+    let propsObj = null;
     try {
       const props = getQueryValue('props');
       if (props) {
@@ -137,6 +61,32 @@
       }
     } catch (e) {}
 
+    if (propsObj && propsObj.icon) {
+      const href = propsObj.icon;
+
+      addMeta("msapplication-TileImage", href);
+
+      addLink("apple-touch-icon", "57x57", href);
+      addLink("apple-touch-icon", "60x60", href);
+      addLink("apple-touch-icon", "72x72", href);
+      addLink("apple-touch-icon", "76x76", href);
+      addLink("apple-touch-icon", "114x114", href);
+      addLink("apple-touch-icon", "120x120", href);
+      addLink("apple-touch-icon", "144x144", href);
+      addLink("apple-touch-icon", "152x152", href);
+      addLink("apple-touch-icon", "180x180", href);
+
+      addLink("icon", "192x192", href);
+      addLink("icon", "32x32", href);
+      addLink("icon", "96x96", href);
+      addLink("icon", "16x16", href);
+    }
+  </script>
+  <link rel="manifest" href="./app-manifest.json" />
+</head>
+
+<body style="margin: 0; padding: 0; overflow: hidden; background-color: black">
+  <script>
     const iframe = document.createElement("iframe");
     iframe.setAttribute("width", "100%");
     iframe.setAttribute("height", "100%");
