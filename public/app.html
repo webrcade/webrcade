@@ -1,7 +1,8 @@
 <html>
+
 <head>
   <meta charset="utf-8" />
-  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <link rel="icon" href="./favicon.ico" />
   <meta http-equiv='cache-control' content='no-cache'>
   <meta http-equiv='expires' content='0'>
   <meta http-equiv='pragma' content='no-cache'>
@@ -19,20 +20,123 @@
   <link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
   <link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="android-icon-192x192.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <link rel="manifest" href="./app-manifest.json" />
   <title>webЯcade</title>
 </head>
+
 <body style="margin: 0; padding: 0; overflow: hidden; background-color: black">
   <script>
+    /**
+    *
+    *  Base64 encode / decode
+    *  http://www.webtoolkit.info
+    *
+    **/
+    const B64_PATTERN = new RegExp('^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$');
+    var Base64 = {
+      // private property
+      _keyStr: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/="
+
+      // public method for decoding
+      , decode: function (input) {
+        var output = "";
+        var chr1, chr2, chr3;
+        var enc1, enc2, enc3, enc4;
+        var i = 0;
+
+        input = input.replace(/[^A-Za-z0-9\+\/\=]/g, "");
+        while (i < input.length) {
+          enc1 = this._keyStr.indexOf(input.charAt(i++));
+          enc2 = this._keyStr.indexOf(input.charAt(i++));
+          enc3 = this._keyStr.indexOf(input.charAt(i++));
+          enc4 = this._keyStr.indexOf(input.charAt(i++));
+
+          chr1 = (enc1 << 2) | (enc2 >> 4);
+          chr2 = ((enc2 & 15) << 4) | (enc3 >> 2);
+          chr3 = ((enc3 & 3) << 6) | enc4;
+
+          output = output + String.fromCharCode(chr1);
+
+          if (enc3 != 64) {
+            output = output + String.fromCharCode(chr2);
+          }
+
+          if (enc4 != 64) {
+            output = output + String.fromCharCode(chr3);
+          }
+
+        } // Whend
+
+        output = Base64._utf8_decode(output);
+
+        return output;
+      } // End Function decode
+
+      // private method for UTF-8 decoding
+      , _utf8_decode: function (utftext) {
+        var string = "";
+        var i = 0;
+        var c, c1, c2, c3;
+        c = c1 = c2 = 0;
+
+        while (i < utftext.length) {
+          c = utftext.charCodeAt(i);
+
+          if (c < 128) {
+            string += String.fromCharCode(c);
+            i++;
+          }
+          else if ((c > 191) && (c < 224)) {
+            c2 = utftext.charCodeAt(i + 1);
+            string += String.fromCharCode(((c & 31) << 6) | (c2 & 63));
+            i += 2;
+          }
+          else {
+            c2 = utftext.charCodeAt(i + 1);
+            c3 = utftext.charCodeAt(i + 2);
+            string += String.fromCharCode(((c & 15) << 12) | ((c2 & 63) << 6) | (c3 & 63));
+            i += 3;
+          }
+
+        } // Whend
+
+        return string;
+      } // End Function _utf8_decode
+    }
+
+    const getQueryValue = (name) => {
+      var query = window.location.search.substring(1);
+      var vars = query.split(/[\&\?]/);
+      for (var i = 0; i < vars.length; i++) {
+        var pair = vars[i].split('=');
+        if (decodeURIComponent(pair[0]) == name) {
+          return decodeURIComponent(pair[1]).replace(/\+/g, ' ');
+        }
+      }
+      return null;
+    }
+
     let url = window.location.href;
     let idx = url.indexOf("?");
     url = url.substring(idx);
     url = decodeURIComponent(url);
     url = url.substring(5);
+
+    try {
+      const props = getQueryValue('props');
+      if (props) {
+        propsObj = JSON.parse(decodeURIComponent(Base64.decode(props)));
+        console.log(propsObj)
+        if (propsObj.title) {
+          document.title = propsObj.title;
+        }
+      }
+    } catch (e) {}
+
     const iframe = document.createElement("iframe");
     iframe.setAttribute("width", "100%");
     iframe.setAttribute("height", "100%");
