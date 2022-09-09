@@ -1,12 +1,13 @@
 import React from "react";
 
 import {
-  loadFeedFromUrl,
+  loadFeedFromUrl
 } from './feeds';
+
+import { SettingsEditor } from "@webrcade/app-common";
 
 import AddFeedScreen from './screens/addfeed';
 import AlertScreen from './screens/alert'
-import { SettingsEditor } from "./screens/settings";
 import YesNoScreen from './screens/yesno';
 
 import {
