@@ -14,23 +14,27 @@ function fail() {
 }
 
 # Clone dependencies
-git clone https://github.com/webrcade/webrcade-app-common.git ||
+git clone https://github.com/webrcade/webrcade-app-common.git -b talim ||
   { fail 'Unable to clone common'; }
-git clone https://github.com/webrcade/webrcade-editor.git ||
+git clone https://github.com/webrcade/webrcade-editor.git -b talim ||
   { fail 'Unable to clone editor'; }
-git clone https://github.com/webrcade/webrcade-app-snes9x.git ||
+git clone https://github.com/webrcade/webrcade-app-snes9x.git -b talim ||
   { fail 'Unable to clone snes9x'; }
-git clone https://github.com/webrcade/webrcade-app-genplusgx.git ||
+git clone https://github.com/webrcade/webrcade-app-genplusgx.git -b talim ||
   { fail 'Unable to clone genplusgx'; }
-git clone https://github.com/webrcade/webrcade-app-javatari.git ||
+git clone https://github.com/webrcade/webrcade-app-javatari.git -b talim ||
   { fail 'Unable to clone javatari'; }
-git clone https://github.com/webrcade/webrcade-app-js7800.git ||
+git clone https://github.com/webrcade/webrcade-app-js7800.git -b talim ||
   { fail 'Unable to clone js7800'; }
-git clone https://github.com/webrcade/webrcade-app-fceux.git ||
+git clone https://github.com/webrcade/webrcade-app-fceux.git -b talim ||
   { fail 'Unable to clone fceux'; }
-git clone https://github.com/webrcade/webrcade-app-vba-m.git ||
+git clone https://github.com/webrcade/webrcade-app-vba-m.git -b talim ||
   { fail 'Unable to clone vba-m'; }
-git clone https://github.com/webrcade/webrcade-app-mednafen.git ||
+git clone https://github.com/webrcade/webrcade-app-mednafen.git -b talim ||
   { fail 'Unable to clone mednafen'; }
-git clone https://github.com/webrcade/webrcade-app-fbneo.git ||
+git clone https://github.com/webrcade/webrcade-app-fbneo.git -b talim ||
   { fail 'Unable to clone fbneo'; }
+git clone https://github.com/webrcade/webrcade-app-parallel-n64.git ||
+  { fail 'Unable to clone parallel-n64'; }
+git clone https://github.com/webrcade/webrcade-app-standalone.git ||
+  { fail 'Unable to clone standalone'; }
