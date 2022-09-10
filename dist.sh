@@ -143,6 +143,17 @@ mkdir -p "$DIST_OUT_APP/mednafen"  || { fail 'Error creating mednafen output dir
 cp -R build/. "$DIST_OUT_APP/mednafen" || { fail 'failed to copy mednafen to out.'; }
 
 ##
+## webrcade-app-parallel-n64
+##
+
+cd "$DIR/../webrcade-app-parallel-n64" || { fail 'Unable to change to n64.'; }
+npm install . || { fail 'Unable to install n64 dependencies.'; }
+npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
+npm run build || { fail 'Unable to build n64.'; }
+mkdir -p "$DIST_OUT_APP/n64"  || { fail 'Error creating n64 output directory.'; }
+cp -R build/. "$DIST_OUT_APP/n64" || { fail 'failed to copy n64 to out.'; }
+
+##
 ## webrcade-app-fbneo
 ##
 
@@ -151,7 +162,7 @@ npm install . || { fail 'Unable to install fbneo dependencies.'; }
 npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
 npm run build || { fail 'Unable to build fbneo.'; }
 mkdir -p "$DIST_OUT_APP/neo"  || { fail 'Error creating fbneo output directory.'; }
-cp -R build/. "$DIST_OUT_APP/neo" || { fail 'failed to copy mednafen to out.'; }
+cp -R build/. "$DIST_OUT_APP/neo" || { fail 'failed to copy fbneo to out.'; }
 
 ##
 ## webrcade-app-prboom
@@ -176,3 +187,14 @@ npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
 npm run build || { fail 'Unable to build editor.'; }
 mkdir -p "$DIST_OUT_APP/editor"  || { fail 'Error creating editor output directory.'; }
 cp -R build/. "$DIST_OUT_APP/editor" || { fail 'failed to copy editor to out.'; }
+
+##
+## webrcade-standalone
+##
+
+cd "$DIR/../webrcade-standalone" || { fail 'Unable to change to standalone.'; }
+npm install . || { fail 'Unable to install standalone dependencies.'; }
+npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
+npm run build || { fail 'Unable to build standalone.'; }
+mkdir -p "$DIST_OUT_APP/standalone"  || { fail 'Error creating standalone output directory.'; }
+cp -R build/. "$DIST_OUT_APP/standalone" || { fail 'failed to copy standalone to out.'; }
