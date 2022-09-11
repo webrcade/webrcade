@@ -192,7 +192,7 @@ cp -R build/. "$DIST_OUT_APP/editor" || { fail 'failed to copy editor to out.'; 
 ## webrcade-standalone
 ##
 
-cd "$DIR/../webrcade-standalone" || { fail 'Unable to change to standalone.'; }
+cd "$DIR/../webrcade-app-standalone" || { fail 'Unable to change to standalone.'; }
 npm install . || { fail 'Unable to install standalone dependencies.'; }
 npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
 npm run build || { fail 'Unable to build standalone.'; }
