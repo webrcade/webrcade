@@ -1,6 +1,65 @@
 ## Change log
 
-### 06/07/22 (0.0.4.0)
+### --/--/22 (0.0.5)
+    - Support for cloud-based in-games saves (Dropbox)
+    - Export/import feeds with zip and base64
+    - Settings editor now available in the upper-right corner of the webrcade
+      player and editor
+      - Display settings:
+        - Enable/disable vertical sync (enabled by default)
+        - Enable/disable bilinear filter (disabled by default)
+      - Cloud Storage:
+        - Enable/disable and link to Dropbox
+      - Advanced settings:
+        - Enable/disable experimental apps (disabled by default)
+          - Allows for early public access to applications (emulators, etc.)
+            not ready for a broad release
+          - For example: stability and compatibility issues, high resource
+            requirements (N64, etc.)
+        - Hide the webrcade title bar (adds more vertical space in player
+          front-end)
+    - N64:
+      - Very early version that requires enabling "experimental" applications
+        in settings
+      - Requires modern PC/Mac or newer iPad/iPhone 11+ (Android currently too
+        slow due to low single core performance)
+      - Games with compatibility issues will present a dialog with details when
+        loaded
+      - Ability to scale screen for individual games
+      - Keyboard support
+    - Stand-alone links (sharable direct links to games)
+      - The editor now provides the ability to generate a stand-alone link to a
+        game (without displaying the player or the editor)
+        - To use:
+          - Select a single item (game, etc.) in the editor
+          - Go to the additional items in the toolbar ("...")
+          - Select "Copy stand-along link" (The link will be copied to the
+            clipboard)
+      - Stand-alone links can be added to the iPhone/Android home screens
+        - Game-specific shortcuts on the home screen
+        - Includes thumbnail image and title
+    - Arcade (FBNeo):
+      - World Rally 2 forced to single screen
+      - Custom mapping for Toobin'
+      - Custom mapping for Eco Fighter
+      - Custom mapping for Ultimate Mortal Kombat 3
+    - Editor
+      - Full screen mode when added to the home screen on mobile
+      - Modified the breakpoints of the editor. So now, even in landscape on a
+        phone, the left navigation drawer will be hidden giving much more
+        horizontal space. This makes navigating the editor on the phone much
+        easier and is now a decent alternative to the player.
+    - Ability to View Control mappings (gamepad/keyboard) for all applications
+      (emulators, etc.) via the application's pause menu
+    - Full screen webrcade on Android home screen (PR#53, jaycliff)
+    - Bundled SVG icons
+    - Bug fixes
+      - URL remapping defect in editor (Dropbox, etc.)
+      - Google Drive issue where certain files would not download
+      - Button colors within the webrcade player on Macos
+      - Updated content-disposition parsing
+
+### 06/07/22 (0.0.4)
     - FBNeo support, 6907 games total, (Neo Geo, Capcom, Konami, etc.)
       - Neo Geo:
         - BIOS Selection (per item and globally)
@@ -45,8 +104,10 @@
 ### 01/20/22 (0.0.1)
     - Automatic VSync disable if unable to maintain frame rate
     - Fixed Android rotation issue when added to home screen
-    - Added automatic URL remapping for Google Drive and Dropbox (no longer necessary to manually modify URLs)
-    - Moved default feed to its own GitHub repository (old URLs should remap automatically)
+    - Added automatic URL remapping for Google Drive and Dropbox (no longer
+      necessary to manually modify URLs)
+    - Moved default feed to its own GitHub repository (old URLs should remap
+      automatically)
     - Refactored code to support GitHub CI, Docker, and build-related files
     - Added Multitap support for SNES (Snes9x)
     - Added CHANGELOG file
