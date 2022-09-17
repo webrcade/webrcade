@@ -34,3 +34,7 @@ git clone https://github.com/webrcade/webrcade-app-mednafen.git ||
   { fail 'Unable to clone mednafen'; }
 git clone https://github.com/webrcade/webrcade-app-fbneo.git ||
   { fail 'Unable to clone fbneo'; }
+git clone https://github.com/webrcade/webrcade-app-parallel-n64.git ||
+  { fail 'Unable to clone parallel-n64'; }
+git clone https://github.com/webrcade/webrcade-app-standalone.git ||
+  { fail 'Unable to clone standalone'; }

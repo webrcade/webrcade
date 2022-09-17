@@ -1,11 +1,13 @@
 import React, { Component } from "react";
-import { 
-  toggleTabIndex,  
-  FocusGrid, 
+import {
+  settings,
+  toggleTabIndex,
+  FocusGrid,
   GamepadNotifier,
   FileButton,
-  ImageButton,   
-  Message,  
+  ImageButton,
+  Message,
+  SettingsWhiteImage,
   WebrcadeContext,
   LOG,
 } from '@webrcade/app-common'
@@ -27,7 +29,7 @@ export default class AppBrowseScreen extends Component {
 
   constructor() {
     super();
-    
+
     this.ModeEnum = AppBrowseScreen.ModeEnum;
 
     this.state = {
@@ -40,12 +42,16 @@ export default class AppBrowseScreen extends Component {
     this.sliderRef = React.createRef();
     this.button1Ref = React.createRef();
     this.button2Ref = React.createRef();
+    this.settingsRef = React.createRef();
+    this.settingsDetailsRef = React.createRef();
     this.categoryRef = React.createRef();
     this.appRef = React.createRef();
-    this.webrcadeDivRef = React.createRef();    
+    this.webrcadeDivRef = React.createRef();
     this.browsingModeListener = null;
 
     this.focusGrid.setComponents([
+      [this.settingsRef],
+      [this.settingsDetailsRef],
       [this.button1Ref, this.button2Ref],
       [this.categoryRef],
       [this.sliderRef]
@@ -62,7 +68,7 @@ export default class AppBrowseScreen extends Component {
   MAX_SLIDES = 8;
 
   focusGrid = new FocusGrid();
-  gamepadNotifier = new GamepadNotifier();  
+  gamepadNotifier = new GamepadNotifier();
   screenContext = {gamepadNotifier: this.gamepadNotifier};
 
   gamepadCallback = e => {
@@ -93,21 +99,21 @@ export default class AppBrowseScreen extends Component {
     this.webrcadeDivRef.current.style.height = window.innerHeight + "px";
   }
 
-  componentDidMount() {    
+  componentDidMount() {
     const { context } = this.props;
     const { gamepadNotifier } = this;
-    
+
     if (!this.browsingModeListener) {
       // This attempts to detect the Xbox browser's "Browsing Mode"
       this.browsingModeListener = new Xbox.BrowsingModeListener(
-        gamepadNotifier, () => { context.showXboxBrowsingAlert(); }          
+        gamepadNotifier, () => { context.showXboxBrowsingAlert(); }
       );
     }
 
     this.startGamepadNotifier();
     this.browsingModeListener.registerListeners();
     window.addEventListener('resize', this.onResize);
-    window.addEventListener('orientationchange', this.onResize);    
+    window.addEventListener('orientationchange', this.onResize);
   }
 
   componentWillUnmount() {
@@ -122,7 +128,7 @@ export default class AppBrowseScreen extends Component {
     const { sliderRef, webrcadeDivRef } = this;
 
     if (hide || disable) {
-      this.stopGamepadNotifier();      
+      this.stopGamepadNotifier();
       this.browsingModeListener.unregisterListeners();
 
       if (disable && !prevProps.disable) {
@@ -139,7 +145,7 @@ export default class AppBrowseScreen extends Component {
         sliderRef.current.focus();
       }
     }
-  }  
+  }
 
   static getDerivedStateFromProps(props, state) {
     const { ModeEnum } = AppBrowseScreen;
@@ -156,7 +162,7 @@ export default class AppBrowseScreen extends Component {
         let item = null;
         if (feed.getTitle() === Session.getLastFeedTitle()) {
           category = feed.findCategoryByTitle(Session.getLastCategoryTitle());
-        }        
+        }
         if (!category) {
           category = feed.getCategories()[0];
         } else {
@@ -164,15 +170,15 @@ export default class AppBrowseScreen extends Component {
           if (lastItemTitle) {
             for (let i = 0; i < category.items.length; i++) {
               const ci = category.items[i];
-              if (ci.title === lastItemTitle) {                
+              if (ci.title === lastItemTitle) {
                 item = ci;
                 break;
-              } 
+              }
             }
-          }          
+          }
         }
 
-        const isCategories = feed.getUniqueCategoryCount() > 1;        
+        const isCategories = feed.getUniqueCategoryCount() > 1;
         if (state && state.browseScreen) {
           setTimeout(() => {
             state.browseScreen.sliderRef.current.focus();
@@ -194,10 +200,10 @@ export default class AppBrowseScreen extends Component {
   }
 
   render() {
-    const { feeds, hide } = this.props;
+    const { disable, feeds, hide, onSettings } = this.props;
     const { category, currentItem, feed, menuMode } = this.state;
-    const { categoryRef, focusGrid, button1Ref, screenContext, sliderRef, 
-      webrcadeDivRef, MAX_SLIDES } = this;
+    const { categoryRef, focusGrid, button1Ref, screenContext, settingsRef,
+      settingsDetailsRef, sliderRef, webrcadeDivRef, MAX_SLIDES } = this;
     const { ModeEnum } = this;
 
     const isCategories = (menuMode === ModeEnum.CATEGORIES);
@@ -208,12 +214,12 @@ export default class AppBrowseScreen extends Component {
     let itemId = 0, info = null, lastFeedItemMatch = false;;
 
     if (currentItem) {
-      itemId = currentItem.id;      
+      itemId = currentItem.id;
       info = isFeeds ? getFeedInfo(this, currentItem, itemId) :
-        isCategories ? getCategoryInfo(this, currentItem) : 
+        isCategories ? getCategoryInfo(this, currentItem) :
           getAppInfo(this, currentItem);
 
-      if ((feed.getTitle() === Session.getLastFeedTitle()) && 
+      if ((feed.getTitle() === Session.getLastFeedTitle()) &&
         (category && (category.title === Session.getLastCategoryTitle())) &&
         (currentItem.title === Session.getLastItemTitle())) {
         // console.log(feed.getTitle());
@@ -228,13 +234,29 @@ export default class AppBrowseScreen extends Component {
       }
     }
 
+    const hideTitleBar = settings.getHideTitleBar();
+
     return (
-      <WebrcadeContext.Provider value={screenContext}>      
-        <div ref={webrcadeDivRef} style={{height: window.innerHeight + "px"}} className="webrcade">                  
+      <WebrcadeContext.Provider value={screenContext}>
+        <div ref={webrcadeDivRef} style={{height: window.innerHeight + "px"}} className="webrcade">
           <div className={'webrcade-outer' +
             (hide === true ? ' webrcade-outer--hide' : '')}>
             <Message />
-            <Logo />            
+            {!hideTitleBar && (
+              <div className="header-nav">
+                <div className="header-nav-left">&nbsp;</div>
+                <div className="header-nav-center"><Logo /></div>
+                <div className="header-nav-right">
+                  <ImageButton
+                      className={"settings-button"}
+                      onPad={e => focusGrid.moveFocus(e.type, settingsRef)}
+                      onClick={() => onSettings()}
+                      ref={settingsRef}
+                      imgSrc={SettingsWhiteImage}
+                    />
+                </div>
+              </div>
+            )}
             <AppDetails
               itemKey={itemId}
               title={info.title}
@@ -242,7 +264,11 @@ export default class AppBrowseScreen extends Component {
               subTitle={info.subTitle}
               backgroundSrc={info.backgroundSrc}
               defaultBackgroundSrc={info.defaultBackgroundSrc}
+              settingsButtonRef={settingsDetailsRef}
+              focusGrid={focusGrid}
               pixelated={info.backgroundPixelated}
+              disable={disable}
+              onSettings={onSettings}
               buttons={currentItem ?
                 <>
                   <ImageButton
@@ -252,8 +278,8 @@ export default class AppBrowseScreen extends Component {
                     imgSrc={info.button1Img}
                     hoverImgSrc={info.button1HoverImg}
                     label={info.button1Label}
-                  /> 
-                  {info.isButton2Enabled ? (                
+                  />
+                  {info.isButton2Enabled ? (
                     (info.button2OnFile ? (
                       <FileButton
                         onPad={e => focusGrid.moveFocus(e.type, this.button2Ref)}
@@ -262,7 +288,7 @@ export default class AppBrowseScreen extends Component {
                         imgSrc={info.button2Img}
                         hoverImgSrc={info.button2HoverImg}
                         label={info.button2Label}
-                      /> 
+                      />
                     ) : (
                       <ImageButton
                         onPad={e => focusGrid.moveFocus(e.type, this.button2Ref)}
@@ -271,14 +297,14 @@ export default class AppBrowseScreen extends Component {
                         imgSrc={info.button2Img}
                         hoverImgSrc={info.button2HoverImg}
                         label={info.button2Label}
-                      /> 
+                      />
                     )))
                   : null}
                 </> : null
               }
               bottom={
                 <AppCategory
-                  isSelectable={info.flyoutLabel}                  
+                  isSelectable={info.flyoutLabel}
                   onPad={e => focusGrid.moveFocus(e.type, categoryRef)}
                   ref={categoryRef}
                   label={info.categoryLabel}

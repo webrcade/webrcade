@@ -1,8 +1,10 @@
 import React from "react";
 
 import {
-  loadFeedFromUrl,
+  loadFeedFromUrl
 } from './feeds';
+
+import { SettingsEditor } from "@webrcade/app-common";
 
 import AddFeedScreen from './screens/addfeed';
 import AlertScreen from './screens/alert'
@@ -17,6 +19,15 @@ import {
 export default function Dialogs(props) {
   const { webrcade } = props;
   const { ctx, ScreenEnum } = webrcade;
+
+  const renderSettingsEditor = () => {
+    return (
+      <SettingsEditor
+        ctx={ctx}
+        onClose={() => { ctx.showSettingsEditor(false) }}
+      />
+    );
+  }
 
   const renderAddFeed = () => {
     return (
@@ -60,6 +71,7 @@ export default function Dialogs(props) {
     const props = ctx.getAlertScreenProps();
     return (
       <AlertScreen
+        disableAnimation={props.disableAnimation}
         message={props.message}
         onOk={props.onOk}
         showButton={props.showButton}
@@ -73,6 +85,7 @@ export default function Dialogs(props) {
       {ctx.isAlertScreenOpen() ? renderAlert() : null}
       {ctx.isYesNoScreenOpen() ? renderYesNo() : null}
       {ctx.isAddFeedScreenOpen() ? renderAddFeed() : null}
+      {ctx.isSettingsEditorOpen() ? renderSettingsEditor() : null}
     </>
   );
 }
