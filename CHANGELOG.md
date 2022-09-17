@@ -1,6 +1,6 @@
 ## Change log
 
-### 9/17/22 (0.0.5)
+### 09/17/22 (0.0.5)
     - Support for cloud-based in-games saves (Dropbox)
     - Export/import feeds with zip and base64
     - Settings editor now available in the upper-right corner of the webrcade
@@ -18,7 +18,7 @@
             requirements (N64, etc.)
         - Hide the webrcade title bar (adds more vertical space in player
           front-end)
-    - N64:
+    - Nintendo 64:
       - Very early version that requires enabling "experimental" applications
         in settings
       - Requires modern PC/Mac or newer iPad/iPhone 11+ (Android currently too
@@ -27,7 +27,7 @@
         loaded
       - Ability to scale screen for individual games
       - Keyboard support
-    - Stand-alone links (sharable direct links to games)
+    - Stand-alone links (shareable direct links to games)
       - The editor now provides the ability to generate a stand-alone link to a
         game (without displaying the player or the editor)
         - To use:
