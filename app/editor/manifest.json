@@ -1,6 +1,4 @@
 {
-  "short_name": "webЯcade Editor",
-  "name": "webЯcade Editor",
   "icons": [
     {
       "src": "android-icon-36x36.png",
@@ -40,8 +38,7 @@
     }
   ],
   "start_url": ".",
-  "display": "standalone",
-  "orientation": "landscape-primary",
+  "display": "fullscreen",
   "theme_color": "#000000",
   "background_color": "#000000"
 }
