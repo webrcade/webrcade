@@ -1,6 +1,6 @@
 ## Change log
 
-### --/--/22 (0.0.5)
+### 9/17/22 (0.0.5)
     - Support for cloud-based in-games saves (Dropbox)
     - Export/import feeds with zip and base64
     - Settings editor now available in the upper-right corner of the webrcade
@@ -33,7 +33,7 @@
         - To use:
           - Select a single item (game, etc.) in the editor
           - Go to the additional items in the toolbar ("...")
-          - Select "Copy stand-along link" (The link will be copied to the
+          - Select "Copy stand-alone link" (The link will be copied to the
             clipboard)
       - Stand-alone links can be added to the iPhone/Android home screens
         - Game-specific shortcuts on the home screen
