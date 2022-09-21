@@ -1,5 +1,11 @@
 ## Change log
 
+### 09/20/22 (0.0.5.1)
+    - Nintendo 64
+      - Warning dialog for devices running iOS 16 (performance issues)
+      - Refers to documentation with instructions to disable Safari experimental
+        feature (GPU Process: WebGL) to restore performance.
+
 ### 09/17/22 (0.0.5)
     - Support for cloud-based in-games saves (Dropbox)
     - Export/import feeds with zip and base64
