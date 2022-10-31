@@ -14,10 +14,10 @@ function fail() {
 }
 
 # Clone dependencies
-git clone -b ftl https://github.com/webrcade/webrcade-app-common.git ||
+git clone https://github.com/webrcade/webrcade-app-common.git ||
   { fail 'Unable to clone common'; }
 git clone https://github.com/webrcade/webrcade-editor.git ||
-  { fail -b ftl 'Unable to clone editor'; }
+  { fail 'Unable to clone editor'; }
 git clone https://github.com/webrcade/webrcade-app-snes9x.git ||
   { fail 'Unable to clone snes9x'; }
 git clone https://github.com/webrcade/webrcade-app-genplusgx.git ||
@@ -28,7 +28,7 @@ git clone https://github.com/webrcade/webrcade-app-js7800.git ||
   { fail 'Unable to clone js7800'; }
 git clone https://github.com/webrcade/webrcade-app-fceux.git ||
   { fail 'Unable to clone fceux'; }
-git clone -b ftl https://github.com/webrcade/webrcade-app-vba-m.git ||
+git clone https://github.com/webrcade/webrcade-app-vba-m.git ||
   { fail 'Unable to clone vba-m'; }
 git clone https://github.com/webrcade/webrcade-app-mednafen.git ||
   { fail 'Unable to clone mednafen'; }
