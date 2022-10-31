@@ -44,17 +44,33 @@ RUN cd /webrcade && \
 FROM php:8.0-apache
 COPY --from=builder ./webrcade/dist/package /var/www/html
 
-RUN a2enmod headers
+RUN a2enmod headers && \
+  a2enmod proxy_http && \
+  a2enmod proxy_balancer && \
+  a2enmod lbmethod_byrequests
+
+# Node 16
+RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash - && \
+  apt-get install -y nodejs && \
+  apt-get clean && \
+  apt-get autoclean && \
+  apt-get autoremove
+
+# Node-based CORS
+RUN npm install -g miniflare && \
+  curl -fsSL https://webrcade.github.io/webrcade-utils/cors.js > /var/www/cors.js && \
+  curl -fsSL https://webrcade.github.io/webrcade-utils/apache.conf > /etc/apache2/sites-available/000-default.conf
 
 # Create .htaccess for content directory
-RUN echo "Options +Indexes" >> /home/.htaccess
-RUN echo "Header add Access-Control-Allow-Origin \"*\"" >> /home/.htaccess
+RUN echo "Options +Indexes" >> /home/.htaccess && \
+  echo "Header add Access-Control-Allow-Origin \"*\"" >> /home/.htaccess
 
 # Start script
-RUN echo "#!/bin/bash" >> /home/start.sh
-RUN echo "yes | cp -rf /home/.htaccess /var/www/html/content" >> /home/start.sh
-RUN echo "apache2-foreground" >> /home/start.sh
-RUN chmod +x /home/start.sh
+RUN echo "#!/bin/bash" >> /home/start.sh && \
+  echo "yes | cp -rf /home/.htaccess /var/www/html/content" >> /home/start.sh && \
+  echo "miniflare /var/www/cors.js &" >> /home/start.sh && \
+  echo "apache2-foreground" >> /home/start.sh && \
+  chmod +x /home/start.sh
 
 # Create content directory
 RUN mkdir -p /var/www/html/content

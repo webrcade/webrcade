@@ -165,6 +165,18 @@ mkdir -p "$DIST_OUT_APP/neo"  || { fail 'Error creating fbneo output directory.'
 cp -R build/. "$DIST_OUT_APP/neo" || { fail 'failed to copy fbneo to out.'; }
 
 ##
+## webrcade-app-beetle-psx
+##
+
+cd "$DIR/../webrcade-app-beetle-psx" || { fail 'Unable to change to beetle-psx.'; }
+npm install . || { fail 'Unable to install beetle-psx dependencies.'; }
+npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
+npm run build || { fail 'Unable to build psx.'; }
+mkdir -p "$DIST_OUT_APP/psx"  || { fail 'Error creating psx output directory.'; }
+cp -R build/. "$DIST_OUT_APP/psx" || { fail 'failed to copy psx to out.'; }
+
+
+##
 ## webrcade-app-prboom
 ##
 
