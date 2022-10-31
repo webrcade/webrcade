@@ -2,6 +2,7 @@
 
 ### 10/31/22 (0.0.6)
     - PlayStation
+      - PlayStation application (emulator)
       - Only .CHD and .PBP files are supported (BIN/CUE and ISO are not
           supported).
       - Games must be added manually (versus auto-detection).
