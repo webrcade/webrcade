@@ -1,5 +1,27 @@
 ## Change log
 
+### 10/31/22 (0.0.6)
+    - PlayStation
+      - Only .CHD and .PBP files are supported (BIN/CUE and ISO are not
+          supported).
+      - Games must be added manually (versus auto-detection).
+          See PlayStation Application documentation, for more details.
+    - Editor
+      - Auto-completion of game titles (and related artwork loading) via the
+          "title" text field (Item editor, General page).
+      - When creating stand-alone links you can choose to shorten the link
+          (via TinyURL). This allows for links to be used within iMessage
+          (full versions get truncated).
+      - Switched the look of select items (drop-downs) in the editor to
+          provide more vertical real estate.
+    - GBA: Added ability to "Disable Game Lookup" for settings based on
+        Game ID. This allows for all settings to be overridden even if
+        the game is recognized. This is typically useful for "hacks" that
+        are based on a standard game ID, but have unique settings
+        (use of Real-time clock, etc.).
+    - Bug fixes
+      - Editor: Multi-line fields now work correctly on Safari for Mac
+
 ### 09/20/22 (0.0.5.1)
     - Nintendo 64
       - Warning dialog for devices running iOS 16 (performance issues)
