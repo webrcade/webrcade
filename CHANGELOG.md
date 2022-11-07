@@ -1,5 +1,13 @@
 ## Change log
 
+### 11/06/22 (0.0.6.1)
+    - PlayStation
+      - Fixed issue causing L1 not to work with keyboard.
+    - Editor
+      - Fixed defect that would cause editor to crash when experimental
+        mode was disabled, and the last type used in an item editor was
+        an experimental type (N64 or PSX).
+
 ### 10/31/22 (0.0.6)
     - PlayStation
       - Only .CHD and .PBP files are supported (BIN/CUE and ISO are not
