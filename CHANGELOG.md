@@ -1,5 +1,13 @@
 ## Change log
 
+### 11/06/22 (0.0.6.2)
+    - PlayStation
+      - Decreased memory usage when loading discs.
+        - Allows larger .CHD/.PBP files to be loaded.
+        - To increase likelihood of a game loading, use standalone-based
+          links on both iOS (add to home) and Xbox Edge browsers (game-specific
+          tab).
+
 ### 11/06/22 (0.0.6.1)
     - PlayStation
       - Fixed issue causing L1 not to work with keyboard.
