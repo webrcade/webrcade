@@ -1,6 +1,6 @@
 ## Change log
 
-### 11/06/22 (0.0.6.2)
+### 11/07/22 (0.0.6.2)
     - PlayStation
       - Decreased memory usage when loading discs.
         - Allows larger .CHD/.PBP files to be loaded.
