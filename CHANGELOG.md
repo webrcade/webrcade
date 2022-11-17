@@ -1,5 +1,17 @@
 ## Change log
 
+### 11/17/22 (0.0.7)
+    - Sega CD support
+      - Requires BIOS for each region (USA, EUR, JPN) (feed properties)
+      - Disc images must be in .CHD or .PBP format
+      - Games must be added manually (same as PlayStation)
+    - Sony PlayStation
+      - No longer tagged as experimental
+    - Custom CSS capability in feeds.
+    - Bug fixes
+      - Sony PlayStation
+        - Fixed display driver issue that was causing certain games to crash
+
 ### 11/07/22 (0.0.6.2)
     - PlayStation
       - Decreased memory usage when loading discs.

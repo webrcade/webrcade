@@ -38,5 +38,7 @@ git clone https://github.com/webrcade/webrcade-app-parallel-n64.git ||
   { fail 'Unable to clone parallel-n64'; }
 git clone https://github.com/webrcade/webrcade-app-beetle-psx.git ||
   { fail 'Unable to clone beetle-psx'; }
+git clone https://github.com/webrcade/webrcade-app-retro-genplusgx.git ||
+  { fail 'Unable to clone retro-genplusgx'; }
 git clone https://github.com/webrcade/webrcade-app-standalone.git ||
   { fail 'Unable to clone standalone'; }
