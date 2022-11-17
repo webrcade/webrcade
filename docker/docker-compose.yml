@@ -1,0 +1,83 @@
+version: "3"
+services:
+  webrcade:
+    image: webrcade/webrcade:latest
+    container_name: webrcade
+    volumes:
+      - [OWNCLOUD-STORAGE-PATH]/files/[OWNCLOUD-USERNAME]/files/webrcade:/var/www/html/content # webrcade storage
+    ports:
+      - 80:80
+    restart: always
+
+  owncloud:
+    image: owncloud/server:latest
+    container_name: webrcade-owncloud
+    restart: always
+    ports:
+      - 8080:8080
+      - 443:443
+    depends_on:
+      - db
+      - redis
+    environment:
+      - OWNCLOUD_DOMAIN=localhost
+      - OWNCLOUD_TRUSTED_DOMAINS=localhost,[SERVER-IP-ADDRESS] # Server IP Address
+      - OWNCLOUD_DB_TYPE=mysql
+      - OWNCLOUD_DB_NAME=owncloud
+      - OWNCLOUD_DB_USERNAME=owncloud
+      - OWNCLOUD_DB_PASSWORD=owncloud
+      - OWNCLOUD_DB_HOST=db
+      - OWNCLOUD_ADMIN_USERNAME=[ADMIN-USERNAME] # admin username
+      - OWNCLOUD_ADMIN_PASSWORD=[ADMIN-PASSWORD] # admin password
+      - OWNCLOUD_MYSQL_UTF8MB4=true
+      - OWNCLOUD_REDIS_ENABLED=true
+      - OWNCLOUD_REDIS_HOST=redis
+    healthcheck:
+      test: ["CMD", "/usr/bin/healthcheck"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    volumes:
+      - [OWNCLOUD-STORAGE-PATH]:/mnt/data # ownCloud storage
+
+  db:
+    image: webhippie/mariadb:latest
+    container_name: webrcade-db
+    restart: always
+    environment:
+      - MARIADB_ROOT_PASSWORD=owncloud
+      - MARIADB_USERNAME=owncloud
+      - MARIADB_PASSWORD=owncloud
+      - MARIADB_DATABASE=owncloud
+      - MARIADB_MAX_ALLOWED_PACKET=128M
+      - MARIADB_INNODB_LOG_FILE_SIZE=64M
+    healthcheck:
+      test: ["CMD", "/usr/bin/healthcheck"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    volumes:
+      - mysql:/var/lib/mysql
+      - backup:/var/lib/backup
+
+  redis:
+    image: webhippie/redis:latest
+    container_name: webrcade-redis
+    restart: always
+    environment:
+      - REDIS_DATABASES=1
+    healthcheck:
+      test: ["CMD", "/usr/bin/healthcheck"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    volumes:
+      - redis:/var/lib/redis
+
+volumes:
+  mysql:
+    driver: local
+  backup:
+    driver: local
+  redis:
+    driver: local
