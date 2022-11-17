@@ -10,6 +10,7 @@ import {
   SettingsWhiteImage,
   WebrcadeContext,
   LOG,
+  uuidv4
 } from '@webrcade/app-common'
 
 import * as Session from "./session"
@@ -64,6 +65,8 @@ export default class AppBrowseScreen extends Component {
     APPS: "apps",
     CATEGORIES: "categories"
   }
+
+  static cssElements = [];
 
   MAX_SLIDES = 8;
 
@@ -148,14 +151,45 @@ export default class AppBrowseScreen extends Component {
   }
 
   static getDerivedStateFromProps(props, state) {
-    const { ModeEnum } = AppBrowseScreen;
+    const { cssElements, ModeEnum } = AppBrowseScreen;
 
     if (!state || props.feed !== state.feed) {
 
       LOG.info('feed has changed');
 
+      const head = document.head;
+
+      // clear CSS
+      console.log(cssElements)
+      for (let i = 0; i < cssElements.length; i++) {
+        const id = cssElements[i];
+        const el = document.getElementById(id);
+        console.log(el);
+        if (el) {
+          head.removeChild(el);
+        }
+      }
+      while(cssElements.length > 0) {
+        cssElements.pop();
+      }
+
       const feed = props.feed;
       if (feed) {
+        // CSS
+        const feedProps = feed.getProps()
+        if (feedProps.css && Array.isArray(feedProps.css)) {
+          const cssUrls = feedProps.css;
+          for (let i = 0; i < cssUrls.length; i++) {
+            const el = document.createElement('link');
+            const id = uuidv4();
+            el.setAttribute('id', id);
+            el.setAttribute('rel', 'stylesheet');
+            el.setAttribute('type', 'text/css');
+            el.setAttribute('href', cssUrls[i]);
+            cssElements.push(id);
+            head.appendChild(el);
+          }
+        }
 
         // Determine category and item for new feed (based on session state)
         let category = null;
