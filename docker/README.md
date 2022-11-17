@@ -47,6 +47,12 @@ At this point, you are up and running. The suggested final step is to enter the 
 
 ## External Access
 
+***WARNING!*** Do not forward port 80 as that points to webRcade. This project is in early development with focuses on functionality not security. webRcade will not be held liable for damages done by external attacks.
+
 To access ownCloud from the web, [forward port](https://www.noip.com/support/knowledgebase/general-port-forwarding-guide/) 443 for https from your external router (internet facing) to your docker host IP address.
 
-***WARNING!*** Do not forward port 80 as that points to webRcade. This project is in early development with focuses on functionality not security. webRcade will not be held liable for damages done by external attacks.
+Most users receive a dynamic IP address from their ISP and as such, it is not a reliable link to use when importing content into your feeds. As such, its best to use the [DDNS](https://en.wikipedia.org/wiki/Dynamic_DNS) feature included in most modern routers to reflect any changes of your external IP address to a DNS server.
+
+TL;DR IP addresses change but names are forever (terms & conditions apply)
+
+[Afraid.org (aka FreeDNS)](https://freedns.afraid.org/) is a simple, cost effective DNS server solution and they have detailed instructions on the website.
