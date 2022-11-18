@@ -266,6 +266,20 @@ function prboom() {
     cp -R build/. "$DIST_OUT_APP/doom" || { fail 'failed to copy doom to out.'; }
 }
 
+function retro-genplusgx() {
+  git clone https://github.com/webrcade/webrcade-app-retro-genplusgx.git ||
+    { fail 'Unable to clone retro-genplusgx'; }
+  ##
+  ## webrcade-app-retro-genplusgx
+  ##
+  cd "$DIR/webrcade-app-retro-genplusgx" || { fail 'Unable to change to retro-genplusgx.'; }
+  npm install . || { fail 'Unable to install retro-genplusgx dependencies.'; }
+  npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
+  npm run build || { fail 'Unable to build retro-genplusgx.'; }
+  mkdir -p "$DIST_OUT_APP/retro-genesis"  || { fail 'Error creating retro-genplusgx output directory.'; }
+  cp -R build/. "$DIST_OUT_APP/retro-genesis" || { fail 'failed to copy retro-genplusgx to out.'; }
+}
+
 function standalone() {
   git clone https://github.com/webrcade/webrcade-app-standalone.git ||
     { fail 'Unable to clone standalone'; }
@@ -380,10 +394,10 @@ function multiselect() {
 
 # multiselect outputArray "option1;option2" "defaultvalue1;defaultvalue2"
 echo "Select which apps to install:"
-multiselect result "editor;snes9x;genplusgx;javatari;js7800;fceux;vba-m;mednafen;fbneo;parallelN64;beetlePSX;prboom;standalone" "false;false;false;false;false;false;false;false;false;false;false;false;false"
+multiselect result "editor;snes9x;genplusgx;javatari;js7800;fceux;vba-m;mednafen;fbneo;parallelN64;beetlePSX;prboom;retro-genplusgx;standalone" "false;false;false;false;false;false;false;false;false;false;false;false;false;false"
 
 # Array of apps (must match 'multiselect')
-apps=("editor" "snes9x" "genplusgx" "javatari" "js7800" "fceux" "vba-m" "mednafen" "fbneo" "parallelN64" "beetlePSX" "prboom" "standalone")
+apps=("editor" "snes9x" "genplusgx" "javatari" "js7800" "fceux" "vba-m" "mednafen" "fbneo" "parallelN64" "beetlePSX" "prboom" "retro-genplusgx" "standalone")
 
 # Call the setup function for selected apps
 for ((i=0; i<${#result[@]}; i++)); do
