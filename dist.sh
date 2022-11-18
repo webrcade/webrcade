@@ -175,6 +175,16 @@ npm run build || { fail 'Unable to build psx.'; }
 mkdir -p "$DIST_OUT_APP/psx"  || { fail 'Error creating psx output directory.'; }
 cp -R build/. "$DIST_OUT_APP/psx" || { fail 'failed to copy psx to out.'; }
 
+##
+## webrcade-app-retro-genplusgx
+##
+
+cd "$DIR/../webrcade-app-retro-genplusgx" || { fail 'Unable to change to retro-genplusgx.'; }
+npm install . || { fail 'Unable to install retro-genplusgx dependencies.'; }
+npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
+npm run build || { fail 'Unable to build retro-genplusgx.'; }
+mkdir -p "$DIST_OUT_APP/retro-genesis"  || { fail 'Error creating retro-genplusgx output directory.'; }
+cp -R build/. "$DIST_OUT_APP/retro-genesis" || { fail 'failed to copy retro-genplusgx to out.'; }
 
 ##
 ## webrcade-app-prboom
