@@ -14,8 +14,8 @@ services:
     container_name: webrcade-owncloud
     restart: always
     ports:
-      - 8080:8080
-      - 443:443
+      - 8080:8080 # http
+      - 443:443 # https
     depends_on:
       - db
       - redis
@@ -59,6 +59,8 @@ services:
     volumes:
       - mysql:/var/lib/mysql
       - backup:/var/lib/backup
+      - init:/etc/mysql/init.d
+      - conf:/etc/mysql/conf.d
 
   redis:
     image: webhippie/redis:latest
@@ -78,6 +80,10 @@ volumes:
   mysql:
     driver: local
   backup:
+    driver: local
+  init:
+    driver: local
+  conf:
     driver: local
   redis:
     driver: local
