@@ -72,7 +72,6 @@ RUN echo "#!/bin/bash" >> /home/start.sh && \
   echo "apache2-foreground" >> /home/start.sh && \
   chmod +x /home/start.sh
 
-
 # Fix file corruption issues that occurred via content mounts
 RUN echo "EnableMMAP off" >> /etc/apache2/apache2.conf && \
   echo "EnableSendfile off" >> /etc/apache2/apache2.conf
