@@ -187,6 +187,17 @@ mkdir -p "$DIST_OUT_APP/retro-genesis"  || { fail 'Error creating retro-genplusg
 cp -R build/. "$DIST_OUT_APP/retro-genesis" || { fail 'failed to copy retro-genplusgx to out.'; }
 
 ##
+## webrcade-app-retro-pce-fast
+##
+
+cd "$DIR/../webrcade-app-retro-pce-fast" || { fail 'Unable to change to retro-pce-fast.'; }
+npm install . || { fail 'Unable to install retro-pce-fast dependencies.'; }
+npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
+npm run build || { fail 'Unable to build retro-pce-fast.'; }
+mkdir -p "$DIST_OUT_APP/retro-pce-fast"  || { fail 'Error creating retro-pce-fast output directory.'; }
+cp -R build/. "$DIST_OUT_APP/retro-pce-fast" || { fail 'failed to copy retro-pce-fast to out.'; }
+
+##
 ## webrcade-app-prboom
 ##
 
