@@ -1,9 +1,31 @@
 ## Change log
 
+### 12/15/22 (0.0.8)
+    - PC Engine CD support
+      - Requires BIOS (feed properties)
+      - Disc images must be in .CHD format
+      - Games must be added manually (same as PlayStation)
+    - Save state support
+      - Requires cloud storage to be enabled
+      - All emulators supported with exception of Atari 2600 and 7800
+    - Nintendo 64
+      - Fix for Pilotwings 64 graphical glitches
+    - Sony Playstation
+      - Ability to disable Memory Card 1 (Memory Card 0 still enabled)
+    - NEC PC Engine
+      - Swapped buttons III and IV when using 6 button mode
+      - Added ability to map SELECT and RUN to standard buttons
+        (when in 2 button mode)
+    - Editor
+      - Feed properties page now has a pulldown to select the application
+        (emulator) to edit settings for (BIOS, etc.)
+    - Player
+      - Left and right bumpers can be used to switch between tabs
+
 ### 11/17/22 (0.0.7)
     - Sega CD support
       - Requires BIOS for each region (USA, EUR, JPN) (feed properties)
-      - Disc images must be in .CHD or .PBP format
+      - Disc images must be in .CHD format
       - Games must be added manually (same as PlayStation)
     - Sony PlayStation
       - No longer tagged as experimental
