@@ -1,5 +1,38 @@
 ## Change log
 
+### 2/05/23 (0.0.9)
+    - NEC PC-FX (New)
+      - Requires BIOS in feed properties(pcfx.rom)
+      - Requires .CHD disc format
+    - ColecoVision (New)
+      - From scratch Emscripten port
+      - Requires BIOS to be provided (in feed properties)
+      - Virtual on-screen keypad
+      - Supports Super Game Module (SGM)
+      - Supports Driving, Roller, and Super-action controllers
+      - Ability to provide keypad to gamepad mappings (Mappings tab in Coleco
+        item editor)
+      - Ability to provide descriptions of keypad buttons (Descriptions tab in
+        Coleco item editor)
+    - Atari 5200 (New)
+      - Virtual on-screen keypad
+      - Ability to provide keypad to gamepad mappings (Mappings tab in 5200
+        item editor)
+      - Ability to provide descriptions of keypad buttons (Descriptions tab
+        in 5200 item editor)
+      - Currently "experimental" due to the following issues (core emulator
+        defects):
+        - Single player only (core does not support second fire or keypad for
+          player 2)
+        - Does not support newer homebrew (unsupported cart mappings)
+        - Analog quirks (Holding analog stick in a direction prior to level
+          starting causes odd behavior: Centipede, Missile Command, probably
+          others).
+        - Keypad seems to inconsistently accept presses (Only experienced with
+          Star Raiders)
+    - Sony PlayStation
+      - Ability to reset Disc (useful for save state-based disc swaps)
+
 ### 12/15/22 (0.0.8)
     - PC Engine CD support
       - Requires BIOS (feed properties)
@@ -23,7 +56,7 @@
       - Left and right bumpers can be used to switch between tabs
 
 ### 11/17/22 (0.0.7)
-    - Sega CD support
+    - Sega CD (New)
       - Requires BIOS for each region (USA, EUR, JPN) (feed properties)
       - Disc images must be in .CHD format
       - Games must be added manually (same as PlayStation)
@@ -51,7 +84,7 @@
         an experimental type (N64 or PSX).
 
 ### 10/31/22 (0.0.6)
-    - PlayStation
+    - PlayStation (New)
       - PlayStation application (emulator)
       - Only .CHD and .PBP files are supported (BIN/CUE and ISO are not
           supported).
@@ -97,7 +130,7 @@
             requirements (N64, etc.)
         - Hide the webrcade title bar (adds more vertical space in player
           front-end)
-    - Nintendo 64:
+    - Nintendo 64 (New)
       - Very early version that requires enabling "experimental" applications
         in settings
       - Requires modern PC/Mac or newer iPad/iPhone 11+ (Android currently too
@@ -139,7 +172,7 @@
       - Updated content-disposition parsing
 
 ### 06/07/22 (0.0.4)
-    - FBNeo support, 6907 games total, (Neo Geo, Capcom, Konami, etc.)
+    - FBNeo support, 6907 games total, (Neo Geo, Capcom, Konami, etc.) (New)
       - Neo Geo:
         - BIOS Selection (per item and globally)
         - Selecting between AES (console) and MVS (arcade) hardware
@@ -164,7 +197,7 @@
 
 ### 03/18/22 (0.0.3)
     - Added the following application (emulator):
-      - Atari Lynx
+      - Atari Lynx (New)
     - New implementation of NES display layer
     - Adjusted Atari 7800 screen sizes
     - GBA save game fixes
@@ -172,13 +205,13 @@
 
 ### 02/21/22 (0.0.2)
     - Added the following applications (emulators):
-      - Bandai WonderSwan
-      - Bandai WonderSwan Color
-      - NEC PC Engine (TurboGrafx-16)
-      - NEC SuperGrafx
-      - Neo Geo Pocket
-      - Neo Geo Pocket Color
-      - Nintendo Virtual Boy
+      - Bandai WonderSwan (New)
+      - Bandai WonderSwan Color (New)
+      - NEC PC Engine (TurboGrafx-16) (New)
+      - NEC SuperGrafx (New)
+      - Neo Geo Pocket (New)
+      - Neo Geo Pocket Color (New)
+      - Nintendo Virtual Boy (New)
 
 ### 01/20/22 (0.0.1)
     - Automatic VSync disable if unable to maintain frame rate
