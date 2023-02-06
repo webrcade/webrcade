@@ -198,6 +198,39 @@ mkdir -p "$DIST_OUT_APP/retro-pce-fast"  || { fail 'Error creating retro-pce-fas
 cp -R build/. "$DIST_OUT_APP/retro-pce-fast" || { fail 'failed to copy retro-pce-fast to out.'; }
 
 ##
+## webrcade-app-colem
+##
+
+cd "$DIR/../webrcade-app-colem" || { fail 'Unable to change to colem.'; }
+npm install . || { fail 'Unable to install colem dependencies.'; }
+npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
+npm run build || { fail 'Unable to build colem.'; }
+mkdir -p "$DIST_OUT_APP/colem"  || { fail 'Error creating colem output directory.'; }
+cp -R build/. "$DIST_OUT_APP/colem" || { fail 'failed to copy colem to out.'; }
+
+##
+## webrcade-app-beetle-pcfx
+##
+
+cd "$DIR/../webrcade-app-beetle-pcfx" || { fail 'Unable to change to beetle-pcfx.'; }
+npm install . || { fail 'Unable to install beetle-pcfx dependencies.'; }
+npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
+npm run build || { fail 'Unable to build beetle-pcfx.'; }
+mkdir -p "$DIST_OUT_APP/pcfx"  || { fail 'Error creating beetle-pcfx output directory.'; }
+cp -R build/. "$DIST_OUT_APP/pcfx" || { fail 'failed to copy beetle-pcfx to out.'; }
+
+##
+## webrcade-app-retro-a5200
+##
+
+cd "$DIR/../webrcade-app-retro-a5200" || { fail 'Unable to change to retro-a5200.'; }
+npm install . || { fail 'Unable to install retro-a5200 dependencies.'; }
+npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
+npm run build || { fail 'Unable to buildretro-a5200.'; }
+mkdir -p "$DIST_OUT_APP/retro-a5200"  || { fail 'Error creating retro-a5200 output directory.'; }
+cp -R build/. "$DIST_OUT_APP/retro-a5200" || { fail 'failed to copy retro-a5200 to out.'; }
+
+##
 ## webrcade-app-prboom
 ##
 

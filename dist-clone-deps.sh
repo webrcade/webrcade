@@ -42,5 +42,11 @@ git clone https://github.com/webrcade/webrcade-app-retro-genplusgx.git ||
   { fail 'Unable to clone retro-genplusgx'; }
 git clone https://github.com/webrcade/webrcade-app-retro-pce-fast.git ||
   { fail 'Unable to clone retro-pce-fast'; }
+  git clone https://github.com/webrcade/webrcade-app-colem.git ||
+  { fail 'Unable to clone colem'; }
+git clone https://github.com/webrcade/webrcade-app-beetle-pcfx.git ||
+  { fail 'Unable to clone beetle-pcfx'; }
+git clone https://github.com/webrcade/webrcade-app-retro-a5200.git ||
+  { fail 'Unable to clone retro-a5200'; }
 git clone https://github.com/webrcade/webrcade-app-standalone.git ||
   { fail 'Unable to clone standalone'; }
