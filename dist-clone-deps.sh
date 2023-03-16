@@ -48,7 +48,7 @@ git clone https://github.com/webrcade/webrcade-app-beetle-pcfx.git ||
   { fail 'Unable to clone beetle-pcfx'; }
 git clone https://github.com/webrcade/webrcade-app-retro-a5200.git ||
   { fail 'Unable to clone retro-a5200'; }
-git clone https://github.com/webrcade/webrcade-app-retro-a5200.git ||
+git clone https://github.com/webrcade/webrcade-app-retro-neocd.git ||
   { fail 'Unable to clone retro-neocd'; }
 git clone https://github.com/webrcade/webrcade-app-tyrquake.git ||
   { fail 'Unable to clone quake'; }
