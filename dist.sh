@@ -226,9 +226,31 @@ cp -R build/. "$DIST_OUT_APP/pcfx" || { fail 'failed to copy beetle-pcfx to out.
 cd "$DIR/../webrcade-app-retro-a5200" || { fail 'Unable to change to retro-a5200.'; }
 npm install . || { fail 'Unable to install retro-a5200 dependencies.'; }
 npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
-npm run build || { fail 'Unable to buildretro-a5200.'; }
+npm run build || { fail 'Unable to build retro-a5200.'; }
 mkdir -p "$DIST_OUT_APP/retro-a5200"  || { fail 'Error creating retro-a5200 output directory.'; }
 cp -R build/. "$DIST_OUT_APP/retro-a5200" || { fail 'failed to copy retro-a5200 to out.'; }
+
+##
+## webrcade-app-retro-neocd
+##
+
+cd "$DIR/../webrcade-app-retro-neocd" || { fail 'Unable to change to retro-neocd.'; }
+npm install . || { fail 'Unable to install retro-neocd dependencies.'; }
+npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
+npm run build || { fail 'Unable to build retro-neocd.'; }
+mkdir -p "$DIST_OUT_APP/retro-neocd"  || { fail 'Error creating retro-neocd output directory.'; }
+cp -R build/. "$DIST_OUT_APP/retro-neocd" || { fail 'failed to copy retro-neocd to out.'; }
+
+##
+## webrcade-app-tyrquake
+##
+
+cd "$DIR/../webrcade-app-tyrquake" || { fail 'Unable to change to quake.'; }
+npm install . || { fail 'Unable to install quake dependencies.'; }
+npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
+npm run build || { fail 'Unable to build quake.'; }
+mkdir -p "$DIST_OUT_APP/quake"  || { fail 'Error creating quake output directory.'; }
+cp -R build/. "$DIST_OUT_APP/quake" || { fail 'failed to copy quake to out.'; }
 
 ##
 ## webrcade-app-prboom
