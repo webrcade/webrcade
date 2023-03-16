@@ -14,9 +14,9 @@ function fail() {
 }
 
 # Clone dependencies
-git clone https://github.com/webrcade/webrcade-app-common.git ||
+git clone -b k7 https://github.com/webrcade/webrcade-app-common.git ||
   { fail 'Unable to clone common'; }
-git clone https://github.com/webrcade/webrcade-editor.git ||
+git clone -b k7 https://github.com/webrcade/webrcade-editor.git ||
   { fail 'Unable to clone editor'; }
 git clone https://github.com/webrcade/webrcade-app-snes9x.git ||
   { fail 'Unable to clone snes9x'; }
@@ -42,7 +42,7 @@ git clone https://github.com/webrcade/webrcade-app-retro-genplusgx.git ||
   { fail 'Unable to clone retro-genplusgx'; }
 git clone https://github.com/webrcade/webrcade-app-retro-pce-fast.git ||
   { fail 'Unable to clone retro-pce-fast'; }
-  git clone https://github.com/webrcade/webrcade-app-colem.git ||
+git clone https://github.com/webrcade/webrcade-app-colem.git ||
   { fail 'Unable to clone colem'; }
 git clone https://github.com/webrcade/webrcade-app-beetle-pcfx.git ||
   { fail 'Unable to clone beetle-pcfx'; }
