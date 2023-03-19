@@ -14,9 +14,9 @@ function fail() {
 }
 
 # Clone dependencies
-git clone -b k7 https://github.com/webrcade/webrcade-app-common.git ||
+git clone https://github.com/webrcade/webrcade-app-common.git ||
   { fail 'Unable to clone common'; }
-git clone -b k7 https://github.com/webrcade/webrcade-editor.git ||
+git clone https://github.com/webrcade/webrcade-editor.git ||
   { fail 'Unable to clone editor'; }
 git clone https://github.com/webrcade/webrcade-app-snes9x.git ||
   { fail 'Unable to clone snes9x'; }
