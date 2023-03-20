@@ -1,8 +1,17 @@
 ## Change log
 
+### 3/19/23 (0.1.0)
+    - Quake (New)
+      - Supports Quake and Expansion Packs 1-3
+    - Neo Geo CD (New)
+      - Requires BIOS in feed properties
+      - Requires .CHD disc format
+    - Bug fixes
+      - Metadata now available for NEC PC-FX and Atari 5200
+
 ### 2/05/23 (0.0.9)
     - NEC PC-FX (New)
-      - Requires BIOS in feed properties(pcfx.rom)
+      - Requires BIOS in feed properties (pcfx.rom)
       - Requires .CHD disc format
     - ColecoVision (New)
       - From scratch Emscripten port
