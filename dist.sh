@@ -4,6 +4,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 DIST="$DIR/dist"
 DIST_OUT="$DIST/out"
 DIST_OUT_APP="$DIST_OUT/app"
+UTILS="$DIR/../webrcade-utils"
 
 #
 # Function that is invoked when the script fails.
@@ -17,7 +18,7 @@ function fail() {
     exit 1
 }
 
-## 
+##
 ## create output directories
 ##
 if [ -d "$DIST_OUT" ]; then
@@ -44,11 +45,19 @@ npm link || { fail 'Unable to make common linkable.'; }
 cd "$DIR" || { fail 'Unable to change to webrcade.'; }
 # dats
 cd public || { fail 'Unable to change to public.'; }
+mkdir -p "$UTILS" || { fail "Unable to create utils dir"; }
+cd "$UTILS" || { fail "Unable to change to utils dir"; }
 npm install archiver || { fail 'Unable to install archiver.'; }
-wget -O - https://webrcade.github.io/webrcade-utils/createdats.js > createdats.js || 
+wget -O - https://webrcade.github.io/webrcade-utils/createdats-fbneo.js > createdats-fbneo.js ||
+    { fail 'Unable to retrieve create fbneo dats.'; }
+wget -O - https://webrcade.github.io/webrcade-utils/createdats.js > createdats.js ||
     { fail 'Unable to retrieve create dats.'; }
-node createdats.js || { fail 'Unable to execute create dats.'; }
-rm createdats.js || { fail 'Unable remove create dats.'; }
+cd "$DIR" || { fail 'Unable to change to webrcade.'; }
+cd public || { fail 'Unable to change to public.'; }
+node "$UTILS/createdats-fbneo.js" || { fail 'Unable to execute create dats fbneo.'; }
+cp "roms-fbneo.json" "$UTILS" || { fail 'Unable to copy roms-fbneo.json'; }
+node "$UTILS/createdats.js" || { fail 'Unable to execute create dats.'; }
+rm -rf "$UTILS" || { fail 'Unable remove utils directory.'; }
 cd "$DIR" || { fail 'Unable to change to webrcade.'; }
 # build
 npm install . || { fail 'Unable to install webrcade dependencies.'; }
@@ -134,6 +143,116 @@ mkdir -p "$DIST_OUT_APP/mednafen"  || { fail 'Error creating mednafen output dir
 cp -R build/. "$DIST_OUT_APP/mednafen" || { fail 'failed to copy mednafen to out.'; }
 
 ##
+## webrcade-app-parallel-n64
+##
+
+cd "$DIR/../webrcade-app-parallel-n64" || { fail 'Unable to change to n64.'; }
+npm install . || { fail 'Unable to install n64 dependencies.'; }
+npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
+npm run build || { fail 'Unable to build n64.'; }
+mkdir -p "$DIST_OUT_APP/n64"  || { fail 'Error creating n64 output directory.'; }
+cp -R build/. "$DIST_OUT_APP/n64" || { fail 'failed to copy n64 to out.'; }
+
+##
+## webrcade-app-fbneo
+##
+
+cd "$DIR/../webrcade-app-fbneo" || { fail 'Unable to change to fbneo.'; }
+npm install . || { fail 'Unable to install fbneo dependencies.'; }
+npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
+npm run build || { fail 'Unable to build fbneo.'; }
+mkdir -p "$DIST_OUT_APP/neo"  || { fail 'Error creating fbneo output directory.'; }
+cp -R build/. "$DIST_OUT_APP/neo" || { fail 'failed to copy fbneo to out.'; }
+
+##
+## webrcade-app-beetle-psx
+##
+
+cd "$DIR/../webrcade-app-beetle-psx" || { fail 'Unable to change to beetle-psx.'; }
+npm install . || { fail 'Unable to install beetle-psx dependencies.'; }
+npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
+npm run build || { fail 'Unable to build psx.'; }
+mkdir -p "$DIST_OUT_APP/psx"  || { fail 'Error creating psx output directory.'; }
+cp -R build/. "$DIST_OUT_APP/psx" || { fail 'failed to copy psx to out.'; }
+
+##
+## webrcade-app-retro-genplusgx
+##
+
+cd "$DIR/../webrcade-app-retro-genplusgx" || { fail 'Unable to change to retro-genplusgx.'; }
+npm install . || { fail 'Unable to install retro-genplusgx dependencies.'; }
+npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
+npm run build || { fail 'Unable to build retro-genplusgx.'; }
+mkdir -p "$DIST_OUT_APP/retro-genesis"  || { fail 'Error creating retro-genplusgx output directory.'; }
+cp -R build/. "$DIST_OUT_APP/retro-genesis" || { fail 'failed to copy retro-genplusgx to out.'; }
+
+##
+## webrcade-app-retro-pce-fast
+##
+
+cd "$DIR/../webrcade-app-retro-pce-fast" || { fail 'Unable to change to retro-pce-fast.'; }
+npm install . || { fail 'Unable to install retro-pce-fast dependencies.'; }
+npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
+npm run build || { fail 'Unable to build retro-pce-fast.'; }
+mkdir -p "$DIST_OUT_APP/retro-pce-fast"  || { fail 'Error creating retro-pce-fast output directory.'; }
+cp -R build/. "$DIST_OUT_APP/retro-pce-fast" || { fail 'failed to copy retro-pce-fast to out.'; }
+
+##
+## webrcade-app-colem
+##
+
+cd "$DIR/../webrcade-app-colem" || { fail 'Unable to change to colem.'; }
+npm install . || { fail 'Unable to install colem dependencies.'; }
+npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
+npm run build || { fail 'Unable to build colem.'; }
+mkdir -p "$DIST_OUT_APP/colem"  || { fail 'Error creating colem output directory.'; }
+cp -R build/. "$DIST_OUT_APP/colem" || { fail 'failed to copy colem to out.'; }
+
+##
+## webrcade-app-beetle-pcfx
+##
+
+cd "$DIR/../webrcade-app-beetle-pcfx" || { fail 'Unable to change to beetle-pcfx.'; }
+npm install . || { fail 'Unable to install beetle-pcfx dependencies.'; }
+npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
+npm run build || { fail 'Unable to build beetle-pcfx.'; }
+mkdir -p "$DIST_OUT_APP/pcfx"  || { fail 'Error creating beetle-pcfx output directory.'; }
+cp -R build/. "$DIST_OUT_APP/pcfx" || { fail 'failed to copy beetle-pcfx to out.'; }
+
+##
+## webrcade-app-retro-a5200
+##
+
+cd "$DIR/../webrcade-app-retro-a5200" || { fail 'Unable to change to retro-a5200.'; }
+npm install . || { fail 'Unable to install retro-a5200 dependencies.'; }
+npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
+npm run build || { fail 'Unable to build retro-a5200.'; }
+mkdir -p "$DIST_OUT_APP/retro-a5200"  || { fail 'Error creating retro-a5200 output directory.'; }
+cp -R build/. "$DIST_OUT_APP/retro-a5200" || { fail 'failed to copy retro-a5200 to out.'; }
+
+##
+## webrcade-app-retro-neocd
+##
+
+cd "$DIR/../webrcade-app-retro-neocd" || { fail 'Unable to change to retro-neocd.'; }
+npm install . || { fail 'Unable to install retro-neocd dependencies.'; }
+npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
+npm run build || { fail 'Unable to build retro-neocd.'; }
+mkdir -p "$DIST_OUT_APP/retro-neocd"  || { fail 'Error creating retro-neocd output directory.'; }
+cp -R build/. "$DIST_OUT_APP/retro-neocd" || { fail 'failed to copy retro-neocd to out.'; }
+
+##
+## webrcade-app-tyrquake
+##
+
+cd "$DIR/../webrcade-app-tyrquake" || { fail 'Unable to change to quake.'; }
+npm install . || { fail 'Unable to install quake dependencies.'; }
+npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
+npm run build || { fail 'Unable to build quake.'; }
+mkdir -p "$DIST_OUT_APP/quake"  || { fail 'Error creating quake output directory.'; }
+cp -R build/. "$DIST_OUT_APP/quake" || { fail 'failed to copy quake to out.'; }
+
+##
 ## webrcade-app-prboom
 ##
 
@@ -144,7 +263,7 @@ if test -d "$DIR/../webrcade-app-prboom"; then
     npm run build || { fail 'Unable to build prboom.'; }
     mkdir -p "$DIST_OUT_APP/doom"  || { fail 'Error creating doom output directory.'; }
     cp -R build/. "$DIST_OUT_APP/doom" || { fail 'failed to copy doom to out.'; }
-fi    
+fi
 
 ##
 ## webrcade-editor
@@ -156,3 +275,14 @@ npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
 npm run build || { fail 'Unable to build editor.'; }
 mkdir -p "$DIST_OUT_APP/editor"  || { fail 'Error creating editor output directory.'; }
 cp -R build/. "$DIST_OUT_APP/editor" || { fail 'failed to copy editor to out.'; }
+
+##
+## webrcade-standalone
+##
+
+cd "$DIR/../webrcade-app-standalone" || { fail 'Unable to change to standalone.'; }
+npm install . || { fail 'Unable to install standalone dependencies.'; }
+npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
+npm run build || { fail 'Unable to build standalone.'; }
+mkdir -p "$DIST_OUT_APP/standalone"  || { fail 'Error creating standalone output directory.'; }
+cp -R build/. "$DIST_OUT_APP/standalone" || { fail 'failed to copy standalone to out.'; }

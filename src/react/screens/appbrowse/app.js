@@ -7,6 +7,8 @@ import {
   PlayArrowWhiteImage
 } from '@webrcade/app-common'
 
+import * as Session from "./session"
+
 const getAppInfo = (appBrowse, currentItem) => {
   const { sliderRef } = appBrowse;
   const { onAppSelected, feed } = appBrowse.props;
@@ -29,12 +31,15 @@ const getAppInfo = (appBrowse, currentItem) => {
     getTitle: item => reg.getTitle(item),
     getThumbnailSrc: item => reg.getThumbnail(item),
     getDefaultThumbnailSrc: item => reg.getDefaultThumbnail(item),
-    onClick: () => { if (onAppSelected) onAppSelected(currentItem); },
+    onClick: () => { 
+      if (onAppSelected) onAppSelected(currentItem); 
+      Session.setLastItem(feed.getTitle(), category.title, currentItem.title);
+    },
     categoryOnClick: () => {
       appBrowse.setState({ 
         currentItem: feed.getCategories()[0],
         menuMode: ModeEnum.CATEGORIES 
-      });
+      }, () => { setTimeout(() => { Session.clearLastItem(); }, 0)});
       sliderRef.current.focus();
     }
   }

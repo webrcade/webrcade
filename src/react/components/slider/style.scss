@@ -52,10 +52,10 @@
 // animation-timing-function:ease-out;
 
 
-// @keyframes fadein {
-//   from { opacity: 0; }
-//   to   { opacity: 1; }
-// }
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
 
 // @keyframes slideup {
 //   0%{bottom:-10vh}

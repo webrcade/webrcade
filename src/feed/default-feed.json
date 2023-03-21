@@ -387,9 +387,9 @@
           "props": {
             "rom": "/content/nes/Alter_Ego.nes"
           }
-        },        
+        },
         {
-          "title": "Battle Kid",          
+          "title": "Battle Kid",
           "longTitle": "Battle Kid: Fortress of Peril (Demo)",
           "type": "nes",
           "thumbnail": "/images/nes/battlekid-thumb.png",
@@ -430,7 +430,7 @@
             "pal": true,
             "rom": "/content/nes/Driar.nes"
           }
-        },        
+        },
         {
           "title": "Elite",
           "type": "nes",
@@ -441,7 +441,7 @@
             "pal": true,
             "rom": "/content/nes/elite.nes"
           }
-        },                
+        },
         {
           "title": "Lan Master",
           "type": "nes",
@@ -503,7 +503,7 @@
           "props": {
             "rom": "/content/nes/PROTO DERE.NES"
           }
-        },        
+        },
         {
           "title": "Sir Ababol",
           "type": "nes",
@@ -523,7 +523,7 @@
           "props": {
             "rom": "/content/nes/streemerz-v02.nes"
           }
-        }        
+        }
       ]
     },
     {
@@ -532,7 +532,7 @@
       "background": "/images/snes-background.png",
       "thumbnail": "/images/snes-thumb.png",
       "description": "The SNES is Nintendo's second programmable home console, following the Nintendo Entertainment System (NES). The console introduced advanced graphics and sound capabilities compared with other systems at the time. The system was designed to accommodate the ongoing development of a variety of enhancement chips integrated into game cartridges to be competitive into the next generation.",
-      "items": [        
+      "items": [
         {
           "title": "Christmas Craze",
           "description": "The first SNES homebrew game by RetroZone, Christmas Craze. Dodge aliens and grab gifts or fight your friends with snowballs in two player present picking battles.",
@@ -573,7 +573,7 @@
           "props": {
             "rom": "/content/snes/MazezaM.sfc"
           }
-        },        
+        },
         {
           "title": "Rodas Cross",
           "longTitle": "Rodas Cross (Demo)",
@@ -625,7 +625,7 @@
           "props": {
             "rom": "/content/snes/questformoney.sfc"
           }
-        }        
+        }
       ]
     },
     {
@@ -637,7 +637,7 @@
       "items": [
         {
           "title": "Retroid",
-          "type": "gb",          
+          "type": "gb",
           "description": "\"Retroid\" is a Game Boy game based on the classic arcade game that was originally published as \"Breakout\" by Atari and later brought to perfection as \"Arkanoid\" by the Japanese software firm Taito. The player controls a paddle at the bottom of the screen that reflects a ball to destroy bricks at the top of the screen.",
           "thumbnail": "/images/gb/retroid-thumb.png",
           "background": "/images/gb/retroid-background.png",
@@ -650,7 +650,7 @@
         },
         {
           "title": "Dangan",
-          "type": "gb",          
+          "type": "gb",
           "description": "Dangan GB is a short simplistic boss-rush/bullet-hell SHMUP released for the Game Boy to celebrate the console's 30th anniversary.",
           "thumbnail": "/images/gb/dangan-thumb.png",
           "background": "/images/gb/dangan-background.png",
@@ -659,7 +659,7 @@
             "hwType": 1
           }
         },
-        {          
+        {
           "title": "Tuff",
           "type": "gb",
           "description": "Tuff is an original game for Nintendo's black and white Game Boy, based on a mix of Jump'n'Run and Metroidvania style game elements.",
@@ -670,7 +670,7 @@
             "hwType": 1
           }
         },
-        {          
+        {
           "title": "Bouncing Ball",
           "longTitle": "The Bouncing Ball",
           "description": "In this game you are in control of a little ball, which is constantly bouncing around. Your goal is to bounce through all 50 unique levels by collecting every heart you can find on your way.",
@@ -684,7 +684,7 @@
             "palette": 1
           }
         },
-        {          
+        {
           "title": "Super Princess",
           "type": "gb",
           "description": "The evil Lord Zurrapa has stolen the kingdom's crown and now our Super Princess has to take it back! Unveil the secrets of the maze, kill all enemies and bring the glory back to the country!",
@@ -699,7 +699,7 @@
         },
         {
           "title": "Polka Sheep",
-          "type": "gb",          
+          "type": "gb",
           "description": "All the sheep of the flock have been captured in mysterious giant bubbles! Help Polka Sheep rescue his friends using his velcro powers! He can fasten himself to all velcro surfaces within the environments. Avoid hundreds of evil wolves, thousands of kawaii parrots and millions of poisoned spikes to liberate all your friends! It’s an epic fight to restore peace in the flock.",
           "thumbnail": "/images/gb/polkasheep-thumb.png",
           "background": "/images/gb/polkasheep-background.png",
@@ -710,7 +710,7 @@
             "palette": 1
           }
         },
-        {          
+        {
           "title": "Into the Blue",
           "description": "This game consists of a vertical play field with panels rising from the bottom. The panels can be rearranged and will disappear if three (or more) matching panels are lined up in a horizontal or vertical row. This game is inspired by the Sega Genesis title Megapanel.",
           "type": "gb",
@@ -736,7 +736,7 @@
         },
         {
           "title": "Tobu Tobu Girl",
-          "type": "gb",          
+          "type": "gb",
           "description": "Your cat is floating into the atmosphere and you are the only one who can save it. Jump, dash, and flap your arms to maneuver around perilous obstacles racing against the clock to retrieve your pet friend before it is too late!",
           "thumbnail": "/images/gb/tobutobu-thumb.png",
           "background": "/images/gb/tobutobu-background.png",
@@ -744,10 +744,10 @@
             "rom": "/content/gb/tobu.gb",
             "hwType": 3,
             "colors": 1,
-            "palette": 1            
+            "palette": 1
           }
         },
-        {          
+        {
           "title": "Lumberjack",
           "description": "Lumberjack is a Game Boy homebrew where you help the world's most fragile lumberjack cut down an endless tree while avoiding getting killed by little owls, flimsy branches, or just standing still for too long.",
           "type": "gb",
@@ -760,7 +760,7 @@
             "palette": 1
           }
         }
-      
+
       ]
     },
     {
@@ -775,30 +775,30 @@
           "description": "Space Invasion takes the classic alien invasion genre a step further with full color action, tons of levels, and a variety of aliens, each armed with a different weapon. It's up to you and your three shields to protect the earth.",
           "type": "gbc",
           "thumbnail": "/images/gbc/spaceinvasion-thumb.png",
-          "background": "/images/gbc/spaceinvasion-background.png",          
+          "background": "/images/gbc/spaceinvasion-background.png",
           "props": {
             "rom": "/content/gbc/SpaceInvasion01.gb"
-          }          
+          }
         },
         {
           "title": "µCity",
           "description": " µCity (also spelled 'uCity', pronounced 'micro-city'), the open-source city-building game for Game Boy Color. The aim of the game is to build a city. Simple enough.",
           "type": "gbc",
           "thumbnail": "/images/gbc/ucity-thumb.png",
-          "background": "/images/gbc/ucity-background.png",          
+          "background": "/images/gbc/ucity-background.png",
           "props": {
             "rom": "/content/gbc/ucity.gbc"
-          }          
+          }
         },
         {
           "title": "Spelunky",
           "description": "An attempt to demake Spelunky 2 for the Game Boy Color. In Spelunky players journey deep underground and explore amazing places filled with traps, treasure, and secrets.",
-          "type": "gbc",          
+          "type": "gbc",
           "thumbnail": "/images/gbc/spelunky-thumb.png",
-          "background": "/images/gbc/spelunky-background.png",          
+          "background": "/images/gbc/spelunky-background.png",
           "props": {
             "rom": "/content/gbc/GBCspelunky.gbc"
-          }                    
+          }
         },
         {
           "title": "Infinity",
@@ -806,7 +806,7 @@
           "description": "Infinity is a role-playing game for the Game Boy Color handheld game console, developed by Affinix Software primarily between the years 1999 and 2001. The game is incomplete and should be considered alpha/preview quality. In 2021, development on the game resumed and will hopefully see a commercial release soon.",
           "type": "gbc",
           "thumbnail": "/images/gbc/infinity-thumb.png",
-          "background": "/images/gbc/infinity-background.png",          
+          "background": "/images/gbc/infinity-background.png",
           "props": {
             "rom": "/content/gbc/infinity.gb"
           }
@@ -817,7 +817,7 @@
           "description": "\"Floracy\" is a roleplaying game with elements of strategy and action games, in which the player breeds plantlike creatures for exciting animated combats. Felix, hero of the video game \"Felix und die Rache der Null\", spends his time growing plants on his farm, which will develop into creatures after a while, the Floracy.",
           "type": "gbc",
           "thumbnail": "/images/gbc/florancy-thumb.png",
-          "background": "/images/gbc/florancy-background.png",          
+          "background": "/images/gbc/florancy-background.png",
           "props": {
             "rom": "/content/gbc/Floracy.GBC"
           }
@@ -825,23 +825,23 @@
         {
           "title": "Super JetPak DX",
           "description": "Your Astronaut is lost out at the furthest edges of an alien galaxy. Help him return home by deftly maneuvering over each planet's surface with your jet pack. Build the rocket ship, fuel it, and take off to the next planet.",
-          "type": "gbc",                            
+          "type": "gbc",
           "thumbnail": "/images/gbc/jetpak-thumb.png",
-          "background": "/images/gbc/jetpak-background.png",          
+          "background": "/images/gbc/jetpak-background.png",
           "props": {
             "rom": "/content/gbc/JetPakDX.gb"
           }
         },
         {
           "title": "Last Crown Warriors",
-          "longTitle": "Last Crown Warriors (Demo)",          
+          "longTitle": "Last Crown Warriors (Demo)",
           "description": "Action/strategy game for the Nintendo Game Boy. Take on waves of enemies as you try to conquer all of the bases within each stage. Each warrior has his own custom weapon, and each stage its own enemies.",
           "type": "gbc",
           "thumbnail": "/images/gbc/lastcrown-thumb.png",
-          "background": "/images/gbc/lastcrown-background.png",          
+          "background": "/images/gbc/lastcrown-background.png",
           "props": {
             "rom": "/content/gbc/Last%20Crown%20Warriors%20(Demo)%202.1.1.gb"
-          }          
+          }
         }
       ]
     },
@@ -851,7 +851,7 @@
       "background": "/images/gba-background.png",
       "thumbnail": "/images/gba-thumb.png",
       "description": "The Game Boy Advance (GBA) is a 32-bit handheld game console developed, manufactured and marketed by Nintendo as the successor to the Game Boy Color. Contrary to the previous Game Boy models, which have the \"portrait\" form factor of the original Game Boy, the Game Boy Advance was designed in a \"landscape\" form factor, putting the buttons to the sides of the device instead of below the screen.",
-      "items": [                
+      "items": [
         {
           "title": "Anguna",
           "description": "A top-down fantasy action-adventure game, with 5 dungeons to explore. Anguna is a homebrew game for Gameboy Advance and Nintendo DS, featuring art by Chris Hildenbrand.",
@@ -875,7 +875,7 @@
             "saveType": 2,
             "flashSize": 65536
           }
-        },        
+        },
         {
           "title": "Astrohawk Advance",
           "longTitle": "Astrohawk Advance (Demo)",
@@ -886,7 +886,7 @@
           "props": {
             "rom": "/content/gba/ahawk.bin"
           }
-        },        
+        },
         {
           "title": "Blast Arena Advance",
           "description": "The objective of Blast Arena Advance is to collect as many jittering yellow squares as possible, while avoiding the shrapnel thrown out by the explosions. Using your cunning and skill, ricochet the cursor against the walls of your Game Boy to outwit and evade the deadly shrapnel.",
@@ -897,17 +897,6 @@
             "rom": "/content/gba/BlastArenaAdvance_Mathew_Carr.gba",
             "saveType": 2,
             "flashSize": 65536
-          }
-        },                
-        {
-          "title": "Broken Circle",
-          "description": "Broken Circle was a turn-based RPG by 7 Raven Studios. The developers had difficulty finding an interested publisher, partially because the game's 256MB size. Thus Broken Circle never officially came out. 7 Raven later released the last version of the game in ROM form as a free download.",
-          "type": "gba",
-          "thumbnail": "/images/gba/brokencircle-thumb.png",
-          "background": "/images/gba/brokencircle-background.png",
-          "props": {
-            "rom": "/content/gba/Broken Circle (Proto).gba",
-            "saveType": 1
           }
         },
         {
@@ -922,7 +911,7 @@
             "saveType": 2,
             "flashSize": 65536
           }
-        },      
+        },
         {
           "title": "LOCKJAW",
           "longTitle": "LOCKJAW: The Overdose",
@@ -933,7 +922,7 @@
           "props": {
             "rom": "/content/gba/tod.gba"
           }
-        }, 
+        },
         {
           "title": "MazezaM Challenge",
           "description": "MazezaM Challenge (pronounced \"may-zam\") is a simple puzzle game based on MazezaM from Malcolm Tyrrell. You will have to go through 33 levels of mazes. You enter the maze on the left and you have to get to the exit on the right by pushing rows of blocks left and right.",
@@ -943,7 +932,7 @@
           "props": {
             "rom": "/content/gba/MazezaM.gba"
           }
-        },        
+        },
         {
           "title": "Motocross Challenge",
           "description": "The gameplay in Motocross Challenge is very similar to that of Excitebike. Players race on a track made up of different track pieces. There are gas and boost buttons. Boosting will drain the boost meter. Using normal gas replenishes the meter.",
@@ -953,7 +942,7 @@
           "props": {
             "rom": "/content/gba/Motocross Challenge (USA) (Proto).gba"
           }
-        },        
+        },
         {
           "title": "POWDER",
           "description": "POWDER is a roguelike developed specifically for the Gameboy Advance. Descend into the depths of the dungeon until you reach the foul daemon known as \"He who the author cannot spell consistently\", or, Baezl'bub. When you have slain Baezl'bub in heroic combat, or, if Baezl'bub dies in any way, retrieve his black heart and bring it to the surface world.",
@@ -965,7 +954,7 @@
             "saveType": 2,
             "flashSize": 65536
           }
-        }, 
+        },
         {
           "title": "Power Pig",
           "description": "You play as a pig armed with a gravity gun that allows you to carry anything on your shoulders. This gravity gun is powered by coins you collect throughout the levels.",
@@ -975,7 +964,7 @@
           "props": {
             "rom": "/content/gba/powerpig.gba"
           }
-        },        
+        },
         {
           "title": "Simonchu",
           "description": "An evil villain tries to conquer Simonchu Land, and has sent his hordes of monsters to terrify the little animals that live there peacefully. Simonchu, the hamster, must not allow that to happen.",
@@ -1149,7 +1138,7 @@
       "background": "/images/genesis-background.png",
       "thumbnail": "/images/genesis-thumb.png",
       "description": "The Sega Genesis, known as the Mega Drive outside North America, is a 16-bit fourth-generation home video game console developed and sold by Sega. Designed by an R&D team supervised by Hideki Sato and Masami Ishikawa, the Genesis was adapted from Sega's System 16 arcade board, centered on a Motorola 68000 processor as the CPU, a Zilog Z80 as a sound controller, and a video system supporting hardware sprites, tiles, and scrolling.",
-      "items": [                        
+      "items": [
         {
           "title": "Arkagis Revolution",
           "longTitle": "Arkagis Revolution (Trial)",
@@ -1212,7 +1201,7 @@
           "props": {
             "rom": "/content/genesis/ixion.bin"
           }
-        },        
+        },
         {
           "title": "Lethal Wedding",
           "longTitle": "Lethal Wedding (Demo)",
@@ -1275,7 +1264,7 @@
           "props": {
             "rom": "/content/genesis/phantom_gear_0.21.bin"
           }
-        }, 
+        },
         {
           "title": "Pringles",
           "description": "There are three worlds with three levels each. Collect all the Pringles you can and don’t jump in the wrong direction!",
@@ -1285,7 +1274,7 @@
           "props": {
             "rom": "/content/genesis/PRINGLES.BIN"
           }
-        },        
+        },
         {
           "title": "Project MD",
           "longTitle": "Project MD (Unfinished)",
@@ -1296,7 +1285,7 @@
           "props": {
             "rom": "/content/genesis/projmd-20120429.bin"
           }
-        },        
+        },
         {
           "title": "Rick Dangerous",
           "description": "Will Rick Dangerous, intrepid Super Hero and part-time stamp collector, survive his first mission in the Aztec temple of the tribe? Should he do so, Rick will face new hazards in the Egyptian tomb and the enemy fortress.",
@@ -1317,7 +1306,7 @@
           "props": {
             "rom": "/content/genesis/TANGLEWD.BIN"
           }
-        },               
+        },
         {
           "title": "VilQ Adventure",
           "description": "A non-stop side scrolling jump, run, and slider in which you need to avoid the enemies, pick up food, and get as far as possible to reach the highest score.",
@@ -1327,7 +1316,7 @@
           "props": {
             "rom": "/content/genesis/vilqadventure.bin"
           }
-        },                       
+        },
         {
           "title": "Xump 2",
           "longTitle": "Xump 2: Back to Space",
@@ -1338,16 +1327,6 @@
           "props": {
             "rom": "/content/genesis/xump2_100-digital (free release).bin"
           }
-        },
-        {
-          "title": "Zero Tolerance",
-          "description": "Zero Tolerance is a 1994 video game developed by Technopop and published by Accolade exclusively for the Sega Mega Drive/Genesis video game console. It was one of the few Mega Drive/Genesis first person shooters, besides Bloodshot and the Duke Nukem 3D port. This game was deemed publicly distributable, provided no changes to the game are ever made, by Technopop very recently.",
-          "type": "genesis",
-          "thumbnail": "/images/genesis/zerotolerance-thumb.png",
-          "background": "/images/genesis/zerotolerance-background.png",
-          "props": {
-            "rom": "/content/genesis/ZEROTOL.BIN"
-          }
         }
       ]
     },
@@ -1357,7 +1336,7 @@
       "background": "/images/gamegear-background.png",
       "thumbnail": "/images/gamegear-thumb.png",
       "description": "The Game Gear is an 8-bit fourth generation handheld game console released by Sega on October 6, 1990 in Japan and in April 1991 throughout North America and Europe. The Game Gear primarily competed with Nintendo's Game Boy, the Atari Lynx, and NEC's TurboExpress. It shares much of its hardware with the Master System.",
-      "items": [        
+      "items": [
         {
           "title": "Dangerous Demolition",
           "description": "Dangerous Demolition is a small arcade/action game for the Game Gear. It's a mix between breakout and a shooter. The balls help you destroy bricks walls, but they can also kill you! Hopefully, you can shoot them to guide them in the right direction.",
@@ -1377,7 +1356,7 @@
           "props": {
             "rom": "/content/gg/ftrack.gg"
           }
-        },        
+        },
         {
           "title": "Nibbles",
           "description": "Nibbles is a snake-like game developed by Martin Konrad for the Sega Game Gear. Eat the fruits, avoid the obstacles, and don't run into your growing body.",

@@ -26,6 +26,7 @@ yarn-error.log*
 default-feed-*
 public/default-feed.json
 public/default-feed-editor.json
+public/roms-fbneo.json
 public/roms.json
 public/roms.json.zip
 feeds

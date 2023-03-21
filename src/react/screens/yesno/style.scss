@@ -7,6 +7,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      text-align: center;
 
       &>div:not(:last-child) {
         margin-bottom: 2rem;
@@ -27,7 +28,7 @@
 
       &>button {
         margin-right:1rem;
-      }  
+      }
     }
   }
 }

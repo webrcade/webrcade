@@ -1,6 +1,6 @@
 html {
   background-color: #0b0b0b;
-  -webkit-text-size-adjust: 100%;  
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -12,19 +12,27 @@ body {
 @media only screen and (max-width: 864px) {
   .webrcade-outer {
     max-height: 90vw;
-  }  
-}  
+  }
+}
 
 @media only screen and (max-width: 1152px) and (min-width: 864px) {
   .webrcade-outer {
     max-height: 75vw;
   }
-}  
+}
+
+.details-header-nav {
+  display: none;
+}
 
 /* Mobile sizing (experimental) */
 @media only screen and (max-width: 950px) and (max-height: 400px) {
-  .logo {
+  .header-nav {
     display:none;
+  }
+
+  .details-header-nav {
+    display: block;
   }
 
   .app-details-content-container-title {
@@ -38,4 +46,4 @@ body {
   .app-details-content-container-description {
     min-height: 0px;
   }
-}  
+}

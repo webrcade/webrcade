@@ -94,11 +94,24 @@ class Slider extends Component {
     window.removeEventListener("orientationchange", this.handleWindowResize);
   }  
 
+  getItemIndex(title, items) {
+    if (title) {
+      for (let i = 0; i < items.length; i++) {
+        const item = items[i];
+        if (title === item.title) {
+          return i;
+        }   
+      }
+    }
+    return -1;
+  }
+
   shouldComponentUpdate(nextProps, nextState) {
     const { items, onSelected } = this.props;
 
     let ret = true;    
 
+    const lastItemTitle = nextProps.lastItemTitle;
     const unique = nextProps.items.reduce((
       acc, curr) => acc + (curr.duplicate ? 0 : 1), 0);
     const scrollable = unique > nextState.itemsInRow;
@@ -108,10 +121,27 @@ class Slider extends Component {
     // console.log("Scrollable: " + scrollable);
 
     if (nextProps.items !== items) {
+      let index = this.getItemIndex(lastItemTitle, nextProps.items);
+      if (index < 0 ) {
+        index = 0;
+      }
+
+      let lowestVisible = 0;
+      if (index > 0 && index >= nextState.itemsInRow) {
+        lowestVisible = (index / nextState.itemsInRow) | 0;
+        lowestVisible *= nextState.itemsInRow;
+        // console.log("index: " + index);
+        // console.log("items in row: " + nextState.itemsInRow);
+        // console.log("Lowest visible: " + lowestVisible);
+        if ((lowestVisible + nextState.itemsInRow) >= nextProps.items.length) {
+          lowestVisible = nextProps.items.length - nextState.itemsInRow;
+        }
+      }
+
       ret = false;
       this.setState({
-        selectedItem: 0,
-        lowestVisibleIndex: 0,
+        selectedItem: index,
+        lowestVisibleIndex: scrollable ? lowestVisible : 0,
         sliderHidden: true,
         uniqueItems: unique,
         scrollable: scrollable
@@ -124,7 +154,7 @@ class Slider extends Component {
           }, 250);  
 
           if (onSelected) {
-            onSelected(nextProps.items[0]);
+            onSelected(nextProps.items[index]);
           }
         });
     } else if (unique !== nextState.uniqueItems || scrollable !== nextState.scrollable) {
@@ -139,16 +169,17 @@ class Slider extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     const { items, maxSlides, onSelected } = this.props;
-    const { itemsInRow, selectedItem, lowestVisibleIndex, scrollable} = this.state;
+    const { itemsInRow, selectedItem, lowestVisibleIndex, scrollable, uniqueItems} = this.state;
 
     // console.log('selected: ' + selectedItem);
     // console.log('lowest visible:' + lowestVisibleIndex);
     // console.log('items in row: ' + itemsInRow);
+    // console.log('uniqueItems: ' + uniqueItems);
     
     if (prevState.scrollable && !scrollable) {
       console.log("Reset selected item due to scrollable changing.");
       this.setState({
-        selectedItem: 0,
+        selectedItem: selectedItem < uniqueItems ? selectedItem : 0,
         lowestVisibleIndex: 0
       });
     } else {
@@ -579,7 +610,8 @@ class Slider extends Component {
     } else {
       sliderStyle = {
         transform: 'translateY(0%)',
-        transition: '.65s, opacity .8s ease-in-out',
+        transition: '.8s ease-in-out',
+        animation: 'fadein .3s',
         opacity: 1
       }
     }

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import {
-  getDefaultFeed, 
+  getDefaultFeed,
   setDefaultFeed,
 } from '../feed';
 
@@ -22,6 +22,8 @@ import {
   addXboxFullscreenCallback,
   applyIosNavBarHack,
   getXboxViewMessage,
+  settings,
+  showMessage,
   AppScreen,
   FetchAppData,
   Resources,
@@ -29,6 +31,7 @@ import {
   LOG,
   TEXT_IDS,
   config,
+  dropbox,
 } from '@webrcade/app-common'
 
 require("./style.scss");
@@ -36,6 +39,9 @@ require("./style.scss");
 export class Webrcade extends Component {
   constructor() {
     super();
+
+    // Check to ensure resources are resolving
+    Resources.check();
 
     setFeedsWebrcade(this);
 
@@ -138,31 +144,48 @@ export class Webrcade extends Component {
     const { initial, initialFeed, mode } = this.state;
     const { browseScreenRef, ScreenEnum, } = this;
 
+    let errorMessage = null;
+    const displayMessage = (msg) => {
+      if (msg) {
+        setTimeout(() => {
+          showMessage(msg);
+        }, 10);
+      }
+    }
+
     if (mode === ScreenEnum.LOADING) {
       if (initialFeed) {
-        if (config.isPublicServer()) {
-          loadInitialFeed(null);
-        } else {
-          // Attempt to load default feed from public server
-          let feedJson = null;
-          let defFeed = null;
-          new FetchAppData("https://play.webrcade.com/default-feed.json").fetch()
-            .then(response => response.json())
-            .then(json => {
-              feedJson = json;
-              return parseFeed(json)
-            })
-            .then(feed => {             
-                // set default feed
-                setDefaultFeed(feedJson);                
-                // set feed here
-                defFeed = feed;
-            })
-            .catch(e => LOG.info(e))
+        settings.load().finally(() => {
+          dropbox.checkLinkResult()
+            .catch(e => { errorMessage = e })
             .finally(() => {
-              loadInitialFeed(defFeed);  
-            })
-        }
+              if (config.isPublicServer()) {
+                loadInitialFeed(null)
+                  .then(() =>displayMessage(errorMessage));
+              } else {
+                // Attempt to load default feed from public server
+                let feedJson = null;
+                let defFeed = null;
+                new FetchAppData("https://play.webrcade.com/default-feed.json").fetch()
+                  .then(response => response.json())
+                  .then(json => {
+                    feedJson = json;
+                    return parseFeed(json)
+                  })
+                  .then(feed => {
+                    // set default feed
+                    setDefaultFeed(feedJson);
+                    // set feed here
+                    defFeed = feed;
+                  })
+                  .catch(e => LOG.info(e))
+                  .finally(() => {
+                    loadInitialFeed(defFeed)
+                      .then(() => displayMessage(errorMessage));
+                  })
+              }
+          })
+        });
       }
     } else if (initial ||
       (prevState.mode === ScreenEnum.APP && mode === ScreenEnum.BROWSE)) {
@@ -192,16 +215,17 @@ export class Webrcade extends Component {
         }}
         onFeedLoad={f => loadFeed(f)}
         onFeedDelete={f => deleteFeed(f)}
+        onSettings={() => ctx.showSettingsEditor(true)}
       />
     );
   }
 
   renderApp() {
     const { app, feed } = this.state;
-    
+
     return (
-      <AppScreen 
-        app={app} 
+      <AppScreen
+        app={app}
         feedProps={feed.getProps()}
         exitCallback={() => {
           this.setState({

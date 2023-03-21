@@ -4,7 +4,7 @@
 
   &-outer {
     margin: auto;
-    display: flex;    
+    display: flex;
     overflow: hidden;
     flex-direction: column;
     justify-content: center;
@@ -22,8 +22,73 @@
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 0; 
+    bottom: 0;
     top: 0;
     z-index: 22
   }
 }
+
+.header-nav {
+  display: flex;
+  flex-direction: row;
+
+  &-left {
+    flex-grow: 1;
+    width: 4rem;
+  }
+
+  &-center {}
+
+  &-right {
+    flex-grow: 1;
+    width: 4rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}
+
+.settings-button {
+  // Fix issue on Android where iframe is blue on exit
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  border: 0;
+  line-height: 0;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  border-radius: .3rem;
+  margin-right: .5rem;
+  padding: .1rem .4rem;
+  opacity: .6;
+
+  &>img {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  &>div {}
+
+  &:focus {
+    // opacity: .8;
+    background-color: red;
+    opacity: .6;
+    transition: 0.4s;
+    transform: scale(1.1);
+  }
+
+  @media (hover) {
+    &:hover {
+      outline: none;
+      background-color: #444;
+      opacity: .7;
+      transition: 0.4s;
+      transform: scale(1.1);
+    }
+
+  }
+
+  &:active {
+    outline: none;
+  }
+}
+
