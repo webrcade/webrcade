@@ -1,12 +1,13 @@
 ###############################################################################
-# Build 
+# Build
 ###############################################################################
 
-FROM node:12.13.1 as builder
+FROM ubuntu:20.04 as builder
 
-RUN apt-get update -y && apt-get install -y zip
+RUN apt-get update -y && apt-get install -y zip curl git wget
+RUN curl -fsSL https://deb.nodesource.com/setup_12.x | bash - && apt-get install -y nodejs
 
-RUN mkdir webrcade 
+RUN mkdir webrcade
 COPY \
   copy-default-feed.js \
   dist.sh \
@@ -35,7 +36,7 @@ RUN cd /webrcade && \
   ./dist.sh
 RUN wget -O - https://webrcade.github.io/webrcade-utils/cors.php > /webrcade/dist/out/cors.php
 RUN cd /webrcade && \
-  ./dist-package.sh  
+  ./dist-package.sh
 
 ###############################################################################
 # Image
