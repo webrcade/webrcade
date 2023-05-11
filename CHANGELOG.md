@@ -1,5 +1,16 @@
 ## Change log
 
+### TBD (0.1.1)
+    - Player now scales to large screen sizes (4k, etc.)
+    - Screen sizing
+      - Native, 16:9, fill
+      - Global setting with optional app (emu, etc.) override
+    - Misc.
+      - All apps (emus, etc.) now support zoom option in editor
+      - All apps (emus, etc.) now support bilinear filter
+    - Docker
+      - ARM64 image
+
 ### 3/19/23 (0.1.0)
     - Quake (New)
       - Supports Quake and Expansion Packs 1-3
