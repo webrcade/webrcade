@@ -1,6 +1,6 @@
 ## Change log
 
-### TBD (0.1.1)
+### 5/10/23 (0.1.1)
     - Player now scales to large screen sizes (4k, etc.)
     - Screen sizing
       - Native, 16:9, fill
