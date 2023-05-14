@@ -1,5 +1,8 @@
 ## Change log
 
+### 5/14/23 (0.1.1.1)
+    - Screen sizing fix (would revert when internal aspect ratio changed)
+
 ### 5/10/23 (0.1.1)
     - Player now scales to large screen sizes (4k, etc.)
     - Screen sizing
