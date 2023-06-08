@@ -242,6 +242,17 @@ mkdir -p "$DIST_OUT_APP/retro-neocd"  || { fail 'Error creating retro-neocd outp
 cp -R build/. "$DIST_OUT_APP/retro-neocd" || { fail 'failed to copy retro-neocd to out.'; }
 
 ##
+## webrcade-app-retro-opera
+##
+
+cd "$DIR/../webrcade-app-retro-opera" || { fail 'Unable to change to retro-opera.'; }
+npm install . || { fail 'Unable to install retro-opera dependencies.'; }
+npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
+npm run build || { fail 'Unable to build retro-opera.'; }
+mkdir -p "$DIST_OUT_APP/3do"  || { fail 'Error creating retro-neocd output directory.'; }
+cp -R build/. "$DIST_OUT_APP/3do" || { fail 'failed to copy retro-neocd to out.'; }
+
+##
 ## webrcade-app-tyrquake
 ##
 
