@@ -58,7 +58,7 @@ RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash - && \
   apt-get autoremove
 
 # Node-based CORS
-RUN npm install -g miniflare && \
+RUN npm install -g miniflare@2.12.1 && \
   curl -fsSL https://webrcade.github.io/webrcade-utils/cors.js > /var/www/cors.js && \
   curl -fsSL https://webrcade.github.io/webrcade-utils/apache.conf > /etc/apache2/sites-available/000-default.conf
 
