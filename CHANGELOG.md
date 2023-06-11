@@ -16,6 +16,8 @@
           - Pause Screen > Advanced Settings > GPU Resolution
       - All CD-based systems:
         - Will write game-specific saves, even after loading a save state (helpful for disc-swapping games)
+    - Docker
+      - Fixed CORS proxy
 
 ### 5/14/23 (0.1.1.1)
     - Screen sizing fix (would revert when internal aspect ratio changed)
