@@ -1,6 +1,9 @@
 ## Change log
 
-### 6/10/23 (0.1.2)
+### 7/07/23 (0.1.2.1)
+    - Update to Dropbox fix
+
+### 6/11/23 (0.1.2)
     - 3DO Support (New)
       - Requires CHD files
       - Some games require a "hack" to be set (will auto-select in editor).
@@ -14,8 +17,12 @@
       - PlayStation:
         - Ability to set GPU resolution (default or 2x)
           - Pause Screen > Advanced Settings > GPU Resolution
+      - N64:
+        - Removed WebGL performance prompt for iOS 16.5+ (the issue has been resolved)
       - All CD-based systems:
         - Will write game-specific saves, even after loading a save state (helpful for disc-swapping games)
+    - Docker
+      - Fixed CORS proxy
 
 ### 5/14/23 (0.1.1.1)
     - Screen sizing fix (would revert when internal aspect ratio changed)
