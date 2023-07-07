@@ -1,5 +1,8 @@
 ## Change log
 
+### 7/07/23 (0.1.2.1)
+    - Update to Dropbox fix
+
 ### 6/11/23 (0.1.2)
     - 3DO Support (New)
       - Requires CHD files
