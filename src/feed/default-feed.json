@@ -244,6 +244,18 @@
       "description": "The Atari 7800 ProSystem, or simply the Atari 7800, is a home video game console officially released by Atari Corporation in 1986 as the successor to both the Atari 2600 and Atari 5200. Designed by General Computer Corporation, the 7800 has significantly improved graphics hardware over Atari's previous consoles, but the same Television Interface Adapter chip that launched with the 2600 in 1977 is used to generate audio.",
       "items": [
         {
+          "title": "Attack of the PETSCII Robots",
+          "longTitle": "Attack of the PETSCII Robots (Demo)",
+          "type": "7800",
+          "thumbnail": "/images/7800/petscii-thumb.png",
+          "background": "/images/7800/petscii-background.png",
+          "description": "Attack of the PETSCII Robots is a top-down action/puzzle game. The object is to destroy all of the robots. To do this, you have to search objects in the game for weapons and other items to help you along the way. Many scenarios require complex thinking and problem solving, rather than just action shooting.",
+          "backgroundPixelated": true,
+          "props": {
+            "rom": "/content/7800/petscii7800demo.a78"
+          }
+        },
+        {
           "title": "Bentley Bear",
           "longTitle": "Bentley Bear's Crystal Quest",
           "type": "7800",

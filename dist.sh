@@ -264,6 +264,17 @@ mkdir -p "$DIST_OUT_APP/quake"  || { fail 'Error creating quake output directory
 cp -R build/. "$DIST_OUT_APP/quake" || { fail 'failed to copy quake to out.'; }
 
 ##
+## webrcade-app-retro-stella-2014
+##
+
+cd "$DIR/../webrcade-app-retro-stella-2014" || { fail 'Unable to change to retro stella.'; }
+npm install . || { fail 'Unable to install retro stella dependencies.'; }
+npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
+npm run build || { fail 'Unable to build retro stella.'; }
+mkdir -p "$DIST_OUT_APP/retro-stella"  || { fail 'Error creating retro stella output directory.'; }
+cp -R build/. "$DIST_OUT_APP/retro-stella" || { fail 'failed to copy retro stella to out.'; }
+
+##
 ## webrcade-app-prboom
 ##
 

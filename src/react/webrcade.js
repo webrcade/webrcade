@@ -32,6 +32,7 @@ import {
   TEXT_IDS,
   config,
   dropbox,
+  storagePersist
 } from '@webrcade/app-common'
 
 require("./style.scss");
@@ -111,6 +112,9 @@ export class Webrcade extends Component {
   componentDidMount() {
     const { ScreenEnum } = this;
     const { mode } = this.state;
+
+    // Ask for long term storage
+    storagePersist();
 
     // Hack for navigation bar issue on iOS
     applyIosNavBarHack();
