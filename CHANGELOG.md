@@ -1,5 +1,39 @@
 ## Change log
 
+### 7/29/23 (0.1.3)
+    - New Atari 2600 emulator (based on Stella)
+      - This emulator is now the default for Atari 2600
+      - The previous 2600 emulator is still available (select specific
+        application in item editor).
+      - This emulator introduces the following enhancements:
+        - WebAssembly-based
+        - Save state support
+        - Improved game compatibility (graphical effects (like star fields)
+          are now present in certain games).
+        - Color/B&W and difficulty switches accessible via controllers and
+          pause screen.
+        - Paddle controller support (via gamepad analog stick)
+          - Specify controller types and paddle settings in feed editor
+            (game's item editor)
+          - Specify joystick vs. paddle for each port (for games that support
+            both paddles and joysticks simultaneously)
+            - Specify paddle center and sensitivity
+            - Auto-detection of paddle settings when games are added in editor
+            - Inverted paddle support
+    - Atari 7800
+      - Save state support (including audio chips)
+      - Ability to set difficulty switch settings and dual-analog in pause
+        menu
+      - Pause button mapped to gamepad/keyboard
+      - Improved cycle accuracy (resolves several game glitches)
+      - Pokey filter support (contributed by RevEng @ AtariAge)
+      - YM-2151 auto-detect support (for homebrew carts)
+      - Support for 7800 Diagnostic cartridge
+    - PC-Engine CD
+      - Ability to provide a custom BIOS on a game-by-game basis
+    - Fixes/enhancements
+      - Long term persistence in browser (more than 7 days w/o visiting)
+
 ### 7/07/23 (0.1.2.1)
     - Update to Dropbox fix
 
@@ -18,9 +52,11 @@
         - Ability to set GPU resolution (default or 2x)
           - Pause Screen > Advanced Settings > GPU Resolution
       - N64:
-        - Removed WebGL performance prompt for iOS 16.5+ (the issue has been resolved)
+        - Removed WebGL performance prompt for iOS 16.5+ (the issue has been
+          resolved)
       - All CD-based systems:
-        - Will write game-specific saves, even after loading a save state (helpful for disc-swapping games)
+        - Will write game-specific saves, even after loading a save state
+          (helpful for disc-swapping games)
     - Docker
       - Fixed CORS proxy
 
