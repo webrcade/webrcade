@@ -26,6 +26,9 @@
         menu
       - Pause button mapped to gamepad/keyboard
       - Improved cycle accuracy (resolves several game glitches)
+      - Banksets support
+      - Maria background color fix
+      - Cartridge headers fix
       - Pokey filter support (contributed by RevEng @ AtariAge)
       - YM-2151 auto-detect support (for homebrew carts)
       - Support for 7800 Diagnostic cartridge
