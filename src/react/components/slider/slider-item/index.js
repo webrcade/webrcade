@@ -61,12 +61,7 @@ const SliderItem = ({ width, selected, onClick, title, thumbnailSrc, defaultThum
     <div className="slider-item" style={{ width: `${width}%`, visibility: hide ? 'hidden' : 'visible' }} onClick={onClick}>
       <div className={'slider-item-container' + (selected ? ' slider-item-container__selected' : '')} style={{aspectRatio: "4/3", overflow: 'hidden'}}>
         <img
-          style={{
-            width: '100%',
-            position: 'relative',
-            top: '50%',
-            transform: 'translateY(-50%)'
-          }}
+          style={{width:'100%', height:'100%', objectFit: 'cover'}}
           src="images/default-thumb.png"
           onContextMenu={preventDefault}
           key={thumbnailSrc}
