@@ -56,5 +56,7 @@ git clone https://github.com/webrcade/webrcade-app-tyrquake.git ||
   { fail 'Unable to clone quake'; }
 git clone https://github.com/webrcade/webrcade-app-retro-stella-2014.git ||
   { fail 'Unable to clone retro stella'; }
+git clone https://github.com/webrcade/webrcade-app-scummvm.git ||
+  { fail 'Unable to clone scummvm'; }
 git clone https://github.com/webrcade/webrcade-app-standalone.git ||
   { fail 'Unable to clone standalone'; }

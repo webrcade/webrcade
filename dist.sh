@@ -277,6 +277,17 @@ mkdir -p "$DIST_OUT_APP/retro-stella"  || { fail 'Error creating retro stella ou
 cp -R build/. "$DIST_OUT_APP/retro-stella" || { fail 'failed to copy retro stella to out.'; }
 
 ##
+## webrcade-app-scummvm
+##
+
+cd "$DIR/../webrcade-app-scummvm" || { fail 'Unable to change to scummvm.'; }
+npm install . || { fail 'Unable to install scummvm dependencies.'; }
+npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
+npm run build || { fail 'Unable to build scummvm.'; }
+mkdir -p "$DIST_OUT_APP/scummvm"  || { fail 'Error creating scummvm output directory.'; }
+cp -R build/. "$DIST_OUT_APP/scummvm" || { fail 'failed to copy scummvm to out.'; }
+
+##
 ## webrcade-app-prboom
 ##
 
