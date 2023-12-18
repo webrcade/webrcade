@@ -48,6 +48,8 @@ cd public || { fail 'Unable to change to public.'; }
 mkdir -p "$UTILS" || { fail "Unable to create utils dir"; }
 cd "$UTILS" || { fail "Unable to change to utils dir"; }
 npm install archiver || { fail 'Unable to install archiver.'; }
+wget -O - https://webrcade.github.io/webrcade-utils/roms-scummvm.json > roms-scummvm.json ||
+    { fail 'Unable to retrieve scummvm info.'; }
 wget -O - https://webrcade.github.io/webrcade-utils/createdats-fbneo.js > createdats-fbneo.js ||
     { fail 'Unable to retrieve create fbneo dats.'; }
 wget -O - https://webrcade.github.io/webrcade-utils/createdats.js > createdats.js ||
@@ -273,6 +275,17 @@ npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
 npm run build || { fail 'Unable to build retro stella.'; }
 mkdir -p "$DIST_OUT_APP/retro-stella"  || { fail 'Error creating retro stella output directory.'; }
 cp -R build/. "$DIST_OUT_APP/retro-stella" || { fail 'failed to copy retro stella to out.'; }
+
+##
+## webrcade-app-scummvm
+##
+
+cd "$DIR/../webrcade-app-scummvm" || { fail 'Unable to change to scummvm.'; }
+npm install . || { fail 'Unable to install scummvm dependencies.'; }
+npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
+npm run build || { fail 'Unable to build scummvm.'; }
+mkdir -p "$DIST_OUT_APP/scummvm"  || { fail 'Error creating scummvm output directory.'; }
+cp -R build/. "$DIST_OUT_APP/scummvm" || { fail 'failed to copy scummvm to out.'; }
 
 ##
 ## webrcade-app-prboom
