@@ -1,0 +1,285 @@
+<!doctypehtml>
+	<html lang=en-us>
+
+	<head>
+		<meta charset=utf-8>
+		<meta content="text/html; charset=utf-8" http-equiv=Content-Type>
+		<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name=viewport>
+		<link href=manifest.json rel=manifest>
+		<link href=scummvm-192.png rel=apple-touch-icon>
+		<title>ScummVM</title>
+		<style>
+			body {
+				margin: 0;
+				padding: none;
+				background-color: #000
+			}
+
+			.emscripten {
+				padding-right: 0;
+				margin-left: auto;
+				margin-right: auto;
+				display: block
+			}
+
+			textarea.emscripten {
+				font-family: monospace;
+				width: 80%
+			}
+
+			div.emscripten {
+				text-align: center
+			}
+
+			div.emscripten_border {
+				border: 1px solid #000;
+				padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)
+			}
+
+			canvas.emscripten {
+				border: 0 none;
+				/* background: url("logo.svg"); */
+				background-position: center;
+				background-repeat: no-repeat;
+				background-color: #000000;
+				position: absolute;
+				top: 0;
+				left: 0;
+				margin: 0;
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+				display: block
+			}
+
+			@media (orientation:landscape) {
+				canvas.emscripten {
+					background-size: auto 33%
+				}
+			}
+
+			@media (orientation:portrait) {
+				canvas.emscripten {
+					background-size: 80% auto
+				}
+			}
+
+			#progress {
+				top: 0;
+				left: 0;
+				height: 10px;
+				width: 100%;
+				overflow: hidden;
+				display: block;
+				position: absolute;
+				z-index: 2;
+				border: 0;
+				background: #c60
+			}
+
+			progress::-moz-progress-bar {
+				background: #f6e08a
+			}
+
+			progress::-webkit-progress-value {
+				background: #f6e08a
+			}
+
+			progress {
+				color: #f6e08a
+			}
+
+			#status {
+				position: absolute;
+				bottom: 5em;
+				right: 0;
+				padding: 5px;
+				text-align: right;
+				border-top-left-radius: 1em;
+				border-bottom-left-radius: 1em;
+				padding-left: 1em;
+				padding-right: 1em;
+				z-index: 3;
+				border: 3px solid #000;
+				border-right: none;
+				background: #f6e08a;
+				font: bold large/1.4 "Trebuchet MS", Verdana, Tahoma, Sans-Serif
+			}
+
+			#status.error {
+				background: red
+			}
+		</style>
+	</head>
+
+	<body>
+		<div style="display:none">
+			<div class=emscripten><progress hidden id=progress max=100 value=0></progress></div>
+			<div class=emscripten id=status>Downloading ScummVM...</div>
+		</div>
+		<div class=emscripten_border><canvas class="emscripten" id="canvas" oncontextmenu=event.preventDefault()
+				tabindex=-1></canvas></div>
+		<hr><textarea class=emscripten id=output rows=8></textarea>
+		<script src=https://cdnjs.cloudflare.com/ajax/libs/BrowserFS/2.0.0/browserfs.min.js crossorigin=anonymous
+			integrity="sha512-mz0EI+Ay1uIJP7rZEX8C/JlTAcHRIQ8Sny4vxmmj8MSzDJgG9NxxY2pUmOGv1lO7imFIFMyjjCzEXEywNgaUdQ=="></script>
+		<script type=module>import{ScummvmFS}from"./scummvm_fs.js";window.ScummvmFS=ScummvmFS</script>
+		<script>
+
+var statusElement = document.getElementById("status"),
+    progressElement = document.getElementById("progress");
+
+function loadingDoneMessage() {
+    return document.getElementById("progress").style.zIndex = 0, "All downloads complete."
+}
+
+
+// function encodeInode(e, t, n, s, o, l) {
+//     _writeUInt16LE = function(e, t, n) {
+//         return t = +t, e[n >>>= 0] = 255 & t, e[n + 1] = t >>> 8, n + 2
+//     }, _writeUInt32LE = function(e, t, n) {
+//         return t = +t, e[(n >>>= 0) + 3] = t >>> 24, e[n + 2] = t >>> 16, e[n + 1] = t >>> 8, e[n] = 255 & t, n + 4
+//     };
+//     var u = new Uint8Array(30 + e.length);
+//     _writeUInt32LE(u, t, 0), _writeUInt16LE(u, n, 4);
+//     for (var i = 0; i < e.length; i++) u[30 + i] = e.charCodeAt(i);
+//     var r = "";
+//     for (i = 0; i < u.length; i++) r += String.fromCharCode(u[i]);
+//     return btoa(r)
+// }
+
+// function setupDefaultLocalData() {
+//     return null === localStorage.getItem("/") ? fetch("scummvm.ini").then(e => e.text().then(function(e) {
+//         for (key in ini_data = btoa(e), folder_inode = {
+//                 id: folder_inode_id = "b3da6754-64c0-40f0-92ad-83b6ca6ffec9",
+//                 size: 4096,
+//                 mode: 16895
+//             }, ini_inode = {
+//                 id: ini_inode_id = "1b4a97d1-4ce0-417f-985c-e0f22ca21aef",
+//                 size: atob(ini_data).length,
+//                 mode: 33206
+//             }, folder_listing = {
+//                 "scummvm.ini": folder_entry_id = "70879b79-8d58-400c-8143-332242320b34"
+//             }, (defaultLocalStorage = {})["/"] = encodeInode(folder_inode.id, folder_inode.size, folder_inode.mode, 0, 0, 0), defaultLocalStorage[folder_inode_id] = btoa(JSON.stringify(folder_listing)), defaultLocalStorage[folder_entry_id] = encodeInode(ini_inode.id, ini_inode.size, ini_inode.mode, 0, 0, 0), defaultLocalStorage[ini_inode_id] = ini_data, defaultLocalStorage) {console.log(key); console.log(defaultLocalStorage[key]); localStorage.setItem(key, defaultLocalStorage[key])}
+//     })) : Promise.resolve()
+// }
+
+function setupLocalFilesystem() {
+	FS.mkdir("/local/");
+	return  Promise.resolve();
+    // return setupDefaultLocalData().then(() => new Promise((e, t) => {
+    //     BrowserFS.FileSystem.LocalStorage.Create(function(n, s) {
+    //         if (n) return t(n);
+    //         BrowserFS.FileSystem.MountableFileSystem.Create({
+    //             "/": s
+    //         }, function(n, s) {
+    //             if (n) return t(n);
+    //             BrowserFS.initialize(s);
+    //             var o = new BrowserFS.EmscriptenFS;
+    //             return FS.mkdir("/local"), FS.mount(o, {
+    //                 root: "/"
+    //             }, "/local"), e()
+    //         })
+    //     })
+    // }))
+}
+
+async function setupHTTPFilesystem(e) {
+	console.log(e)
+    FS.mkdir("/" + e)
+	FS.mount(new ScummvmFS(FS, e), {}, "/" + e + "/")
+
+	if (e === "games") {
+		const root = "/mem-game/";
+		FS.mkdir(root);
+
+		const dl = {
+			// "games/ft-mac/%25Full%20Throttle%20Data": "%Full Throttle Data",
+			// "games/ft-mac/%25Read%20Me": "%Read Me",
+			// "games/ft-mac/Full%20Throttle%20Data": "Full Throttle Data",
+			// "games/ft-mac/Read%20Me": "Read Me",
+			// "games/dott-cd/monster.sof": "monster.sof",
+			"games/dott-cd/monster.sog": "monster.sog",
+			"games/dott-cd/MT32_CONTROL.ROM": "MT32_CONTROL.ROM",
+			"games/dott-cd/MT32_PCM.ROM": "MT32_PCM.ROM",
+			"games/dott-cd/TENTACLE.000": "TENTACLE.000",
+			"games/dott-cd/TENTACLE.001": "TENTACLE.001",
+
+		}
+
+		// "games/dott-cd/monster.sof": "monster.sof",
+		// 	"games/dott-cd/MT32_CONTROL.ROM": "MT32_CONTROL.ROM",
+		// 	"games/dott-cd/MT32_PCM.ROM": "MT32_PCM.ROM",
+		// 	"games/dott-cd/TENTACLE.000": "TENTACLE.000",
+		// 	"games/dott-cd/TENTACLE.001": "TENTACLE.001",
+
+
+		for (url in dl) {
+			const response = await fetch(url);
+			const data = new Uint8Array(await response.arrayBuffer());
+			const stream = FS.open(root + dl[url], 'w+');
+			FS.write(stream, data, 0, data.length, 0);
+			FS.close(stream);
+		}
+		// FS.writeFile(root + "bar.txt", "hello")
+	}
+
+	//FS.mount(new FS.MEM(FS, e), {}, "/foo/")
+
+}
+
+function setupFilesystem() {
+    addRunDependency("scummvm-fs-setup");
+	setupLocalFilesystem().then(async () => {
+        await setupHTTPFilesystem("games");
+		await setupHTTPFilesystem("plugins");
+		await setupHTTPFilesystem("data");
+		removeRunDependency("scummvm-fs-setup");
+    })
+	alert('file system setup!')
+}
+var Module = {
+    preRun: [setupFilesystem],
+    postRun: [],
+    print: function() {
+        var e = document.getElementById("output");
+        return e && (e.value = ""),
+            function(t) {
+                arguments.length > 1 && (t = Array.prototype.slice.call(arguments).join(" ")), console.log(t), e && (e.value += t + "\n", e.scrollTop = e.scrollHeight)
+            }
+    }(),
+    printErr: function(e) {
+        arguments.length > 1 && (e = Array.prototype.slice.call(arguments).join(" ")), console.error(e)
+    },
+    canvas: function() {
+        var e = document.getElementById("canvas");
+        return e.addEventListener("webglcontextlost", function(e) {
+            alert("WebGL context lost. You will need to reload the page."), e.preventDefault()
+        }, !1), e
+    }(),
+    setStatus: function(e) {
+        if (console.log((new Date).toLocaleTimeString() + " " + e), Module.setStatus.last || (Module.setStatus.last = {
+                time: Date.now(),
+                text: ""
+            }), e !== Module.setStatus.last.text) {
+            var t = e.match(/([^(]+)\((\d+(\.\d+)?)\/(\d+)\)/),
+                n = Date.now();
+            t && n - Module.setStatus.last.time < 30 || (Module.setStatus.last.time = n, Module.setStatus.last.text = e, t ? (e = t[1], progressElement.value = 100 * parseInt(t[2]), progressElement.max = 100 * parseInt(t[4]), progressElement.hidden = !1) : (progressElement.value = null, progressElement.max = null, progressElement.hidden = !0), e && e.length > 0 ? (e += "⚡️", statusElement.style.display = "block") : statusElement.style.display = "none", statusElement.innerHTML = e)
+        }
+    },
+    totalDependencies: 0,
+    monitorRunDependencies: function(e) {
+        this.totalDependencies = Math.max(this.totalDependencies, e), Module.setStatus(e ? "Preparing... (" + (this.totalDependencies - e) + "/" + this.totalDependencies + ")" : loadingDoneMessage())
+    },
+};
+Module.setStatus("Downloading ScummVM..."), window.onerror = function() {
+    statusElement.classList.add("error"), Module.setStatus("Exception thrown, see JavaScript console"), Module.setStatus = function(e) {
+        e && Module.printErr("[post-exception status] " + e)
+    }
+};
+
+		</script>
+		<script src=scummvm.js async></script>
+	</body>
+
+	</html>
+
