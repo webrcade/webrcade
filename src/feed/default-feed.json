@@ -772,7 +772,6 @@
             "palette": 1
           }
         }
-
       ]
     },
     {
@@ -1461,6 +1460,111 @@
           "props": {
             "game": "freedoom2"
           }
+        }
+      ]
+    },
+    {
+      "title": "ScummVM",
+      "longTitle": "ScummVM Games",
+      "background": "/images/scummvm-background.png",
+      "thumbnail": "/images/scummvm-thumb.png",
+      "description": "Script Creation Utility for Maniac Mansion Virtual Machine (ScummVM) is a set of game engine recreations. Originally designed to play LucasArts adventure games that use the SCUMM system, it also supports a variety of non-SCUMM games by companies like Revolution Software and Adventure Soft.",
+      "items": [
+        {
+          "props": {
+            "uid": "bfe20ed3-3327-41e5-8ea3-1c15b140b297",
+            "archive": "/content/scummvm/Beneath%20a%20Steel%20Sky/WRC-MANIFEST.JSON"
+          },
+          "type": "scumm",
+          "title": "Beneath a Steel Sky",
+          "description": "Beneath a Steel Sky uses a variant of Revolution's virtual theatre engine. The game takes place in the future, after the world is damaged from the ravages of humankind. The game first follows Robert Foster as he tries to escape from an enclosed city after he was kidnapped and brought there from his home in the Australian outback. Later, Robert discovers a plot involving the death of his mother, a government coverup, and the secrets about his own father.",
+          "thumbnail": "/images/scummvm/Beneath%20a%20Steel%20Sky-thumb.png",
+          "background": "/images/scummvm/Beneath%20a%20Steel%20Sky-background.png",
+          "backgroundPixelated": true
+        },
+        {
+          "props": {
+            "uid": "fa3a3d86-ba09-4633-a1a0-2704f23fa5a2",
+            "archive": "/content/scummvm/Drascula/drascula-1.0.zip"
+          },
+          "type": "scumm",
+          "title": "Drascula: The Vampire Strikes Back",
+          "description": "Drascula: The Vampire Strikes Back is the only game known that uses the drascula engine. It is an old Spanish 2D classic point & click style adventure with tons of humor and an easy interface.",
+          "thumbnail": "/images/scummvm/Drascula-thumb.png",
+          "background": "/images/scummvm/Drascula-background.png",
+          "backgroundPixelated": true
+        },
+        {
+          "props": {
+            "uid": "3f2055ce-4e1b-4094-b9a8-95017916c636",
+            "archive": "/content/scummvm/Dreamweb/WRC-MANIFEST.JSON"
+          },
+          "type": "scumm",
+          "title": "Dreamweb",
+          "description": "DreamWeb is a top-down adventure game set in a gritty futuristic/dystopian city. Each location takes only a small portion of the screen without panning (except an optional small zoom window in the corner that follows the cursor), with the player interacting with objects and people by simply clicking them. Ryan has a limited inventory space, and as a lot of objects can be picked up (many without any use), the player must rationalize what might be useful and just filler. Dialogue is straight forward, with no options, but still required to advance in the game (to find new locations, for instance). In situations where many adventure games often feature an indirect approach to solve a problem, Ryan often faces himself with situations where it's 'killed or be killed', which result in deaths (sometimes of innocents).",
+          "thumbnail": "/images/scummvm/Dreamweb-thumb.png",
+          "background": "/images/scummvm/Dreamweb-background.png",
+          "backgroundPixelated": true
+        },
+        {
+          "props": {
+            "uid": "c100c407-7d2b-4472-b4eb-83c9aced6497",
+            "archive": "/content/scummvm/Flight%20of%20the%20Amazon%20Queen/WRC-MANIFEST.JSON"
+          },
+          "type": "scumm",
+          "title": "Flight of the Amazon Queen",
+          "description": "Flight of the Amazon Queen follows a pilot for hire named Joe King who is hired to fly a famous actress to her next job, but ends up in a lightning storm and crashes deep in the Amazon Jungle.  In the jungle, Joe uncovers a plot by a mad scientist to take over the world by creating an army of dinosaur women created from Amazon women.",
+          "thumbnail": "/images/scummvm/Flight%20of%20the%20Amazon%20Queen-thumb.png",
+          "background": "/images/scummvm/Flight%20of%20the%20Amazon%20Queen-background.png",
+          "backgroundPixelated": true
+        },
+        {
+          "props": {
+            "uid": "21feb94f-e028-453d-a1c2-a15d189889b4",
+            "archive": "/content/scummvm/Griffon%20Legend/griffon-1.0.zip"
+          },
+          "type": "scumm",
+          "title": "Griffon Legend",
+          "description": "The Griffon Legend is a freeware zelda-like RPG created in FreeBASIC as part of a contest by Syn9 (Daniel Kennedy). 500 years after the Griffon-Dragon war, the Dragons have returned to reclaim their empire. Cities are falling, everyone is dying, and the lone Griffon Knight Fayne is caught up in the middle of it all.",
+          "thumbnail": "/images/scummvm/Griffon Legend-thumb.png",
+          "background": "/images/scummvm/Griffon Legend-background.png",
+          "backgroundPixelated": true
+        },
+        {
+          "props": {
+            "uid": "1f6f5fc4-1d38-41ec-ad16-c52609ff01b2",
+            "archive": "/content/scummvm/Lure%20of%20the%20Temptress/lure.zip"
+          },
+          "type": "scumm",
+          "title": "Lure of the Temptress",
+          "description": "Lure of the Temptress, was the first game to use Revolution's Virtual Theatre engine. The game follows a young peasant named Diermot who must escape prison, rid the kingdom of Turnvale from the Skorl invaders, and defeat the cruel temptress Selena.",
+          "thumbnail": "/images/scummvm/Lure%20of%20the%20Temptress-thumbnail.png",
+          "background": "/images/scummvm/Lure%20of%20the%20Temptress-background.png",
+          "backgroundPixelated": true
+        },
+        {
+          "props": {
+            "uid": "db8dea2d-3c61-44be-95ee-c57b99d3a796",
+            "archive": "/content/scummvm/Sfinx/Sfinx.zip"
+          },
+          "type": "scumm",
+          "title": "Sfinx",
+          "description": "Sfinx follows Vincent (Wacek) and Anna (Andzia), a pair of school age children, who are told by an old professor that a flying saucer has landed somewhere on Earth.  Wacek and Andzia then start a journey to find and help the alien.",
+          "thumbnail": "/images/scummvm/Sfinx-thumb.png",
+          "background": "/images/scummvm/Sfinx-background.png",
+          "backgroundPixelated": true
+        },
+        {
+          "props": {
+            "uid": "ad3d68ca-7b2b-40e4-8a02-572c93a59d3e",
+            "archive": "/content/scummvm/Soltys/Soltys.zip"
+          },
+          "type": "scumm",
+          "title": "Soltys",
+          "description": "You play the head of the village of Wąchock and your aim is to find the missing husband of your daughter (who apparently isn't very attractive if you know what I mean). Scared of his future, Leon decides to run away from the wedding and you are responsible for bringing this poor guy back.",
+          "thumbnail": "/images/scummvm/Soltys-thumb.png",
+          "background": "/images/scummvm/Soltys-background.png",
+          "backgroundPixelated": true
         }
       ]
     }

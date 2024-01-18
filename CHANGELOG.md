@@ -1,5 +1,34 @@
 ## Change log
 
+### 01/18/24 (0.1.4)
+    - ScummVM support
+      - Touch support (direct and touchpad modes)-
+      - Webrcade-specific Virtual keyboard
+      - Default feed updated to include several freeware ScummVM-compatible
+        games
+      - Compatible with archive manifests
+    - Quake
+      - Updated to be compatible with archive manifests
+      - Updated to support alternate pause menu key combos
+    - Sony PlayStation
+      - Support for .SBI files
+    - Atari 7800
+      - Pokey audio chip re-implementation (by RevEng @ AtariAge)
+      - TIA fidelity issue fix (by RevEng @ AtariAge)
+    - Editor
+      - Support for repackaging archives (.zip files) into webrcade manifest
+        format
+      - Support for pasting multiple Google Drive URLs in multi-url text
+        fields
+    - General
+      - Thumbnails no longer required to be 400x300
+      - Archive manifest support
+        - Significantly decreases browser memory use for large archive
+          (.zip) files
+      - Additional pause screen key combos
+        - CONTROL+RETURN, CONTROL+SHIFT, ALT+RETURN, ALT+SHIFT
+      - Several minor bug fixes
+
 ### 7/29/23 (0.1.3)
     - New Atari 2600 emulator (based on Stella)
       - This emulator is now the default for Atari 2600

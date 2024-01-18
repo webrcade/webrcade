@@ -27,8 +27,15 @@ const getImage = (url) => {
 
 const getRom = (url) => {
   return config.getDefaultFeedContentRoot() + url;
-  // return (isDev() ? 
-  //   (config.getLocalUrl() + "/") : 
+  // return (isDev() ?
+  //   (config.getLocalUrl() + "/") :
+  //   (config.getDefaultFeedContentRoot() ? config.getDefaultFeedContentRoot() : "../../" )) + url;
+}
+
+const getArchive = (url) => {
+  return config.getDefaultFeedContentRoot() + url;
+  // return (isDev() ?
+  //   (config.getLocalUrl() + "/") :
   //   (config.getDefaultFeedContentRoot() ? config.getDefaultFeedContentRoot() : "../../" )) + url;
 }
 
@@ -38,10 +45,10 @@ const getDefaultFeed = () => {
 
 const setDefaultFeed = (feed) => {
   config.setEmptyDefaultFeed(feed === EMPTY_FEED);
-  defaultFeed = feed;  
+  defaultFeed = feed;
 }
 
-// Mark default as empty 
+// Mark default as empty
 config.setEmptyDefaultFeed(true);
 
 if (config.isPublicServer()) {
@@ -64,9 +71,12 @@ if (config.isPublicServer()) {
       if (props.rom) {
         props.rom = getRom(props.rom);
       }
+      if (props.archive) {
+        props.archive = getArchive(props.archive);
+      }
     })
   });
   setDefaultFeed(feed);
 }
 
-export { getDefaultFeed, setDefaultFeed }   
+export { getDefaultFeed, setDefaultFeed }
