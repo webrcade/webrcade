@@ -1,5 +1,17 @@
 ## Change log
 
+### 03/03/24 (0.1.5)
+    - Atari 2600
+      - New Stella Version (Latest)
+      - The default "2600" app now uses this version (previous still available)
+      - Supports latest homebrew (DPC+/CDF/ARM, etc.)
+      - Default feed updated to include several new 2600 homebrew games
+    - Atari 7800
+      - Souper support
+      - Activision OM ROM layout support
+      - Pole Position II track selection fix (by RevEng @ AtariAge)
+      - Tower Toppler and Jinks composite smoothing (by RevEng @ AtariAge)
+
 ### 01/18/24 (0.1.4)
     - ScummVM support
       - Touch support (direct and touchpad modes)-
