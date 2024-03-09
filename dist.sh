@@ -269,12 +269,23 @@ cp -R build/. "$DIST_OUT_APP/quake" || { fail 'failed to copy quake to out.'; }
 ## webrcade-app-retro-stella-2014
 ##
 
-cd "$DIR/../webrcade-app-retro-stella-2014" || { fail 'Unable to change to retro stella.'; }
+cd "$DIR/../webrcade-app-retro-stella-2014" || { fail 'Unable to change to retro stella 2014.'; }
+npm install . || { fail 'Unable to install retro stella 2014 dependencies.'; }
+npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
+npm run build || { fail 'Unable to build retro 2014 stella.'; }
+mkdir -p "$DIST_OUT_APP/retro-stella"  || { fail 'Error creating retro stella 2014 output directory.'; }
+cp -R build/. "$DIST_OUT_APP/retro-stella" || { fail 'failed to copy retro stella 2014 to out.'; }
+
+##
+## webrcade-app-retro-stella
+##
+
+cd "$DIR/../webrcade-app-retro-stella" || { fail 'Unable to change to retro stella.'; }
 npm install . || { fail 'Unable to install retro stella dependencies.'; }
 npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
 npm run build || { fail 'Unable to build retro stella.'; }
-mkdir -p "$DIST_OUT_APP/retro-stella"  || { fail 'Error creating retro stella output directory.'; }
-cp -R build/. "$DIST_OUT_APP/retro-stella" || { fail 'failed to copy retro stella to out.'; }
+mkdir -p "$DIST_OUT_APP/retro-stella-latest"  || { fail 'Error creating retro stella output directory.'; }
+cp -R build/. "$DIST_OUT_APP/retro-stella-latest" || { fail 'failed to copy retro stella to out.'; }
 
 ##
 ## webrcade-app-scummvm
