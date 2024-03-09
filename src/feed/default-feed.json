@@ -53,6 +53,28 @@
           }
         },
         {
+          "title": "Draconian",
+          "description": "As pilot of the Space Fighter Draconian, your mission is to destroy enemy space stations – sector by sector – until they’re all wiped out!",
+          "type": "2600",
+          "thumbnail": "/images/2600/draconian-thumb.png",
+          "background": "/images/2600/draconian-background.png",
+          "backgroundPixelated": true,
+          "props": {
+            "rom": "/content/2600/draconian_20171020_RC8.bin"
+          }
+        },
+        {
+          "title": "Elevator Agent (Demo)",
+          "description": "You are Agent 23 on a special mission to sneak into the enemy headquarters, steal the briefcases of top secret documents and escape in the getaway car to your next assignment. Navigate the elevators and escalators as you descend down the 30 floors, avoiding enemy spies while searching for the secret plans.  Jump and duck to avoid the gunfire as you make  your way to the lower levels.",
+          "type": "2600",
+          "thumbnail": "/images/2600/elevatoragent-thumb.png",
+          "background": "/images/2600/elevatoragent-background.png",
+          "backgroundPixelated": true,
+          "props": {
+            "rom": "/content/2600/Elevator-Agent_demo_final_CG_NTSC.bin"
+          }
+        },
+        {
           "title": "Fall Down",
           "description": "Fall Down pits the ever-opposed forces of RED and BLUE against each other in an ultimate battle to capture scrolling platforms! The first player to fall past a platform captures it and scores a point.",
           "type": "2600",
@@ -110,6 +132,26 @@
           "background": "/images/2600/junofirst-background.png",
           "props": {
             "rom": "/content/2600/junofirst.bin"
+          }
+        },
+        {
+          "title": "Lady Bug Arcade (Demo)",
+          "description": "It's dinnertime and Lady Bug is hungry!  Guide her around the garden collecting flowers and hearts while avoiding the deadly insects trying to make *her* their dinner! Luckily, the garden is equipped with many revolving doors that the lady bug can use to block the enemy's attack or steer them into the deadly poison.",
+          "type": "2600",
+          "thumbnail": "/images/2600/ladybug-thumb.png",
+          "background": "/images/2600/ladybug-background.png",
+          "props": {
+            "rom": "/content/2600/Lady-Bug-Arcade_demo_final_CG_NTSC.bin"
+          }
+        },
+        {
+          "title": "Mappy (Demo)",
+          "description": "The Meowkies and their boss Goro have hidden the loot throughout their mansion, and the only way to get from floor to floor is to hop on and off the many trampolines.  Be careful opening doors as they have been booby-trapped with harmful microwave bursts, but if you're good enough you can use these traps against the dastardly cats.",
+          "type": "2600",
+          "thumbnail": "/images/2600/mappy-thumb.png",
+          "background": "/images/2600/mappy-background.png",
+          "props": {
+            "rom": "/content/2600/Mappy_demo_final_CG_NTSC.bin"
           }
         },
         {
@@ -215,13 +257,13 @@
           }
         },
         {
-          "title": "Toyshop Trouble",
-          "description": "Santa's counting on you to ensure that all the toys are painted correctly! Can you get the job done before Santa's sleigh is loaded up on Christmas Eve? You don't want to be responsible for children waking up Christmas morning without toys under their trees, do you? Time to juggle those cans of paint and get moving!",
+          "title": "Stay Frosty 2",
+          "description": "Everybody's favorite fabled frosty firefighter is back! But so are those pesky fireballs, and they're hotter than ever! This year they've kidnapped Santa and some of his helpers, so it's up to you to put out the fireballs and rescue your friends from their fiery fate.",
           "type": "2600",
-          "thumbnail": "/images/2600/toyshop-trouble-thumb.png",
-          "background": "/images/2600/toyshop-trouble-background.png",
+          "thumbnail": "/images/2600/stayfrosty2-thumb.png",
+          "background": "/images/2600/stayfrosty2-background.png",
           "props": {
-            "rom": "/content/2600/ToyshopTrouble.bin"
+            "rom": "/content/2600/SF2_demo_NTSC.bin"
           }
         },
         {
@@ -232,6 +274,27 @@
           "background": "/images/2600/thrust-background.png",
           "props": {
             "rom": "/content/2600/Thrust.bin"
+          }
+        },
+        {
+          "title": "Toyshop Trouble",
+          "description": "Santa's counting on you to ensure that all the toys are painted correctly! Can you get the job done before Santa's sleigh is loaded up on Christmas Eve? You don't want to be responsible for children waking up Christmas morning without toys under their trees, do you? Time to juggle those cans of paint and get moving!",
+          "type": "2600",
+          "thumbnail": "/images/2600/toyshop-trouble-thumb.png",
+          "background": "/images/2600/toyshop-trouble-background.png",
+          "props": {
+            "rom": "/content/2600/ToyshopTrouble.bin"
+          }
+        },
+        {
+          "title": "Turbo (Demo)",
+          "description": "The classic 3D racer comes home!  Navigate your car through the hundreds of full-color scenes, including cities, darkened tunnels, slippery snow covered roads, hidden hills, narrow bridges and many more!",
+          "type": "2600",
+          "thumbnail": "/images/2600/turbo-thumb.png",
+          "background": "/images/2600/turbo-background.png",
+          "backgroundPixelated": true,
+          "props": {
+            "rom": "/content/2600/Turbo-Arcade_demo_final_CG_NTSC.bin"
           }
         }
       ]

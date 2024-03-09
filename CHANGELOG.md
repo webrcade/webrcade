@@ -1,6 +1,6 @@
 ## Change log
 
-### 03/03/24 (0.1.5)
+### 03/09/24 (0.1.5)
     - Atari 2600
       - New Stella Version (Latest)
       - The default "2600" app now uses this version (previous still available)
