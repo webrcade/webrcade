@@ -47,7 +47,7 @@ cd "$DIR" || { fail 'Unable to change to webrcade.'; }
 cd public || { fail 'Unable to change to public.'; }
 mkdir -p "$UTILS" || { fail "Unable to create utils dir"; }
 cd "$UTILS" || { fail "Unable to change to utils dir"; }
-npm install archiver || { fail 'Unable to install archiver.'; }
+npm install archiver@6.0.2 || { fail 'Unable to install archiver.'; }
 wget -O - https://webrcade.github.io/webrcade-utils/roms-scummvm.json > roms-scummvm.json ||
     { fail 'Unable to retrieve scummvm info.'; }
 wget -O - https://webrcade.github.io/webrcade-utils/createdats-fbneo.js > createdats-fbneo.js ||
