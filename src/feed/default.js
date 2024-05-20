@@ -74,6 +74,11 @@ if (config.isPublicServer()) {
       if (props.archive) {
         props.archive = getArchive(props.archive);
       }
+      if (props.media) {
+        for (let i = 0; i < props.media.length; i++) {
+          props.media[i] = config.getDefaultFeedContentRoot() + props.media[i];
+        }
+      }
     })
   });
   setDefaultFeed(feed);
