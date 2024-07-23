@@ -310,11 +310,6 @@ npm run build || { fail 'Unable to build scummvm.'; }
 mkdir -p "$DIST_OUT_APP/retro-commodore-8bit"  || { fail 'Error creating commodore 8bit output directory.'; }
 cp -R build/. "$DIST_OUT_APP/retro-commodore-8bit" || { fail 'failed to copy commodore 8bit to out.'; }
 
-IF %ERRORLEVEL% NEQ 0 (
-   Echo "Error."
-   EXIT /B
-)
-
 ##
 ## webrcade-app-prboom
 ##
