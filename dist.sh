@@ -54,6 +54,8 @@ wget -O - https://webrcade.github.io/webrcade-utils/createdats-fbneo.js > create
     { fail 'Unable to retrieve create fbneo dats.'; }
 wget -O - https://webrcade.github.io/webrcade-utils/createdats.js > createdats.js ||
     { fail 'Unable to retrieve create dats.'; }
+wget -O - https://webrcade.github.io/webrcade-utils/roms-c64.json > roms-c64.json ||
+    { fail 'Unable to retrieve c64 roms.'; }
 cd "$DIR" || { fail 'Unable to change to webrcade.'; }
 cd public || { fail 'Unable to change to public.'; }
 node "$UTILS/createdats-fbneo.js" || { fail 'Unable to execute create dats fbneo.'; }
