@@ -1630,6 +1630,155 @@
           "backgroundPixelated": true
         }
       ]
+    },
+    {
+      "title": "Commodore 64",
+      "longTitle": "Commodore 64 Games",
+      "background": "/images/c64-background.png",
+      "thumbnail": "/images/c64-thumb.png",
+      "description": "The Commodore 64, also known as the C64, is an 8-bit home computer introduced in January 1982 by Commodore International. It has been listed in the Guinness World Records as the highest-selling single computer model of all time, with independent estimates placing the number sold between 12.5 and 17 million units.",
+      "items": [
+        {
+          "props": {
+            "uid": "9552666e-9a3a-4cc9-b457-073bf0420106",
+            "media": [
+              "/content/c64/brucelee2_ef.crt"
+            ],
+            "region": 1
+          },
+          "type": "commodore-c64",
+          "title": "Bruce Lee II",
+          "description": "Bruce's sister has been kidnapped by the evil sorcerer, Tao-Bao, and imprisoned in his massive palace. As Bruce infiltrates the large fortress, he will encounter numerous traps while constantly being targeted by Tao-Bao's henchmen.",
+          "thumbnail": "/images/c64/brucelee2-thumb.png",
+          "background": "/images/c64/brucelee2-background.png",
+          "backgroundPixelated": true
+        },
+        {
+          "props": {
+            "uid": "360e2656-e419-4f05-bb5e-27ce287e588f",
+            "media": [
+              "/content/c64/cshadowgate.d81"
+            ],
+            "disableTrueDriveEmulation": true
+          },
+          "type": "commodore-c64",
+          "title": "Castle Shadowgate",
+          "description": "As the last of the Line of Kings, only you possess the power to prevent the evil Warlock Lord from raising the Behemoth and unleashing it upon the land. Your quest lies within the Castle Shadowgate, with its secret passageways, collapsing floors, and armed creatures. Your courage and wisdom will see you through... but a good sword might be helpful.",
+          "thumbnail": "/images/c64/castleshadowgate-thumb.png",
+          "background": "/images/c64/castleshadowgate-background.png",
+          "backgroundPixelated": true
+        },
+        {
+          "props": {
+            "uid": "e78d057f-4594-4afe-91ff-1432063582ff",
+            "media": [
+              "/content/c64/comaland%20(Disk 1).d64",
+              "/content/c64/comaland%20(Disk 2).d64",
+              "/content/c64/comaland%20(Disk 3).d64",
+              "/content/c64/comaland%20(Disk 4).d64"
+            ]
+          },
+          "type": "commodore-c64",
+          "title": "Comaland",
+          "longTitle": "Comaland (Scene Demo)",
+          "description": "Comaland by Censor Design and Oxyron was the winner of the C64 Demo Competition at X'2014. The name is a fusion of Oxyron's \"Coma Light\" and Censor's \"Wonderland\" series of demos.",
+          "thumbnail": "/images/c64/comaland-thumb.png",
+          "background": "/images/c64/comaland-background.png",
+          "backgroundPixelated": true
+        },
+        {
+          "props": {
+            "media": [
+              "/content/c64/digiloi.d64"
+            ],
+            "uid": "b2640af3-4f54-43c0-b876-b3447e03e0fb",
+            "disableTrueDriveEmulation": true
+          },
+          "type": "commodore-c64",
+          "title": "Digiloi",
+          "description": "Digiloi, an all-PETSCII action game by Dr. TerrorZ. A computer weapons ecosystem is about to take over the whole planet. You need to disable the master computer by finding three floppy keys and insert them in the terminal.",
+          "thumbnail": "/images/c64/digiloi-thumb.png",
+          "background": "/images/c64/digiloi-background.png",
+          "backgroundPixelated": true
+        },
+        {
+          "props": {
+            "uid": "1d19237d-5ef7-4e1a-afaa-ff0031ca4952",
+            "media": [
+              "/content/c64/nextlevel%20(Disk 1).d64",
+              "/content/c64/nextlevel%20(Disk 2).d64",
+              "/content/c64/nextlevel%20(Disk 3).d64",
+              "/content/c64/nextlevel%20(Disk 4).d64"
+            ]
+          },
+          "type": "commodore-c64",
+          "title": "Next Level",
+          "longTitle": "Next Level (Scene Demo)",
+          "description": "Next Level by Performers was the winner of the C64 Demo Competition at X'2023.",
+          "thumbnail": "/images/c64/nextlevel-thumb.png",
+          "background": "/images/c64/nextlevel-background.png",
+          "backgroundPixelated": true
+        },
+        {
+          "props": {
+            "media": [
+              "/content/c64/rent-a-cop-2.d64"
+            ],
+            "uid": "4ec0ee3a-4672-48ce-92e1-31a89c8fd2d9",
+            "disableTrueDriveEmulation": true
+          },
+          "type": "commodore-c64",
+          "title": "Rent-A-Cop Reloaded",
+          "description": "In 2012 Rent-A-Cop was released for the RGCD C64 16KB Cartridge Game Development Competition as a cool game by Achim in which you had to take out the thieves on a level within a specified time limit. The game is heavily inspired by the Activision classic Keystone Kapers. Published in Commodore Free #067.",
+          "thumbnail": "/images/c64/rentacopreloaded-thumb.png",
+          "background": "/images/c64/rentacopreloaded-background.png",
+          "backgroundPixelated": true
+        },
+        {
+          "props": {
+            "media": [
+              "/content/c64/time_of_silence_1.0.1.d64"
+            ],
+            "uid": "ed92a36a-5ad6-4a87-84f0-5ea10597ed60",
+            "disableTrueDriveEmulation": true
+          },
+          "type": "commodore-c64",
+          "title": "Time of Silence",
+          "description": "Time of Silence is an Adventure RPG with high-grade music and smooth scrolling as you try to survive using unique abilities in a world overcome by disease and decay.",
+          "thumbnail": "/images/c64/timeofsilence-thumb.png",
+          "background": "/images/c64/timeofsilence-background.png",
+          "backgroundPixelated": true
+        },
+        {
+          "props": {
+            "media": [
+              "/content/c64/vallation_16k.zip"
+            ],
+            "uid": "d7c73cc9-5182-4b58-b7b8-f2e7b58bf394"
+          },
+          "type": "commodore-c64",
+          "title": "Vallation",
+          "description": "An action packed game, with over 70 rooms, beautiful graphics and an excellent soundtrack, this Cyberoid style game has the player attempting to escape from a space pirate base whilst taking out as many of the vile scum as you can. Move through the screens to see if you can find the way out. Mind the missiles - they can not be destroyed! And be very careful about the enemies that will shoot at the moment they see you. You'll have your hands full.",
+          "thumbnail": "/images/c64/vallation-thumb.png",
+          "background": "/images/c64/vallation-background.png",
+          "backgroundPixelated": true
+        },
+        {
+          "props": {
+            "media": [
+              "/content/c64/wolfling14-c64.zip"
+            ],
+            "uid": "09dde95e-823b-429c-a661-ad0754f4496e",
+            "disableTrueDriveEmulation": true
+          },
+          "type": "commodore-c64",
+          "title": "Wolfling",
+          "description": "Ling awakes in Baron Baranov's dungeon. The baron fears all creatures of the night and Ling knows that her dark heritage is the reason for her imprisonment. Can she escape from the dungeon? Can she break her curse?",
+          "thumbnail": "/images/c64/wolfling-thumb.png",
+          "background": "/images/c64/wolfling-background.png",
+          "backgroundPixelated": true
+        }
+      ]
     }
   ]
 }

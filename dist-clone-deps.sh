@@ -60,5 +60,7 @@ git clone https://github.com/webrcade/webrcade-app-retro-stella.git ||
   { fail 'Unable to clone retro stella'; }
 git clone https://github.com/webrcade/webrcade-app-scummvm.git ||
   { fail 'Unable to clone scummvm'; }
+git clone https://github.com/webrcade/webrcade-app-retro-commodore-8bit.git ||
+  { fail 'Unable to clone scummvm'; }
 git clone https://github.com/webrcade/webrcade-app-standalone.git ||
   { fail 'Unable to clone standalone'; }
