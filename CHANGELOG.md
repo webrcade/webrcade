@@ -1,5 +1,34 @@
 ## Change log
 
+### 07/26/24 (0.1.6)
+
+    - General
+      - Google drive support for large files (200mb+)
+      - Fix for Dropbox issues
+    - Editor
+      - Safari (iOS/Mac) fix when adding multiple files (Dropbox, etc.)
+      - Commodore 64: Controller mappings
+    - Nintendo 64
+      - Message regarding the use of Vertex Buffers
+      - Vertex Buffers (VBO) now on by default for iOS
+    - Commodore 64
+      - Virtual keyboard and physical keyboard support
+      - Ability to auto-detect when dragging, adding (similar to ROMs)
+      - Multi-disk game support
+      - Save state support
+      - JiffyDOS support (must provide BIOS files in feed properties)
+      - Tape, Cartridge, and Disk support
+      - 2 button joystick support
+      - Support for "save" disks
+        - Games have single save disk by default (can be adjusted to 4)
+      - Changes to media (disks, carts) are persisted
+        (when displaying pause screen)
+      - Ability to disable autoload of media (disks, tapes, etc.)
+      - Ability to mount disks when loading a cartridge, tape, etc.
+      - Support for disabling True Drive Emulation (TDE)
+      - Per-game controller mappings (map keys to controller, etc.)
+      - Updated default feed to include public domain C64 games and demos
+
 ### 03/09/24 (0.1.5)
     - Atari 2600
       - New Stella Version (Latest)

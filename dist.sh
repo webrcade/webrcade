@@ -299,6 +299,21 @@ mkdir -p "$DIST_OUT_APP/scummvm"  || { fail 'Error creating scummvm output direc
 cp -R build/. "$DIST_OUT_APP/scummvm" || { fail 'failed to copy scummvm to out.'; }
 
 ##
+## webrcade-app-retro-commodore-8bit
+##
+cd "$DIR/../webrcade-app-retro-commodore-8bit" || { fail 'Unable to change to commodore 8bit.'; }
+npm install . || { fail 'Unable to install scummvm dependencies.'; }
+npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
+npm run build || { fail 'Unable to build scummvm.'; }
+mkdir -p "$DIST_OUT_APP/retro-commodore-8bit"  || { fail 'Error creating commodore 8bit output directory.'; }
+cp -R build/. "$DIST_OUT_APP/retro-commodore-8bit" || { fail 'failed to copy commodore 8bit to out.'; }
+
+IF %ERRORLEVEL% NEQ 0 (
+   Echo "Error."
+   EXIT /B
+)
+
+##
 ## webrcade-app-prboom
 ##
 
