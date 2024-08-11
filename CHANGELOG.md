@@ -1,6 +1,6 @@
 ## Change log
 
-### 07/26/24 (0.1.6)
+### 08/11/24 (0.1.6)
 
     - General
       - Google drive support for large files (200mb+)
