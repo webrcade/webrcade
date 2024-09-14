@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import {
   settings,
+  getProxyToUrl,
   ImageButton,
   SettingsWhiteImage,
 } from '@webrcade/app-common'
@@ -54,10 +55,14 @@ export default class AppDetails extends Component {
       const img = new Image();
       img.onload = () => { displayBackground(img.src); };
       img.onerror = () => {
-        // If an error occurred, attempt to load default background
-        const defaultImg = new Image();
-        defaultImg.onload = () => { displayBackground(defaultImg.src); };
-        defaultImg.src = defaultBackgroundSrc;
+        // Try proxy
+        const proxyImg = new Image();
+        proxyImg.onload = () => { displayBackground(proxyImg.src); };
+        proxyImg.onerror = () => {
+          // Load default
+          displayBackground(defaultBackgroundSrc);
+        };
+        proxyImg.src = getProxyToUrl(img.src);
       }
       img.src = backgroundSrc;
     }

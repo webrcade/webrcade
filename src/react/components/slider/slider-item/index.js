@@ -1,5 +1,9 @@
 import React, { useRef, useState } from "react";
 
+import {
+  getProxyToUrl
+} from '@webrcade/app-common'
+
 require("./style.scss");
 
 const preventDefault = (e) => { e.preventDefault(); }
@@ -50,8 +54,14 @@ const SliderItem = ({ width, selected, onClick, title, thumbnailSrc, defaultThum
       // }
     };
     img.onerror = () => {
-      // If an error occurred, attempt to load default thumbnail
-      loadDefault();
+      // Try proxy
+      const proxyImg = new Image();
+      proxyImg.onload = () => { showImage(proxyImg.src) };
+      proxyImg.onerror = () => {
+        // If an error occurred, attempt to load default thumbnail
+        loadDefault();
+      }
+      proxyImg.src = getProxyToUrl(img.src);
     }
     img.src = thumbnailSrc;
     setLastSrc(thumbnailSrc);
@@ -61,6 +71,7 @@ const SliderItem = ({ width, selected, onClick, title, thumbnailSrc, defaultThum
     <div className="slider-item" style={{ width: `${width}%`, visibility: hide ? 'hidden' : 'visible' }} onClick={onClick}>
       <div className={'slider-item-container' + (selected ? ' slider-item-container__selected' : '')} style={{aspectRatio: "4/3", overflow: 'hidden'}}>
         <img
+          crossOrigin="true"
           style={{width:'100%', height:'100%', objectFit: 'cover'}}
           src="images/default-thumb.png"
           onContextMenu={preventDefault}
