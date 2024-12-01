@@ -56,7 +56,7 @@ const loadInitialFeed = (defaultFeed) => {
               storage.put(EDITOR_TEST_FEED, "");
               // Mark that we are going to be loading a feed
               loadingFeed = true;
-              // Show the loading scrren
+              // Show the loading screen
               webrcade.setState({
                 loadingStatus: Resources.getText(TEXT_IDS.LOADING_FEED),
                 initialFeed: false,
