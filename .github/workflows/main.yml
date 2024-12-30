@@ -43,7 +43,7 @@ jobs:
         ./dist-version.sh "CI Build" && \
         cp ./CHANGELOG.md public
         
-    - uses: actions/upload-artifact@v2
+    - uses: actions/upload-artifact@v3
       with:
         name: webrcade-full-source
         path: src
@@ -56,7 +56,7 @@ jobs:
         chmod +x dist-package.sh && \
         ./dist-package.sh
         
-    - uses: actions/upload-artifact@v2
+    - uses: actions/upload-artifact@v3
       with:
         name: webrcade-dist
         path: src/webrcade/dist/package
