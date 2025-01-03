@@ -72,7 +72,7 @@ class Slider extends Component {
     if (gamepadNotifier) {
       gamepadNotifier.addCallback(this.gamepadCallback);
     }
-    
+
     window.addEventListener("resize", this.handleWindowResize);
     window.addEventListener("orientationchange", this.handleWindowResize);
     this.handleWindowResize();
@@ -92,7 +92,7 @@ class Slider extends Component {
 
     window.removeEventListener("resize", this.handleWindowResize);
     window.removeEventListener("orientationchange", this.handleWindowResize);
-  }  
+  }
 
   getItemIndex(title, items) {
     if (title) {
@@ -100,7 +100,7 @@ class Slider extends Component {
         const item = items[i];
         if (title === item.title) {
           return i;
-        }   
+        }
       }
     }
     return -1;
@@ -108,8 +108,9 @@ class Slider extends Component {
 
   shouldComponentUpdate(nextProps, nextState) {
     const { items, onSelected } = this.props;
+    const { selectedItem } = this.state;
 
-    let ret = true;    
+    let ret = true;
 
     const lastItemTitle = nextProps.lastItemTitle;
     const unique = nextProps.items.reduce((
@@ -151,17 +152,26 @@ class Slider extends Component {
             this.setState({
               sliderHidden: false
             });
-          }, 250);  
+          }, 250);
 
           if (onSelected) {
             onSelected(nextProps.items[index]);
           }
         });
     } else if (unique !== nextState.uniqueItems || scrollable !== nextState.scrollable) {
-      this.setState({
+      const state = {
         uniqueItems: unique,
-        scrollable: scrollable
-      });
+        scrollable: scrollable,
+      }
+
+      if (lastItemTitle) {
+        let index = this.getItemIndex(lastItemTitle, nextProps.items);
+        if (index >= 0 && index !== selectedItem) {
+          state.selectedItem = index;
+        }
+      }
+
+      this.setState(state);
     }
 
     return ret;
@@ -175,7 +185,7 @@ class Slider extends Component {
     // console.log('lowest visible:' + lowestVisibleIndex);
     // console.log('items in row: ' + itemsInRow);
     // console.log('uniqueItems: ' + uniqueItems);
-    
+
     if (prevState.scrollable && !scrollable) {
       console.log("Reset selected item due to scrollable changing.");
       this.setState({
@@ -273,7 +283,7 @@ class Slider extends Component {
     const { getTitle, getThumbnailSrc, getDefaultThumbnailSrc, items } = this.props;
     const totalItems = items.length;
 
-    const onImageLoadedFunc = (e) => {      
+    const onImageLoadedFunc = (e) => {
       if (!this.setMinHeight) {
         this.resetMinHeight();
       }
@@ -336,11 +346,11 @@ class Slider extends Component {
 
     const leadingIndex =
       combinedIndex[0] === 0 ? totalItems - 1 : combinedIndex[0] - 1;
-    combinedIndex.unshift(leadingIndex);    
+    combinedIndex.unshift(leadingIndex);
 
     const sliderContents = [];
-    for (let index of combinedIndex) {      
-      const item = items[index];      
+    for (let index of combinedIndex) {
+      const item = items[index];
       const thumbnailSrc = getThumbnailSrc ? getThumbnailSrc(item) : '';
       const key = item.id ? item.id : `${item.title}-${index}-${thumbnailSrc}`;
       const hide = item.duplicate === true && !scrollable;
@@ -424,7 +434,7 @@ class Slider extends Component {
   };
 
   handleNextPage = () => {
-    const { focused, itemsInRow, lowestVisibleIndex, scrollable, 
+    const { focused, itemsInRow, lowestVisibleIndex, scrollable,
       sliderHasMoved, sliderMoving } = this.state;
     const { items } = this.props;
     const totalItems = items.length;
@@ -480,14 +490,14 @@ class Slider extends Component {
   }
 
   selectNext() {
-    const { focused, itemsInRow, lowestVisibleIndex, scrollable, selectedItem, 
+    const { focused, itemsInRow, lowestVisibleIndex, scrollable, selectedItem,
       sliderMoving, uniqueItems } = this.state;
     const { items } = this.props;
 
-    const max = lowestVisibleIndex + itemsInRow;    
+    const max = lowestVisibleIndex + itemsInRow;
     const totalItems = items.length;
 
-    if (sliderMoving || !focused || 
+    if (sliderMoving || !focused ||
       (!scrollable && selectedItem === (uniqueItems - 1))) return;
 
     let newItem = selectedItem + 1;
@@ -558,14 +568,14 @@ class Slider extends Component {
       window.clearTimeout(this.minHeightTimeoutId)
     }
     container.style.minHeight = '0px';
-    this.minHeightTimeoutId = setTimeout(() => {        
+    this.minHeightTimeoutId = setTimeout(() => {
       const height = container.offsetHeight;
       if (height > 0) {
-        container.style.minHeight = container.offsetHeight + "px";         
+        container.style.minHeight = container.offsetHeight + "px";
         console.log("Min height: " + container.style.minHeight);
         this.setMinHeight = true;
-      }    
-    }, 1000);    
+      }
+    }, 1000);
   }
 
   render() {
@@ -573,10 +583,10 @@ class Slider extends Component {
       itemsInRow,
       movePercentage,
       scrollable,
-      sliderHasMoved,      
+      sliderHasMoved,
       sliderHidden,
       sliderMoveDirection,
-      sliderMoving      
+      sliderMoving
     } = this.state;
     const { items } = this.props;
 
@@ -600,7 +610,7 @@ class Slider extends Component {
           }%)`,
       };
     }
-    
+
     let sliderStyle = {}
     if (sliderHidden) {
       sliderStyle = {
@@ -622,13 +632,13 @@ class Slider extends Component {
       );
     } else {
       return (
-        <div className="slider" tabIndex="0" 
+        <div className="slider" tabIndex="0"
           ref={(container) => { this.container = container; }}
           onFocus={this.onFocus}
           onBlur={this.onBlur}>
           {sliderHasMoved && (
-            <SliderControl 
-              arrowDirection={"left"} 
+            <SliderControl
+              arrowDirection={"left"}
               onClick={this.handlePrevPage}
               hide={!scrollable} />
           )}
@@ -637,9 +647,9 @@ class Slider extends Component {
               {items.length > 0 ? this.renderSliderContent() : null}
             </div>
           </div>
-          <SliderControl 
-            arrowDirection={"right"} 
-            onClick={this.handleNextPage} 
+          <SliderControl
+            arrowDirection={"right"}
+            onClick={this.handleNextPage}
             hide={!scrollable} />
         </div>
       );

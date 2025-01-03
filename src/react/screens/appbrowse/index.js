@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {
+  isIos,
   settings,
   toggleTabIndex,
   FocusGrid,
@@ -10,7 +11,7 @@ import {
   SettingsWhiteImage,
   WebrcadeContext,
   LOG,
-  uuidv4
+  uuidv4,
 } from '@webrcade/app-common'
 
 import * as Session from "./session"
@@ -37,7 +38,9 @@ export default class AppBrowseScreen extends Component {
       category: null,
       currentItem: null,
       menuMode: this.ModeEnum.CATEGORIES,
-      browseScreen: this
+      browseScreen: this,
+      iosFix: !isIos(), // false,
+      display: !isIos(), //false
     };
 
     this.sliderRef = React.createRef();
@@ -128,7 +131,28 @@ export default class AppBrowseScreen extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     const { hide, disable } = this.props;
+    const { iosFix } = this.state;
     const { sliderRef, webrcadeDivRef } = this;
+
+
+    if (!iosFix && !hide) {
+      this.setState({iosFix: true})
+      setTimeout(() => {
+        let metaTag = document.querySelector('meta[name="viewport"]');
+        if (metaTag) {
+          // Change the content of the existing meta tag
+          metaTag.setAttribute('content', `width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover`);
+          setTimeout(() => {
+            metaTag.setAttribute('content', `width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=auto`);
+            setTimeout(() => {
+              this.setState({display: true})
+            }, 50);
+          }, 300);
+        } else {
+          this.setState({display: true})
+        }
+      }, 0);
+    }
 
     if (hide || disable) {
       this.stopGamepadNotifier();
@@ -235,7 +259,7 @@ export default class AppBrowseScreen extends Component {
 
   render() {
     const { disable, feeds, hide, onSettings } = this.props;
-    const { category, currentItem, feed, menuMode } = this.state;
+    const { category, currentItem, feed, menuMode, display } = this.state;
     const { categoryRef, focusGrid, button1Ref, screenContext, settingsRef,
       settingsDetailsRef, sliderRef, webrcadeDivRef, MAX_SLIDES } = this;
     const { ModeEnum } = this;
@@ -272,7 +296,7 @@ export default class AppBrowseScreen extends Component {
 
     return (
       <WebrcadeContext.Provider value={screenContext}>
-        <div ref={webrcadeDivRef} style={{height: window.innerHeight + "px"}} className="webrcade">
+        <div ref={webrcadeDivRef} style={{height: window.innerHeight + "px", opacity: display ? "1" : "0"}} className="webrcade">
           <div className={'webrcade-outer' +
             (hide === true ? ' webrcade-outer--hide' : '')}>
             <Message />
