@@ -1888,6 +1888,70 @@
           "thumbnail": "/images/dos/wolf3d-thumb.png",
           "background": "/images/dos/wolf3d-background.png",
           "backgroundPixelated": true
+        },
+        {
+          "props": {
+            "uid": "940aa726-3f64-4fc7-b320-361523a813dd",
+            "archive": "/content/dos/tim2/tim2.zip",
+            "autoStartPath": "tim2.exe",
+            "controllerMode": 1
+          },
+          "type": "dos",
+          "title": "Incredible Machine 2 (Demo)",
+          "description": "This game involves puzzle solving, while creating wacky machines.  Each level of the game contains a machine designed to do a specific task.  The only problem is, there are parts missing, and it is your job to figure out where to put what in order to get the machine to work.  The game features many wacky machine parts, including cats, super balls, lava lamps, flashlights, can openers, monkeys on treadmills, and many more wacky parts to get your machine working.  The game also comes with an editor to let you design your own unique machines from scratch.  These can either be for fun, or you can set it so that the person playing has to fill in the missing parts, just like in the campaign.",
+          "thumbnail": "/images/dos/tim2-thumb.png",
+          "background": "/images/dos/tim2-background.png",
+          "backgroundPixelated": true
+        },
+        {
+          "props": {
+            "uid": "e2896622-d9fe-47a0-8068-a80d0f65f6b9",
+            "archive": "/content/dos/rayman/rayman.zip"
+          },
+          "type": "dos",
+          "title": "Rayman (Demo)",
+          "description": "When a villain known only as Mr. Dark appears, trouble brews in Rayman's world. Mr. Dark captures the Toons - source of light and Rayman's friends. With no more light, evil creatures begin to roam, making the world unsafe for everyone. It’s up to you, as Rayman, to free your friends and put an end to Mr. Dark's dastardly schemes!Rayman is a side-scrolling platformer starring the titular Rayman, a big-nosed chap with no arms or legs. Rayman can jump and use his hair to hover for a short period of time. He can also attack by throwing his fists, or winding up his fists for a more powerful punch. He can occasionally find special power ups that grant him unlimited flying power, giving him the ability to navigate through tricky mazes.",
+          "thumbnail": "/images/dos/rayman-thumb.png",
+          "background": "/images/dos/rayman-background.png",
+          "backgroundPixelated": true
+        },
+        {
+          "props": {
+            "uid": "230a703a-7d8c-4e39-bb82-e9e12e9de92f",
+            "archive": "/content/dos/carmenusa/carmenusa.zip",
+            "controllerMode": 1
+          },
+          "type": "dos",
+          "title": "Where in the USA Is Carmen Sandiego? (Demo)",
+          "description": "A remake of Where in the U.S.A. is Carmen Sandiego?, this title features high-resolution graphics, digitized sound effects, and new locations.Sign your name up, then listen to the chief give you details about the suspect and the loot stolen by them, the location where the suspect was last seen, and the deadline by which you have to apprehend the suspect by. Question witnesses and contact informants to get information on the next location that the suspect headed to, as well as any information that could lead to a warrant. (You cannot arrest the suspect without one.) Determining where to go next will require research on your part, as everyone you question will reveal places, not cities that appear on the travel map.When you have decided where you should go next, you can travel to the next location. And from there, the above process gets repeated until you finally caught up with the suspect. A new feature on this map allows you to zoom in to a state, allowing you to look closer on its towns and terrain, and its surrounding states.",
+          "thumbnail": "/images/dos/carmenusa-thumb.png",
+          "background": "/images/dos/carmenusa-background.png",
+          "backgroundPixelated": true
+        },
+        {
+          "props": {
+            "uid": "47e74cae-3dd3-4737-aa48-7ad62b84063f",
+            "archive": "/content/dos/powerslave/powerslave.zip",
+            "autoStartPath": "ps.exe"
+          },
+          "type": "dos",
+          "title": "Powerslave (Demo)",
+          "description": "Powerslave is a first person shooter with an arcade style level progression. There are 20 consecutive single-player levels and 12 multiplayer deathmatch levels.Unknown alien forces have invaded the city of Karnak, and isolated it from the rest of the world. The inhabitants were subjected to torture, or injected with a substance, turning them into servient mummies. Even the mummy of king Ramses was not spared. After multiple failed attempts from world leaders to send armed forces to deal with the situation, you were chosen among a select few of the world's best special forces to infiltrate Karnak and destroy the invading forces from within. The mission turns awry, however, when your helicopter is shot down, and you find yourself alone, hoping to complete your mission and get out of the fray alive.Contrary to the later console adaptations of the game, each of the 20 singleplayer levels are played back to back with the player hunting for keys and secret areas to proceed onto the next level, similar to other games of the time, such as DOOM. The game features a single save slot for each playthrough and has a checkpoint system, allowing the player to continue from the latest checkpoint they have found. Levels range from ancient cities and temples through sprawling caverns of also lava variety all the way to the alien Kilmaat ships, and are filled with traps and keys hiding multiple pathways from initial access.The player starts their adventure with a mere Machete, but can find weapons such as a Revolver, M60, hand grenades and a Flamethrower to magical weapons such as the Cobra Staff that fires seeking snake projectiles, and the Eye of Ra gauntlet which summons Ra to strike enemies down with lightning. Basic enemies include mummies and men-turned-zombies representing ancient gods; Anubis, Bastet and Set. Mystical being such as the Am-Mit, Selkis and a lava beast called Magmantis are also included. The alien Kilmaat forces are represented by Kilmaat soldiers and Kilmaatikhan. Crazed wildlife is represented by Rats, Giant Piranhas, Terranian spiders and Omen Wasps.Although the multiplayer in the game is set up to be deathmatch-only, it's possible to play the singleplayer levels with enemies.",
+          "thumbnail": "/images/dos/powerslave-thumb.png",
+          "background": "/images/dos/powerslave-background.png",
+          "backgroundPixelated": true
+        },
+        {
+          "props": {
+            "uid": "b1dc9af9-ac37-4620-89a2-e8600e7c797d",
+            "archive": "/content/dos/alienrampage/alienrampage.zip"
+          },
+          "type": "dos",
+          "title": "Alien Rampage (Demo)",
+          "description": "Alien Rampage is a 2D side-scroller with large animated sprites and multiple layers of parallaxing backgrounds.You are a lone angry alien dude with a bad attitude. You crash landed on an inhospitable planet, and thus you set out to get back to a ship so you can leave this horrible place. To make it, you'll blast hundreds upon hundreds of nasty creatures, enemy bounty hunters, and you'll use some pretty impressive weaponry to do it.You'll also get to buy power ups and get help from the goofy local troll-like natives, to solve puzzles.The gameplay consists of running, jumping and shooting, with a big emphasis on shooting. The action is very gory, and is akin to DOOM in 2D.",
+          "thumbnail": "/images/dos/alienrampage-thumb.png",
+          "background": "/images/dos/alienrampage-background.png",
+          "backgroundPixelated": true
         }
       ]
     }
