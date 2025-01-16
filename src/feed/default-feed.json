@@ -1779,6 +1779,181 @@
           "backgroundPixelated": true
         }
       ]
+    },
+    {
+      "title": "DOS",
+      "longTitle": "DOS Games",
+      "background": "/images/dos-background.png",
+      "thumbnail": "/images/dos-thumb.png",
+      "description": "DOS games were designed for MS-DOS, a command-line operating system popular in the 1980s and early 1990s. These games spanned a wide range of genres, from platformers and RPGs to first-person shooters and adventure titles, often limited by the hardware of the time with low-resolution graphics and simple sound. Iconic games like Doom, Commander Keen, and The Secret of Monkey Island became classics and helped shape modern gaming.",
+      "items": [
+        {
+          "props": {
+            "uid": "5b918da7-7590-4e4b-a200-a303c7cf2a4c",
+            "archive": "/content/dos/bstone/bstone.zip",
+            "autoStartPath": "bstone.bat"
+          },
+          "type": "dos",
+          "title": "Blake Stone: Aliens of Gold (Shareware)",
+          "description": "Aliens of Gold, the first game in the Blake Stone series, pits the space-age British secret agent against Dr. Pyrus Goldfire; a madman bent on world domination. Using a mastery of genetic engineering and a tremendous reserve of wealth, Dr. Goldfire intends to unleash a mutant army upon the Earth.The first chapter begins in Goldfire's S.T.A.R. Institute headquarters building. Each level has Blake fighting through guards to find an elevator keycard for the next level. Dr. Goldfire will personally appear along the way to fire shots at Blake, and his genetic creations also pose a tough challenge. Each chapter lasts 10 levels, and brings Blake closer to reaching Goldfire, only to have the mad doctor escape to a new installation in his network, and the start of a new chapter.Blake Stone uses the Wolfenstein 3-D engine to render its levels. Basic gameplay and enemy AI is similar in most respects. Some of Blake 's innovations include silent weapons that can kill guards without alerting others. Alerts are given to the player through text messages on the HUD. Health can be gained through use of wall-mounted vending machines, operated with tokens picked up off dead guards. An automap and stat-tracking are both available during gameplay. Finally, there are friendly AI characters who offer clues and powerups when you speak to them - provided Blake doesn't accidentally shoot them first!",
+          "thumbnail": "/images/dos/bstone-thumb.png",
+          "background": "/images/dos/bstone-background.png",
+          "backgroundPixelated": true
+        },
+        {
+          "props": {
+            "uid": "4bb88569-1228-455e-b2d6-abb7a667e12e",
+            "archive": "/content/dos/darkforces/darkforces.zip",
+            "autoStartPath": "df.exe"
+          },
+          "type": "dos",
+          "title": "Star Wars: Dark Forces (Demo)",
+          "description": "Kyle Katarn is a former Imperial officer turned mercenary, now hired by the Rebel Alliance. After having stolen the Death Star plans from a remote facility, he is tasked with investigating the sudden destruction of a hidden Rebel base. This leads him to face off against Imperial General Rom Mohc and the various iterations of his Dark Troopers - cybernetic soldiers with the armor and firepower to turn the tide of the war.Dark Forces is a close prequel to the original Star Wars movie trilogy. The game marks LucasArts' first attempt to enter the first-person shooter market. Instead of licensing the DOOM engine, like many competitors, LucasArts created its own internal Jedi engine. The Jedi engine contains advanced features over similar tech, including the ability to look up and down, jump, crouch, and limited support (in the build used for Dark Forces) for rooms (sectors) over rooms. The 3D models also make occasional appearances inside the game, as turrets or Kyle's ship dropping him off or picking him up from each mission.Most levels have a fairly complex, often maze-like structure, and include various switches that need to be activated to change the layout of the level. Jumping is integrated into the gameplay, as certain areas can only be accessed in that way. In addition to weapons, Kyle can use shields to protect himself from damage, a head lamp to illuminate dark areas, as well as specific items used to counter environmental hazards. The player character is given a certain amount of \"lives\" per level; he dies permanently once he runs out of all of them. Game progress can be saved only between missions.The game features fourteen substantial levels as Kyle works to disarm the Dark Trooper project. Many levels reference characters or areas from the Star Wars movie trilogy, such as a visit with Jabba the Hutt, a trip to Coruscant, and a battle through the interior of a Star Destroyer. As opposed to most first-person shooters of the time period, every level has objectives for Kyle to complete, ranging from grabbing a clue and getting out alive, to planting charges around a facility to demolish it. Cutscenes appear between key missions to update the plot.The Star Wars license gets plenty of use, as the game features imperial officers, stormtroopers, and a collection of aliens seen in the films as enemies. Blaster rifles and thermal detonators are used as weapons, along with other firearms inspired by the tech of the films. Dark Forces also uses the iMuse engine to dynamically change the music during action scenes, with much of the music based off or directly replicating, John Williams' original film score.The game is entirely a single-player campaign; no multiplayer is included or supported.",
+          "thumbnail": "/images/dos/darkforces-thumb.png",
+          "background": "/images/dos/darkforces-background.png",
+          "backgroundPixelated": true
+        },
+        {
+          "props": {
+            "uid": "e83ca20a-8d03-43ad-a2a8-c0a1f42099b5",
+            "archive": "/content/dos/descent/descent.zip",
+            "autoStartPath": "descent.bat"
+          },
+          "type": "dos",
+          "title": "Descent (Demo)",
+          "description": "The Post-Terran Minerals Corporation (PTMC) digs up minerals on all nine planets of the solar system, employing humans and robots to do its job. Unfortunately, the mining robots are now being controlled by a hacker, and have taken the human workers hostage. The PTMC has tried to get the robots back under their control, but communication with the mining stations has been lost. In desperation, the PTMC modifies a Pyro-GX ship for combat and hires a mercenary, codenamed \"Material Defender\", to fly it. The mission is to destroy the infected mines and rescue human hostages, destroying any hostile robot that gets in the way.Descent is a 3D first-person game that puts the player at the controls of the Pyro-GX spaceship. Descent is notable in that the player travels through various interior locations (mines) but can do so in 720 degrees of movement. The ship however only moves forward and backward in any of the directions it is facing. The ship is able to use a variety of weapons scattered as power-ups throughout each level. They include: standard lasers, the Vulcan Cannon (a chaingun-like weapon), the Spreadfire Cannon (a rapidly firing, shotgun-like energy weapon), the Plasma Cannon (a rapidly firing energy weapon more suited for medium-range combat), and the Fusion Cannon (fires a ball of energy that's more powerful the longer it is charged it up, but could destroy the ship). All of these weapons, except for the Vulcan Cannon, use the ship's energy supply. The Pyro-PX is also capable of firing regular concussion missiles, homing missiles, proximity bombs (positioned midair, then explodes when something gets close to it), smart missiles (more powerful homing missiles that fire out homing energy balls upon impact with their target), and Mega Missiles (the ultimate weapons of mass destruction).The goal of each level is to locate and destroy the mine's reactor. Once completed, there is a countdown to find the escape hatch to get out of the mine before it explodes. As progress is made through the game, the AI will adapt to player's strategies and attempt to prevent the player from reaching the goals.",
+          "thumbnail": "/images/dos/descent-thumb.png",
+          "background": "/images/dos/descent-background.png",
+          "backgroundPixelated": true
+        },
+        {
+          "props": {
+            "uid": "8daf2bbc-21a9-4a39-b74c-b4bffe14c425",
+            "archive": "/content/dos/duke3d/Duke%203d.zip",
+            "autoStartPath": "duke3d.exe"
+          },
+          "type": "dos",
+          "title": "Duke Nukem 3D (Shareware)",
+          "description": "Aliens have landed in futuristic Los Angeles and it's up to the Duke to bring the pain and show them the door. After the initial entries of side-scrolling platform games, Duke Nukem 3D introduces a first-person perspective to the series and turns the game into a full-fledged shooter with 2.5D graphics.Duke's arsenal includes pistols, pipe bombs, laser trip mines, Nordenfelt guns, a chain gun and various rocket launchers, but also his mighty foot to kick enemies. The game sports a high level of interactivity. Many objects in the environment can be broken or interacted with, such as pool tables, arcade machines, glass, light switches and security cameras. The protagonist is also able to hand strippers dollars to have them remove their top.The main character regularly delivers commentary on the events through one-liners. There are twenty-eight levels, divided over three episodes, set in locations such as streets, a church, a space station, a Japanese villa, a football field and many modern environments. Enemies mainly include aliens, mutated humans and members of the police force that have been turned into Pig Cops. Next to weapons, Duke also has access to medikits, steroids to enhance his speed, night vision, protective boots, a hologram known as the \"holoduke\", and a jetpack to reach higher areas. Most of the gameplay is action-oriented, but there is also an amount of puzzles needed to progress or access secret areas.The game includes network play through the IPX protocol, for deathmatch and cooperative games.While the port for the Sega Saturn features, among other things, a new secret level called Area 51, the Sony PlayStation version adds a whole new 7 level long episode called Plug 'N' Pray with new enemies and rearranged music.",
+          "thumbnail": "/images/dos/duke3d-thumb.png",
+          "background": "/images/dos/duke3d-background.png",
+          "backgroundPixelated": true
+        },
+        {
+          "props": {
+            "uid": "86cc7916-6558-4d25-b1fd-c1a5487580b3",
+            "archive": "/content/dos/pop/pop.zip"
+          },
+          "type": "dos",
+          "title": "Prince of Persia (Demo)",
+          "description": "While the Sultan of Persia is fighting a war in a foreign country, his Grand Vizier Jaffar orchestrates a coup d'état. His way to the throne lies through the Sultan's lovely daughter. Jaffar kidnaps her and threatens to kill her if she refuses to marry him. Meanwhile, the man the Princess loves is thrown into the dungeon. He has only one hour to escape from his prison, defeat the guards on his way, and stop Jaffar before the terrible marriage takes place.Prince of Persia is a 2D platformer that is commonly regarded as a progenitor of the cinematic platformer genre. Rather than following the more common jump-and-run mechanics, it focuses on careful advancement through fairly complex levels, emphasizing the protagonist's vulnerability and survival aspect. Rotoscoping technique is used to give more realism to the animation of the characters' movements.The protagonist must avoid deadly traps, solve some simple jumping and environmental puzzles (such as stepping on pressure plates to raise portcullis), and engage in sword fights with the guards. The player character has an infinite amount of lives, but has to restart at the beginning of a level each time he dies, and must complete the game within an hour. The hero starts with three units of health, which can be replenished with small health potions or permanently increased with large jars.The Game Boy Color and SNES versions of the game feature additional levels and new enemies. The Genesis version has a new intro, an altered set of graphics and four new levels.",
+          "thumbnail": "/images/dos/pop-thumb.png",
+          "background": "/images/dos/pop-background.png",
+          "backgroundPixelated": true
+        },
+        {
+          "props": {
+            "uid": "b58d8629-98fb-4d16-852e-e9131746c697",
+            "archive": "/content/dos/tyrian2000/tyrian2000.zip"
+          },
+          "type": "dos",
+          "title": "Tyrian 2000",
+          "description": "Tyrian 2000 is a direct re-release of the original action smash, Tyrian. It is essentially the same game with an additional new episode (Hazudra Fodder), a revised engine (fewer bugs and better controls) and added Windows support. It also adds another option called \"Timed Battle\".Tyrian is nothing like your run-of-the-mill shoot-'em-up. It gained a following even larger than the classic Raptor: Call of the Shadows, and rightfully so: it has a plot. A plot, you ask? Yes. And even a complex one. You play the role of Trent Hawkings, this galaxy's ace solo fighter-pilot, whose luck forces him to save the galaxy, one time after another. Again and again, Trent must fight off MicroSol, a company with the evil intent of taking over the galaxy. Through your struggles, you will find yourself again and again betrayed by friends and allies, your parents will be killed and you will have to return to points you've already been to (with variations on the levels) in order to remove further threats to the galaxy and to yourself, all for the ultimate goal of overthrowing MicroSol.Tyrian also has two player arcade mode and supports network/modem/serial play. It features a multi-layered ship upgrade engine, in which you can change hulls, decide upon and upgrade your front and rear weapons, buy better shields and generators and even add ship \"sidekicks\". Tyrian's complete arsenal amound to over a dozen type of ships and over 100 weapon types!",
+          "thumbnail": "/images/dos/tyrian2000-thumb.png",
+          "background": "/images/dos/tyrian2000-background.png",
+          "backgroundPixelated": true
+        },
+        {
+          "props": {
+            "uid": "5629d2d1-812d-497a-bfa6-47f106943417",
+            "archive": "/content/dos/warcraft2/warcraft2.zip",
+            "autoStartPath": "war2",
+            "controllerMode": 1
+          },
+          "type": "dos",
+          "title": "WarCraft II: Tides of Darkness (Shareware)",
+          "description": "WarCraft II: Tides of Darkness is a fantasy themed real-time strategy game and sequel to WarCraft: Orcs & Humans set on the world of Azeroth. With the conquest of the kingdom of Azeroth in the first war, the orcs are now preparing for an invasion of Lordaeron and conquer the remaining human, dwarven and elvisch realms. In an effort to counter this invasion the humans, elves and dwarves formed an alliance in the hope to avert the same fate the kingdom of Azeroth met.The game comes with many new features such as fighting not only over land but also over sea and air, SVGA 640x480 resolution graphics with many newly-rendered buildings and units, multiplayer-support with up to eight players, as well as a Red Book audio soundtrack, and a scenario editor that allows players to design and create their own scenarios. The editor requires Windows 3.1 or greater, even though WarCraft II is a DOS-based game.",
+          "thumbnail": "/images/dos/warcraft2-thumb.png",
+          "background": "/images/dos/warcraft2-background.png",
+          "backgroundPixelated": true
+        },
+        {
+          "props": {
+            "uid": "42c796bb-8ae4-4a6d-a24a-c34b708993c5",
+            "archive": "/content/dos/wolf3d/Wolfenstein%203d.zip"
+          },
+          "type": "dos",
+          "title": "Wolfenstein 3D (Shareware)",
+          "description": "Wolfenstein 3D is an episodic first-person shooter and a follow-up to the top-down infiltration game Castle Wolfenstein. The game puts the player in the boots of B.J. Blazkowicz, an allied spy. There are six episodes: the first distributed completely as shareware; the second and the third available after registration; and the three final missions (which happen before the events of the first episode) available in the Nocturnal Missions pack.In the first episode (Escape from Wolfenstein), B.J. is captured, but overpowers a guard with the help of a concealed knife and manages to get out of his cell. Throughout the next nine levels, the player guides B.J. searching for an escape from Wolfenstein, guarded by Hans Grosse. After returning to Allied territory, B.J. is given the instructions to Operation: Eisenfaust, where he has to stop Dr. Schabbs and his army of mutant prototypes before they are released into the battlefields. The final mission (Die, Führer, Die!) has a simple goal: infiltrate the bunker under the Reichstag, and terminate Hitler (in a robotic suit) himself.The Nocturnal Missions are focused on the Nazi plans for chemical warfare, and start with Dark Secret, where B.J. hunts for lead researcher Dr. Otto Giftmacher. It's followed by Trail of the Madman, where the goal is capturing the war plans guarded by Gretel Grosse, and the final episode Confrontation, where B.J. meets General Fettgesicht, the planner for the chemical assault.Each episode has nine levels (eight regular and a final boss level), plus a secret level activated by a hidden switch somewhere in the eight first levels. Regular levels often feature a maze-like appearance or large areas with many enemies (the number of them on each area depends on the difficulty level), where the player must reach the exit elevator. To do so, he must kill the enemies (while it's possible to move behind the guards' backs and even there's a slight bonus in attacking them from behind, most enemies have to be dealt with by firepower), and depending on the level, activate \"push walls\" and/or get silver and golden keys to open certain doors.Many objects can be found in a level, from medikits, chicken meals, and even dog food (to restore health), ammo, and treasures, which solely exist for points. There are four weapons (knife, pistol, machine gun, and Gatling), all of them using the same bullets except the knife. The knife and the pistol are given at the start of the level, while the machine gun is either found (usually in secret areas) or picked up from SS troopers, and the Gatling is always dropped somewhere in the level. There are five kinds of enemies (excluding bosses) - Dogs (fast, but more a nuisance than life-threatening), Army Soldiers (dressed in a regular brown outfit, not very powerful but usually found in large groups), Officers (dressed in white, armed with a very accurate pistol and tough to kill), SS Troopers (blue attire, armed with a machine gun and tough to kill), and Mutants (the rarest and toughest of regular enemies, pale-skinned troopers with green clothes and a machine gun stuck in their chest).The player character has a number of lives; once he loses the last life, the game ends. To win extra lives, the player has to either find the 1-up item in the level or get 20,000 points (by killing enemies and capturing treasures or completing a level below the 'par' time while killing all enemies, finding all secrets by pushing walls, and collecting all treasure points).",
+          "thumbnail": "/images/dos/wolf3d-thumb.png",
+          "background": "/images/dos/wolf3d-background.png",
+          "backgroundPixelated": true
+        },
+        {
+          "props": {
+            "uid": "940aa726-3f64-4fc7-b320-361523a813dd",
+            "archive": "/content/dos/tim2/tim2.zip",
+            "autoStartPath": "tim2.exe",
+            "controllerMode": 1
+          },
+          "type": "dos",
+          "title": "Incredible Machine 2 (Demo)",
+          "description": "This game involves puzzle solving, while creating wacky machines.  Each level of the game contains a machine designed to do a specific task.  The only problem is, there are parts missing, and it is your job to figure out where to put what in order to get the machine to work.  The game features many wacky machine parts, including cats, super balls, lava lamps, flashlights, can openers, monkeys on treadmills, and many more wacky parts to get your machine working.  The game also comes with an editor to let you design your own unique machines from scratch.  These can either be for fun, or you can set it so that the person playing has to fill in the missing parts, just like in the campaign.",
+          "thumbnail": "/images/dos/tim2-thumb.png",
+          "background": "/images/dos/tim2-background.png",
+          "backgroundPixelated": true
+        },
+        {
+          "props": {
+            "uid": "e2896622-d9fe-47a0-8068-a80d0f65f6b9",
+            "archive": "/content/dos/rayman/rayman.zip"
+          },
+          "type": "dos",
+          "title": "Rayman (Demo)",
+          "description": "When a villain known only as Mr. Dark appears, trouble brews in Rayman's world. Mr. Dark captures the Toons - source of light and Rayman's friends. With no more light, evil creatures begin to roam, making the world unsafe for everyone. It’s up to you, as Rayman, to free your friends and put an end to Mr. Dark's dastardly schemes!Rayman is a side-scrolling platformer starring the titular Rayman, a big-nosed chap with no arms or legs. Rayman can jump and use his hair to hover for a short period of time. He can also attack by throwing his fists, or winding up his fists for a more powerful punch. He can occasionally find special power ups that grant him unlimited flying power, giving him the ability to navigate through tricky mazes.",
+          "thumbnail": "/images/dos/rayman-thumb.png",
+          "background": "/images/dos/rayman-background.png",
+          "backgroundPixelated": true
+        },
+        {
+          "props": {
+            "uid": "230a703a-7d8c-4e39-bb82-e9e12e9de92f",
+            "archive": "/content/dos/carmenusa/carmenusa.zip",
+            "controllerMode": 1
+          },
+          "type": "dos",
+          "title": "Where in the USA Is Carmen Sandiego? (Demo)",
+          "description": "A remake of Where in the U.S.A. is Carmen Sandiego?, this title features high-resolution graphics, digitized sound effects, and new locations.Sign your name up, then listen to the chief give you details about the suspect and the loot stolen by them, the location where the suspect was last seen, and the deadline by which you have to apprehend the suspect by. Question witnesses and contact informants to get information on the next location that the suspect headed to, as well as any information that could lead to a warrant. (You cannot arrest the suspect without one.) Determining where to go next will require research on your part, as everyone you question will reveal places, not cities that appear on the travel map.When you have decided where you should go next, you can travel to the next location. And from there, the above process gets repeated until you finally caught up with the suspect. A new feature on this map allows you to zoom in to a state, allowing you to look closer on its towns and terrain, and its surrounding states.",
+          "thumbnail": "/images/dos/carmenusa-thumb.png",
+          "background": "/images/dos/carmenusa-background.png",
+          "backgroundPixelated": true
+        },
+        {
+          "props": {
+            "uid": "47e74cae-3dd3-4737-aa48-7ad62b84063f",
+            "archive": "/content/dos/powerslave/powerslave.zip",
+            "autoStartPath": "ps.exe"
+          },
+          "type": "dos",
+          "title": "Powerslave (Demo)",
+          "description": "Powerslave is a first person shooter with an arcade style level progression. There are 20 consecutive single-player levels and 12 multiplayer deathmatch levels.Unknown alien forces have invaded the city of Karnak, and isolated it from the rest of the world. The inhabitants were subjected to torture, or injected with a substance, turning them into servient mummies. Even the mummy of king Ramses was not spared. After multiple failed attempts from world leaders to send armed forces to deal with the situation, you were chosen among a select few of the world's best special forces to infiltrate Karnak and destroy the invading forces from within. The mission turns awry, however, when your helicopter is shot down, and you find yourself alone, hoping to complete your mission and get out of the fray alive.Contrary to the later console adaptations of the game, each of the 20 singleplayer levels are played back to back with the player hunting for keys and secret areas to proceed onto the next level, similar to other games of the time, such as DOOM. The game features a single save slot for each playthrough and has a checkpoint system, allowing the player to continue from the latest checkpoint they have found. Levels range from ancient cities and temples through sprawling caverns of also lava variety all the way to the alien Kilmaat ships, and are filled with traps and keys hiding multiple pathways from initial access.The player starts their adventure with a mere Machete, but can find weapons such as a Revolver, M60, hand grenades and a Flamethrower to magical weapons such as the Cobra Staff that fires seeking snake projectiles, and the Eye of Ra gauntlet which summons Ra to strike enemies down with lightning. Basic enemies include mummies and men-turned-zombies representing ancient gods; Anubis, Bastet and Set. Mystical being such as the Am-Mit, Selkis and a lava beast called Magmantis are also included. The alien Kilmaat forces are represented by Kilmaat soldiers and Kilmaatikhan. Crazed wildlife is represented by Rats, Giant Piranhas, Terranian spiders and Omen Wasps.Although the multiplayer in the game is set up to be deathmatch-only, it's possible to play the singleplayer levels with enemies.",
+          "thumbnail": "/images/dos/powerslave-thumb.png",
+          "background": "/images/dos/powerslave-background.png",
+          "backgroundPixelated": true
+        },
+        {
+          "props": {
+            "uid": "b1dc9af9-ac37-4620-89a2-e8600e7c797d",
+            "archive": "/content/dos/alienrampage/alienrampage.zip"
+          },
+          "type": "dos",
+          "title": "Alien Rampage (Demo)",
+          "description": "Alien Rampage is a 2D side-scroller with large animated sprites and multiple layers of parallaxing backgrounds.You are a lone angry alien dude with a bad attitude. You crash landed on an inhospitable planet, and thus you set out to get back to a ship so you can leave this horrible place. To make it, you'll blast hundreds upon hundreds of nasty creatures, enemy bounty hunters, and you'll use some pretty impressive weaponry to do it.You'll also get to buy power ups and get help from the goofy local troll-like natives, to solve puzzles.The gameplay consists of running, jumping and shooting, with a big emphasis on shooting. The action is very gory, and is akin to DOOM in 2D.",
+          "thumbnail": "/images/dos/alienrampage-thumb.png",
+          "background": "/images/dos/alienrampage-background.png",
+          "backgroundPixelated": true
+        }
+      ]
     }
   ]
 }

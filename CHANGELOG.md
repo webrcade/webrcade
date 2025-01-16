@@ -1,5 +1,20 @@
 ## Change log
 
+### TBD (0.1.7)
+
+    - DOS
+      - Initial version of DOS (DosBox Pure) support
+      - Works similar to ScummVM (archive-based)
+      - Compatible with Manifest format
+      - Virtual Keyboard, Gamepad, and touch input support
+    - Commodore 64
+      - Left trigger + right analog: Toggle virtual keyboard
+      - Bug fixes (disable input)
+    - ScummVM
+      - Left trigger + right analog: Toggle virtual keyboard
+    - Arcade (FBNeo)
+      - Samples fix
+
 ### 08/11/24 (0.1.6)
 
     - General

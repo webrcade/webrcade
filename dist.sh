@@ -56,6 +56,8 @@ wget -O - https://webrcade.github.io/webrcade-utils/createdats.js > createdats.j
     { fail 'Unable to retrieve create dats.'; }
 wget -O - https://webrcade.github.io/webrcade-utils/roms-c64.json > roms-c64.json ||
     { fail 'Unable to retrieve c64 roms.'; }
+wget -O - https://webrcade.github.io/webrcade-utils/roms-dos.json > roms-dos.json ||
+    { fail 'Unable to retrieve dost roms.'; }
 cd "$DIR" || { fail 'Unable to change to webrcade.'; }
 cd public || { fail 'Unable to change to public.'; }
 node "$UTILS/createdats-fbneo.js" || { fail 'Unable to execute create dats fbneo.'; }
@@ -309,6 +311,16 @@ npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
 npm run build || { fail 'Unable to build scummvm.'; }
 mkdir -p "$DIST_OUT_APP/retro-commodore-8bit"  || { fail 'Error creating commodore 8bit output directory.'; }
 cp -R build/. "$DIST_OUT_APP/retro-commodore-8bit" || { fail 'failed to copy commodore 8bit to out.'; }
+
+##
+## webrcade-app-retro-dosbox-pure
+##
+cd "$DIR/../webrcade-app-retro-dosbox-pure" || { fail 'Unable to change to dosbox pure.'; }
+npm install . || { fail 'Unable to install dosbox dependencies.'; }
+npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
+npm run build || { fail 'Unable to build dosbox.'; }
+mkdir -p "$DIST_OUT_APP/retro-dosbox-pure"  || { fail 'Error creating dosbox output directory.'; }
+cp -R build/. "$DIST_OUT_APP/retro-dosbox-pure" || { fail 'failed to copy dosbox to out.'; }
 
 ##
 ## webrcade-app-prboom

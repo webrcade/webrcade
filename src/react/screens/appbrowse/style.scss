@@ -1,6 +1,8 @@
 .webrcade {
   display: flex;
   flex-direction: column;
+  // opacity: 0;
+  // transition: opacity 1 ease; /* Transition the opacity over 1 second */
 
   &-outer {
     margin: auto;
