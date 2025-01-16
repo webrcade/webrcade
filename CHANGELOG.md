@@ -14,6 +14,8 @@
       - Left trigger + right analog: Toggle virtual keyboard
     - Arcade (FBNeo)
       - Samples fix
+    - Docker image
+      - HTTPS support (use own certs, or automatically generates self-signed)
 
 ### 08/11/24 (0.1.6)
 
