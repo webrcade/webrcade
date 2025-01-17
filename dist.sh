@@ -323,6 +323,16 @@ mkdir -p "$DIST_OUT_APP/retro-dosbox-pure"  || { fail 'Error creating dosbox out
 cp -R build/. "$DIST_OUT_APP/retro-dosbox-pure" || { fail 'failed to copy dosbox to out.'; }
 
 ##
+## webrcade-app-retro-fceumm
+##
+cd "$DIR/../webrcade-app-retro-fceumm" || { fail 'Unable to change to retro fceumm.'; }
+npm install . || { fail 'Unable to install dosbox dependencies.'; }
+npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
+npm run build || { fail 'Unable to build retro fceumm.'; }
+mkdir -p "$DIST_OUT_APP/retro-fceumm"  || { fail 'Error creating retro fceumm output directory.'; }
+cp -R build/. "$DIST_OUT_APP/retro-fceumm" || { fail 'failed to copy retro fceumm to out.'; }
+
+##
 ## webrcade-app-prboom
 ##
 
