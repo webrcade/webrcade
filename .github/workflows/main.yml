@@ -1,7 +1,7 @@
 
 name: Build
 
-on: 
+on:
   workflow_dispatch:
   push:
     branches:
@@ -9,7 +9,7 @@ on:
   pull_request:
     branches:
     - master
-  
+
 jobs:
   build:
 
@@ -29,7 +29,7 @@ jobs:
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
-        node-version: ${{ matrix.node-version }}        
+        node-version: ${{ matrix.node-version }}
 
     - name: Clone dependencies
       run: |
@@ -42,8 +42,8 @@ jobs:
         chmod +x ./dist-version.sh && \
         ./dist-version.sh "CI Build" && \
         cp ./CHANGELOG.md public
-        
-    - uses: actions/upload-artifact@v3
+
+    - uses: actions/upload-artifact@v4
       with:
         name: webrcade-full-source
         path: src
@@ -55,8 +55,8 @@ jobs:
         ./dist.sh && \
         chmod +x dist-package.sh && \
         ./dist-package.sh
-        
-    - uses: actions/upload-artifact@v3
+
+    - uses: actions/upload-artifact@v4
       with:
         name: webrcade-dist
         path: src/webrcade/dist/package
