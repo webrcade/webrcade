@@ -1,9 +1,9 @@
 ## Change log
 
-### TBD (0.1.7)
+### 01/31/25 (0.1.7)
 
     - DOS
-      - Initial version of DOS (DosBox Pure) support
+      - Initial version of DOS (DOSBox Pure) support
       - Works similar to ScummVM (archive-based)
       - Compatible with Manifest format
       - Virtual Keyboard, Gamepad, and touch input support
@@ -16,6 +16,8 @@
       - Samples fix
     - Docker image
       - HTTPS support (use own certs, or automatically generates self-signed)
+    - iOS
+      - Fixed full screen issue when adding to home screen
 
 ### 08/11/24 (0.1.6)
 
