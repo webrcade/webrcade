@@ -231,6 +231,9 @@ export class Webrcade extends Component {
       <AppScreen
         app={app}
         feedProps={feed.getProps()}
+        popstateCallback={() => {
+          this.popstateHandler();
+        }}
         exitCallback={() => {
           this.setState({
             browseHidden: false
