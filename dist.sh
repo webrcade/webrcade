@@ -57,7 +57,9 @@ wget -O - https://webrcade.github.io/webrcade-utils/createdats.js > createdats.j
 wget -O - https://webrcade.github.io/webrcade-utils/roms-c64.json > roms-c64.json ||
     { fail 'Unable to retrieve c64 roms.'; }
 wget -O - https://webrcade.github.io/webrcade-utils/roms-dos.json > roms-dos.json ||
-    { fail 'Unable to retrieve dost roms.'; }
+    { fail 'Unable to retrieve dos roms.'; }
+wget -O - https://webrcade.github.io/webrcade-utils/roms-ds.json > roms-ds.json ||
+    { fail 'Unable to retrieve ds roms.'; }
 cd "$DIR" || { fail 'Unable to change to webrcade.'; }
 cd public || { fail 'Unable to change to public.'; }
 node "$UTILS/createdats-fbneo.js" || { fail 'Unable to execute create dats fbneo.'; }
