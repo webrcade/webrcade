@@ -229,7 +229,7 @@ const loadFeedFromUrl = (url) => {
     const start = Date.now();
     let feedJson = null, newFeed = null;
     let errorMessage = null;
-    new FetchAppData(url).fetch()
+    new FetchAppData(url, true /* Add prefix */).fetch()
       .then(response => response.blob())
       .then(blob => getFeedAsJson(blob))
       .then(json => {
