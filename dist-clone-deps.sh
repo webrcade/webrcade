@@ -66,5 +66,7 @@ git clone https://github.com/webrcade/webrcade-app-retro-dosbox-pure.git ||
   { fail 'Unable to clone dos'; }
 git clone https://github.com/webrcade/webrcade-app-retro-fceumm.git ||
   { fail 'Unable to clone retro fceumm'; }
+git clone https://github.com/webrcade/webrcade-app-retro-melonds.git ||
+  { fail 'Unable to clone retro melonds'; }
 git clone https://github.com/webrcade/webrcade-app-standalone.git ||
   { fail 'Unable to clone standalone'; }

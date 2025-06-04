@@ -335,6 +335,16 @@ mkdir -p "$DIST_OUT_APP/retro-fceumm"  || { fail 'Error creating retro fceumm ou
 cp -R build/. "$DIST_OUT_APP/retro-fceumm" || { fail 'failed to copy retro fceumm to out.'; }
 
 ##
+## webrcade-app-retro-melonds
+##
+cd "$DIR/../webrcade-app-retro-melonds" || { fail 'Unable to change to retro melonds.'; }
+npm install . || { fail 'Unable to install melonds dependencies.'; }
+npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
+npm run build || { fail 'Unable to build retro melonds.'; }
+mkdir -p "$DIST_OUT_APP/retro-melonds"  || { fail 'Error creating retro melonds output directory.'; }
+cp -R build/. "$DIST_OUT_APP/retro-melonds" || { fail 'failed to copy retro melonds to out.'; }
+
+##
 ## webrcade-app-prboom
 ##
 
