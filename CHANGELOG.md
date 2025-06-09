@@ -1,5 +1,21 @@
 ## Change log
 
+### 06/10/25 (0.1.8)
+
+    - Nintendo DS
+      - Touch, Mouse, and Gamepad (with Analog for stylus) support
+      - Book mode support
+      - Dual analog mode (for FPS-style controls with gamepad)
+      - Support for multiple screen layouts and screen gap adjustment
+      - On-screen microphone support
+    - Editor
+      - Fixed issue with copying URLs on iOS (URL dialog)
+    - General
+      - Feed URLs no longer require the https:// prefix
+      - Fixed Safari (iOS and MacOS) issue where a blank page would appear
+        after loading 2 games (in the player or editor)
+      - Fix for disabling context menus on mobile (iOS)
+
 ### 01/31/25 (0.1.7)
 
     - DOS
