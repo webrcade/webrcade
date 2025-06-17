@@ -212,7 +212,7 @@ const loadFeedFromLocal = (localFeed) => {
   });
 }
 
-const loadFeedFromUrl = (url) => {
+const loadFeedFromUrl = (url, addPrefix = true) => {
   const {
     ScreenEnum,
     LAST_FEED_PROP,
@@ -229,7 +229,7 @@ const loadFeedFromUrl = (url) => {
     const start = Date.now();
     let feedJson = null, newFeed = null;
     let errorMessage = null;
-    new FetchAppData(url, true /* Add prefix */).fetch()
+    new FetchAppData(url, addPrefix).fetch()
       .then(response => response.blob())
       .then(blob => getFeedAsJson(blob))
       .then(json => {
