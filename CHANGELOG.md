@@ -1,6 +1,6 @@
 ## Change log
 
-### 06/10/25 (0.1.8)
+### 06/24/25 (0.1.8)
 
     - Nintendo DS
       - Touch, Mouse, and Gamepad (with Analog for stylus) support
