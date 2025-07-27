@@ -72,6 +72,7 @@ npm install . || { fail 'Unable to install webrcade dependencies.'; }
 npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
 npm run build || { fail 'Unable to build webrcade.'; }
 cp -R build/. "$DIST_OUT" || { fail 'failed to copy to out.'; }
+[ -f "$DIST_OUT/config.js" ] || { fail 'config.js manquant dans dist/out'; }
 
 ##
 ## webrcade-app-snes9x
