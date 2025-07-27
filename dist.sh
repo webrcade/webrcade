@@ -1,6 +1,11 @@
 #!/bin/bash
 
+set -euo pipefail
+
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+export NPM_CONFIG_LEGACY_PEER_DEPS=true
+export NPM_CONFIG_AUDIT=false
+export NPM_CONFIG_FUND=false
 DIST="$DIR/dist"
 DIST_OUT="$DIST/out"
 DIST_OUT_APP="$DIST_OUT/app"
