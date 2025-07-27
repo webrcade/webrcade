@@ -37,6 +37,23 @@ import {
 
 require("./style.scss");
 
+// -----------------------------------------------------------------------------
+// CUSTOM FEED SUPPORT
+// -----------------------------------------------------------------------------
+/**
+ * Retourne l'URL du feed custom si elle a été injectée via window.CUSTOM_FEED_URL.
+ * On filtre les valeurs vides / "undefined" / "null".
+ */
+const getCustomFeedUrl = () => {
+  try {
+    const u = window && window.CUSTOM_FEED_URL ? String(window.CUSTOM_FEED_URL).trim() : "";
+    return (u && u !== "undefined" && u !== "null") ? u : null;
+  } catch (_) {
+    return null;
+  }
+};
+// -----------------------------------------------------------------------------
+
 export class Webrcade extends Component {
   constructor() {
     super();
@@ -163,31 +180,64 @@ export class Webrcade extends Component {
           dropbox.checkLinkResult()
             .catch(e => { errorMessage = e })
             .finally(() => {
-              if (config.isPublicServer()) {
-                loadInitialFeed(null)
-                  .then(() =>displayMessage(errorMessage));
-              } else {
-                // Attempt to load default feed from public server
+              // -----------------------------------------------------------------
+              // CUSTOM: on tente d'abord de charger le CUSTOM_FEED_URL si existant
+              // -----------------------------------------------------------------
+              const customUrl = getCustomFeedUrl();
+              const fallbackRemote = "https://play.webrcade.com/default-feed.json";
+
+              const tryFetchFeed = (url) => {
                 let feedJson = null;
-                let defFeed = null;
-                new FetchAppData("https://play.webrcade.com/default-feed.json").fetch()
+                let parsedFeed = null;
+                return new FetchAppData(url).fetch()
                   .then(response => response.json())
                   .then(json => {
                     feedJson = json;
-                    return parseFeed(json)
+                    return parseFeed(json);
                   })
                   .then(feed => {
-                    // set default feed
+                    // mémorise ce feed comme "default" local (pour l'éditeur, etc.)
                     setDefaultFeed(feedJson);
-                    // set feed here
-                    defFeed = feed;
-                  })
-                  .catch(e => LOG.info(e))
-                  .finally(() => {
-                    loadInitialFeed(defFeed)
-                      .then(() => displayMessage(errorMessage));
-                  })
+                    parsedFeed = feed;
+                    return parsedFeed;
+                  });
+              };
+
+              if (config.isPublicServer()) {
+                // Mode "public" d'origine : utilise la mécanique existante
+                loadInitialFeed(null)
+                  .then(() => displayMessage(errorMessage));
+              } else {
+                // Mode hébergé "privé" : on essaie dans cet ordre :
+                // 1. CUSTOM_FEED_URL s'il est défini
+                // 2. le feed par défaut distant officiel
+                // 3. si tout échoue, loadInitialFeed(null) utilisera le feed embarqué
+                const loadChain = (async () => {
+                  let defFeed = null;
+
+                  if (customUrl) {
+                    try {
+                      defFeed = await tryFetchFeed(customUrl);
+                    } catch (e) {
+                      LOG.warn("Custom feed load failed, falling back to official default.", e);
+                    }
+                  }
+
+                  if (!defFeed) {
+                    try {
+                      defFeed = await tryFetchFeed(fallbackRemote);
+                    } catch (e) {
+                      LOG.info("Official default feed load failed.", e);
+                    }
+                  }
+
+                  // Quoi qu'il arrive : on continue le flow normal
+                  return loadInitialFeed(defFeed);
+                })();
+
+                loadChain.then(() => displayMessage(errorMessage));
               }
+              // -----------------------------------------------------------------
           })
         });
       }
