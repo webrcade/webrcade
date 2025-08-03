@@ -1,0 +1,370 @@
+npm WARN old lockfile 
+npm WARN old lockfile The package-lock.json file was created with an old version of npm,
+npm WARN old lockfile so supplemental metadata must be fetched from the registry.
+npm WARN old lockfile 
+npm WARN old lockfile This is a one-time fix-up, please be patient...
+npm WARN old lockfile 
+npm WARN deprecated is-data-descriptor@0.1.4: Please upgrade to v0.1.5
+npm WARN deprecated is-accessor-descriptor@0.1.6: Please upgrade to v0.1.7
+npm WARN deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+npm WARN deprecated is-accessor-descriptor@1.0.0: Please upgrade to v1.0.1
+npm WARN deprecated is-data-descriptor@1.0.0: Please upgrade to v1.0.1
+npm WARN deprecated is-data-descriptor@1.0.0: Please upgrade to v1.0.1
+npm WARN deprecated is-accessor-descriptor@1.0.0: Please upgrade to v1.0.1
+npm WARN deprecated is-data-descriptor@1.0.0: Please upgrade to v1.0.1
+npm WARN deprecated is-accessor-descriptor@1.0.0: Please upgrade to v1.0.1
+npm WARN deprecated is-accessor-descriptor@1.0.0: Please upgrade to v1.0.1
+npm WARN deprecated is-data-descriptor@1.0.0: Please upgrade to v1.0.1
+npm WARN deprecated stable@0.1.8: Modern JS already guarantees Array#sort() is a stable sort, so this library is deprecated. See the compatibility table on MDN: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#browser_compatibility
+npm WARN deprecated source-map-url@0.4.1: See https://github.com/lydell/source-map-url#deprecated
+npm WARN deprecated move-concurrently@1.0.1: This package is no longer supported.
+npm WARN deprecated flatten@1.0.3: flatten is deprecated in favor of utility frameworks such as lodash.
+npm WARN deprecated @babel/plugin-proposal-private-property-in-object@7.16.7: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-private-property-in-object instead.
+npm WARN deprecated @babel/plugin-proposal-unicode-property-regex@7.16.7: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-unicode-property-regex instead.
+npm WARN deprecated @babel/plugin-proposal-optional-catch-binding@7.16.7: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-optional-catch-binding instead.
+npm WARN deprecated @babel/plugin-proposal-private-methods@7.16.7: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-private-methods instead.
+npm WARN deprecated @babel/plugin-proposal-logical-assignment-operators@7.16.7: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-logical-assignment-operators instead.
+npm WARN deprecated @babel/plugin-proposal-numeric-separator@7.16.7: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-numeric-separator instead.
+npm WARN deprecated @babel/plugin-proposal-json-strings@7.16.7: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-json-strings instead.
+npm WARN deprecated @babel/plugin-proposal-nullish-coalescing-operator@7.16.7: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-nullish-coalescing-operator instead.
+npm WARN deprecated @babel/plugin-proposal-export-namespace-from@7.16.7: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-export-namespace-from instead.
+npm WARN deprecated @babel/plugin-proposal-class-properties@7.7.4: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-class-properties instead.
+npm WARN deprecated @babel/plugin-proposal-dynamic-import@7.16.7: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-dynamic-import instead.
+npm WARN deprecated @babel/plugin-proposal-class-static-block@7.16.7: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-class-static-block instead.
+npm WARN deprecated @babel/plugin-proposal-optional-chaining@7.9.0: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-optional-chaining instead.
+npm WARN deprecated @babel/plugin-proposal-nullish-coalescing-operator@7.8.3: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-nullish-coalescing-operator instead.
+npm WARN deprecated @babel/plugin-proposal-numeric-separator@7.8.3: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-numeric-separator instead.
+npm WARN deprecated @babel/plugin-proposal-class-properties@7.8.3: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-class-properties instead.
+npm WARN deprecated @babel/plugin-proposal-class-properties@7.16.7: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-class-properties instead.
+npm WARN deprecated rollup-plugin-terser@5.3.1: This package has been deprecated and is no longer maintained. Please use @rollup/plugin-terser
+npm WARN deprecated rimraf@2.6.3: Rimraf versions prior to v4 are no longer supported
+npm WARN deprecated request-promise-native@1.0.9: request-promise-native has been deprecated because it extends the now deprecated request package, see https://github.com/request/request/issues/3142
+npm WARN deprecated figgy-pudding@3.5.2: This module is no longer supported.
+npm WARN deprecated @hapi/topo@3.1.6: This version has been deprecated and is no longer supported or maintained
+npm WARN deprecated @hapi/bourne@1.3.2: This version has been deprecated and is no longer supported or maintained
+npm WARN deprecated @babel/plugin-proposal-async-generator-functions@7.16.8: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-async-generator-functions instead.
+npm WARN deprecated rimraf@2.7.1: Rimraf versions prior to v4 are no longer supported
+npm WARN deprecated urix@0.1.0: Please see https://github.com/lydell/urix#deprecated
+npm WARN deprecated har-validator@5.1.5: this library is no longer supported
+npm WARN deprecated lodash.template@4.5.0: This package is deprecated. Use https://socket.dev/npm/package/eta instead.
+npm WARN deprecated copy-concurrently@1.0.5: This package is no longer supported.
+npm WARN deprecated @babel/plugin-proposal-optional-chaining@7.16.7: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-optional-chaining instead.
+npm WARN deprecated domexception@1.0.1: Use your platform's native DOMException instead
+npm WARN deprecated abab@2.0.5: Use your platform's native atob() and btoa() methods instead
+npm WARN deprecated resolve-url@0.2.1: https://github.com/lydell/resolve-url#deprecated
+npm WARN deprecated glob@7.2.0: Glob versions prior to v9 are no longer supported
+npm WARN deprecated @babel/plugin-proposal-object-rest-spread@7.16.7: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-object-rest-spread instead.
+npm WARN deprecated source-map-resolve@0.5.3: See https://github.com/lydell/source-map-resolve#deprecated
+npm WARN deprecated left-pad@1.3.0: use String.prototype.padStart()
+npm WARN deprecated w3c-hr-time@1.0.2: Use your platform's native performance.now() and performance.timeOrigin.
+npm WARN deprecated q@1.5.1: You or someone you depend on is using Q, the JavaScript Promise library that gave JavaScript developers strong feelings about promises. They can almost certainly migrate to the native JavaScript promise now. Thank you literally everyone for joining me in this bet against the odds. Be excellent to each other.
+npm WARN deprecated 
+npm WARN deprecated (For a CapTP with native promises, see @endo/eventual-send and @endo/captp)
+npm WARN deprecated sourcemap-codec@1.4.8: Please use @jridgewell/sourcemap-codec instead
+npm WARN deprecated fs-write-stream-atomic@1.0.10: This package is no longer supported.
+npm WARN deprecated sane@4.1.0: some dependency vulnerabilities fixed, support for node < 10 dropped, and newer ECMAScript syntax/features added
+npm WARN deprecated eslint-loader@3.0.3: This loader has been deprecated. Please use eslint-webpack-plugin
+npm WARN deprecated querystring@0.2.0: The querystring API is considered Legacy. new code should use the URLSearchParams API instead.
+npm WARN deprecated workbox-google-analytics@4.3.1: It is not compatible with newer versions of GA starting with v4, as long as you are using GAv3 it should be ok, but the package is not longer being maintained
+npm WARN deprecated babel-eslint@10.1.0: babel-eslint is now @babel/eslint-parser. This package will no longer receive updates.
+npm WARN deprecated @hapi/address@2.1.4: Moved to 'npm install @sideway/address'
+npm WARN deprecated html-webpack-plugin@4.0.0-beta.11: please switch to a stable version
+npm WARN deprecated rollup-plugin-babel@4.4.0: This package has been deprecated and is no longer maintained. Please use @rollup/plugin-babel.
+npm WARN deprecated uuid@3.4.0: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
+npm WARN deprecated request@2.88.2: request has been deprecated, see https://github.com/request/request/issues/3142
+npm WARN deprecated @hapi/hoek@8.5.1: This version has been deprecated and is no longer supported or maintained
+npm WARN deprecated @hapi/joi@15.1.1: Switch to 'npm install joi'
+npm WARN deprecated svgo@1.3.2: This SVGO version is no longer supported. Upgrade to v2.x.x.
+npm WARN deprecated eslint@6.8.0: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+npm WARN deprecated core-js@2.6.12: core-js@<3.23.3 is no longer maintained and not recommended for usage due to the number of issues. Because of the V8 engine whims, feature detection in old core-js versions could cause a slowdown up to 100x even if nothing is polyfilled. Some versions have web compatibility issues. Please, upgrade your dependencies to the actual version of core-js.
+npm WARN deprecated core-js-pure@3.20.2: core-js-pure@<3.23.3 is no longer maintained and not recommended for usage due to the number of issues. Because of the V8 engine whims, feature detection in old core-js versions could cause a slowdown up to 100x even if nothing is polyfilled. Some versions have web compatibility issues. Please, upgrade your dependencies to the actual version of core-js-pure.
+npm WARN deprecated core-js@3.20.2: core-js@<3.23.3 is no longer maintained and not recommended for usage due to the number of issues. Because of the V8 engine whims, feature detection in old core-js versions could cause a slowdown up to 100x even if nothing is polyfilled. Some versions have web compatibility issues. Please, upgrade your dependencies to the actual version of core-js.
+
+> @webrcade/app-common@0.1.0 prepare
+> run-s build
+
+
+> @webrcade/app-common@0.1.0 build
+> npm run icons && microbundle-crl --no-compress --format modern,cjs
+
+
+> @webrcade/app-common@0.1.0 icons
+> node icons/build.js
+
+Browserslist: caniuse-lite is outdated. Please run:
+  npx browserslist@latest --update-db
+  Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
+[34mBuild "appCommon" to dist:[39m
+       [31m120 kB[39m: [37mindex.js[39m.gz
+      [31m97.4 kB[39m: [37mindex.js[39m.br
+       [31m119 kB[39m: [37mindex.modern.js[39m.gz
+      [31m96.9 kB[39m: [37mindex.modern.js[39m.br
+
+added 1838 packages, and audited 1839 packages in 1m
+
+126 packages are looking for funding
+  run `npm fund` for details
+
+195 vulnerabilities (7 low, 130 moderate, 47 high, 11 critical)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues possible (including breaking changes), run:
+  npm audit fix --force
+
+Some issues need review, and may require choosing
+a different dependency.
+
+Run `npm audit` for details.
+
+> @webrcade/app-common@0.1.0 build
+> npm run icons && microbundle-crl --no-compress --format modern,cjs
+
+
+> @webrcade/app-common@0.1.0 icons
+> node icons/build.js
+
+Browserslist: caniuse-lite is outdated. Please run:
+  npx browserslist@latest --update-db
+  Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
+[34mBuild "appCommon" to dist:[39m
+       [31m120 kB[39m: [37mindex.js[39m.gz
+      [31m97.5 kB[39m: [37mindex.js[39m.br
+       [31m119 kB[39m: [37mindex.modern.js[39m.gz
+      [31m96.9 kB[39m: [37mindex.modern.js[39m.br
+
+changed 1 package, and audited 3 packages in 33s
+
+found 0 vulnerabilities
+npm WARN deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+npm WARN deprecated glob@8.1.0: Glob versions prior to v9 are no longer supported
+
+added 38 packages, and audited 39 packages in 2s
+
+2 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+--2025-07-27 19:21:50--  https://webrcade.github.io/webrcade-utils/roms-scummvm.json
+Resolving webrcade.github.io (webrcade.github.io)... 185.199.108.153, 185.199.110.153, 185.199.109.153, ...
+Connecting to webrcade.github.io (webrcade.github.io)|185.199.108.153|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 33682 (33K) [application/json]
+Saving to: ‘STDOUT’
+
+     0K .......... .......... .......... ..                   100% 6.06M=0.005s
+
+2025-07-27 19:21:50 (6.06 MB/s) - written to stdout [33682/33682]
+
+--2025-07-27 19:21:50--  https://webrcade.github.io/webrcade-utils/createdats-fbneo.js
+Resolving webrcade.github.io (webrcade.github.io)... 185.199.108.153, 185.199.110.153, 185.199.109.153, ...
+Connecting to webrcade.github.io (webrcade.github.io)|185.199.108.153|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 4208 (4.1K) [application/javascript]
+Saving to: ‘STDOUT’
+
+     0K ....                                                  100% 3.73M=0.001s
+
+2025-07-27 19:21:50 (3.73 MB/s) - written to stdout [4208/4208]
+
+--2025-07-27 19:21:50--  https://webrcade.github.io/webrcade-utils/createdats.js
+Resolving webrcade.github.io (webrcade.github.io)... 185.199.111.153, 185.199.108.153, 185.199.110.153, ...
+Connecting to webrcade.github.io (webrcade.github.io)|185.199.111.153|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 33476 (33K) [application/javascript]
+Saving to: ‘STDOUT’
+
+     0K .......... .......... .......... ..                   100% 7.61M=0.004s
+
+2025-07-27 19:21:51 (7.61 MB/s) - written to stdout [33476/33476]
+
+--2025-07-27 19:21:51--  https://webrcade.github.io/webrcade-utils/roms-c64.json
+Resolving webrcade.github.io (webrcade.github.io)... 185.199.109.153, 185.199.111.153, 185.199.108.153, ...
+Connecting to webrcade.github.io (webrcade.github.io)|185.199.109.153|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 224651 (219K) [application/json]
+Saving to: ‘STDOUT’
+
+     0K .......... .......... .......... .......... .......... 22% 5.64M 0s
+    50K .......... .......... .......... .......... .......... 45% 6.87M 0s
+   100K .......... .......... .......... .......... .......... 68% 16.5M 0s
+   150K .......... .......... .......... .......... .......... 91% 24.1M 0s
+   200K .......... .........                                  100% 7.00M=0.02s
+
+2025-07-27 19:21:51 (9.14 MB/s) - written to stdout [224651/224651]
+
+--2025-07-27 19:21:51--  https://webrcade.github.io/webrcade-utils/roms-dos.json
+Resolving webrcade.github.io (webrcade.github.io)... 185.199.110.153, 185.199.109.153, 185.199.111.153, ...
+Connecting to webrcade.github.io (webrcade.github.io)|185.199.110.153|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 411110 (401K) [application/json]
+Saving to: ‘STDOUT’
+
+     0K .......... .......... .......... .......... .......... 12% 5.61M 0s
+    50K .......... .......... .......... .......... .......... 24% 10.5M 0s
+   100K .......... .......... .......... .......... .......... 37% 9.89M 0s
+   150K .......... .......... .......... .......... .......... 49% 23.9M 0s
+   200K .......... .......... .......... .......... .......... 62% 18.4M 0s
+   250K .......... .......... .......... .......... .......... 74% 17.8M 0s
+   300K .......... .......... .......... .......... .......... 87% 21.2M 0s
+   350K .......... .......... .......... .......... .......... 99% 24.4M 0s
+   400K .                                                     100% 4.21M=0.03s
+
+2025-07-27 19:21:51 (12.9 MB/s) - written to stdout [411110/411110]
+
+--2025-07-27 19:21:51--  https://webrcade.github.io/webrcade-utils/roms-ds.json
+Resolving webrcade.github.io (webrcade.github.io)... 185.199.108.153, 185.199.110.153, 185.199.109.153, ...
+Connecting to webrcade.github.io (webrcade.github.io)|185.199.108.153|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 574495 (561K) [application/json]
+Saving to: ‘STDOUT’
+
+     0K .......... .......... .......... .......... ..........  8% 5.27M 0s
+    50K .......... .......... .......... .......... .......... 17% 8.11M 0s
+   100K .......... .......... .......... .......... .......... 26% 22.8M 0s
+   150K .......... .......... .......... .......... .......... 35% 19.6M 0s
+   200K .......... .......... .......... .......... .......... 44% 12.8M 0s
+   250K .......... .......... .......... .......... .......... 53% 21.3M 0s
+   300K .......... .......... .......... .......... .......... 62% 23.4M 0s
+   350K .......... .......... .......... .......... .......... 71% 20.1M 0s
+   400K .......... .......... .......... .......... .......... 80% 23.2M 0s
+   450K .......... .......... .......... .......... .......... 89% 23.2M 0s
+   500K .......... .......... .......... .......... .......... 98% 22.6M 0s
+   550K .......... .                                          100% 16.2M=0.04s
+
+2025-07-27 19:21:51 (14.6 MB/s) - written to stdout [574495/574495]
+
+npm WARN old lockfile 
+npm WARN old lockfile The package-lock.json file was created with an old version of npm,
+npm WARN old lockfile so supplemental metadata must be fetched from the registry.
+npm WARN old lockfile 
+npm WARN old lockfile This is a one-time fix-up, please be patient...
+npm WARN old lockfile 
+npm WARN deprecated is-data-descriptor@0.1.4: Please upgrade to v0.1.5
+npm WARN deprecated is-accessor-descriptor@0.1.6: Please upgrade to v0.1.7
+npm WARN deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+npm WARN deprecated @npmcli/move-file@1.1.2: This functionality has been moved to @npmcli/fs
+npm WARN deprecated is-data-descriptor@1.0.0: Please upgrade to v1.0.1
+npm WARN deprecated is-accessor-descriptor@1.0.0: Please upgrade to v1.0.1
+npm WARN deprecated is-data-descriptor@1.0.0: Please upgrade to v1.0.1
+npm WARN deprecated is-accessor-descriptor@1.0.0: Please upgrade to v1.0.1
+npm WARN deprecated is-data-descriptor@1.0.0: Please upgrade to v1.0.1
+npm WARN deprecated is-accessor-descriptor@1.0.0: Please upgrade to v1.0.1
+npm WARN deprecated is-accessor-descriptor@1.0.0: Please upgrade to v1.0.1
+npm WARN deprecated is-data-descriptor@1.0.0: Please upgrade to v1.0.1
+npm WARN deprecated stable@0.1.8: Modern JS already guarantees Array#sort() is a stable sort, so this library is deprecated. See the compatibility table on MDN: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#browser_compatibility
+npm WARN deprecated source-map-url@0.4.1: See https://github.com/lydell/source-map-url#deprecated
+npm WARN deprecated move-concurrently@1.0.1: This package is no longer supported.
+npm WARN deprecated flatten@1.0.3: flatten is deprecated in favor of utility frameworks such as lodash.
+npm WARN deprecated @babel/plugin-proposal-unicode-property-regex@7.16.7: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-unicode-property-regex instead.
+npm WARN deprecated @babel/plugin-proposal-private-methods@7.16.7: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-private-methods instead.
+npm WARN deprecated @babel/plugin-proposal-private-property-in-object@7.16.7: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-private-property-in-object instead.
+npm WARN deprecated @babel/plugin-proposal-numeric-separator@7.16.7: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-numeric-separator instead.
+npm WARN deprecated @babel/plugin-proposal-logical-assignment-operators@7.16.7: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-logical-assignment-operators instead.
+npm WARN deprecated @babel/plugin-proposal-optional-catch-binding@7.16.7: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-optional-catch-binding instead.
+npm WARN deprecated @babel/plugin-proposal-export-namespace-from@7.16.7: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-export-namespace-from instead.
+npm WARN deprecated @babel/plugin-proposal-json-strings@7.16.7: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-json-strings instead.
+npm WARN deprecated @babel/plugin-proposal-nullish-coalescing-operator@7.16.7: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-nullish-coalescing-operator instead.
+npm WARN deprecated @babel/plugin-proposal-class-static-block@7.16.7: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-class-static-block instead.
+npm WARN deprecated @babel/plugin-proposal-class-properties@7.16.7: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-class-properties instead.
+npm WARN deprecated @babel/plugin-proposal-dynamic-import@7.16.7: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-dynamic-import instead.
+npm WARN deprecated rollup-plugin-terser@5.3.1: This package has been deprecated and is no longer maintained. Please use @rollup/plugin-terser
+npm WARN deprecated rimraf@2.7.1: Rimraf versions prior to v4 are no longer supported
+npm WARN deprecated figgy-pudding@3.5.2: This module is no longer supported.
+npm WARN deprecated @hapi/topo@3.1.6: This version has been deprecated and is no longer supported or maintained
+npm WARN deprecated @hapi/bourne@1.3.2: This version has been deprecated and is no longer supported or maintained
+npm WARN deprecated @babel/plugin-proposal-async-generator-functions@7.16.8: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-async-generator-functions instead.
+npm WARN deprecated urix@0.1.0: Please see https://github.com/lydell/urix#deprecated
+npm WARN deprecated source-map-resolve@0.6.0: See https://github.com/lydell/source-map-resolve#deprecated
+npm WARN deprecated @humanwhocodes/config-array@0.5.0: Use @eslint/config-array instead
+npm WARN deprecated lodash.template@4.5.0: This package is deprecated. Use https://socket.dev/npm/package/eta instead.
+npm WARN deprecated copy-concurrently@1.0.5: This package is no longer supported.
+npm WARN deprecated @babel/plugin-proposal-optional-chaining@7.16.7: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-optional-chaining instead.
+npm WARN deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+npm WARN deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+npm WARN deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+npm WARN deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+npm WARN deprecated abab@2.0.5: Use your platform's native atob() and btoa() methods instead
+npm WARN deprecated resolve-url@0.2.1: https://github.com/lydell/resolve-url#deprecated
+npm WARN deprecated glob@7.2.0: Glob versions prior to v9 are no longer supported
+npm WARN deprecated @babel/plugin-proposal-object-rest-spread@7.16.7: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-object-rest-spread instead.
+npm WARN deprecated querystring@0.2.1: The querystring API is considered Legacy. new code should use the URLSearchParams API instead.
+npm WARN deprecated domexception@2.0.1: Use your platform's native DOMException instead
+npm WARN deprecated source-map-resolve@0.5.3: See https://github.com/lydell/source-map-resolve#deprecated
+npm WARN deprecated source-map-resolve@0.5.3: See https://github.com/lydell/source-map-resolve#deprecated
+npm WARN deprecated w3c-hr-time@1.0.2: Use your platform's native performance.now() and performance.timeOrigin.
+npm WARN deprecated q@1.5.1: You or someone you depend on is using Q, the JavaScript Promise library that gave JavaScript developers strong feelings about promises. They can almost certainly migrate to the native JavaScript promise now. Thank you literally everyone for joining me in this bet against the odds. Be excellent to each other.
+npm WARN deprecated 
+npm WARN deprecated (For a CapTP with native promises, see @endo/eventual-send and @endo/captp)
+npm WARN deprecated sourcemap-codec@1.4.8: Please use @jridgewell/sourcemap-codec instead
+npm WARN deprecated fs-write-stream-atomic@1.0.10: This package is no longer supported.
+npm WARN deprecated sane@4.1.0: some dependency vulnerabilities fixed, support for node < 10 dropped, and newer ECMAScript syntax/features added
+npm WARN deprecated querystring@0.2.0: The querystring API is considered Legacy. new code should use the URLSearchParams API instead.
+npm WARN deprecated babel-eslint@10.1.0: babel-eslint is now @babel/eslint-parser. This package will no longer receive updates.
+npm WARN deprecated @hapi/address@2.1.4: Moved to 'npm install @sideway/address'
+npm WARN deprecated @humanwhocodes/object-schema@1.2.1: Use @eslint/object-schema instead
+npm WARN deprecated rollup-plugin-babel@4.4.0: This package has been deprecated and is no longer maintained. Please use @rollup/plugin-babel.
+npm WARN deprecated uuid@3.4.0: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
+npm WARN deprecated @npmcli/fs@1.1.0: this version had an improper engines field added, update to 1.1.1
+npm WARN deprecated @hapi/hoek@8.5.1: This version has been deprecated and is no longer supported or maintained
+npm WARN deprecated workbox-google-analytics@5.1.4: It is not compatible with newer versions of GA starting with v4, as long as you are using GAv3 it should be ok, but the package is not longer being maintained
+npm WARN deprecated @hapi/joi@15.1.1: Switch to 'npm install joi'
+npm WARN deprecated svgo@1.3.2: This SVGO version is no longer supported. Upgrade to v2.x.x.
+npm WARN deprecated eslint@7.32.0: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+npm WARN deprecated core-js@2.6.12: core-js@<3.23.3 is no longer maintained and not recommended for usage due to the number of issues. Because of the V8 engine whims, feature detection in old core-js versions could cause a slowdown up to 100x even if nothing is polyfilled. Some versions have web compatibility issues. Please, upgrade your dependencies to the actual version of core-js.
+npm WARN deprecated core-js-pure@3.20.2: core-js-pure@<3.23.3 is no longer maintained and not recommended for usage due to the number of issues. Because of the V8 engine whims, feature detection in old core-js versions could cause a slowdown up to 100x even if nothing is polyfilled. Some versions have web compatibility issues. Please, upgrade your dependencies to the actual version of core-js-pure.
+npm WARN deprecated core-js@3.20.2: core-js@<3.23.3 is no longer maintained and not recommended for usage due to the number of issues. Because of the V8 engine whims, feature detection in old core-js versions could cause a slowdown up to 100x even if nothing is polyfilled. Some versions have web compatibility issues. Please, upgrade your dependencies to the actual version of core-js.
+
+added 1957 packages, and audited 1958 packages in 1m
+
+159 packages are looking for funding
+  run `npm fund` for details
+
+172 vulnerabilities (7 low, 107 moderate, 44 high, 14 critical)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+npm ERR! code ERESOLVE
+npm ERR! ERESOLVE could not resolve
+npm ERR! 
+npm ERR! While resolving: react-dom@17.0.1
+npm ERR! Found: react@17.0.2
+npm ERR! node_modules/react
+npm ERR!   peer react@"*" from @testing-library/react@11.2.7
+npm ERR!   node_modules/@testing-library/react
+npm ERR!     @testing-library/react@"^11.2.3" from the root project
+npm ERR!   react@"^17.0.2" from the root project
+npm ERR! 
+npm ERR! Could not resolve dependency:
+npm ERR! peer react@"17.0.1" from react-dom@17.0.1
+npm ERR! node_modules/react-dom
+npm ERR!   peer react-dom@"*" from @testing-library/react@11.2.7
+npm ERR!   node_modules/@testing-library/react
+npm ERR!     @testing-library/react@"^11.2.3" from the root project
+npm ERR!   react-dom@"^17.0.1" from the root project
+npm ERR! 
+npm ERR! Conflicting peer dependency: react@17.0.1
+npm ERR! node_modules/react
+npm ERR!   peer react@"17.0.1" from react-dom@17.0.1
+npm ERR!   node_modules/react-dom
+npm ERR!     peer react-dom@"*" from @testing-library/react@11.2.7
+npm ERR!     node_modules/@testing-library/react
+npm ERR!       @testing-library/react@"^11.2.3" from the root project
+npm ERR!     react-dom@"^17.0.1" from the root project
+npm ERR! 
+npm ERR! Fix the upstream dependency conflict, or retry
+npm ERR! this command with --force, or --legacy-peer-deps
+npm ERR! to accept an incorrect (and potentially broken) dependency resolution.
+npm ERR! 
+npm ERR! See /home/mat/.npm/eresolve-report.txt for a full report.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/mat/.npm/_logs/2025-07-27T17_23_12_990Z-debug-0.log
+Unable to link common.
+Exiting.

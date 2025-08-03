@@ -1,0 +1,791 @@
+
+> @webrcade/app-common@0.1.0 prepare
+> run-s build
+
+
+> @webrcade/app-common@0.1.0 build
+> npm run icons && microbundle-crl --no-compress --format modern,cjs
+
+
+> @webrcade/app-common@0.1.0 icons
+> node icons/build.js
+
+[34mBuild "appCommon" to dist:[39m
+       [31m120 kB[39m: [37mindex.js[39m.gz
+      [31m97.5 kB[39m: [37mindex.js[39m.br
+       [31m119 kB[39m: [37mindex.modern.js[39m.gz
+      [31m96.8 kB[39m: [37mindex.modern.js[39m.br
+
+added 2 packages in 36s
+
+> @webrcade/app-common@0.1.0 build
+> npm run icons && microbundle-crl --no-compress --format modern,cjs
+
+
+> @webrcade/app-common@0.1.0 icons
+> node icons/build.js
+
+[34mBuild "appCommon" to dist:[39m
+       [31m120 kB[39m: [37mindex.js[39m.gz
+      [31m97.4 kB[39m: [37mindex.js[39m.br
+       [31m119 kB[39m: [37mindex.modern.js[39m.gz
+      [31m96.7 kB[39m: [37mindex.modern.js[39m.br
+
+up to date in 35s
+
+added 38 packages in 3s
+
+added 2 packages in 2s
+
+added 1 package in 38s
+
+> @webrcade/webrcade@0.1.0 build
+> react-scripts build
+
+Creating an optimized production build...
+Compiled successfully.
+
+File sizes after gzip:
+
+  236.72 KB  build/static/js/2.adb6ba1f.chunk.js
+  105.75 KB  build/static/js/main.5463eeba.chunk.js
+  4.92 KB    build/static/css/main.5660c24d.chunk.css
+  779 B      build/static/js/runtime-main.910d67d0.js
+
+The project was built assuming it is hosted at ./.
+You can control this with the homepage field in your package.json.
+
+The build folder is ready to be deployed.
+
+Find out more about deployment here:
+
+  https://cra.link/deployment
+
+
+added 1913 packages in 43s
+
+added 3 packages in 38s
+
+> @webrcade/app-snes9x@0.1.0 build
+> react-scripts build
+
+Creating an optimized production build...
+Compiled successfully.
+
+File sizes after gzip:
+
+  241.76 KB  build/static/js/2.ff1c4177.chunk.js
+  66.87 KB   build/static/js/main.3401f5be.chunk.js
+  3.31 KB    build/static/css/main.5dc6e124.chunk.css
+  783 B      build/static/js/runtime-main.4e15e5a8.js
+
+The project was built assuming it is hosted at ./.
+You can control this with the homepage field in your package.json.
+
+The build folder is ready to be deployed.
+
+Find out more about deployment here:
+
+  https://cra.link/deployment
+
+
+added 1943 packages in 40s
+
+added 3 packages in 37s
+
+> @webrcade/app-genplusgx@0.1.0 build
+> react-scripts build
+
+Creating an optimized production build...
+Compiled successfully.
+
+File sizes after gzip:
+
+  233.88 KB  build/static/js/2.afe8f0ea.chunk.js
+  67.15 KB   build/static/js/main.46ded62d.chunk.js
+  3.29 KB    build/static/css/main.6b951c44.chunk.css
+  786 B      build/static/js/runtime-main.575793f5.js
+
+The project was built assuming it is hosted at ./.
+You can control this with the homepage field in your package.json.
+
+The build folder is ready to be deployed.
+
+Find out more about deployment here:
+
+  https://cra.link/deployment
+
+
+added 1910 packages in 43s
+
+added 3 packages in 37s
+
+> @webrcade/app-javatari@0.1.0 build
+> react-scripts build
+
+Creating an optimized production build...
+Compiled successfully.
+
+File sizes after gzip:
+
+  241.89 KB  build/static/js/2.289b287c.chunk.js
+  63.89 KB   build/static/js/main.16d9429f.chunk.js
+  3.33 KB    build/static/css/main.a9b2f670.chunk.css
+  784 B      build/static/js/runtime-main.bb84a9ec.js
+
+The project was built assuming it is hosted at ./.
+You can control this with the homepage field in your package.json.
+
+The build folder is ready to be deployed.
+
+Find out more about deployment here:
+
+  https://cra.link/deployment
+
+
+added 1907 packages in 39s
+
+added 3 packages in 47s
+
+> @webrcade/app-js7800@0.1.0 build
+> react-scripts build
+
+Creating an optimized production build...
+Compiled successfully.
+
+File sizes after gzip:
+
+  242.18 KB  build/static/js/2.9326ccf8.chunk.js
+  65.38 KB   build/static/js/main.549b48f7.chunk.js
+  3.35 KB    build/static/css/main.86efa2c1.chunk.css
+  785 B      build/static/js/runtime-main.20f66924.js
+
+The project was built assuming it is hosted at ./.
+You can control this with the homepage field in your package.json.
+
+The build folder is ready to be deployed.
+
+Find out more about deployment here:
+
+  https://cra.link/deployment
+
+
+added 1943 packages in 43s
+
+added 3 packages in 39s
+
+> @webrcade/app-fceux@0.1.0 build
+> react-scripts build
+
+Creating an optimized production build...
+Compiled successfully.
+
+File sizes after gzip:
+
+  233.72 KB  build/static/js/2.68affe5a.chunk.js
+  67.25 KB   build/static/js/main.0842aa24.chunk.js
+  3.29 KB    build/static/css/main.6b951c44.chunk.css
+  783 B      build/static/js/runtime-main.0bd6a272.js
+
+The project was built assuming it is hosted at ./.
+You can control this with the homepage field in your package.json.
+
+The build folder is ready to be deployed.
+
+Find out more about deployment here:
+
+  https://cra.link/deployment
+
+
+added 1997 packages in 41s
+
+added 3 packages in 39s
+
+> @webrcade/app-vba-m@0.1.0 build
+> react-scripts build
+
+Creating an optimized production build...
+Compiled successfully.
+
+File sizes after gzip:
+
+  242.11 KB  build/static/js/2.f7d85c55.chunk.js
+  69.2 KB    build/static/js/main.cb5174d2.chunk.js
+  3.34 KB    build/static/css/main.2922286a.chunk.css
+  783 B      build/static/js/runtime-main.e6c428eb.js
+
+The project was built assuming it is hosted at ./.
+You can control this with the homepage field in your package.json.
+
+The build folder is ready to be deployed.
+
+Find out more about deployment here:
+
+  https://cra.link/deployment
+
+
+added 1920 packages in 44s
+
+added 3 packages in 39s
+
+> @webrcade/app-mednafen@0.1.0 build
+> react-scripts build
+
+Creating an optimized production build...
+Compiled successfully.
+
+File sizes after gzip:
+
+  242.34 KB  build/static/js/2.fb90639e.chunk.js
+  69.46 KB   build/static/js/main.ed2f3d82.chunk.js
+  3.35 KB    build/static/css/main.d0151922.chunk.css
+  784 B      build/static/js/runtime-main.abe1a8a6.js
+
+The project was built assuming it is hosted at ./.
+You can control this with the homepage field in your package.json.
+
+The build folder is ready to be deployed.
+
+Find out more about deployment here:
+
+  https://cra.link/deployment
+
+
+added 1920 packages in 41s
+
+added 3 packages in 38s
+
+> @webrcade/app-paralleln64@0.1.0 build
+> react-scripts build
+
+Creating an optimized production build...
+Compiled successfully.
+
+File sizes after gzip:
+
+  242.36 KB  build/static/js/2.ae06439f.chunk.js
+  74.71 KB   build/static/js/main.a5db103f.chunk.js
+  3.3 KB     build/static/css/main.074cd46e.chunk.css
+  789 B      build/static/js/runtime-main.1c7ea9e2.js
+
+The project was built assuming it is hosted at ./.
+You can control this with the homepage field in your package.json.
+
+The build folder is ready to be deployed.
+
+Find out more about deployment here:
+
+  https://cra.link/deployment
+
+
+added 1920 packages in 44s
+
+added 3 packages in 38s
+
+> @webrcade/app-fbneo@0.1.0 build
+> react-scripts build
+
+Creating an optimized production build...
+Compiled successfully.
+
+File sizes after gzip:
+
+  242.75 KB  build/static/js/2.3a7f03ac.chunk.js
+  82.23 KB   build/static/js/main.12c64277.chunk.js
+  3.34 KB    build/static/css/main.1dba4afd.chunk.css
+  783 B      build/static/js/runtime-main.a9d7a0b7.js
+
+The project was built assuming it is hosted at ./.
+You can control this with the homepage field in your package.json.
+
+The build folder is ready to be deployed.
+
+Find out more about deployment here:
+
+  https://cra.link/deployment
+
+
+added 2078 packages in 45s
+
+added 3 packages in 38s
+
+> @webrcade/app-beetle-psx@0.1.0 build
+> react-scripts build
+
+Creating an optimized production build...
+Compiled successfully.
+
+File sizes after gzip:
+
+  242.29 KB  build/static/js/2.f127e952.chunk.js
+  74.92 KB   build/static/js/main.dbb7672b.chunk.js
+  3.24 KB    build/static/css/main.91b94e7e.chunk.css
+  787 B      build/static/js/runtime-main.4373386d.js
+
+The project was built assuming it is hosted at ./.
+You can control this with the homepage field in your package.json.
+
+The build folder is ready to be deployed.
+
+Find out more about deployment here:
+
+  https://cra.link/deployment
+
+
+added 2091 packages in 47s
+
+added 3 packages in 38s
+
+> @webrcade/app-retro-genplusgx@0.1.0 build
+> react-scripts build
+
+Creating an optimized production build...
+Compiled successfully.
+
+File sizes after gzip:
+
+  241.76 KB  build/static/js/2.2f38ccff.chunk.js
+  73.04 KB   build/static/js/main.49c5f77b.chunk.js
+  3.18 KB    build/static/css/main.6fb45164.chunk.css
+  789 B      build/static/js/runtime-main.bb7375bd.js
+
+The project was built assuming it is hosted at ./.
+You can control this with the homepage field in your package.json.
+
+The build folder is ready to be deployed.
+
+Find out more about deployment here:
+
+  https://cra.link/deployment
+
+
+added 2093 packages in 45s
+
+added 3 packages in 38s
+
+> @webrcade/app-retro-pce-fast@0.1.0 build
+> react-scripts build
+
+Creating an optimized production build...
+Compiled successfully.
+
+File sizes after gzip:
+
+  242.11 KB  build/static/js/2.4caf9a75.chunk.js
+  73.2 KB    build/static/js/main.7fe28504.chunk.js
+  3.18 KB    build/static/css/main.217d1298.chunk.css
+  790 B      build/static/js/runtime-main.d19a6665.js
+
+The project was built assuming it is hosted at ./.
+You can control this with the homepage field in your package.json.
+
+The build folder is ready to be deployed.
+
+Find out more about deployment here:
+
+  https://cra.link/deployment
+
+
+added 2093 packages in 47s
+
+added 3 packages in 38s
+
+> @webrcade/app-colem@0.1.0 build
+> react-scripts build
+
+Creating an optimized production build...
+Compiled successfully.
+
+File sizes after gzip:
+
+  242.64 KB  build/static/js/2.dbe8d95c.chunk.js
+  70.35 KB   build/static/js/main.6fc28ddb.chunk.js
+  3.48 KB    build/static/css/main.fbb13ad3.chunk.css
+  784 B      build/static/js/runtime-main.484648b9.js
+
+The project was built assuming it is hosted at ./.
+You can control this with the homepage field in your package.json.
+
+The build folder is ready to be deployed.
+
+Find out more about deployment here:
+
+  https://cra.link/deployment
+
+
+added 2100 packages in 45s
+
+added 3 packages in 38s
+
+> @webrcade/app-beetle-pcfx@0.1.0 build
+> react-scripts build
+
+Creating an optimized production build...
+Compiled successfully.
+
+File sizes after gzip:
+
+  241.89 KB  build/static/js/2.1c13ba09.chunk.js
+  72.92 KB   build/static/js/main.52c1804e.chunk.js
+  3.18 KB    build/static/css/main.217d1298.chunk.css
+  787 B      build/static/js/runtime-main.2d876d50.js
+
+The project was built assuming it is hosted at ./.
+You can control this with the homepage field in your package.json.
+
+The build folder is ready to be deployed.
+
+Find out more about deployment here:
+
+  https://cra.link/deployment
+
+
+added 2098 packages in 48s
+
+added 3 packages in 38s
+
+> @webrcade/app-retro-a5200@0.1.0 build
+> react-scripts build
+
+Creating an optimized production build...
+Compiled successfully.
+
+File sizes after gzip:
+
+  242.62 KB  build/static/js/2.11d5da9d.chunk.js
+  79.43 KB   build/static/js/main.aa20fb81.chunk.js
+  3.5 KB     build/static/css/main.26bab043.chunk.css
+  787 B      build/static/js/runtime-main.b829f5eb.js
+
+The project was built assuming it is hosted at ./.
+You can control this with the homepage field in your package.json.
+
+The build folder is ready to be deployed.
+
+Find out more about deployment here:
+
+  https://cra.link/deployment
+
+
+added 2100 packages in 45s
+
+added 3 packages in 38s
+
+> @webrcade/app-retro-neocd@0.1.0 build
+> react-scripts build
+
+Creating an optimized production build...
+Compiled successfully.
+
+File sizes after gzip:
+
+  242.06 KB  build/static/js/2.8f8b90e1.chunk.js
+  74.26 KB   build/static/js/main.17a6e433.chunk.js
+  3.18 KB    build/static/css/main.139e2e8f.chunk.css
+  788 B      build/static/js/runtime-main.1fdfef4f.js
+
+The project was built assuming it is hosted at ./.
+You can control this with the homepage field in your package.json.
+
+The build folder is ready to be deployed.
+
+Find out more about deployment here:
+
+  https://cra.link/deployment
+
+
+added 2100 packages in 47s
+
+added 3 packages in 38s
+
+> @webrcade/app-retro-opera@0.1.0 build
+> react-scripts build
+
+Creating an optimized production build...
+Compiled successfully.
+
+File sizes after gzip:
+
+  242.53 KB  build/static/js/2.33fe1163.chunk.js
+  75.1 KB    build/static/js/main.33cfa137.chunk.js
+  3.18 KB    build/static/css/main.139e2e8f.chunk.css
+  786 B      build/static/js/runtime-main.5d651fd6.js
+
+The project was built assuming it is hosted at ./.
+You can control this with the homepage field in your package.json.
+
+The build folder is ready to be deployed.
+
+Find out more about deployment here:
+
+  https://cra.link/deployment
+
+
+added 2098 packages in 45s
+
+added 3 packages in 38s
+
+> @webrcade/app-tyrquake@0.1.0 build
+> react-scripts build
+
+Creating an optimized production build...
+Compiled successfully.
+
+File sizes after gzip:
+
+  242.13 KB  build/static/js/2.e1d32791.chunk.js
+  74.19 KB   build/static/js/main.e1f5cb45.chunk.js
+  3.2 KB     build/static/css/main.d84247e5.chunk.css
+  786 B      build/static/js/runtime-main.65719905.js
+
+The project was built assuming it is hosted at ./.
+You can control this with the homepage field in your package.json.
+
+The build folder is ready to be deployed.
+
+Find out more about deployment here:
+
+  https://cra.link/deployment
+
+
+added 2100 packages in 48s
+
+added 3 packages in 38s
+
+> @webrcade/app-retro-stealla-2014@0.1.0 build
+> react-scripts build
+
+Creating an optimized production build...
+Compiled successfully.
+
+File sizes after gzip:
+
+  242.4 KB  build/static/js/2.b30a32d4.chunk.js
+  74.21 KB  build/static/js/main.7789a00b.chunk.js
+  3.18 KB   build/static/css/main.139e2e8f.chunk.css
+  790 B     build/static/js/runtime-main.ace0088d.js
+
+The project was built assuming it is hosted at ./.
+You can control this with the homepage field in your package.json.
+
+The build folder is ready to be deployed.
+
+Find out more about deployment here:
+
+  https://cra.link/deployment
+
+
+added 2022 packages in 46s
+
+added 4 packages in 38s
+
+> @webrcade/app-retro-stealla@0.1.0 build
+> react-scripts build
+
+Creating an optimized production build...
+Compiled successfully.
+
+File sizes after gzip:
+
+  239.73 KB  build/static/js/2.2d9beb0d.chunk.js
+  73.23 KB   build/static/js/main.5bcf12c0.chunk.js
+  3.18 KB    build/static/css/main.139e2e8f.chunk.css
+  785 B      build/static/js/runtime-main.1cf6dc71.js
+
+The project was built assuming it is hosted at ./.
+You can control this with the homepage field in your package.json.
+
+The build folder is ready to be deployed.
+
+Find out more about deployment here:
+
+  https://cra.link/deployment
+
+
+added 1910 packages in 43s
+
+added 3 packages in 37s
+
+> @webrcade/app-scummvm@0.1.0 build
+> react-scripts build
+
+Creating an optimized production build...
+Compiled successfully.
+
+File sizes after gzip:
+
+  242.18 KB  build/static/js/2.63d3d034.chunk.js
+  79.22 KB   build/static/js/main.15778d8c.chunk.js
+  3.94 KB    build/static/css/main.d4c0d5b9.chunk.css
+  785 B      build/static/js/runtime-main.6ea6bb20.js
+
+The project was built assuming it is hosted at ./.
+You can control this with the homepage field in your package.json.
+
+The build folder is ready to be deployed.
+
+Find out more about deployment here:
+
+  https://cra.link/deployment
+
+
+added 2022 packages in 46s
+
+added 4 packages in 38s
+
+> @webrcade/app-retro-commodore-8bit@0.1.0 build
+> react-scripts build
+
+Creating an optimized production build...
+Compiled successfully.
+
+File sizes after gzip:
+
+  239.73 KB  build/static/js/2.7410a8c8.chunk.js
+  84.35 KB   build/static/js/main.67497fc0.chunk.js
+  3.75 KB    build/static/css/main.d87e18b6.chunk.css
+  796 B      build/static/js/runtime-main.67ebd4ad.js
+
+The project was built assuming it is hosted at ./.
+You can control this with the homepage field in your package.json.
+
+The build folder is ready to be deployed.
+
+Find out more about deployment here:
+
+  https://cra.link/deployment
+
+
+added 2093 packages in 49s
+
+added 3 packages in 37s
+
+> @webrcade/app-retro-dosbox-pure@0.1.0 build
+> react-scripts build
+
+Creating an optimized production build...
+Compiled successfully.
+
+File sizes after gzip:
+
+  242.85 KB  build/static/js/2.95f2e9b5.chunk.js
+  84.25 KB   build/static/js/main.c41112cd.chunk.js
+  3.83 KB    build/static/css/main.917d87c6.chunk.css
+  793 B      build/static/js/runtime-main.6e0cc8ac.js
+
+The project was built assuming it is hosted at ./.
+You can control this with the homepage field in your package.json.
+
+The build folder is ready to be deployed.
+
+Find out more about deployment here:
+
+  https://cra.link/deployment
+
+
+added 2022 packages in 46s
+
+added 4 packages in 37s
+
+> @webrcade/app-retro-fceumm@0.1.0 build
+> react-scripts build
+
+Creating an optimized production build...
+Compiled successfully.
+
+File sizes after gzip:
+
+  239.73 KB  build/static/js/2.bb85f821.chunk.js
+  73.08 KB   build/static/js/main.eb72b515.chunk.js
+  3.18 KB    build/static/css/main.139e2e8f.chunk.css
+  788 B      build/static/js/runtime-main.1ecdc484.js
+
+The project was built assuming it is hosted at ./.
+You can control this with the homepage field in your package.json.
+
+The build folder is ready to be deployed.
+
+Find out more about deployment here:
+
+  https://cra.link/deployment
+
+
+added 2093 packages in 47s
+
+added 3 packages in 37s
+
+> @webrcade/app-retro-melonds@0.1.0 build
+> react-scripts build
+
+Creating an optimized production build...
+Compiled successfully.
+
+File sizes after gzip:
+
+  242.46 KB  build/static/js/2.f3d4a987.chunk.js
+  79.31 KB   build/static/js/main.bf49cfcc.chunk.js
+  3.54 KB    build/static/css/main.3a50f1e5.chunk.css
+  788 B      build/static/js/runtime-main.b23ef740.js
+
+The project was built assuming it is hosted at ./.
+You can control this with the homepage field in your package.json.
+
+The build folder is ready to be deployed.
+
+Find out more about deployment here:
+
+  https://cra.link/deployment
+
+
+added 1998 packages in 1m
+
+added 4 packages in 37s
+
+> webrcade-feed-editor@0.1.0 build
+> react-scripts build
+
+Creating an optimized production build...
+Compiled successfully.
+
+File sizes after gzip:
+
+  364.59 KB  build/static/js/2.e4c237d2.chunk.js
+  113.49 KB  build/static/js/main.bd749ee2.chunk.js
+  1.3 KB     build/static/css/main.7bc57c20.chunk.css
+  783 B      build/static/js/runtime-main.015de522.js
+
+The project was built assuming it is hosted at ./.
+You can control this with the homepage field in your package.json.
+
+The build folder is ready to be deployed.
+
+Find out more about deployment here:
+
+  https://cra.link/deployment
+
+
+added 2077 packages in 47s
+
+added 3 packages in 37s
+
+> @webrcade/app-standalone@0.1.0 build
+> react-scripts build
+
+Creating an optimized production build...
+Compiled successfully.
+
+File sizes after gzip:
+
+  239.75 KB  build/static/js/2.b82221dd.chunk.js
+  48.22 KB   build/static/js/main.953981ff.chunk.js
+  784 B      build/static/js/runtime-main.8cd4ee69.js
+
+The project was built assuming it is hosted at ./.
+You can control this with the homepage field in your package.json.
+
+The build folder is ready to be deployed.
+
+Find out more about deployment here:
+
+  https://cra.link/deployment
+
