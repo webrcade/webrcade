@@ -197,6 +197,13 @@ export class Webrcade extends Component {
       setTimeout(() => {
         window.focus();
         browseScreenRef.current.focus();
+        if (initial) {
+          if (!settings.getHideVersionInfo()) {
+            setTimeout(() => {
+              this.ctx.showReleaseNotes(true);
+            }, 0);
+          }
+        }
       }, 0);
     }
   }
