@@ -328,11 +328,113 @@ cp -R build/. "$DIST_OUT_APP/retro-dosbox-pure" || { fail 'failed to copy dosbox
 ## webrcade-app-retro-fceumm
 ##
 cd "$DIR/../webrcade-app-retro-fceumm" || { fail 'Unable to change to retro fceumm.'; }
-npm install . || { fail 'Unable to install dosbox dependencies.'; }
+npm install . || { fail 'Unable to install dependencies.'; }
 # npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
 npm run build || { fail 'Unable to build retro fceumm.'; }
 mkdir -p "$DIST_OUT_APP/retro-fceumm"  || { fail 'Error creating retro fceumm output directory.'; }
 cp -R build/. "$DIST_OUT_APP/retro-fceumm" || { fail 'failed to copy retro fceumm to out.'; }
+
+##
+## webrcade-app-retro-pokemini
+##
+cd "$DIR/../webrcade-app-retro-pokemini" || { fail 'Unable to change to retro-pokemini.'; }
+npm install . || { fail 'Unable to install dependencies.'; }
+npm run build || { fail 'Unable to build retro-pokemini.'; }
+mkdir -p "$DIST_OUT_APP/retro-pokemini"  || { fail 'Error creating output directory.'; }
+cp -R build/. "$DIST_OUT_APP/retro-pokemini" || { fail 'failed to copy to out.'; }
+
+##
+## webrcade-app-retro-snes9x
+##
+cd "$DIR/../webrcade-app-retro-snes9x" || { fail 'Unable to change to retro-snes9x.'; }
+npm install . || { fail 'Unable to install dependencies.'; }
+npm run build || { fail 'Unable to build retro-snes9x.'; }
+mkdir -p "$DIST_OUT_APP/retro-snes9x"  || { fail 'Error creating output directory.'; }
+cp -R build/. "$DIST_OUT_APP/retro-snes9x" || { fail 'failed to copy to out.'; }
+
+##
+## webrcade-app-retro-mednafen-supergrafx
+##
+cd "$DIR/../webrcade-app-retro-mednafen-supergrafx" || { fail 'Unable to change to supergrafx.'; }
+npm install . || { fail 'Unable to install dependencies.'; }
+npm run build || { fail 'Unable to build supergrafx.'; }
+mkdir -p "$DIST_OUT_APP/retro-mednafen-sgx"  || { fail 'Error creating output directory.'; }
+cp -R build/. "$DIST_OUT_APP/retro-mednafen-sgx" || { fail 'failed to copy to out.'; }
+
+##
+## webrcade-app-retro-mednafen-vb
+##
+cd "$DIR/../webrcade-app-retro-mednafen-vb" || { fail 'Unable to change to virtualboy.'; }
+npm install . || { fail 'Unable to install dependencies.'; }
+npm run build || { fail 'Unable to build virtualboy.'; }
+mkdir -p "$DIST_OUT_APP/retro-mednafen-vb"  || { fail 'Error creating output directory.'; }
+cp -R build/. "$DIST_OUT_APP/retro-mednafen-vb" || { fail 'failed to copy to out.'; }
+
+##
+## webrcade-app-retro-mednafen-wswan
+##
+cd "$DIR/../webrcade-app-retro-mednafen-wswan" || { fail 'Unable to change to wonderswan.'; }
+npm install . || { fail 'Unable to install dependencies.'; }
+npm run build || { fail 'Unable to build wonderswan.'; }
+mkdir -p "$DIST_OUT_APP/retro-mednafen-wswan"  || { fail 'Error creating output directory.'; }
+cp -R build/. "$DIST_OUT_APP/retro-mednafen-wswan" || { fail 'failed to copy to out.'; }
+
+##
+## webrcade-app-retro-mgba
+##
+cd "$DIR/../webrcade-app-retro-mgba" || { fail 'Unable to change to mgba.'; }
+npm install . || { fail 'Unable to install dependencies.'; }
+npm run build || { fail 'Unable to build mgba.'; }
+mkdir -p "$DIST_OUT_APP/retro-mgba"  || { fail 'Error creating output directory.'; }
+cp -R build/. "$DIST_OUT_APP/retro-mgba" || { fail 'failed to copy to out.'; }
+
+##
+## webrcade-app-retro-sameboy
+##
+cd "$DIR/../webrcade-app-retro-sameboy" || { fail 'Unable to change to sameboy.'; }
+npm install . || { fail 'Unable to install dependencies.'; }
+npm run build || { fail 'Unable to build sameboy.'; }
+mkdir -p "$DIST_OUT_APP/retro-sameboy"  || { fail 'Error creating output directory.'; }
+cp -R build/. "$DIST_OUT_APP/retro-sameboy" || { fail 'failed to copy to out.'; }
+
+##
+## webrcade-app-retro-yabause (Saturn)
+##
+cd "$DIR/../webrcade-app-retro-yabause" || { fail 'Unable to change to saturn.'; }
+npm install . || { fail 'Unable to install dependencies.'; }
+npm run build || { fail 'Unable to build saturn.'; }
+mkdir -p "$DIST_OUT_APP/saturn"  || { fail 'Error creating output directory.'; }
+cp -R build/. "$DIST_OUT_APP/saturn" || { fail 'failed to copy to out.'; }
+
+##
+## webrcade-app-retro-prosystem
+##
+cd "$DIR/../webrcade-app-retro-prosystem" || { fail 'Unable to change to prosystem.'; }
+npm install . || { fail 'Unable to install dependencies.'; }
+npm run build || { fail 'Unable to build prosystem.'; }
+mkdir -p "$DIST_OUT_APP/retro-prosystem"  || { fail 'Error creating output directory.'; }
+cp -R build/. "$DIST_OUT_APP/retro-prosystem" || { fail 'failed to copy to out.'; }
+
+##
+## webrcade-app-retro-mednafen-lynx
+##
+cd "$DIR/../webrcade-app-retro-mednafen-lynx" || { fail 'Unable to change to retro mednafen lynx.'; }
+npm install . || { fail 'Unable to install dependencies.'; }
+# npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
+npm run build || { fail 'Unable to build retro mednafen lynx.'; }
+mkdir -p "$DIST_OUT_APP/retro-mednafen-lynx"  || { fail 'Error creating retro mednafen lynx output directory.'; }
+cp -R build/. "$DIST_OUT_APP/retro-mednafen-lynx" || { fail 'failed to copy retro mednafen lynx to out.'; }
+
+##
+## webrcade-app-retro-mednafen-ngp
+##
+cd "$DIR/../webrcade-app-retro-mednafen-ngp" || { fail 'Unable to change to retro mednafen ngp.'; }
+npm install . || { fail 'Unable to install dependencies.'; }
+# npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
+npm run build || { fail 'Unable to build retro mednafen ngp.'; }
+mkdir -p "$DIST_OUT_APP/retro-mednafen-ngp"  || { fail 'Error creating retro mednafen ngp output directory.'; }
+cp -R build/. "$DIST_OUT_APP/retro-mednafen-ngp" || { fail 'failed to copy retro mednafen ngp to out.'; }
+
 
 ##
 ## webrcade-app-retro-melonds
