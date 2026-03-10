@@ -4,8 +4,16 @@
 
 FROM ubuntu:20.04 as builder
 
-RUN apt-get update -y && apt-get install -y zip curl git wget
-RUN curl -fsSL https://deb.nodesource.com/setup_12.x | bash - && apt-get install -y nodejs
+#RUN apt-get update -y && apt-get install -y zip curl git wget
+#RUN curl -fsSL https://deb.nodesource.com/setup_12.x | bash - && apt-get install -y nodejs
+
+RUN apt-get update -y && apt-get install -y zip curl git wget gnupg ca-certificates
+
+# Node 12 install (ignore GPG errors)
+RUN echo "deb [trusted=yes] https://deb.nodesource.com/node_12.x focal main" \
+    > /etc/apt/sources.list.d/nodesource.list \
+ && apt-get update \
+ && apt-get install -y nodejs
 
 RUN mkdir webrcade
 COPY \
