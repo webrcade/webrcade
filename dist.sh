@@ -409,11 +409,11 @@ cp -R build/. "$DIST_OUT_APP/saturn" || { fail 'failed to copy to out.'; }
 ##
 ## webrcade-app-retro-prosystem
 ##
-cd "$DIR/../webrcade-app-retro-prosystem" || { fail 'Unable to change to prosystem.'; }
-npm install . || { fail 'Unable to install dependencies.'; }
-npm run build || { fail 'Unable to build prosystem.'; }
-mkdir -p "$DIST_OUT_APP/retro-prosystem"  || { fail 'Error creating output directory.'; }
-cp -R build/. "$DIST_OUT_APP/retro-prosystem" || { fail 'failed to copy to out.'; }
+# cd "$DIR/../webrcade-app-retro-prosystem" || { fail 'Unable to change to prosystem.'; }
+# npm install . || { fail 'Unable to install dependencies.'; }
+# npm run build || { fail 'Unable to build prosystem.'; }
+# mkdir -p "$DIST_OUT_APP/retro-prosystem"  || { fail 'Error creating output directory.'; }
+# cp -R build/. "$DIST_OUT_APP/retro-prosystem" || { fail 'failed to copy to out.'; }
 
 ##
 ## webrcade-app-retro-mednafen-lynx
