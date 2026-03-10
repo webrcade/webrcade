@@ -68,5 +68,25 @@ git clone https://github.com/webrcade/webrcade-app-retro-fceumm.git ||
   { fail 'Unable to clone retro fceumm'; }
 git clone https://github.com/webrcade/webrcade-app-retro-melonds.git ||
   { fail 'Unable to clone retro melonds'; }
+git clone https://github.com/webrcade/webrcade-app-retro-mednafen-lynx.git ||
+  { fail 'Unable to clone retro mednafen lynx'; }
+git clone https://github.com/webrcade/webrcade-app-retro-mednafen-ngp.git ||
+  { fail 'Unable to clone retro mednafen ngp'; }
+git clone https://github.com/webrcade/webrcade-app-retro-mednafen-supergrafx.git ||
+  { fail 'Unable to clone retro mednafen supergrafx'; }
+git clone https://github.com/webrcade/webrcade-app-retro-mednafen-vb.git ||
+  { fail 'Unable to clone retro mednafen vb'; }
+git clone https://github.com/webrcade/webrcade-app-retro-mednafen-wswan.git ||
+  { fail 'Unable to clone retro mednafen wswan'; }
+git clone https://github.com/webrcade/webrcade-app-retro-mgba.git ||
+  { fail 'Unable to clone retro mgba'; }
+git clone https://github.com/webrcade/webrcade-app-retro-pokemini.git ||
+  { fail 'Unable to clone retro pokemini'; }
+git clone https://github.com/webrcade/webrcade-app-retro-sameboy.git ||
+  { fail 'Unable to clone retro sameboy'; }
+git clone https://github.com/webrcade/webrcade-app-retro-snes9x.git ||
+  { fail 'Unable to clone retro snes9x'; }
+git clone https://github.com/webrcade/webrcade-app-retro-yabause.git ||
+  { fail 'Unable to clone retro yabause'; }
 git clone https://github.com/webrcade/webrcade-app-standalone.git ||
   { fail 'Unable to clone standalone'; }
