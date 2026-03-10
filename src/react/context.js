@@ -8,7 +8,8 @@ class WebrcadeScreenContext {
       yesNoScreenProps: {},
       renderAddFeedScreen: false,
       renderAlertScreen: false,
-      renderSettingsEditor: false
+      renderSettingsEditor: false,
+      releaseNotes: false,
     }
   }
 
@@ -26,6 +27,18 @@ class WebrcadeScreenContext {
   isSettingsEditorOpen() {
     const { webrcade } = this;
     return webrcade.state.renderSettingsEditor;
+  }
+
+  showReleaseNotes(open) {
+    const { webrcade } = this;
+    webrcade.setState({
+      releaseNotes: open
+    });
+  }
+
+  isReleaseNotesOpen() {
+    const { webrcade } = this;
+    return webrcade.state.releaseNotes;
   }
 
   showAddFeedScreen(open) {
@@ -112,7 +125,8 @@ class WebrcadeScreenContext {
       this.isAlertScreenOpen() ||
       this.isAddFeedScreenOpen() ||
       this.isYesNoScreenOpen() ||
-      this.isSettingsEditorOpen()
+      this.isSettingsEditorOpen() ||
+      this.isReleaseNotesOpen()
     );
   }
 }

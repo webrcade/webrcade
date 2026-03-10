@@ -4,11 +4,12 @@ import {
   loadFeedFromUrl
 } from './feeds';
 
-import { SettingsEditor } from "@webrcade/app-common";
+import { SettingsEditor, settings } from "@webrcade/app-common";
 
 import AddFeedScreen from './screens/addfeed';
 import AlertScreen from './screens/alert'
 import YesNoScreen from './screens/yesno';
+import ReleaseNotesScreen from './screens/releasenotes'
 
 import {
   Resources,
@@ -80,12 +81,27 @@ export default function Dialogs(props) {
     );
   }
 
+  const renderReleaseNotesScreen = () => {
+    return (
+      <ReleaseNotesScreen
+        onClose={(dontshow) => {
+          if (dontshow) {
+            settings.setHideVersionInfo();
+            settings.save();
+          }
+          ctx.showReleaseNotes(false);
+        }}
+      />
+    )
+  }
+
   return (
     <>
       {ctx.isAlertScreenOpen() ? renderAlert() : null}
       {ctx.isYesNoScreenOpen() ? renderYesNo() : null}
       {ctx.isAddFeedScreenOpen() ? renderAddFeed() : null}
       {ctx.isSettingsEditorOpen() ? renderSettingsEditor() : null}
+      {ctx.isReleaseNotesOpen() ? renderReleaseNotesScreen() : null}
     </>
   );
 }
