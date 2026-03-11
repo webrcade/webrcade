@@ -68,7 +68,7 @@ node "$UTILS/createdats.js" || { fail 'Unable to execute create dats.'; }
 rm -rf "$UTILS" || { fail 'Unable remove utils directory.'; }
 cd "$DIR" || { fail 'Unable to change to webrcade.'; }
 # build
-npm install . || { fail 'Unable to install webrcade dependencies.'; }
+npm ci || { fail 'Unable to install webrcade dependencies.'; }
 # npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
 npm run build || { fail 'Unable to build webrcade.'; }
 cp -R build/. "$DIST_OUT" || { fail 'failed to copy to out.'; }
@@ -78,7 +78,7 @@ cp -R build/. "$DIST_OUT" || { fail 'failed to copy to out.'; }
 ##
 
 cd "$DIR/../webrcade-app-snes9x" || { fail 'Unable to change to snes9x.'; }
-npm install . || { fail 'Unable to install snes9x dependencies.'; }
+npm ci || { fail 'Unable to install snes9x dependencies.'; }
 # npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
 npm run build || { fail 'Unable to build snes9x.'; }
 mkdir -p "$DIST_OUT_APP/snes"  || { fail 'Error creating snes output directory.'; }
@@ -89,7 +89,7 @@ cp -R build/. "$DIST_OUT_APP/snes" || { fail 'failed to copy snes to out.'; }
 ##
 
 cd "$DIR/../webrcade-app-genplusgx" || { fail 'Unable to change to genplusgx.'; }
-npm install . || { fail 'Unable to install genplusgx dependencies.'; }
+npm ci || { fail 'Unable to install genplusgx dependencies.'; }
 # npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
 npm run build || { fail 'Unable to build genplusgx.'; }
 mkdir -p "$DIST_OUT_APP/genesis"  || { fail 'Error creating genesis output directory.'; }
@@ -100,7 +100,7 @@ cp -R build/. "$DIST_OUT_APP/genesis" || { fail 'failed to copy genesis to out.'
 ##
 
 cd "$DIR/../webrcade-app-javatari" || { fail 'Unable to change to javatari.'; }
-npm install . || { fail 'Unable to install javatari dependencies.'; }
+npm ci || { fail 'Unable to install javatari dependencies.'; }
 # npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
 npm run build || { fail 'Unable to build javatari.'; }
 mkdir -p "$DIST_OUT_APP/2600"  || { fail 'Error creating 2600 output directory.'; }
@@ -111,7 +111,7 @@ cp -R build/. "$DIST_OUT_APP/2600" || { fail 'failed to copy 2600 to out.'; }
 ##
 
 cd "$DIR/../webrcade-app-js7800" || { fail 'Unable to change to js7800.'; }
-npm install . || { fail 'Unable to install js7800 dependencies.'; }
+npm ci || { fail 'Unable to install js7800 dependencies.'; }
 # npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
 npm run build || { fail 'Unable to build js7800.'; }
 mkdir -p "$DIST_OUT_APP/7800"  || { fail 'Error creating 7800 output directory.'; }
@@ -122,7 +122,7 @@ cp -R build/. "$DIST_OUT_APP/7800" || { fail 'failed to copy 7800 to out.'; }
 ##
 
 cd "$DIR/../webrcade-app-fceux" || { fail 'Unable to change to fceux.'; }
-npm install . || { fail 'Unable to install fceux dependencies.'; }
+npm ci || { fail 'Unable to install fceux dependencies.'; }
 # npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
 npm run build || { fail 'Unable to build fceux.'; }
 mkdir -p "$DIST_OUT_APP/nes"  || { fail 'Error creating nes output directory.'; }
@@ -133,7 +133,7 @@ cp -R build/. "$DIST_OUT_APP/nes" || { fail 'failed to copy nes to out.'; }
 ##
 
 cd "$DIR/../webrcade-app-vba-m" || { fail 'Unable to change to vba-m.'; }
-npm install . || { fail 'Unable to install vba-m dependencies.'; }
+npm ci || { fail 'Unable to install vba-m dependencies.'; }
 # npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
 npm run build || { fail 'Unable to build vba-m.'; }
 mkdir -p "$DIST_OUT_APP/gba"  || { fail 'Error creating gba output directory.'; }
@@ -144,7 +144,7 @@ cp -R build/. "$DIST_OUT_APP/gba" || { fail 'failed to copy gba to out.'; }
 ##
 
 cd "$DIR/../webrcade-app-mednafen" || { fail 'Unable to change to mednafen.'; }
-npm install . || { fail 'Unable to install mednafen dependencies.'; }
+npm ci || { fail 'Unable to install mednafen dependencies.'; }
 # npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
 npm run build || { fail 'Unable to build mednafen.'; }
 mkdir -p "$DIST_OUT_APP/mednafen"  || { fail 'Error creating mednafen output directory.'; }
@@ -155,7 +155,7 @@ cp -R build/. "$DIST_OUT_APP/mednafen" || { fail 'failed to copy mednafen to out
 ##
 
 cd "$DIR/../webrcade-app-parallel-n64" || { fail 'Unable to change to n64.'; }
-npm install . || { fail 'Unable to install n64 dependencies.'; }
+npm ci || { fail 'Unable to install n64 dependencies.'; }
 # npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
 npm run build || { fail 'Unable to build n64.'; }
 mkdir -p "$DIST_OUT_APP/n64"  || { fail 'Error creating n64 output directory.'; }
@@ -166,7 +166,7 @@ cp -R build/. "$DIST_OUT_APP/n64" || { fail 'failed to copy n64 to out.'; }
 ##
 
 cd "$DIR/../webrcade-app-fbneo" || { fail 'Unable to change to fbneo.'; }
-npm install . || { fail 'Unable to install fbneo dependencies.'; }
+npm ci || { fail 'Unable to install fbneo dependencies.'; }
 # npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
 npm run build || { fail 'Unable to build fbneo.'; }
 mkdir -p "$DIST_OUT_APP/neo"  || { fail 'Error creating fbneo output directory.'; }
@@ -177,7 +177,7 @@ cp -R build/. "$DIST_OUT_APP/neo" || { fail 'failed to copy fbneo to out.'; }
 ##
 
 cd "$DIR/../webrcade-app-beetle-psx" || { fail 'Unable to change to beetle-psx.'; }
-npm install . || { fail 'Unable to install beetle-psx dependencies.'; }
+npm ci || { fail 'Unable to install beetle-psx dependencies.'; }
 # npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
 npm run build || { fail 'Unable to build psx.'; }
 mkdir -p "$DIST_OUT_APP/psx"  || { fail 'Error creating psx output directory.'; }
@@ -188,7 +188,7 @@ cp -R build/. "$DIST_OUT_APP/psx" || { fail 'failed to copy psx to out.'; }
 ##
 
 cd "$DIR/../webrcade-app-retro-genplusgx" || { fail 'Unable to change to retro-genplusgx.'; }
-npm install . || { fail 'Unable to install retro-genplusgx dependencies.'; }
+npm ci || { fail 'Unable to install retro-genplusgx dependencies.'; }
 # npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
 npm run build || { fail 'Unable to build retro-genplusgx.'; }
 mkdir -p "$DIST_OUT_APP/retro-genesis"  || { fail 'Error creating retro-genplusgx output directory.'; }
@@ -199,7 +199,7 @@ cp -R build/. "$DIST_OUT_APP/retro-genesis" || { fail 'failed to copy retro-genp
 ##
 
 cd "$DIR/../webrcade-app-retro-pce-fast" || { fail 'Unable to change to retro-pce-fast.'; }
-npm install . || { fail 'Unable to install retro-pce-fast dependencies.'; }
+npm ci || { fail 'Unable to install retro-pce-fast dependencies.'; }
 # npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
 npm run build || { fail 'Unable to build retro-pce-fast.'; }
 mkdir -p "$DIST_OUT_APP/retro-pce-fast"  || { fail 'Error creating retro-pce-fast output directory.'; }
@@ -210,7 +210,7 @@ cp -R build/. "$DIST_OUT_APP/retro-pce-fast" || { fail 'failed to copy retro-pce
 ##
 
 cd "$DIR/../webrcade-app-colem" || { fail 'Unable to change to colem.'; }
-npm install . || { fail 'Unable to install colem dependencies.'; }
+npm ci || { fail 'Unable to install colem dependencies.'; }
 # npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
 npm run build || { fail 'Unable to build colem.'; }
 mkdir -p "$DIST_OUT_APP/colem"  || { fail 'Error creating colem output directory.'; }
@@ -221,7 +221,7 @@ cp -R build/. "$DIST_OUT_APP/colem" || { fail 'failed to copy colem to out.'; }
 ##
 
 cd "$DIR/../webrcade-app-beetle-pcfx" || { fail 'Unable to change to beetle-pcfx.'; }
-npm install . || { fail 'Unable to install beetle-pcfx dependencies.'; }
+npm ci || { fail 'Unable to install beetle-pcfx dependencies.'; }
 # npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
 npm run build || { fail 'Unable to build beetle-pcfx.'; }
 mkdir -p "$DIST_OUT_APP/pcfx"  || { fail 'Error creating beetle-pcfx output directory.'; }
@@ -232,7 +232,7 @@ cp -R build/. "$DIST_OUT_APP/pcfx" || { fail 'failed to copy beetle-pcfx to out.
 ##
 
 cd "$DIR/../webrcade-app-retro-a5200" || { fail 'Unable to change to retro-a5200.'; }
-npm install . || { fail 'Unable to install retro-a5200 dependencies.'; }
+npm ci || { fail 'Unable to install retro-a5200 dependencies.'; }
 # npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
 npm run build || { fail 'Unable to build retro-a5200.'; }
 mkdir -p "$DIST_OUT_APP/retro-a5200"  || { fail 'Error creating retro-a5200 output directory.'; }
@@ -243,7 +243,7 @@ cp -R build/. "$DIST_OUT_APP/retro-a5200" || { fail 'failed to copy retro-a5200 
 ##
 
 cd "$DIR/../webrcade-app-retro-neocd" || { fail 'Unable to change to retro-neocd.'; }
-npm install . || { fail 'Unable to install retro-neocd dependencies.'; }
+npm ci || { fail 'Unable to install retro-neocd dependencies.'; }
 # npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
 npm run build || { fail 'Unable to build retro-neocd.'; }
 mkdir -p "$DIST_OUT_APP/retro-neocd"  || { fail 'Error creating retro-neocd output directory.'; }
@@ -254,7 +254,7 @@ cp -R build/. "$DIST_OUT_APP/retro-neocd" || { fail 'failed to copy retro-neocd 
 ##
 
 cd "$DIR/../webrcade-app-retro-opera" || { fail 'Unable to change to retro-opera.'; }
-npm install . || { fail 'Unable to install retro-opera dependencies.'; }
+npm ci || { fail 'Unable to install retro-opera dependencies.'; }
 # npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
 npm run build || { fail 'Unable to build retro-opera.'; }
 mkdir -p "$DIST_OUT_APP/3do"  || { fail 'Error creating retro-neocd output directory.'; }
@@ -265,7 +265,7 @@ cp -R build/. "$DIST_OUT_APP/3do" || { fail 'failed to copy retro-neocd to out.'
 ##
 
 cd "$DIR/../webrcade-app-tyrquake" || { fail 'Unable to change to quake.'; }
-npm install . || { fail 'Unable to install quake dependencies.'; }
+npm ci || { fail 'Unable to install quake dependencies.'; }
 # npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
 npm run build || { fail 'Unable to build quake.'; }
 mkdir -p "$DIST_OUT_APP/quake"  || { fail 'Error creating quake output directory.'; }
@@ -276,7 +276,7 @@ cp -R build/. "$DIST_OUT_APP/quake" || { fail 'failed to copy quake to out.'; }
 ##
 
 cd "$DIR/../webrcade-app-retro-stella-2014" || { fail 'Unable to change to retro stella 2014.'; }
-npm install . || { fail 'Unable to install retro stella 2014 dependencies.'; }
+npm ci || { fail 'Unable to install retro stella 2014 dependencies.'; }
 # npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
 npm run build || { fail 'Unable to build retro 2014 stella.'; }
 mkdir -p "$DIST_OUT_APP/retro-stella"  || { fail 'Error creating retro stella 2014 output directory.'; }
@@ -287,7 +287,7 @@ cp -R build/. "$DIST_OUT_APP/retro-stella" || { fail 'failed to copy retro stell
 ##
 
 cd "$DIR/../webrcade-app-retro-stella" || { fail 'Unable to change to retro stella.'; }
-npm install . || { fail 'Unable to install retro stella dependencies.'; }
+npm ci || { fail 'Unable to install retro stella dependencies.'; }
 # npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
 npm run build || { fail 'Unable to build retro stella.'; }
 mkdir -p "$DIST_OUT_APP/retro-stella-latest"  || { fail 'Error creating retro stella output directory.'; }
@@ -298,7 +298,7 @@ cp -R build/. "$DIST_OUT_APP/retro-stella-latest" || { fail 'failed to copy retr
 ##
 
 cd "$DIR/../webrcade-app-scummvm" || { fail 'Unable to change to scummvm.'; }
-npm install . || { fail 'Unable to install scummvm dependencies.'; }
+npm ci || { fail 'Unable to install scummvm dependencies.'; }
 # npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
 npm run build || { fail 'Unable to build scummvm.'; }
 mkdir -p "$DIST_OUT_APP/scummvm"  || { fail 'Error creating scummvm output directory.'; }
@@ -308,7 +308,7 @@ cp -R build/. "$DIST_OUT_APP/scummvm" || { fail 'failed to copy scummvm to out.'
 ## webrcade-app-retro-commodore-8bit
 ##
 cd "$DIR/../webrcade-app-retro-commodore-8bit" || { fail 'Unable to change to commodore 8bit.'; }
-npm install . || { fail 'Unable to install scummvm dependencies.'; }
+npm ci || { fail 'Unable to install scummvm dependencies.'; }
 # npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
 npm run build || { fail 'Unable to build scummvm.'; }
 mkdir -p "$DIST_OUT_APP/retro-commodore-8bit"  || { fail 'Error creating commodore 8bit output directory.'; }
@@ -318,7 +318,7 @@ cp -R build/. "$DIST_OUT_APP/retro-commodore-8bit" || { fail 'failed to copy com
 ## webrcade-app-retro-dosbox-pure
 ##
 cd "$DIR/../webrcade-app-retro-dosbox-pure" || { fail 'Unable to change to dosbox pure.'; }
-npm install . || { fail 'Unable to install dosbox dependencies.'; }
+npm ci || { fail 'Unable to install dosbox dependencies.'; }
 # npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
 npm run build || { fail 'Unable to build dosbox.'; }
 mkdir -p "$DIST_OUT_APP/retro-dosbox-pure"  || { fail 'Error creating dosbox output directory.'; }
@@ -328,7 +328,7 @@ cp -R build/. "$DIST_OUT_APP/retro-dosbox-pure" || { fail 'failed to copy dosbox
 ## webrcade-app-retro-fceumm
 ##
 cd "$DIR/../webrcade-app-retro-fceumm" || { fail 'Unable to change to retro fceumm.'; }
-npm install . || { fail 'Unable to install dependencies.'; }
+npm ci || { fail 'Unable to install dependencies.'; }
 # npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
 npm run build || { fail 'Unable to build retro fceumm.'; }
 mkdir -p "$DIST_OUT_APP/retro-fceumm"  || { fail 'Error creating retro fceumm output directory.'; }
@@ -338,7 +338,7 @@ cp -R build/. "$DIST_OUT_APP/retro-fceumm" || { fail 'failed to copy retro fceum
 ## webrcade-app-retro-pokemini
 ##
 cd "$DIR/../webrcade-app-retro-pokemini" || { fail 'Unable to change to retro-pokemini.'; }
-npm install . || { fail 'Unable to install dependencies.'; }
+npm ci || { fail 'Unable to install dependencies.'; }
 npm run build || { fail 'Unable to build retro-pokemini.'; }
 mkdir -p "$DIST_OUT_APP/retro-pokemini"  || { fail 'Error creating output directory.'; }
 cp -R build/. "$DIST_OUT_APP/retro-pokemini" || { fail 'failed to copy to out.'; }
@@ -347,7 +347,7 @@ cp -R build/. "$DIST_OUT_APP/retro-pokemini" || { fail 'failed to copy to out.';
 ## webrcade-app-retro-snes9x
 ##
 cd "$DIR/../webrcade-app-retro-snes9x" || { fail 'Unable to change to retro-snes9x.'; }
-npm install . || { fail 'Unable to install dependencies.'; }
+npm ci || { fail 'Unable to install dependencies.'; }
 npm run build || { fail 'Unable to build retro-snes9x.'; }
 mkdir -p "$DIST_OUT_APP/retro-snes9x"  || { fail 'Error creating output directory.'; }
 cp -R build/. "$DIST_OUT_APP/retro-snes9x" || { fail 'failed to copy to out.'; }
@@ -356,7 +356,7 @@ cp -R build/. "$DIST_OUT_APP/retro-snes9x" || { fail 'failed to copy to out.'; }
 ## webrcade-app-retro-mednafen-supergrafx
 ##
 cd "$DIR/../webrcade-app-retro-mednafen-supergrafx" || { fail 'Unable to change to supergrafx.'; }
-npm install . || { fail 'Unable to install dependencies.'; }
+npm ci || { fail 'Unable to install dependencies.'; }
 npm run build || { fail 'Unable to build supergrafx.'; }
 mkdir -p "$DIST_OUT_APP/retro-mednafen-sgx"  || { fail 'Error creating output directory.'; }
 cp -R build/. "$DIST_OUT_APP/retro-mednafen-sgx" || { fail 'failed to copy to out.'; }
@@ -365,7 +365,7 @@ cp -R build/. "$DIST_OUT_APP/retro-mednafen-sgx" || { fail 'failed to copy to ou
 ## webrcade-app-retro-mednafen-vb
 ##
 cd "$DIR/../webrcade-app-retro-mednafen-vb" || { fail 'Unable to change to virtualboy.'; }
-npm install . || { fail 'Unable to install dependencies.'; }
+npm ci || { fail 'Unable to install dependencies.'; }
 npm run build || { fail 'Unable to build virtualboy.'; }
 mkdir -p "$DIST_OUT_APP/retro-mednafen-vb"  || { fail 'Error creating output directory.'; }
 cp -R build/. "$DIST_OUT_APP/retro-mednafen-vb" || { fail 'failed to copy to out.'; }
@@ -374,7 +374,7 @@ cp -R build/. "$DIST_OUT_APP/retro-mednafen-vb" || { fail 'failed to copy to out
 ## webrcade-app-retro-mednafen-wswan
 ##
 cd "$DIR/../webrcade-app-retro-mednafen-wswan" || { fail 'Unable to change to wonderswan.'; }
-npm install . || { fail 'Unable to install dependencies.'; }
+npm ci || { fail 'Unable to install dependencies.'; }
 npm run build || { fail 'Unable to build wonderswan.'; }
 mkdir -p "$DIST_OUT_APP/retro-mednafen-wswan"  || { fail 'Error creating output directory.'; }
 cp -R build/. "$DIST_OUT_APP/retro-mednafen-wswan" || { fail 'failed to copy to out.'; }
@@ -383,7 +383,7 @@ cp -R build/. "$DIST_OUT_APP/retro-mednafen-wswan" || { fail 'failed to copy to 
 ## webrcade-app-retro-mgba
 ##
 cd "$DIR/../webrcade-app-retro-mgba" || { fail 'Unable to change to mgba.'; }
-npm install . || { fail 'Unable to install dependencies.'; }
+npm ci || { fail 'Unable to install dependencies.'; }
 npm run build || { fail 'Unable to build mgba.'; }
 mkdir -p "$DIST_OUT_APP/retro-mgba"  || { fail 'Error creating output directory.'; }
 cp -R build/. "$DIST_OUT_APP/retro-mgba" || { fail 'failed to copy to out.'; }
@@ -392,7 +392,7 @@ cp -R build/. "$DIST_OUT_APP/retro-mgba" || { fail 'failed to copy to out.'; }
 ## webrcade-app-retro-sameboy
 ##
 cd "$DIR/../webrcade-app-retro-sameboy" || { fail 'Unable to change to sameboy.'; }
-npm install . || { fail 'Unable to install dependencies.'; }
+npm ci || { fail 'Unable to install dependencies.'; }
 npm run build || { fail 'Unable to build sameboy.'; }
 mkdir -p "$DIST_OUT_APP/retro-sameboy"  || { fail 'Error creating output directory.'; }
 cp -R build/. "$DIST_OUT_APP/retro-sameboy" || { fail 'failed to copy to out.'; }
@@ -401,7 +401,7 @@ cp -R build/. "$DIST_OUT_APP/retro-sameboy" || { fail 'failed to copy to out.'; 
 ## webrcade-app-retro-yabause (Saturn)
 ##
 cd "$DIR/../webrcade-app-retro-yabause" || { fail 'Unable to change to saturn.'; }
-npm install . || { fail 'Unable to install dependencies.'; }
+npm ci || { fail 'Unable to install dependencies.'; }
 npm run build || { fail 'Unable to build saturn.'; }
 mkdir -p "$DIST_OUT_APP/saturn"  || { fail 'Error creating output directory.'; }
 cp -R build/. "$DIST_OUT_APP/saturn" || { fail 'failed to copy to out.'; }
@@ -410,7 +410,7 @@ cp -R build/. "$DIST_OUT_APP/saturn" || { fail 'failed to copy to out.'; }
 ## webrcade-app-retro-prosystem
 ##
 # cd "$DIR/../webrcade-app-retro-prosystem" || { fail 'Unable to change to prosystem.'; }
-# npm install . || { fail 'Unable to install dependencies.'; }
+# npm ci || { fail 'Unable to install dependencies.'; }
 # npm run build || { fail 'Unable to build prosystem.'; }
 # mkdir -p "$DIST_OUT_APP/retro-prosystem"  || { fail 'Error creating output directory.'; }
 # cp -R build/. "$DIST_OUT_APP/retro-prosystem" || { fail 'failed to copy to out.'; }
@@ -419,7 +419,7 @@ cp -R build/. "$DIST_OUT_APP/saturn" || { fail 'failed to copy to out.'; }
 ## webrcade-app-retro-mednafen-lynx
 ##
 cd "$DIR/../webrcade-app-retro-mednafen-lynx" || { fail 'Unable to change to retro mednafen lynx.'; }
-npm install . || { fail 'Unable to install dependencies.'; }
+npm ci || { fail 'Unable to install dependencies.'; }
 # npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
 npm run build || { fail 'Unable to build retro mednafen lynx.'; }
 mkdir -p "$DIST_OUT_APP/retro-mednafen-lynx"  || { fail 'Error creating retro mednafen lynx output directory.'; }
@@ -429,7 +429,7 @@ cp -R build/. "$DIST_OUT_APP/retro-mednafen-lynx" || { fail 'failed to copy retr
 ## webrcade-app-retro-mednafen-ngp
 ##
 cd "$DIR/../webrcade-app-retro-mednafen-ngp" || { fail 'Unable to change to retro mednafen ngp.'; }
-npm install . || { fail 'Unable to install dependencies.'; }
+npm ci || { fail 'Unable to install dependencies.'; }
 # npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
 npm run build || { fail 'Unable to build retro mednafen ngp.'; }
 mkdir -p "$DIST_OUT_APP/retro-mednafen-ngp"  || { fail 'Error creating retro mednafen ngp output directory.'; }
@@ -440,7 +440,7 @@ cp -R build/. "$DIST_OUT_APP/retro-mednafen-ngp" || { fail 'failed to copy retro
 ## webrcade-app-retro-melonds
 ##
 cd "$DIR/../webrcade-app-retro-melonds" || { fail 'Unable to change to retro melonds.'; }
-npm install . || { fail 'Unable to install melonds dependencies.'; }
+npm ci || { fail 'Unable to install melonds dependencies.'; }
 # npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
 npm run build || { fail 'Unable to build retro melonds.'; }
 mkdir -p "$DIST_OUT_APP/retro-melonds"  || { fail 'Error creating retro melonds output directory.'; }
@@ -452,7 +452,7 @@ cp -R build/. "$DIST_OUT_APP/retro-melonds" || { fail 'failed to copy retro melo
 
 if test -d "$DIR/../webrcade-app-prboom"; then
     cd "$DIR/../webrcade-app-prboom" || { fail 'Unable to change to prboom.'; }
-    npm install . || { fail 'Unable to install prboom dependencies.'; }
+    npm ci || { fail 'Unable to install prboom dependencies.'; }
     # npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
     npm run build || { fail 'Unable to build prboom.'; }
     mkdir -p "$DIST_OUT_APP/doom"  || { fail 'Error creating doom output directory.'; }
@@ -464,7 +464,7 @@ fi
 ##
 
 cd "$DIR/../webrcade-editor" || { fail 'Unable to change to editor.'; }
-npm install . || { fail 'Unable to install editor dependencies.'; }
+npm ci || { fail 'Unable to install editor dependencies.'; }
 # npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
 npm run build || { fail 'Unable to build editor.'; }
 mkdir -p "$DIST_OUT_APP/editor"  || { fail 'Error creating editor output directory.'; }
@@ -475,7 +475,7 @@ cp -R build/. "$DIST_OUT_APP/editor" || { fail 'failed to copy editor to out.'; 
 ##
 
 cd "$DIR/../webrcade-app-standalone" || { fail 'Unable to change to standalone.'; }
-npm install . || { fail 'Unable to install standalone dependencies.'; }
+npm ci || { fail 'Unable to install standalone dependencies.'; }
 # npm link "@webrcade/app-common" || { fail 'Unable to link common.'; }
 npm run build || { fail 'Unable to build standalone.'; }
 mkdir -p "$DIST_OUT_APP/standalone"  || { fail 'Error creating standalone output directory.'; }
