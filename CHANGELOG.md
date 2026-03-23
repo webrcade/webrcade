@@ -1,5 +1,35 @@
 ## Change log
 
+### 03/23/26 (0.2.0)
+
+    - New applications
+      - Nintendo Pokémon Mini
+      - Sega Saturn (requires Experimental apps to be enabled in Settings > Advanced)
+    - New application variants added:
+      - Atari Lynx: Libretro Mednafen Lynx
+      - Bandai WonderSwan / Color: Libretro Mednafen Wswan
+      - NEC PC Engine: Libretro Mednafen PCEngine
+      - NEC SuperGrafx: Libretro Mednafen SuperGrafx
+      - Nintendo Game Boy / Color: Libretro SameBoy
+      - Nintendo GBA: Libretro mGBA
+      - Nintendo NES: Libretro FCEUmm
+      - Nintendo SNES: Libretro SNES9X
+      - Nintendo Virtual Boy: Libretro Mednafen VB
+      - Sega Game Gear / Genesis / Master System / SG-1000: Libretro Genesis Plus GX
+      - SNK Neo Geo Pocket / Color: Libretro Mednafen NGP
+    - Application defaults
+      - Ability to select default Application per system (Settings > Applications)
+      - Feeds can specify default applications (Edit Feed > Applications tab)
+      - Device-specific user settings override feed settings
+      - Important: Due to default changes, previous saves may not appear unless:
+        - Previous application is mapped in Settings > Applications, or
+        - Item is configured to use the previous application in the Feed Editor
+    - Shaders
+      - Added shader support for many applications
+      - Available via Settings > Shaders in the pause menu
+    - Editor
+      - Standalone link generation now uses is.gd instead of TinyURL
+
 ### 06/24/25 (0.1.8)
 
     - Nintendo DS
