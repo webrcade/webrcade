@@ -9,7 +9,8 @@ export default class PromptScreen extends Screen {
 
   render() {
     const { screenContext, screenStyles } = this;
-    const { disableAnimation, height } = this.props;
+    const { disableAnimation, height, overlayOpacity: overlayOpacityProp } = this.props;
+    const overlayOpacity = this.overlayOpacity !== undefined ? this.overlayOpacity : overlayOpacityProp;
 
     const styles = {};
     if (height) {
@@ -22,6 +23,10 @@ export default class PromptScreen extends Screen {
     const transparencyStyles = {}
     if (disableAnimation) {
       transparencyStyles.animation = 'none'
+    }
+    if (overlayOpacity !== undefined) {
+      transparencyStyles.opacity = overlayOpacity;
+      transparencyStyles.animation = 'none';
     }
 
     return (
