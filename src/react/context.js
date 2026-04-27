@@ -10,6 +10,8 @@ class WebrcadeScreenContext {
       renderAlertScreen: false,
       renderSettingsEditor: false,
       releaseNotes: false,
+      renderSearchScreen: false,
+      searchScreenProps: {},
     }
   }
 
@@ -111,6 +113,24 @@ class WebrcadeScreenContext {
     return webrcade.state.yesNoScreenProps;
   }
 
+  showSearchScreen(open, props = {}) {
+    const { webrcade } = this;
+    webrcade.setState({
+      renderSearchScreen: open,
+      searchScreenProps: open ? props : {}
+    });
+  }
+
+  isSearchScreenOpen() {
+    const { webrcade } = this;
+    return webrcade.state.renderSearchScreen;
+  }
+
+  getSearchScreenProps() {
+    const { webrcade } = this;
+    return webrcade.state.searchScreenProps;
+  }
+
   showXboxBrowsingAlert() {
     this.showAlertScreen(true, (
       <div style={{ textAlign: 'center' }}>
@@ -126,7 +146,8 @@ class WebrcadeScreenContext {
       this.isAddFeedScreenOpen() ||
       this.isYesNoScreenOpen() ||
       this.isSettingsEditorOpen() ||
-      this.isReleaseNotesOpen()
+      this.isReleaseNotesOpen() ||
+      this.isSearchScreenOpen()
     );
   }
 }

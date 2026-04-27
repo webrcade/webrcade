@@ -113,12 +113,15 @@ export default class ReleaseNotesScreen extends Screen {
           </div>
 
           <div className="release-screen-content" ref={this.contentRef}>
-            {notes.map(note => (
-              <div key={note.version} className="release-item">
+            {notes.map((note, noteIndex) => (
+              <div key={note.version} className={`release-item${noteIndex > 0 ? ' release-item-divider' : ''}`}>
                 <div className="release-meta">
                   <span className="release-version">{note.version}</span>
                   <span>•</span>
                   <span className="release-date">{note.date}</span>
+                  {note.preRelease && (
+                    <span className="release-pre-badge">Pre-Release</span>
+                  )}
                 </div>
 
                 <div className="release-title">{note.title}</div>

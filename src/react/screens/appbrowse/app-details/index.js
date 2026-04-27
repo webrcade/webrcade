@@ -4,6 +4,7 @@ import {
   settings,
   getProxyToUrl,
   ImageButton,
+  SearchWhiteImage,
   SettingsWhiteImage,
 } from '@webrcade/app-common'
 
@@ -17,8 +18,8 @@ export default class AppDetails extends Component {
 
   render() {
     const { backgroundSrc, defaultBackgroundSrc, bottom, buttons,
-      description, disable, focusGrid, itemKey, onSettings, subTitle,
-      title, pixelated, settingsButtonRef } = this.props;
+      description, disable, focusGrid, hideSearch, itemKey, onSettings, onSearch, subTitle,
+      title, pixelated, settingsButtonRef, searchButtonRef } = this.props;
     const key = itemKey;
     const detailsRightRef = this.detailsRightRef;
 
@@ -81,6 +82,15 @@ export default class AppDetails extends Component {
           <div className="app-details-left"></div>
           {!disable ? (
             <div className="details-header-nav" style={headerNavStyles}>
+              {!hideSearch && (
+                <ImageButton
+                  className={"details-header-nav-button"}
+                  onPad={e => focusGrid.moveFocus(e.type, searchButtonRef)}
+                  onClick={() => onSearch && onSearch()}
+                  ref={searchButtonRef}
+                  imgSrc={SearchWhiteImage}
+                />
+              )}
               <ImageButton
                 className={"details-header-nav-button"}
                 onPad={e => focusGrid.moveFocus(e.type, settingsButtonRef)}

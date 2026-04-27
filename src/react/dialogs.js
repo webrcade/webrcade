@@ -4,10 +4,11 @@ import {
   loadFeedFromUrl
 } from './feeds';
 
-import { SettingsEditor, settings } from "@webrcade/app-common";
+import { iosClose, SettingsEditor, settings } from "@webrcade/app-common";
 
 import AddFeedScreen from './screens/addfeed';
 import AlertScreen from './screens/alert'
+import SearchScreen from './screens/search';
 import YesNoScreen from './screens/yesno';
 import ReleaseNotesScreen from './screens/releasenotes'
 
@@ -25,7 +26,7 @@ export default function Dialogs(props) {
     return (
       <SettingsEditor
         ctx={ctx}
-        onClose={() => { ctx.showSettingsEditor(false) }}
+        onClose={() => iosClose(() => ctx.showSettingsEditor(false))}
       />
     );
   }
@@ -51,7 +52,7 @@ export default function Dialogs(props) {
             }
           }
         }}
-        closeCallback={() => { ctx.showAddFeedScreen(false) }}
+        closeCallback={() => iosClose(() => ctx.showAddFeedScreen(false))}
       />
     );
   }
@@ -63,7 +64,7 @@ export default function Dialogs(props) {
         height="10rem"
         message={props.message}
         onYes={props.onYes}
-        closeCallback={() => { ctx.showYesNoScreen(false); }}
+        closeCallback={() => iosClose(() => ctx.showYesNoScreen(false))}
       />
     );
   }
@@ -76,7 +77,7 @@ export default function Dialogs(props) {
         message={props.message}
         onOk={props.onOk}
         showButton={props.showButton}
-        closeCallback={() => { ctx.showAlertScreen(false); }}
+        closeCallback={() => iosClose(() => ctx.showAlertScreen(false))}
       />
     );
   }
@@ -89,10 +90,24 @@ export default function Dialogs(props) {
             settings.setHideVersionInfo();
             settings.save();
           }
-          ctx.showReleaseNotes(false);
+          iosClose(() => ctx.showReleaseNotes(false));
         }}
       />
     )
+  }
+
+  const renderSearch = () => {
+    const props = ctx.getSearchScreenProps();
+    return (
+      <SearchScreen
+        closeCallback={() => iosClose(() => ctx.showSearchScreen(false))}
+        initialValue={props.initialValue}
+        getCount={props.getCount}
+        onSearch={props.onSearch}
+        onApply={props.onApply}
+        onClear={props.onClear}
+      />
+    );
   }
 
   return (
@@ -102,6 +117,7 @@ export default function Dialogs(props) {
       {ctx.isAddFeedScreenOpen() ? renderAddFeed() : null}
       {ctx.isSettingsEditorOpen() ? renderSettingsEditor() : null}
       {ctx.isReleaseNotesOpen() ? renderReleaseNotesScreen() : null}
+      {ctx.isSearchScreenOpen() ? renderSearch() : null}
     </>
   );
 }
