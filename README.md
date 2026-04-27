@@ -3,10 +3,12 @@
 [![Actions Status](https://github.com/webrcade/webrcade/workflows/Build/badge.svg)](https://github.com/webrcade/webrcade/actions)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Docker Build Status](https://img.shields.io/docker/pulls/webrcade/webrcade)](https://hub.docker.com/r/webrcade/webrcade/)
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=flat&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/webrcade)
+[![PayPal](https://img.shields.io/badge/PayPal-003087?style=flat&logo=paypal&logoColor=white)](https://paypal.me/webrcade)
 
 WebЯcade consists of an intuitive [web-based front end](https://docs.webrcade.com/userguide/) that enables playing popular gaming content entirely within the context of the browser across a [wide variety of platforms](https://docs.webrcade.com/platforms/) (Xbox Series X|S, iOS, Android, Windows, macOS). Gamepads are supported (Bluetooth and USB) for both front-end navigation and while playing games.
 
-The content for playing games (binaries, etc.) and populating the front-end (images, etc.) is collected from [cloud-based resources](https://docs.webrcade.com/feeds/resources/) based on [user-defined feeds](https://docs.webrcade.com/feeds/). Each feed item (game, etc.) has an associated application type. [Application types](https://docs.webrcade.com/apps/) include [emulators](https://docs.webrcade.com/apps/emulators/) (Atari, Sega, Nintendo) and [game engines](https://docs.webrcade.com/apps/engines/) (Classic Doom). 
+The content for playing games (binaries, etc.) and populating the front-end (images, etc.) is collected from [cloud-based resources](https://docs.webrcade.com/feeds/resources/) based on [user-defined feeds](https://docs.webrcade.com/feeds/). Each feed item (game, etc.) has an associated application type. [Application types](https://docs.webrcade.com/apps/) include [emulators](https://docs.webrcade.com/apps/emulators/) (Atari, Sega, Nintendo) and [game engines](https://docs.webrcade.com/apps/engines/) (Classic Doom).
 
 
 <p align="center">
@@ -35,7 +37,7 @@ The following steps are recommended for getting started with webЯcade:
 
 The default feed consists of high-quality publicly available games and demos across the various [application types](https://docs.webrcade.com/apps/) ([emulators](https://docs.webrcade.com/apps/emulators/), [engines](https://docs.webrcade.com/apps/engines/), etc.) that are supported by webЯcade.
 
-The [default feed AUTHORS page](https://github.com/webrcade/webrcade-default-feed/blob/main/AUTHORS-default-feed.md) includes the list of titles that are included in the default feed, their respective authors, and related links. 
+The [default feed AUTHORS page](https://github.com/webrcade/webrcade-default-feed/blob/main/AUTHORS-default-feed.md) includes the list of titles that are included in the default feed, their respective authors, and related links.
 
 ## What is (and is not) webЯcade?
 
@@ -54,6 +56,16 @@ The following lists further describe webЯcade in terms of its focus.
 * Directly playing locally stored game content (ROMs, etc.)<br>*(Technically possible by using a local web server, but not a primary use case)*
 * The "latest and greatest" emulator features and compatibility<br>*(Primary emphasis is on compatibility with popular game content across a variety of platforms while minimizing resource requirements)*
 * Touch-based (virtual) gamepad controls<br>*(The focus is on native gamepad support via Bluetooth and USB)*
+
+## Support
+
+webЯcade is free and open-source, and will always remain so. If you enjoy the project and would like to help cover some of the ongoing costs (GitHub, hosting, domain, etc.), contributions are greatly appreciated but never expected.
+
+<p>
+  <a href="https://buymeacoffee.com/webrcade"><img src="https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me a Coffee"></a>
+  &nbsp;
+  <a href="https://paypal.me/webrcade"><img src="https://img.shields.io/badge/PayPal-003087?style=for-the-badge&logo=paypal&logoColor=white" alt="Donate via PayPal"></a>
+</p>
 
 ## LICENSE
 
