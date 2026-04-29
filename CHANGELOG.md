@@ -1,24 +1,41 @@
 ## Change log
 
-### 04/26/26 (0.2.1-p5)
+### 04/29/26 (0.2.1)
 
     - Cheats
-      - Added cheats support for the following systems: Atari 2600, Atari 5200, Atari Lynx, NEC PC Engine / TurboGrafx-16, NEC PC Engine CD / TurboGrafx-CD, NEC SuperGrafx, Nintendo NES, Nintendo SNES, Nintendo Game Boy, Nintendo Game Boy Color, Nintendo Game Boy Advance, Nintendo DS, Sega SG-1000, Sega Master System, Sega Genesis, Sega CD, Sega Saturn, Sega Game Gear, Sony PlayStation, Quake
+      - Added cheats support for the following systems: Atari 2600,
+        Atari 5200, Atari Lynx, NEC PC Engine / TurboGrafx-16,
+        NEC PC Engine CD / TurboGrafx-CD, NEC SuperGrafx,
+        Nintendo NES, Nintendo SNES, Nintendo Game Boy,
+        Nintendo Game Boy Color, Nintendo Game Boy Advance,
+        Nintendo DS, Sega SG-1000, Sega Master System, Sega Genesis,
+        Sega CD, Sega Saturn, Sega Game Gear, Sony PlayStation, Quake
     - Player
-      - Added Search support to the player, allowing you to quickly find games across all categories.
-      - Fixed an issue on iOS where closing a search or feed dialog after typing would leave the page scrolled to an incorrect position.
+      - Added Search support to the player, allowing you to quickly
+        find games across all categories.
+      - Fixed an issue on iOS where closing a search or feed dialog
+        after typing would leave the page scrolled to an incorrect
+        position.
     - Editor
-      - Added Search tab to the Feed Editor, allowing you to search, edit, copy, and analyze items across all categories.
-      - Added a Cheats tab to item properties for supported systems. A cheat file can be specified via URL, or selected from the built-in cheat database.
+      - Added Search tab to the Feed Editor, allowing you to search,
+        edit, copy, and analyze items across all categories.
+      - Added a Cheats tab to item properties for supported systems.
+        A cheat file can be specified via URL, or selected from the
+        built-in cheat database.
     - Bug Fixes
-      - Fixed an issue where gamepad navigation was not functioning in the Shader Settings tab of the Nintendo DS emulator settings.
-      - Fixed an issue where gamepad navigation was not functioning in the Display and Shader Settings tabs of the Pokémon Mini emulator settings.
+      - Fixed an issue where gamepad navigation was not functioning
+        in the Shader Settings tab of the Nintendo DS emulator
+        settings.
+      - Fixed an issue where gamepad navigation was not functioning
+        in the Display and Shader Settings tabs of the Pokémon Mini
+        emulator settings.
 
 ### 03/23/26 (0.2.0)
 
     - New applications
       - Nintendo Pokémon Mini
-      - Sega Saturn (requires Experimental apps to be enabled in Settings > Advanced)
+      - Sega Saturn (requires Experimental apps to be enabled in
+        Settings > Advanced)
     - New application variants added:
       - Atari Lynx: Libretro Mednafen Lynx
       - Bandai WonderSwan / Color: Libretro Mednafen Wswan
@@ -29,10 +46,12 @@
       - Nintendo NES: Libretro FCEUmm
       - Nintendo SNES: Libretro SNES9X
       - Nintendo Virtual Boy: Libretro Mednafen VB
-      - Sega Game Gear / Genesis / Master System / SG-1000: Libretro Genesis Plus GX
+      - Sega Game Gear / Genesis / Master System / SG-1000:
+        Libretro Genesis Plus GX
       - SNK Neo Geo Pocket / Color: Libretro Mednafen NGP
     - Application defaults
-      - Ability to select default Application per system (Settings > Applications)
+      - Ability to select default Application per system
+        (Settings > Applications)
       - Feeds can specify default applications (Edit Feed > Applications tab)
       - Device-specific user settings override feed settings
       - Important: Due to default changes, previous saves may not appear unless:
