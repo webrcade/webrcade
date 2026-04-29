@@ -3,8 +3,9 @@
 [![Actions Status](https://github.com/webrcade/webrcade/workflows/Build/badge.svg)](https://github.com/webrcade/webrcade/actions)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Docker Build Status](https://img.shields.io/docker/pulls/webrcade/webrcade)](https://hub.docker.com/r/webrcade/webrcade/)
-[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=flat&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/webrcade)
+[![Discord](https://img.shields.io/badge/Discord-5865F2?style=flat&logo=discord&logoColor=white)](https://discord.gg/C4gXN2HJAv)
 [![PayPal](https://img.shields.io/badge/PayPal-003087?style=flat&logo=paypal&logoColor=white)](https://paypal.me/webrcade)
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=flat&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/webrcade)
 
 WebЯcade consists of an intuitive [web-based front end](https://docs.webrcade.com/userguide/) that enables playing popular gaming content entirely within the context of the browser across a [wide variety of platforms](https://docs.webrcade.com/platforms/) (Xbox Series X|S, iOS, Android, Windows, macOS). Gamepads are supported (Bluetooth and USB) for both front-end navigation and while playing games.
 
@@ -66,6 +67,14 @@ webЯcade is free and open-source, and will always remain so. If you enjoy the p
   &nbsp;
   <a href="https://paypal.me/webrcade"><img src="https://img.shields.io/badge/PayPal-003087?style=for-the-badge&logo=paypal&logoColor=white" alt="Donate via PayPal"></a>
 </p>
+
+## Get Involved
+
+Have a question, suggestion, or just want to chat? Come join the community!
+
+* 💬 **[Discord](https://discord.gg/C4gXN2HJAv)** — Join the webЯcade Discord server to chat, ask questions, and stay up to date.
+* 📋 **[GitHub Issues](https://github.com/webrcade/webrcade/issues)** — Report bugs or request features.
+* 💡 **[GitHub Discussions](https://github.com/webrcade/webrcade/discussions)** — Share ideas or ask questions.
 
 ## LICENSE
 
