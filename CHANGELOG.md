@@ -1,5 +1,87 @@
 ## Change log
 
+### 05/19/26 (0.2.2-p5)
+
+    - RetroAchievements
+      - Added RetroAchievements support. Log in via Settings >
+        RetroAchievements to earn and track achievements while
+        you play.
+      - Achievements are supported for the following systems:
+        Atari 2600, Atari Lynx, Bandai WonderSwan / Color,
+        ColecoVision, NEC PC Engine / TurboGrafx-16, NEC PC-FX,
+        NEC SuperGrafx, Nintendo NES, Nintendo SNES,
+        Nintendo 64, Nintendo Game Boy, Nintendo Game Boy Color,
+        Nintendo Game Boy Advance, Nintendo DS,
+        Nintendo Pokémon Mini, Nintendo Virtual Boy,
+        Panasonic 3DO, Sega SG-1000, Sega Master System,
+        Sega Genesis, Sega CD, Sega Game Gear, Sega Saturn,
+        SNK Neo Geo CD, SNK Neo Geo Pocket / Color,
+        Sony PlayStation.
+      - When a game has achievements, an Achievements button
+        will appear in the pause menu where you can see your
+        progress.
+      - A notification will pop up on screen whenever an
+        achievement is unlocked.
+      - Supports softcore mode, rich presence, and an in-game
+        achievement list showing earned and unearned
+        achievements for the current game.
+      - Note: Hardcore mode is not currently supported.
+    - Pause Menu
+      - Reworked pause menu layout and navigation to
+        accommodate Cheats and Achievements buttons.
+    - Editor
+      - Feeds can now be exported directly to cloud storage.
+      - Added Add Local Files support. Local files and folders
+        (ROMs, disc images, etc.) can now be uploaded directly
+        to cloud storage by dragging and dropping them onto the
+        editor or by selecting them via the new Add Local Files
+        and Add Local Folder options. Dropping a folder will
+        recursively upload all supported files within it.
+      - The Add Local Files dialog shows upload progress for
+        each file, with separate tabs for completed, skipped,
+        and errored files.
+      - Image fields (thumbnails, backgrounds) now support
+        uploading local files via drag-and-drop or via the
+        field menu.
+      - File fields (ROMs, BIOS files, etc.) now support
+        uploading local files via drag-and-drop or via the
+        Add file(s)... option in the field menu.
+      - Note: All of the above features require cloud storage
+        to be enabled.
+    - General
+      - Improved audio support for iOS for Atari 2600 games.
+
+### 05/14/26 (0.2.2-p3)
+
+    - RetroAchievements
+      - Added RetroAchievements support. Log in via Settings >
+        RetroAchievements to earn and track achievements while
+        you play.
+      - Achievements are supported for the following systems:
+        Atari 2600, Atari Lynx, Bandai WonderSwan / Color,
+        ColecoVision, NEC PC Engine / TurboGrafx-16, NEC PC-FX,
+        NEC SuperGrafx, Nintendo NES, Nintendo SNES,
+        Nintendo Game Boy, Nintendo Game Boy Color,
+        Nintendo Game Boy Advance, Nintendo DS,
+        Nintendo Pokémon Mini, Nintendo Virtual Boy,
+        Panasonic 3DO, Sega SG-1000, Sega Master System,
+        Sega Genesis, Sega CD, Sega Game Gear, Sega Saturn,
+        SNK Neo Geo CD, SNK Neo Geo Pocket / Color,
+        Sony PlayStation.
+      - When a game has achievements, an Achievements button will
+        appear in the pause menu where you can see your progress.
+      - A notification will pop up on screen whenever an achievement
+        is unlocked.
+      - Supports softcore mode, rich presence, and an in-game
+        achievement list showing earned and unearned achievements
+        for the current game.
+      - Note: Hardcore mode is not currently supported.
+    - Pause Menu
+      - Reworked pause menu layout and navigation to accommodate
+        Cheats and Achievements buttons.
+    - General
+      - Improved audio support for iOS for Atari 2600 games.
+
 ### 04/29/26 (0.2.1)
 
     - Cheats
