@@ -34,6 +34,17 @@
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root"></div>
+
+<!-- <script>
+  if (location.search.indexOf('_f=1') === -1) {
+    document.getElementById('root').style.display = 'none';
+    var f = document.createElement('iframe');
+    f.src = location.href + (location.search ? '&' : '?') + '_f=1';
+    f.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:60vh;border:none;display:block;';
+    f.allow = 'cross-origin-isolated';
+    document.body.appendChild(f);
+  }
+</script> -->
 </body>
 
 </html>
