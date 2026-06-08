@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack://src/App.scss"],"names":[],"mappings":"AAIA,UACI,wBAAA","file":"main.1bb8fe59.chunk.css","sourcesContent":["html {\r\n    background-color: #0b0b0b;\r\n}\r\n\r\nbody {\r\n    background-color: #0b0b0b;\r\n}"]}
