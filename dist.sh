@@ -60,6 +60,14 @@ wget -O - https://webrcade.github.io/webrcade-utils/roms-dos.json > roms-dos.jso
     { fail 'Unable to retrieve dos roms.'; }
 wget -O - https://webrcade.github.io/webrcade-utils/roms-ds.json > roms-ds.json ||
     { fail 'Unable to retrieve ds roms.'; }
+wget -O - https://webrcade.github.io/webrcade-utils/roms-astrocade.json > roms-astrocade.json ||
+    { fail 'Unable to retrieve astrocade roms.'; }
+wget -O - https://webrcade.github.io/webrcade-utils/roms-apple2.json > roms-apple2.json ||
+    { fail 'Unable to retrieve apple2 roms.'; }
+wget -O - https://webrcade.github.io/webrcade-utils/roms-apple2gs.json > roms-apple2gs.json ||
+    { fail 'Unable to retrieve apple2gs roms.'; }
+wget -O - https://webrcade.github.io/webrcade-utils/roms-cdi-final.json > roms-cdi-final.json ||
+    { fail 'Unable to retrieve cdi roms.'; }
 cd "$DIR" || { fail 'Unable to change to webrcade.'; }
 cd public || { fail 'Unable to change to public.'; }
 node "$UTILS/createdats-fbneo.js" || { fail 'Unable to execute create dats fbneo.'; }
