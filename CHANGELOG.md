@@ -1,5 +1,27 @@
 ## Change log
 
+### 07/18/26 (0.2.3)
+
+    - New Emulators
+      - Added Bally Astrocade emulator.
+      - Added Philips CD-i emulator.
+      - Added Apple II emulator.
+      - Added Apple IIGS emulator.
+    - Nintendo DS
+      - Added Homebrew SD Card support. When enabled, the emulator
+        provides an SD card via DLDI patching, allowing homebrew games
+        to read and write files. An optional SD Card Archive (zip file)
+        and SD Card Path can be specified to pre-populate the card with
+        files at startup.
+    - Editor: Application Selection
+      - Added a new Browse... dialog for selecting applications when
+        editing items. The dialog features a visual grid layout with
+        platform thumbnails, categorized by manufacturer (Atari,
+        Nintendo, Sega, NEC, Sony, SNK, Arcade, Computers, Other).
+    - Cloud Storage (Dropbox)
+      - Fixed failures that could occur when downloading or uploading
+        files.
+
 ### 06/03/26 (0.2.2)
 
     - RetroAchievements

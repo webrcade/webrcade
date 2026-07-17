@@ -460,6 +460,42 @@ if test -d "$DIR/../webrcade-app-prboom"; then
 fi
 
 ##
+## webrcade-app-retro-mame-astrocade
+##
+cd "$DIR/../webrcade-app-retro-mame-astrocade" || { fail 'Unable to change to retro-mame-astrocade.'; }
+npm install . || { fail 'Unable to install dependencies.'; }
+npm run build || { fail 'Unable to build retro-mame-astrocade.'; }
+mkdir -p "$DIST_OUT_APP/retro-mame-astrocade"  || { fail 'Error creating output directory.'; }
+cp -R build/. "$DIST_OUT_APP/retro-mame-astrocade" || { fail 'failed to copy to out.'; }
+
+##
+## webrcade-app-retro-mame-apple2
+##
+cd "$DIR/../webrcade-app-retro-mame-apple2" || { fail 'Unable to change to retro-mame-apple2.'; }
+npm install . || { fail 'Unable to install dependencies.'; }
+npm run build || { fail 'Unable to build retro-mame-apple2.'; }
+mkdir -p "$DIST_OUT_APP/retro-mame-apple2"  || { fail 'Error creating output directory.'; }
+cp -R build/. "$DIST_OUT_APP/retro-mame-apple2" || { fail 'failed to copy to out.'; }
+
+##
+## webrcade-app-retro-mame-apple2gs
+##
+cd "$DIR/../webrcade-app-retro-mame-apple2gs" || { fail 'Unable to change to retro-mame-apple2gs.'; }
+npm install . || { fail 'Unable to install dependencies.'; }
+npm run build || { fail 'Unable to build retro-mame-apple2gs.'; }
+mkdir -p "$DIST_OUT_APP/retro-mame-apple2gs"  || { fail 'Error creating output directory.'; }
+cp -R build/. "$DIST_OUT_APP/retro-mame-apple2gs" || { fail 'failed to copy to out.'; }
+
+##
+## webrcade-app-retro-mame-cdi
+##
+cd "$DIR/../webrcade-app-retro-mame-cdi" || { fail 'Unable to change to retro-mame-cdi.'; }
+npm install . || { fail 'Unable to install dependencies.'; }
+npm run build || { fail 'Unable to build retro-mame-cdi.'; }
+mkdir -p "$DIST_OUT_APP/retro-mame-cdi"  || { fail 'Error creating output directory.'; }
+cp -R build/. "$DIST_OUT_APP/retro-mame-cdi" || { fail 'failed to copy to out.'; }
+
+##
 ## webrcade-editor
 ##
 
