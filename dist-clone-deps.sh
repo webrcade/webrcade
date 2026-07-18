@@ -88,5 +88,13 @@ git clone https://github.com/webrcade/webrcade-app-retro-snes9x.git ||
   { fail 'Unable to clone retro snes9x'; }
 git clone https://github.com/webrcade/webrcade-app-retro-yabause.git ||
   { fail 'Unable to clone retro yabause'; }
+git clone https://github.com/webrcade/webrcade-app-retro-mame-astrocade.git ||
+  { fail 'Unable to clone retro-mame-astrocade'; }
+git clone https://github.com/webrcade/webrcade-app-retro-mame-apple2.git ||
+  { fail 'Unable to clone retro-mame-apple2'; }
+git clone https://github.com/webrcade/webrcade-app-retro-mame-apple2gs.git ||
+  { fail 'Unable to clone retro-mame-apple2gs'; }
+git clone https://github.com/webrcade/webrcade-app-retro-mame-cdi.git ||
+  { fail 'Unable to clone retro-mame-cdi'; }
 git clone https://github.com/webrcade/webrcade-app-standalone.git ||
   { fail 'Unable to clone standalone'; }
