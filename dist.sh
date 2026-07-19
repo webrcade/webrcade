@@ -6,8 +6,6 @@ DIST_OUT="$DIST/out"
 DIST_OUT_APP="$DIST_OUT/app"
 UTILS="$DIR/../webrcade-utils"
 
-export GENERATE_SOURCEMAP=false
-
 #
 # Function that is invoked when the script fails.
 #
