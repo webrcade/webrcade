@@ -504,6 +504,15 @@ mkdir -p "$DIST_OUT_APP/retro-mame-cdi"  || { fail 'Error creating output direct
 cp -R build/. "$DIST_OUT_APP/retro-mame-cdi" || { fail 'failed to copy to out.'; }
 
 ##
+## webrcade-app-retro-virtual-jaguar
+##
+cd "$DIR/../webrcade-app-retro-virtual-jaguar" || { fail 'Unable to change to retro-virtual-jaguar.'; }
+npm install . || { fail 'Unable to install retro-virtual-jaguar dependencies.'; }
+npm run build || { fail 'Unable to build retro-virtual-jaguar.'; }
+mkdir -p "$DIST_OUT_APP/retro-virtual-jaguar"  || { fail 'Error creating output directory.'; }
+cp -R build/. "$DIST_OUT_APP/retro-virtual-jaguar" || { fail 'failed to copy to out.'; }
+
+##
 ## webrcade-editor
 ##
 
