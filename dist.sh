@@ -68,6 +68,14 @@ wget -O - https://webrcade.github.io/webrcade-utils/roms-apple2gs.json > roms-ap
     { fail 'Unable to retrieve apple2gs roms.'; }
 wget -O - https://webrcade.github.io/webrcade-utils/roms-cdi-final.json > roms-cdi-final.json ||
     { fail 'Unable to retrieve cdi roms.'; }
+wget -O - https://webrcade.github.io/webrcade-utils/roms-32xcd.json > roms-32xcd.json ||
+    { fail 'Unable to retrieve 32x cd roms.'; }
+wget -O - https://webrcade.github.io/webrcade-utils/roms-jaguarcd.json > roms-jaguarcd.json ||
+    { fail 'Unable to retrieve jaguar cd roms.'; }
+wget -O - https://webrcade.github.io/webrcade-utils/roms-dreamcast.json > roms-dreamcast.json ||
+    { fail 'Unable to retrieve dreamcast roms.'; }
+wget -O - https://webrcade.github.io/webrcade-utils/roms-psp.json > roms-psp.json ||
+    { fail 'Unable to retrieve psp roms.'; }
 cd "$DIR" || { fail 'Unable to change to webrcade.'; }
 cd public || { fail 'Unable to change to public.'; }
 node "$UTILS/createdats-fbneo.js" || { fail 'Unable to execute create dats fbneo.'; }
@@ -511,6 +519,42 @@ npm install . || { fail 'Unable to install retro-virtual-jaguar dependencies.'; 
 npm run build || { fail 'Unable to build retro-virtual-jaguar.'; }
 mkdir -p "$DIST_OUT_APP/retro-virtual-jaguar"  || { fail 'Error creating output directory.'; }
 cp -R build/. "$DIST_OUT_APP/retro-virtual-jaguar" || { fail 'failed to copy to out.'; }
+
+##
+## webrcade-app-retro-picodrive
+##
+cd "$DIR/../webrcade-app-retro-picodrive" || { fail 'Unable to change to retro-picodrive.'; }
+npm install . || { fail 'Unable to install retro-picodrive dependencies.'; }
+npm run build || { fail 'Unable to build retro-picodrive.'; }
+mkdir -p "$DIST_OUT_APP/retro-picodrive"  || { fail 'Error creating output directory.'; }
+cp -R build/. "$DIST_OUT_APP/retro-picodrive" || { fail 'failed to copy to out.'; }
+
+##
+## webrcade-app-retro-mupen64plus-next
+##
+cd "$DIR/../webrcade-app-retro-mupen64plus-next" || { fail 'Unable to change to retro-mupen64plus-next.'; }
+npm install . || { fail 'Unable to install retro-mupen64plus-next dependencies.'; }
+npm run build || { fail 'Unable to build retro-mupen64plus-next.'; }
+mkdir -p "$DIST_OUT_APP/retro-mupen64plus-next"  || { fail 'Error creating output directory.'; }
+cp -R build/. "$DIST_OUT_APP/retro-mupen64plus-next" || { fail 'failed to copy to out.'; }
+
+##
+## webrcade-app-retro-flycast
+##
+cd "$DIR/../webrcade-app-retro-flycast" || { fail 'Unable to change to retro-flycast.'; }
+npm install . || { fail 'Unable to install retro-flycast dependencies.'; }
+npm run build || { fail 'Unable to build retro-flycast.'; }
+mkdir -p "$DIST_OUT_APP/retro-flycast"  || { fail 'Error creating output directory.'; }
+cp -R build/. "$DIST_OUT_APP/retro-flycast" || { fail 'failed to copy to out.'; }
+
+##
+## webrcade-app-retro-ppsspp
+##
+cd "$DIR/../webrcade-app-retro-ppsspp" || { fail 'Unable to change to retro-ppsspp.'; }
+npm install . || { fail 'Unable to install retro-ppsspp dependencies.'; }
+npm run build || { fail 'Unable to build retro-ppsspp.'; }
+mkdir -p "$DIST_OUT_APP/retro-ppsspp"  || { fail 'Error creating output directory.'; }
+cp -R build/. "$DIST_OUT_APP/retro-ppsspp" || { fail 'failed to copy to out.'; }
 
 ##
 ## webrcade-editor
