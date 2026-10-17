@@ -98,3 +98,15 @@ git clone https://github.com/webrcade/webrcade-app-retro-mame-cdi.git ||
   { fail 'Unable to clone retro-mame-cdi'; }
 git clone https://github.com/webrcade/webrcade-app-standalone.git ||
   { fail 'Unable to clone standalone'; }
+git clone https://github.com/webrcade/webrcade-app-retro-picodrive.git ||
+  { fail 'Unable to clone retro-picodrive'; }
+git clone https://github.com/webrcade/webrcade-app-retro-virtual-jaguar.git ||
+  { fail 'Unable to clone retro-virtual-jaguar'; }
+git clone https://github.com/webrcade/webrcade-app-retro-flycast.git ||
+  { fail 'Unable to clone retro-flycast'; }
+git clone https://github.com/webrcade/webrcade-app-retro-ppsspp.git ||
+  { fail 'Unable to clone retro-ppsspp'; }
+git clone https://github.com/webrcade/webrcade-app-retro-mupen64plus-next.git ||
+  { fail 'Unable to clone retro-mupen64plus-next'; }
+git clone https://github.com/webrcade/webrcade-app-retro-prosystem.git ||
+  { fail 'Unable to clone retro-prosystem'; }
