@@ -1,5 +1,83 @@
 ## Change log
 
+### 10/18/26 (0.2.4)
+
+    - New Emulators
+      - Added Atari Jaguar emulator (experimental).
+      - Added Atari Jaguar CD emulator (experimental).
+      - Added Sega 32X emulator.
+      - Added Sega 32X CD emulator.
+      - Added Sega Dreamcast emulator (experimental).
+      - Added Sony PSP emulator (experimental).
+    - New Application Variants
+      - Atari 7800: Added Libretro ProSystem-Next (supports
+        shaders, cheats, and achievements), now the default.
+        JS7800 remains available as a lighter-weight
+        alternative.
+      - Nintendo 64: Added Libretro Mupen64Plus-Next, now the
+        default. ParaLLEl N64 remains available as an
+        alternative.
+    - Experimental Apps
+      - Apple IIGS, Atari 5200, and Nintendo 64 are no longer
+        marked experimental.
+      - Removed the Experimental apps setting. Experimental
+        applications always appear, marked with an experimental
+        tag in the editor's Platform Chooser instead.
+    - Player
+      - Added a standardized on-screen Pause button, a
+        consistent On-Screen Controls setting, and a matching
+        keyboard/gamepad control scheme across applications.
+    - Editor
+      - Added an Arrange dialog to the Categories toolbar for
+        drag-and-drop reordering.
+      - URL fields (Discs, Media, BIOS, etc.) now show parsed
+        file names, a full-path toggle, and drag-and-drop
+        reordering. Raw text mode is still available via a new
+        Use classic URL entry fields setting.
+      - Deleting categories or items now asks for confirmation.
+      - Selecting an item's platform/core now opens the same
+        Platform Chooser used when adding a new item, and
+        platform icons now appear next to the relevant
+        dropdowns throughout the Feed Editor.
+      - Fixed several bugs affecting disc-based systems,
+        matched-title display, cheat file uploads, large
+        disc-image handling, and per-game mappings/settings
+        not being applied when a title is picked from search.
+    - Cloud Storage (Dropbox)
+      - Downloads now automatically retry on transient
+        failures, matching existing upload behavior.
+      - Fixed streaming downloads failing when the server's
+        response didn't include a filename in its headers.
+    - Achievements
+      - Fixed a missing RetroAchievements condition type that
+        caused some achievements to fail to unlock.
+    - Apple II / Apple IIGS
+      - Added support for a second disk drive, an Initial
+        Keyboard Mode option, and remappable D-pad keys.
+      - Added a Save Disks option (Apple II) for games that
+        need a blank formatted disk to save progress.
+      - Fixed several disk-swapping, save-state, and file-type
+        detection bugs.
+    - Atari 5200 / ColecoVision / Atari Jaguar
+      - Added an on-screen Pause/Keypad button and a
+        stick-driven radial keypad selector for quickly
+        selecting keypad digits with the right analog stick.
+    - Bally Astrocade
+      - Fixed the on-screen keypad reopening if Enter was still
+        held down when it closed.
+    - Commodore 64
+      - Fixed the Save Disks setting ignoring an explicit
+        choice of "(none)".
+    - Nintendo DS
+      - Added a selectable microphone "blow" type (Realistic
+        Sample or Random Noise).
+    - SNES
+      - Fixed the pause menu occasionally not responding to
+        Tab, Enter, or Space.
+    - Cheats
+      - Fixed some cheats not reverting their effect when
+        disabled.
+
 ### 07/18/26 (0.2.3)
 
     - New Emulators
