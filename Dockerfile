@@ -50,7 +50,7 @@ RUN cd /webrcade && \
 # Image
 ###############################################################################
 
-FROM php:8.0-apache
+FROM php:8.3-apache
 COPY --from=builder ./webrcade/dist/package /var/www/html
 
 RUN a2enmod headers && \
